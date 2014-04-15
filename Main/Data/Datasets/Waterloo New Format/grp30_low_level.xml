@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp30_low_level</id>
+    <name>Waterloo grp30_low_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp30_low_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>UC-SA-0</id>
+      <content>Name: Authenticate "Administrator" user
+Use Case Number: UC-SA-0
+Authors: M2, M3
+Event: The administrator needs to do some kind of system maintenance
+System: The authentication service
+Actors: System Administrator
+Overview: This case describes the process of authenticating the system administrator.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC-SA-3</id>
+      <content>Name: Activate a New Phone
+Use Case Number: UC-SA-3
+Authors: M2, M3
+Event: New phone is purchased to be added to the phone system
+System: The physical phone and administrative processor
+Actors: System Administrator
+Overview: This case describes the process required to add a new phone to the phone system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC-SA-4</id>
+      <content>Name: Add New Users to System
+Use Case Number: UC-SA-4
+Authors: M2, M3
+Event: A new person has moved into the complex/area
+System: User management system
+Actors: System Administrator
+Overview: This case shows the procedure for adding new users into the phone system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC-SA-5</id>
+      <content>Name: Associate User with Extension (setting phone as active)
+Use Case Number: UC-SA-5
+Authors: M2, M3
+Event: A new phone and new user were added to the system
+System: The administrative processor interacts to the actor's request
+Actors: System Administrator
+Overview: This case demonstrates the process taken to active a phone/extension by associating a user</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC-SA-6</id>
+      <content>Name: Change Active Phone to be Inactive
+Use Case Number: UC-SA-6
+Authors: M2, M3
+Event: A phone is no longer being used by any user; therefore make the phone inactive
+System: The user management system
+Actors: System Administrator
+Overview: This case describes the course of action taken to change the phone from an active state to an inactive state</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC-SA-7</id>
+      <content>Name: Remove Phone from System
+Use Case Number: UC-SA-7
+Authors: M2, M3
+Event: Phone is either broken or out-dated and will be removed from phone system
+System: The physical phone and the administrative processor
+Actors: System Administrator
+Overview: This case steps through removing a phone from the phone system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC-SA-8</id>
+      <content>Name: Reset Phone Status (Maintain phone system integrity)
+Use Case Number: UC-SA-8
+Authors: M2, M3
+Event: System did not catch the hang-up event from the phone
+System: Phone system interacts with the physical phone
+Actors: System Administrator
+Overview: This case describes the method of resetting the status on a particular phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC-SA-9</id>
+      <content>Name: View Phone Information (Check Phone Status)
+Use Case Number: UC-SA-9
+Authors: M2, M3
+Event: Administrator wants to view information about a particular phone
+System: The administrative processor provides phone information
+Actors: System Administrator
+Overview: This case shows the steps taken by the administrator to extract the information of a particular phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC-SA-10</id>
+      <content>Name: Change User Privileges
+Use Case Number: UC-SA-10
+Authors: M2, M3
+Event: User requires new permissions or restrictions
+System: The administrative processor
+Actors: System Administrator
+Overview: This case describes the procedure to apply filters to specific users</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC-SA-11</id>
+      <content>Name: Check System Load (Open Connections)
+Use Case Number: UC-SA-11
+Authors: M2
+Event: Administrator wants to see the load on the phone system
+System: The maintenance processor
+Actors: System Administrator
+Overview: This case shows the steps taken by the administrator to extract the load on the phone system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC-USR-0</id>
+      <content>Use Case Number: UC-USR-0
+Authors: M1
+Event: A customer (caller) would like to call another customer on the phone.
+System: A caller telephone, a callee telephone, an external telephone service, and a server that implements an IP based telephone network.
+Actors: Caller (initiator), callee, external telephone system
+Overview: This use case captures the process of a customer of the system making a phone call to either another customer of the system or to
+the external telephone system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC-USR-1</id>
+      <content>Name: Receive Phone Call from Internal Caller
+Use Case Number: UC-USR-1
+Authors: M1
+Event: A customer (callee) of the system receives a telephone call. The callee's IP address is passed as input.
+System: A caller telephone, a callee telephone, and a server that implements an IP based telephone network.
+Actors: Callee (initiator), caller
+Overview: This use case captures the process of receiving an incoming call from another customer of the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC-USR-2</id>
+      <content>Name: Receive Phone Call from External Caller
+Use Case Number: UC-USR-2
+Authors: M1
+Event: A customer (callee) of the system receives a telephone call. The callee's 4-digit extension is passed as input.
+System: A callee telephone, an external telephone service, and a server that implements an IP based telephone network.
+Actors: External telephone system (initiator), callee
+Overview: This use case captures the process of receiving an incoming call from the external telephone system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC-USR-3</id>
+      <content>Name: Leave a Voicemail Message
+Use Case Number: UC-USR-3
+Authors: M1
+Event: Callee is unavailable and has voice mail service. The callee's extension is sent as input.
+System: A caller telephone, a server that implements an IP based telephone network, a computer storing voice mail messages.
+Actors: Voicemail service (initiator), caller
+Overview: This use case captures the process of a caller leaving a voicemail message for an unavailable callee.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC-USR-4</id>
+      <content>Name: Participate in a Conference Call
+Use Case Number: UC-USR-4
+Authors: M1
+Event: Caller wishes to join a conference call.
+System: A caller telephone, a server that implements an IP based telephone network, a system hosting a conference
+Actors: Caller (initiator), conference call service
+Overview: This use case captures the process of a caller joining an existing conference call.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC-USR-5</id>
+      <content>Name: Set up a Conference
+Use Case Number: UC-USR-5
+Authors: M1
+Event: Customer requests to set up a conference call.
+System: A caller telephone, a server that implements an IP based telephone network
+Actors: Caller (initiator), conference call service
+Overview: This use case captures the process of setting up a new conference call.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC-USR-6</id>
+      <content>Name: Access Voicemail System
+Use Case Number: UC-USR-6
+Authors: M1
+Event: Customer wants to access any voicemail functionality.
+System: A caller telephone, a server that implements an IP based telephone network, a computer storing voice mail messages.
+Actors: Caller (initiator), voicemail service
+Overview: This use case captures the process of a customer accessing their voicemail system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC-USR-8</id>
+      <content>Name: Play New Voicemail Messages
+Use Case Number: UC-USR-8
+Authors: M1
+Event: Customer wants to listen to new voicemail messages. Customer's voicemail box and the message number is passed as input.
+System: A caller telephone, a server that implements an IP based telephone network, a computer storing voice mail messages.
+Actors: Voicemail service (initiator), caller
+Overview: This use case captures the process of a customer listening to new voicemail messages.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC-USR-9</id>
+      <content>Name: Play Saved Voicemail Messages
+Use Case Number: UC-USR-9
+Authors: M1
+Event: Customer wants to listen to saved voicemail messages. Customer's voicemail box and the message number is passed as input.
+System: A caller telephone, a server that implements an IP based telephone network, a computer storing voice mail messages.
+Actors: Voicemail service (initiator), caller
+Overview: This use case captures the process of a customer listening to saved voicemail messages.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC-USR-10</id>
+      <content>Name: Change Voicemail Greeting
+Use Case Number: UC-USR-10
+Authors: M1
+Event: Customer wants to change their voicemail greeting.
+System: A caller telephone, a server that implements an IP based telephone network, a computer storing voice mail messages.
+Actors: Voicemail service (initiator), caller
+Overview: This use case captures the process of a customer modifying their voicemail greeting.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

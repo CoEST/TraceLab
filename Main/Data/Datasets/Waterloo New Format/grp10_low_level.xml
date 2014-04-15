@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp10_low_level</id>
+    <name>Waterloo grp10_low_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp10_low_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>UC1</id>
+      <content>Name: Deactivate System
+ID: UC1
+Event: Administrator brings IP Phone system offline
+System: Phone System
+Actors: Administrator (Initiator)
+Overview: Description of internal behavior when an administrator brings the IP Phone system offline.
+Preconditions: Server is started</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC2</id>
+      <content>Name: Initialize System
+ID: UC2
+Event: Administrator turns on and initializes IP Phone system
+System: Phone System
+Actors: Administrator (Initiator)
+Overview: Description of internal behavior when an administrator brings IP Phone system online.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC3</id>
+      <content>Name: Make a Call
+ID: UC3
+Event: User calls another user
+System: Phone System
+Actors: Caller (initiator) and Callee
+Overview: Description of internal behavior when a user makes a call to another user in the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC4</id>
+      <content>Name: Administrator Login
+ID: UC4
+Event: Administrator logs into the system console
+System: System Console
+Actors: Administrator (Initiator)
+Overview: Description of internal behavior when an administrator logs into the system console.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC5</id>
+      <content>Name: Administrator Logoff
+ID: UC5
+Event: Administrator logs out of the system console
+System: System Console
+Actors: Administrator (Initiator)
+Overview: Description of internal behavior when an administrator logs out of the system console.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC6</id>
+      <content>Name: User Account Administration
+ID: UC6
+Event: Administrator modifies user account settings
+System: System Console
+Actors: Administrator (Initiator)
+Overview: Description of internal behavior when administrator attempts to modify user/ account information</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC7</id>
+      <content>Name: Calling Plan Management
+ID: UC7
+Event: Administrator modifies calling plan settings applicable to all users
+System: System Console
+Actors: Administrator (Initiator)
+Overview: Description of internal behavior when administrator accesses universal billing plan configuration</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC8</id>
+      <content>Name: System Configuration
+ID: UC8
+Event: Administrator modifies system settings
+System: System Console
+Actors: Administrator (Initiator)
+Overview: Description of internal behavior when administrator accesses system configuration</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

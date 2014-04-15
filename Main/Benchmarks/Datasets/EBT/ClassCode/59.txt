@@ -1,0 +1,81 @@
+           Done
+           "/**
+            * The number of Worker object
+            * threads that are currently working
+            * on something  .
+            */
+           private int _ active  Threads = 0  ;
+          
+           /**
+            * This boolean keeps track of if
+            * the very first thread has started
+            * or not  . This prevents this object
+            * from falsely reporting that the Thread  Pool
+            * is done   just because the first thread
+            * has not yet started  .
+            */
+           private boolean _ started = false  ;
+           /**
+            * This method can be called to block
+            * the current thread until the Thread  Pool
+            * is done  .
+            */"
+           "/**
+            * This method can be called to block
+            * the current thread until the Thread  Pool
+            * is done  .
+            */
+          
+           synchronized public void wait  Done  ()
+           {
+            try {
+             while ( _ active  Threads  >  0 ) {
+              wait  ();
+             }
+            } catch ( Interrupted  Exception e ) {
+            }
+           }"
+           "/**
+            * Called to wait for the first thread to
+            * start  . Once this method returns the
+            * process has begun  .
+            */
+          
+           synchronized public void wait  Begin  ()
+           {
+            try {
+             while ( !_ started ) {
+              wait  ();
+             }
+            } catch ( Interrupted  Exception e ) {
+            }
+           }"
+           "/**
+            * Called by a Worker object
+            * to indicate that it has begun
+            * working on a workload  .
+            */
+           synchronized public void worker  Begin  ()
+           {
+            _ active  Threads  ++;
+            _ started = true  ;
+            notify  ();
+           }"
+           "/**
+            * Called by a Worker object to
+            * indicate that it has completed a
+            * workload  .
+            */
+           synchronized public void worker  End  ()
+           {
+            _ active  Threads  --  ;
+            notify  ();
+           }"
+           "/**
+            * Called to reset this object to
+            * its initial state  .
+            */
+           synchronized public void reset  ()
+           {
+            _ active  Threads = 0  ;
+           }"

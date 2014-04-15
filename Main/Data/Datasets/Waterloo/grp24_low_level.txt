@@ -1,0 +1,203 @@
+UC2	Use Case Number: 	UC2
+Name: 	Hang Up Phone
+Authors:	M2, M4, M3, M1
+Event: 	The IP Phone is placed on its cradle.
+System: 	IP Phone, Server
+Actors: 	User
+Overview: 	This use case illustrates the process of hanging up a phone.~
+UC3	Use Case Number: 	UC3
+Name: 	Make Call
+Authors:	M2, M4, M3, M1
+Event: 	User picks up phone.
+System: 	IP Phone, Server
+Actors: 	User
+Overview: 	This use case illustrates the process of making a phone call.~
+UC4	Use Case Number: 	UC4
+Name: 	Receive Call
+Authors:	M2, M4, M3, M1
+Event: 	The IP Phone outputs a ring tone.
+System: 	IP Phone, Server
+Actors: 	User
+Overview: 	This use case illustrates the process of receiving a phone call.~
+UC5	Use Case Number: 	UC5
+Name: 	Login
+Authors:	M2, M4, M3, M1
+Event: 	Administrator opens login screen.
+System: 	Server, System Console
+Actors: 	Administrator
+Overview: 	This use case illustrates the process of logging into system console.~
+UC6	Use Case Number: 	UC6
+Name: 	Logout
+Authors:	M2, M4, M3, M1
+Event: 	Administrator closes system console.
+System: 	Server, System Console
+Actors: 	Administrator
+Overview: 	This use case illustrates the process of logging out of the system console.~
+UC7	Use Case Number: 	UC7
+Name: 	Create Account
+Authors:	M2, M4, M3, M1
+Event: 	Administrator opens manage account screen.
+System: 	Server, System Console, IP Phone
+Actors: 	Administrator
+Overview: 	This use case illustrates the process of adding a new user account.~
+UC8	Use Case Number: 	UC8
+Name: 	Edit Account
+Authors:	M2, M4, M3, M1
+Event: 	Administrator opens manage account screen.
+System: 	Server, System Console, IP Phone
+Actors: 	Administrator
+Overview: 	This use case illustrates the process of editing an existing user’s account.~
+UC10	Use Case Number: 	UC10
+Name: 	Resume Account
+Authors:	M2, M4, M3, M1
+Event: 	Administrator opens manage account screen.
+System: 	Server, System Console, IP Phone
+Actors: 	Administrator
+Overview: 	This use case illustrates the process of resuming an existing user’s suspended account.~
+UC11	Use Case Number: 	UC11
+Name: 	Deactivate Account
+Authors:	M2, M4, M3, M1
+Event: 	Administrator opens manage account screen.
+System: 	Server, System Console, IP Phone
+Actors: 	Administrator
+Overview: 	This use case illustrates the process of deactivating an existing user’s account.~
+UC13	Use Case Number: 	UC13
+Name: 	Search for Account
+Authors:	M2, M4, M3, M1
+Event: 	Administrator opens manage account screen.
+System: 	Server, System Console, IP Phone
+Actors: 	Administrator
+Overview: 	This use case illustrates the process of searching for an existing user’s account.~
+UC14	Use Case Number: 	UC14
+Name: 	Search for Available Phone Numbers and IPs
+Authors:	M2, M4, M3, M1
+Event: 	Administrator opens manage account screen.
+System: 	Server, System Console, IP Phone
+Actors: 	Administrator
+Overview: 	This use case illustrates the process of searching for available phone numbers and IP addresses.~
+UC15	Use Case Number: 	UC15
+Name: 	Edit Phone Number / IP Mapping
+Authors:	M2, M4, M3, M1
+Event: 	Administrator opens phones screen.
+System: 	Server, System Console, IP Phone
+Actors: 	Administrator
+Overview: 	This use case illustrates the process editing the mapping between the IP Phones and IP addresses.~
+UC16	Use Case Number: 	UC16
+Name: 	Calculate Bill
+Authors:	M2, M4, M3, M1
+Event: 	Administrator opens billing screen.
+System: 	Server, System Console
+Actors: 	Administrator
+Overview: 	This use case illustrates the process of calculating an existing user’s phone bill.~
+UC17	Use Case Number: 	UC17
+Name: 	Automatic Bill Generation
+Authors:	M2, M4, M3, M1
+Event: 	Server generates bills daily.
+System: 	Server, System Console
+Actors: 	Administrator
+Overview: 	This use case illustrates the process of the automatic bill generation for user’s whose billing date is today.~
+UC18	Use Case Number: 	UC18
+Name: 	Display Bill
+Authors:	M2, M4, M3, M1
+Event: 	Administrator opens billing screen.
+System: 	Server, System Console
+Actors: 	Administrator
+Overview: 	This use case illustrates the process of displaying an existing user’s phone bill.~
+UC19	Use Case Number: 	UC19
+Name: 	Issue Bill
+Authors:	M2, M4, M3, M1
+Event: 	Administrator opens billing screen.
+System: 	Server, System Console
+Actors: 	Administrator
+Overview: 	This use case illustrates the process of issuing a bill to an existing user.~
+UC20	Use Case Number: 	UC20
+Name: 	Apply Discount
+Authors:	M2, M4, M3, M1
+Event: 	Administrator opens billing screen.
+System: 	Server, System Console
+Actors: 	Administrator
+Overview: 	This use case illustrates the process of applying a discount to an existing user’s account.~
+UC21	Use Case Number: 	UC21
+Name: 	Record Bill Payment
+Authors:	M2, M4, M3, M1
+Event: 	Administrator opens billing screen.
+System: 	Server, System Console
+Actors: 	Administrator
+Overview: 	This use case illustrates the process of recording a bill payment from an existing user.~
+UC22	Use Case Number: 	UC22
+Name: 	Set Billing Period
+Authors:	M2, M4, M3, M1
+Event: 	Administrator opens billing screen.
+System: 	Server, System Console
+Actors: 	Administrator
+Overview: 	This use case illustrates the process of setting the billing period.~
+UC26	Use Case Number: 	UC26
+Name: 	Add New Phone Plan for User
+Authors:	M2, M4, M3, M1
+Event: 	Administrator opens billing screen.
+System: 	Server, System Console
+Actors: 	Administrator
+Overview: 	This use case illustrates the process of adding a new phone plan for an existing user.~
+UC27	Use Case Number: 	UC27
+Name: 	Change User’s Phone Plan
+Authors:	M2, M4, M3, M1
+Event: 	Administrator opens billing screen.
+System: 	Server, System Console
+Actors: 	Administrator
+Overview: 	This use case illustrates the process of changing an existing user’s phone plan.~
+UC28	Use Case Number: 	UC28
+Name: 	Hardware Test
+Authors:	M2, M4, M3, M1
+Event: 	Administrator opens maintenance screen.
+System: 	Server, System Console, IP Phones
+Actors: 	Administrator
+Overview: 	This use case illustrates the process of starting a hardware test for all the IP phones.~
+UC30	Use Case Number: 	UC30
+Name: 	View Hardware Test Results
+Authors:	M2, M4, M3, M1
+Event: 	Administrator opens maintenance screen.
+System: 	Server, System Console
+Actors: 	Administrator
+Overview: 	This use case illustrates the process displaying the results from the hardware test.~
+UC31	Use Case Number: 	UC31
+Name: 	View System Load
+Authors:	M2, M4, M3, M1
+Event: 	Administrator opens maintenance screen.
+System: 	Server, System Console
+Actors: 	Administrator
+Overview: 	This use case illustrates the process of displaying the system load statistics.~
+UC32	Use Case Number: 	UC32
+Name: 	Reset Phone Call Processing
+Authors:	M2, M4, M3, M1
+Event: 	Administrator opens maintenance screen.
+System: 	Server, System Console
+Actors: 	Administrator
+Overview: 	This use case illustrates the process of resetting the phone call processing when the system reaches a state of instability.~
+UC33	Use Case Number: 	UC33
+Name: 	Set Maximum Number of Concurrent Phone Calls
+Authors:	M2, M4, M3, M1
+Event: 	Administrator opens phones screen.
+System: 	Server, System Console
+Actors: 	Administrator
+Overview: 	This use case illustrates the process of setting the maximum number of concurrent phone calls.~
+UC34	Use Case Number: 	UC34
+Name: 	Remove Broken/Removed/Suspended Phone
+Authors:	M2, M4, M3, M1
+Event: 	Administrator opens phones screen.
+System: 	Server, System Console
+Actors: 	Administrator
+Overview: 	This use case illustrates the process disabling phones.~
+UC35	Use Case Number: 	UC35
+Name: 	Add New/Repaired/Suspended Phone for Service
+Authors:	M2, M4, M3, M1
+Event: 	Administrator opens phones screen.
+System: 	Server, System Console
+Actors: 	Administrator
+Overview: 	This use case illustrates the process enabling phones.~
+UC36	Use Case Number: 	UC36
+Name: 	Set Mean Time for Hardware Tests
+Authors:	M2, M4, M3, M1
+Event: 	Administrator opens maintenance screen.
+System: 	Server, System Console
+Actors: 	Administrator
+Overview: 	This use case illustrates the process of setting the mean time between hardware tests.~

@@ -1,0 +1,40 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf110
+{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;\f1\ftech\fcharset0 Wingdings-Regular;\f2\fnil\fcharset0 LucidaGrande;
+}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f0\b\fs24 \cf0 Nome caso d\'92uso\
+
+\b0 VisionePianoRegolatore\
+
+\b Attori partecipanti\
+
+\b0 Iniziato da cittadino\
+
+\b Flusso di eventi\
+
+\b0 1.	Il cittadino accede all'area Piano Regolatore mediante l'apposito link\
+2.	il sistema visualizza il documento\
+
+\b Condizione di entrata\
+
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Il cittadino ha avuto accesso al sistema\
+
+\b Condizioni di uscita\
+
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Il sistema mostra il piano regolatore, OR 
+\f1 \uc0\u61656 
+\f2  
+\f0 nel caso di fallimenti tecnici il sistema richiama	il	caso	d'uso\
+
+\b ServizioNonDisponibile\
+Requisiti di qualita
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Non previsti}

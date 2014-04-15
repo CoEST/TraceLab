@@ -1,0 +1,4 @@
+org.mozilla.javascript.TokenStream.getToken
+org.mozilla.javascript.Decompiler.decompile
+org.mozilla.javascript.NativeGlobal.js_parseFloat
+org.mozilla.javascript.TokenStream.isJSSpace

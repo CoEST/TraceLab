@@ -1,0 +1,26 @@
+Test case of a First Amendment to visit Date: 
+    C51 followed by a Day Hospital 20/06/2003 
+            in a location 
+            between two visits Control 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for modification of a 
+UcModVis service by Outpatient a 
+            patient 
+High Priority 
+Set up There are no previous reservations 
+            The reservation is `Next: 
+                29/09/2003 hours 08 00 Day Hospital 
+            New reservation was 
+             02/10/2003 hours 09 00 Visit Control 
+            New reservaion later: 
+             07/10/2003 hours 09 00 Visit Control 
+Description test 
+Input Visit selected: 
+                26/09/2003 hours 11 00 First visit 
+            Review: 
+                        03/10/2003 hours 11 00 
+Oracle Sequence invalid The system 
+            the changing of the reservation 
+Classes cover valid: CE1 CE8 CE14 CE19 CE21 
+            Classes are not valid: None

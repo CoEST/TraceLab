@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp03_high_level</id>
+    <name>Waterloo grp03_high_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp03_high_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>F1</id>
+      <content>A user must be able to place a call.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F2</id>
+      <content>A user must be able to receive a call.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F3</id>
+      <content>A user must be able to forward a call to any extension</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F4</id>
+      <content>To forward a call a user must press the �#� key and then dial the extension</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F5</id>
+      <content>When a user forwards a call and the destination extension is busy, the other party of the initial call gets busy signal</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F6</id>
+      <content>The user must be able to globally forward calls to their extension to another extension</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F7</id>
+      <content>A caller must be able to leave a voice message</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F8</id>
+      <content>A user must be able to sign for a Voice Mail service</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F9</id>
+      <content>A user must be able to log in to the Voice Mail System from any phone that is part of the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F10</id>
+      <content>To log in to the Voice Mail system a user must dial extension 6000</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F11</id>
+      <content>A user must be able to change the greeting message for their Voice Mail.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F12</id>
+      <content>A user must be able to change the password of their voice mail box.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F13</id>
+      <content>A user must be able to listen to voice messages in their voice mail box</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F14</id>
+      <content>A user must be able to delete voice messages from their voice mail box.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F15</id>
+      <content>Once a connection between two users is established, they must be able to hear each other.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F16</id>
+      <content>A call must end when either the caller or callee hangs up.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F17</id>
+      <content>A user must hear dial tone once they pick the receiver.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F18</id>
+      <content>A caller must hear busy tone after the extension of the callee has been dialed.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F19</id>
+      <content>A caller must hear ring tone after the extension of the callee has been dialed.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F20</id>
+      <content>A caller must hear fast busy tone after the extension of the callee has been dialed</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F21</id>
+      <content>A user must hear a tone after pressing a key on the keypad of the phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F22</id>
+      <content>A user must hear voice mail instructions when interacting with the Voice Mail system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F23</id>
+      <content>A user must not be charged for checking their voice mail</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F24</id>
+      <content>The system must not charge a user when a call to administrator is placed</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F25</id>
+      <content>Billing for calls must be by the minute.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F26</id>
+      <content>Only the caller is billed for a phone call</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F27</id>
+      <content>There is no upper limit on the duration of any call</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F28</id>
+      <content>Call processing must start once four digits (extension) are dialed by a caller</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F29</id>
+      <content>If a call is dropped for any reason, the charge for that call is for the duration of the call until the drop time</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F30</id>
+      <content>A user must not be able to call their own extension</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F31</id>
+      <content>A user must be able to change their calling plan</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F32</id>
+      <content>Administrator must be able to log in</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F33</id>
+      <content>Administrator must be able to log out</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F34</id>
+      <content>Administrator must be able to record a bill payment on the behalf of a user</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F35</id>
+      <content>Administrator must be able to print bill(s)</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F36</id>
+      <content>Administrator must be able to suspend a user account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F37</id>
+      <content>Administrator must be able to activate a suspended user account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F38</id>
+      <content>Administrator must be able to delete a user account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F39</id>
+      <content>Administrator must be able to create a new user account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F40</id>
+      <content>Administrator must be able to view user account history</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F41</id>
+      <content>Administrator must be able to modify user account attributes</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F42</id>
+      <content>Administrator must be able to add a new phone to the VIOP Network system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F43</id>
+      <content>Administrator must be able to remove a phone from the VIOP Network system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F44</id>
+      <content>Administrator must be able to set an upper bound on the number of live calls in the VOIP Network system at one time</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F45</id>
+      <content>Administrator must be able to request a hardware test</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F46</id>
+      <content>Administrator must be able to add a new calling plan to the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F47</id>
+      <content>Administrator must be able to delete a calling plan from the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F48</id>
+      <content>Administrator must be able to reset a call process</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F49</id>
+      <content>The VOIP Network system will have only one administrator</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F50</id>
+      <content>The system must notify the administrator and suspend an account in case of hardware and/or software failure</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F51</id>
+      <content>The system should prompt the administrator to print the last bill in case of account cancellation</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F52</id>
+      <content>Each bill should contain a list of phone records and the total charge for the billing period</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F53</id>
+      <content>The default billing period is the current period</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F54</id>
+      <content>The system should not allow more simultaneous calls than specified my the administrator</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F56</id>
+      <content>The system must provide a means for the administrator to check whether an extension is in use</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F57</id>
+      <content>The system must not permit a user to utilize the services provided by the network until an administrator has initialized their account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F58</id>
+      <content>The system must provide a method for the administrator to initialize a user account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F59</id>
+      <content>The system must provide a method for the administrator to view a user�s outstanding bill</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F60</id>
+      <content>The system must provide a method for the administrator to access logs of previously-run system tests</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N1</id>
+      <content>A user may have more than one account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N2</id>
+      <content>The maximum number of active user accounts in the system cannot be more than the phones part of the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N3</id>
+      <content>There should be no restriction on the available extensions</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N4</id>
+      <content>The system does not need to be scalable beyond 10000 users</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N5</id>
+      <content>The system should log all activities of the administrator</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N6</id>
+      <content>All IP part of the system should be static</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N7</id>
+      <content>There should be only one administrator logged in at a time</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N8</id>
+      <content>When the system is connecting two IP telephones in a voice call, the call must be connected within 1 second to ensure a reasonable system response time</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N9</id>
+      <content>Time for administrator to learn how to comfortably use the administrator interface should not exceed one week when proper training and/or documentation is offered</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N10</id>
+      <content>System should be easily adaptable from a subscription-based service to an unlimited private internal communication network</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N11</id>
+      <content>Time for a user to learn how to comfortably operate supplementary services such as voice mail and call forwarding should not exceed one week</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

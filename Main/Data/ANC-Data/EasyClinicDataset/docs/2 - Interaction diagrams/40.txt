@@ -1,0 +1,29 @@
+Changing age Patient 
+
+     The service was launched following the express request 
+by the actor The Operator logs on to form 
+Patient's main section (for instance GUIPaziente) and there 
+select the function for amending the register of Patient 
+which made the request and then passes control 
+GUIPazienteHandler to the instance of that delegation to the instance of 
+GUIAnagraficaPazienteHandler the task of managing the service A 
+Now the control passes to the instance of 
+GUIAnagraficaPazienteHandler which delegated the task of 
+retrieve patient data on the applicant to the instance of 
+PazienteManager latter through the application of patient 
+provides for recovery of such data and provides them to the instance of 
+GUIAnagraficaPazienteHandler which in turn takes care of them 
+display on screen GUIAnagraficaPaziente 
+     At this point, the operator confirms the changes made and 
+Control goes back to the instance of 
+GUIAnagraficaPazienteHandler which delegated the task of 
+store the changes made to data from the 
+Patient concerned the application of this PazienteManager 
+by the panel shall rescue Patient Data 
+and modified when the store passes the 
+control of the application to which GUIAnagraficaPazienteHandler 
+turn is responsible to notify the success of 
+by displaying a message on 
+mask on managing the Patient 
+(instance of GUIAnagraficaPaziente) This feature is was 
+described by the collaboration diagram of Fig 3 15

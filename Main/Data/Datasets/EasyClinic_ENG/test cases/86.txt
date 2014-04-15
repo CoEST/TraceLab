@@ -1,0 +1,17 @@
+Test case reservation a Day Date: 
+    C36 Hospital preceded by a 20/06/2003 
+            Visit control 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for a reservation 
+UcPreVis service by Outpatient a 
+            patient 
+High Priority 
+Set up The last reservation is `: 
+             02/10/2003 hours 09 00 Visit control 
+Description test 
+Input type selected visit: Day Hospital 
+The Oracle system enables the reservation of 
+            Visit 
+Classes cover valid: CE2 CE8 
+            Classes are not valid: None

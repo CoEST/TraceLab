@@ -1,0 +1,48 @@
+Class GUIManagement Date: 16/09/2003 
+                                                 Version: 0 01 000 
+Description Its task is to display the mask 
+                       on the management functions 
+                       to monitor activities 
+                       Outpatients 
+Attributes 
+         Name Access Description 
+Private btnPianiPrenotazioni button that provides access 
+                                implemented by the mask 
+                                GUIPianiPrenotazioni 
+Attributes 
+Private btnResocontoEsami button that provides access 
+                                 implemented by the mask 
+                                 GUIResocontoEsami 
+Private btnResocontoMedicina button that provides access 
+will be deployed to mask 
+                                 GUIResocontoMedicinali 
+Private btnResocontoPrenotaz button that provides access 
+ions to form implemented by oprator
+                                 GUIResocontoPrenotazioni 
+Private btnResocontoVisite button that provides access 
+                                 implemented by the mask 
+                                 GUIResocontoVisite 
+Private btnTempiMedi button that provides access 
+                                 implemented by the mask 
+                                 GUITempiMedi 
+Methods 
+       Signature resocontoVisite () Public Access 
+    Description Its task is to draw handler class 
+                   associated with the mask implemented by 
+                   GUIResocontoVisite 
+       Signature resocontoEsami () Public Access 
+    Description Its task is to draw handler class 
+                   associated with the mask implemented by 
+                   GUIResocontoEsami 
+       Signature resocontoPrenotazioni () Public Access 
+    Description Its task is to draw handler class 
+                   associated with the mask implemented by 
+                   GUIResocontoPrenotazioni 
+       Signature tempiMedi () Public Access 
+    Description Its task is to draw handler class 
+                   associated with the mask implemented by 
+                   GUITempiMedi 
+       Signature pianiPrenotazioni () Public Access 
+    Description Its task is to draw handler class 
+                   associated with the mask implemented by 
+                   GUIPianiPrenotazioni

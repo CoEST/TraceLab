@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{82BFB2F7-8C98-4374-AFC1-CC22E1861DED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TraceLab.UI.GTK</RootNamespace>
+    <AssemblyName>TraceLab.UI.GTK</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>..\bin\DebugMono</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>..\bin\DebugMono</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug Mono|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>..\bin\DebugMono</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>True</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug MONO_DEV|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>..\bin\DebugMono</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release Mono|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\ReleaseMono</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Deploy|AnyCPU'">
+    <OutputPath>..\bin\Deploy\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Mono.Posix" />
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Mono.Cairo" />
+    <Reference Include="NLog">
+      <HintPath>..\..\external\NLog\.NET Framework 4.0\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="QuickGraph">
+      <HintPath>..\..\external\lib\QuickGraph.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DockLibrary\stock-auto-hide.png">
+      <LogicalName>stock-auto-hide.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockLibrary\stock-close-12.png">
+      <LogicalName>stock-close-12.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockLibrary\stock-dock.png">
+      <LogicalName>stock-dock.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockLibrary\stock-menu-left-12.png">
+      <LogicalName>stock-menu-left-12.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockLibrary\stock-menu-right-12.png">
+      <LogicalName>stock-menu-right-12.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\icon_debug_12x12.png" />
+    <EmbeddedResource Include="Resources\icon_error_12x12.png" />
+    <EmbeddedResource Include="Resources\icon_info_12x12.png" />
+    <EmbeddedResource Include="Resources\icon_trace_12x12.png" />
+    <EmbeddedResource Include="Resources\Icon_TraceLab48.png" />
+    <EmbeddedResource Include="Resources\icon_warning_12x12.png" />
+    <EmbeddedResource Include="Resources\Image_StartPageHeader.png" />
+    <EmbeddedResource Include="Resources\DefineCompositeComponent.png" />
+    <EmbeddedResource Include="Resources\Icon_Play16.png" />
+    <EmbeddedResource Include="Resources\Icon_Info16.png" />
+    <EmbeddedResource Include="Resources\StopDisabled.png" />
+    <EmbeddedResource Include="Resources\Stop.png" />
+    <EmbeddedResource Include="Resources\arrow.png" />
+    <EmbeddedResource Include="Resources\info.png" />
+    <EmbeddedResource Include="Resources\loupe.png" />
+    <EmbeddedResource Include="Resources\trashBin.png" />
+    <EmbeddedResource Include="Resources\infoOn.png" />
+    <EmbeddedResource Include="gtk-gui\gui.stetic">
+      <LogicalName>gui.stetic</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\MonoDevelop.Components.PropertyGrid.DefaultPropertyTab.bmp">
+      <LogicalName>MonoDevelop.Components.PropertyGrid.DefaultPropertyTab.bmp</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\MonoDevelop.Components.PropertyGrid.EventPropertyTab.bmp">
+      <LogicalName>MonoDevelop.Components.PropertyGrid.EventPropertyTab.bmp</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\MonoDevelop.Components.PropertyGrid.SortByCat.png">
+      <LogicalName>MonoDevelop.Components.PropertyGrid.SortByCat.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\cursor-grab-open.png">
+      <DeployService-UseProjectRelativePath>True</DeployService-UseProjectRelativePath>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\arrowcursor_icon.png" />
+    <EmbeddedResource Include="Resources\all16.png" />
+    <EmbeddedResource Include="Resources\any16.png" />
+    <EmbeddedResource Include="Resources\Icon_Refresh16.png" />
+    <EmbeddedResource Include="Resources\Icon_PkgReference16.png" />
+    <EmbeddedResource Include="Resources\workspaceViewer.png" />
+    <EmbeddedResource Include="Resources\noViewer.png" />
+    <EmbeddedResource Include="Resources\dialogError.png" />
+    <EmbeddedResource Include="Resources\Image_NSFLogo.png" />
+    <EmbeddedResource Include="Resources\Icon_TraceLab16.png" />
+    <EmbeddedResource Include="Resources\Icon_Link32.png" />
+    <EmbeddedResource Include="Resources\Icon_Play32.png" />
+    <EmbeddedResource Include="Resources\Icon_Play32-Alt.png" />
+    <EmbeddedResource Include="Resources\Icon_Link32-Alt.png" />
+    <EmbeddedResource Include="Resources\Icon_Help16.png" />
+    <EmbeddedResource Include="Resources\Icon_Link16.png" />
+    <EmbeddedResource Include="Resources\Icon_Video16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DrawingLibrary\ContainerCanvas.cs" />
+    <Compile Include="DrawingLibrary\DrawingEventArgs.cs" />
+    <Compile Include="DrawingLibrary\Event.cs" />
+    <Compile Include="DrawingLibrary\IDrawing.cs" />
+    <Compile Include="DrawingLibrary\IDrawingEditor.cs" />
+    <Compile Include="DrawingLibrary\IDrawingView.cs" />
+    <Compile Include="DrawingLibrary\KeyEvent.cs" />
+    <Compile Include="DrawingLibrary\Commands\AbstractCommand.cs" />
+    <Compile Include="DrawingLibrary\Commands\AbstractUndoActivity.cs" />
+    <Compile Include="DrawingLibrary\Commands\BringToFrontCommand.cs" />
+    <Compile Include="DrawingLibrary\Commands\ChangeAttributeCommand.cs" />
+    <Compile Include="DrawingLibrary\Commands\Clipboard.cs" />
+    <Compile Include="DrawingLibrary\Commands\CopyCommand.cs" />
+    <Compile Include="DrawingLibrary\Commands\CutCommand.cs" />
+    <Compile Include="DrawingLibrary\Commands\DeleteCommand.cs" />
+    <Compile Include="DrawingLibrary\Commands\DeleteFromDrawingVisitor.cs" />
+    <Compile Include="DrawingLibrary\Commands\DuplicateCommand.cs" />
+    <Compile Include="DrawingLibrary\Commands\FigureTransferCommand.cs" />
+    <Compile Include="DrawingLibrary\Commands\ICommand.cs" />
+    <Compile Include="DrawingLibrary\Commands\InsertIntoDrawingVisitor.cs" />
+    <Compile Include="DrawingLibrary\Commands\IUndoActivity.cs" />
+    <Compile Include="DrawingLibrary\Commands\NullUndoActivity.cs" />
+    <Compile Include="DrawingLibrary\Commands\PasteCommand.cs" />
+    <Compile Include="DrawingLibrary\Commands\RedoCommand.cs" />
+    <Compile Include="DrawingLibrary\Commands\SelectAllCommand.cs" />
+    <Compile Include="DrawingLibrary\Commands\SendToBackCommand.cs" />
+    <Compile Include="DrawingLibrary\Commands\UndoableCommand.cs" />
+    <Compile Include="DrawingLibrary\Commands\UndoCommand.cs" />
+    <Compile Include="DrawingLibrary\Commands\UndoManager.cs" />
+    <Compile Include="DrawingLibrary\Connectors\AbstractConnector.cs" />
+    <Compile Include="DrawingLibrary\Connectors\ChopBoxConnector.cs" />
+    <Compile Include="DrawingLibrary\Connectors\ChopEllipseConnector.cs" />
+    <Compile Include="DrawingLibrary\Connectors\IConnector.cs" />
+    <Compile Include="DrawingLibrary\Figures\AbstractFigure.cs" />
+    <Compile Include="DrawingLibrary\Figures\AttributeFigure.cs" />
+    <Compile Include="DrawingLibrary\Figures\BaseBoxFigure.cs" />
+    <Compile Include="DrawingLibrary\Figures\CompositeFigure.cs" />
+    <Compile Include="DrawingLibrary\Figures\EllipseFigure.cs" />
+    <Compile Include="DrawingLibrary\Figures\FigureAttribute.cs" />
+    <Compile Include="DrawingLibrary\Figures\FigureCollection.cs" />
+    <Compile Include="DrawingLibrary\Figures\FigureEventArgs.cs" />
+    <Compile Include="DrawingLibrary\Figures\HStackFigure.cs" />
+    <Compile Include="DrawingLibrary\Figures\IConnectionFigure.cs" />
+    <Compile Include="DrawingLibrary\Figures\IFigure.cs" />
+    <Compile Include="DrawingLibrary\Figures\IFigureVisitor.cs" />
+    <Compile Include="DrawingLibrary\Figures\LineConnection.cs" />
+    <Compile Include="DrawingLibrary\Figures\LineTerminal.cs" />
+    <Compile Include="DrawingLibrary\Figures\MultiLineTextFigure.cs" />
+    <Compile Include="DrawingLibrary\Figures\PixbufFigure.cs" />
+    <Compile Include="DrawingLibrary\Figures\PolyLineFigure.cs" />
+    <Compile Include="DrawingLibrary\Figures\RectangleFigure.cs" />
+    <Compile Include="DrawingLibrary\Figures\SimpleTextFigure.cs" />
+    <Compile Include="DrawingLibrary\Figures\StackFigure.cs" />
+    <Compile Include="DrawingLibrary\Figures\TriangleArrowLineTerminal.cs" />
+    <Compile Include="DrawingLibrary\Figures\VStackFigure.cs" />
+    <Compile Include="DrawingLibrary\Handles\AbstractHandle.cs" />
+    <Compile Include="DrawingLibrary\Handles\ChangeConnectionEndHandle.cs" />
+    <Compile Include="DrawingLibrary\Handles\ChangeConnectionHandle.cs" />
+    <Compile Include="DrawingLibrary\Handles\ChangeConnectionStartHandle.cs" />
+    <Compile Include="DrawingLibrary\Handles\EastHandle.cs" />
+    <Compile Include="DrawingLibrary\Handles\IHandle.cs" />
+    <Compile Include="DrawingLibrary\Handles\LineConnectionHandle.cs" />
+    <Compile Include="DrawingLibrary\Handles\LocatorHandle.cs" />
+    <Compile Include="DrawingLibrary\Handles\NorthEastHandle.cs" />
+    <Compile Include="DrawingLibrary\Handles\NorthHandle.cs" />
+    <Compile Include="DrawingLibrary\Handles\NorthWestHandle.cs" />
+    <Compile Include="DrawingLibrary\Handles\PixbufHandle.cs" />
+    <Compile Include="DrawingLibrary\Handles\PixButtonHandle.cs" />
+    <Compile Include="DrawingLibrary\Handles\PolyLineHandle.cs" />
+    <Compile Include="DrawingLibrary\Handles\ResizeHandle.cs" />
+    <Compile Include="DrawingLibrary\Handles\SouthEastHandle.cs" />
+    <Compile Include="DrawingLibrary\Handles\SouthHandle.cs" />
+    <Compile Include="DrawingLibrary\Handles\SouthWestHandle.cs" />
+    <Compile Include="DrawingLibrary\Handles\ToggleButtonHandle.cs" />
+    <Compile Include="DrawingLibrary\Handles\UndoableHandle.cs" />
+    <Compile Include="DrawingLibrary\Handles\WestHandle.cs" />
+    <Compile Include="DrawingLibrary\Locators\AbsoluteLocator.cs" />
+    <Compile Include="DrawingLibrary\Locators\CenterLineLocator.cs" />
+    <Compile Include="DrawingLibrary\Locators\ILocator.cs" />
+    <Compile Include="DrawingLibrary\Locators\PolyLineLocator.cs" />
+    <Compile Include="DrawingLibrary\Locators\QuickActionLocator.cs" />
+    <Compile Include="DrawingLibrary\Locators\QuickActionPosition.cs" />
+    <Compile Include="DrawingLibrary\Locators\RelativeLocator.cs" />
+    <Compile Include="DrawingLibrary\Serialization\ColorSerializationSurrogate.cs" />
+    <Compile Include="DrawingLibrary\Serialization\GenericCloner.cs" />
+    <Compile Include="DrawingLibrary\Serialization\PointDSerializationSurrogate.cs" />
+    <Compile Include="DrawingLibrary\Tools\AbstractTool.cs" />
+    <Compile Include="DrawingLibrary\Tools\CompositeFigureTool.cs" />
+    <Compile Include="DrawingLibrary\Tools\ConnectionCreationTool.cs" />
+    <Compile Include="DrawingLibrary\Tools\CreationTool.cs" />
+    <Compile Include="DrawingLibrary\Tools\DragCreationTool.cs" />
+    <Compile Include="DrawingLibrary\Tools\DragTool.cs" />
+    <Compile Include="DrawingLibrary\Tools\FigureTool.cs" />
+    <Compile Include="DrawingLibrary\Tools\HandleTracker.cs" />
+    <Compile Include="DrawingLibrary\Tools\ITool.cs" />
+    <Compile Include="DrawingLibrary\Tools\MultiLineTextTool.cs" />
+    <Compile Include="DrawingLibrary\Tools\PanTool.cs" />
+    <Compile Include="DrawingLibrary\Tools\PolyLineFigureTool.cs" />
+    <Compile Include="DrawingLibrary\Tools\ResizeCreationTool.cs" />
+    <Compile Include="DrawingLibrary\Tools\SelectAreaTool.cs" />
+    <Compile Include="DrawingLibrary\Tools\SelectionTool.cs" />
+    <Compile Include="DrawingLibrary\Tools\SimpleTextTool.cs" />
+    <Compile Include="DrawingLibrary\Tools\TextTool.cs" />
+    <Compile Include="DrawingLibrary\Util\CairoFigures.cs" />
+    <Compile Include="DrawingLibrary\Util\CursorFactory.cs" />
+    <Compile Include="DrawingLibrary\Util\CustomCursorFactory.cs" />
+    <Compile Include="DrawingLibrary\Util\Dash.cs" />
+    <Compile Include="DrawingLibrary\Util\FontFactory.cs" />
+    <Compile Include="DrawingLibrary\Util\GdkCairoHelper.cs" />
+    <Compile Include="DrawingLibrary\Util\Geometry.cs" />
+    <Compile Include="DrawingLibrary\Util\RectangleD.cs" />
+    <Compile Include="DrawingLibrary\MouseEvent.cs" />
+    <Compile Include="DrawingLibrary\StandardDrawing.cs" />
+    <Compile Include="DrawingLibrary\StandardDrawingView.cs" />
+    <Compile Include="DrawingLibrary\SteticComponent.cs" />
+    <Compile Include="MainWindow.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="GtkMain.cs" />
+    <Compile Include="DockLibrary\AutoHideBox.cs" />
+    <Compile Include="DockLibrary\DockBar.cs" />
+    <Compile Include="DockLibrary\DockBarItem.cs" />
+    <Compile Include="DockLibrary\DockContainer.cs" />
+    <Compile Include="DockLibrary\DockFrame.cs" />
+    <Compile Include="DockLibrary\DockFrameTopLevel.cs" />
+    <Compile Include="DockLibrary\DockGroup.cs" />
+    <Compile Include="DockLibrary\DockGroupItem.cs" />
+    <Compile Include="DockLibrary\DockGroupType.cs" />
+    <Compile Include="DockLibrary\DockItem.cs" />
+    <Compile Include="DockLibrary\DockItemBehavior.cs" />
+    <Compile Include="DockLibrary\DockItemContainer.cs" />
+    <Compile Include="DockLibrary\DockItemStatus.cs" />
+    <Compile Include="DockLibrary\DockItemToolbar.cs" />
+    <Compile Include="DockLibrary\DockLayout.cs" />
+    <Compile Include="DockLibrary\DockObject.cs" />
+    <Compile Include="DockLibrary\DockPosition.cs" />
+    <Compile Include="DockLibrary\HslColor.cs" />
+    <Compile Include="DockLibrary\PlaceholderWindow.cs" />
+    <Compile Include="DockLibrary\ShadedContainer.cs" />
+    <Compile Include="DockLibrary\TabStrip.cs" />
+    <Compile Include="Extensions\GdkExtensions.cs" />
+    <Compile Include="WindowShell.cs" />
+    <Compile Include="Actions\FileActions.cs" />
+    <Compile Include="Actions\ActionManager.cs" />
+    <Compile Include="Actions\ActionHandlers.cs" />
+    <Compile Include="Extensions\GtkExtensions.cs" />
+    <Compile Include="Actions\IActionHandler.cs" />
+    <Compile Include="Actions\File\OpenExperimentAction.cs" />
+    <Compile Include="Actions\File\NewExperimentAction.cs" />
+    <Compile Include="Actions\File\SaveExperimentAction.cs" />
+    <Compile Include="Actions\File\SaveExperimentAsAction.cs" />
+    <Compile Include="Controls\IDockPad.cs" />
+    <Compile Include="Controls\OutputWindow\OutputWindowPad.cs" />
+    <Compile Include="Controls\WorkspaceWindow\WorkspaceWindowPad.cs" />
+    <Compile Include="Controls\ExperimentView\ExperimentCanvasPad.cs" />
+    <Compile Include="ApplicationViewModelWrapper.cs" />
+    <Compile Include="Controls\ExperimentView\Nodes\ComponentControl.cs" />
+    <Compile Include="Controls\ExperimentProgressBar.cs" />
+    <Compile Include="Controls\ExperimentView\Nodes\NewConnectionHandle.cs" />
+    <Compile Include="Controls\ExperimentView\Nodes\IComponentControl.cs" />
+    <Compile Include="Actions\File\FileDialogs.cs" />
+    <Compile Include="Controls\ExperimentView\Nodes\RemoveNodeHandle.cs" />
+    <Compile Include="gtk-gui\generated.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ComponentInfoPanel.cs" />
+    <Compile Include="gtk-gui\TraceLab.UI.GTK.ComponentInfoPanel.cs" />
+    <Compile Include="Controls\ExperimentView\Nodes\NodeConnectionControl.cs" />
+    <Compile Include="Controls\ExperimentView\Nodes\NodeConnectionControlFactory.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\DefaultPropertyTab.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\EditorManager.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\EventPropertyTab.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\PropertyEditorCell.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\PropertyEditorTypeAttribute.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\PropertyGrid.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\PropertyGridTree.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\PropertyValueChangedEventArgs.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\PropertyValueChangedEventHandler.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\SurrogateUITypeEditorAttribute.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\Editors\BooleanEditorCell.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\Editors\CharPropertyEditor.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\Editors\CollectionEditor.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\Editors\ColorEditorCell.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\Editors\DateTimeEditor.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\Editors\DefaultEditor.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\Editors\EnumerationEditorCell.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\Editors\EventEditor.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\Editors\ExpandableObjectEditor.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\Editors\FilePathEditor.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\Editors\FlagsEditorCell.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\Editors\FlagsSelectorDialog.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\Editors\FloatRange.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\Editors\IntRange.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\Editors\TextEditor.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\Editors\TextEditorDialog.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\Editors\TimeSpanEditor.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\CompactScrolledWindow.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\IOItemNode.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\ConfigPropertyGrid\Editors\DirectoryPathEditor.cs" />
+    <Compile Include="Controls\ExperimentView\ExperimentCanvasWidget.cs" />
+    <Compile Include="Controls\NewExperimentDialog.cs" />
+    <Compile Include="gtk-gui\TraceLab.UI.GTK.ExperimentCanvasWidget.cs" />
+    <Compile Include="gtk-gui\TraceLab.UI.GTK.NewExperimentDialog.cs" />
+    <Compile Include="Controls\ExperimentView\Nodes\BasicNodeControl.cs" />
+    <Compile Include="Controls\ExperimentView\Nodes\NodeControlFactory.cs" />
+    <Compile Include="Controls\ExperimentView\Nodes\NodeControlButtons.cs" />
+    <Compile Include="Controls\ExperimentView\Nodes\StartNodeControl.cs" />
+    <Compile Include="Controls\ExperimentView\Nodes\EndNodeControl.cs" />
+    <Compile Include="Controls\ExperimentView\Nodes\DecisionNodeControl.cs" />
+    <Compile Include="Controls\ExperimentView\Nodes\RemoveConnectionHandle.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\InfoPanelFactory.cs" />
+    <Compile Include="gtk-gui\TraceLab.UI.GTK.DecisionInfoPanel.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\DecisionInfoPanel.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\InfoPanelUtils.cs" />
+    <Compile Include="Controls\ExperimentView\Nodes\PixToggleButtonHandle.cs" />
+    <Compile Include="Controls\ExperimentView\Nodes\CompositeComponentControl.cs" />
+    <Compile Include="Controls\ExperimentView\Crumbs\Crumbs.cs" />
+    <Compile Include="Controls\ExperimentView\Crumbs\ExperimentCrumb.cs" />
+    <Compile Include="Controls\ExperimentView\Crumbs\ExperimentCrumbGatherer.cs" />
+    <Compile Include="Extensions\PointDExtensions.cs" />
+    <Compile Include="Controls\AboutExperimentDialog.cs" />
+    <Compile Include="gtk-gui\TraceLab.UI.GTK.AboutExperimentDialog.cs" />
+    <Compile Include="Controls\ComponentsLibrary\ComponentsLibraryWidget.cs" />
+    <Compile Include="Controls\ComponentsLibrary\ComponentsLibraryPad.cs" />
+    <Compile Include="gtk-gui\TraceLab.UI.GTK.ComponentsLibraryWidget.cs" />
+    <Compile Include="Controls\ComponentsLibrary\NodesTreeBuilder.cs" />
+    <Compile Include="gtk-gui\MonoHotDraw.SteticComponent.cs" />
+    <Compile Include="Controls\ExperimentView\ExperimentDrawer.cs" />
+    <Compile Include="Controls\DefineCompositeComponentWizard\IOSpecSetupPage.cs" />
+    <Compile Include="gtk-gui\TraceLab.UI.GTK.IOSpecSetupPage.cs" />
+    <Compile Include="Controls\DefineCompositeComponentWizard\ConfigSetupPage.cs" />
+    <Compile Include="gtk-gui\TraceLab.UI.GTK.ConfigSetupPage.cs" />
+    <Compile Include="Controls\DefineCompositeComponentWizard\ComponentInfoPage.cs" />
+    <Compile Include="gtk-gui\TraceLab.UI.GTK.ComponentInfoPage.cs" />
+    <Compile Include="Controls\DefineCompositeComponentWizard\ConfirmationPage.cs" />
+    <Compile Include="gtk-gui\TraceLab.UI.GTK.ConfirmationPage.cs" />
+    <Compile Include="Controls\DefineCompositeComponentWizard\DefineCompositeComponentWizard.cs" />
+    <Compile Include="gtk-gui\TraceLab.UI.GTK.DefineCompositeComponentWizard.cs" />
+    <Compile Include="Controls\PackageReferencesWindow\PackageReferencesWindow.cs" />
+    <Compile Include="gtk-gui\TraceLab.UI.GTK.PackageReferencesWindow.cs" />
+    <Compile Include="Controls\ComponentsLibrary\ComponentsLibraryNode.cs" />
+    <Compile Include="Controls\PackageReferencesWindow\PackageReferenceNode.cs" />
+    <Compile Include="Controls\Dialogs\ErrorDialog.cs" />
+    <Compile Include="Controls\WelcomePageWidget.cs" />
+    <Compile Include="gtk-gui\TraceLab.UI.GTK.WelcomePageWidget.cs" />
+    <Compile Include="Controls\MenuButton.cs" />
+    <Compile Include="Utils\GtkMenuHelper.cs" />
+    <Compile Include="DrawingLibrary\Tools\IPrimaryToolDelegator.cs" />
+    <Compile Include="Actions\File\SettingsAction.cs" />
+    <Compile Include="Controls\SettingsDialog.cs" />
+    <Compile Include="gtk-gui\TraceLab.UI.GTK.SettingsDialog.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TraceLab.Core\TraceLab.Core.csproj">
+      <Project>{D22496F8-7E72-4B36-9FCA-630CD1679943}</Project>
+      <Name>TraceLab.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TraceLabSDK\TraceLabSDK.csproj">
+      <Project>{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}</Project>
+      <Name>TraceLabSDK</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\cursor_grabbing.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup />
+  <ItemGroup />
+</Project>

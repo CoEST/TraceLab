@@ -1,0 +1,107 @@
+package unisa.gps.etour.control. Gestione Beni Culturali;
+
+import java.util. Date;
+import unisa.gps.etour.bean. Bean Bene Culturale;
+
+/**
+ *  Questa classe ha il compito di controllare i dati di un bene culturale.
+ *  Vengono effettuati vari controlli di consistenza quali la lunghezza di stringhe,
+ * riferimenti nulli, tipi dinamici errati.
+ *
+ * @author  De  Simone  Michelangelo
+ * @version  . 
+ * 
+ *  &#   ;      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I -  University of  Salerno
+ */
+public class  Controllo Beni Culturali
+{
+	/**
+	 * 
+	 *  Effettua il controllo di consistenza richiamando gli opportuni metodi.
+	 *  Questo metodo "wrappa" tutti gli altri metodi di controllo con una sola chiamata.
+	 *  Al primo valore false il flusso è interrotto.
+	 *
+	 * @param p B C  Il bean del bene culturale da controllare
+	 * @return boolean  Il risultato del controllo: true se  O K, false altrimenti
+	 */
+	public static boolean controlla Dati Bene Culturale( Bean Bene Culturale p B C)
+	{
+		//  Questo metodo controlla il parametro d'ingresso nei casi di
+		// riferimento nullo o tipo dinamico errato
+		if (p B C == null || !(p B C instanceof  Bean Bene Culturale))
+			return false;
+		
+		//  Questo metodo controlla se l' Id del  Bean Bene Culturale passato come parametro
+		// è valido o meno
+		if (!controlla Id Bene Culturale(p B C.get Id()))
+			return false;
+		
+		//  Questo metodo controlla gli oggetti  Date contenuti nel  Bean Bene Culturale
+		//  In quanto tale viene effettuato un controllo di riferimento nullo ed un controllo
+		// sul tipo dinamico.
+		if (!controlla Date Bene Culturale(p B C))
+			return false;
+		
+		//  Questo metodo controlla tutti i campi presenti nel  Bean Bene Culturale, alla ricerca
+		// di eventuali riferimenti nulli
+		if (!controlla Dati Nulli(p B C))
+			return false;
+		
+		//  Controlla la corretta lunghezza delle stringhe, nel caso specifico il  C A P dev'essere
+		// per forza di cose di cinque cifre, mentre la provincia di  D U E.
+		//  T O D O:  Da completare
+		if (p B C.get Cap().length() !=   || p B C.get Provincia().length() !=   )
+			return false;
+		
+		return true;
+	}
+
+	/**
+	 * 
+	 *  Controlla la presenza di dati nulli in un bean bene culturale.
+	 *  Il controllo viene effettuato su tutti i campi del bean.
+	 *
+	 * @param p B C  Il bean bene culturale da controllare
+	 * @return boolean  Il risultato del controllo: true se non ci sono riferimenti nulli; false altrimenti
+	 */
+	public static boolean controlla Dati Nulli( Bean Bene Culturale p B C)
+	{
+		if (p B C.get Cap() == null || p B C.get Citta() == null || p B C.get Descrizione() == null || p B C.get Giorno Chiusura() == null ||
+				p B C.get Localita() == null || p B C.get Nome() == null || p B C.get Orario Apertura() == null ||
+				p B C.get Orario Chiusura() == null || p B C.get Provincia() == null || p B C.get Telefono() == null || p B C.get Via() == null)
+			return false;
+
+		return true;
+	}
+	
+	/**
+	 * 
+	 *  Controlla la consistenza delle date presente all'interno dei  Bean Bene Culturale.
+	 *  Il controllo viene effettuato esclusivamente sugli oggetti, mentre non viene effettuato
+	 * alcun controllo di validita' su  una data in quanto un bene culturale potrebbe avere anche
+	 * date successive a quella odierna (vedi ad esempio data apertura di mostre).
+	 *
+	 * @param p B C  Il  Bean Bene Culturale del quale controllare le date
+	 * @return boolean  Il risultato del controllo: true se le date hanno consistenza; false altrimenti
+	 */	
+	public static boolean controlla Date Bene Culturale( Bean Bene Culturale p B C)
+	{
+		if (p B C.get Orario Apertura() == null || !(p B C.get Orario Apertura() instanceof  Date) ||
+				p B C.get Orario Chiusura() == null || !(p B C.get Orario Chiusura() instanceof  Date))
+			return false;
+		
+		return true;
+	}
+	
+	/**
+	 * 
+	 *  Controlla l' I D del  Bean Bene Culturale
+	 *
+	 * @param p Id  L' I D del  Bean Bene Culturale da controllare
+	 * @return boolean  Il risultato del controllo: true se l' I D è corretto; false altrimenti
+	 */	
+	public static boolean controlla Id Bene Culturale(int p Id)
+	{
+		return (p Id >  );
+	}
+}

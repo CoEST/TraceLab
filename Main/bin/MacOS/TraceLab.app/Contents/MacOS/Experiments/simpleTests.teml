@@ -1,0 +1,132 @@
+﻿<graph>
+  <References />
+  <ExperimentInfo>
+    <Version>2</Version>
+    <Id>9b6cf303-3f9f-4859-aad0-cd4f92ccb472</Id>
+    <Name>windowsFormTest</Name>
+    <LayoutName>EfficientSugiyama</LayoutName>
+  </ExperimentInfo>
+  <node id="Start">
+    <SerializedVertexData Version="1" X="291" Y="68">
+      <Metadata type="TraceLab.Core.Components.StartNodeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Start" />
+    </SerializedVertexData>
+  </node>
+  <node id="End">
+    <SerializedVertexData Version="1" X="277" Y="321">
+      <Metadata type="TraceLab.Core.Components.EndNodeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="End" WaitsForAllPredecessors="True" />
+    </SerializedVertexData>
+  </node>
+  <node id="84768174-7302-4a4f-8e3f-1d41b64264c7">
+    <SerializedVertexData Version="1" X="273" Y="207">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Integer Writer" ComponentMetadataDefinitionID="1f2c04e4-4426-539b-803f-4f06810a332c" WaitsForAllPredecessors="True">
+        <IOSpec Version="2">
+          <Input />
+          <Output>
+            <IOItem>
+              <IOItemDefinition Name="integer" Type="System.Int32" IOType="Output" />
+              <MappedTo>integer</MappedTo>
+            </IOItem>
+          </Output>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>3</Version>
+              <Name>OutputInteger</Name>
+              <DisplayName>Output integer</DisplayName>
+              <Description />
+              <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <int>5</int>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="8cba2dbb-dfa2-46d5-b237-4a5e2f491935">
+    <SerializedVertexData Version="1" X="161" Y="223">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="StringWriter" ComponentMetadataDefinitionID="029463a8-e7b4-51ee-a216-c1924e30526c" WaitsForAllPredecessors="True">
+        <IOSpec Version="2">
+          <Input />
+          <Output>
+            <IOItem>
+              <IOItemDefinition Name="string" Type="System.String" IOType="Output" />
+              <MappedTo>myTest</MappedTo>
+            </IOItem>
+          </Output>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>3</Version>
+              <Name>String</Name>
+              <DisplayName>String</DisplayName>
+              <Description />
+              <ValueType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <string>test</string>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="dba78437-3489-4399-90a2-6f709afe9973">
+    <SerializedVertexData Version="1" X="435" Y="226">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Incrementer By Specified Value" ComponentMetadataDefinitionID="b2adca30-0a24-552a-85e2-4167589a024d" WaitsForAllPredecessors="True">
+        <IOSpec Version="2">
+          <Input>
+            <IOItem>
+              <IOItemDefinition Name="integer" Type="System.Int32" IOType="Input" />
+              <MappedTo>integer</MappedTo>
+            </IOItem>
+          </Input>
+          <Output>
+            <IOItem>
+              <IOItemDefinition Name="integer" Type="System.Int32" IOType="Output" />
+              <MappedTo>integer</MappedTo>
+            </IOItem>
+          </Output>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>3</Version>
+              <Name>IncrementBy</Name>
+              <DisplayName>Increment by value</DisplayName>
+              <Description />
+              <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <int>1</int>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <edge id="5f8c3386-62c2-458c-b64c-58d7f446d4a3" source="Start" target="84768174-7302-4a4f-8e3f-1d41b64264c7" isFixed="False" isVisible="True">
+    <RoutePointsCollection />
+  </edge>
+  <edge id="3dbcb1ec-5a11-4ede-9e43-3f8f4f7baf2e" source="84768174-7302-4a4f-8e3f-1d41b64264c7" target="dba78437-3489-4399-90a2-6f709afe9973" isFixed="False" isVisible="True">
+    <RoutePointsCollection />
+  </edge>
+  <edge id="ee1c2088-a447-41b5-bc9b-b175a1e1484a" source="84768174-7302-4a4f-8e3f-1d41b64264c7" target="8cba2dbb-dfa2-46d5-b237-4a5e2f491935" isFixed="False" isVisible="True">
+    <RoutePointsCollection />
+  </edge>
+  <edge id="2f4855eb-eba0-4955-bdeb-4bfa2a7745ad" source="8cba2dbb-dfa2-46d5-b237-4a5e2f491935" target="End" isFixed="False" isVisible="True">
+    <RoutePointsCollection />
+  </edge>
+  <edge id="bfeeb4e4-9a66-45e0-8148-5ed6d321b0b7" source="dba78437-3489-4399-90a2-6f709afe9973" target="End" isFixed="False" isVisible="True">
+    <RoutePointsCollection />
+  </edge>
+</graph>

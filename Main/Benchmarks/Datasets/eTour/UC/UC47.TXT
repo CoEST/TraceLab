@@ -1,0 +1,19 @@
+
+Use case name MODIFICADATITURISTA 
+Change data associated with your account. 
+Partecipating 
+Actor initialized by Tourist 
+Entry 
+Conditions • Tourism has successfully authenticated to the system. 
+Flow of events User System 
+1. Access to functionality for the modification of data. 
+2 Loads the data and displays them in a form. 
+3 Edit the fields in the form and submit. 
+4 Check the modified information and asks for confirmation of the change. Where the data is invalid or insufficient, the system activates the use case Errored. 
+5 Confirmation of the transaction change. 
+6. Stores the modified data. 
+Exit conditions • The system shall notify the successful modification of data. 
+• The Tourist cancels the operation. 
+• Interruption of the connection to the server ETOUR. 
+Quality 
+requirements

@@ -1,0 +1,6 @@
+org.mozilla.javascript.ScriptRuntime.setName
+org.mozilla.javascript.NativeCall.NativeCall
+org.mozilla.javascript.Arguments.get
+org.mozilla.javascript.IdScriptableObject.exportAsJSClass
+org.mozilla.javascript.Interpreter.initFrame
+org.mozilla.javascript.IdFunctionObject.addAsProperty

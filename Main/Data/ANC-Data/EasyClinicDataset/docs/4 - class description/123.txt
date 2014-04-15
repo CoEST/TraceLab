@@ -1,0 +1,23 @@
+Class GUIAnagraficaLaboratorio Date: 
+                                                   16/09/2003 
+                                                   Version: 
+                                                   0 01 000 
+Description Make the mask on the management 
+                   the anagrafica of laboratories 
+Attributes 
+       Name Access Description 
+Private gridElencoLaborat list containing the information 
+gold key laboratories registered 
+                              within S I O 
+Methods 
+       Signature visualizzaDatiLaboratorio () Public Access 
+    Description View details of the laboratory 
+                   selected in the panelDati 
+       Signature visualizzaElencoLaboratori () Public Access 
+    Description View list of laboratories registered 
+                   in the S I O 
+     Signature gestioneAnagrafica () Public Access 
+  It description of the retrieval of all information 
+                necessary for the organization of the mask 
+                implemented by GUIAnagraficaLaboratorio
+

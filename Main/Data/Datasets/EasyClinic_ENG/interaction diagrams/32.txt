@@ -1,0 +1,14 @@
+Login failed validation Operator Scenario 
+     The service was launched following the explicit request 
+by the actor Operator The access to the screen 
+on the management of the system (for instance 
+GUILogin) enter login and password and check the function 
+The validation then passes control to the instance of 
+GUILoginHandler which delegates to the instance of OperatoreManager 
+the task of managing the latter deals with 
+validate the data entered by using the panel 
+The operator of the negative outcome is notified 
+backward up to the instance of which shall GUILoginHandler 
+to display an error message on 
+mask GUILogin This feature is was described by 
+sequence diagram of Fig 3 3

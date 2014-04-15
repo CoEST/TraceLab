@@ -1,0 +1,30 @@
+           eventserver
+           "public static void main  (  String args  [])
+           {
+          
+              Thread  Pool pool = new Thread  Pool  (  1  );
+          
+               int port = default  Port  ;
+               try
+               {
+             Server  Socket ss = new Server  Socket  ( port  );
+             for  ( int i  =0  ; i  <  4  ; i  ++)
+             {
+              pool  . assign  ( new Event  Server  Thread  ( ss  ));
+                   }
+          
+          
+               }
+               catch (  IO Exception ex  )
+               {
+                 System  . err  . println  ( ex  );
+               }
+          
+              pool  . complete  ();
+          
+              System  . out  . println  (""  All tasks are done  ."");
+          
+          
+           }"
+           "public final static int default  Port = 1701  ;
+           Server  Socket the  Server  ;"

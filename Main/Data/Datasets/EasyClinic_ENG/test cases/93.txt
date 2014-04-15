@@ -1,0 +1,17 @@
+Reservation test case for a type of date: 
+    C43 is not expected visit 20/06/2003 
+            preceded by a visit by 
+            check 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for a reservation 
+UcPreVis service by Outpatient a 
+            patient 
+Media Priorities 
+Set up The last reservation is `: 
+             07/10/2003 hours 10 00 Visit control 
+Description test 
+Input type selected visit: NP 
+Oracle Input Invalid 
+Classes cover valid: CE8 
+            Classes invalid: CE4

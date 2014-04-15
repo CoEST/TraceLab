@@ -1,0 +1,12 @@
+Use case name	ERRORE TAG ESISTENTE
+E’ stato richiesto l’inserimento di un tag di ricerca già presente nel sistema.
+Participating
+Actor	
+Entry
+conditions	•	E’stato richiesto l’inserimento di un tag di ricerca già presente nel sistema.
+Flow of events 		User	System
+	1.			Notifica l’errore con un messaggio e chiede conferma della sua lettura.
+	2.		Conferma la lettura della notifica.	
+	3.			Recupera lo stato precedente.
+Exit conditions	•	Il sistema restituisce il controllo dell’interazione all’utente.
+Quality requirements	

@@ -1,0 +1,51 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf110
+{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;\f1\fswiss\fcharset0 Helvetica;\f2\ftech\fcharset0 Wingdings-Regular;
+\f3\fnil\fcharset0 LucidaGrande;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f0\b\fs24 \cf0 Nome caso d\'92uso\
+
+\b0 VisualizzaInformazioni\
+
+\b Attori partecipanti\
+
+\b0 Iniziato da Cittadino\
+
+\b Flusso di eventi\
+
+\b0 1.\
+Il Cittadino richiede la visualizzazione della informazioni presenti sul territorio.\
+2. Il sistema restituisce le informazioni riguardanti il territorio visualizzandone dati come:\
+
+\f1 \'95 
+\f0 biblioteche; 
+\f1 \'95 
+\f0 eventi; 
+\f1 \'95 
+\f0 musei; 
+\f1 \'95 
+\f0 promozioni presenti sul territorio.\
+
+\b Condizione di entrata\
+
+\f2\b0 \uc0\u61656 
+\f3  
+\f0 Questo caso richiede che il cittadino ha effettuato l'accesso al sistema.\
+
+\b Condizioni di uscita\
+
+\f2\b0 \uc0\u61656 
+\f3  
+\f0 Il Cittadino ha visionato le informazioni, OR\
+
+\f2 \uc0\u61656 
+\f0 Nel caso in cui il sistema non sia disponibile richiama il caso d'uso 
+\b ServizioNonDisponibile
+\b0 .\
+
+\b Requisiti di qualita
+\f2\b0 \uc0\u61656 
+\f3  
+\f0 Non previsti.}

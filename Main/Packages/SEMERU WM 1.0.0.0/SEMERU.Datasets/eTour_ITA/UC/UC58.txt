@@ -1,0 +1,13 @@
+Use case name	VISUALIZZA SCHEDA SITO
+Visualizza la scheda di un determinato sito.
+Partecipating
+Actor	Inizializzato da Turista
+Entry
+conditions	•	Il Turista si è autenticato con successo al sistema e si trova in una delle seguenti aree: Risultati di Ricerca, Lista dei Siti Visitati e Lista dei Siti Preferiti
+Flow of events 		User	System
+	1.		Seleziona la funzionalità per la visualizzazione della scheda relativa ad un sito scelto.	
+	2.			Carica i dati dal database.
+Exit conditions	•	Il sistema visualizza la scheda del sito selezionato.
+•	Interruzione della connessione al server di eTour.
+Quality 
+requirements	

@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp02_low_level</id>
+    <name>Waterloo grp02_low_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp02_low_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>UC1</id>
+      <content>Use Case Number: UC1
+Authors: M1, M2, M3, M4
+Event: A Caller wishes to make a phone call to another phone user (Callee).  The phone number is passed as an input
+System: The Resource Manager checks for available phone lines while the Call Manager implements the phone connection to process the call.
+Actors: Caller (initiator), Callee
+Overview: This use cases captures the process of making a successful phone connection from a Caller to a Callee. The connection is initiated by the Caller</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC2</id>
+      <content>Use Case Number: UC2
+Authors: M1, M2, M3, M4
+Event: Administrator wishes to retrieve a user�s account information.
+System: The Administrator uses the system console as an interface to the system server.
+Actors: Administrator (initiator), system console
+Overview: This use case captures the process of logging into the system console</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC3</id>
+      <content>Use Case Number: UC3
+Authors: M1, M2, M3, M4
+Event: Administrator wishes to retrieve account information.  The search criteria (ie. Account number) is passed as the input.
+System: The Administrator uses the system console as an interface to the system server.
+Actors: Administrator (initiator), system console
+Overview: This use case captures the process of retrieving and viewing the account information linked to a specified search criteria.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC4</id>
+      <content>Use Case Number: UC4
+Authors: M1, M2, M3, M4
+Event: Administrator wishes to modify a customer�s account information.  The account number is passed as the input.
+System: The Administrator uses the system console as an interface to the system server.
+Actors: Administrator (initiator), system console
+Overview: This use case captures the process of editing a customer�s account information on the system console</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC5</id>
+      <content>Use Case Number: UC5
+Authors: M1, M2, M3, M4
+Event: Administrator wishes to suspend a user�s account.  The account number is passed as the input.
+System: The Administrator uses the system console as an interface to the system server.
+Actors: Administrator (initiator), system console
+Overview: This use case captures the process of an administrator suspending a user�s account on the system console.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC6</id>
+      <content>Use Case Number: UC6
+Authors: M1, M2, M3, M4
+Event: Administrator wishes to delete a user�s account.  The account number is passed as the input.
+System: The Administrator uses the system console as an interface to the system server.
+Actors: Administrator (initiator), system console
+Overview: This use case captures the process of an administrator deleting a user�s account on the system console.  The account is deleted permanently</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC7</id>
+      <content>Use Case Number: UC7
+Authors: M1, M2, M3, M4
+Event: Administrator wishes to add a new user account.
+System: The Administrator uses the system console as an interface to the system server.
+Actors: Administrator (initiator), system console
+Overview: This use case captures the process of adding a new user account.  An unused phone number is assigned to a valid IP address.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC8</id>
+      <content>Use Case Number: UC8
+Authors: M1, M2, M3, M4
+Event: Administrator wishes to alter an existing billing plan.
+System: The Administrator uses the system console as an interface to the system server.
+Actors: Administrator (initiator), system console
+Overview: This use case captures the process of changing an existing billing plan.  The administrator can choose from a list of existing billing plans.  All accounts linked to the changed billing plan are updated.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC9</id>
+      <content>Use Case Number: UC9
+Authors: M1, M2, M3, M4
+Event: Administrator wishes to add a new billing plan.
+System: The Administrator uses the system console as an interface to the system server.
+Actors: Administrator (initiator), system console
+Overview: This use case captures the process of an administrator adding a new billing plan on the system console.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC10</id>
+      <content>Use Case Number: UC10
+Authors: M1, M2, M3, M4
+Event: Administrator wishes to cancel a user account. The user account number is passed as input.
+System: The Administrator uses the system console as an interface to the system server.
+Actors: Administrator (initiator), system console
+Overview: This use case captures the process of canceling a user account given by the specified account number.  The administrator must first logon to the system console with a user id and password.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC11</id>
+      <content>Use Case Number: UC11
+Authors: M1, M2, M3, M4
+Event: Administrator wishes to enter a user�s bill payment.
+System: The Administrator uses the system console as an interface to the system server.
+Actors: Administrator (initiator), system console
+Overview: This use case captures the process of the administrator entering a user�s bill payment.  The administrator must first logon to the system console with a user id and password.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC12</id>
+      <content>Use Case Number: UC12
+Authors: M1, M2, M3, M4
+Event: Administrator wishes to change the system configurations.
+System: The Administrator uses the system console as an interface to the system server.
+Actors: Administrator (initiator)
+Overview: This use case captures the procedure for the administrator to change the maximum number of concurrent calls and the hardware fault duration time.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC13</id>
+      <content>Use Case Number: UC13
+Authors: M1, M2, M3, M4
+Event: Administrator chooses to view hardware status and run a connectivity test.
+System: System server, console terminals.
+Actors: Administrator (initiator)
+Overview: This use case captures the process the administration running a connectivity test to verify that the user�s phone is connected to the system.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

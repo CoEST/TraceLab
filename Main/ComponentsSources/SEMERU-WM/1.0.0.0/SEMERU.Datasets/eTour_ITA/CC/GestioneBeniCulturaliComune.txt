@@ -1,0 +1,270 @@
+package unisa.gps.etour.control. Gestione Beni Culturali;
+
+import java.rmi. Remote Exception;
+import java.rmi.server. Unicast Remote Object;
+import java.sql. S Q L Exception;
+import java.util. Array List;
+import java.util. Date;
+import java.util. Hash Map;
+import unisa.gps.etour.bean. Bean Bene Culturale;
+import unisa.gps.etour.bean. Bean Tag;
+import unisa.gps.etour.bean. Bean Visita B C;
+import unisa.gps.etour.repository. D B Tag;
+//import unisa.gps.etour.repository. D B Bene Culturale;
+//import unisa.gps.etour.repository. D B Turista;
+//import unisa.gps.etour.repository. D B Visita B C;
+import unisa.gps.etour.repository. I D B Bene Culturale;
+import unisa.gps.etour.repository. I D B Tag;
+import unisa.gps.etour.repository. I D B Turista;
+import unisa.gps.etour.repository. I D B Visita B C;
+import unisa.gps.etour.util. Costanti Globali;
+import unisa.gps.etour.util. Messaggi Errore;
+
+//  Stub
+import unisa.gps.etour.control. Gestione Beni Culturali.test.stub. D B Bene Culturale; // ***
+import unisa.gps.etour.control. Gestione Beni Culturali.test.stub. D B Turista; // ***
+import unisa.gps.etour.control. Gestione Beni Culturali.test.stub. D B Visita B C; // ***
+
+/**
+ *  Classe di gestione di beni culturali per le operazioni comuni a tutti gli attori
+ *
+ * @author  De  Simone  Michelangelo
+ * @version  . 
+ * 
+ *  &#   ;      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I -  University of  Salerno
+ */
+/**
+ *
+ */
+public class  Gestione Beni Culturali Comune extends  Unicast Remote Object implements
+		 I Gestione Beni Culturali Comune 
+{
+	//  Connessione al  D B per i  Beni  Culturali
+	protected  I D B Bene Culturale dbbc;
+	
+	//  Connessione al  D B per i  Tag
+	protected  I D B Tag dtag ;
+	
+	//  Connessione al  D B per i  Feedback/ Visite
+	protected  I D B Visita B C dvisita ;
+	
+	//  Connessione al  D B per i  Turisti
+	protected  I D B Turista database turista ;
+	
+	/**
+ 	 *  Costruttore; si istanziano tutti i campi utili alla gestione dei dati;
+	 * i campi vengono inizializzati ad ogni istanza di classe.
+	 * 
+	 * @throws  Remote Exception  Eccezione nel flusso
+	 */
+	public  Gestione Beni Culturali Comune() throws  Remote Exception
+	{
+		//  Supercostruttore della classe  Unicast Remote Object
+		super();
+		
+		//  Si istanziano gli oggetti
+		try
+		{
+			dbbc = new  D B Bene Culturale();
+			dtag  = new  D B Tag();
+			dvisita  = new  D B Visita B C();
+			database turista  = new  D B Turista();
+		}
+		catch ( Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+		}
+	}
+
+	/*
+	 *  Implementa il metodo per l'ottenimento di un bene culturale tramite  Id.
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Beni Culturali. I Gestione Beni Culturali Comune#ottieni Bene Culturale(int)
+	 */
+	public  Bean Bene Culturale ottieni Bene Culturale(int p Bene Culturale I D)	throws  Remote Exception
+	{
+		if (! Controllo Beni Culturali.controlla Id Bene Culturale(p Bene Culturale I D))
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D A T I);
+		
+		 Bean Bene Culturale bbc = null;
+		
+		try
+		{
+			bbc = dbbc.ottieni Bene Culturale(p Bene Culturale I D);			
+		}
+		catch ( S Q L Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+		catch ( Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+		}
+		
+		return bbc;
+	}
+
+	/*
+	 *  Implementa il metodo per l'ottenimento di tutti i tag di un bene culturale.
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Beni Culturali. I Gestione Beni Culturali Comune#ottieni Tag Bene Culturale(int)
+	 */
+	public  Array List< Bean Tag> ottieni Tag Bene Culturale(int p Bene Culturale I D) throws  Remote Exception
+	{
+		if (! Controllo Beni Culturali.controlla Id Bene Culturale(p Bene Culturale I D))
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D A T I);
+		
+		 Array List< Bean Tag> tag  = null;
+		
+		try
+		{
+			tag  = dtag .ottieni Tag Bene Culturale(p Bene Culturale I D);
+		}
+		catch ( S Q L Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+		catch ( Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+		}
+		
+		return tag ;
+	}
+
+	/*
+	 *  Implementa il metodo per ottenere la lista dei feedback e dei relativi username su un bene
+	 * culturale specificato tramite  Id.
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Beni Culturali. I Gestione Beni Culturali Comune#ottieni Feedback Bene Culturale(int)
+	 */
+	public  Hash Map< Bean Visita B C,  String> ottieni Feedback Bene Culturale(int p Bene Culturale I D) throws  Remote Exception
+	{
+		if (! Controllo Beni Culturali.controlla Id Bene Culturale(p Bene Culturale I D))
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D A T I);
+		
+		 Hash Map< Bean Visita B C,  String> mappa Ritorno;
+		
+		try
+		{
+			//  Istanzio la mappa delle stesse dimensioni della lista di  Bean Visita B C			
+			mappa Ritorno = new  Hash Map< Bean Visita B C,  String>(dvisita .ottieni Lista Visita B C(p Bene Culturale I D).size());
+
+			//  Per ogni visita aggiungo il relativo username
+			//  Qui inizio a iterare per aggiungere a ogni visita il relativo username
+			for ( Bean Visita B C b: dvisita .ottieni Lista Visita B C(p Bene Culturale I D))
+				mappa Ritorno.put(b, database turista .ottieni Turista(b.get Id Turista()).get Username());
+
+		}
+		catch ( S Q L Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+		catch ( Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+		}
+		
+		return mappa Ritorno;
+	}
+	
+	/*
+	 *  Implementa il metodo per ottenere le statistiche su un bene culturale passato
+	 * tramite  Id.
+	 *  
+	 * @see unisa.gps.etour.control. Gestione Beni Culturali. I Gestione Beni Culturali Comune#ottieni Statistiche Bene Culturale(int)
+	 */
+	public  Array List< Integer> ottieni Statistiche Bene Culturale(int p Bene Culturale I D) throws  Remote Exception
+	{
+		/*
+		 *  Questo metodo restituisce un  Array List contenente   elementi ( .. ).
+		 *  Ad ogni indice piu' uno corrisponde il numero di feedback di valore equivalente proprio
+		 * al numero di indice piu' uno.
+		 *  Anche in questo caso il metodo non e' particolarmente attraente ma fa il suo sporco lavoro
+		 * egregiamente.
+		 */
+
+		if (! Controllo Beni Culturali.controlla Id Bene Culturale(p Bene Culturale I D))
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D A T I);
+
+		 Array List< Integer> lista Risultati = new  Array List< Integer>( );
+
+		//  Imposta tutti gli indici a  
+		for (int i =  ; i <  ; i++)
+			lista Risultati.add(i,  Integer.value Of( ));
+		
+		//  Calcola la data per gli ultimi trenta giorni
+		 Date ultimi Trenta Giorni = new  Date(new  Date().get Time() -  Costanti Globali. T R E N T A_ G I O R N I);
+		
+		try
+		{
+			//  Ottiene tutte le visite di un certo bene culturale
+			//  Itera alla ricerca delle visite/feedback ottenuti entro gli ultimi trenta giorni
+			for ( Bean Visita B C b: dvisita .ottieni Lista Visita B C(p Bene Culturale I D))
+				if (b.get Data Visita().after(ultimi Trenta Giorni))
+					lista Risultati.set(b.get Voto() -  ,	 Integer.value Of(lista Risultati.get(b.get Voto() -  ).int Value() +  ));
+		}
+		catch ( S Q L Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+		catch ( Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+		}
+		
+		return lista Risultati;
+	}
+	
+	/*
+	 *  Implementa il metodo per la modifica di un feedback su un bene culturale passato
+	 * tramite  Id.
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Beni Culturali. I Gestione Beni Culturali Comune#modifica Feedback Bene Culturale(int, unisa.gps.etour.bean. Bean Visita B C)
+	 */
+	public boolean modifica Feedback Bene Culturale(int p Bene Culturale I D,  Bean Visita B C p Bean Visita B C) throws  Remote Exception
+	{
+		if (! Controllo Beni Culturali.controlla Id Bene Culturale(p Bene Culturale I D) ||
+			! Controllo Visite Beni Culturali.controlla Dati Visita Bene Culturale(p Bean Visita B C))
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D A T I);
+
+		/*
+		 *  Si controlla che il voto non sia cambiato.
+		 *  Se il voto viene cambiato viene lanciata un'eccezione
+		 */
+		boolean voto Ok = true;
+		
+		try
+		{
+			voto Ok =  dvisita .ottieni Visita B C(p Bene Culturale I D, p Bean Visita B C.get Id Turista()).get Voto() == p Bean Visita B C.get Voto();
+		}
+		catch ( S Q L Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+		catch ( Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+		}
+
+		/*
+		 *  Se il voto non è cambiato si procede all'invio del messaggio al metodo di
+		 * modifica del layer database.
+		 */
+		if (voto Ok)
+			try
+			{
+				return (dvisita .modifica Visita B C(p Bean Visita B C));
+			}
+			catch ( S Q L Exception e)
+			{
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+			}
+			catch ( Exception e)
+			{
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+			}
+
+		return false;
+	}
+}

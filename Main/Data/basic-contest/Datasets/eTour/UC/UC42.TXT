@@ -1,0 +1,18 @@
+Use case name ELIMINAMENÙ 
+Delete a daily menu of a restaurant. 
+Partecipating 
+Actor initialization Operator Point Of Restaurants 
+Entry 
+conditions • The Point Of Restaurant Operator has successfully authenticated to the system. 
+Flow of events User System 
+1. Enable the functionality of deleting a menu. 
+2 Displays a form containing the seven days of the week. 
+3 Select a day of the week and submit the form. 
+4 Calls to confirm the deletion. 
+5 Confirm the operation. 
+6. Delete the daily menu selection. 
+Exit conditions • The system shall notify the successful elimination of the daily menu selection. 
+• Restaurant Point Of Operator cancels the operation. 
+• Interruption of the connection to the server ETOUR. 
+Quality 
+requirements

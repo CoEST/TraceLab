@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp09_high_level</id>
+    <name>Waterloo grp09_high_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp09_high_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>F1</id>
+      <content>Caller establishes a call by dialing a 4-digit extension</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F2</id>
+      <content>Phone manager verifies that the user�s IP exist</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F3</id>
+      <content>Depending on different cases, caller hears different tones</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F4</id>
+      <content>Callee receives call from caller</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F5</id>
+      <content>Conversation ends between caller and callee</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F6</id>
+      <content>A new user subscribes to the service and a new account is generated</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F7</id>
+      <content>User terminates the service</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F8</id>
+      <content>System calculates amount for each call</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F9</id>
+      <content>Bills are automatically generated to all subscribers</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F10</id>
+      <content>Warnings are sent to users who have an outstanding account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F11</id>
+      <content>System must consist of a server and several phone subsystems</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F12</id>
+      <content>A graphical user interface is available to the Administrator</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F13</id>
+      <content>System must be able to monitor phone events as well as display system status information</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F14</id>
+      <content>System should have basic fault detection. If there is a system fault, it should notify the Administrator.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F15</id>
+      <content>Administrator should have the ability to create new billing plan</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F16</id>
+      <content>System administrator must be able to resolve potential conflicts, view information and modify account information</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F17</id>
+      <content>Administrator should have the ability to test the system manually</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N1</id>
+      <content>Call connection response time must be quick</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N2</id>
+      <content>System console must be easy to learn and use</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N3</id>
+      <content>System must use minimal computing resources to perform tasks</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N4</id>
+      <content>Call failure frequency must be non-existent at all</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N5</id>
+      <content>System must be able to detect invalid input</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N6</id>
+      <content>System should be reusable on different platform</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N7</id>
+      <content>System should work with large number of users</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N8</id>
+      <content>System should easily extend new features</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N9</id>
+      <content>System design and components should be reusable</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N10</id>
+      <content>System should be easily modified</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N11</id>
+      <content>System should be easily verified for correctness</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N12</id>
+      <content>Design, architecture and code of the system are easy to learn</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N13</id>
+      <content>Level of interaction between modules should be clearly defined</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

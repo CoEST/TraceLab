@@ -1,0 +1,17 @@
+Test case reservation a First Date: 
+    C34 preceded by a visit 20/06/2003 
+            Visit control 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for a reservation 
+UcPreVis service by Outpatient a 
+            patient 
+Media Priorities 
+Set up The last reservation is `: 
+            30/09/2003 hours 10 30 Visit control 
+Description test 
+Input type selected visit: First visit 
+Oracle Sequence invalid The system 
+            allows the reservation of the visit 
+Classes cover valid: CE1 CE8 
+            Classes are not valid: None

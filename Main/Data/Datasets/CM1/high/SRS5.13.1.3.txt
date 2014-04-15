@@ -1,0 +1,1 @@
+  The DPU-TMALI shall provide a function which sets the current event bit ordering mode in the DCI driver.

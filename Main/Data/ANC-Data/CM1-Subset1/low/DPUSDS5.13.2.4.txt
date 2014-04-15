@@ -1,0 +1,1 @@
+Public Functions	This routine provides a means to get the current data timeout value used by the DCI.  The returned value is the current timeout in milliseconds.The timeout is discussed in document 036911400, section 4.3.2.4.1.3.

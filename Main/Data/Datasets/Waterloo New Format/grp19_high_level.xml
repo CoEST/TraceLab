@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp19_high_level</id>
+    <name>Waterloo grp19_high_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp19_high_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>F1</id>
+      <content>System must allow adding and removing of customers� accounts.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F2</id>
+      <content>System must allow editing of customers� accounts, such as name, phone number, and bill plan type.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F3</id>
+      <content>Administrator has the privilege of modifying a customer�s account status</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F4</id>
+      <content>System must allow IPs to be assigned to phone subsystems.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F5</id>
+      <content>System must allow IPs to be removed from phone subsystems.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F6</id>
+      <content>System must allow phone numbers to be assigned to IPs.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F7</id>
+      <content>System must allow phone numbers to be removed from IPs.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F8</id>
+      <content>System must check the validity of administrator�s input/request, to make sure they are valid.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F9</id>
+      <content>System must provide functions for administrator to perform hardware and connectivity test.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F10</id>
+      <content>System must provide functions for administrator to reset each phone subsystem�s software.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F11</id>
+      <content>System must allow administrator to add or remove a bill plan.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F12</id>
+      <content>Administrator must be able to change the content of a bill plan through mechanisms provided by the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F13</id>
+      <content>Administrator must be able to record a payment received once a customer has paid the bill.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F14</id>
+      <content>Administrator must be able to start up the console system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F15</id>
+      <content>Administrator must be able to shut down the console system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F16</id>
+      <content>System check the ID and password are valid before granting access to an administrator</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F17</id>
+      <content>Administrator must be able to search a particular customer�s account information</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F18</id>
+      <content>Administrator must be able to search all information associated with a particular phone number</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F19</id>
+      <content>Administrator can perform search on the all phone numbers that are not associated with an IP</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F20</id>
+      <content>Administrator must be able to search all information associated with an IP.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F21</id>
+      <content>Administrator can perform search on all IPs that are not associated with a phone subsystem</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F22</id>
+      <content>System must enforce atomic operations when processing requests such as assigning IPs and phone numbers</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F23</id>
+      <content>Administrator can request to display current system load on the system console</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F24</id>
+      <content>Administrator can set the phone subsystem status through provided system console GUI</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F25</id>
+      <content>Administrator must be able to set the max number of concurrent calls allowed</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F26</id>
+      <content>When an IP is used, it is validated to ensure it is a usable IP.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F27</id>
+      <content>At the end of each billing period, the system will automatically generate bills for all serviced customers</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F28</id>
+      <content>Administrator should be able to set a list of number that are blocked in customers accounts</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F29</id>
+      <content>Each time a customer makes a call, the number he or she dials is checked against the database for validity</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F30</id>
+      <content>All customer records are stored. Upon canceling of service, the record will remain in system database for up to 6 months.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F31</id>
+      <content>System enables communication of 2 customers by creating an audio path between two phone subsystems.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F32</id>
+      <content>When a conversation is completed, the system close the audio path created.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F33</id>
+      <content>The system must track the time an account is being suspended.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F34</id>
+      <content>When an account is moved to cancel state, the system will track the time it has been in cancelled state.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F35</id>
+      <content>The system must be constantly monitoring a phone subsystem for events.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F36</id>
+      <content>System must provide a mapping set between IP and phone numbers for reference</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F37</id>
+      <content>When an account is cancelled, a bill is generated immediately for all services the customer has used.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F38</id>
+      <content>System must maintain a log containing all errors occurred to hardware components of the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F39</id>
+      <content>When an exceptional situation occurs, the calling customer will receive a voice reply indicating the situation encountered.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F40</id>
+      <content>When customer picks up the phone, a dial tone is sent to the phone subsystem indicating ready to receive numbers.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F41</id>
+      <content>System keeps track of the system working load, and this data is updated every minute</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F42</id>
+      <content>System must ensure all charges are targeted at the calling customer.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F43</id>
+      <content>System must perform tests automatically to check if all hardware components are working properly.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F44</id>
+      <content>Upon detecting of an error by automatic fault detection, a signal is sent to the system console notifying the administrator of such incident.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F45</id>
+      <content>System must record all services a customer has used automatically.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F46</id>
+      <content>System must provide mechanisms for customer to set up speed dial numbers through the phone subsystems.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F47</id>
+      <content>System must allow customer to initiate a call through phone subsystem.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F48</id>
+      <content>System must allow receiving of a call</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F49</id>
+      <content>When a conversation is complete, system must terminate the call.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F50</id>
+      <content>Emergency numbers such as 911 must be pre-installed in the phone subsystem.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F51</id>
+      <content>The system should be able to block calls from undesired caller  that appear on the customer�s blocked list</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N1</id>
+      <content>The system console GUI must be easy and intuitive for administrator to use</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N2</id>
+      <content>The phone subsystem must be easy for customers to operate</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N3</id>
+      <content>There must be more than one plan for customer to choose from</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N4</id>
+      <content>When a signal is received at a phone subsystem from automatic fault detection, it must response with in 5 seconds</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N5</id>
+      <content>The system must maintain acceptable efficiency, regardless of the system load.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N6</id>
+      <content>If a new phone subsystem is to be added to the network, system must provide easy functions for administrator to connect the phone to the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N7</id>
+      <content>The system, when placed in new hardware of the same type, should behave the same way as they  are supposed to</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N8</id>
+      <content>The system must be developed within the cost budget</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N9</id>
+      <content>The data and system functions should not be accessed in anyway by people who do not have the right privilege.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N10</id>
+      <content>System should be protected from invalid inputs and continue to operate normally.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

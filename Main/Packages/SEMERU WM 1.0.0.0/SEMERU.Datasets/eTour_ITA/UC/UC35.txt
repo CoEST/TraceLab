@@ -1,0 +1,15 @@
+Use case name	LOGIN
+Garantisce a un utente registrato l’accesso al sistema con i privilegi che gli spettano.
+Partecipating
+Actor	Inizializzato da Utente Registrato
+Entry
+conditions	•	Un Utente Registrato ha accesso al sistema.
+Flow of events 		User	System
+	1.		Attiva la funzionalità di login. 	
+	2.			Visualizza la form corrispondente.
+	3.		Compila la form con i dati di accesso e la sottomette.	
+	4.			Controlla la correttezza dei dati, se non sono corretti attiva il caso d’uso login errato.
+Exit conditions	•	Il sistema visualizza l’area di lavoro dell’Utente Registrato.
+•	L’Utente Registrato annulla l’operazione.
+•	Interruzione della connessione al server eTour..
+Quality requirements	

@@ -1,0 +1,13 @@
+Nome: EliminaInsegnamento
+Attori: Amministratore
+Descrizione: Elimina un insegnamento dall’archivio
+Precondizioni:
+• • • •
+L’utente è loggato al sistema come Amministratore L’utente ha eseguito il caso d’uso “VisualizzaDettagliInsegnamento” L’utente visualizza le informazione dettagliate di un insegnamento L’utente clicca sul pulsante “Elimina”
+Sequenza degli eventi
+Utente
+Sistema
+1.	Elimina	l’insegnamento dall’archivio
+2.	Visualizza	l’elenco	degli insegnamenti aggiornato
+Postcondizioni:
+•	L’utente ha eliminato un insegnamento •	Connessione al server SMOS interrotta

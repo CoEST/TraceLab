@@ -1,0 +1,7 @@
+org.mozilla.javascript.NativeDate.jsConstructor
+org.mozilla.javascript.NativeDate.execIdCall
+org.mozilla.javascript.NativeDate.initPrototypeId
+org.mozilla.javascript.NativeDate.now
+org.mozilla.javascript.NativeDate.findPrototypeId
+org.mozilla.javascript.NativeDate.date_format
+org.mozilla.javascript.IdScriptableObject.initPrototypeConstructor

@@ -1,0 +1,132 @@
+UC1	Use Case Number: UC1
+Name: MakeCalls
+Authors: M1, M2, M3, M4
+Event: Caller initiates phone call with Callee.
+Actors: Caller (initiator), Callee
+Overview: This use case captures the process of establishing a phone call.~
+UC3	Use Case Number: UC3
+Name: ConductTest
+Authors: M1, M2, M3, M4
+Event: Administrator requests tests to be conducted on a specific phone. The phone number is passed in as input.
+Actors: Administrator (initiator) 
+Overview: This use case captures the process of conducting tests on a phone subsystem.~
+UC4	Use Case Number: UC4
+Name: CheckStatus
+Authors: M1, M2, M3, M4
+Event: Administrator requests system status.
+Actors: Administrator (initiator)
+Overview: This use case captures the process of checking system status.~
+UC5	Use Case Number: UC5	 
+Name: Login
+Authors: M1, M2, M3, M4
+Event: Administrator requests to log in to the System.
+Actors: Administrator (initiator)
+Overview: This use case captures the login process to the System.~
+UC6	Use Case Number: UC6
+Name: Logout
+Authors: M1, M2, M3, M4
+Event: Administrator requests to log out of the System.
+Actors: Administrator (initiator)
+Overview: This use case captures the logout process of the System.~
+UC7	Use Case Number: UC7
+Name: RunEndOfMonthProcess
+Authors: M1, M2, M3, M4
+Event: Administrator generates account bills at the end of the billing month.
+Actors: Administrator (initiator)
+Overview: This use case captures the process of performing end-of-month duties.~
+UC8	Use Case Number: UC8
+Name: CreateUser
+Authors: M1, M2, M3, M4
+Event: Administrator creates a new user in the system.  
+Actors: Administrator (initiator) 
+Overview: This use case captures the process of creating a new user in the system.~
+UC9	Use Case Number: UC9
+Name: CreateBillingPlan
+Authors: M1, M2, M3, M4
+Event: Administrator requests to create a new billing plan.
+Actors: Administrator (initiator) 
+Overview: This use case captures the process of creating a new billing plan.~
+UC10	Use Case Number: UC10
+Name: CancelAccount
+Authors: M1, M2, M3, M4
+Event: Administrators requests to cancel an account. The phone number is passed as input.
+Actors: Administrator (initiator)
+Overview: This use case captures the process of cancelling an existing account in the system.~
+UC11	Use Case Number: UC11
+Name: EnterPayment
+Authors: M1, M2, M3, M4
+Event: Administrator selects option to enter payment. The phone number is passed as input.
+Actors: Administrator (initiator)
+Overview: This use case captures the process of inputting payment information.~
+UC12	Use Case Number: UC12
+Name: SuspendAccount
+Authors: M1, M2, M3, M4
+Event: Administrator selects option to suspend a user’s account. The phone number is passed as input.
+Actors: Administrator (initiator)
+Overview: This use case captures the process of suspending an existing account in the system.~
+UC13	Use Case Number: UC13
+Name: ModifyUser
+Authors: M1, M2, M3, M4
+Event: Administrator requests to modify the user information.
+Actors: Administrator (initiator)
+Overview: This use case captures the process of modifying information for a user.~
+UC14	Use Case Number: UC14
+Name: CreateAccount
+Authors: M1, M2, M3, M4
+Event: Administrator requests to create an account.
+Actors: Administrator (initiator)
+Overview: This use case captures the process of creating an account.~
+UC15	Use Case Number: UC15
+Name: ModifyAccount
+Authors: M1, M2, M3, M4
+Event: Administrator requests to modify the account information.
+Actors: Administrator (initiator)
+Overview: This use case captures the process of modifying the information for an account.~
+UC16	Use Case Number: UC16
+Name: ModifyBillingPlan
+Authors: M1, M2, M3, M4
+Event: Administrator requests to modify a billing plan.  
+Actors: Administrator (initiator)
+Overview: This use case captures the process of modifying a billing plan.~
+UC17	Use Case Number: UC17
+Name: ReactivateAccount
+Authors: M1, M2, M3, M4
+Event: Administrator selects option to reactivate an account.  The phone number is passed as input.  
+Actors: Administrator (initiator)
+Overview: This use case captures the process of reactivating a suspended account in the system.~
+UC18	Use Case Number: UC18
+Name: GetUnusedPhoneNumber
+Authors: M1, M2, M3, M4
+Event: Administrator selects option to find the next unused phone number.
+Actors: Administrator (initiator)
+Overview: This use case captures the process of obtaining the next unused number in the system.~
+UC19	Use Case Number: UC19
+Name: ViewLog
+Authors: M1, M2, M3, M4
+Event: Administrator requests to view the test and call log files.
+Actors: Administrator (initiator)
+Overview: This use case captures the process of viewing the test and call log files.~
+UC20	Use Case Number: UC20
+Name: ResetPhone
+Authors: M1, M2, M3, M4
+Event: Administrator requests a phone to be reset. The phone number is passed in as input.
+Actors: Administrator (initiator) 
+Overview: This use case captures the process of resetting a phone.~
+UC21	Use Case Number: UC21
+Name: SetMaxConnections
+Authors: M1, M2, M3, M4
+Event: Administrator requests to set the maximum number of simultaneous connections.
+Actors: Administrator (initiator)
+Overview: This use case captures the process of setting the maximum simultaneous connections.~
+UC22	Use Case Number: UC22
+Name: SetTestInterval
+Authors: M1, M2, M3, M4
+Event: Administrator requests to set the automatic test interval.
+Actors: Administrator (initiator)
+Overview: This use case captures the process of setting the automatic test interval.~
+UC23	Use Case Number: UC23
+Name: RunAutomaticTest
+Authors: M1, M2, M3, M4
+Event: Timer requests automatic tests to be performed on the system phones.
+Actors: Timer (initiator)
+Overview: This use case captures the process of automatic testing on the system phones.~

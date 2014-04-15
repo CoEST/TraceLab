@@ -1,0 +1,22 @@
+Testing houses delete a Visit Date: 
+    C50 control following a 20/06/2003 
+            Visit control and 
+            precedes a visit by 
+            check 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for delete of 
+UcAnnPre a booking service 
+            made by an ambulatory patient 
+High Priority 
+Set up the previous reservation is `: 
+             02/10/2003 hours 09 00 Visit control 
+            The reservation is `Next: 
+            07/10/2003 hours 09 00 Visit control 
+Description test 
+Input Visit selected: 
+            06/10/2003 hours 09 00 Visit control 
+The oracle system deletes the reservation 
+            selected 
+Classes cover valid: CE4 CE8 CE13 
+            Classes are not valid: None

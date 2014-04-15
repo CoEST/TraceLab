@@ -1,0 +1,49 @@
+package unisa.gps.etour.control;
+
+import java.rmi. Remote Exception;
+import java.rmi.registry. Locate Registry;
+import java.rmi.registry. Registry;
+import java.rmi.server. Unicast Remote Object;
+
+import unisa.gps.etour.control. Gestione Beni Culturali. Gestione Beni Culturali Comune;
+import unisa.gps.etour.control. Gestione Beni Culturali. I Gestione Beni Culturali Comune;
+
+/**
+ *  Questo è l'entry point del control server.  Questa classe ha il compito di
+ * effettuare il deploy dei servizi sul registro  R M I, rendendo di conseguenza i
+ * servizi disponibili ed utilizzabili.
+ * 
+ * @author  De  Simone  Michelangelo
+ * @version  .  &#   ;      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I -  University of  Salerno
+ */
+public class  Control Server Launcher
+{
+	/**
+	 *  Entry point del  Control Server
+	 * 
+	 * @param args  I parametri da riga di comando
+	 */
+	public static void main( String[] args)
+	{
+		// ***  A T T E N Z I O N E ***  S P E R I M E N T A L E ***  A T T E N Z I O N E ***  S P E R I M E N T A L E
+				
+		try
+		{
+			//  Gestione Beni Culturali Comune è la classe che realizza l'interfaccia  I Gestione Beni Culturali Comune,
+			// interfaccia presente sia sul  C L I E N T E, sia sul  S E R V E R
+			 Gestione Beni Culturali Comune g B C C = new  Gestione Beni Culturali Comune();
+			
+			//  Qui si crea lo stub per il registry, facendo capire al sistema  R M I che si sta esportando l'oggetto g B C C su una
+			// porta anonima
+			 I Gestione Beni Culturali Comune stub G B C C = ( I Gestione Beni Culturali Comune) Unicast Remote Object.export Object(g B C C,  );
+			
+			//  Si procede a chiamare il registro (di default è su localhost) e si "binda" (lega)
+			 Registry registry =  Locate Registry.get Registry();
+			registry.bind(" I Gestione Beni Culturali Comune", stub G B C C);
+		}
+		catch ( Exception e)
+		{
+			 System.err.println(" Eccezione: " + e.get Localized Message());
+		}
+	}
+}

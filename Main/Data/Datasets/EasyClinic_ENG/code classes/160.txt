@@ -1,0 +1,15 @@
+Class TipoVisita Date: 20/09/03 
+                                                    Version: 
+                                                    0 01 000 
+Description contains a description of the different types of 
+                   visit that may be made in 
+                   outpatient 
+Attributes 
+       Name Access Description 
+Private code code type of visit 
+                               (PV DH C) 
+Private description description of the type of 
+                               visit 
+Methods 
+       Signature Access 
+    Description

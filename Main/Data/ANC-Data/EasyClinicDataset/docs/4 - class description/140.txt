@@ -1,0 +1,38 @@
+Class GUIVisita Date: 
+                                                   16/09/2003 
+                                                   Version: 
+                                                   0 01 000 
+Description Make the mask used for managing 
+                   of visits within 
+                   of the outpatient
+Attributes 
+       Name Access Description 
+Private btnDelete button that allows you to start 
+                             procedure for delete of a 
+                             visit 
+Private btnEdit button that allows you to start 
+                             procedure for changing a visit 
+Private btnNew button that allows you to start 
+                             procedure for input a new 
+                             visit 
+Private btnSave button that allows you to start 
+                             procedure to save a visit 
+                             just changed or added 
+Private btnUndo button that allows you to cancel 
+                             The last operation performed 
+Methods 
+       Signature notificaSuccesso () Public Access 
+    Description Its task is to notify the success 
+                   of 
+       Signature visualizzaElencoVisite () Public Access 
+    Description Its task is to see the list of 
+                   visits 
+       Signature examinations () Public Access 
+    Description Its task is to manage the event generated 
+                   When the operator selects a visit 
+                   from the list and requires access to the section 
+                   that shows the examination to such 
+                   visit 
+       Signature visit () Public Access 
+    Description Its task is to find the information 
+                   necessary for the realization of GUIVisita

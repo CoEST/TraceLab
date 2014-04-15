@@ -1,0 +1,44 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf110
+{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;\f1\ftech\fcharset0 Wingdings-Regular;\f2\fnil\fcharset0 LucidaGrande;
+}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f0\b\fs24 \cf0 Nome caso d\'92uso\
+
+\b0 PagamentoNonRiuscito\
+
+\b Attori partecipanti\
+
+\b0 Iniziato da Cittadino\
+
+\b Flusso di eventi\
+
+\b0 1. Il Cittadino clicca sul pulsante per accedere all'area Pagamento Online delle tasse o delle multe.\
+2. Il Sistema visualizza la lista delle tasse/ multe che possono essere pagate online.\
+3. Il Cittadino seleziona la tassa/multa di interesse\
+5.\
+4. Il Sistema redirige il Cittadino verso la sezione necessaria, mostrando il form al cittadino. Il Cittadino avvia la transazione.\
+6. Il Sistema non consente la transazione poich\'e9 si sono verificati problemi con il metodo di pagamento selezionato.\
+
+\b Condizione di entrata\
+
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Questo	caso	d'uso	estende 
+\b ICI,IRPEF,TIA,TOSAP,IPPA	
+\b0 e 
+\b PagamentoMulta 
+\b0 ed \'e8 invocato quando si verificano errori dovuti al metodo di pagamento.\
+
+\b Condizioni di uscita\
+
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Il	Sistema	notifica	l'errore	e	mostra nuovamente il form da compilare.\
+
+\b Requisiti di qualita
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Non previsti.}

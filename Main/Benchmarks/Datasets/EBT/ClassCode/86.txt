@@ -1,0 +1,49 @@
+           EB Shape
+           "private int x   y  ;
+           private String requirement No  ;
+           private String Project  Name   Module  Path  ;
+              private Color c  ;"
+           "public EBShape  ( int xpos   int ypos   Color col  )
+           {
+            x = xpos  ;
+            y = ypos  ;
+                      c = col  ;
+            requirement No = """";
+            Project  Name = """";
+            Module  Path = """";
+           }"
+           "public void Update  requirement Info  (  String rno   String pname   String mname  )
+           {
+            requirement No = rno  . trim  ();
+            Project  Name = pname  . trim  ();
+            Module  Path = mname  . trim  ();
+           }"
+           "public boolean match  ( int mx   int my  )
+           {
+            return true  ;
+          
+           }"
+           "public int Get  X  ()
+           {
+            return x  ;
+           }"
+           "public int Get  Y  ()
+           {
+            return y  ;
+           }"
+           "public Color Get  C  ()
+              {
+            return c  ;
+           }"
+           "public String Get  Reqno  ()
+           {
+            return requirement No  ;
+           }"
+           "public String Get  Project  ()
+           {
+            return Project  Name  ;
+           }"
+           "public String Get  Module  ()
+           {
+            return Module  Path  ;
+           }"

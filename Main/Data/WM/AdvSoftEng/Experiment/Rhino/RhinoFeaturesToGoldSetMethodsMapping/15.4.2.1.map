@@ -1,0 +1,10 @@
+org.mozilla.javascript.NativeArray.js_concat
+org.mozilla.javascript.regexp.RegExpImpl.match_glob
+org.mozilla.javascript.NativeArray.iterativeMethod
+org.mozilla.javascript.NativeArray.jsConstructor
+org.mozilla.javascript.regexp.NativeRegExp.executeRegExp
+org.mozilla.javascript.NativeArray.js_splice
+org.mozilla.javascript.NativeArray.execIdCall
+org.mozilla.javascript.NativeArray.getClassName
+org.mozilla.javascript.NativeArray.js_slice
+org.mozilla.javascript.NativeArray.NativeArray

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CompositeComponentMetadataDefinition xmlVersion="1">
+  <Info>
+    <ID>440e3469-0a02-47e6-9cee-c49e686cda64</ID>
+    <Version />
+    <Label>2</Label>
+    <Name>2</Name>
+    <Author />
+    <Description />
+  </Info>
+  <Input />
+  <Output />
+  <Import />
+  <ConfigDefinition>
+    <IsJava>False</IsJava>
+    <ConfigProperties />
+  </ConfigDefinition>
+  <ComponentGraph>
+    <graph>
+      <ExperimentInfo>
+        <Version>1</Version>
+        <Id>df1cce69-1534-4a80-b586-94b234f22e59</Id>
+        <Name>2</Name>
+        <LayoutName>EfficientSugiyama</LayoutName>
+      </ExperimentInfo>
+      <node id="Start">
+        <SerializedVertexData Version="1" X="200" Y="100">
+          <Metadata type="TraceLab.Core.Components.StartNodeMetadata, TraceLab.Core, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Start" />
+        </SerializedVertexData>
+      </node>
+      <node id="End">
+        <SerializedVertexData Version="1" X="202" Y="214">
+          <Metadata type="TraceLab.Core.Components.EndNodeMetadata, TraceLab.Core, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="End" />
+        </SerializedVertexData>
+      </node>
+      <node id="80a9940d-14ee-4020-8614-710f2e9d9d51">
+        <SerializedVertexData Version="1" X="201" Y="156">
+          <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="2" ComponentMetadataDefinitionID="e8244e98-2d98-11e0-9317-5e44e0d72085">
+            <IOSpec Version="1">
+              <Input />
+              <Output />
+              <Import />
+            </IOSpec>
+            <ConfigWrapper Version="1" IsJava="False">
+              <ConfigValues />
+            </ConfigWrapper>
+          </Metadata>
+        </SerializedVertexData>
+      </node>
+      <edge id="4ef9f9d8-23f7-465a-9781-3e04efd174cd" source="Start" target="80a9940d-14ee-4020-8614-710f2e9d9d51" />
+      <edge id="50613ef1-9281-4b5b-bcc2-632d658c6ab4" source="80a9940d-14ee-4020-8614-710f2e9d9d51" target="End" />
+    </graph>
+  </ComponentGraph>
+</CompositeComponentMetadataDefinition>

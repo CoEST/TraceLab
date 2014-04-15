@@ -1,0 +1,31 @@
+Edit test case of a visit by Date: 
+    C54 preceded by a control 20/06/2003 
+            Day Hospital and followed by a 
+            Day in Hospital 
+            final position of 
+            sequence of reservations and 
+            preceded by a Day 
+            Hospital 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for modification of a 
+UcModVis service by Outpatient a 
+            patient 
+High Priority 
+Set up the previous reservation is `: 
+                29/09/2003 hours 08 00 Day Hospital 
+            The reservation is `Next: 
+                03/10/2003 hours 08 00 Day Hospital 
+            New reservation was 
+                10/10/2003 hours 08 00 Day Hospital 
+            There are no reservations after the next 
+            Review 
+Description test 
+Input Visit selected: 
+             02/10/2003 hours 09 00 Visit control 
+            Review: 
+                        02/10/2003 hours 10 30 
+Oracle Sequence invalid The system 
+            the changing of the reservation 
+Classes cover valid: ce3 CE8 CE13 CE16 CE23 
+            Classes are not valid: None

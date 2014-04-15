@@ -1,0 +1,37 @@
+<#if package?? && package != "">
+package ${package};
+
+</#if>
+
+import cli.TraceLabSDK.*;
+
+@ComponentAttribute.Annotation(
+        Name = "${label}",
+        Description = "${description}",
+        Author = "${user}",
+        Version = "1.0")
+<#if includeSampleIO == true>
+@IOSpecAttribute.Annotation.__Multiple({
+        @IOSpecAttribute.Annotation(IOType = IOSpecType.__Enum.Input, Name = "example_input", DataType = String.class, Description="Description about input"),
+        @IOSpecAttribute.Annotation(IOType = IOSpecType.__Enum.Output, Name = "example_output", DataType = String.class, Description="Description about output")
+    })
+</#if>
+public class ${name} extends BaseComponent {
+
+    public ${name}(ComponentLogger log) {
+        super(log);
+    }
+
+    @Override
+    public void Compute() 
+    {
+        super.get_Logger().Trace("Hello World");
+        
+        //your component implementation
+        <#if includeSampleIO == true>
+        String exampleInput = (String)super.get_Workspace().Load("example_input");
+        String exampleOutput = "mock value";
+        super.get_Workspace().Store("example_output", exampleOutput);
+        </#if>
+    }
+}

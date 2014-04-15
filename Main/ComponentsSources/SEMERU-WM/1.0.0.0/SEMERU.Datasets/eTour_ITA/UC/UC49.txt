@@ -1,0 +1,13 @@
+Use case name	VISUALIZZA SITI PREFERITI
+Visualizza la lista dei siti preferiti personale.
+Participating
+Actor	Inizializzato da Turista
+Entry
+conditions	•	Il Turista si è autenticato con successo al sistema.
+Flow of events 		User	System
+	1.		Seleziona la funzionalità per la visualizzazione della lista dei siti preferiti personali.	
+	2.			Carica la lista dei siti preferiti.
+Exit conditions	•	Il sistema visualizza la lista dei siti preferiti.
+•	Interruzione della connessione al server di eTour.
+Quality 
+requirements	

@@ -1,0 +1,15 @@
+Use case name RICERCASITO 
+Searching for a specific site on the computer. 
+Partecipating 
+Actor 
+Entry 
+conditions 
+Flow of events User System 
+1. Activate the search functionality of a site. 
+2 Show the form for research 
+3 Fill in the form of research and submit 
+4 Processing the request 
+Exit conditions • The system returns a list of sites found 
+• Interruption of the connection to the server ETOUR. 
+Quality 
+The system requirements should return the results within a time limit set

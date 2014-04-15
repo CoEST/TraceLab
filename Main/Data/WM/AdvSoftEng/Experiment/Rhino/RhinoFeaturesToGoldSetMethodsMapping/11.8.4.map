@@ -1,0 +1,7 @@
+org.mozilla.javascript.TokenStream.getToken
+org.mozilla.javascript.Parser.relExpr
+org.mozilla.javascript.Decompiler.decompile
+org.mozilla.javascript.ScriptRuntime.cmp_LE
+org.mozilla.javascript.Interpreter.interpretLoop
+org.mozilla.javascript.Token.name
+org.mozilla.javascript.Interpreter.visitExpression

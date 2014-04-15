@@ -1,0 +1,85 @@
+F1	Interface for Administrator to monitor and control the system.~
+F2	There is only one Administrator account.~
+F3	Administrator logs into the console using a name/password combination.~
+F4	The console should validate the login name/password combination.~
+F5	All console features are accessible by every Administrator.~
+F6	The console is only on the server machine.~
+F7	The system may be extended to handle access by multiple Administrators at the same time.~
+F8	The system should validate all data inputted by Administrators and display errors.~
+F9	The console allows the display of all assigned phone numbers.~
+F10	The console allows the display of all assigned IP addresses.~
+F11	The console allows the Administrator to search for an unassigned phone number.~
+F12	The console allows the association of a phone number with an IP address.~
+F13	The console supports users.~
+F14	The console supports accounts.~
+F15	The console allows the association of a user to an account.~
+F16	The console allows the association of an account to a phone number and IP.~
+F17	User and account information is stored indefinitely in the system.~
+F18	The console supports billing plans.~
+F19	The console displays the status of each phone.~
+F20	The console displays the error log for the system.~
+F21	The system console must alert the Administrator if there is an error.~
+F22	The console allows the Administrator to conduct tests on the system.~
+F23	The console allows the Administrator to request tests to be conducted at regular intervals.~
+F24	The console allows Administrators to remove a phone from service.~
+F25	The console allows Administrators to enable a phone.~
+F26	The console allows Administrator to reset the call processing software.~
+F27	The console allows the Administrator to set the maximum number of simultaneous calls.~
+F28	The console displays the system load.~
+F29	The console calculates a suggested maximum number of simultaneous calls.~
+F30	The console displays any user’s bill for any billing period.~
+F31	The console allows the Administrators to enter payment information on an account.~
+F32	The console allows the Administrator to generate bills for each account.~
+F33	The console displays a list of all overdue accounts.~
+F34	Each user should store name and accounts.~
+F35	Each account should store phone number and billing plan.~
+F36	Phone numbers can be re-used.~
+F37	Each account may possess different call privileges to originate and receive calls in terms of filters.~
+F38	Status checks can be requested for the system.~
+F39	Error logs are maintained by the system.~
+F40	Administrator can request hardware test at any time to verify the hardware’s function. ~
+F41	Automated hardware tests will be performed regularly. ~
+F42	A phone can be set to “out of service” status if there is a hardware problem.~
+F43	A phone can be enabled by administrator if there is a repaired or newly added hardware.~
+F44	The system console must be able to receive error message from the hardware phone.~
+F45	The system supports changes to the maximum number of simultaneous calls in the system. ~
+F46	Callee’s phone displays caller’s number.~
+F47	Off-hook starts dial tone.~
+F48	The input of first digit would stop the dial tone and start dialling process.~
+F49	After the user dials four digits, the server should attempt to establish a connection.~
+F50	Caller hears busy signal when connecting to an off-hook callee.~
+F51	Caller hears busy signal when an invalid number dialled.~
+F52	Caller hears ring tone and callee’s phone rings when connecting to an on-hook callee.~
+F53	Stop connection attempt after 30 seconds had passed.~
+F54	Stop dialing after 20 seconds had passed.~
+F55	Stop dial tone after 20 seconds had passed.~
+F56	Connect caller and callee and establish audio connection after callee off-hook.~
+F57	Call is disconnected after either callee or caller on-hook.~
+F58	Once received a reset signal from the server, the phone must reset itself and return to the initial state of operation.~
+F59	Server maintains a count of the number of simultaneous calls.~
+F60	When the number of simultaneous calls is equal or above the value defined, any connection attempt always produces fast busy tone.~
+F61	Phone numbers contain four digits.~
+F62	Phone numbers are mapped to IP addresses.~
+F63	Billing system must keep a record of every established call on every account.~
+F64	Call rate is calculated based on billing plan of account.~
+F65	Each billing period is one month.~
+F66	A bill for each account is generated and sent to its user at the end of each billing period.~
+F67	A bill is immediately generated and sent to a user whose account is cancelled.~
+F68	Each bill shows the account history and charges within its billing period.~
+F69	A bill is generated for each account (not user).~
+F70	There are three types of charges: calls, fines, and taxes~
+F71	Each call has an associated charge (cost) based on a variety of factors.~
+F72	A 10% compounded interest is charged on overdue accounts.~
+F73	Tax (in percentage) can be applied on taxable charges.~
+F74	Only certain types of charges are taxable.~
+F75	Charge calculation is performed at the end of each call and logged in the call history.~
+F76	A report is generated for the Administrator at the end of each billing period listing all accounts that have not been paid for two months.~
+F77	Billing plan is used to determine call rate at a certain time.~
+F78	Billing plans can be added or modified.~
+F79	Calls started during the discount period are charged a discounted rate.~
+F80	A discount rate allows only a percentage of the regular rate to be charged on calls.~
+N1	The behaviour of the IP phone system should be similar to traditional phones from the perspective of its users.~
+N2	The system should be reliable at all times.~
+N3	Users’ personal and billing information should be protected.~
+N4	The system should be able to handle as many simultaneous connections as possible.~
+N5	The system should be user-friendly.  The user and administrator should be able to adapt to the system very easily.~

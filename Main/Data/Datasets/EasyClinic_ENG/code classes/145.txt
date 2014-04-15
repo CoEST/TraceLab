@@ -1,0 +1,23 @@
+Class PazienteManager Date: 
+                                                    14/09/2003 
+                                                    Version: 
+                                                    0 01 000 
+Description has the task to manage operations 
+                   require access to personal data of 
+                   Patients 
+Attributes 
+       Name Access Description 
+                                
+Methods 
+       Signature editPaziente () Public Access 
+    Description Manages updating of data 
+                   a patient 
+       Signature findPaziente () Public Access 
+    Description Checks for a particular patient 
+                   in the S I O 
+       Signature getDatiPaziente () Public Access 
+    Description Its task is to find all the information 
+                   relating to personal data of a given 
+                   Patient 
+       Signature newPaziente () Public Access 
+    Description Its task is to create a new patient

@@ -1,0 +1,16 @@
+Use case name RICERCABENECULTURALE 
+Returns the list of cultural objects in the system according to certain parameters. 
+Partecipating 
+Actor 
+Entry 
+conditions 
+Flow of events User System 
+1. Activate the search functionality of a cultural object. 
+2 Show the form for research. 
+3 Fill in the search form and submit. 
+4 Processing the request. 
+Exit conditions • The system returns a list of cultural goods that meet the search criteria. 
+• Interruption of the connection to the server ETOUR. 
+Quality 
+The system requirements should return the results within a set time.
+

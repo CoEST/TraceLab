@@ -1,0 +1,1700 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>TC</id>
+    <name>TC</name>
+    <version>1.1</version>
+    <description>Test cases</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>100</id>
+      <content>Test case  Annullamento  di  un   Visita Data:
+   C50     di  controllo che  segue  una 20/06/2003
+           Visita    di   controllo    e
+           precede    una   Visita    di
+           controllo.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa  la  richiesta di  annullamento  di
+Uc_Ann_Pre una     prenotazione    di    un    servizio
+           ambulatoriale presentata da un paziente.
+Priorit…   Alta.
+Set up     La prenotazione precedente Š:
+            02/10/2003 ore 09.00 - Visita di controllo
+           La prenotazione successiva Š:
+           07/10/2003 ore 09.00 - Visita  di controllo
+Descrizione test
+Input      Visita selezionata:
+           06/10/2003 ore 09.00 - Visita  di controllo
+Oracolo    Il sistema elimina la prenotazione
+           selezionata.
+Copertura  Classi valide: CE4, CE8, CE13.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>101</id>
+      <content>Test case  Modifica di una Prima  visita Data:
+   C51     seguita  da un Day  Hospital, 20/06/2003
+           in   una  posizione  compresa
+           tra due Visite di Controllo.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa  la  richiesta di  modifica  di  un
+Uc_Mod_Vis servizio  ambulatoriale  presentata  da   un
+           paziente.
+Priorit…   Alta.
+Set up     Non ci sono prenotazioni precedenti
+           La prenotazione successiva Š:
+               29/09/2003 ore 08.00 - Day Hospital
+           Nuova prenotazione precedente:
+            02/10/2003 ore 09.00 - Visita di Controllo
+           Nuova prenotazione successiva:
+            07/10/2003 ore 09.00 - Visita di Controllo
+Descrizione test
+Input      Visita selezionata:
+               26/09/2003 ore 11.00 - Prima visita
+           Modifica:
+                       03/10/2003 ore 11.00
+Oracolo    Sequenza   non   valida.  Il   sistema   non
+           consente la modifica della prenotazione.
+Copertura  Classi valide: CE1, CE8, CE14, CE19, CE21.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>102</id>
+      <content>Test case  Modifica  di un Day  Hospital Data:
+   C52     preceduto   da   una    Prima 20/06/2003
+           visita   e  seguito  da   una
+           Visita  di controllo, in  una
+           posizione  compresa  tra   un
+           Day  Hospital ed  una  Visita
+           di Controllo.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa  la  richiesta di  modifica  di  un
+Uc_Mod_Vis servizio  ambulatoriale  presentata  da   un
+           paziente.
+Priorit…   Alta.
+Set up     La prenotazione precedente Š:
+               26/09/2003 ore 11.00 - Prima visita
+           La prenotazione successiva Š:
+            02/10/2003 ore 09.00 - Visita di Controllo
+           Nuova prenotazione precedente:
+               03/10/2003 ore 08.00 - Day Hospital
+           Nuova prenotazione successiva:
+            06/10/2003 ore 09.00 - Visita di Controllo
+Descrizione test
+Input :    Visita selezionata:
+               29/09/2003 ore 08.00 - Day Hospital
+           Modifica:
+                       06/10/2003 ore 08.00
+Oracolo :  Sequenza   non   valida.  Il   sistema   non
+           consente la modifica della prenotazione.
+Copertura  Classi valide: CE2, CE9, CE13, CE19, CE22.
+:          Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>103</id>
+      <content>Test case  Modifica  di un Day  Hospital Data:
+   C53     preceduto   da   una    Prima 20/06/2003
+           visita   e  seguito  da   una
+           Visita  di controllo, in  una
+           posizione  compresa  tra  due
+           visite di controllo.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa  la  richiesta di  modifica  di  un
+Uc_Mod_Vis servizio  ambulatoriale  presentata  da   un
+           paziente.
+Priorit…   Alta.
+Set up     La prenotazione precedente Š:
+               26/09/2003 ore 11.00 - Prima visita
+           La prenotazione successiva Š:
+            02/10/2003 ore 09.00 - Visita di Controllo
+           Nuova prenotazione precedente:
+            06/10/2003 ore 09.00 - Visita di Controllo
+           Nuova prenotazione successiva:
+            13/10/2003 ore 09.30 - Visita di Controllo
+Descrizione test
+Input      Visita selezionata:
+               29/09/2003 ore 08.00 - Day Hospital
+           Modifica:
+                       08/10/2003 ore 08.00
+Oracolo    Il sistema non consente la modifica della
+           prenotazione.
+Copertura  Classi valide: CE2, CE9, CE14, CE19, CE22.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>104</id>
+      <content>Test case  Modifica  di  una  Visita  di Data:
+   C54     controllo  preceduta  da   un 20/06/2003
+           Day Hospital e seguita da  un
+           Day    Hospital    ,    nella
+           posizione    finale     della
+           sequenza  di  prenotazioni  e
+           preceduta    da    un     Day
+           Hospital.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa  la  richiesta di  modifica  di  un
+Uc_Mod_Vis servizio  ambulatoriale  presentata  da   un
+           paziente.
+Priorit…   Alta.
+Set up     La prenotazione precedente Š:
+               29/09/2003 ore 08.00 - Day Hospital
+           La prenotazione successiva Š:
+               03/10/2003 ore 08.00 - Day Hospital
+           Nuova prenotazione precedente:
+               10/10/2003 ore 08.00 - Day Hospital
+           Non ci sono prenotazioni successive dopo la
+           modifica.
+Descrizione test
+Input      Visita selezionata:
+            02/10/2003 ore 09.00 - Visita di controllo
+           Modifica:
+                       02/10/2003 ore 10.30
+Oracolo    Sequenza   non   valida.  Il   sistema   non
+           consente la modifica della prenotazione.
+Copertura  Classi valide: CE3, CE8, CE13, CE16, CE23.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>105</id>
+      <content>Test case  Modifica  di  una  Visita  di Data:
+   C55     controllo  preceduta  da   un 20/06/2003
+           Day  Hospital  e  seguita  da
+           una  Visita di controllo,  in
+           una  posizione  compresa  tra
+           un  Day Hospital e una Visita
+           di controllo.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa  la  richiesta di  modifica  di  un
+Uc_Mod_Vis servizio  ambulatoriale  presentata  da   un
+           paziente.
+Priorit…   Media.
+Set up     La prenotazione precedente Š:
+               29/09/2003 ore 08.00 - Day Hospital
+           La prenotazione successiva Š:
+            06/10/2003 ore 09.00 - Visita di controllo
+           Nuova prenotazione precedente:
+               08/10/2003 ore 08.00 - Day Hospital
+           Nuova prenotazione successiva:
+            13/10/2003 ore 09.00 - Visita di controllo
+Descrizione test
+Input      Visita selezionata:
+            02/10/2003 ore 09.00 - Visita di controllo
+           Modifica:
+                       09/10/2003 ore 10.00
+Oracolo    Il sistema consente la modifica della
+           prenotazione.
+Copertura  Classi valide: CE3, CE9, CE13, CE19, CE23.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>106</id>
+      <content>Test case  Modifica  di un Day  Hospital Data:
+   C56     compreso  tra due  visite  di 20/06/2003
+           controllo,  in una  posizione
+           compresa  tra  due visite  di
+           controllo.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa  la  richiesta di  modifica  di  un
+Uc_Mod_Vis servizio  ambulatoriale  presentata  da   un
+           paziente.
+Priorit…   Media.
+Set up     La prenotazione precedente Š:
+            07/10/2003 ore 09.30 - Visita di controllo
+           La prenotazione successiva Š:
+            09/10/2003 ore 10.00 - Visita di controllo
+           Nuova prenotazione precedente:
+            09/10/2003 ore 9.00 - Visita di controllo
+           Nuova prenotazione successiva:
+            13/10/2003 ore 9.00 - Visita di controllo
+Descrizione test
+Input :    Visita selezionata:
+               08/10/2003 ore 08.00 - Day Hospital
+           Modifica:
+                       08/10/2003 ore 8.00
+Oracolo :  Il sistema consente la modifica della
+           prenotazione.
+Copertura  Classi valide: CE4, CE9, CE14, CE19, CE22.
+:          Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>107</id>
+      <content>Test case  Login    Paziente    mediante Data:
+   C57     Hospital  Card corretta,  PIN 20/06/2003
+           corretto    e    la    coppia
+           (Hospital     Card,      PIN)
+           presente nel S.I.O
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Log_Paz necessarie   per  l'autenticazione   di   un
+           paziente
+Priorit…   Alta.
+Set up     La coppia (Hospital Card, PIN) = (00001,
+           65323) Š registrata nel S.I.O.
+Descrizione test
+Input      Hospital Card: 00001
+           PIN: 65323
+Oracolo    Il sistema consente l'accesso al paziente.
+Copertura  Classi valide: CE1, CE2, CE6, CE7.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>108</id>
+      <content>Test case  Login    Paziente    mediante Data:
+   C58     Hospital  Card  non  corretta 20/06/2003
+           (numero  inferiore di  cifre)
+           e PIN registrato nel S.I.O.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Log_Paz necessarie   per  l'autenticazione   di   un
+           paziente
+Priorit…   Alta.
+Set up     Il PIN 65323 Š registrato nel S.I.O.
+Descrizione test
+Input      Hospital Card: 0000
+           PIN: 65323
+Oracolo    Input non valido: Hospital Card.
+Copertura  Classi valide: CE7.
+           Classi non valide: CE3.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>109</id>
+      <content>Test case  Login    Paziente    mediante Data:
+   C59     Hospital  Card  non  corretta 20/06/2003
+           (numero  superiore di  cifre)
+           e PIN registrato nel S.I.O.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Log_Paz necessarie   per  l'autenticazione   di   un
+           paziente
+Priorit…   Alta.
+Set up     Il PIN 65323 Š registrato nel S.I.O.
+Descrizione test
+Input      Hospital Card: 000000
+           PIN: 65323
+Oracolo    Input non valido: Hospital Card.
+Copertura  Classi valide: CE7.
+           Classi non valide: CE4.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>110</id>
+      <content>Test case  Login    Paziente    mediante Data:
+   C60     Hospital   Card    registrata 20/06/2003
+           nel    S.I.O    e   PIN   non
+           corretto   (numero  inferiore
+           di cifre).
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Log_Paz necessarie   per  l'autenticazione   di   un
+           paziente
+Priorit…   Alta.
+Set up     La Hospital Card 00001 Š registrata nel
+           S.I.O.
+Descrizione test
+Input      Hospital Card: 00001
+           PIN: 6532
+Oracolo    Input non valido: PIN
+Copertura  Classi valide: CE2.
+           Classi non valide: CE8.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>111</id>
+      <content>Test case  Login    Paziente    mediante Data:
+   C61     Hospital   Card    registrata 20/06/2003
+           nel    S.I.O    e   PIN   non
+           corretto   (numero  superiore
+           di cifre).
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Log_Paz necessarie   per  l'autenticazione   di   un
+           paziente
+Priorit…   Alta.
+Set up     La Hospital Card 00001 Š registrata nel
+           S.I.O.
+Descrizione test
+Input      Hospital Card: 00001
+           PIN: 65323555
+Oracolo    Input non valido: PIN
+Copertura  Classi valide: CE2.
+           Classi non valide: CE9.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>112</id>
+      <content>Test case  Login    Paziente    mediante Data:
+   C62     Hospital   Card    registrata 20/06/2003
+           nel S.I.O  e PIN corretto  ma
+           non registrato nel S.I.O.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Log_Paz necessarie   per  l'autenticazione   di   un
+           paziente
+Priorit…   Alta.
+Set up     La  Hospital  Card  00001 Š  registrata  nel
+           S.I.O.
+           Il PIN 47389 non Š registrato nel S.I.O.
+Descrizione test
+Input :    Hospital Card: 00001
+           PIN: 47389
+Oracolo :  IL sistema non consente l'accesso al
+           paziente.
+Copertura  Classi valide: CE2.
+:          Classi non valide: CE10.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>113</id>
+      <content>Test case  Login    Paziente    mediante Data:
+   C63     Hospital  Card  corretta   ma 20/06/2003
+           non  registrata nel  S.I.O  e
+           PIN registrato nel S.I.O.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Log_Paz necessarie   per  l'autenticazione   di   un
+           paziente
+Priorit…   Alta.
+Set up     La  Hospital Card 00034 non Š registrata nel
+           S.I.O.
+           Il PIN 65323 Š registrato nel S.I.O.
+Descrizione test
+Input      Hospital Card: 00034
+           PIN: 65323
+Oracolo    Il sistema non consente l'accesso al
+           paziente.
+Copertura  Classi valide: CE1, CE7.
+           Classi non valide: CE5.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>51</id>
+      <content>Test case  Login               Operatore     Data:
+   C01     dell'operatore mediante login   20/06/2003
+           corretta, password corretta e
+           la  coppia  (login, password)
+           presente nel S.I.O.
+                                           Versione:
+                                            0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Val_Ope necessarie   per  l'autenticazione   di   un
+           Operatore.
+Priorit…   Alta.
+Set up     La  coppia  ( login, password ) = (  rocoli,
+           virago ) Š registrata nel S.I.O.
+Descrizione test
+Input      Login: rocoli
+           Password: virago
+Oracolo    Il sistema consente l'accesso
+           all'Operatore.
+Copertura  Classi valide: CE1, CE2, CE6, CE7.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>52</id>
+      <content>Test case  Login    Operatore   mediante     Data:
+   C02     login  non  corretta  (numero   20/06/2003
+           inferiore  di  caratteri)   e
+           password    registrata    nel
+           S.I.O.
+                                           Versione:
+                                            0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Val_Ope necessarie   per  l'autenticazione   di   un
+           Operatore.
+Priorit…   Alta.
+Set up     La password virago Š registrata nel S.I.O.
+Descrizione test
+Input      Login: roc
+           Password: virago
+Oracolo    Input non valido: login.
+Copertura  Classi valide : CE7.
+           Classi non valide: CE3.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>53</id>
+      <content>Test case  Login    Operatore   mediante Data:
+   C03     login  non  corretta  (numero 20/06/2003
+           superiore  di  caratteri)   e
+           password    registrata    nel
+           S.I.O.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Val_Ope necessarie   per  l'autenticazione   di   un
+           Operatore.
+Priorit…   Alta.
+Set up     La password virago Š registrata nel S.I.O.
+Descrizione test
+Input      Login: roccoliveto
+           Password: virago
+Oracolo    Input non valido: login.
+Copertura  Classi valide: CE7.
+           Classi non valide: CE4.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>54</id>
+      <content>Test case  Login    Operatore   mediante Data:
+   C04     login registrata nel S.I.O  e 20/06/2003
+           password     non     corretta
+           (numero     inferiore      di
+           caratteri).
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Val_Ope necessarie   per  l'autenticazione   di   un
+           Operatore.
+Priorit…   Alta.
+Set up     La login rocoli Š registrata nel S.I.O.
+Descrizione test
+Input      Login: rocoli
+           Password: vir
+Oracolo    Input non valido: Password
+Copertura  Classi valide: CE2.
+           Classi non valide: CE8.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>55</id>
+      <content>Test case  Login    Operatore   mediante Data:
+   C05     login registrata nel S.I.O  e 20/06/2003
+           password     non     corretta
+           (numero     superiore      di
+           caratteri).
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Val_Ope necessarie   per  l'autenticazione   di   un
+           Operatore.
+Priorit…   Alta.
+Set up     La login rocoli Š registrata nel S.I.O.
+Descrizione test
+Input      Login: rocoli
+           Password: rocolivirago
+Oracolo    Input non valido: Password
+Copertura  Classi valide: CE2.
+           Classi non valide: CE9.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>56</id>
+      <content>Test case  Login    Operatore   mediante Data:
+   C06     login  registrata  nel  S.I.O 20/06/2003
+           e  password corretta  ma  non
+           registrata nel S.I.O.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Val_Ope necessarie   per  l'autenticazione   di   un
+           Operatore.
+Priorit…   Alta.
+Set up     La login rocoli Š registrata nel S.I.O.
+           La  password  rocco  non  Š  registrato  nel
+           S.I.O.
+Descrizione test
+Input      Login: rocoli
+           Password: rocco
+Oracolo    Il sistema non consente l'accesso al
+           paziente.
+Copertura  Classi valide: CE2.
+           Classi non valide: CE10.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>57</id>
+      <content>Test case  Login    Operatore   mediante Data:
+   C07     login    corretta   ma    non 20/06/2003
+           registrata   nel   S.I.O    e
+           password    registrata    nel
+           S.I.O.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Val_Ope necessarie   per  l'autenticazione   di   un
+           Operatore.
+Priorit…   Alta.
+Set up     La   login  oliveto  non  Š  registrata  nel
+           S.I.O.
+           La password virago Š registrata nel S.I.O.
+Descrizione test
+Input      Login: oliveto
+           Password: virago
+Oracolo    Il sistema non consente l'accesso al
+           paziente.
+Copertura  Classi valide: CE1,CE7.
+           Classi non valide: CE5.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>58</id>
+      <content>Test case  Validazione          Paziente Data:
+   C08     mediante    Hospital     Card 20/06/2003
+           corretta    (5    cifre)    e
+           presente nel S.I.O.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Val_Paz necessarie   per  l'autenticazione   di   un
+           Paziente.
+Priorit…   Alta.
+Set up     La   Hospital   Card   00001   deve   essere
+           registrata nel S.I.O.
+Descrizione test
+Input      Hospital Card: 00001
+Oracolo    L'Operatore accede alla sezione relativa al
+           paziente validato.
+Copertura  Classi valide: CE1, CE2.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>59</id>
+      <content>Test case  Validazione          Paziente Data:
+   C09     mediante  Hospital  Card  non 20/06/2003
+           corretta   (numero  inferiore
+           di cifre).
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Val_Paz necessarie   per  l'autenticazione   di   un
+           Paziente.
+Priorit…   Alta.
+Set up     Non identificato.
+Descrizione test
+Input      Hospital Card: 0000
+Oracolo    Input non valido.
+Copertura  Classi valide: Nessuna.
+           Classi non valide: CE3.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>60</id>
+      <content>Test case  Validazione          Paziente Data:
+   C10     mediante  Hospital  Card  non 20/06/2003
+           corretta   (numero  superiore
+           di cifre).
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Val_Paz necessarie   per  l'autenticazione   di   un
+           Paziente.
+Priorit…   Alta.
+Set up     Non identificato.
+Descrizione test
+Input      Hospital Card: 000000
+Oracolo    Input non valido.
+Copertura  Classi valide: Nessuna.
+           Classi non valide: CE4.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>61</id>
+      <content>Test case  Validazione          Paziente Data:
+   C11     mediante    Hospital     Card 20/06/2003
+           corretta  ma  non  registrata
+           nel S.I.O.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Val_Paz necessarie   per  l'autenticazione   di   un
+           Paziente.
+Priorit…   Alta.
+Set up     La Hospital Card 99999 non deve essere
+           registrata nel S.I.O.
+Descrizione test
+Input      Hospital Card: 99999
+Oracolo    Il   sistema  non  consente  l'accesso  alla
+           sezione relativa al Pazien-te.
+Copertura  Classi valide: CE1.
+           Classi non valide: CE5.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>62</id>
+      <content>Test case  Validazione          Paziente Data:
+   C12     mediante    codice    fiscale 20/06/2003
+           corretto    (16   cifre)    e
+           presente nel S.I.O.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Val_Paz necessarie   per  l'autenticazione   di   un
+           Paziente.
+Priorit…   Alta.
+Set up     Il   codice  fiscale  ZCCRCC80D13G942U  deve
+           essere registrato nel S.I.O.
+Descrizione test
+Input :    Codice fiscale: ZCCRCC80D13G942U
+Oracolo :  L'Operatore accede alla sezione relativa al
+           Paziente validato.
+Copertura  Classi valide: CE6.
+:          Classi non valide: CE7.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>63</id>
+      <content>Test case  Validazione          Paziente Data:
+   C13     mediante  codice fiscale  non 20/06/2003
+           corretto   (numero  inferiore
+           di cifre).
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Val_Paz necessarie   per  l'autenticazione   di   un
+           Paziente.
+Priorit…   Alta.
+Set up     Non identificate.
+Descrizione test
+Input      Codice fiscale : ZCCRCC80D
+Oracolo    Input non valido.
+Copertura  Classi valide: Nessuna.
+           Classi non valide: CE8.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>64</id>
+      <content>Test case  Validazione          Paziente Data:
+   C14     mediante  codice fiscale  non 20/06/2003
+           corretto   (numero  superiore
+           di  cifre)  ma  non  presente
+           nel S.I.O.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Val_Paz necessarie   per  l'autenticazione   di   un
+           Paziente.
+Priorit…   Alta.
+Set up     Non identificate.
+Descrizione test
+Input      Codice fiscale: ZCCRCC80D13G942UZCCRCC
+Oracolo    Input non valido.
+Copertura  Classi valide: Nessuna.
+           Classi non valide: CE9.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>65</id>
+      <content>Test case  Validazione          Paziente Data:
+   C15     mediante    codice    fiscale 20/06/2003
+           corretto  ma  non  registrato
+           nel S.I.O.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Val_Paz necessarie   per  l'autenticazione   di   un
+           Paziente.
+Priorit…   Alta.
+Set up     Il  codice fiscale RGANLL80C14H703E non deve
+           essere registrato nel S.I.O.
+Descrizione test
+Input      Codice fiscale: RGANLL80C14H703E
+Oracolo    Il   sistema  non  consente  l'accesso  alla
+           sezione relativa al Pazien-te.
+Copertura  Classi valide: CE6.
+           Classi non valide: CE10.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>66</id>
+      <content>Inserimento     dei      dati Data:
+Test case  anagrafici  di  un   Paziente 20/06/2003
+   C16     non   registrato  nel  S.I.O.
+           (codice  fiscale  corretto  e
+           non  registrato nel  S.I.O.).
+           I   dati  inseriti  sono  non
+           nulli.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Ins_Paz necessarie         per         l'inserimento
+           dell'anagrafica di un nuovo paziente.
+Priorit…   Media.
+Set up     Il  codice fiscale ZCCRCC80D13G942U non deve
+           essere registrato nel S.I.O.
+Descrizione test
+Input      Codice fiscale:  ZCCRCC80D13G942U
+           Nome: Rocco
+           Cognome: Zaccagnino
+           Sesso: M
+           Data nascita: 13/04/1980
+           Luogo di nascita: Potenza
+           Provincia di nascita: PZ
+           Indirizzo: fraz. Paoladoce, 26
+           Luogo di residenza: Avigliano
+           Provincia di residenza: PZ
+           CAP: 85020
+           Recapiti: 0971/87267 - 347/9908973
+Oracolo    Il sistema consente la registrazione dei
+           dati anagrafici.
+Copertura  Classi  valide:  CE1, CE3, CE5,  CE8,  CE10,
+           CE12,  CE14,  CE16, CE18, CE20, CE23,  CE24,
+           CE28
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>67</id>
+      <content>Test case  Inserimento     dei      dati Data:
+   C17     anagrafici  di  un   Paziente 20/06/2003
+           non   registrato  nel  S.I.O.
+           (codice  fiscale  corretto  e
+           non  registrato nel  S.I.O.).
+           I   dati  inseriti  sono  non
+           nulli ad eccezione del nome.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Ins_Paz necessarie         per         l'inserimento
+           dell'anagrafica di un nuovo paziente.
+Priorit…   Media.
+Set up     IL  codice fiscale ZCCRCC80D13G942U non deve
+           essere registrato nel S.I.O.
+Descrizione test
+Input      Codice fiscale:  ZCCRCC80D13G942U
+           Nome:
+           Cognome: Rocco
+           Sesso: M
+           Data nascita: 13/04/1980
+           Luogo di nascita: Potenza
+           Provincia di nascita: PZ
+           Indirizzo: fraz. Paoladoce, 26
+           Luogo di residenza: Avigliano
+           Provincia di residenza: PZ
+           CAP: 85020
+           Recapiti: 0971/87267 - 347/9908973
+Oracolo    Input non valido: Nome.
+Copertura  Classi  valide: CE3, CE5, CE8,  CE10,  CE12,
+           CE14, CE16, CE18, CE20, CE23, CE24, CE28.
+           Classi non valide: CE2.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>68</id>
+      <content>Test case  Inserimento     dei      dati Data:
+   C18     anagrafici  di  un   Paziente 20/06/2003
+           non   registrato  nel  S.I.O.
+           (codice  fiscale  corretto  e
+           non  registrato nel  S.I.O.).
+           I   dati  inseriti  sono  non
+           nulli   ad   eccezione    del
+           cognome.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Ins_Paz necessarie         per         l'inserimento
+           dell'anagrafica di un nuovo paziente.
+Priorit…   Media.
+Set up     IL  codice fiscale ZCCRCC80D13G942U non deve
+           essere registrato nel S.I.O.
+Descrizione test
+Input :    Codice fiscale:  ZCCRCC80D13G942U
+           Nome: Rocco
+           Cognome:
+           Sesso: M
+           Data nascita: 13/04/1980
+           Luogo di nascita: Potenza
+           Provincia di nascita: PZ
+           Indirizzo: fraz.Paoladoce, 26
+           Luogo di residenza: Avigliano
+           Provincia di residenza: PZ
+           CAP: 85020
+           Recapiti: 0971/87267 - 347/9908973
+Oracolo :  Input non valido: Cognome.
+Copertura  Classi  valide: CE1, CE5, CE8,  CE10,  CE12,
+:          CE14, CE16, CE18, CE20, CE23, CE24, CE28.
+           Classi non valide: CE4.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>69</id>
+      <content>Test case  Inserimento     dei      dati Data:
+   C19     anagrafici  di  un   Paziente 20/06/2003
+           non   registrato  nel  S.I.O.
+           (codice  fiscale  corretto  e
+           non  registrato nel  S.I.O.).
+           I   dati  inseriti  sono  non
+           nulli  ed  il campo  sesso  Š
+           non corretto.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Ins_Paz necessarie         per         l'inserimento
+           dell'anagrafica di un nuovo paziente.
+Priorit…   Media.
+Set up     IL  codice fiscale ZCCRCC80D13G942U non deve
+           essere registrato nel S.I.O.
+Descrizione test
+Input      Codice fiscale:  ZCCRCC80D13G942U
+           Nome: Rocco
+           Cognome: Zaccagnino
+           Sesso: B
+           Data nascita: 13/04/1980
+           Luogo di nascita: Potenza
+           Provincia di nascita: PZ
+           Indirizzo: fraz.Paoladoce, 26
+           Luogo di residenza: Avigliano
+           Provincia di residenza: PZ
+           CAP: 85020
+           Recapiti: 0971/87267 - 347/9908973
+Oracolo    Input non valido: Sesso.
+Copertura  Classi  valide: CE1, CE3, CE8,  CE10,  CE12,
+           CE14, CE16, CE18, CE20, CE23, CE24, CE28.
+           Classi non valide: CE7.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>70</id>
+      <content>Test case  Inserimento     dei      dati Data:
+   C20     anagrafici  di  un   Paziente 20/06/2003
+           non   registrato  nel  S.I.O.
+           (codice  fiscale  corretto  e
+           non  registrato nel  S.I.O.).
+           I   dati  inseriti  sono  non
+           nulli  ed  il campo  relativo
+           alla  data di nascita  non  Š
+           valido.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Ins_Paz necessarie         per         l'inserimento
+           dell'anagrafica di un nuovo paziente.
+Priorit…   Media.
+Set up     IL  codice fiscale ZCCRCC80D13G942U non deve
+           essere registrato nel S.I.O.
+Descrizione test
+Input      Codice fiscale:  ZCCRCC80D13G942U
+           Nome: Rocco
+           Cognome: Zaccagnino
+           Sesso: M
+           Data nascita: 55/66/7777
+           Luogo di nascita: Potenza
+           Provincia di nascita: PZ
+           Indirizzo: fraz.Paoladoce, 26
+           Luogo di residenza: Avigliano
+           Provincia di residenza: PZ
+           CAP: 85020
+           Recapiti: 0971/87267 - 347/9908973
+Oracolo    Input non valido: Data nascita.
+Copertura  Classi  valide: CE1, CE3, CE5,  CE10,  CE12,
+           CE14, CE16, CE18, CE20, CE23, CE24, CE28.
+           Classi non valide: CE9.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>71</id>
+      <content>Test case  Inserimento     dei      dati Data:
+   C21     anagrafici  di  un   Paziente 20/06/2003
+           non   registrato  nel  S.I.O.
+           (codice  fiscale  corretto  e
+           non  registrato nel  S.I.O.).
+           I   dati  inseriti  sono  non
+           nulli  ad eccezione del luogo
+           di nascita.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Ins_Paz necessarie         per         l'inserimento
+           dell'anagrafica di un nuovo paziente.
+Priorit…   Media.
+Set up     IL  codice fiscale ZCCVTN77D53G942U non deve
+           essere registrato nel S.I.O.
+Descrizione test
+Input      Codice fiscale:  ZCCVTN77D53G942U
+           Nome: Vitina
+           Cognome: Zaccagnino
+           Sesso: F
+           Data nascita: 13/04/1977
+           Luogo di nascita:
+           Provincia di nascita: PZ
+           Indirizzo: via La Frasca, 36
+           Luogo di residenza: Atella
+           Provincia di residenza: PZ
+           CAP: 85020
+           Recapiti: 0972/720897 - 340/9008171
+Oracolo    Input non valido: Luogo di nascita.
+Copertura  Classi  valide:  CE1, CE3, CE6,  CE8,  CE12,
+           CE14, CE16, CE18, CE20, CE23, CE24, CE28.
+           Classi non valide: CE11.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>72</id>
+      <content>Test case  Inserimento     dei      dati Data:
+   C22     anagrafici  di  un   Paziente 20/06/2003
+           non   registrato  nel  S.I.O.
+           (codice  fiscale  corretto  e
+           non  registrato nel  S.I.O.).
+           I   dati  inseriti  sono  non
+           nulli   ad  eccezione   della
+           provincia di nascita.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Ins_Paz necessarie         per         l'inserimento
+           dell'anagrafica di un nuovo paziente.
+Priorit…   Media.
+Set up     IL  codice fiscale ZCCRCC80D13G942U non deve
+           essere registrato nel S.I.O.
+Descrizione test
+Input      Codice fiscale:  ZCCRCC80D13G942U
+           Nome: Rocco
+           Cognome: Zaccagnino
+           Sesso: M
+           Data nascita: 13/04/1980
+           Luogo di nascita: Potenza
+           Provincia di nascita:
+           Indirizzo: fraz. Paoladoce, 26
+           Luogo di residenza: Avigliano
+           Provincia di residenza: PZ
+           CAP: 85020
+           Recapiti: 0971/87267 - 347/9908973
+Oracolo    Input non valido: Provincia di nascita.
+Copertura  Classi  valide:  CE1, CE3, CE5,  CE8,  CE10,
+           CE14, CE16, CE18, CE20, CE23, CE24, CE28.
+           Classi non valide: CE13.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>73</id>
+      <content>Test case  Inserimento     dei      dati Data:
+   C23     anagrafici  di  un   Paziente 20/06/2003
+           non   registrato  nel  S.I.O.
+           (codice  fiscale  corretto  e
+           non  registrato nel  S.I.O.).
+           I   dati  inseriti  sono  non
+           nulli       ad      eccezione
+           dell'indirizzo.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Ins_Paz necessarie         per         l'inserimento
+           dell'anagrafica di un nuovo paziente.
+Priorit…   Media.
+Set up     IL  codice fiscale ZCCRCC80D13G942U non deve
+           essere registrato nel S.I.O.
+Descrizione test
+Input      Codice fiscale:  ZCCRCC80D13G942U
+           Nome: Rocco
+           Cognome: Zaccagnino
+           Sesso: M
+           Data nascita: 13/04/1980
+           Luogo di nascita: Potenza
+           Provincia di nascita: PZ
+           Indirizzo:
+           Luogo di residenza: Avigliano
+           Provincia di residenza: PZ
+           CAP: 85020
+           Recapiti: 0971/87267 - 347/9908973
+Oracolo    Input non valido: Indirizzo.
+Copertura  Classi  valide:  CE1, CE3, CE5,  CE8,  CE10,
+           CE12, CE16, CE18, CE20, CE23, CE24, CE28.
+           Classi non valide: CE15.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>74</id>
+      <content>Test case  Inserimento     dei      dati Data:
+   C24     anagrafici  di  un   Paziente 20/06/2003
+           non   registrato  nel  S.I.O.
+           (codice  fiscale  corretto  e
+           non  registrato nel  S.I.O.).
+           I   dati  inseriti  sono  non
+           nulli  ad eccezione del luogo
+           di residenza.
+                                         Versione:
+                                         0.02.000
+                                         
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Ins_Paz necessarie         per         l'inserimento
+           dell'anagrafica di un nuovo paziente.
+Priorit…   Media.
+Set up     IL  codice fiscale ZCCRCC80D13G942U non deve
+           essere registrato nel S.I.O.
+Descrizione test
+Input      Codice fiscale:  ZCCRCC80D13G942U
+           Nome: Rocco
+           Cognome: Zaccagnino
+           Sesso: M
+           Data nascita: 13/04/1980
+           Luogo di nascita: Potenza
+           Provincia di nascita: PZ
+           Indirizzo: fraz.Paoladoce, 26
+           Luogo di residenza:
+           Provincia di residenza: PZ
+           CAP: 85020
+           Recapiti: 0971/87267 - 347/9908973
+Oracolo    Input non valido: Luogo di residenza.
+Copertura  Classi valide: CE1, CE3, CE5, CE8, CE10,
+           CE12, CE14, CE18, CE20, CE23, CE24, CE28.
+           Classi non valide: CE17.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>75</id>
+      <content>Test case  Inserimento     dei      dati Data:
+   C25     anagrafici  di  un   Paziente 20/06/2003
+           non   registrato  nel  S.I.O.
+           (codice  fiscale  corretto  e
+           non  registrato nel  S.I.O.).
+           I   dati  inseriti  sono  non
+           nulli   ad  eccezione   della
+           provincia di residenza.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Ins_Paz necessarie         per         l'inserimento
+           dell'anagrafica di un nuovo paziente.
+Priorit…   Media.
+Set up     IL  codice fiscale ZCCRCC80D13G942U non deve
+           essere registrato nel S.I.O.
+Descrizione test
+Input      Codice fiscale:  ZCCRCC80D13G942U
+           Nome: Rocco
+           Cognome: Zaccagnino
+           Sesso: M
+           Data nascita: 13/04/1980
+           Luogo di nascita: Potenza
+           Indirizzo: fraz.Paoladoce, 26
+           Provincia di nascita: PZ
+           Luogo di residenza: Avigliano
+           Provincia di residenza:
+           CAP: 85020
+           Recapiti: 0971/87267 - 347/9908973
+Oracolo    Input non valido: Provincia di residenza.
+Copertura  Classi  valide:  CE1, CE3, CE5,  CE8,  CE10,
+           CE12, CE14, CE16, CE20, CE23, CE24, CE28 .
+           Classi non valide: CE19.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>76</id>
+      <content>Test case  Inserimento     dei      dati Data:
+   C26     anagrafici  di  un   Paziente 20/06/2003
+           non   registrato  nel  S.I.O.
+           (codice  fiscale  corretto  e
+           non  registrato nel  S.I.O.).
+           I   dati  inseriti  sono  non
+           nulli   e  CAP  non  corretto
+           (numero inferiore di cifre).
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Ins_Paz necessarie         per         l'inserimento
+           dell'anagrafica di un nuovo paziente.
+Priorit…   Media.
+Set up     IL  codice fiscale ZCCRCC80D13G942U non deve
+           essere registrato nel S.I.O.
+Descrizione test
+Input      Codice fiscale:  ZCCRCC80D13G942U
+           Nome: Rocco
+           Cognome: Zaccagnino
+           Sesso: M
+           Data nascita: 13/04/1980
+           Luogo di nascita: Potenza
+           Provincia di nascita: PZ
+           Indirizzo: fraz.Paoladoce, 26
+           Luogo di residenza: Avigliano
+           Provincia di residenza: PZ
+           CAP: 850
+           Recapiti: 0971/87267 - 347/9908973
+Oracolo    Input non valido: CAP.
+Copertura  Classi  valide:  CE1, CE3, CE5,  CE8,  CE10,
+           CE12, CE14, CE16, CE18, CE23, CE24, CE28.
+           Classi valide: CE21.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>77</id>
+      <content>Test case  Inserimento     dei      dati Data:
+   C27     anagrafici  di  un   Paziente 20/06/2003
+           non   registrato  nel  S.I.O.
+           (codice  fiscale  corretto  e
+           non  registrato nel  S.I.O.).
+           I   dati  inseriti  sono  non
+           nulli   e  CAP  non  corretto
+           (numero superiore di cifre).
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Ins_Paz necessarie         per         l'inserimento
+           dell'anagrafica di un nuovo paziente.
+Priorit…   Media.
+Set up     IL  codice fiscale ZCCRCC80D13G942U non deve
+           essere registrato nel S.I.O.
+Descrizione test
+Input      Codice fiscale:  ZCCRCC80D13G942U
+           Nome: Rocco
+           Cognome: Zaccagnino
+           Sesso: M
+           Data nascita: 13/04/1980
+           Luogo di nascita: Potenza
+           Provincia di nascita: PZ
+           Indirizzo: fraz. Paoladoce, 26
+           Luogo di residenza: Avigliano
+           Provincia di residenza: PZ
+           CAP: 8500000000000000
+           Recapiti: 0971/87267 - 347/9908973
+Oracolo    Input non valido: CAP.
+Copertura  Classi  valide:  CE1, CE3, CE5,  CE8,  CE10,
+           CE12, CE14, CE16, CE18, CE23, CE24, CE28.
+           Classi non valide: CE22.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>78</id>
+      <content>Test case  Inserimento     dei      dati Data:
+   C28     anagrafici di un Paziente.  I 20/06/2003
+           dati  inseriti sono non nulli
+           e  il  codice fiscale  Š  non
+           corretto   (numero  inferiore
+           di caratteri).
+                                         Versione:
+                                         0.02.000
+                                         
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Ins_Paz necessarie         per         l'inserimento
+           dell'anagrafica di un nuovo paziente.
+Priorit…   Media.
+Set up     Non identificato.
+Descrizione test
+Input      Codice fiscale:  ZCCRCC
+           Nome: Rocco
+           Cognome: Zaccagnino
+           Sesso: M
+           Data nascita: 13/04/1980
+           Luogo di nascita: Potenza
+           Provincia di nascita: PZ
+           Indirizzo:  fraz. Paoladoce, 26
+           Luogo di residenza: Avigliano
+           Provincia di residenza: PZ
+           CAP: 85020
+           Recapiti: 0971/87267 - 347/9908973
+Oracolo    Input non valido: Codice fiscale.
+Copertura  Classi  valide:  CE1, CE3, CE5,  CE8,  CE10,
+           CE12, CE14, CE16, CE18, CE20, CE28.
+           Classi non valide: CE25.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>79</id>
+      <content>Test case  Inserimento     dei      dati Data:
+   C29     anagrafici di un paziente.  I 20/06/2003
+           dati  inseriti sono non nulli
+           e  il  codice fiscale  Š  non
+           corretto   (numero  superiore
+           di caratteri).
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Ins_Paz necessarie         per         l'inserimento
+           dell'anagrafica di un nuovo paziente.
+Priorit…   Media.
+Set up     Non identificato.
+Descrizione test
+Input      Codice fiscale:
+           ZCCRCC80D13G942UZCCRCCCCCCCCC
+           Nome: Rocco
+           Cognome: Zaccagnino
+           Sesso: M
+           Data nascita: 13/04/1980
+           Luogo di nascita: Potenza
+           Provincia di nascita: PZ
+           Indirizzo: fraz. Paoladoce, 26
+           Luogo di residenza: Avigliano
+           Provincia di residenza: PZ
+           CAP: 85020
+           Recapiti: 0971/87267 - 347/9908973
+Oracolo :  Input non valido: Codice fiscale.
+Copertura  Classi  valide:  CE1, CE3, CE5,  CE8,  CE10,
+:          CE12, CE14, CE16, CE18, CE20, CE 28.
+           Classi non valide: CE26.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>80</id>
+      <content>Test case  Inserimento     dei      dati Data:
+   C30     anagrafici  di  un   paziente 20/06/2003
+           gi…   registrato  all'interno
+           del  S.I.O.. I dati  inseriti
+           sono non nulli.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Si    occupa   di   eseguire   le   funzioni
+Uc_Ins_Paz necessarie         per         l'inserimento
+           dell'anagrafica di un nuovo paziente.
+Priorit…   Media.
+Set up     Il  codice  fiscale   RGANLL80C14H703E  deve
+           essere registrato nel S.I.O.
+Descrizione test
+Input      Codice fiscale:  RGANLL80C14H703E
+           Nome: Aniello
+           Cognome: Rago
+           Sesso: M
+           Data nascita: 14/03/1980
+           Luogo di nascita: Salerno
+           Provincia di nascita: SA
+           Indirizzo: via Francesco De Sanctis, 18
+           Luogo di residenza: Antessano
+           Provincia di residenza: SA
+           CAP: 84021
+           Recapiti: 089/951257-339/3166793
+Oracolo :  Paziente  gi…  registrato.  Il  sistema  non
+           consente   la   memorizzazione   dei    dati
+           anagrafici.
+Copertura  Classi  valide:  CE1, CE3, CE5,  CE8,  CE10,
+:          CE12, CE14, CE16, CE18, CE20, CE28.
+           Classi non valide: CE27.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>81</id>
+      <content>Test case  Prenotazione  di  una   Prima Data:
+   C31     visita   effettuata   da   un 20/06/2003
+           nuovo                paziente
+           dell'ambulatorio.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa la richiesta di prenotazione di  un
+Uc_Pre_Vis servizio  ambulatoriale  presentata  da   un
+           paziente.
+Priorit…   Alta.
+Set up     Non ci sono prenotazioni effettuate.
+Descrizione test
+Input      Tipo visita selezionata: Prima visita
+Oracolo    Il sistema consente la prenotazione della
+           visita.
+Copertura  Classi valide: CE1, CE5.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>82</id>
+      <content>Test case  Prenotazione  di  una   Prima Data:
+   C32     visita  preceduta da un'altra 20/06/2003
+           Prima visita.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa la richiesta di prenotazione di  un
+Uc_Pre_Vis servizio  ambulatoriale  presentata  da   un
+           paziente.
+Priorit…   Alta.
+Set up     L'ultima prenotazione effettuata Š:
+               24/09/2003 ore 09.00 - Prima visita
+Descrizione test
+Input      Tipo visita selezionata: Prima visita
+Oracolo    Sequenza   non   valida.  Il   sistema   non
+           consente la prenotazione della visita.
+Copertura  Classi valide: CE1, CE6.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>83</id>
+      <content>Test case  Prenotazione  di  una   Prima Data:
+   C33     visita  preceduta da  un  Day 20/06/2003
+           Hospital.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa la richiesta di prenotazione di  un
+Uc_Pre_Vis servizio  ambulatoriale  presentata  da   un
+           paziente.
+Priorit…   Alta.
+Set up     L'ultima prenotazione effettuata Š:
+               25/09/2003 ore 08.00 - Day Hospital
+Descrizione test
+Input      Tipo visita selezionata: Prima visita.
+Oracolo    Sequenza   non   valida.  Il   sistema   non
+           consente la prenotazione della visita.
+Copertura  Classi valide: CE1, CE7.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>84</id>
+      <content>Test case  Prenotazione  di  una   Prima Data:
+   C34     visita   preceduta   da   una 20/06/2003
+           Visita di controllo.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa la richiesta di prenotazione di  un
+Uc_Pre_Vis servizio  ambulatoriale  presentata  da   un
+           paziente.
+Priorit…   Media.
+Set up     L'ultima prenotazione effettuata Š:
+           30/09/2003 ore 10.30 - Visita  di controllo
+Descrizione test
+Input      Tipo visita selezionata: Prima visita.
+Oracolo    Sequenza   non   valida.  Il   sistema   non
+           consente la prenotazione della visita.
+Copertura  Classi valide: CE1, CE8.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>85</id>
+      <content>Test case  Prenotazione   di   un    Day Data:
+   C35     Hospital  preceduto  da   una 20/06/2003
+           Prima visita.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa la richiesta di prenotazione di  un
+Uc_Pre_Vis servizio  ambulatoriale  presentata  da   un
+           paziente.
+Priorit…   Alta.
+Set up     L'ultima prenotazione effettuata Š:
+               26/09/2003 ore 11.00 - Prima visita
+Descrizione test
+Input      Tipo visita selezionata: Day Hospital.
+Oracolo    Il sistema consente la prenotazione della
+           visita.
+Copertura  Classi valide: CE2, CE6.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>86</id>
+      <content>Test case  Prenotazione   di   un    Day Data:
+   C36     Hospital  preceduto  da   una 20/06/2003
+           Visita di controllo.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa la richiesta di prenotazione di  un
+Uc_Pre_Vis servizio  ambulatoriale  presentata  da   un
+           paziente.
+Priorit…   Alta.
+Set up     L'ultima prenotazione effettuata Š:
+            02/10/2003 ore 09.00 - Visita di controllo
+Descrizione test
+Input      Tipo visita selezionata: Day Hospital.
+Oracolo    Il sistema consente la prenotazione della
+           visita.
+Copertura  Classi valide: CE2, CE8.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>87</id>
+      <content>Test case  Prenotazione   di   un    Day Data:
+   C37     Hospital  preceduto   da   un 20/06/2003
+           altro Day Hospital.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa la richiesta di prenotazione di  un
+Uc_Pre_Vis servizio  ambulatoriale  presentata  da   un
+           paziente.
+Priorit…   Alta.
+Set up     L'ultima prenotazione effettuata Š:
+               03/10/2003 ore 08.00 - Day Hospital
+Descrizione test
+Input      Tipo visita selezionata : Day Hospital.
+Oracolo    Sequenza   non   valida.  Il   sistema   non
+           consente la prenotazione della visita.
+Copertura  Classi valide: CE2, CE7.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>88</id>
+      <content>Test case  Prenotazione   di   un    Day Data:
+   C38     Hospital  effettuata  da   un 20/06/2003
+           nuovo paziente.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa la richiesta di prenotazione di  un
+Uc_Pre_Vis servizio  ambulatoriale  presentata  da   un
+           paziente.
+Priorit…   Alta.
+Set up     Non ci sono prenotazioni precedenti.
+Descrizione test
+Input      Tipo visita selezionata: Day Hospital.
+Oracolo    Sequenza   non   valida.  Il   sistema   non
+           consente la prenotazione della visita.
+Copertura  Classi valide: CE2, CE5.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>89</id>
+      <content>Test case  Prenotazione  di  una  Visita Data:
+   C39     di  controllo  effettuata  da 20/06/2003
+           un nuovo paziente.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa la richiesta di prenotazione di  un
+Uc_Pre_Vis servizio  ambulatoriale  presentata  da   un
+           paziente.
+Priorit…   Alta.
+Set up     Non ci sono prenotazioni precedenti.
+Descrizione test
+Input      Tipo visita selezionata: Visita di
+           controllo.
+Oracolo    Sequenza   non   valida.  Il   sistema   non
+           consente la prenotazione della visita.
+Copertura  Classi valide: CE3, CE5.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>90</id>
+      <content>Test case  Prenotazione  di  una  Visita Data:
+   C40     di  controllo   preceduta  da 20/06/2003
+           un Day Hospital.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa la richiesta di prenotazione di  un
+Uc_Pre_Vis servizio  ambulatoriale  presentata  da   un
+           paziente.
+Priorit…   Alta.
+Set up     L'ultima prenotazione effettuata Š:
+               03/10/2003 ore 08.00 - Day Hospital
+Descrizione test
+Input      Tipo visita selezionata : Visita di
+           controllo.
+Oracolo    Il sistema consente la prenotazione della
+           visita.
+Copertura  Classi valide: CE3, CE7.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>91</id>
+      <content>Test case  Prenotazione  di  una  Visita Data:
+   C41     di  controllo   preceduta  da 20/06/2003
+           un'altra      Visita       di
+           controllo.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa la richiesta di prenotazione di  un
+Uc_Pre_Vis servizio  ambulatoriale  presentata  da   un
+           paziente.
+Priorit…   Media.
+Set up     L'ultima prenotazione effettuata Š:
+            06/10/2003 ore 12.00 - Visita di controllo
+Descrizione test
+Input      Tipo visita selezionata: Visita di
+           controllo.
+Oracolo    Il sistema consente la prenotazione della
+           visita.
+Copertura  Classi valide: CE3, CE8.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>92</id>
+      <content>Test case  Prenotazione  di  una  Visita Data:
+   C42     di  controllo   preceduta  da 20/06/2003
+           una Prima visita.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa la richiesta di prenotazione di  un
+Uc_Pre_Vis servizio  ambulatoriale  presentata  da   un
+           paziente.
+Priorit…   Media.
+Set up     L'ultima prenotazione effettuata Š:
+               03/09/2003 ore 09.00 - Prima visita
+Descrizione test
+Input      Tipo visita selezionata: Visita di
+           controllo.
+Oracolo    Sequenza   non   valida.  Il   sistema   non
+           consente la prenotazione della visita.
+Copertura  Classi valide: CE3, CE6.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>93</id>
+      <content>Test case  Prenotazione di  un  tipo  di Data:
+   C43     visita      non      previsto 20/06/2003
+           preceduto  da una  Visita  di
+           controllo.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa la richiesta di prenotazione di  un
+Uc_Pre_Vis servizio  ambulatoriale  presentata  da   un
+           paziente.
+Priorit…   Media.
+Set up     L'ultima prenotazione effettuata Š:
+            07/10/2003 ore 10.00 - Visita di controllo
+Descrizione test
+Input      Tipo visita selezionata : NP.
+Oracolo    Input non valido.
+Copertura  Classi valide: CE8.
+           Classi non valide: CE4.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>94</id>
+      <content>Test case  Annullamento di una Prima     Data:
+   C44     visita.                       20/06/2003
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa  la  richiesta di  annullamento  di
+Uc_Ann_Pre una     prenotazione    di    un    servizio
+           ambulatoriale presentata da un paziente.
+Priorit…   Alta.
+Set up     Non ci sono prenotazioni precedenti e
+           prenotazioni successive.
+Descrizione test
+Input      Visita selezionata:
+               03/09/2003 ore 09.00 - Prima visita
+Oracolo    Il   sistema  elimina  la  prenotazione   ed
+           elimina il paziente dal S.I.O.
+Copertura  Classi valide: CE1, CE6, CE10.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>95</id>
+      <content>Test case  Annullamento   di   un    Day Data:
+   C45     Hospital che segue una  Prima 20/06/2003
+           visita   e   che  rappresenta
+           l'ultima         prenotazione
+           effettuata.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa  la  richiesta di  annullamento  di
+Uc_Ann_Pre una     prenotazione    di    un    servizio
+           ambulatoriale presentata da un paziente.
+Priorit…   Alta.
+Set up     La prenotazione precedente Š:
+               26/09/2003  ore 11.00 - Prima visita
+           Non ci sono prenotazioni successive a
+           quella selezionata.
+Descrizione test
+Input      Visita selezionata :
+           30/09/2003 ore 08.00 - Day Hospital
+Oracolo    Il sistema elimina la prenotazione
+           selezionata.
+Copertura  Classi valide: CE2, CE7, CE10.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>96</id>
+      <content>Test case  Annullamento  di  una  Visita Data:
+   C46     di  controllo  che  segue  un 20/06/2003
+           Day   Hospital  e   che  rap-
+           presenta             l'ultima
+           prenotazione effettuata.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa  la  richiesta di  annullamento  di
+Uc_Ann_Pre una     prenotazione    di    un    servizio
+           ambulatoriale presentata da un paziente.
+Priorit…   Alta.
+Set up     La prenotazione precedente Š:
+               29/09/2003 ore 08.00 - Day Hospital
+           Non   ci  sono  prenotazioni  successive   a
+           quella selezionata.
+Descrizione test
+Input      Visita selezionata:
+            30/09/2003 ore 09.00 - Visita di controllo
+Oracolo    Il sistema elimina la prenotazione
+           selezionata.
+Copertura  Classi valide: CE3, CE8, CE10.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>97</id>
+      <content>Test case  Annullamento   di   un    Day Data:
+   C47     Hospital che segue una  Prima 20/06/2003
+           visita  e precede una  Visita
+           di Controllo.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa  la  richiesta di  annullamento  di
+Uc_Ann_Pre una     prenotazione    di    un    servizio
+           ambulatoriale presentata da un paziente.
+Priorit…   Alta.
+Set up     La prenotazione precedente Š:
+               26/09/2003 ore 11.00 - Prima visita
+           La prenotazione successiva Š:
+             30/09/2003 ore 09.00 - Visita Controllo
+Descrizione test
+Input      Visita selezionata:
+               29/09/2003 ore 08.00 - Day Hospital
+Oracolo    Sequenza   non   valida.  Il   sistema   non
+           consente l'annullamento della prenotazione.
+Copertura  Classi valide: CE2, CE7, CE13.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>98</id>
+      <content>Test case  Annullamento  di  una  Visita Data:
+   C48     di  controllo  che  segue  un 20/06/2003
+           Day  Hospital  e  precede  un
+           altro Day Hospital.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa  la  richiesta di  annullamento  di
+Uc_Ann_Pre una     prenotazione    di    un    servizio
+           ambulatoriale presentata da un paziente.
+Priorit…   Media.
+Set up     La prenotazione precedente Š:
+               29/03/2003 ore 08.00 - Day Hospital
+           La prenotazione successiva Š:
+               01/10/2003 ore 08.00 - Day Hospital
+Descrizione test
+Input      Visita selezionata:
+             30/09/2003 ore 09.00 - Visita controllo
+Oracolo    Sequenza   non   valida.  Il   sistema   non
+           consente l'annullamento della prenotazione.
+Copertura  Classi valide: CE3, CE8, CE12.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>99</id>
+      <content>Test case  Annullamento  di  un   Visita Data:
+   C49     di  controllo  che  segue  un 20/06/2003
+           Day  Hospital e  precede  una
+           Visita di controllo.
+                                         Versione:
+                                         0.02.000
+Caso d'uso Soddisfa  la  richiesta di  annullamento  di
+Uc_Ann_Pre una     prenotazione    di    un    servizio
+           ambulatoriale presentata da un paziente.
+Priorit…   Alta.
+Set up     La prenotazione precedente Š:
+               29/03/2003 ore 08.00 - Day Hospital
+           La prenotazione successiva Š:
+             02/10/2003 ore 09.00 - Visita Controllo
+Descrizione test
+Input      Visita selezionata:
+           30/09/2003 ore 12.00 - Visita  di controllo
+Oracolo    Il sistema elimina la prenotazione
+           selezionata.
+Copertura  Classi valide: CE3, CE8, CE13.
+           Classi non valide: Nessuna.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

@@ -1,0 +1,11 @@
+org.mozilla.javascript.Parser.primaryExpr
+org.mozilla.javascript.ScriptRuntime.getElemFunctionAndThis
+org.mozilla.javascript.TokenStream.stringToKeyword
+org.mozilla.javascript.ScriptRuntime.getValueFunctionAndThis
+org.mozilla.javascript.Decompiler.decompile
+org.mozilla.javascript.ScriptRuntime.getPropFunctionAndThis
+org.mozilla.javascript.ScriptRuntime.lastStoredScriptable
+org.mozilla.javascript.ScriptRuntime.storeScriptable
+org.mozilla.javascript.ScriptRuntime.getNameFunctionAndThis
+org.mozilla.javascript.Token.name
+org.mozilla.javascript.Interpreter.visitExpression

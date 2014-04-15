@@ -1,0 +1,2 @@
+org.mozilla.javascript.ScriptRuntime.initStandardObjects
+org.mozilla.javascript.ScriptRuntime.getGlobal

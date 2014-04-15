@@ -1,0 +1,47 @@
+Report visits 
+It allows the operator to have a 
+                 record visits 
+                 of the outpatient inside so 
+                 have a total of visits 
+                 made by a patient visits 
+                 supported by a doctor etc 
+                 The Operator's interest to have a 
+                 report of visits 
+                 within of the outpatient 
+The Operator has been recognized by ` 
+                 System (See UcValOp) 
+The operator activates the execution of 
+                 service record visits 
+1 View the mask 
+     for viewing 
+     the reporting of 
+     visits 
+2 Select the time gap
+3 Select the type of 
+                                Information summary 
+4 Confirm selection 
+5 Access to the database and 
+     found in the 
+     training required 
+6 View 
+     information obtained 
+Operator decides to print 
+information 
+   6 1 Start printing information 
+          displayed 
+   6 2 generates the report and sends it to 
+          Printer 
+Operator cancels the operation 
+   4 1 ends the use case with failure 
+   The Operator 3 1 can access the following 
+          summary information: 
+           all visits with 
+             On the patient undergoes a doctor visit 
+             who led the visit; 
+           all visits made by the same 
+          doctor with the dates of patients 
+          visited the examinations required; 
+           all visits made by a patient 
+          with the dates of doctor 
+          accused of diagnostic pathology examinations 
+          and medicines prescribed

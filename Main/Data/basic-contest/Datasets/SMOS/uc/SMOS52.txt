@@ -1,0 +1,11 @@
+Nome: Ricerca EntitaAttori: Amministratore
+Descrizione: Consente all'amministratore di ricercare nel sistema tutte le entità caratterizzate dalle keywords inserite
+Precondizioni:
+•	L'utente è loggato al sistema come amministrator •	L'utente inserisce il testo da cercare e clicca sul pulsante “Ricerca”
+Sequenza degli eventi
+Utente
+Sistema
+1	. Visualizza	l'elenco	delle	entità correlate alla keywords ricercate; in particolare vengono mostrate in una lista attiva: Classi, Insegnamenti, Indirizzi, Utenti trovati.
+Postcondizioni:
+• L’utente sta visualizzando una lista attiva di entità corrispondenti alle keyword inserite.
+•	L'utente interrompe l'operazione •	Connessione al server SMOS interrotta

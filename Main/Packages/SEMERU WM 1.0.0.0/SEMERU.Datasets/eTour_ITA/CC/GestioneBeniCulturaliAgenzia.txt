@@ -1,0 +1,236 @@
+package unisa.gps.etour.control. Gestione Beni Culturali;
+
+import java.rmi. Remote Exception;
+import java.sql. S Q L Exception;
+import java.util. Array List;
+import unisa.gps.etour.bean. Bean Bene Culturale;
+import unisa.gps.etour.bean. Bean Tag;
+import unisa.gps.etour.bean. Bean Visita B C;
+import unisa.gps.etour.util. Messaggi Errore;
+
+/**
+ *  Classe di gestione di beni culturali peculiare per  Agenzia
+ *
+ * @author  De  Simone  Michelangelo
+ * @version  . 
+ * 
+ *  &#   ;      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I -  University of  Salerno
+ */
+public class  Gestione Beni Culturali Agenzia extends  Gestione Beni Culturali Comune
+		implements  I Gestione Beni Culturali Agenzia
+{
+	/*
+	 *  Costruttore di classe, richiama ed inizializza la classe di gestione comune
+	 */
+	public  Gestione Beni Culturali Agenzia() throws  Remote Exception
+	{
+		super();
+	}
+	
+	/*
+	 *  Implementa il metodo per l'eliminazione dal sistema di un bene culturale.
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Beni Culturali. I Gestione Beni Culturali Agenzia#cancella Bene Culturale(int)
+	 */
+	public boolean cancella Bene Culturale(int p Bene Culturale I D)
+			throws  Remote Exception
+	{
+		if (! Controllo Beni Culturali.controlla Id Bene Culturale(p Bene Culturale I D))
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D A T I);
+		
+		try
+		{
+			return (dbbc.cancella Bene Culturale(p Bene Culturale I D));
+		}
+		catch ( S Q L Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+		catch ( Exception e)
+		{
+			throw new   Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+		}
+	}
+	
+	/*
+	 *  Implementa il metodo per l'inserimento di un nuovo bene culturale.
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Beni Culturali. I Gestione Beni Culturali Agenzia#inserisci Bene Culturale(unisa.gps.etour.bean. Bean Bene Culturale)
+	 */
+	public boolean inserisci Bene Culturale( Bean Bene Culturale p Bene Culturale)
+			throws  Remote Exception
+	{
+		if (! Controllo Beni Culturali.controlla Dati Bene Culturale(p Bene Culturale))
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ F O R M A T O_ B E A N);
+		
+		try
+		{
+			return (dbbc.inserisci Bene Culturale(p Bene Culturale));
+		}
+		catch ( S Q L Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+		catch ( Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+		}
+	}
+	
+	/*
+	 *  Implementa il metodo per l'ottenimento di tutti i beni culturali attualmente presenti nel sistema.
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Beni Culturali. I Gestione Beni Culturali Agenzia#ottieni Beni Culturali()
+	 */
+	public  Array List< Bean Bene Culturale> ottieni Beni Culturali() throws  Remote Exception
+	{
+		try
+		{
+			return (dbbc.ottieni Lista B C());
+		}
+		catch ( S Q L Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+		catch ( Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+		}
+	}
+
+	/*
+	 *  Implementa il metodo per la modifica di un bene culturale presente nel sistema.
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Beni Culturali. I Gestione Beni Culturali Agenzia#modifica Bene Culturale(unisa.gps.etour.bean. Bean Bene Culturale)
+	 */
+	public boolean modifica Bene Culturale( Bean Bene Culturale p Bene Culturale)
+			throws  Remote Exception
+	{
+		if (! Controllo Beni Culturali.controlla Dati Bene Culturale(p Bene Culturale))
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ F O R M A T O_ B E A N);
+
+		try
+		{
+			return (dbbc.modifica Bene Culturale(p Bene Culturale));
+		}
+		catch ( S Q L Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+		catch ( Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+		}
+	}
+
+	/*
+	 *  Implementa il metodo per l'aggiunta di un tag ad un bene culturale.
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Beni Culturali. I Gestione Beni Culturali Agenzia#aggiungi Tag Bene Culturale(int, int)
+	 */
+	public boolean aggiungi Tag Bene Culturale(int p Bene Culturale I D, int p Tag I D) throws  Remote Exception
+	{
+		if (! Controllo Beni Culturali.controlla Id Bene Culturale(p Bene Culturale I D) || !(p Tag I D >  ))
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D A T I);
+
+		/*
+		 *  Questo segmento di codice controlla che effettivamente il bene culturale speficato
+		 * abbia il tag definito.
+		 */
+		
+		/*
+		 *  Ottengo tutti i tag per il bene culturale passato per parametro
+		 */ 
+		 Array List< Bean Tag> temp Tag = null;
+
+		boolean contiene Tag = false;
+
+		try
+		{
+			temp Tag = dtag .ottieni Tag Bene Culturale(p Bene Culturale I D);
+		}
+		catch ( S Q L Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+
+		/*
+		 *  Qui si itera alla ricerca del tag che speficato, se lo si trova si imposta una sentinella
+		 * in modo da non aggiungere un tag due volte allo stesso bene culturale.
+		 */
+		for ( Bean Tag t: temp Tag)
+			if (t.get Id() == p Tag I D)
+				contiene Tag = true;
+		
+		if (!contiene Tag)
+			try
+			{
+				return (dtag .aggiunge Tag Bene Culturale(p Bene Culturale I D, p Tag I D));
+			}
+			catch ( S Q L Exception e)
+			{
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+			}
+			catch ( Exception e)
+			{
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+			}
+		
+		return false;
+	}
+
+	/*
+	 *  Implementa il metodo per la rimozione di un tag da un bene culturale.
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Beni Culturali. I Gestione Beni Culturali Agenzia#rimuovi Tag Bene Culturale(int, int)
+	 */
+	public boolean rimuovi Tag Bene Culturale(int p Bene Culturale I D, int p Tag I D) throws  Remote Exception
+	{
+		if (! Controllo Beni Culturali.controlla Id Bene Culturale(p Bene Culturale I D) || !(p Tag I D >  ))
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D A T I);
+
+		/*
+		 *  Questo segmento di codice controlla che effettivamente il bene culturale speficato
+		 * abbia il tag specificato.
+		 */
+		
+		/*
+		 *  Ottengo tutti i tag per il bene culturale passato per parametro
+		 */ 
+		 Array List< Bean Tag> temp Tag = null;
+
+		try
+		{
+			temp Tag = dtag .ottieni Tag Bene Culturale(p Bene Culturale I D);
+		}
+		catch ( S Q L Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+
+		/*
+		 *  Qui si itera alla ricerca del tag che speficato, se lo si trova si effettua l'operazione
+		 * di rimozione del tag e si restituisce il controllo
+		 */
+		for ( Bean Tag t: temp Tag)
+		{
+			if (t.get Id() == p Tag I D)
+			{
+				try
+				{
+					return (dtag .cancella Tag Bene Culturale(p Bene Culturale I D, p Tag I D));
+				}
+				catch ( S Q L Exception e)
+				{
+					throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+				}
+				catch ( Exception e)
+				{
+					throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+				}
+			}
+		}
+		
+		return false;
+	}
+}

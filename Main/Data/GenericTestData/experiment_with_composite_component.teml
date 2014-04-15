@@ -1,0 +1,68 @@
+﻿<graph>
+  <References />
+  <ExperimentInfo>
+    <Version>2</Version>
+    <Id>f55324d7-a729-49ae-a2f0-fba2a7a709d1</Id>
+    <Name>Experiment with Composite Component</Name>
+    <LayoutName>EfficientSugiyama</LayoutName>
+  </ExperimentInfo>
+  <node id="Start">
+    <SerializedVertexData Version="1" X="200" Y="100">
+      <Metadata type="TraceLab.Core.Components.StartNodeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Start" />
+    </SerializedVertexData>
+  </node>
+  <node id="End">
+    <SerializedVertexData Version="1" X="200" Y="215">
+      <Metadata type="TraceLab.Core.Components.EndNodeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="End" />
+    </SerializedVertexData>
+  </node>
+  <node id="46b30cf2-28e8-40ef-8fae-797255c09dc3">
+    <SerializedVertexData Version="1" X="201" Y="160">
+      <Metadata type="TraceLab.Core.Components.CompositeComponentMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Composite Component" ComponentMetadataDefinitionID="364eff30-25e6-4fe9-a6d1-db54fc6d9b0e" WaitsForAllPredecessors="True">
+        <IOSpec Version="2">
+          <Input />
+          <Output>
+            <IOItem>
+              <IOItemDefinition Name="test1" Type="System.Int32" IOType="Input" />
+              <MappedTo>test_x</MappedTo>
+            </IOItem>
+            <IOItem>
+              <IOItemDefinition Name="test4" Type="System.Int32" IOType="Input" />
+              <MappedTo>test_y</MappedTo>
+            </IOItem>
+          </Output>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>3</Version>
+              <Name>fc7f64e4-2f34-49a4-8e8c-295f7bc32363:Value</Name>
+              <DisplayName>Test writer Value</DisplayName>
+              <Description />
+              <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <int>10</int>
+              </Value>
+            </PropertyObject>
+            <PropertyObject>
+              <Version>3</Version>
+              <Name>5bd09d2e-1266-4f11-b476-7e7f61c3759e:Value</Name>
+              <DisplayName>Test writer Value 2</DisplayName>
+              <Description />
+              <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <int>5</int>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <edge id="341f8d0e-cfd0-47a6-af60-55e5e8ba2cf3" source="Start" target="46b30cf2-28e8-40ef-8fae-797255c09dc3" />
+  <edge id="f19f55bf-f0da-446d-9c78-71fac49075b1" source="46b30cf2-28e8-40ef-8fae-797255c09dc3" target="End" />
+</graph>

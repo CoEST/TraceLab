@@ -1,0 +1,19 @@
+Login test case by Patient Data: 
+    Hospital C57 Card correct PIN 20/06/2003 
+            correct and the couple 
+            (Hospital Card PIN) 
+            in S I O 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcLogPaz necessary to authenticate an 
+            patient 
+High Priority 
+The couple set up (Hospital Card PIN) = (00,001 
+            65323) is registered in the `S I O 
+Description test 
+Hospital Input Card: 00,001 
+            PIN: 65,323 
+The Oracle system allows access to the patient 
+Classes cover valid: CE1 CE2 CE6 CE7 
+            Classes are not valid: None

@@ -1,0 +1,5 @@
+2009-07-07  Manuel Cerón  <ceronman@gmail.com>
+
+	* AbsoluteLocator.cs: Added new Locator for absolute positions
+	from the figure
+

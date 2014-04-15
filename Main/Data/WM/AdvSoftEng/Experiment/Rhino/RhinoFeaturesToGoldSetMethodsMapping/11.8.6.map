@@ -1,0 +1,6 @@
+org.mozilla.javascript.Parser.relExpr
+org.mozilla.javascript.Decompiler.decompile
+org.mozilla.javascript.ScriptRuntime.instanceOf
+org.mozilla.javascript.Interpreter.interpretLoop
+org.mozilla.javascript.Token.name
+org.mozilla.javascript.Interpreter.visitExpression

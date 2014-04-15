@@ -1,0 +1,21 @@
+Login Operator test case by Date: 
+    C07 login correct but not 20/06/2003 
+            recorded in S I O and 
+            passwords stored on the 
+            I S O 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcValOpe necessary to authenticate an 
+            Operator 
+High Priority 
+Set up the login olive grove is not registered in ` 
+            I S O 
+            The password is `Virago registered in S I O 
+Description test 
+Input Login: olive grove 
+            Password: Virago 
+The Oracle system does not allow access to 
+            patient 
+Classes cover valid: CE1 CE7 
+            Classes invalid: CE5

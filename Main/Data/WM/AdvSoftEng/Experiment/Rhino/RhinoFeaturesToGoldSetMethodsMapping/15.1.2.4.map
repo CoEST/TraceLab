@@ -1,0 +1,2 @@
+org.mozilla.javascript.NativeGlobal.init
+org.mozilla.javascript.NativeGlobal.execIdCall

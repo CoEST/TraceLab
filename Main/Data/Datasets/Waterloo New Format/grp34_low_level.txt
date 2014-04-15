@@ -1,0 +1,109 @@
+UC1	Name: Adding new user	ID: UC1
+Authors: M2
+Event: Administrator requests to add a new user account into the system
+System: IP Telephone System
+Actors: Administrator
+Overview: This user case captures the process of adding a new user into the system. When a user is added, the system set the user status to “I”~
+UC2	Name: Editing existing user
+ID: UC2
+Authors: M2
+Event: Administrator requests to edit an existing user account in the system
+System: IP Telephone System
+Actors: Administrator
+Overview: This use case captures the process of editing an existing user account in the system~
+UC3	Name: Assigning phone number/IP address
+ID: UC3
+Authors: M2
+Event: Administrator assigns phone number/IP address to an existing user who does not have a phone number/IP address
+System: IP Telephone System
+Actors: Administrator
+Overview: This use case captures the process of assigning a randomly generated phone number/IP address to a user.  The user must exists in the system and does not have a phone number/IP address~
+UC4	Name: Canceling user’s service	ID: UC4
+Authors: M2
+Event: Administrator requests to delete an existing user in the system
+System: IP Telephone System
+Actors: Administrator
+Overview: Capture the process of deleting the user and disassociating phone number/IP address from a user who no longer exists in the system~
+UC5	Name: Add Filter Phone Numbers
+ID: UC5
+Authors: M2
+Event: User wants to add filter on one or more phone number(s)
+System: IP Telephone System
+Actors: Administrator
+Overview: This use case captures the process of adding filter to one or more phone numbers.  Once the phone number is filtered from the user, the user would not be able to accept calls from the filtered number.~
+UC6	Name: Edit/Remove Filter Phone Numbers
+ID: UC6
+Authors: M2
+Event: User wants to modify or remove filter on one or more phone number(s)
+System: IP Telephone System
+Actors: Administrator
+Overview: This use case captures the process of modifying/removing filter on one or more phone numbers.  Once a filter has been removed from a number, the user can receive call from that number again~
+UC7	Name: Individual Connectivity Test
+ID: UC7
+Authors: M2
+Event: User complains his/.her phone does not work 
+System: IP Telephone System
+Actors: Administrator
+Overview: Administrator requests connectivity test for a specific phone number.  The system will indicate whether the phone “pass” or “fail” the test~
+UC8	Name: System Hardware Test
+ID: UC8
+Authors: M2
+Event: Administrator requests hardware test
+System: IP Telephone System
+Actors: Administrator
+Overview: Administrator requests a hardware test; system captures hardware status; system reports the hardware status.~
+UC10	Name: Activate User Service
+ID: UC10
+Authors: M2
+Event: Administrator wants to activate a phone number from an existing user
+System: IP Telephone System
+Actors: Administrator
+Overview: The use case captures the process of activating the phone number of a suspended user. After the phone has been activated, the user status will be set to “A”~
+UC11	Name: Suspend User Service
+ID: UC11
+Authors: M2
+Event: Administrator requests to suspend a user who has overdue payment for 2 weeks or whose hardware is not working properly
+System: IP Telephone System
+Actors: Administrator
+Overview: This use case captures the process of suspending a user who has overdue payment for 2 weeks or whose hardware is not working properly.  The system sets the user status = “S”~
+UC12	Name: Record Bill Payment	ID: UC12
+Authors: M2
+Event: Administrator requests to record a bill payment from a user
+System: IP Telephone System
+Actors: Administrator
+Overview: Whenever the user make a payment, the administrator will record the payment in the system If the user does not make a payment more than 2 weeks, system suspend the user.  Any unpaid amount will be carried over to the next month~
+UC13	Name: Add Calling Plan
+ID: UC13
+Authors: M2
+Event: Administrator requests to add new calling plan
+System: IP Telephone System
+Actors: Administrator
+Overview: Whenever there is a new calling plan, the administrator needs to add to the system before the plan can be assigned to the user.  No two calling plans have the same name.~
+UC14	Name: Edit Existing Calling Plan
+ID: UC14
+Authors: M2
+Event: Administrator wants to modify an existing calling plan
+System: IP Telephone System
+Actors: Administrator
+Overview: This use case captures the process of editing an existing calling plan~
+UC15	Name: Print Bill
+ID: UC15
+Authors: M2
+Event: Administrator requests to print a bill of an employee
+System: IP Telephone System
+Actors: Administrator
+Overview: This use case captures the process of printing an employee’s phone bill during a specified period~
+UC16	Name:  Automatic Print Bill
+ID: UC16
+Authors: M2
+Event: Date Timer signals end of billing period
+System: IP Telephone System, Printer
+Actors: Server
+Overview: This use case captures the process of automatic printing of bills for each billing period~
+UC17	Name: Send/Receive call
+ID: UC17
+Authors: M2
+Event: Caller places a call to the callee
+System: IP Telephone System
+Actors: Caller (initiator), Server, Callee	
+Overview: The caller picks up the phone, dials the 4 digit number and the phone sends each digit to the server individually. The server sets up a connection between the caller and the callee and increments the max count by 1 (the count is responsible for ensuring the number of connections does not exceed the capacity). The connection is disconnected when either side hangs up the phone.~

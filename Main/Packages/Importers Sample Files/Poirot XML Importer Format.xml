@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<!-- Poirot XML Format is the same format that has been used in Poirot web application at DePaul University -->
+<artifacts>												
+  <project_id>1</project_id> <!-- TraceLab ignored project_id. It is important only in Poirot. -->
+  <artifact_type>HIPAA Goal Model</artifact_type> <!-- TraceLab ignored artifact_type. It is important only in Poirot. -->
+  
+  <artifact>
+	<!-- art_id - ID of Artifact -->
+	<art_id>	AC	</art_id>
+	<!--art_title - Title of artifact. Note, if data is used in TraceLab all content can be put here. In Poirot it has limit only to 500 characters -->
+	<art_title>	Access Control</art_title>
+	
+	<art_parent />
+	
+	<!-- art_content - Text of artifact. Note, that final Text of artifact in TraceLab is the concatenation of title and content -->
+	<art_content>
+		Implement technical policies and procedures for electronic information systems that maintain electronic protected health information to allow access only to those persons or software programs that have been granted access rights as specified in ? 164.308(a)(4).
+	</art_content> 	  
+	
+	<art_type /> 	  
+  </artifact>
+  
+  <artifact>	  
+	<art_id>	AUD	</art_id> 	  
+	<art_title>	Audit Controls. Implement hardware, software, and/or procedural mechanisms that record and examine activity in information systems that contain or use electronic protected health information.	</art_title> 	  
+	<art_parent /> 	  
+	<art_content>		</art_content> 	  
+	<art_type /> 	  
+  </artifact>
+</artifacts>												

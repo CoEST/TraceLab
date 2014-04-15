@@ -1,0 +1,12 @@
+Use case name VISUALIZZASCHEDATURISTA 
+View the details of a selected account Turista. 
+Partecipating 
+Actor initialization Agency Operator 
+Entry 
+Operator conditions • The agency has logged. 
+Flow of events User System 
+1. Tourists from the list obtained by activating the use case RicercaTurista will select and activate a function for displaying the card. 
+2 Upload data to the selected account. 
+Exit conditions • The system displays the card's Tourist selected. 
+• Interruption of the connection to the server ETOUR. 
+Quality requirements

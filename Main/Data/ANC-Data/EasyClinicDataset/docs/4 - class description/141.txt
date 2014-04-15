@@ -1,0 +1,35 @@
+Class GUIEsame Date: 16/09/2003 
+                                                  Version: 
+                                                  0 01 000 
+Make description on the mask used for 
+                   management of examinations related to a 
+                   particular visit 
+Attributes 
+       Name Access Description 
+Private btnDelete button that allows you to start 
+                             procedure for delete of a 
+                             examination 
+Private btnEdit button that allows you to start 
+                             procedure for changing a review 
+Private btnNew button that allows you to start 
+                             procedure for input a new 
+                             examination 
+Private btnSave button that allows you to start 
+                             procedure saving a review 
+                             just changed or added 
+Private btnUndo button that allows you to cancel 
+                             The last operation performed 
+Methods 
+       Signature notificaSuccesso () Public Access 
+    Description Its task is to notify the success of 
+                   a change or insertion 
+                   Deleting a; a 
+       Signature visualizzaDatiEsame () Public Access 
+    Description Its task is to see the details of 
+                   examination 
+       Signature visualizzaElencoEsami () Public Access 
+    Description Its task is to see the list of 
+                   Examination of a visit 
+       Signature examinations () Public Access 
+    Description Its task is to find the information 
+                   necessary for the realization of GUIEsame

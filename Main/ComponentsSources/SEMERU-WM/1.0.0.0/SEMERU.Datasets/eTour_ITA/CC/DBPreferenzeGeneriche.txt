@@ -1,0 +1,206 @@
+﻿package unisa.gps.etour.repository;
+
+import java.sql. Connection;
+import java.sql. Result Set;
+import java.sql. S Q L Exception;
+import java.sql. Statement;
+import unisa.gps.etour.bean. Bean Preferenze Generiche;
+
+/**
+ *  Implementazione dell'interfaccia  I D B Preferenze Generiche
+ * 
+ * @author  Miranda  Mauro
+ * @version  .  �      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I �  University
+ *          of  Salerno
+ */
+public class  D B Preferenze Generiche implements  I D B Preferenze Generiche
+{
+	//  Costruttore senza parametri
+	public  D B Preferenze Generiche()
+	{
+
+	}
+
+	public boolean cancella Preferenza Generica(int p Id Preferenza)
+			throws  S Q L Exception
+	{
+		//  Connessione al database
+		 Connection conn = null;
+		//  Statement per eseguire le query
+		 Statement stat = null;
+		//  Blocco try dove vengono eseguite le query e la connessione al database
+		try
+		{
+			//  Si ottiene la connessione al database dal pool
+			conn =  D B Connessione Pool.ottieni Connessione();
+			//  Si crea lo statement
+			stat = conn.create Statement();
+			//  Query
+			 String query = " D E L E T E  F R O M preferenze generiche   W H E R E  Id ="
+					+ p Id Preferenza;
+			//  Si esegue la query
+			int i = stat.execute Update(query);
+
+			return (i ==  );
+		}
+		//  Blocco finally che contiene le istruzione per chiudere le connessioni
+		// iene eseguito in qualsiasi caso
+		finally
+		{
+			//  Si chiude lo statement se e' stato aperto
+			if (stat != null)
+			{
+				stat.close();
+			}
+			//  Si restituisce la connessione al pool se e' stata aperta
+			if (conn != null)
+			{
+				 D B Connessione Pool.rilascia Connessione(conn);
+			}
+		}
+	}
+
+	public boolean inserisci Preferenza Genenerica(
+			 Bean Preferenze Generiche p Preferenza) throws  S Q L Exception
+	{
+		//  Connessione al database
+		 Connection conn = null;
+		//  Statement per eseguire le query
+		 Statement stat = null;
+		//  Blocco try dove vengono eseguite le query e la connessione al database
+		try
+		{
+			//  Si ottiene la connessione al database dal pool
+			conn =  D B Connessione Pool.ottieni Connessione();
+			//  Si crea lo statement
+			stat = conn.create Statement();
+			//  Query
+			 String query = " I N S E R T  I N T O preferenze generiche ( Id Turista,  Font,  Tema,  Dimensione Font) "
+					+ " V A L U E S("
+					+ p Preferenza.get Id Turista()
+					+ ",'"
+					+ p Preferenza.get Font()
+					+ "','"
+					+ p Preferenza.get Tema()
+					+ "'," + p Preferenza.get Dimensione Font() + ")";
+			//  Si esegue la query
+			int i = stat.execute Update(query);
+			return (i ==  );
+		}
+		//  Blocco finally che contiene le istruzione per chiudere le connessioni
+		// iene eseguito in qualsiasi caso
+		finally
+		{
+			//  Si chiude lo statement se e' stato aperto
+			if (stat != null)
+			{
+				stat.close();
+			}
+			//  Si restituisce la connessione al pool se e' stata aperta
+			if (conn != null)
+			{
+				 D B Connessione Pool.rilascia Connessione(conn);
+			}
+		}
+	}
+
+	public boolean modifica Preferenza Generica(
+			 Bean Preferenze Generiche p Preferenza) throws  S Q L Exception
+	{
+		//  Connessione al database
+		 Connection conn = null;
+		//  Statement per eseguire le query
+		 Statement stat = null;
+		//  Blocco try dove vengono eseguite le query e la connessione al database
+		try
+		{
+			//  Si ottiene la connessione al database dal pool
+			conn =  D B Connessione Pool.ottieni Connessione();
+			//  Si crea lo statement
+			stat = conn.create Statement();
+			//  Query
+			 String query = " U P D A T E preferenze generiche   S E T " + " Id Turista = "
+					+ p Preferenza.get Id Turista() + ",  Font = '"
+					+ p Preferenza.get Font() + "',  Tema = '"
+					+ p Preferenza.get Tema() + "',  Dimensione Font = "
+					+ p Preferenza.get Dimensione Font() + "  W H E R E  Id = "
+					+ p Preferenza.get Id();
+			//  Si esegue la query
+			int i = stat.execute Update(query);
+
+			return (i ==  );
+		}
+		//  Blocco finally che contiene le istruzione per chiudere le connessioni
+		// iene eseguito in qualsiasi caso
+		finally
+		{
+			//  Si chiude lo statement se e' stato aperto
+			if (stat != null)
+			{
+				stat.close();
+			}
+			//  Si restituisce la connessione al pool se e' stata aperta
+			if (conn != null)
+			{
+				 D B Connessione Pool.rilascia Connessione(conn);
+			}
+		}
+	}
+
+	public  Bean Preferenze Generiche ottieni Preferenza Generica(int p Id Turista)
+			throws  S Q L Exception
+	{
+		//  Connessione al database
+		 Connection conn = null;
+		//  Statement per eseguire le query
+		 Statement stat = null;
+		//  Resut set dove verra inserito l'output della query
+		 Result Set result = null;
+		//  Blocco try dove vengono eseguite le query e la connessione al database
+		try
+		{
+			//  Si ottiene la connessione al database dal pool
+			conn =  D B Connessione Pool.ottieni Connessione();
+			//  Si crea lo statement
+			stat = conn.create Statement();
+			//  Query
+			 String query = " S E L E C T *  F R O M preferenze generiche   W H E R E  Id Turista = "
+					+ p Id Turista;
+			// si esegue la query
+			result = stat.execute Query(query);
+			 Bean Preferenze Generiche pref = null;
+			//  Si controlla che la query restituisca almeno un risultato
+			if (result.next())
+			{
+				pref = new  Bean Preferenze Generiche();
+				pref.set Id(result.get Int(" Id"));
+				pref.set Id Turista(result.get Int(" Id Turista"));
+				pref.set Dimensione Font(result.get Int(" Dimensione Font"));
+				pref.set Font(result.get String(" Font"));
+				pref.set Tema(result.get String(" Tema"));
+			}
+			return pref;
+		}
+		//  Blocco finally che contiene le istruzione per chiudere le connessioni
+		// iene eseguito in qualsiasi caso
+		finally
+		{
+			//  Si chiude il result set solo se e' stata effettuata la query
+			if (result != null)
+			{
+				result.close();
+			}
+			//  Si chiude lo statement se e' stato aperto
+			if (stat != null)
+			{
+				stat.close();
+			}
+			//  Si restituisce la connessione al pool se e' stata aperta
+			if (conn != null)
+			{
+				 D B Connessione Pool.rilascia Connessione(conn);
+			}
+		}
+	}
+
+}

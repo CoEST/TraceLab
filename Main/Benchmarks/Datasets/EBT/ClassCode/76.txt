@@ -1,0 +1,380 @@
+           Evaluator
+           "private static final int EOL     = 0  ;
+              private static final int VALUE   = 1  ;
+              private static final int OPAREN  = 2  ;
+              private static final int CPAREN  = 3  ;
+              private static final int EXP     = 4  ;
+              private static final int MULT    = 5  ;
+              private static final int DIV     = 6  ;
+              private static final int PLUS    = 7  ;
+              private static final int MINUS   = 8  ;"
+           "private static class Precedence
+              {
+          
+                  public int input  Symbol  ; // refers to the precedence level of operator
+                  public int top  Of  Stack  ; // stores the operator in the form of integer
+          
+                  public Precedence  ( int in  Symbol   int top  Symbol )
+                  {
+                      input  Symbol = in  Symbol  ;
+                      top  Of  Stack  = top  Symbol  ;
+                  }
+              }// end of class Precedence"
+           "// Prec  Table matches order of Token enumeration
+              private static Precedence [ ] prec  Table = new Precedence  [ ]
+              {
+          
+                  new Precedence  (   0   -1 )  // EOL
+                  new Precedence  (   0    0 )  // VALUE
+                  new Precedence  ( 100    0 )  // OPAREN
+                  new Precedence  (   0   99 )  // CPAREN
+                  new Precedence  (   6    5 )  // EXP
+                  new Precedence  (   3    4 )  // MULT
+                  new Precedence  (   3    4 )  // DIV
+                  new Precedence  (   1    2 )  // PLUS
+                  new Precedence  (   1    2 )  // MINUS
+              };"
+           "private static class Token
+              {
+          
+                  public Token  ( ) { this  ( EOL ); }
+          
+                  public Token  ( int t ) { this  ( t   0 ); }
+          
+                  public Token  ( int t   double v ) {
+          
+                   System  . out  . println  (""   INSIDE Token  .  Token  ()"");
+                   type = t  ; value = v  ;
+                   System  . out  . println  (""   token type = ""+ type + "" Token Value = ""+ value  );
+                  }
+                  // change to support double
+          
+                  public int get  Type  ( ){ return type  ; }
+          
+                  public double get  Value  ( ) { return value  ; }
+          
+                  private int type = EOL  ;// refers to the type of token as static value
+                  private double value = 0  ;// refers to the value of token
+                  // change from long to double
+              }"
+           "private static class Eval  Tokenizer {
+          
+                  public Eval  Tokenizer  ( String  Tokenizer is ) {
+                   System  . out  . println  (""  INSIDE Eval  Tokenizer  "");
+                   str = is  ;
+                  }"
+           "/**
+                   * Find the next token   skipping blanks   and return it  .
+                   * For VALUE token   place the processed value in current  Value  .
+                   * Print error message if input is unrecognized  .
+                   */
+                  public Token get  Token  ( ) {
+          
+                      System  . out  . println  (""  INSIDE Eval  Tokenizer  . get  Token  ()"");
+                      double the  Value  ;
+          
+                      if  ( ! str  . has  More  Tokens  ( )) { return new Token  ( ); }
+          
+                      String s = str  . next  Token  ( );
+                      System  . out  . println  (""  The Token type is OPERATOR is = ""+ s  );
+                      if  ( s  . equals  ( "" "" ) ) return get  Token  ( );
+                      if  ( s  . equals  ( ""^"" ) ) return new Token  ( EXP );
+                      if  ( s  . equals  ( ""/"" ) ) return new Token  ( DIV );
+                      if  ( s  . equals  ( ""*"" ) ) return new Token  ( MULT );
+                      if  ( s  . equals  ( ""("" ) ) return new Token  ( OPAREN );
+                      if  ( s  . equals  ( "")"" ) ) return new Token  ( CPAREN );
+                      if  ( s  . equals  ( ""+"" ) ) return new Token  ( PLUS );
+                      if  ( s  . equals  ( ""  -  "" ) ) return new Token  ( MINUS );
+          
+                      try { the  Value = Double  . parse  Double  ( s ); }
+                      catch  ( Number  Format  Exception e ) {
+                          System  . err  . println  ( ""  Parse error  "" );
+                          return new Token  ( );
+                      }
+                      System  . out  . println  (""  The Token type is VALUE is = ""+ s  );
+             return new Token  ( VALUE   the  Value );
+                  }
+                  private String  Tokenizer str  ;// data member that holds the equation in the form of token
+              }"
+           "/**
+               * Construct an evaluator object  .
+               * @param s the string containing the expression  .
+               */
+              public Evaluator  ( String s ) {
+          
+                  op  Stack = new Stack  ( );
+                  postfix  Stack = new Stack  ( );
+                  str = new String  Tokenizer  ( s   ""+*  -  /^() "" true );
+                  op  Stack  . push  ( new Integer  ( EOL ) );
+              }"
+           "// The only publicly visible routine
+              /**
+               * Public routine that performs the evaluation  .
+               * Examine the  postfix machine to see if a single result is
+               * left and if so   return it  ; otherwise print error  .
+               * @return the result  .
+               */
+          
+                public double get  Value  ( ) { // to be able to work with double values
+              // public long get  Value  ( ) {
+          
+            System  . out  . println  (""  INSIDE get  Value  ()"");
+                  Eval  Tokenizer tok = new Eval  Tokenizer  ( str );
+                  Token last  Token  ;
+                  int round  Count  =0  ;
+                  do {
+                   System  . out  . println  (""\ n INSIDE DO LOOP  "");
+                   System  . out  . println  ("" Round Number = ""+ round  Count  );
+             last  Token = tok  . get  Token  ( );
+             System  . out  . println  ("" last  Token type is = ""+ last  Token  . get  Type  () + "" and Value is = ""+ last  Token  . get  Value  ());
+                      System  . out  . println  ("" CALL FROM Evaluator  . get  Value method  "");
+                      process  Token  ( last  Token );
+                      round  Count  ++;
+                  } while  ( last  Token  . get  Type  ( ) !  = EOL );
+          
+                  if  ( postfix  Stack  . is  Empty  ( ) ) {
+                   System  . out  . println  ("" INSIDE 1st IF LOOP  "");
+                      System  . out  . println  ("" postfix  Stack is Empty  "");
+                      System  . err  . println  ("" Missing operand  !"" );
+                      return 0  ;
+                  }
+          
+            System  . out  . println  ("" CALL FROM Evaluator  . get  Value method  "");
+                  double the  Result = post  Fix  Top  And  Pop  ( ); // to be able to work with double values
+                  // long the  Result = post  Fix  Top  And  Pop  ( );
+          
+                  if  ( ! postfix  Stack  . is  Empty  ( ) ){
+                   System  . out  . println  ("" INSIDE 2nd IF LOOP  "");
+                   System  . out  . println  ("" postfix  Stack should be Empty but the content is = ""+ postfix  Stack  . peek  () );
+                      System  . err  . println  ("" Warning  : missing operators  !"" );
+                  }
+                  System  . out  . println  (""  LEAVING get  Value  ()"");
+                  return the  Result  ;
+              }"
+           "private Stack op  Stack  ;       // Operator stack for conversion
+              private Stack postfix  Stack  ;  // Stack for postfix machine that stores the numbers could be values or result
+              private String  Tokenizer str  ; // String  Tokenizer stream   contents equation if the form of tokens"
+           "/**
+               * Internal method that hides type  -casting  .
+               * Changed the method to support double
+               */
+              private double post  Fix  Top  And  Pop  ( ) {
+               System  . out  . println  (""      INSIDE post  Fix  Top  And  Pop method  "");
+               System  . out  . println  (""       THE postfix  Stack befor pop = ""+ postfix  Stack  . to  String  () );
+               String temp = (( postfix  Stack  . pop  ()). to  String  ());
+               System  . out  . println  (""       the string is =  "" + temp  );
+               System  . out  . println  (""       THE postfix  Stack befor pop = ""+ postfix  Stack  . to  String  () );
+               return Double  . parse  Double  ( temp  );
+              }"
+           "/**
+               * Another internal method that hides type  -casting  .
+               */
+              private int op  Stack  Top  ( ) {
+                  return ( (  Integer  ) ( op  Stack  . peek  ( ) ) ). int  Value  ( );
+              }"
+           "/**
+               * After a token is read   use operator precedence parsing
+               * algorithm to process it  ; missing opening parentheses
+               * are detected here  .
+               */
+              private void process  Token  ( Token last  Token ) {
+          
+                  System  . out  . println  (""   INSIDE Evaluator  . process  Token  ()"");
+                  int top  Op  ; // operator at the top of op  Stack
+                  int last  Type = last  Token  . get  Type  ( );
+          
+                  switch  ( last  Type ) {
+          
+                    case VALUE  :
+                     System  . out  . println  (""   INSIDE VALUE CASE  "" );
+                     System  . out  . println  (""   THE postfix  Stack befor push = ""+ postfix  Stack  . to  String  () );
+                      postfix  Stack  . push  ( new Double  ( last  Token  . get  Value  ( ) ) );
+             System  . out  . println  (""   THE postfix  Stack befor push = ""+ postfix  Stack  . to  String  () );
+                      // convert double to Double b  4 pushing it to stack
+                      return  ;
+          
+                    case CPAREN  :
+                     System  . out  . println  (""   INSIDE CPAREN CASE  "" );
+               System  . out  . println  (""   ( top  Op = op  Stack  Top  ( ) ) !  = OPAREN && top  Op !  = EOL  "" );
+               int c  Parent  While  Track  =0  ;
+               //  System  . out  . println  (""   CPAREN while track number = "" + c  Parent  While  Track );
+               while  ( ( top  Op = op  Stack  Top  ( ) ) !  = OPAREN && top  Op !  = EOL ) {
+                System  . out  . println  (""    INSIDE while track number = "" + c  Parent  While  Track );
+                System  . out  . println  (""     "" + top  Op + "" !  = "" + OPAREN +  "" && "" + top  Op + "" !  = "" + EOL );
+                          System  . out  . println  (""    CALL FROM CPAREN CASE 1st WHILE LOOP  "" );
+                          binary  Op  ( top  Op );
+                          c  Parent  While  Track  ++;
+               }
+                      if  ( top  Op == OPAREN ){
+                       System  . out  . println  (""   INSIDE if  "" );
+                       System  . out  . println  (""   THE op  Stack befor pop = ""+ op  Stack  . to  String  () );
+                          op  Stack  . pop  ( );  // Get rid of opening parenthesis
+                          System  . out  . println  (""   THE op  Stack after pop = ""+ op  Stack  . to  String  () );
+             }
+                      else {
+                       System  . out  . println  (""   INSIDE else  "" );
+                          System  . err  . println  (""   Missing open parenthesis  "" );
+                      }
+                      break  ;
+          
+                    default  :    // General operator case
+                     // why its a while loop here
+                      System  . out  . println  (""   INSIDE DEFAULT CASE  "" );
+                      System  . out  . println  (""   prec  Table  [ last  Type ]. input  Symbol <  = prec  Table  [ top  Op = op  Stack  Top  ( ) ]. top  Of  Stack  "" );
+                      System  . out  . println  (""   "" + prec  Table  [ last  Type ]. input  Symbol  + "" <  = "" + prec  Table  [ top  Op = op  Stack  Top  ( ) ]. top  Of  Stack  );
+                      int default  While  Track  =0  ;
+                      while  ( prec  Table  [ last  Type ]. input  Symbol <  = prec  Table  [ top  Op = op  Stack  Top  ( ) ]. top  Of  Stack ) {
+                       System  . out  . println  (""   INSIDE DEFAULT While track number = ""+ default  While  Track );
+                        System  . out  . println  (""   CALL TO binary  Op FROM DEFAULT CASE WHILE LOOP  "" );
+                          binary  Op  ( top  Op );
+                          default  While  Track  ++;
+                      }
+                      if  ( last  Type !  = EOL ){
+                       System  . out  . println  (""   CALL TO op  Stack  . push method FROM DEFAULT CASE IF LOOP  "" );
+                 System  . out  . println  (""   Content of op  Stack before push = ""+ op  Stack  . to  String  () );
+                 op  Stack  . push  ( new Integer  ( last  Type ) );
+                 System  . out  . println  (""   Content of op  Stack after push = ""+ op  Stack  . to  String  () );
+             }
+                      break  ;
+                  }
+              }"
+           "/*
+               * top  And  Pop the postfix machine stack  ; return the result  .
+               * If the stack is empty   print an error message  .
+               */
+              private double get  Top  ( ) { // change to support double
+               System  . out  . println  (""    INSIDE GET TOP  "" );
+          
+                  if ( postfix  Stack  . is  Empty  ( ) ) {
+                      System  . err  . println  ( ""     Missing operand  "" );
+                      System  . err  . println  ( ""     THERE IS NO ITEM IN postfix  Stack so returning 0  .  0  "" );
+                      return 0  .  0  ;
+                  }
+          
+                  System  . out  . println  (""     CALL FROM get  Top method  "");
+                  return post  Fix  Top  And  Pop  ( );
+              }"
+           "/**
+               * Internal routine to compute x  ^ n  .
+               */
+              private static double pow  ( double x   double n ) {
+               System  . out  . println  (""      INSIDE pow  "");
+          
+                  if  ( x == 0 ) {
+                       if  ( n == 0 ){
+                        System  . out  . println  (""      inside 1st if where x  =0 and n  =0  "");
+                           System  . err  . println  ( ""      0  ^  0 is undefined  "" );
+                       }
+                System  . out  . println  (""      LEAVING pow with error from 1st if  !!!"");
+                return 0  ;
+                  }
+          
+                  if  ( n < 0 ) {
+                   System  . out  . println  (""      inside 2nd if where n is negative = ""+ n  );
+                      System  . err  . println  ( ""      Negative exponent  "" );
+                      System  . out  . println  (""      LEAVING pow with error from 2nd if  !!!"");
+                      return 0  ;
+                  }
+          
+                  if  ( n == 0 ) {
+                   System  . out  . println  (""      inside 3ed if where n =  0  "");
+                   System  . out  . println  (""      LEAVING pow with error from 3ed if  !!!"");
+                      return 1  ;
+                  }
+          
+                  if  ( n % 2 == 0 ){
+                   System  . out  . println  (""      inside 4th if where n  %  2 is 0   means n is even  "");
+                   System  . out  . println  (""      CALL FROM 4th if of pow -- Recursive call  "");
+                      return pow  ( x * x   n / 2  );
+                  }
+                  else  {
+                   System  . out  . println  (""      inside else of 4th if where n  %  2 is not 0   means n is odd  "");
+                   System  . out  . println  (""      CALL FROM else of 4th if pow -- Recursive call  "");
+                      return x * pow  ( x   n - 1 );
+                  }
+              }"
+           "/**
+               * Process an operator by taking two items off the postfix
+               * stack   applying the operator   and pushing the result  .
+               * Print error if missing closing parenthesis or division by 0  .
+               */
+              private void binary  Op  ( int top  Op ) {
+                   // if its the opening parameter then just push it into the stack
+                  System  . out  . println  (""     INSIDE BINARY OP  "" );
+                  if  ( top  Op == OPAREN ) {
+                   System  . out  . println  (""      THIS IS OPAREN type operator  "" );
+                      System  . err  . println  ( ""      Unbalanced parentheses  "" );
+                      System  . out  . println  (""      THE op  Stack befor pop = ""+ op  Stack  . to  String  () );
+                      op  Stack  . pop  ( );
+                      System  . out  . println  (""      THE op  Stack after pop = ""+ op  Stack  . to  String  () );
+                      System  . out  . println  (""     LEAVING BINARY OP FROM 1st IF LOOP  "" );
+                      return  ;
+                  }
+          
+                  // two stack pop operation
+                  // this will get two values
+                  System  . out  . println  (""     CALL FROM binary  Op  "");
+                  double rhs = get  Top  ( );
+                  System  . out  . println  (""     CALL FROM binary  Op  "");
+                  double lhs = get  Top  ( );
+          
+            // based on the type of operator perform operation
+                  if  ( top  Op == EXP ){
+                   System  . out  . println  (""      EXP  : lhs is = "" + lhs +"" top  Op is = "" + top  Op + "" rhs is = "" + rhs );
+                      System  . out  . println  (""      THE postfix  Stack befor push = ""+ postfix  Stack  . to  String  () );
+                      System  . out  . println  (""      CALL FROM binary  Op with EXP if loop  "");
+                      postfix  Stack  . push  ( new Double  ( pow  ( lhs   rhs ) ) );
+                      System  . out  . println  (""      THE postfix  Stack after push = ""+ postfix  Stack  . to  String  () );
+                  }
+                  else if  ( top  Op == PLUS ){
+                   System  . out  . println  (""      PLUS  : lhs is = "" + lhs +"" top  Op is = "" + top  Op + "" rhs is = "" + rhs );
+                   System  . out  . println  (""      THE postfix  Stack befor push = ""+ postfix  Stack  . to  String  () );
+                      postfix  Stack  . push  ( new Double  ( lhs + rhs ) );
+                      System  . out  . println  (""      THE postfix  Stack after push = ""+ postfix  Stack  . to  String  () );
+                  }
+                  else if  ( top  Op == MINUS ){
+                   System  . out  . println  (""      MINUS  : lhs is = "" + lhs +"" top  Op is = "" + top  Op + "" rhs is = "" + rhs );
+                   System  . out  . println  (""      THE postfix  Stack befor push = ""+ postfix  Stack  . to  String  () );
+                      postfix  Stack  . push  ( new Double  ( lhs - rhs ) );
+                      System  . out  . println  (""      THE postfix  Stack after push = ""+ postfix  Stack  . to  String  () );
+                  }
+                  else if  ( top  Op == MULT ){
+                   System  . out  . println  (""      MULT  : lhs is = "" + lhs +"" top  Op is = "" + top  Op + "" rhs is = "" + rhs );
+                   System  . out  . println  (""      THE postfix  Stack befor push = ""+ postfix  Stack  . to  String  () );
+                      postfix  Stack  . push  ( new Double  ( lhs * rhs ) );
+                      System  . out  . println  (""      THE postfix  Stack after push = ""+ postfix  Stack  . to  String  () );
+                  }
+                  else if  ( top  Op == DIV ){
+                   System  . out  . println  (""      DIV  : lhs is = "" + lhs +"" top  Op is = "" + top  Op + "" rhs is = "" + rhs );
+                      if  ( rhs !  = 0 ){
+                       System  . out  . println  (""      THE postfix  Stack befor push = ""+ postfix  Stack  . to  String  () );
+                          postfix  Stack  . push  ( new Double  ( lhs / rhs ) );
+                          System  . out  . println  (""      THE postfix  Stack after push = ""+ postfix  Stack  . to  String  () );
+                      }
+                      else {
+                       System  . err  . println  ( ""      rhs is 0 !!!!!"" );
+                          System  . err  . println  ( ""      Division by zero  "" );
+                          System"
+           "/**
+               * Simple main to exercise Evaluator class  .
+               */
+              public static void main  ( String [ ] args ) {
+          
+          
+          
+                  String str  ;
+                  Buffered  Reader in = new Buffered  Reader  ( new Input  Stream  Reader  ( System  . in ) );
+          
+                  try {
+                   System  . out  . println  (""  Enter the Expression  "");
+                       while  ( ( str = in  . read  Line  ( ) ) !  = null ) {
+                          System  . out  . println  ( ""  Read  : "" + str );
+          
+                          Evaluator ev = new Evaluator  ( str );
+          
+                          System  . out  . println  ( ev  . get  Value  ( ) );
+                          System  . out  . println  ( ""  Enter next expression  :"" );
+                      }
+                  }
+                  catch  ( IO Exception e ) { e  . print  Stack  Trace  ( ); }
+              }"

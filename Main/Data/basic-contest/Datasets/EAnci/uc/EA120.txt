@@ -1,0 +1,50 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf110
+{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;\f1\ftech\fcharset0 Wingdings-Regular;\f2\fnil\fcharset0 LucidaGrande;
+}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f0\b\fs24 \cf0 Nome caso d\'92uso\
+
+\b0 ContestaMulta\
+
+\b Attori partecipanti\
+
+\b0 Iniziato da Cittadino\
+
+\b Flusso di eventi\
+
+\b0 1. Il Cittadino clicca sul pulsante per accedere alla funzionalit\'e0 di gestione online delle multe.\
+2. Il Sistema redirige il cittadino verso la sezione desiderata.\
+3. Il Cittadino clicca sul pulsante per il pagamento online delle multe.\
+4. Il Sistema effettua una ricerca delle multe a carico del Cittadino presenti nel database per le quali non \'e8 ancora pervenuto il pagamento.\
+5. Il Cittadino seleziona la multa per la quale desidera effettuare una contestazione.\
+6. Il Sistema mostra tutte le informazioni disponibili relative alla multa, oltre al form da compilare per la contestazione.\
+7. Il Cittadino inserisce le informazioni necessarie.\
+8. Il Sistema verifica la correttezza delle informazioni,	inoltra	la	richiesta	di contestazione a chi di dovere e notifica il tutto al Cittadino.\
+
+\b Condizione di entrata\
+
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Il Cittadino si \'e8 autenticato nel sistema.\
+
+\b Condizioni di uscita\
+
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Questo	caso	d'uso	estende 
+\b PagamentoMulte 
+\b0 ed \'e8 invocato quando il cittadino clicca sul bottone relativo alla contestazione delle multe, OR\
+
+\f1 \uc0\u61656 
+\f2  
+\f0 Nel caso in cui vi siano errori generici il sistema	chiama	il	caso	d'uso 
+\b ServizioNonDisponibile
+\b0 .\
+
+\b Requisiti di qualita
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Non previsti}

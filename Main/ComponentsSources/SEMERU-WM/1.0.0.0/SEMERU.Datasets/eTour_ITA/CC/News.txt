@@ -1,0 +1,852 @@
+package unisa.gps.etour.gui.operatore agenzia ;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.io. File Not Found Exception;
+import java.rmi. Remote Exception;
+import java.rmi.registry. Locate Registry;
+import java.rmi.registry. Registry;
+import java.util. Array List;
+import java.util. Date;
+import javax.swing.*;
+import javax.swing.event.*;
+import javax.swing.text. Bad Location Exception;
+import javax.swing.text. Document;
+import javax.swing.border.*;
+import unisa.gps.etour.bean. Bean News;
+import unisa.gps.etour.control. Gestione Advertisement. I Gestione Advertisement Agenzia;
+import unisa.gps.etour.gui. Desk Manager;
+import unisa.gps.etour.gui. Help Manager;
+import unisa.gps.etour.gui.operatore agenzia .document. Limited Document;
+import unisa.gps.etour.gui.operatore agenzia .tables. News Table Model;
+import unisa.gps.etour.gui.operatore agenzia .tables. Priorita Renderer;
+import unisa.gps.etour.gui.operatore agenzia .tables. Scrollable Table;
+import unisa.gps.etour.gui.operatore agenzia .tables. Testo News Renderer;
+import unisa.gps.etour.util. Data;
+
+/**
+ *  Questa classe realizza l'interfaccia per la gestione delle news per l'attore
+ *  Operatore  Agenzia.
+ * 
+ * @version  . 
+ * @author  Mario  Gallo 
+ * 
+ * &#   ;      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I -
+ *          University of  Salerno
+ */
+public class  News extends  J Internal Frame
+{
+	private  J Panel j Content Pane = null;
+	private  J Tool Bar  News Toolbar = null;
+	private  J Button btn Elimina N = null;
+	private  J Panel right Panel = null;
+	private  J Panel form News = null;
+	private  J Slider pr Slider = null;
+	private  J Button btn Insert Modify = null;
+	private  J Button btn Reset = null;
+	private  J Panel panel Help = null;
+	private  J Text Pane text Guida = null;
+	private  J Scroll Pane scroll Table News = null;
+	private  J Table table News = null;
+	private  J Text Area testo News = null;
+	private  J Combo Box durata News = null;
+	private  J Button btn Modifica N = null;
+	private  J Label label Caratteri;
+	private int id News = - ;
+	private  News Table Model table Model;
+	private  Help Manager news Help;
+	protected  Desk Manager desktop Manager;
+	protected  J Desktop Pane j Desktop Pane;
+	private  I Gestione Advertisement Agenzia gestione News;
+
+	/**
+	 *  Questo &egrave; il costruttore di default.
+	 */
+	public  News()
+	{
+		super(" News");
+		set Preferred Size( Home. C H I L D_ S I Z E);
+		set Minimum Size(new  Dimension(   ,    ));
+		set Resizable(true);
+		set Frame Icon(new  Image Icon(get Class().get Resource(
+				 Home. U R L_ I M A G E S + " News  .png")));
+		set Iconifiable(true);
+		set Maximizable(true);
+		set Closable(true);
+
+		//  Setting up dell'help manager per la gestione delle news.
+		text Guida = new  J Text Pane();
+		try
+		{
+			news Help = new  Help Manager( Home. U R L_ H E L P + " News.txt", text Guida);
+		}
+		catch ( File Not Found Exception e)
+		{
+			text Guida
+					.set Text("<html><b> Guida in linea non disponibile!</b></html>");
+		}
+
+		set Content Pane(get J Content Pane());
+
+		add Internal Frame Listener(new  Internal Frame Adapter()
+		{
+
+			/*
+			 *  All'inserimento del frame nel desktop pane recupera desktop pane
+			 * e desktop manager e inizializza gli oggetti remoti per la
+			 * gestione dei beni culturali.
+			 */
+
+			public void internal Frame Opened( Internal Frame Event p Event)
+			{
+				 J Internal Frame frame = p Event.get Internal Frame();
+				j Desktop Pane = frame.get Desktop Pane();
+				desktop Manager = ( Desk Manager) j Desktop Pane.get Desktop Manager();
+
+				//  Setting up degli oggetti remoti per la gestione dei beni
+				// culturali.
+				try
+				{
+					 Registry reg =  Locate Registry.get Registry( Home. H O S T);
+					gestione News = ( I Gestione Advertisement Agenzia) reg
+							.lookup(" Gestione Advertisement Agenzia");
+
+					//  Caricamento dei dati.
+					carica Tabella();
+				}
+				/*
+				 *  Due eccezioni:  Remote Exception e  Not Bound Exception.  Il
+				 * risultato è lo stesso.  La gestione non è operabile e la
+				 * finestra dopo il messaggio di errore verrà chiusa.
+				 */
+				catch ( Exception ex)
+				{
+					 J Label errore = new  J Label(
+							"<html><h > Impossibile comunicare con il server di e Tour.</h >"
+									+ "<h ><u> La finestra di gestione richiesta verrà chiusa.</u></h >"
+									+ "<p><b> Possibili  Cause:</b>"
+									+ "<ul><li> Nessuna connessione alla rete.</li>"
+									+ "<li> Server inattivo.</li>"
+									+ "<li> Server intasato.</li></ul>"
+									+ "<p> Si prega di riprovare in un secondo momento.</p>"
+									+ "<p> Se l'errore dovesse persistere, si prega di contattare l'assistenza tecnica.</p>"
+									+ "<p> Ci scusiamo per il disagio.</html>");
+					 Image Icon err = new  Image Icon(get Class().get Resource(
+							 Home. U R L_ I M A G E S + "error  .png"));
+					 J Option Pane.show Message Dialog(j Desktop Pane, errore,
+							" Errore!",  J Option Pane. E R R O R_ M E S S A G E, err);
+					frame.dispose();
+				}
+			}
+		});
+	}
+
+	/**
+	 *  Inizializza il content pane del frame interno.
+	 * 
+	 * @return javax.swing. J Panel - il content pane.
+	 */
+	private  J Panel get J Content Pane()
+	{
+		if (j Content Pane == null)
+		{
+			j Content Pane = new  J Panel();
+			j Content Pane.set Layout(new  Border Layout());
+			j Content Pane.add(get News Toolbar(),  Border Layout. N O R T H);
+			j Content Pane.add(get Right Panel(),  Border Layout. E A S T);
+			j Content Pane.add(get Table News(),  Border Layout. C E N T E R);
+		}
+		return j Content Pane;
+	}
+
+	/**
+	 *  Questo metodo inizializza la toolbar per la gestione delle news.
+	 * 
+	 * @return javax.swing. J Tool Bar - la toolbar di gestione news.
+	 */
+	private  J Tool Bar get News Toolbar()
+	{
+		if ( News Toolbar == null)
+		{
+			 News Toolbar = new  J Tool Bar();
+			 News Toolbar.set Floatable(false);
+			 News Toolbar.add(get Btn Modifica N());
+			 News Toolbar.add Separator();
+			 News Toolbar.add(get Btn Elimina N());
+		}
+		return  News Toolbar;
+	}
+
+	/**
+	 *  Questo metodo inizializza il bottone di modifica di una news.
+	 * 
+	 * @return javax.swing. J Button - il bottone di modifica.
+	 */
+	private  J Button get Btn Modifica N()
+	{
+		if (btn Modifica N == null)
+		{
+			btn Modifica N = new  J Button();
+			btn Modifica N.set Text(" Modifica  News");
+			btn Modifica N.set Icon(new  Image Icon(get Class().get Resource(
+					 Home. U R L_ I M A G E S + " Modifica News  .png")));
+			btn Modifica N.set Cursor( Cursor
+					.get Predefined Cursor( Cursor. H A N D_ C U R S O R));
+			btn Modifica N.set Name("btn Modifica");
+			btn Modifica N.add Mouse Listener(news Help);
+			btn Modifica N.set Enabled(false);
+			btn Modifica N.add Action Listener(new  Action Listener()
+			{
+				public void action Performed( Action Event p Action Event)
+				{
+					int selected Row = table News.get Selected Row();
+					if (id News == - ) //  In questo modo so già se stava
+										// modificando
+					{
+						btn Insert Modify.set Text(" Modifica");
+						btn Insert Modify.set Icon(new  Image Icon(get Class()
+								.get Resource( Home. U R L_ I M A G E S + " Salva  .png")));
+						btn Reset.set Text(" Annulla");
+						btn Reset.set Icon(new  Image Icon(get Class().get Resource(
+								 Home. U R L_ I M A G E S + " Annulla  .png")));
+						form News.set Border( Border Factory.create Titled Border(
+								 Border Factory.create Line Border(new  Color(  ,
+										   ,    ),  ), " Modifica  News",
+								 Titled Border. D E F A U L T_ J U S T I F I C A T I O N,
+								 Titled Border. D E F A U L T_ P O S I T I O N, new  Font(
+										" Dialog",  Font. B O L D,   ), new  Color( ,
+										   ,    )));
+					}
+					 String testo = ( String) table Model.get Value At(selected Row,
+							 );
+					int num Caratteri =     - testo.length() +  ;
+					label Caratteri.set Text("#  Caratteri:" + num Caratteri);
+					 Document doc Testo = testo News.get Document();
+					try
+					{
+						doc Testo.remove( , doc Testo.get Length());
+						doc Testo.insert String( , testo, null);
+					}
+					catch ( Bad Location Exception e)
+					{
+						e.print Stack Trace();
+					}
+					 Date scadenza = ( Date) table Model
+							.get Value At(selected Row,  );
+					durata News.set Selected Index( Data.get Num Days(scadenza));
+					id News = table Model.get I D(selected Row);
+					pr Slider.set Value(( Integer) table Model.get Value At(
+							selected Row,  ));
+				}
+
+			});
+		}
+		return btn Modifica N;
+	}
+
+	/**
+	 *  Questo metodo inizializza il bottone di  Eliminazione di una news.
+	 * 
+	 * @return javax.swing. J Button - il bottone per l'eliminazione.
+	 */
+	private  J Button get Btn Elimina N()
+	{
+		if (btn Elimina N == null)
+		{
+			btn Elimina N = new  J Button();
+			btn Elimina N.set Text(" Elimina  News");
+			btn Elimina N.set Icon(new  Image Icon(get Class().get Resource(
+					 Home. U R L_ I M A G E S + " Elimina News  .png")));
+			btn Elimina N.set Enabled(false);
+			btn Elimina N.set Cursor( Cursor
+					.get Predefined Cursor( Cursor. H A N D_ C U R S O R));
+			btn Elimina N.set Name("btn Elimina");
+			btn Elimina N.add Mouse Listener(news Help);
+			btn Elimina N.add Action Listener(new  Action Listener()
+			{
+				public void action Performed( Action Event p Event)
+				{
+					int selected Row = table News.get Selected Row();
+
+					//  Costruzione della dialog per la conferma
+					// dell'eliminazione
+					 J Panel root = new  J Panel(new  Border Layout());
+					 J Label message = new  J Label(
+							" Sei sicuro di voler eliminare la news selezionata?");
+					message.set Font(new  Font(" Dialog",  Font. B O L D,   ));
+					 J Label avviso = new  J Label(
+							" I dati eliminati non potranno essere più recuperati.",
+							 Swing Constants. C E N T E R);
+					avviso.set Icon(new  Image Icon(get Class().get Resource(
+							 Home. U R L_ I M A G E S + "warning  .png")));
+					root.add(message,  Border Layout. N O R T H);
+					root.add(avviso,  Border Layout. S O U T H);
+					 String[] options = { " Elimina", " Annulla" };
+
+					//  La dialog viene visualizzata a schermo
+					int scelta =  J Option Pane.show Internal Option Dialog(
+							j Content Pane, root, " Conferma  Eliminazione  News",
+							 J Option Pane. Y E S_ N O_ O P T I O N,
+							 J Option Pane. Q U E S T I O N_ M E S S A G E, new  Image Icon(
+									get Class().get Resource(
+											 Home. U R L_ I M A G E S
+													+ " Elimina News  .png")),
+							options, options[ ]);
+
+					//  Se si è scelto di confermare l'eliminazione
+					if (scelta ==  J Option Pane. Y E S_ O P T I O N)
+					{
+						try
+						{
+							gestione News.cancella News(table Model
+									.get I D(selected Row));
+							table Model.remove News(selected Row);
+							 J Option Pane
+									.show Internal Message Dialog(
+											j Content Pane,
+											" La news selezionata è stata eliminata correttamente",
+											" News  Eliminata!",
+											 J Option Pane. O K_ O P T I O N,
+											new  Image Icon(
+													get Class()
+															.get Resource(
+																	 Home. U R L_ I M A G E S
+																			+ "ok  .png")));
+							azzera Form();
+						}
+						catch ( Exception ex)
+						{
+							 J Label errore = new  J Label(
+									"<html><h > Impossibile comunicare con il server di e Tour.</h >"
+											+ "<h ><u> L'operazione di eliminazione richiesta non può essere completata.</u></h >"
+											+ "<p> Si prega di riprovare in un secondo momento.</p>"
+											+ "<p> Se l'errore dovesse persistere, si prega di contattare l'assistenza tecnica.</p>"
+											+ "<p> Ci scusiamo per il disagio.</html>");
+							 Image Icon err = new  Image Icon(get Class()
+									.get Resource(
+											 Home. U R L_ I M A G E S + "error  .png"));
+							 J Option Pane.show Message Dialog(j Desktop Pane, errore,
+									" Errore!",  J Option Pane. E R R O R_ M E S S A G E, err);
+						}
+					}
+				}
+			});
+		}
+		return btn Elimina N;
+	}
+
+	/**
+	 *  Questo metodo inizializza il pannello che realizza l'interfaccia sul lato
+	 * destro della gestione delle news.
+	 * 
+	 * @return javax.swing. J Panel - il pannello destro.
+	 */
+	private  J Panel get Right Panel()
+	{
+		if (right Panel == null)
+		{
+			right Panel = new  J Panel();
+			right Panel.set Layout(new  Grid Bag Layout());
+			 Grid Bag Constraints g = new  Grid Bag Constraints();
+			g.fill =  Grid Bag Constraints. B O T H;
+			g.gridx =  ;
+			g.gridy =  ;
+			g.weighty =  . ;
+			right Panel.add(get Form News(), g);
+			g.weighty =  . ;
+			g.gridy =  ;
+			right Panel.add(get Panel Help(), g);
+
+		}
+		return right Panel;
+	}
+
+	/**
+	 *  Questo metodo inizializza il form per l'inserimento e la modifica di una
+	 * news.
+	 * 
+	 * @return javax.swing. J Panel - il form
+	 */
+	private  J Panel get Form News()
+	{
+		if (form News == null)
+		{
+			form News = new  J Panel(new  Grid Bag Layout());
+			form News.set Border( Border Factory.create Titled Border( Border Factory
+					.create Line Border(new  Color(  ,    ,    ),  ),
+					" Nuova  News",  Titled Border. D E F A U L T_ J U S T I F I C A T I O N,
+					 Titled Border. D E F A U L T_ P O S I T I O N, new  Font(" Dialog",
+							 Font. B O L D,   ), new  Color( ,    ,    )));
+			 Grid Bag Constraints g = new  Grid Bag Constraints();
+			g.anchor =  Grid Bag Constraints. C E N T E R;
+			g.gridx =  ;
+			g.gridy =  ;
+			g.weighty =  . ;
+			g.gridwidth =  ;
+			g.gridheight =  ;
+			g.insets = new  Insets( ,  ,  ,  );
+			form News.add(new  J Label(" Testo della news:"), g);
+			label Caratteri = new  J Label("#  Caratteri:   ");
+			g.gridx =  ;
+			form News.add(label Caratteri, g);
+			g.gridx =  ;
+			g.gridwidth =  ;
+			g.gridy =  ;
+			g.weighty =  . ;
+			g.fill =  Grid Bag Constraints. V E R T I C A L;
+			 J Scroll Pane scroll Testo = new  J Scroll Pane(get Testo News());
+			scroll Testo
+					.set Vertical Scroll Bar Policy( J Scroll Pane. V E R T I C A L_ S C R O L L B A R_ A L W A Y S);
+			form News.add(scroll Testo, g);
+			g.weighty =  . ;
+			g.gridy =  ;
+			g.fill =  Grid Bag Constraints. N O N E;
+			form News.add(new  J Label(" Priorità:"), g);
+			g.gridy =  ;
+			form News.add(get Pr Slider(), g);
+			 J Panel nuovo = new  J Panel(new  Flow Layout());
+			nuovo.add(new  J Label(" Durata della news:"));
+			durata News = new  J Combo Box();
+			for (int i =  ; i <=   ; i++)
+			{
+				durata News.add Item("" + i);
+			}
+			durata News.set Selected Index( );
+			durata News.set Editable(false);
+			durata News.set Name("durata");
+			durata News.add Mouse Listener(news Help);
+			nuovo.add(durata News);
+			nuovo.add(new  J Label("giorni"));
+			g.gridy =  ;
+			g.fill =  Grid Bag Constraints. H O R I Z O N T A L;
+			form News.add(nuovo, g);
+			g.gridwidth =  ;
+			g.gridy =  ;
+			form News.add(get Btn Insert Modify(), g);
+			g.gridx =  ;
+			form News.add(get Btn Reset(), g);
+		}
+		return form News;
+	}
+
+	/**
+	 *  Questo metodo inizializza lo slider per settare la priorit&agrave; di una
+	 * news.
+	 * 
+	 * @return javax.swing. J Slider - lo slider con ticks da   a  .
+	 */
+	private  J Slider get Pr Slider()
+	{
+		if (pr Slider == null)
+		{
+			pr Slider = new  J Slider( J Slider. H O R I Z O N T A L,  ,  );
+			pr Slider.set Minimum( );
+			pr Slider.set Maximum( );
+			pr Slider.set Major Tick Spacing( );
+			pr Slider.set Label Table(pr Slider.create Standard Labels( ));
+			pr Slider.set Cursor( Cursor.get Predefined Cursor( Cursor. H A N D_ C U R S O R));
+			pr Slider.set Name("priorità");
+			pr Slider.add Mouse Listener(news Help);
+			pr Slider.set Paint Labels(true);
+			pr Slider.set Paint Ticks(true);
+			pr Slider.set Paint Ticks(true);
+			pr Slider.set Snap To Ticks(true);
+		}
+		return pr Slider;
+	}
+
+	/**
+	 *  Questo metodo inizializza il pulsante di sottomissione della form di
+	 * inserimento/modifica.
+	 * 
+	 * @return javax.swing. J Button - il pulsante di sottomissione della form.
+	 */
+	private  J Button get Btn Insert Modify()
+	{
+		if (btn Insert Modify == null)
+		{
+			btn Insert Modify = new  J Button();
+			btn Insert Modify.set Text(" Inserisci");
+			btn Insert Modify.set Icon(new  Image Icon(get Class().get Resource(
+					 Home. U R L_ I M A G E S + "nuova News  .png")));
+			btn Insert Modify.set Cursor( Cursor
+					.get Predefined Cursor( Cursor. H A N D_ C U R S O R));
+			btn Insert Modify.set Name("btn Inserisci");
+			btn Insert Modify.add Mouse Listener(news Help);
+			btn Insert Modify.set Font(new  Font(" Dialog",  Font. B O L D,   ));
+			btn Insert Modify.set Horizontal Text Position( Swing Constants. T R A I L I N G);
+			btn Insert Modify.add Action Listener(new  Action Listener()
+			{
+
+				public void action Performed( Action Event p Event)
+				{
+					if (testo News.get Text().length() ==  )
+					{
+						 J Option Pane.show Internal Message Dialog(j Content Pane,
+								" Il testo di una news non pu� essere vuoto!",
+								" Errore  Nuova  News",  J Option Pane. E R R O R_ M E S S A G E,
+								new  Image Icon(get Class().get Resource(
+										 Home. U R L_ I M A G E S + "error  .png")));
+						return;
+					}
+					if (id News != - ) //  Si sta effettuando una modifica
+					{
+						//  Costruzione della dialog per la conferma della
+						// modifica
+						 J Panel root = new  J Panel(new  Border Layout());
+						 J Label message = new  J Label(
+								" Modificare la news selezionata con"
+										+ " i nuovi dati?");
+						message.set Font(new  Font(" Dialog",  Font. B O L D,   ));
+						 J Label avviso = new  J Label(
+								" I dati precedenti non potranno essere pi� recuperati.",
+								 Swing Constants. C E N T E R);
+						avviso.set Icon(new  Image Icon(get Class().get Resource(
+								 Home. U R L_ I M A G E S + "warning  .png")));
+						root.add(message,  Border Layout. N O R T H);
+						root.add(avviso,  Border Layout. S O U T H);
+						 String[] options = { " Modifica", " Annulla" };
+						//  La dialog viene visualizzata a schermo
+						int scelta =  J Option Pane
+								.show Internal Option Dialog(
+										j Content Pane,
+										root,
+										" Conferma  Modifica  News",
+										 J Option Pane. Y E S_ N O_ O P T I O N,
+										 J Option Pane. Q U E S T I O N_ M E S S A G E,
+										new  Image Icon(get Class().get Resource(
+												 Home. U R L_ I M A G E S
+														+ " Modifica News  .png")),
+										options, options[ ]);
+						//  Se si è scelto di confermare la modifica
+						if (scelta ==  J Option Pane. Y E S_ O P T I O N)
+						{
+							try
+							{
+								 Date scadenza = new  Date();
+								scadenza.set Date(scadenza.get Date()
+										+ durata News.get Selected Index());
+								 Bean News nuovo = new  Bean News(testo News
+										.get Text(), new  Date(), scadenza,
+										pr Slider.get Value(), id News);
+								gestione News.modifica News(nuovo);
+								table Model.update News(nuovo);
+								 J Option Pane
+										.show Internal Message Dialog(
+												j Content Pane,
+												" La news selezionata è stata modificata correttamente.",
+												" News  Modificata!",
+												 J Option Pane. O K_ O P T I O N,
+												new  Image Icon(
+														get Class()
+																.get Resource(
+																		 Home. U R L_ I M A G E S
+																				+ "ok  .png")));
+							}
+							catch ( Exception ex)
+							{
+								 J Label errore = new  J Label(
+										"<html><h > Impossibile comunicare con il server di e Tour.</h >"
+												+ "<h ><u> L'operazione di modifica richiesta non può essere completata.</u></h >"
+												+ "<p> Si prega di riprovare in un secondo momento.</p>"
+												+ "<p> Se l'errore dovesse persistere, si prega di contattare l'assistenza tecnica.</p>"
+												+ "<p> Ci scusiamo per il disagio.</html>");
+								 Image Icon err = new  Image Icon(
+										get Class()
+												.get Resource(
+														 Home. U R L_ I M A G E S
+																+ "error  .png"));
+								 J Option Pane.show Message Dialog(j Desktop Pane,
+										errore, " Errore!",
+										 J Option Pane. E R R O R_ M E S S A G E, err);
+							}
+						}
+					}
+					else
+					//  Si sta effettuando un inserimento
+					{
+						 Date scadenza = new  Date();
+						scadenza.set Date(scadenza.get Date()
+								+ durata News.get Selected Index());
+						 Bean News nuovo = new  Bean News(testo News.get Text(),
+								new  Date(), scadenza, pr Slider.get Value(),   );
+						try
+						{
+							boolean ok = gestione News.inserisci News(nuovo);
+							if (ok)
+							{
+								carica Tabella();
+								table Model.insert News(nuovo);
+								 J Option Pane
+										.show Internal Message Dialog(
+												j Content Pane,
+												" La news selezionata è stata inserita correttamente nel sistema.",
+												" Nuova  News inserita!",
+												 J Option Pane. O K_ O P T I O N,
+												new  Image Icon(
+														get Class()
+																.get Resource(
+																		 Home. U R L_ I M A G E S
+																				+ "nuova News  .png")));
+							}
+						}
+						catch ( Remote Exception e)
+						{
+							 J Label errore = new  J Label(
+									"<html><h > Impossibile comunicare con il server di e Tour.</h >"
+											+ "<h ><u> L'operazione di inserimento richiesta non può essere completata.</u></h >"
+											+ "<p> Si prega di riprovare in un secondo momento.</p>"
+											+ "<p> Se l'errore dovesse persistere, si prega di contattare l'assistenza tecnica.</p>"
+											+ "<p> Ci scusiamo per il disagio.</html>");
+							 Image Icon err = new  Image Icon(get Class()
+									.get Resource(
+											 Home. U R L_ I M A G E S + "error  .png"));
+							 J Option Pane.show Message Dialog(j Desktop Pane, errore,
+									" Errore!",  J Option Pane. E R R O R_ M E S S A G E, err);
+						}
+					}
+					table Model.fire Table Data Changed();
+					azzera Form();
+				}
+			});
+
+		}
+		return btn Insert Modify;
+	}
+
+	/**
+	 *  Questo metodo inizializza il pulsante per l'azzeramento della form o per
+	 * annullare l'azione di modifica su una news selezionata.
+	 * 
+	 * @return javax.swing. J Button - il pulsante sopra descritto.
+	 */
+	private  J Button get Btn Reset()
+	{
+		if (btn Reset == null)
+		{
+			btn Reset = new  J Button();
+			btn Reset.set Text(" Azzera");
+			btn Reset.set Horizontal Text Position( Swing Constants. L E A D I N G);
+			btn Reset.set Preferred Size(new  Dimension(   ,   ));
+			btn Reset.set Icon(new  Image Icon(get Class().get Resource(
+					 Home. U R L_ I M A G E S + "azzera  .png")));
+			btn Reset.set Cursor( Cursor.get Predefined Cursor( Cursor. H A N D_ C U R S O R));
+			btn Reset.set Name("btn Azzera");
+			btn Reset.add Mouse Listener(news Help);
+			btn Reset.add Action Listener(new  Action Listener()
+			{
+				public void action Performed( Action Event arg )
+				{
+					azzera Form();
+				}
+			});
+		}
+		return btn Reset;
+	}
+
+	/**
+	 *  Questo metodo inizializza il pannello della guida in linea.
+	 * 
+	 * @return javax.swing. J Panel
+	 */
+	private  J Panel get Panel Help()
+	{
+		if (panel Help == null)
+		{
+			panel Help = new  J Panel();
+			panel Help.set Layout(new  Border Layout());
+			panel Help.set Border( Border Factory.create Titled Border( Border Factory
+					.create Line Border(new  Color(  ,    ,    ),  ),
+					" Guida in  Linea",  Titled Border. D E F A U L T_ J U S T I F I C A T I O N,
+					 Titled Border. D E F A U L T_ P O S I T I O N, new  Font(" Dialog",
+							 Font. B O L D,   ), new  Color( ,    ,    )));
+			text Guida.set Editable(false);
+			text Guida.set Content Type("text/html");
+			text Guida.set Opaque(false);
+			text Guida
+					.set Text("<html> Muovi il puntatore del mouse su un controllo "
+							+ "d'interesse per visualizzare la guida sensibile al contesto.</html>");
+			text Guida.set Name("text Guida");
+			text Guida.add Mouse Listener(news Help);
+			panel Help.set Preferred Size(new  Dimension(   ,    ));
+			panel Help.add(text Guida,  Border Layout. C E N T E R);
+		}
+		return panel Help;
+	}
+
+	/**
+	 *  Questo metodo inizializza la tabella contenente tutte le news presenti
+	 * nel sistema.
+	 * 
+	 * @return javax.swing. J Table
+	 */
+	private  J Scroll Pane get Table News()
+	{
+		if (table News == null)
+		{
+			table Model = new  News Table Model();
+			table News = new  Scrollable Table(table Model);
+			table News.set Row Height(  );
+			table News.set Selection Mode( List Selection Model. S I N G L E_ S E L E C T I O N);
+			table News.set Selection Background(new  Color( xe ,  xe ,  xfa));
+			table News.set Column Selection Allowed(false);
+			 List Selection Model selection Model = table News.get Selection Model();
+			selection Model.add List Selection Listener(new  List Selection Listener()
+			{
+				public void value Changed( List Selection Event event)
+				{
+					int selected Row = table News.get Selected Row();
+					btn Modifica N.set Enabled((selected Row != - ) ? true : false);
+					btn Elimina N.set Enabled((selected Row != - ) ? true : false);
+				}
+			});
+			table News.add Key Listener(new  Key Adapter()
+			{
+				public void key Pressed( Key Event p Key)
+				{
+					int key Code = p Key.get Key Code();
+					if (key Code ==  Key Event. V K_ E N T E R)
+					{
+						btn Modifica N.do Click();
+					}
+					else if ((key Code ==  Key Event. V K_ C A N C E L)
+							|| (key Code ==  Key Event. V K_ B A C K_ S P A C E))
+					{
+						btn Elimina N.do Click();
+					}
+				}
+			});
+
+			scroll Table News = new  J Scroll Pane();
+			scroll Table News.set Viewport View(table News);
+			scroll Table News
+					.set Vertical Scroll Bar Policy( J Scroll Pane. V E R T I C A L_ S C R O L L B A R_ A L W A Y S);
+		}
+		return scroll Table News;
+	}
+
+	/**
+	 *  Questo metodo inizializza la text area che contiene il testo di una news.
+	 * 
+	 * @return javax.swing. J Text Area - la text area.
+	 */
+	private  J Text Area get Testo News()
+	{
+		if (testo News == null)
+		{
+			testo News = new  J Text Area();
+			testo News.set Wrap Style Word(true);
+			testo News.set Line Wrap(true);
+			testo News.set Border( Border Factory.create Lowered Bevel Border());
+			testo News.set Columns(  );
+			testo News.set Line Wrap(true);
+			testo News.set Rows( );
+			testo News.set Document(new  Limited Document(   ));
+			testo News.set Name("testo");
+			testo News.add Mouse Listener(news Help);
+			testo News.add Key Listener(new  Key Adapter()
+			{
+				public void key Typed( Key Event p Key Event)
+				{
+					char key Char = p Key Event.get Key Char();
+					if ( Character.is Digit(key Char)
+							||  Character.is Letter(key Char)
+							||  Character.is Whitespace(key Char))
+					{
+						int len = testo News.get Text().length();
+						if (len !=    )
+						{
+							label Caratteri
+									.set Text("#  Caratteri:"
+											+ (    - (testo News.get Text()
+													.length() +  )));
+						}
+					}
+				}
+
+				public void key Pressed( Key Event p Key Event)
+				{
+					int key Code = p Key Event.get Key Code();
+					if (key Code ==  Key Event. V K_ C A N C E L
+							|| key Code ==  Key Event. V K_ B A C K_ S P A C E)
+					{
+						int len = testo News.get Text().length();
+						if (len !=  )
+						{
+							label Caratteri.set Text("#  Caratteri:"
+									+ (    - len +  ));
+						}
+					}
+				}
+			});
+
+		}
+		return testo News;
+	}
+
+	/**
+	 *  Questo metodo azzera i campi della form.
+	 */
+	private void azzera Form()
+	{
+		btn Insert Modify.set Text(" Inserisci");
+		btn Reset.set Text(" Azzera");
+		btn Reset.set Icon(new  Image Icon(get Class().get Resource(
+				 Home. U R L_ I M A G E S + "azzera  .png")));
+		form News.set Border( Border Factory.create Titled Border( Border Factory
+				.create Line Border(new  Color(  ,    ,    ),  ), " Nuova  News",
+				 Titled Border. D E F A U L T_ J U S T I F I C A T I O N,
+				 Titled Border. D E F A U L T_ P O S I T I O N,
+				new  Font(" Dialog",  Font. B O L D,   ), new  Color( ,    ,    )));
+		durata News.set Selected Index( );
+		testo News.set Text("");
+		table News.clear Selection();
+		pr Slider.set Value( );
+		label Caratteri.set Text("#  Caratteri:   ");
+		id News = - ;
+	}
+
+	/**
+	 *  Questo metodo importa le news scaricate dal server nella tabella.
+	 */
+	private void carica Tabella()
+	{
+		 Array List< Bean News> news = null;
+		try
+		{
+			news = gestione News.ottieni All News();
+		}
+		//  In caso di errore visualizza un messaggio di errore.
+		catch ( Remote Exception e)
+		{
+			 J Label errore = new  J Label(
+					"<html><h > Impossibile comunicare con il server di e Tour.</h >"
+							+ "<h ><u> La lista delle  News non è stata caricata.</u></h >"
+							+ "<p> Si prega di riprovare in un secondo momento.</p>"
+							+ "<p> Se l'errore dovesse persistere, si prega di contattare l'assistenza tecnica.</p>"
+							+ "<p> Ci scusiamo per il disagio.</html>");
+			 Image Icon err = new  Image Icon(get Class().get Resource(
+					 Home. U R L_ I M A G E S + "error  .png"));
+			 J Option Pane.show Internal Message Dialog(this, errore, " Errore!",
+					 J Option Pane. E R R O R_ M E S S A G E, err);
+		}
+		finally
+		{
+			table Model = new  News Table Model(news);
+			table News.set Model(table Model);
+			//  Testo della news
+			table News.get Column Model().get Column( ).set Preferred Width(   );
+			table News.get Column Model().get Column( ).set Cell Renderer(
+					new  Testo News Renderer());
+			//  Priorità
+			table News.get Column Model().get Column( ).set Preferred Width(   );
+			table News.get Column Model().get Column( ).set Cell Renderer(
+					new  Priorita Renderer());
+			//  Data di inserimento
+			table News.get Column Model().get Column( ).set Preferred Width(  );
+			//  Data di scadenza
+			table News.get Column Model().get Column( ).set Preferred Width(  );
+		}
+
+	}
+}

@@ -1,0 +1,9 @@
+org.mozilla.javascript.NativeArray.heapify_extended
+org.mozilla.javascript.NativeArray.isBigger
+org.mozilla.javascript.NativeArray.heapsort
+org.mozilla.javascript.NativeArray.initPrototypeId
+org.mozilla.javascript.NativeArray.heapify
+org.mozilla.javascript.NativeArray.heapsort_extended
+org.mozilla.javascript.NativeArray.js_sort
+org.mozilla.javascript.NativeArray.execIdCall
+org.mozilla.javascript.NativeArray.findPrototypeId

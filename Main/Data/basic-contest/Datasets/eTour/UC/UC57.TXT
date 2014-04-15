@@ -1,0 +1,15 @@
+Use case name RICERCAAVANZATA 
+The tourist searching for a site using the potential offered by the Advanced Search. 
+Partecipating 
+Actor initialized by Tourist 
+Entry 
+conditions • The Tourist has successfully authenticated to the system. 
+Flow of events User System 
+1. Enable the advanced search feature from your personal area. 
+2 View the advanced search form. 
+3 Fill in the form of advanced search and submit. 
+4 Gets the position of relying on the tourist event of the use location and process the request. 
+Exit conditions • The system displays a list of results. 
+• Interruption of the connection to the server ETOUR. 
+Quality 
+The system requirements into the transaction in more than 15 seconds.

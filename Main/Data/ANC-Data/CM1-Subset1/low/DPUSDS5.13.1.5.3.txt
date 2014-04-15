@@ -1,0 +1,1 @@
+Ring buffer data structure	This definition results in the following:* administration is simple but one location is wasted in the buffer full situation, the pIn pointer is one less that the pOut pointer,* buffer empty when the pIn pointer and the pOut pointer are equal.

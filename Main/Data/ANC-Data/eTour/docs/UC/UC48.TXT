@@ -1,0 +1,18 @@
+Use case name MODIFICAPREFERENZEGENERICHE 
+Edit Preferences generic personal. 
+Partecipating 
+Actor initialized by Tourist 
+Entry 
+Conditions • Tourism has successfully authenticated to the system. 
+Flow of events User System 
+1. Access to functionality for the modification of generic personal preferences. 
+2 Upload your preferences and the general view in a form. 
+3 Edit the fields in the form and submit. 
+4 Asks for confirmation of the change. 
+5 Confirm the operation. 
+6. Stores preferences changed. 
+Exit conditions • The system shall notify the successful modification of general preferences. 
+• The Tourist cancels the operation. 
+• Interruption of the connection to the server ETOUR. 
+Quality 
+requirements

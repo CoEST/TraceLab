@@ -1,0 +1,13 @@
+Nome: EliminaUtente
+Attori: Amministratore
+Descrizione: Elimina un utente dal sistema
+Precondizioni:
+•	L’utente è loggato come amministratore • L’utente ha svolto il caso d’uso “VisualizzaDettagliUtente” e il sistema sta
+visualizzando i dettagli di un utente •	L’utente clicca sul pulsante “Elimina”
+Sequenza degli eventi
+Utente
+Sistema
+1. Elimina l’utente dall’archivio
+2. Visualizza l’elenco degli utenti aggiornato
+Postcondizioni:
+•	L’utente è stato cancellato •	Connessione al server SMOS interrotta

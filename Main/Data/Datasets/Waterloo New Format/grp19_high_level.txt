@@ -1,0 +1,61 @@
+F1	System must allow adding and removing of customers’ accounts.~
+F2	System must allow editing of customers’ accounts, such as name, phone number, and bill plan type.~
+F3	Administrator has the privilege of modifying a customer’s account status~
+F4	System must allow IPs to be assigned to phone subsystems.~
+F5	System must allow IPs to be removed from phone subsystems.~
+F6	System must allow phone numbers to be assigned to IPs.~
+F7	System must allow phone numbers to be removed from IPs.~
+F8	System must check the validity of administrator’s input/request, to make sure they are valid.~
+F9	System must provide functions for administrator to perform hardware and connectivity test.~
+F10	System must provide functions for administrator to reset each phone subsystem’s software.~
+F11	System must allow administrator to add or remove a bill plan.~
+F12	Administrator must be able to change the content of a bill plan through mechanisms provided by the system.~
+F13	Administrator must be able to record a payment received once a customer has paid the bill.~
+F14	Administrator must be able to start up the console system~
+F15	Administrator must be able to shut down the console system~
+F16	System check the ID and password are valid before granting access to an administrator~
+F17	Administrator must be able to search a particular customer’s account information ~
+F18	Administrator must be able to search all information associated with a particular phone number~
+F19	Administrator can perform search on the all phone numbers that are not associated with an IP~
+F20	Administrator must be able to search all information associated with an IP.~
+F21	Administrator can perform search on all IPs that are not associated with a phone subsystem~
+F22	System must enforce atomic operations when processing requests such as assigning IPs and phone numbers~
+F23	Administrator can request to display current system load on the system console~
+F24	Administrator can set the phone subsystem status through provided system console GUI~
+F25	Administrator must be able to set the max number of concurrent calls allowed~
+F26	When an IP is used, it is validated to ensure it is a usable IP.~
+F27	At the end of each billing period, the system will automatically generate bills for all serviced customers~
+F28	Administrator should be able to set a list of number that are blocked in customers accounts~
+F29	Each time a customer makes a call, the number he or she dials is checked against the database for validity~
+F30	All customer records are stored. Upon canceling of service, the record will remain in system database for up to 6 months.~
+F31	System enables communication of 2 customers by creating an audio path between two phone subsystems.~
+F32	When a conversation is completed, the system close the audio path created.~
+F33	The system must track the time an account is being suspended.~
+F34	When an account is moved to cancel state, the system will track the time it has been in cancelled state.~
+F35	The system must be constantly monitoring a phone subsystem for events.~
+F36	System must provide a mapping set between IP and phone numbers for reference~
+F37	When an account is cancelled, a bill is generated immediately for all services the customer has used.~
+F38	System must maintain a log containing all errors occurred to hardware components of the system.~
+F39	When an exceptional situation occurs, the calling customer will receive a voice reply indicating the situation encountered.~
+F40	When customer picks up the phone, a dial tone is sent to the phone subsystem indicating ready to receive numbers.~
+F41	System keeps track of the system working load, and this data is updated every minute~
+F42	System must ensure all charges are targeted at the calling customer.~
+F43	System must perform tests automatically to check if all hardware components are working properly.~
+F44	Upon detecting of an error by automatic fault detection, a signal is sent to the system console notifying the administrator of such incident.~
+F45	System must record all services a customer has used automatically.~
+F46	System must provide mechanisms for customer to set up speed dial numbers through the phone subsystems.~
+F47	System must allow customer to initiate a call through phone subsystem.~
+F48	System must allow receiving of a call~
+F49	When a conversation is complete, system must terminate the call.~
+F50	Emergency numbers such as 911 must be pre-installed in the phone subsystem.~
+F51	The system should be able to block calls from undesired caller  that appear on the customer’s blocked list~
+N1	The system console GUI must be easy and intuitive for administrator to use~
+N2	The phone subsystem must be easy for customers to operate~
+N3	There must be more than one plan for customer to choose from~
+N4	When a signal is received at a phone subsystem from automatic fault detection, it must response with in 5 seconds~
+N5	The system must maintain acceptable efficiency, regardless of the system load.~
+N6	If a new phone subsystem is to be added to the network, system must provide easy functions for administrator to connect the phone to the system.~
+N7	The system, when placed in new hardware of the same type, should behave the same way as they  are supposed to~
+N8	The system must be developed within the cost budget~
+N9	The data and system functions should not be accessed in anyway by people who do not have the right privilege.~
+N10	System should be protected from invalid inputs and continue to operate normally.~

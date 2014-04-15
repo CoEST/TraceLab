@@ -1,0 +1,31 @@
+Validation patient 
+He works to perform the functions 
+                necessary to authenticate an 
+                patient 
+                it's Interest to log on to 
+                see your information 
+The patient must be in possession of 
+                Hospital Card 
+The patient is not recognized ` 
+                system 
+                Success: The patient is recognized by ` 
+                system and access to its section 
+Patient access to Box Tower 
+1 View the mask 
+     for the operation 
+     login 
+2 input the code 
+                               Hospital Card and the code 
+                               PIN 
+3 Confirm validation 
+4 Verify that the couple 
+     (Hospital Card PIN) 
+     identifies a patient 
+     within S I O 
+Patient cancels function 
+validation 
+   3 1 ends the execution of use case with 
+          failure 
+Validation Failed 
+   4 1 Show appropriate message 
+   4 2 Reinserts running from 1 step

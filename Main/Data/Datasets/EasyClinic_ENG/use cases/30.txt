@@ -1,0 +1,39 @@
+Plans reservations 
+It allows the operator to view and / or 
+                 print in tabular form plans 
+                 Bookings made for each type 
+                 Visit 
+                 The Operator's interest to see 
+                 and / or print the plans of reservations 
+                 made 
+The Operator has been recognized by ` 
+                 System (See UcValOp) 
+The operator activates the execution of 
+                 service to view and / or print 
+                 Plans reservations 
+1 View a mask 
+     To view and 
+     print plans 
+     Reservations 
+2 Select the type of 
+                                visit 
+3 Enable 
+4 Access to the database and 
+     found in the 
+     training required 
+5 View 
+     information obtained 
+Operator decides to print 
+information 
+   5 1 Start printing information 
+          displayed 
+   5 2 generates the report and sends it to 
+          Printer 
+Operator cancels the operation 
+   3 1 ends the use case with failure 
+   2 1 The types of access that the operator can "select 
+          are: First Visit Day and Hospital Visit 
+          Check 
+   5 1 for each reservation in this plan 
+          Reservations is the name and 
+          name of patient

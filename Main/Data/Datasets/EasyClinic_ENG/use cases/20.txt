@@ -1,0 +1,44 @@
+Validation patient 
+He works to perform the functions 
+                necessary to authenticate an 
+                Patient 
+                Has an interest in validating the patient to 
+                access to the section relating to his 
+                information 
+The Operator has been recognized by ` 
+                System (See UcValOp) The patient must 
+                provide the operator with the Hospital or Card 
+                its tax code 
+The patient is not recognized ` 
+                system 
+                Success: The patient is recognized by ` 
+                System Operator and access to its 
+                section 
+The Operator active enforcement of a 
+                depending on a specific 
+                patient 
+1 View the mask 
+     for validating the 
+     Patient 
+2 input the code of
+                               Hospital Card 
+3 Confirm validation 
+4 Verify that the code 
+     Card's Hospital 
+     identifies a patient 
+     within S I O 
+5 Get information 
+     Patient 
+6 Transfer in the memory 
+     Patient data 
+Validation through tax code 
+   2 1 injects the tax code 
+          Patient 
+   2 2 Reinserts running from step 3 
+Operator cancels function 
+validation 
+   3 1 ends the execution of use case with 
+          failure 
+Login failed 
+   4 1 Show appropriate message 
+   4 2 Reinserts execution from step 2

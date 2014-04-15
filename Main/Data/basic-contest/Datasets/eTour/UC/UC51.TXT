@@ -1,0 +1,15 @@
+Use case name INSERISCISITONEIPREFERITI 
+Inserts a site selected in the list of bookmarks. 
+Partecipating 
+Actor initialized by Tourist 
+Entry 
+conditions • The tourist card is in a particular site. 
+Flow of events User System 
+1. Activate the feature for the insertion of the selected site from the bookmarks. 
+2 Prompt the inclusion 
+3 Confirm the input. 
+4 Inserts the selected site in the list of bookmarks. 
+Exit conditions • The notification about the insertion site to favorites 
+• Interruption of connection to the server ETOUR. 
+Quality 
+requirements

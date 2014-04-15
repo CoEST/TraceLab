@@ -1,0 +1,215 @@
+           performance model Handler
+           "String str  ES  ; // string received from eventserver
+           String impact  Report  ;// string to be send to event  Server
+          
+           String command  Str  ; // represent the command ex  . execute   re - execute etc
+           String event  Id  ;// refers to the event  Id
+           String model  Name  ; // represents the name of the model to work on
+          
+           String id  ; // stores the requirement id for driver or constraints from str  ES string
+           String type  ; // type of requirement Driver or Constraint
+           String name  ; // name of the constrains or driver
+           double value  ; // value of name
+           double speculate  Value  ; // speculative values applies to Driver
+           String logic  ; // comparison logic between name and value
+           String project  _ path  ; // stores the project name and path on server separated by comma
+          
+           Vector variable = new Vector  (); // stores the Variable objects
+          
+           Variable obj  Vr  ; // reference to Variable object
+          
+           String  Tokenizer main  Sto   s  To  1   s  To  2   s  To  3   s  To  4   s  To  5  ;
+           String temp  Str  1   temp  Str  2   temp  Str  3  ;
+          
+           database Query database = new database Query  (); // object that communicate with database"
+           "performance model Handler  (  String msg  )
+           {
+            this  . str  ES = msg  ;
+           }"
+           "public void message  Parser  ()
+           {
+            System  . out  . println  (""  INSIDE PARSER  "");
+          
+            main  Sto = new String  Tokenizer  ( str  ES  ""|""); // current ex will have 10 tokens in main  Sto
+          
+          
+            temp  Str  1 = main  Sto  . next  Token  ();
+            //  Re  -execute  : Whiteboard  Execution  Graph
+            s  To  1 = new String  Tokenizer  ( temp  Str  1  """");
+            command  Str = s  To  1  . next  Token  (); // contents ""  Re  -execute  ""
+            System  . out  . println  ( command  Str  );
+          
+            s  To  1  . next  Token  ();// dummy token as I am not storing event  Id anywhere
+          
+            model  Name = s  To  1  . next  Token  (). trim  (); // contents ""  Whiteboard  Execution  Graph  ""
+            System  . out  . println  ( model  Name  );
+          
+            s  To  2 = new String  Tokenizer  ( main  Sto  . next  Token  () """");
+            //  Drivers   1
+            type = s  To  2  . next  Token  (). trim  (); // contents ""  Drivers  ""
+            System  . out  . println  ( type  );
+            int num  Of  Driver = Integer  . parse  Int  ( s  To  2  . next  Token  (). trim  ()); // contents ""  1  ""
+            System  . out  . println  ( num  Of  Driver  );
+          
+            System  . out  . println  (""  ---------------------------  "");
+            System  . out  . println  (""  Driver info parsing Started  "");
+          
+            for ( int i = 0  ; i  < num  Of  Driver  ; i  ++)
+            {// loop through number of drivers
+          
+             s  To  3 = new String  Tokenizer  ( main  Sto  . next  Token  () """");
+             //  WB12    Avg  Shape  Size    25    2000  
+             s  To  3  . next  Token  ();// dummy token for Project  Name
+          
+             s  To  3  . next  Token  ();// dummy token for Requirement Location
+          
+             id = s  To  3  . next  Token  (). trim  ();
+             name = s  To  3  . next  Token  (). trim  ();
+             value = Double  . parse  Double  ( s  To  3  . next  Token  (). trim  ()) ;
+             speculate  Value = Double  . parse  Double  ( s  To  3  . next  Token  (). trim  ());
+          
+             obj  Vr = new Variable  ( id   type   name   value   speculate  Value  );
+             System  . out  . println  ( obj  Vr  . to  String  ());
+             variable  . add  ( obj  Vr  );
+          
+            }// end of loop for number of drivers
+          
+            System  . out  . println  (""  Driver info parsing Completed  "");
+            System  . out  . println  (""  ---------------------------  "");
+          
+            s  To  4 = new String  Tokenizer  ( main  Sto  . next  Token  () """");
+            //  Constraints    6
+            type = s  To  4  . next  Token  (); // contents ""  Constraints  ""
+            int num  Of  Constraint = Integer  . parse  Int  ( s  To  4  . next  Token  (). trim  ()); // contents ""  6  ""
+          
+            System  . out  . println  ( num  Of  Constraint  );
+          
+            System  . out  . println  (""  --------------------------------  "");
+            System  . out  . println  (""  Constraints info parsing Started  "");
+          
+            for ( int i = 0  ; i  < num  Of  Constraint  ; i  ++)
+            {// loop through the number of constraints
+          
+             s  To  5 = new String  Tokenizer  ( main  Sto  . next  Token  () """");
+             //  WB19   target  Response  Time  .<  10
+             s  To  5  . next  Token  ();// dummy token for Project  Name
+          
+             s  To  5  . next  Token  ();// dummy token for Requirement Location
+          
+             id = s  To  5  . next  Token  (). trim  ();
+             name = s  To  5  . next  Token  (). trim  ();
+             logic = s  To  5  . next  Token  (). trim  ();
+             value = Double  . parse  Double  ( s  To  5  . next  Token  (). trim  ()) ;
+          
+             obj  Vr = new Variable  ( id   type   name   value   logic  );
+             System  . out  . println  ( obj  Vr  . to  String  ());
+             variable  . add  ( obj  Vr  );
+            }// end of loop through number of constraints
+          
+            System  . out  . println  (""  Constraints info parsing Completed  "");
+            System  . out  . println  (""  ----------------------------------  "");
+          
+            System  . out  . println  (""  Variable = "" + variable  . to  String  ());
+            System  . out  . println  (""  LEAVING PARSER  \ n  "");
+          
+           }// end of message  Parser method"
+           "public String generate  Report  ()
+            {
+             System  . out  . println  (""  INSIDE generate  Report  "");
+          
+             main  Sto = new String  Tokenizer  ( str  ES  ""|""); // current ex will have 10 tokens in main  Sto
+             /*
+              ""  Impact  Report  |  1015818161020  |  Gate  Opening  |"" +
+              ""  Drivers    2  |"" +
+              ""  Railway  Crossing    Crossing  Gate    CG8    Gate  Closure  Trigger  Distance    300    400  |"" +
+              ""  Railway  Crossing    Train  Behavior    TRN2    Maximum  Speed  Of  The  Approaching  Train    45    55  |"" +
+              ""  Constraints    2  |"" +
+              ""  Railway  Crossing    Gate  Performance    GP3    Gate  Ability  To  Open  <  =    7  |"" +
+              ""  Railway  Crossing    Crossing  Gate    CG3    Gate  Close  Time  <  =    20  "";
+              */
+          
+          
+              temp  Str  1 = main  Sto  . next  Token  ();
+              //  Re  -execute  : Whiteboard  Execution  Graph
+               s  To  1 = new String  Tokenizer  ( temp  Str  1  """");
+          
+               s  To  1  . next  Token  (); // dummy token as we want to write Impact  Report as a first word in Impact Report
+               impact  Report = ""  Impact  Report  "";
+          
+               event  Id = s  To  1  . next  Token  ();
+               impact  Report +  = ""|"" + event  Id  ;
+          
+               model  Name = s  To  1  . next  Token  (). trim  (); // contents ""  Whiteboard  Execution  Graph  ""
+               impact  Report +  = ""|"" + model  Name  ;
+          
+              s  To  2 = new String  Tokenizer  ( main  Sto  . next  Token  () """");
+              //  Drivers   1
+               type = s  To  2  . next  Token  (). trim  (); // contents ""  Drivers  ""
+               impact  Report +  = ""|"" + type  ;
+          
+               int num  Of  Driver = Integer  . parse  Int  ( s  To  2  . next  Token  (). trim  ()); // contents ""  1  ""
+               impact  Report +  = """" + num  Of  Driver  ;
+          
+                System  . out  . println  (""  ---------------------------  "");
+                System  . out  . println  (""  Driver info parsing Started  "");
+                for ( int i = 0  ; i  < num  Of  Driver  ; i  ++){// loop through number of drivers
+          
+                 s  To  3 = new String  Tokenizer  ( main  Sto  . next  Token  () """");
+                 //  WB12    Avg  Shape  Size    25    2000  
+                 impact  Report +  = ""|"" + ( s  To  3  . next  Token  ()); // extracts and add project  Name
+          
+                 impact  Report +  = """" + ( s  To  3  . next  Token  ()); // extracts and add Requirement Location
+          
+                 id = s  To  3  . next  Token  (). trim  ();// requirement Id
+                 impact  Report +  = """" + ( id  );
+          
+                 name = s  To  3  . next  Token  (). trim  ();
+                 impact  Report +  = """" + ( name  );
+          
+                 value = Double  . parse  Double  ( s  To  3  . next  Token  (). trim  ()) ;
+                 impact  Report +  = """" + ( value  );
+          
+                 speculate  Value = Double  . parse  Double  ( s  To  3  . next  Token  (). trim  ());
+                 impact  Report +  = """" + ( speculate  Value  );
+          
+                }// end of loop for number of drivers
+                System  . out  . println  (""  Driver info parsing Completed  "");
+                System  . out  . println  (""  ---------------------------  "");
+          
+               s  To  4 = new String  Tokenizer  ( main  Sto  . next  Token  () """");
+               //  Constraints    6
+               type = s  To  4  . next  Token  (). trim  (); // contents ""  Drivers  ""
+               impact  Report +  = ""|"" + type  ;
+          
+               int num  Of  Constraint = Integer  . parse  Int  ( s  To  4  . next  Token  (). trim  ()); // contents ""  1  ""
+               impact  Report +  = """" + num  Of  Constraint  ;
+          
+                System  . out  . println  (""  --------------------------------  "");
+                System  . out  . println  (""  Constraints info parsing Started  "");
+                for ( int i = 0  ; i  < num  Of  Constraint  ; i  ++){// loop through the number of constraints
+          
+                 s  To  5 = new String  Tokenizer  ( main  Sto  . next  Token  () """");
+                 //  WB19   target  Response  Time  .<  10
+                 impact  Report +  = ""|""+ ( s  To  5  . next  Token  ()); // extracts and add project  Name
+          
+                      impact  Report +  = """" + ( s  To  5  . next  Token  ()); // extracts and add"
+           int gr  Id  ;
+           "public int get  Id  (){
+           // get Graph  Id
+           System  . out  . println  (""  database start  "");
+           int gr  Id = database  . get  Graph  Id  ( model  Name  );
+           return gr  Id  ;
+           }"
+           "public void save  Model  ( int id  )
+           {
+            // save current model
+            database  . save  Current  Model  ( id  );
+           }"
+           "public void insert  Data  ( int id  ){
+            // inject data into model
+            database  . inject  Variables  ( id   variable  );
+           }"
+           "public void execute  ( int id  ){
+            // inject data into model
+            database  . execute  Model  ( id   variable  );
+           }"

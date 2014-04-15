@@ -1,0 +1,144 @@
+           Variable
+           "String id = """"; // requirement id ex WB10
+           String type  = """"; // type of requirement ex Driver or Constraints
+           String name  = """"; // requirement name which is same as variable name in graph
+           double value  = 0  .  0  ; // value of variable
+           double speculate  Value  = 0  .  0  ; // if the type is driver then the value you want to try
+           String logic  = """"; // if the type is Constraints then you want value that satisfies the logic
+           String project  _ path  = """"; // stores the project name and path on server seperated by comma"
+           "//  General Constructor to initialize all the members
+           Variable  (  String id   String type   String name   double value   double speculate  Value   String logic   String project  _ path  )
+           {
+            this  . id = id  ;
+            this  . type = type  ;
+            this  . name = name  ;
+            this  . value = value  ;
+            this  . speculate  Value = speculate  Value  ;
+            this  . logic = logic  ;
+            this  . project  _ path = project  _ path  ;
+           }"
+           "//  Constructor to Add driver related members
+           Variable  (  String id   String type   String name   double value   double speculate  Value  )
+           {
+            this  . id = id  ;
+            this  . type = type  ;
+            this  . name = name  ;
+            this  . value = value  ;
+            this  . speculate  Value = speculate  Value  ;
+           }"
+           "//  Constructor to Add constraints related members
+           Variable  (  String id   String type   String name   double value   String logic  ){
+            this  . id = id  ;
+            this  . type = type  ;
+            this  . name = name  ;
+            this  . value = value  ;
+            this  . logic = logic  ;
+           }"
+           "public String to  String  ()
+           {
+            String temp  ;
+            temp = ""  ID = "" + id + "" Type = "" + type + "" Name = "" + name +  "" value = "" + value +
+               "" Speculate  Value = "" + speculate  Value + "" Logic = "" + logic + "" Project  _  Path = "" + project  _ path  ;
+            return temp  ;
+           }"
+           "/**
+            * Returns the id  .
+            * @return int
+            */
+           public String get  Id  ()
+           {
+            return id  ;
+           }"
+           "/**
+            * Returns the logic  .
+            * @return String
+            */
+           public String get  Logic  ()
+           {
+            return logic  ;
+           }"
+           "/**
+            * Returns the name  .
+            * @return String
+            */
+           public String get  Name  ()
+           {
+            return name  ;
+           }"
+           "/**
+            * Returns the value  .
+            * @return double
+            */
+           public double get  Value  () {
+            return value  ;
+           }"
+           "/**
+            * Sets the id  .
+            * @param id The id to set
+            */
+           public void set  Id  (  String id  ) {
+            this  . id = id  ;
+           }"
+           "/**
+            * Sets the logic  .
+            * @param logic The logic to set
+            */
+           public void set  Logic  (  String logic  ) {
+            this  . logic = logic  ;
+           }"
+           "/**
+            * Sets the name  .
+            * @param name The name to set
+            */
+           public void set  Name  (  String name  ) {
+            this  . name = name  ;
+           }"
+           "/**
+            * Sets the value  .
+            * @param value The value to set
+            */
+           public void set  Value  ( double value  ) {
+            this  . value = value  ;
+           }"
+           "/**
+            * Returns the speculate  Value  .
+            * @return double
+            */
+           public double get  Speculate  Value  () {
+            return speculate  Value  ;
+           }"
+           "/**
+            * Sets the speculate  Value  .
+            * @param speculate  Value The speculate  Value to set
+            */
+           public void set  Speculate  Value  ( double speculate  Value  ) {
+            this  . speculate  Value = speculate  Value  ;
+           }"
+           "/**
+            * Returns the type  .
+            * @return String
+            */
+           public String get  Type  () {
+            return type  ;
+           }"
+           "/**
+            * Sets the type  .
+            * @param type The type to set
+            */
+           public void set  Type  (  String type  ) {
+            this  . type = type  ;
+           }"
+           "/**
+            * Returns the project  _ path  .
+            * @return String
+            */
+           public String get  Project  _ path  () {
+            return project  _ path  ;
+           }"
+           "/**
+            * Sets the project  _ path  .
+            * @param project  _ path The project  _ path to set
+            */
+           public void set  Project  _ path  (  String project  _ path  ) {
+            this  . project  _ path = project  _ path  ;
+           }"

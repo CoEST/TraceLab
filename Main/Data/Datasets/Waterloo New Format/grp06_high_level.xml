@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp06_high_level</id>
+    <name>Waterloo grp06_high_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp06_high_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>F01</id>
+      <content>Administrator can add new billing plans to System.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F02</id>
+      <content>Administrator can edit existing billing plan in System.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F03</id>
+      <content>Administrator can delete inactive billing plans from System.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F04</id>
+      <content>Administrator can define/edit the regular rate of a billing plan.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F05</id>
+      <content>Administrator can define/edit/delete one or more discount periods of a billing plan.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F06</id>
+      <content>Administrator can define/edit the discount rate of a discount period of a billing plan.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F07</id>
+      <content>System should monitor the event of a VoIP telephone being connected (plugged in).</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F08</id>
+      <content>System should monitor the event of a VoIP telephone being disconnected (unplugged).</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F09</id>
+      <content>System should translate the phone number dialed into the IP address and port number of the recipient of the call.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F10</id>
+      <content>Administrator can change the billing period length and set an effective date for the new billing period.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F11</id>
+      <content>Administrator can disable a connected, enabled phone.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F12</id>
+      <content>Administrator can enable a disabled phone.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F13</id>
+      <content>The system performs both administrator initiated connectivity test and scheduled periodic tests. This test polls each phone to see if it is still connected to the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F14</id>
+      <content>Prints a bill for a specific user or a list of users.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F15</id>
+      <content>If an error occurs on the phone or the user requests a reset, then administer resets the phone�s software.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F16</id>
+      <content>The Administrator sets the maximum amount simultaneous phone calls that the system can support.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F17</id>
+      <content>Administrator can add a new user account to System.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F18</id>
+      <content>Administrator can edit existing user account in System.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F19</id>
+      <content>Administrator can cancel a user account from System.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F20</id>
+      <content>Administrator can login with a username and password and enter the Administration Console application.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F21</id>
+      <content>Administrator can log out of the system and close the Admin Console application.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F22</id>
+      <content>User is able to originate a VoIP call.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F23</id>
+      <content>User is able to receive a VoIP call.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F24</id>
+      <content>Operators enter bill payment to update account status</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F25</id>
+      <content>SuperAdmin can add an administrator account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F26</id>
+      <content>SuperAdmin can edit an administrator account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F27</id>
+      <content>SuperAdmin can delete an administrator account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F28</id>
+      <content>When the user specified load balancing number is less than the amount of current phone connections the color of the current number of connections is highlighted with a distinctive color.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F29</id>
+      <content>Administrator can view and print a specific bill of a specific user.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F30</id>
+      <content>Administrator can view and print call history of a specific user for a specified period of time.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F31</id>
+      <content>Administrator can suspend an active user account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F32</id>
+      <content>Administrator can reactivate a suspended user account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N01</id>
+      <content>Administrator must logon to the admin console to perform account management, billing, and system maintenance operations</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N02</id>
+      <content>Different types of admin accounts define different access levels.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N03</id>
+      <content>Support different types of phones that conform to the specifications.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N04</id>
+      <content>System must provide uninterrupted voice service during a call.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N05</id>
+      <content>System must not introduce delays or distortions to the voice data.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N06</id>
+      <content>The VoIP phones should function exactly like traditional phones.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N07</id>
+      <content>The admin console must have an intuitive GUI.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

@@ -1,0 +1,30 @@
+F1	User dials a number to make a phone call~
+F2	User picks up the phone to answer phone call~
+F3	System Console validates Administrator with a login name and password pair.~
+F4	Administrator adds a user to the System.~
+F5	Administrator removes the IP address and phone number from user account, sets account status as inactive. ~
+F6	Administrator sets account status as active.~
+F7	Administrator sets account status as suspended if User account is overdue for 2 weeks or phone has problems and need to be taken out of service.~
+F8	Administrator can add phone number to existing active account without a phone number.~
+F9	Set user account as Ex-Employee~
+F10	Change user information on the System such as IP address, billing address, billing plans associated with an account, account privilege, etc.~
+F11	Administrator can perform system test to verify functionality of the system. Administrator may request such test at any time. ~
+F12	Ping user’s IP address to see if there is proper connection between the System and the user’s phone on a nightly basis.~
+F13	Administrator can perform connectivity between a user and the System.~
+F14	Administrator is able to set a value for the maximum number of calls allowed in the System.~
+F15	The system keep track of the duration of each call, the date and time of the call is made. ~
+F16	Print monthly bill for the all users~
+F17	Administrator is able to view user’s bill for any billing period. ~
+F18	Administrator records bill payment made by users. ~
+F19	Extra features supported by the System~
+F20	User add/edit/remove phone numbers they would like to filter by calling Administrator~
+F21	Two rates: 
+	1. Office hours
+	2. Non-office hours and weekends. Manager account get 50% off from normal employee rates.~
+F22	Allows Administrator to add new calling plan to the System~
+F23	Administrator can make changes to the existing calling plans.~
+F24	Phone numbers that start with 0 are dedicated to special numbers such as calling admin, voicemail, 911, etc.~
+F25	All phone numbers are 4 digits in length.~
+N1	A user friendly graphical interface to the System Console.~
+N2	System should available at all time. Uptime is critical because user will not be able to make call if System is down.~
+N3	System should be able to expand easily to be able to handle more users and higher connection capacity.~

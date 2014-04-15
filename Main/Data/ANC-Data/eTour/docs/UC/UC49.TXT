@@ -1,0 +1,13 @@
+Use case name VISUALIZZASITIPREFERITI 
+View the list of personal favorites. 
+Participating 
+Actor initialized by Tourist 
+Entry 
+conditions • The Tourist has successfully authenticated to the system. 
+Flow of events User System 
+1. Select the feature to display the list of personal favorites. 
+2 Upload the list of bookmarks. 
+Exit conditions • The system displays the list of bookmarks. 
+• Interruption of the connection to the server ETOUR. 
+Quality 
+requirements

@@ -1,0 +1,20 @@
+Test case Operator Login Date: 
+    C01's login through 20/06/2003 
+            correct and incorrect password 
+            torque (login password) 
+            in S I O 
+                                            Version: 
+                                             0 02 000 
+Use Case He performs the functions 
+UcValOpe necessary to authenticate an 
+            Operator 
+High Priority 
+The couple set up (login password) = (Rocolo 
+            Virago) is recorded in the `S I O 
+Description test 
+Input Login: Rocolo 
+            Password: Virago 
+The Oracle system allows access 
+            the operator 
+Classes cover valid: CE1 CE2 CE6 CE7 
+            Classes are not valid: None

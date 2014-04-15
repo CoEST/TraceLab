@@ -1,0 +1,18 @@
+Validation test case Patient Data: 
+    C15 tax code through 20/06/2003 
+            correct but not registered 
+            in S I O 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcValPaz necessary to authenticate an 
+            Patient 
+High Priority 
+Set up the tax code should not RGANLL80C14H703E 
+            be registered in S I O 
+Description test 
+Input Tax: RGANLL80C14H703E 
+The Oracle system does not allow access to 
+            section on Patient 
+Classes cover valid: CE6 
+            Classes invalid: CE10

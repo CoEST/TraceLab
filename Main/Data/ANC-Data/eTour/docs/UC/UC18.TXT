@@ -1,0 +1,13 @@
+Use case name CONTROLLANUMEROBANNER 
+Check if a point Refreshments included the maximum number of allowed banners to it. 
+Partecipating 
+Actor 
+Entry 
+Operator conditions • The agency wants to put a new banner 
+Flow of events User System 
+1. Load the data of the Convention of refreshment point and verify that the number of banners is less than the specified number of the current banner. If not checked, will end the operation input and displays a notification. 
+2 Confirmation of the reading of the notification. 
+3 Recovers the previous state. 
+Exit conditions • The system returns control to the user interaction. 
+• Interruption of the connection to the server ETOUR. 
+Quality requirements

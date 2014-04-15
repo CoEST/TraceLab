@@ -1,0 +1,826 @@
+package unisa.gps.etour.repository;
+
+import java.sql. Connection;
+import java.sql. Result Set;
+import java.sql. S Q L Exception;
+import java.sql. Statement;
+import java.sql. Time;
+import java.util. Array List;
+import java.util. Date;
+
+import unisa.gps.etour.bean. Bean Punto Di Ristoro;
+import unisa.gps.etour.bean. Bean Tag;
+import unisa.gps.etour.util. Punto  D;
+
+/**
+ *  Classe che implementa l'interfaccia del  Punto di  Ristoro
+ * 
+ * @author  Martone  Giuseppe
+ * @version  .  �      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I �  University
+ *          of  Salerno
+ */
+public class  D B Punto Di Ristoro implements  I D B Punto Di Ristoro
+{
+	//  Costruttore vuoto
+	public  D B Punto Di Ristoro()
+	{
+
+	}
+
+	public boolean cancella Punto Di Ristoro(int p Id Punto Di Ristoro)
+			throws  S Q L Exception
+	{
+		//  Variabile per la connessione al database
+		 Connection conn = null;
+		//  Variabile per le query
+		 Statement stat = null;
+		try
+		{
+			//  Ottengo la connessione
+			conn =  D B Connessione Pool.ottieni Connessione();
+			//  Creazione dello  Statement
+			stat = conn.create Statement();
+			//  Query di cancellazione
+			 String query = " D E L E T E  F R O M punto di ristoro   W H E R E  Id ="
+					+ p Id Punto Di Ristoro;
+			//  Si esegue la query di  Cancellazione
+			int i = stat.execute Update(query);
+			//  Si restituisce il backup
+			return (i ==  );
+		}
+		//  Viene eseguito sempre e si occupa di chiudere lo  Statement e la
+		//  Connessione
+		finally
+		{
+			if (stat != null)
+			{
+				stat.close();
+			}
+			if (conn != null)
+			{
+				 D B Connessione Pool.rilascia Connessione(conn);
+			}
+		}
+
+	}
+
+	public boolean inserisci Punto Di Ristoro( Bean Punto Di Ristoro p Punto Di Ristoro)
+			throws  S Q L Exception
+	{
+		//  Creazione dell' Orario di  Apertura e  Chiusura
+		java.sql. Time orario Apertura = new  Time(p Punto Di Ristoro
+				.get Orario Apertura().get Time());
+		java.sql. Time orario Chiusura = new  Time(p Punto Di Ristoro
+				.get Orario Chiusura().get Time());
+		//  Variabile per la connessione al database
+		 Connection conn = null;
+		//  Variabile per le query
+		 Statement stat = null;
+		try
+		{
+			//  Ottengo la connessione
+			conn =  D B Connessione Pool.ottieni Connessione();
+			//  Creazione dello  Statement
+			stat = conn.create Statement();
+			//  Query per l'inserimento di un punto di ristoro
+			 String query = " I N S E R T  I N T O punto di ristoro ( Nome,"
+					+ " Descrizione,  Telefono,  Latitudine,  Longitudine,"
+					+ " Altitudine,  Orario Apertura,  Orario Chiusura,  Giorno Chiusura,"
+					+ " Localita,  Citta,  Via,  Cap,  Provincia,  Media Voti,  Numero Voti,"
+					+ " Partita Iva)  V A L U E S ('" + p Punto Di Ristoro.get Nome()
+					+ "','" + p Punto Di Ristoro.get Descrizione() + "','"
+					+ p Punto Di Ristoro.get Telefono() + "',"
+					+ p Punto Di Ristoro.get Posizione().get Latitudine() + ","
+					+ p Punto Di Ristoro.get Posizione().get Longitudine() + ","
+					+ p Punto Di Ristoro.get Posizione().get Altitudine() + ",'"
+					+ orario Apertura.to String() + "','"
+					+ orario Chiusura.to String() + "','"
+					+ p Punto Di Ristoro.get Giorno Chiusura() + "','"
+					+ p Punto Di Ristoro.get Localita() + "','"
+					+ p Punto Di Ristoro.get Citta() + "','"
+					+ p Punto Di Ristoro.get Via() + "','"
+					+ p Punto Di Ristoro.get Cap() + "','"
+					+ p Punto Di Ristoro.get Provincia() + "',"
+					+ p Punto Di Ristoro.get Media Voti() + ","
+					+ p Punto Di Ristoro.get Numero Voti() + ",'"
+					+ p Punto Di Ristoro.get Partita Iva() + "');";
+			//  Si esegue la query di inserimento
+			int i = stat.execute Update(query);
+			return (i ==  );
+		}
+		//  Viene sempre eseguito e si occupa di chiudere lo  Statement, e la
+		//  Connessione
+		finally
+		{
+			if (stat != null)
+			{
+				stat.close();
+			}
+			if (conn != null)
+			{
+				 D B Connessione Pool.rilascia Connessione(conn);
+			}
+		}
+	}
+
+	public boolean modifica Punto Di Ristoro( Bean Punto Di Ristoro p Punto Di Ristoro)
+			throws  S Q L Exception
+	{
+		//  Creazione dell' Orario di  Apertura e  Chiusura
+		java.sql. Time orario Apertura = new  Time(p Punto Di Ristoro
+				.get Orario Apertura().get Time());
+		java.sql. Time orario Chiusura = new  Time(p Punto Di Ristoro
+				.get Orario Chiusura().get Time());
+		//  Variabile per la connessione al database
+		 Connection conn = null;
+		//  Variabile per le query
+		 Statement stat = null;
+		try
+		{
+			//  Ottengo la connessione
+			conn =  D B Connessione Pool.ottieni Connessione();
+			//  Creazione dello  Statement
+			stat = conn.create Statement();
+			//  Query di modifica
+			 String query = " U P D A T E punto di ristoro   S E T " + "  Nome = '"
+					+ p Punto Di Ristoro.get Nome() + "',  Descrizione='"
+					+ p Punto Di Ristoro.get Descrizione() + "',  Telefono= '"
+					+ p Punto Di Ristoro.get Telefono() + "',  Latitudine= "
+					+ p Punto Di Ristoro.get Posizione().get Latitudine()
+					+ ",  Longitudine= "
+					+ p Punto Di Ristoro.get Posizione().get Longitudine()
+					+ ",  Altitudine="
+					+ p Punto Di Ristoro.get Posizione().get Altitudine()
+					+ ",  Orario Apertura='" + orario Apertura.to String()
+					+ "',  Orario Chiusura='" + orario Chiusura.to String()
+					+ "',  Giorno Chiusura='"
+					+ p Punto Di Ristoro.get Giorno Chiusura() + "', Localita= '"
+					+ p Punto Di Ristoro.get Localita() + "',  Citta='"
+					+ p Punto Di Ristoro.get Citta() + "',  Via= '"
+					+ p Punto Di Ristoro.get Via() + "',  Cap= '"
+					+ p Punto Di Ristoro.get Cap() + "',  Provincia='"
+					+ p Punto Di Ristoro.get Provincia() + "',  Media Voti = "
+					+ p Punto Di Ristoro.get Media Voti() + ",  Numero Voti= "
+					+ p Punto Di Ristoro.get Numero Voti() + ",  Partita Iva= '"
+					+ p Punto Di Ristoro.get Partita Iva() + "'  W H E R E  Id= "
+					+ p Punto Di Ristoro.get Id();
+			//  Si esegue la query di  Modifica
+			int i = stat.execute Update(query);
+			//  Si restituisce il backup
+			return (i ==  );
+		}
+		//  Viene sempre eseguito e si occupa di chiudere lo  Statement e la
+		//  Connessione
+		finally
+		{
+			if (stat != null)
+			{
+				stat.close();
+			}
+			if (conn != null)
+			{
+				 D B Connessione Pool.rilascia Connessione(conn);
+			}
+		}
+	}
+
+	public int ottieni Numero Elementi Ricerca( String p Keyword,
+			 Array List< Bean Tag> p Tags,  Punto  D p Posizione,
+			double p Distanza Massima) throws  S Q L Exception
+	{
+		//  Variabile per la connessione al database
+		 Connection conn = null;
+		//  Variabile per le query
+		 Statement stat = null;
+		//  Variabile per i risultati delle query
+		 Result Set result = null;
+		try
+		{
+			//  Ottengo la connessione
+			conn =  D B Connessione Pool.ottieni Connessione();
+			//  Creazione dello  Statement
+			stat = conn.create Statement();
+			//  Query per ottenere il numero di pagine
+			 String query = "";
+			if (p Tags.size() ==  )
+			{
+				//  Query senza il controllo dei tag
+				query = " S E L E C T count(numero)  F R O M ( S E L E C T count(punto di ristoro . Id)  A S numero "
+						+ " F R O M punto di ristoro  "
+						+ " W H E R E (punto di ristoro . Nome  L I K E '%"
+						+ p Keyword
+						+ "%'  O R punto di ristoro . Descrizione  L I K E '%"
+						+ p Keyword
+						+ "%') "
+						+ "  A N D distanza(punto di ristoro . Latitudine,punto di ristoro . Longitudine,"
+						+ p Posizione.get Latitudine()
+						+ ","
+						+ p Posizione.get Longitudine()
+						+ ") < "
+						+ p Distanza Massima
+						+ " G R O U P  B Y punto di ristoro . Id "
+						+ " O R D E R  B Y count(punto di ristoro . Id)  D E S C)  A S tabella ";
+			}
+			else
+			{
+				//  Query con i tag
+				query = " S E L E C T count(numero)  F R O M ( S E L E C T count(punto di ristoro . Id)  A S numero "
+						+ " F R O M punto di ristoro  "
+						+ " J O I N (appartenenza punto di ristoro   J O I N tag  O N  Id Tag =  Id) "
+						+ " O N punto di ristoro . Id = appartenenza punto di ristoro . Id Punto Di Ristoro "
+						+ " W H E R E (punto di ristoro . Nome  L I K E '%"
+						+ p Keyword
+						+ "%'  O R punto di ristoro . Descrizione  L I K E '%"
+						+ p Keyword
+						+ "%')  A N D (tag. Nome = '" + p Tags.get( ).get Nome();
+				if (p Tags.size() >=  )
+				{
+					query = query + "'  O R tag. Nome = '"
+							+ p Tags.get( ).get Nome();
+				}
+				if (p Tags.size() >=  )
+				{
+					query = query + "'  O R tag. Nome = '"
+							+ p Tags.get( ).get Nome();
+				}
+				if (p Tags.size() >=  )
+				{
+					query = query + "'  O R tag. Nome = '"
+							+ p Tags.get( ).get Nome();
+				}
+				if (p Tags.size() >=  )
+				{
+					query = query + "'  O R tag. Nome = '"
+							+ p Tags.get( ).get Nome();
+				}
+				query = query
+						+ "') "
+						+ "  A N D distanza(punto di ristoro . Latitudine,punto di ristoro . Longitudine,"
+						+ p Posizione.get Latitudine() + ","
+						+ p Posizione.get Longitudine() + ") < "
+						+ p Distanza Massima + " G R O U P  B Y punto di ristoro . Id "
+						+ " O R D E R  B Y count(punto di ristoro . Id)  D E S C)  A S tabella ";
+
+			}
+			//  Si esegue la query
+			result = stat.execute Query(query);
+			//  Si restituisce il valore di count() che contiene il numero delle
+			// tuple
+			int i =  ;
+			if (result.next())
+			{
+				i = result.get Int( );
+			}
+			return i;
+		}
+		//  Viene eseguito sempre e si occupa di chiudere il  Result, lo  Statement
+		// e la  Connessione
+		finally
+		{
+			if (result != null)
+			{
+				result.close();
+			}
+			if (stat != null)
+			{
+				stat.close();
+			}
+			if (conn != null)
+			{
+				 D B Connessione Pool.rilascia Connessione(conn);
+			}
+		}
+	}
+
+	public int ottieni Numero Elementi Ricerca Avanzata(int p Id Turista,
+			 String p Keyword,  Array List< Bean Tag> p Tags,  Punto  D p Posizione,
+			double p Distanza Massima) throws  S Q L Exception
+	{
+		//  Variabile per la connessione al database
+		 Connection conn = null;
+		//  Variabile per le query
+		 Statement stat = null;
+		//  Variabile per i risultati delle query
+		 Result Set result = null;
+		try
+		{
+			//  Ottengo la connessione
+			conn =  D B Connessione Pool.ottieni Connessione();
+			//  Creazione dello  Statement
+			stat = conn.create Statement();
+			//  Query per ottenere il numero di pagine della ricerca avanzata
+			 String query = "";
+			if (p Tags.size() ==  )
+			{
+				//  Query senza il controllo dei tag
+				query = " S E L E C T count(numero)  F R O M ( S E L E C T count(punto di ristoro . Id)  A S numero "
+						+ " F R O M (punto di ristoro    L E F T  J O I N "
+						+ "( S E L E C T  Id Punto Di Ristoro "
+						+ " F R O M associazione punto di ristoro , ("
+						+ " S E L E C T  Id Preferenze Di Ricerca "
+						+ " F R O M gradimento "
+						+ " W H E R E  Id Turista = "
+						+ p Id Turista
+						+ " )  A S pref "
+						+ " W H E R E associazione punto di ristoro . Id Preferenze Di Ricerca = pref. Id Preferenze Di Ricerca) "
+						+ " A S preferenze  O N punto di ristoro . Id = preferenze. Id Punto Di Ristoro) "
+						+ " W H E R E (punto di ristoro . Nome  L I K E '%"
+						+ p Keyword
+						+ "%'  O R punto di ristoro . Descrizione  L I K E '%"
+						+ p Keyword
+						+ "%') "
+						+ "  A N D distanza(punto di ristoro . Latitudine,punto di ristoro . Longitudine,"
+						+ p Posizione.get Latitudine()
+						+ ","
+						+ p Posizione.get Longitudine()
+						+ ") < "
+						+ p Distanza Massima
+						+ " G R O U P  B Y punto di ristoro . Id "
+						+ " O R D E R  B Y count(punto di ristoro . Id)  D E S C)  A S tabella ";
+			}
+			else
+			{
+				//  Query con i tag
+				query = " S E L E C T count(numero)  F R O M ( S E L E C T count(punto di ristoro . Id)  A S numero "
+						+ " F R O M (punto di ristoro    L E F T  J O I N "
+						+ "( S E L E C T  Id Punto Di Ristoro "
+						+ " F R O M associazione punto di ristoro , ("
+						+ " S E L E C T  Id Preferenze Di Ricerca "
+						+ " F R O M gradimento "
+						+ " W H E R E  Id Turista = "
+						+ p Id Turista
+						+ " )  A S pref "
+						+ " W H E R E associazione punto di ristoro . Id Preferenze Di Ricerca = pref. Id Preferenze Di Ricerca) "
+						+ " A S preferenze  O N punto di ristoro . Id = preferenze. Id Punto Di Ristoro) "
+						+ " J O I N (appartenenza punto di ristoro   J O I N tag  O N  Id Tag =  Id) "
+						+ " O N punto di ristoro . Id = appartenenza punto di ristoro . Id Punto Di Ristoro "
+						+ " W H E R E (punto di ristoro . Nome  L I K E '%"
+						+ p Keyword
+						+ "%'  O R punto di ristoro . Descrizione  L I K E '%"
+						+ p Keyword
+						+ "%')  A N D (tag. Nome = '" + p Tags.get( ).get Nome();
+				if (p Tags.size() >=  )
+				{
+					query = query + "'  O R tag. Nome = '"
+							+ p Tags.get( ).get Nome();
+				}
+				if (p Tags.size() >=  )
+				{
+					query = query + "'  O R tag. Nome = '"
+							+ p Tags.get( ).get Nome();
+				}
+				if (p Tags.size() >=  )
+				{
+					query = query + "'  O R tag. Nome = '"
+							+ p Tags.get( ).get Nome();
+				}
+				if (p Tags.size() >=  )
+				{
+					query = query + "'  O R tag. Nome = '"
+							+ p Tags.get( ).get Nome();
+				}
+				query = query
+						+ "') "
+						+ "  A N D distanza(punto di ristoro . Latitudine,punto di ristoro . Longitudine,"
+						+ p Posizione.get Latitudine() + ","
+						+ p Posizione.get Longitudine() + ") < "
+						+ p Distanza Massima + " G R O U P  B Y punto di ristoro . Id "
+						+ " O R D E R  B Y count(punto di ristoro . Id)  D E S C)  A S tabella ";
+			}
+			//  Si esegue la query
+			result = stat.execute Query(query);
+			//  Si restituisce il valore di count() che contiene il numero delle
+			// tuple
+			int i =  ;
+			if (result.next())
+			{
+				i = result.get Int( );
+			}
+			return i;
+		}
+		//  Viene eseguito sempre e si occupa di chiudere il  Result, lo  Statement
+		// e la  Connessione
+		finally
+		{
+			if (result != null)
+			{
+				result.close();
+			}
+			if (stat != null)
+			{
+				stat.close();
+			}
+			if (conn != null)
+			{
+				 D B Connessione Pool.rilascia Connessione(conn);
+			}
+		}
+	}
+
+	public  Bean Punto Di Ristoro ottieni Punto Di Ristoro(int p Id)
+			throws  S Q L Exception
+	{
+		//  Variabile per la connessione al database
+		 Connection conn = null;
+		//  Variabile per le query
+		 Statement stat = null;
+		//  Variabile per i risultati delle query
+		 Result Set result = null;
+		try
+		{
+			//  Ottengo la connessione
+			conn =  D B Connessione Pool.ottieni Connessione();
+			//  Creazione dello  Statement
+			stat = conn.create Statement();
+			//  Query
+			 String query = " S E L E C T *  F R O M punto di ristoro   W H E R E  Id =" + p Id;
+			//  Si esegue la query
+			result = stat.execute Query(query);
+			if (result.next())
+			{
+				//  Si generano gli oggetti da restituire
+				 Punto  D punto = new  Punto  D(result.get Double(" Latitudine"),
+						result.get Double(" Longitudine"), result
+								.get Double(" Altitudine"));
+				 Date orario Apertura = new  Date(result.get Time(" Orario Apertura")
+						.get Time());
+				 Date orario Chiusura = new  Date(result.get Time(" Orario Chiusura")
+						.get Time());
+				//  Si genera il bean del punto di ristoro
+				 Bean Punto Di Ristoro punto Temp = new  Bean Punto Di Ristoro(result
+						.get Int(" Id"), result.get Int(" Numero Voti"), result
+						.get Double(" Media Voti"), result.get String(" Nome"),
+						result.get String(" Descrizione"), result
+								.get String(" Telefono"), result
+								.get String(" Localita"), result
+								.get String(" Citta"), result.get String(" Via"),
+						result.get String(" Cap"), result.get String(" Provincia"),
+						result.get String(" Partita Iva"), punto, orario Apertura,
+						orario Chiusura, result.get String(" Giorno Chiusura"));
+				//  Si restituisce il punto di ristoro
+				return punto Temp;
+			}
+			else
+			{
+				return null;
+			}
+		}
+		//  Viene eseguito sempre e si occupa di chiudere il  Result, lo  Statement
+		// e la  Connessione
+		finally
+		{
+			if (result != null)
+			{
+				result.close();
+			}
+			if (stat != null)
+			{
+				stat.close();
+			}
+			if (conn != null)
+			{
+				 D B Connessione Pool.rilascia Connessione(conn);
+			}
+		}
+	}
+
+	public  Array List< Bean Punto Di Ristoro> ricerca( String p Keyword,
+			 Array List< Bean Tag> p Tags, int p Numero Pagina,
+			int p Numero Elementi Per Pagina,  Punto  D p Posizione,
+			double p Distanza Massima) throws  S Q L Exception
+	{
+		//  Variabile per la connessione al database
+		 Connection conn = null;
+		//  Variabile per le query
+		 Statement stat = null;
+		//  Variabile per i risultati delle query
+		 Result Set result = null;
+		try
+		{
+			//  Ottengo la connessione
+			conn =  D B Connessione Pool.ottieni Connessione();
+			//  Creazione dello  Statement
+			stat = conn.create Statement();
+			//  Query per la ricerca
+			 String query = "";
+			if (p Tags.size() ==  )
+			{
+				//  Query senza il controllo dei tag
+				query = " S E L E C T * "
+						+ " F R O M punto di ristoro  "
+						+ " W H E R E (punto di ristoro . Nome  L I K E '%"
+						+ p Keyword
+						+ "%'  O R punto di ristoro . Descrizione  L I K E '%"
+						+ p Keyword
+						+ "%') "
+						+ "  A N D distanza(punto di ristoro . Latitudine,punto di ristoro . Longitudine,"
+						+ p Posizione.get Latitudine() + ","
+						+ p Posizione.get Longitudine() + ") < "
+						+ p Distanza Massima + " G R O U P  B Y punto di ristoro . Id "
+						+ " O R D E R  B Y count(punto di ristoro . Id)  D E S C  L I M I T "
+						+ (p Numero Pagina * p Numero Elementi Per Pagina) + ","
+						+ p Numero Elementi Per Pagina;
+			}
+			else
+			{
+				//  Query con i tag
+				query = " S E L E C T * "
+						+ " F R O M punto di ristoro  "
+						+ " J O I N (appartenenza punto di ristoro   J O I N tag  O N  Id Tag =  Id) "
+						+ " O N punto di ristoro . Id = appartenenza punto di ristoro . Id Punto Di Ristoro "
+						+ " W H E R E (punto di ristoro . Nome  L I K E '%" + p Keyword
+						+ "%'  O R punto di ristoro . Descrizione  L I K E '%" + p Keyword
+						+ "%')  A N D (tag. Nome = '" + p Tags.get( ).get Nome();
+				if (p Tags.size() >=  )
+				{
+					query = query + "'  O R tag. Nome = '"
+							+ p Tags.get( ).get Nome();
+				}
+				if (p Tags.size() >=  )
+				{
+					query = query + "'  O R tag. Nome = '"
+							+ p Tags.get( ).get Nome();
+				}
+				if (p Tags.size() >=  )
+				{
+					query = query + "'  O R tag. Nome = '"
+							+ p Tags.get( ).get Nome();
+				}
+				if (p Tags.size() >=  )
+				{
+					query = query + "'  O R tag. Nome = '"
+							+ p Tags.get( ).get Nome();
+				}
+				query = query
+						+ "') "
+						+ "  A N D distanza(punto di ristoro . Latitudine,punto di ristoro . Longitudine,"
+						+ p Posizione.get Latitudine() + ","
+						+ p Posizione.get Longitudine() + ") < "
+						+ p Distanza Massima + " G R O U P  B Y punto di ristoro . Id "
+						+ " O R D E R  B Y count(punto di ristoro . Id)  D E S C  L I M I T "
+						+ (p Numero Pagina * p Numero Elementi Per Pagina) + ","
+						+ p Numero Elementi Per Pagina;
+			}
+			//  Si esegue la query
+			result = stat.execute Query(query);
+			//  Lista che conterrà i  Bean Punto Di Ristoro
+			 Array List< Bean Punto Di Ristoro> lista = new  Array List< Bean Punto Di Ristoro>();
+			while (result.next())
+			{
+				//  Si generano gli oggetti da restituire
+				 Punto  D punto = new  Punto  D(result.get Double(" Latitudine"),
+						result.get Double(" Longitudine"), result
+								.get Double(" Altitudine"));
+				 Date orario Apertura = new  Date(result.get Time(" Orario Apertura")
+						.get Time());
+				 Date orario Chiusura = new  Date(result.get Time(" Orario Chiusura")
+						.get Time());
+				//  Si genera il punto di ristoro
+				 Bean Punto Di Ristoro punto Temp = new  Bean Punto Di Ristoro(result
+						.get Int(" Id"), result.get Int(" Numero Voti"), result
+						.get Double(" Media Voti"), result.get String(" Nome"),
+						result.get String(" Descrizione"), result
+								.get String(" Telefono"), result
+								.get String(" Localita"), result
+								.get String(" Citta"), result.get String(" Via"),
+						result.get String(" Cap"), result.get String(" Provincia"),
+						result.get String(" Partita Iva"), punto, orario Apertura,
+						orario Chiusura, result.get String(" Giorno Chiusura"));
+				//  Si inserisce il bean nella lista
+				lista.add(punto Temp);
+			}
+			//  Si restituisce la lista
+			return lista;
+		}
+		//  Viene eseguito sempre e si occupa di chiudere il  Result, lo  Statement
+		// e la  Connessione
+		finally
+		{
+			if (result != null)
+			{
+				result.close();
+			}
+			if (stat != null)
+			{
+				stat.close();
+			}
+			if (conn != null)
+			{
+				 D B Connessione Pool.rilascia Connessione(conn);
+			}
+		}
+	}
+
+	public  Array List< Bean Punto Di Ristoro> ricerca Avanzata(int p Id Turista,
+			 String p Keyword,  Array List< Bean Tag> p Tags, int p Numero Pagina,
+			int p Numero Elementi Per Pagina,  Punto  D p Posizione,
+			double p Distanza Massima) throws  S Q L Exception
+	{
+		//  Variabile per la connessione al database
+		 Connection conn = null;
+		//  Variabile per le query
+		 Statement stat = null;
+		//  Variabile per i risultati delle query
+		 Result Set result = null;
+		try
+		{
+			//  Ottengo la connessione
+			conn =  D B Connessione Pool.ottieni Connessione();
+			//  Creazione dello  Statement
+			stat = conn.create Statement();
+			//  Query per la ricerca avanzata
+			 String query = "";
+			if (p Tags.size() ==  )
+			{
+				//  Query senza i tag
+				query = " S E L E C T * "
+						+ " F R O M (punto di ristoro    L E F T  J O I N "
+						+ "( S E L E C T  Id Punto Di Ristoro "
+						+ " F R O M associazione punto di ristoro , ("
+						+ " S E L E C T  Id Preferenze Di Ricerca "
+						+ " F R O M gradimento "
+						+ " W H E R E  Id Turista = "
+						+ p Id Turista
+						+ " )  A S pref "
+						+ " W H E R E associazione punto di ristoro . Id Preferenze Di Ricerca = pref. Id Preferenze Di Ricerca) "
+						+ " A S preferenze  O N punto di ristoro . Id = preferenze. Id Punto Di Ristoro) "
+						+ " W H E R E (punto di ristoro . Nome  L I K E '%"
+						+ p Keyword
+						+ "%'  O R punto di ristoro . Descrizione  L I K E '%"
+						+ p Keyword
+						+ "%')"
+						+ "  A N D distanza(punto di ristoro . Latitudine,punto di ristoro . Longitudine,"
+						+ p Posizione.get Latitudine() + ","
+						+ p Posizione.get Longitudine() + ") < "
+						+ p Distanza Massima + " G R O U P  B Y punto di ristoro . Id "
+						+ " O R D E R  B Y count(punto di ristoro . Id)  D E S C  L I M I T "
+						+ (p Numero Pagina * p Numero Elementi Per Pagina) + ","
+						+ p Numero Elementi Per Pagina;
+			}
+			else
+			{
+				//  Query con i tag
+				query = " S E L E C T * "
+						+ " F R O M (punto di ristoro    L E F T  J O I N "
+						+ "( S E L E C T  Id Punto Di Ristoro "
+						+ " F R O M associazione punto di ristoro , ("
+						+ " S E L E C T  Id Preferenze Di Ricerca "
+						+ " F R O M gradimento "
+						+ " W H E R E  Id Turista = "
+						+ p Id Turista
+						+ " )  A S pref "
+						+ " W H E R E associazione punto di ristoro . Id Preferenze Di Ricerca = pref. Id Preferenze Di Ricerca) "
+						+ " A S preferenze  O N punto di ristoro . Id = preferenze. Id Punto Di Ristoro) "
+						+ " J O I N (appartenenza punto di ristoro   J O I N tag  O N  Id Tag =  Id) "
+						+ " O N punto di ristoro . Id = appartenenza punto di ristoro . Id Punto Di Ristoro "
+						+ " W H E R E (punto di ristoro . Nome  L I K E '%" + p Keyword
+						+ "%'  O R punto di ristoro . Descrizione  L I K E '%" + p Keyword
+						+ "%')  A N D (tag. Nome = '" + p Tags.get( ).get Nome();
+				if (p Tags.size() >=  )
+				{
+					query = query + "'  O R tag. Nome = '"
+							+ p Tags.get( ).get Nome();
+				}
+				if (p Tags.size() >=  )
+				{
+					query = query + "'  O R tag. Nome = '"
+							+ p Tags.get( ).get Nome();
+				}
+				if (p Tags.size() >=  )
+				{
+					query = query + "'  O R tag. Nome = '"
+							+ p Tags.get( ).get Nome();
+				}
+				if (p Tags.size() >=  )
+				{
+					query = query + "'  O R tag. Nome = '"
+							+ p Tags.get( ).get Nome();
+				}
+				query = query
+						+ "') "
+						+ "  A N D distanza(punto di ristoro . Latitudine,punto di ristoro . Longitudine,"
+						+ p Posizione.get Latitudine() + ","
+						+ p Posizione.get Longitudine() + ") < "
+						+ p Distanza Massima + " G R O U P  B Y punto di ristoro . Id "
+						+ " O R D E R  B Y count(punto di ristoro . Id)  D E S C  L I M I T "
+						+ (p Numero Pagina * p Numero Elementi Per Pagina) + ","
+						+ p Numero Elementi Per Pagina;
+			}
+			//  Si esegue la query
+			result = stat.execute Query(query);
+
+			 Array List< Bean Punto Di Ristoro> lista = new  Array List< Bean Punto Di Ristoro>();
+			while (result.next())
+			{
+				//  Si generano gli oggetti da restituire
+				 Punto  D punto = new  Punto  D(result.get Double(" Latitudine"),
+						result.get Double(" Longitudine"), result
+								.get Double(" Altitudine"));
+				 Date orario Apertura = new  Date(result.get Time(" Orario Apertura")
+						.get Time());
+				 Date orario Chiusura = new  Date(result.get Time(" Orario Chiusura")
+						.get Time());
+				//  Si genera il bene culturale
+				 Bean Punto Di Ristoro bene Temp = new  Bean Punto Di Ristoro(result
+						.get Int(" Id"), result.get Int(" Numero Voti"), result
+						.get Double(" Media Voti"), result.get String(" Nome"),
+						result.get String(" Descrizione"), result
+								.get String(" Telefono"), result
+								.get String(" Localita"), result
+								.get String(" Citta"), result.get String(" Via"),
+						result.get String(" Cap"), result.get String(" Provincia"),
+						result.get String(" Partita Iva"), punto, orario Apertura,
+						orario Chiusura, result.get String(" Giorno Chiusura"));
+				//  Si inserisce il bean nella lista
+				lista.add(bene Temp);
+			}
+			//  Si restituisce la lista
+			return lista;
+		}
+		//  Viene eseguito sempre e si occupa di chiudere il  Result, lo  Statement
+		// e la  Connessione
+		finally
+		{
+			if (result != null)
+			{
+				result.close();
+			}
+			if (stat != null)
+			{
+				stat.close();
+			}
+			if (conn != null)
+			{
+				 D B Connessione Pool.rilascia Connessione(conn);
+			}
+		}
+	}
+
+	public  Array List< Bean Punto Di Ristoro> ottieni Lista P R() throws  S Q L Exception
+	{
+		//  Variabile per la connessione al database
+		 Connection conn = null;
+		//  Variabile per le query
+		 Statement stat = null;
+		//  Variabile per i risultati delle query
+		 Result Set result = null;
+		try
+		{
+			//  Ottengo la connessione
+			conn =  D B Connessione Pool.ottieni Connessione();
+			//  Creazione dello  Statement
+			stat = conn.create Statement();
+			//  Query per ottenere la lista di tutti i punti di ristoro
+			 String query = " S E L E C T *  F R O M punto di ristoro ";
+			//  Si esegue la query
+			result = stat.execute Query(query);
+			//  Lista che conterrà i  Bean Punto Di Ristoro
+			 Array List< Bean Punto Di Ristoro> lista = new  Array List< Bean Punto Di Ristoro>();
+			while (result.next())
+			{
+				//  Si generano gli oggetti da restituire
+				 Punto  D punto = new  Punto  D(result.get Double(" Latitudine"),
+						result.get Double(" Longitudine"), result
+								.get Double(" Altitudine"));
+				 Date orario Apertura = new  Date(result.get Time(" Orario Apertura")
+						.get Time());
+				 Date orario Chiusura = new  Date(result.get Time(" Orario Chiusura")
+						.get Time());
+				//  Si genera il punto di ristoro
+				 Bean Punto Di Ristoro punto Temp = new  Bean Punto Di Ristoro(result
+						.get Int(" Id"), result.get Int(" Numero Voti"), result
+						.get Double(" Media Voti"), result.get String(" Nome"),
+						result.get String(" Descrizione"), result
+								.get String(" Telefono"), result
+								.get String(" Localita"), result
+								.get String(" Citta"), result.get String(" Via"),
+						result.get String(" Cap"), result.get String(" Provincia"),
+						result.get String(" Partita Iva"), punto, orario Apertura,
+						orario Chiusura, result.get String(" Giorno Chiusura"));
+				//  Si inserisce il bean nella lista
+				lista.add(punto Temp);
+			}
+			//  Si restituisce la lista
+			return lista;
+		}
+		//  Viene eseguito sempre e si occupa di chiudere il  Result, lo  Statement
+		// e la  Connessione
+		finally
+		{
+			if (result != null)
+			{
+				result.close();
+			}
+			if (stat != null)
+			{
+				stat.close();
+			}
+			if (conn != null)
+			{
+				 D B Connessione Pool.rilascia Connessione(conn);
+			}
+		}
+
+	}
+
+}

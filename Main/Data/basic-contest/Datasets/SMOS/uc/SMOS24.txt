@@ -1,0 +1,12 @@
+Nome:VisualizzaDettagliInsegnamento
+Attori: Amministratore
+Descrizione: Permette di visualizzare i dettagli di un insegnamento
+Precondizioni:
+•	L’utente ha già effettuato il login • L’utente ha già eseguito il caso d’uso “VisualizzaElencoInsegnamenti” e il
+sistema sta visualizzando l’elenco degli insegnamenti •	L’utente clicca sul pulsante “dettagli insegnamento”
+Sequenza degli eventi
+Utente
+Sistema
+1.	Visualizza la schermata con i dettagli di un singolo insegnamento.
+Postcondizioni:
+•	L’utente visualizza le informazioni dettagliate di un singolo insegnamento •	Connessione al server SMOS interrotta

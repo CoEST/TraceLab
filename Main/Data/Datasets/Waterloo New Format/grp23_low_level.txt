@@ -1,0 +1,100 @@
+UC1	Name:   Make Call	ID:  1
+Event: user makes phone call to another user
+System: IP Phone System
+Actors: User (also known as caller)
+Over View: Description of internal behaviour when a user makes a phone call~
+UC2	Name: Receive Call	ID: 2
+Event: user(callee) receives a call from another user(caller)
+System: IP Phone System
+Actors: Users (a caller, a callee)
+Over View: Description of internal behaviour when a user receives a phone call ~
+UC3	Name: Login	ID: 3
+Event: Administrator logs into the sever
+System: IP Phone System
+Actors: Administrator
+Over View: Description of internal behaviour while the administrator logs in.~
+UC4	Name: Add User Account	ID :4
+Event: Administrator adds one new account or active a cancelled account
+System: IP Phone System
+Actors: Administrator(initiator)
+Over View: Description of internal behaviour while the administrator adds one new account or active a cancelled account~
+UC5	Name: Edit User Account	ID :5
+Event: Administrator edit a particular user account
+System: IP Phone System
+Actors: Administrator
+Over View: Description of internal behaviour while the administrator edits a particular user account~
+UC6	Name: Cancel User Service	ID :6
+Event: Administrator cancel a particular user’s service
+System: IP Phone System
+Actors: Administrator(initiator)
+Over View: Description of internal behaviour while the administrator cancels a particular user’s service~
+UC7	Name: Add Call Plan	ID:7
+Event: Administrator adds a new plan to the system, specifically to PlanList
+System: IP Phone System
+Actors: Administrator 
+Over View: Description of internal behaviour while the administrator adds a new plan.~
+UC8	Name: Delete Call Plan	ID:8
+Event: Administrator deletes an existing plan from the system
+System: IP Phone System
+Actors: Administrator
+Over View: Description of internal behaviour while the administrator deletes a plan.~
+UC9	Name: Edit Call Plan	ID:9
+Event: Administrator edits an existing plan in the system
+System: IP Phone System
+Actors: Administrator 
+Over View: Description of internal behaviour while the administrator edits a plan.~
+UC10	Name: Set Max Number of Calls Allowed	ID:10
+Event: Administrator sets the maximum number of calls allowed at a time
+System: IP Phone System
+Actors: Administrator
+Over View: Description of internal behaviour while the administrator sets the number~
+UC11	Name:   Enable Phone	ID:  11
+Event: Enable a new/repaired phone in the system
+System: IP Phone System
+Actors: Administrator
+Over View: Description of internal behaviour when a new/repaired phone is enabled in     the system~
+UC12	Name:   Display Hardware Status	ID:  12
+Event: Display the status information of the hardware in System Console
+System: IP Phone System
+Actors: Administrator
+Over View: Description of internal behaviour when a administrator requests to display the status of the hardware of the system~
+UC13	Name:   Check Phone	ID:  13
+Event: Run connectivity tests on an IP phone
+System: IP Phone System
+Actors: Administrator
+Over View: Description of internal behaviour when administrator run tests on a phone~
+UC14	Name: Logout	ID: 14
+Event: Administrator logout the system
+System: IP Phone System
+Actors: Administrator
+Over View: Description of internal behaviour after the operator logoff.~
+UC15	Name: Add administrator	ID: 15
+Event: Administrator adds one more administrator to the system
+System: IP Phone System
+Actors: Administrator(an existing administrator)
+Over View: Description of internal behaviour when a new administrator is added.~
+UC16	Name: Delete Administrator	ID: 16
+Event: Administrator deletes another administrator
+System: IP Phone System
+Actors: Administrator
+Over View: Description of internal behaviour when an existing administrator is deleted.~
+UC18	Name:   Print Bill	ID:  18
+Event: Administrator asks system to print user’s bill
+System: IP Phone System
+Actors: Administrator
+Over View: Description of internal behaviour when administrator requests to print user’s bill~
+UC19	Name: Suspend User Service	ID :19
+Event: Administrator suspends a particular user’s service
+System: IP Phone System
+Actors: Administrator(initiator)
+Over View: Description of internal behaviour while the administrator suspends a particular user’s service~
+UC20	Name: Resume User Service	ID :20
+Event: Administrator resumes a particular user’s service
+System: IP Phone System
+Actors: Administrator(initiator)
+Over View: Description of internal behaviour while the administrator resumes a particular user’s service~
+UC21	Name: Monitor Call Process	ID :21
+Event: Administrator monitors all of the calling processes.
+System: IP Phone System
+Actors: Administrator(initiator)
+Over View: Description of internal behaviour while the administrator monitors call process.~

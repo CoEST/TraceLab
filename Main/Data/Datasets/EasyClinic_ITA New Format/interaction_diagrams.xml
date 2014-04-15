@@ -1,0 +1,740 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>ID</id>
+    <name>ID</name>
+    <version>1.1</version>
+    <description>Interaction Diagrams</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>31</id>
+      <content>Login Operatore - Scenario validazione eseguita
+    Il  servizio viene avviato a seguito dell'esplicita  richiesta
+da  parte  dell'Operatore. L'attore Operatore accede allo  schermo
+relativo  alla  gestione  dell'accesso  al  sistema  (istanza   di
+GUILogin),  inserisce login e password e seleziona la funzione  di
+validazione.   Il   controllo  passa,   quindi,   all'istanza   di
+GUILoginHandler,  la quale delega all'istanza di  OperatoreManager
+il  compito  di  gestire il servizio. Quest'ultimo  si  occupa  di
+validare  i  dati  inseriti dall'Operatore  tramite  l'istanza  di
+Operatore.  L'esito  positivo dell'operazione viene  notificato  a
+ritroso  fino  all'istanza di GUILoginHandler, il  quale  richiede
+all'istanza  di  GUIPrincipaleHandler di  abilitare  l'accesso  al
+Paziente  richiedente e tale oggetto provvede alla visualizzazione
+della   maschera  principale  (istanza  di  GUIPrincipale).   Tale
+funzionalit…  Š  stata descritta mediante il sequence  diagram  di
+Fig. 3.2.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>32</id>
+      <content>Login Operatore - Scenario validazione fallita
+    Il  servizio viene avviato a seguito della esplicita richiesta
+da  parte  dell'Operatore. L'attore Operatore accede allo  schermo
+relativo  alla  gestione  dell'accesso  al  sistema  (istanza   di
+GUILogin),  inserisce login e password e seleziona la funzione  di
+validazione.   Il   controllo  passa,   quindi,   all'istanza   di
+GUILoginHandler,  la quale delega all'istanza di  OperatoreManager
+il  compito  di  gestire il servizio. Quest'ultimo  si  occupa  di
+validare  i  dati  inseriti dall'Operatore  tramite  l'istanza  di
+Operatore.  L'esito  negativo dell'operazione viene  notificato  a
+ritroso  fino  all'istanza di GUILoginHandler, la  quale  provvede
+alla  visualizzazione  di un apposito messaggio  di  errore  sulla
+maschera GUILogin. Tale funzionalit… Š stata descritta mediante il
+sequence diagram di Fig. 3.3.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>33</id>
+      <content>Inserimento anagrafica laboratorio
+     Il  servizio viene avviato a seguito dell'esplicita richiesta
+da  parte  dell'Operatore. L'attore Operatore accede alla maschera
+principale (istanza di GUIPrincipale) e ivi seleziona la  funzione
+gestione  anagrafica  laboratori.  Il  controllo  passa,   quindi,
+all'istanza  di GUIPrincipaleHandler, la quale delega  all'istanza
+di   GUIAnagraficaLaboratorioHandler  il  compito  di  fornire  il
+servizio. Il primo passo consiste nel reperire l'elenco di tutti i
+laboratori,   pertanto   il   controllo   passa   all'istanza   di
+LaboratorioManager,  la quale, tramite le istanze  di  Laboratorio
+reperisce  tale elenco e lo restituisce a ritroso fino all'istanza
+di  GUIAnagraficaLaboratorioHandler. A questo punto  tale  oggetto
+provvede  alla visualizzazione dell'elenco dei laboratori ottenuto
+sulla  maschera  relativa  alla  gestione  delle  anagrafiche  dei
+laboratori   (istanza  di  GUIAnagraficaLaboratorio).  L'Operatore
+attiva la funzione di inserimento dell'anagrafica del laboratorio,
+inserisce  i dati di un nuovo ambulatorio e conferma  i  dati.  Il
+controllo passa all'istanza di GUIAnagraficaLaboratorioHandler, la
+quale   delega  il  compito  di  inserire  un  nuovo   laboratorio
+all'istanza   di   LaboratorioManager.   Quest'ultimo,    mediante
+l'istanza   di   Laboratorio,  provvede   all'inserimento   e   al
+salvataggio  dei  dati  relativi al nuovo  laboratorio,  passa  il
+controllo a  GUIAnagraficaLaboratorioHandler la quale a sua  volta
+si  occupa  di notificare il successo dell'operazione mediante  la
+visualizzazione  di un apposito messaggio sulla maschera  relativa
+alla   gestione   dell'anagrafica  dei  laboratori   (istanza   di
+GUIAnagraficaLaboratorio).  Tale funzionalit…  Š  stata  descritta
+mediante il collaboration diagram di Fig. 3.4.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>34</id>
+      <content>Modifica anagrafica laboratorio
+    Il  servizio viene avviato a seguito dell'esplicita  richiesta
+da  parte  dell'Operatore. L'attore Operatore accede alla maschera
+principale (istanza di GUIPrincipale) e ivi seleziona la  funzione
+gestione  anagrafica  laboratori.  Il  controllo  passa,   quindi,
+all'istanza  di GUIPrincipaleHandler, la quale delega  all'istanza
+di   GUIAnagraficaLaboratorioHandler  il  compito  di  fornire  il
+servizio. Il primo passo consiste nel reperire l'elenco di tutti i
+laboratori,   pertanto   il   controllo   passa   all'istanza   di
+LaboratorioManager,  la quale, tramite le istanze  di  Laboratorio
+reperisce  tale elenco e lo restituisce a ritroso fino all'istanza
+di  GUIAnagraficaLaboratorioHandler. A questo punto  tale  oggetto
+provvede  alla visualizzazione dell'elenco dei laboratori ottenuto
+sulla  maschera  relativa  alla  gestione  delle  anagrafiche  dei
+laboratori   (istanza  di  GUIAnagraficaLaboratorio).  L'Operatore
+seleziona  dall'elenco  il laboratorio da  modificare,  attiva  la
+funzione  di  modifica  dell'anagrafica  del  laboratorio  ed   il
+controllo passa all'istanza di GUIAnagraficaLaboratorioHandler, la
+quale  delega  il  compito  di  recuperare  i  dati  relativi   al
+laboratorio   selezionato   all'istanza   di   LaboratorioManager.
+Quest'ultimo,  mediante  l'istanza  di  Laboratorio,  provvede  al
+recupero    di    tali   dati,   li   fornisce   all'istanza    di
+GUIAnagraficaLaboratorioHandler che a sua volta  si  occupa  della
+loro visualizzazione sulla maschera GUIAnagraficaLaboratorio.
+    A  questo punto l'Operatore conferma le modifiche effettuate e
+il controllo passa all'istanza di GUIAnagraficaLaboratorioHandler,
+la  quale  delega il compito di memorizzare i dati del laboratorio
+in esame all'istanza di LaboratorioManager. Quest'ultimo, mediante
+l'istanza  di  Laboratorio,  provvede  al  salvataggio  dei   dati
+modificati,     passa     il     controllo     all'istanza      di
+GUIAnagraficaLaboratorioHandler la quale a sua volta si occupa  di
+notificare il successo dell'operazione mediante la visualizzazione
+di  un  apposito messaggio sulla maschera relativa  alla  gestione
+dell'anagrafica       dei       laboratori       (istanza       di
+GUIAnagraficaLaboratorio).  Tale funzionalit…  Š  stata  descritta
+mediante il collaboration diagram di Fig. 3.5.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>35</id>
+      <content>Elimina anagrafica medico
+    Il  servizio viene avviato a seguito dell'esplicita  richiesta
+da  parte  dell'Operatore. L'attore Operatore accede alla maschera
+principale (istanza di GUIPrincipale) e ivi seleziona la  funzione
+di   gestione  anagrafica  medici.  Il  controllo  passa,  quindi,
+all'istanza  di GUIPrincipaleHandler, la quale delega  all'istanza
+di  GUIAnagraficaMedicoHandler il compito di gestire il  servizio.
+Il  primo passo consiste nel reperire l'elenco di tutti i  medici,
+pertanto  il  controllo  passa all'istanza  di  MedicoManager,  la
+quale,  tramite le istanze di Medico reperisce tale  elenco  e  lo
+restituisce      a      ritroso      fino      all'istanza      di
+GUIAnagraficaMedicoHandler. A questo punto tale  oggetto  provvede
+alla   visualizzazione  dell'elenco  dei  medici  ottenuto   sulla
+maschera  relativa  alla  gestione delle  anagrafiche  dei  medici
+(istanza    di    GUIAnagraficaMedico).   L'Operatore    seleziona
+dall'elenco  il  medico  da eliminare ed  attiva  la  funzione  di
+eliminazione dei dati anagrafici del medico; il controllo, quindi,
+passa  all'istanza di GUIAnagraficaMedicoHandler, la quale  delega
+il  compito  di  reperire i dati relativi  al  medico  selezionato
+all'istanza di MedicoManager. Quest'ultimo, mediante l'istanza  di
+Medico, provvede al recupero di tali dati, li fornisce all'istanza
+di GUIAnagraficaMedicoHandler che a sua volta si occupa della loro
+visualizzazione sulla maschera GUIAnagraficaMedico. A questo punto
+l'Operatore conferma le modifiche effettuate e il controllo  passa
+all'istanza  di  GUIAnagraficaMedicoHandler, la  quale  delega  il
+compito   di  eliminare  il  medico  selezionato  all'istanza   di
+MedicoManager.   Quest'ultimo,  mediante  l'istanza   di   Medico,
+provvede  all'eliminazione  e passa il  controllo  all'istanza  di
+GUIAnagraficaMedicoHandler la quale  a  sua  volta  si  occupa  di
+notificare il successo dell'operazione mediante la visualizzazione
+di  un  apposito messaggio sulla maschera relativa  alla  gestione
+dell'anagrafica dei medici (istanza di GUIAnagraficaMedico).  Tale
+funzionalit…  Š stata descritta mediante il collaboration  diagram
+di Fig. 3.6.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>36</id>
+      <content>Registra visita
+
+    Di   tale   funzionalit…  Š  stato  descritto,   mediante   il
+collaboration  diagrams di Fig. 3.21, lo scenario  principale:  il
+servizio  viene  avviato  a seguito della esplicita  richiesta  da
+parte  dell'Operatore.  L'attore Operatore  accede  alla  maschera
+principale (istanza di GUIPrincipale) e ivi seleziona la  funzione
+gestione  visite.  Il  controllo  passa,  quindi,  all'istanza  di
+GUIPrincipaleHandler,    la   quale    delega    all'istanza    di
+GUIVisitaHandler il compito di fornire il servizio. Il primo passo
+consiste  nel  reperire  l'elenco di tutte  le  visite  effettuate
+nell'ambulatorio,  pertanto  il  controllo  passa  all'istanza  di
+VisiteManager. Attraverso un procedimento iterativo si provvede al
+reperimento di tutte le visite, ed ogni passo viene effettuato nel
+modo  seguente:   l'istanza  di VisiteManager   reperisce  tramite
+l'istanza   di   Visite  i  dati  relativi   ad   una   visita   e
+successivamente passa il controllo all'istanza di EsamiManager che
+provvede, tramite le istanze di Esame, al reperimento di tutti gli
+esami  relativi  alla  visita stessa. Tale  elenco  viene  passato
+all'istanza di GUIVisitaHandler, che provvede alla visualizzazione
+dell'elenco  delle  visite ottenuto sulla maschera  relativa  alla
+gestione   delle   visite  (istanza  di  GUIVisite).   L'Operatore
+seleziona  la  funzione di inserimento visita,  inserisce  i  dati
+della  nuova  visita e li conferma. Il controllo passa all'istanza
+di  GUIVisiteHandler, la quale delega il compito  di  inserire  la
+nuova  visita all'istanza di VisiteManager. Quest'ultimo, mediante
+l'istanza di Visita, provvede all'inserimento e al salvataggio dei
+dati relativi alla nuova visita e ritorna il controllo all'istanza
+di  GUIVisitaHandler la quale a sua volta si occupa di  notificare
+il  successo  dell'operazione mediante la  visualizzazione  di  un
+apposito  messaggio  nella maschera relativa alla  gestione  delle
+visite (istanza di GUIVisita).</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>37</id>
+      <content>Inserimento esame
+    Il  servizio viene avviato a seguito dell'esplicita  richiesta
+da  parte  dell'Operatore. L'attore Operatore accede alla maschera
+relativa  alla  gestione  delle  visite  (istanza  di  GUIVisita),
+seleziona dall'elenco la visita alla quale aggiungere un esame  ed
+attiva  la funzione di inserimento di un nuovo esame. Il controllo
+passa,  quindi, all'istanza di GUIVisitaHandler, la  quale  delega
+all'istanza di GUIEsameHandler il compito di fornire il  servizio.
+Il primo passo consiste nel reperire le informazioni relative alla
+visita che l'Operatore ha selezionato, pertanto il controllo passa
+all'istanza  di VisiteManager. Quest'ultima, attraverso  l'istanza
+di   Visita   reperisce  le  informazioni  relative  alla   visita
+selezionata  e passa il controllo all'istanza di EsamiManager  che
+tramite  le  istanze  di  Esame reperisce l'elenco  contenente  le
+informazioni  degli  esami relativi alla  visita.  L'elenco  viene
+restituito   all'istanza  di  GUIVisitaHandler,  che   riceve   il
+controllo  e  provvede alla visualizzazione  della  visita  e  dei
+relativi  esami sulla maschera relativa alla gestione degli  esami
+(istanza di GUIEsami).
+    L'Operatore  inserisce  i  dati del  nuovo  esame  e  conferma
+l'inserimento  degli  stessi. A questo punto  il  controllo  passa
+all'istanza  di  GUIEsamiHandler, la quale delega  il  compito  di
+inserire il nuovo esame all'istanza di EsameManager. Quest'ultimo,
+attraverso  l'istanza  di  Esame, provvede  all'inserimento  e  al
+salvataggio dei dati relativi al nuovo esame e passa il  controllo
+all'istanza di GUIEsameHandler la quale a sua volta si  occupa  di
+notificare il successo dell'operazione mediante la visualizzazione
+di  un  apposito messaggio nella maschera relativa  alla  gestione
+degli  esami  (istanza  di GUIEsame). Tale  funzionalit…  Š  stata
+descritta mediante il collaboration diagrams di Fig. 3.22.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>38</id>
+      <content>Accesso   sezione  paziente  eseguita  (mediante   codice
+    fiscale)
+    Il  servizio viene avviato a seguito dell'esplicita  richiesta
+da  parte  dell'Operatore. L'attore Operatore accede alla maschera
+relativa alla gestione dell'accesso alla sezione Paziente (istanza
+di GUILoginPaziente), inserisce il codice fiscale del Paziente che
+ha   effettuato   una  richiesta  e  seleziona  la   funzione   di
+validazione.   Il   controllo  passa,   quindi,   all'istanza   di
+GUILoginPazienteHandler,   la   quale   delega   all'istanza    di
+PazienteManager il compito di gestire il servizio. Quest'ultima si
+occupa   di  validare  i  dati  inseriti  dall'operato-re  tramite
+l'istanza  di  Paziente.  L'esito positivo  dell'operazione  viene
+notificato  a ritroso fino all'istanza di GUILoginPazienteHandler,
+la  quale  richiede all'istanza di GUIPazienteHandler di abilitare
+l'accesso  da  parte  dell'Operatore  alla  sezione  del  Paziente
+richiedente  e  tale  oggetto provvede alla visualizzazione  della
+maschera principale (istanza di GUIPaziente). Tale funzionalit…  Š
+stata descritta mediante il sequence diagram di Fig. 3.13.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>39</id>
+      <content>Accesso   sezione   paziente  fallito  (mediante   codice
+    Hospital Card)
+    Il  servizio viene avviato a seguito della esplicita richiesta
+da  parte  dell'Operatore. L'attore Operatore accede alla maschera
+relativa alla gestione dell'accesso alla sezione Paziente (istanza
+di  GUILoginPaziente), inserisce il codice dalla Hospital Card del
+Paziente  che ha effettuato una richiesta e seleziona la  funzione
+di   validazione.  Il  controllo  passa,  quindi,  all'istanza  di
+GUILoginPazienteHandler,   la   quale   delega   all'istanza    di
+HospitalCardManager   il   compito   di   gestire   il   servizio.
+Quest'ultima  si occupa di validare i dati inseriti dall'Operatore
+tramite    l'istanza   di   Hospital   Card.   L'esito    negativo
+dell'operazione  viene notificato a ritroso  fino  all'istanza  di
+GUILoginPazienteHandler, la quale provvede alla visualizzazione di
+un apposito messaggio di errore sulla maschera di accesso (istanza
+di GUILoginPaziente). Tale funzionalit… Š stata descritta mediante
+il sequence diagram di Fig. 3.14.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>40</id>
+      <content>Modifica anagrafica Paziente
+
+    Il  servizio viene avviato a seguito dell'esplicita  richiesta
+da  parte  dell'Operatore. L'attore Operatore accede alla maschera
+principale della sezione Paziente (istanza di GUIPaziente)  e  ivi
+seleziona la funzione per la modifica dell'anagrafica del Paziente
+che  ha  effettuato  la  richiesta. Il  controllo  passa,  quindi,
+all'istanza di GUIPazienteHandler, la quale delega all'istanza  di
+GUIAnagraficaPazienteHandler il compito di gestire il servizio.  A
+questo     punto    il    controllo    passa    all'istanza     di
+GUIAnagraficaPazienteHandler,  la  quale  delega  il  compito   di
+recuperare i dati relativi al Paziente richiedente all'istanza  di
+PazienteManager.  Quest'ultima, mediante  l'istanza  di  Paziente,
+provvede  al  recupero di tali dati e li fornisce  all'istanza  di
+GUIAnagraficaPazienteHandler che a sua volta si occupa della  loro
+visualizzazione sulla maschera GUIAnagraficaPaziente.
+    A  questo punto l'Operatore conferma le modifiche effettuate e
+il      controllo     passa     nuovamente     all'istanza      di
+GUIAnagraficaPazienteHandler,  la  quale  delega  il  compito   di
+memorizzare  le  modifiche apportate dall'Operatore  ai  dati  del
+Paziente  in  esame all'istanza di PazienteManager.  Quest'ultima,
+mediante  l'istanza di Paziente, provvede al salvataggio dei  dati
+modificati  e,  una  volta terminata la memorizzazione,  passa  il
+controllo all'istanza di GUIAnagraficaPazienteHandler la  quale  a
+sua  volta  si  occupa  di notificare il successo  dell'operazione
+mediante  la  visualizzazione  di  un  apposito  messaggio   sulla
+maschera  relativa  alla  gestione  dell'anagrafica  del  Paziente
+(istanza  di  GUIAnagraficaPaziente). Tale  funzionalit…  Š  stata
+descritta mediante il collaboration diagram di Fig. 3.15.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>41</id>
+      <content>Prenotazione di una prima visita
+    Il  servizio viene avviato a seguito dell'esplicita  richiesta
+da  parte  dell'Operatore. L'attore Operatore accede alla maschera
+principale (istanza di GUIPrincipale) e ivi seleziona la  funzione
+di  prenotazione di una prima visita. Il controllo passa,  quindi,
+all'istanza  di GUIPrincipaleHandler, la quale delega  all'istanza
+di GUIPrenotaVisitaHandler il compito di gestire il servizio. Dato
+che  si  sta  prenotando  una  prima visita,  il  controllo  passa
+all'istanza   di  GUIAnagraficaPazienteHandler  che  si   occuper…
+dell'inserimento dei dati anagrafici del Paziente.
+    
+    Creazione del nuovo Paziente
+    
+    L'istanza della classe GUIAnagraficaPazienteHandler visualizza
+la  maschera  relativa  all'inserimento dei  dati  anagrafici  del
+Paziente  (istanza  di  GUIAnagraficaPaziente).  A  questo  punto,
+l'Operatore  inserisce i dati anagrafici del Paziente  e  conferma
+tali   dati;   il   controllo   passa   quindi   all'istanza    di
+GUIAnagraficaPazienteHandler,  la  quale,  chiede  all'istanza  di
+PazienteManager di verificare la presenza del Paziente all'interno
+del  S.I.O. Se il Paziente non Š presente, allora l'operazione pu•
+continuare    e    quindi   GUIAnagraficaPazienteHandler    delega
+all'istanza  di  PazienteManager il compito  di  creare  il  nuovo
+Paziente.  Quest'ultima, mediante l'istanza di Paziente,  provvede
+alla  creazione  di  un nuovo Paziente in base  ai  dati  inseriti
+dall'Operatore.
+    Creazione della Hospital Card
+    
+    L'istanza  della  classe PazienteManager  passa  il  controllo
+all'istanza  di HospitalCardManager la quale a sua volta  mediante
+l'istanza  di Hospital Card provvede alla creazione di  una  nuova
+Hospital  Card  da  assegnare al Paziente. Una volta  avvenuta  la
+creazione  viene  inviato un messaggio che  notifica  il  successo
+dell'operazione     a     ritroso     fino     all'istanza      di
+GUIPrenotaVisitaHandler.
+    
+    Scelta del tipo di visita
+    
+    L'istanza  della classe GUIPrenotaVisitaHandler visualizza  la
+maschera  relativa  alla  prenotazione di  una  visita  a  cui  il
+Paziente si deve sottoporre (istanza di GUIPrenotaVisita). Su tale
+maschera l'Operatore seleziona e conferma il tipo di visita ed  il
+controllo  ritorna  all'istanza  di  GUIPrenotaVisitaHandler,   la
+quale,  delega  il  compito  di inserire  una  nuova  prenotazione
+all'istanza di PrenotazioniManager.
+    
+    Creazione della nuova prenotazione
+    
+    L'istanza  della classe PrenotazioniManager mediante l'istanza
+di  Prenotazione  crea  una  nuova prenotazione;  a  questo  punto
+l'istanza di Prenotazione provvede a verificare la validit…  della
+prenotazione, ovvero controlla che la nuova prenotazione  rispetti
+la   sequenza  di  prenotazioni  valide.  Nel  caso  in   cui   la
+prenotazione Š una prenotazione valida si provvede a notificare il
+successo  dell'operazione  di  creazione  di  una  prenotazione  a
+ritroso fino all'istanza di GUIPrenotaVisitaHandler.
+    
+    Reperimento data disponibile
+    
+    L'istanza  della  classe  GUIPrenotaVisitaHandler,  delega  il
+compito  all'istanza di PrenotazioniManager di reperire  la  prima
+data  disponibile in cui la visita pu• tenersi.  Tale  data  viene
+fornita  all'istanza di GUIPrenotaVisitaHandler la quale  provvede
+alla   visualizzazione   di   quest'ultima   sulla   maschera   di
+prenotazione   di   una  visita  (istanza  di   GUIPrenotaVisita).
+L'Operatore conferma la data proposta dal sistema ed il  controllo
+viene restituito all'istanza di GUIPrenotaVisitaHandler.
+    
+    Salvataggio dati anagrafici Paziente e relativa Hospital Card
+    
+    L'istanza  della  classe  GUIPrenotaVisitaHandler   passa   il
+controllo  all'istanza  GUIAnagraficaPazienteHandler  in  modo  da
+consentire  a  quest'ultima di memorizzare i  dati  del  Paziente.
+L'istanza  GUIAnagraficaPazienteHandler, a sua  volta,  delega  il
+compito  di  memorizzare i dati anagrafici  relativi  al  Paziente
+all'istanza della classe PazienteManager che, attraverso l'istanza
+di  Paziente,  memorizza  in  maniera  permanente  tali  dati.  Il
+controllo   viene   restituito  a   ritroso   fino   alla   classe
+HospitalCardManager,  la quale provvede, attraverso  l'istanza  di
+Hospital  Card,  al  salvataggio  dei  dati  della  Hospital  Card
+relativa  al  Paziente  che sta prenotando la  visita.  Una  volta
+completate  le  operazioni di memorizzazione  viene  restituito  a
+ritroso un messaggio che notifica il successo dell'operazione fino
+a giungere all'istanza della classe GUIAnagraficaPazienteHandler.
+    
+    Visualizzazione e stampa della Hospital Card
+    
+     L'istanza della classe GUIAnagraficaPazienteHandler delega il
+compito  di  visualizzare e stampare la Hospital Card  all'istanza
+della  classe GUIHospitalCardHandler. Quest'ultima ottiene i  dati
+relativi  alla  Hospital Card dall'istanza di HospitalCardManager,
+visualizza  tali dati sulla maschera relativa alla visualizzazione
+della  Hospital  Card  (istanza di GUIHospitalCard)  e  delega  il
+compito  di  stampare  la Hospital Card all'istanza  della  classe
+PrintManager.  Il  controllo viene restituito  a  ritroso  fino  a
+giungere all'istanza GUIPrenotaVisitaHandler.
+    
+    Salvataggio prenotazione
+    
+    L'istanza della classe GUIPrenotaVisitaHandler a questo  punto
+procede  alla  memorizzazione  della prenotazione  delegando  tale
+compito   all'istanza   di  PrenotazioniManager.   Tale   istanza,
+attraverso  l'istanza di Prenotazione provvede al salvataggio  dei
+dati   relativi  alla  prenotazione.  Una  volta  effettuata  tale
+operazione      il     controllo     passa     all'istanza      di
+GUIPrenotaVisitaHandler  la  quale  a  sua  volta  si  occupa   di
+notificare il successo dell'operazione mediante la visualizzazione
+di un apposito messaggio sulla maschera relativa alla prenotazione
+di una visita (istanza di GUIPrenotaVisita).
+    Tale  funzionalit… Š stata descritta mediante il collaboration
+diagram di Fig. 3.16.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>42</id>
+      <content>Prenotazione di una visita successiva alla prima
+    Il  servizio viene avviato a seguito dell'esplicita  richiesta
+da  parte  dell'Operatore. L'attore Operatore accede alla maschera
+principale della sezione Paziente (istanza di GUIPaziente) ed  ivi
+seleziona  la  funzione di prenotazione di una  visita  successiva
+alla   prima.   Il   controllo  passa,  quindi,   all'istanza   di
+GUIPazienteHandler,    la    quale    delega    all'istanza     di
+GUIPrenotaVisitaHandler il compito di gestire il servizio.
+    
+    Scelta del tipo di visita
+    
+    L'istanza  della classe GUIPrenotaVisitaHandler visualizza  la
+maschera  relativa  alla  prenotazione di  una  visita  a  cui  il
+Paziente si deve sottoporre (istanza di GUIPrenotaVisita). Su tale
+maschera l'Operatore seleziona e conferma il tipo di visita ed  il
+controllo ritorna all'istanza di GUIPrenotaVisitaHandler, la quale
+delega  il  compito di inserire una nuova prenotazione all'istanza
+di PrenotazioniManager.
+    
+    Creazione della nuova prenotazione
+    
+     L'istanza della classe PrenotazioniManager mediante l'istanza
+di  Prenotazione  crea  una  nuova prenotazione;  a  questo  punto
+l'istanza di Prenotazione provvede a verificare la validit…  della
+prenotazione, ovvero controlla che la nuova prenotazione  rispetta
+la   sequenza  di  prenotazioni  valide.  Nel  caso  in   cui   la
+prenotazione Š una prenotazione valida si provvede a notificare il
+successo  dell'operazione  di  creazione  di  una  prenotazione  a
+ritroso fino all'istanza di GUIPrenotaVisitaHandler.
+
+    Reperimento data disponibile
+    
+    L'istanza  della  classe  GUIPrenotaVisitaHandler,  delega  il
+compito  all'istanza di PrenotazioniManager di reperire  la  prima
+data  disponibile in cui la visita pu• tenersi.  Tale  data  viene
+fornita  all'istanza di GUIPrenotaVisitaHandler la quale  provvede
+alla   visualizzazione   di   quest'ultima   sulla   maschera   di
+prenotazione   di   una  visita  (istanza  di   GUIPrenotaVisita).
+L'Operatore conferma la data proposta dal sistema ed il  controllo
+viene restituito all'istanza di GUIPrenotaVisitaHandler.
+    
+    
+    
+    
+    
+    
+    
+    
+    Salvataggio Prenotazione
+    
+    L'istanza della classe GUIPrenotaVisitaHandler a questo  punto
+procede  alla  memorizzazione  della prenotazione  delegando  tale
+compito   all'istanza   di  PrenotazioniManager.   Tale   istanza,
+attraverso  l'istanza di Prenotazione provvede al salvataggio  dei
+dati   relativi  alla  prenotazione.  Una  volta  effettuata  tale
+operazione      il     controllo     passa     all'istanza      di
+GUIPrenotaVisitaHandler  la  quale  a  sua  volta  si  occupa   di
+notificare il successo dell'operazione mediante la visualizzazione
+di un apposito messaggio sulla maschera relativa alla prenotazione
+di una visita (istanza di GUIPrenotaVisita).
+    Tale  funzionalit… Š stata descritta mediante il collaboration
+diagram  di  Fig.  3.17.  Inoltre poich‚  la  prenotazione  di  un
+servizio ambulatoriale Š la funzione cardine dell'ap-plicazione si
+Š  pensato di commentare tale funzionalit… con un'activity diagram
+(Fig.  3.18), al fine di rendere maggiormente chiare le iterazioni
+che ci sono tra gli attori ed il sistema stesso.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>43</id>
+      <content>Slittamento data visita ad una data successiva
+    Il  servizio viene avviato a seguito dell'esplicita  richiesta
+da  parte  dell'Operatore. L'attore Operatore accede alla maschera
+relativa  alla  sezione Paziente (istanza di  GUIPaziente)  e  ivi
+seleziona  la  funzione  di  modifica prenotazione.  Il  controllo
+passa,  quindi, all'istanza di GUIPazienteHandler, la quale delega
+all'istanza  di GUIPrenotaVisitaHandler il compito di  gestire  il
+servizio.
+    
+    Caricamento dell'elenco delle prenotazioni
+    
+    L'istanza  di  GUIPrenotaVisitaHandler demanda all'istanza  di
+GUISelezionaPrenotazioniHandler il compito di reperire l'elenco di
+tutte  le prenotazioni effettuate dal Paziente. Tale oggetto passa
+il   controllo  all'istanza  di  PrenotazioniManager,  la   quale,
+attraverso le istanze di Prenotazione, provvede al reperimento  di
+tale     elenco     e     lo    restituisce     all'istanza     di
+GUISelezionaPrenotazioniHandler, che a  sua  volta  provvede  alla
+visualizzazione dei dati ottenuti sull'apposita maschera  (istanza
+di GUISelezionaPrenotazioni).
+    
+    Selezione della prenotazione da modificare
+    
+    L'Operatore seleziona dall'elenco visualizzato la prenotazione
+da  modificare  ed  il  controllo viene  passato  a  ritroso  fino
+all'istanza di GUIPrenotaVisitaHandler, la quale delega  l'istanza
+di   PrenotazioniManager  il  compito  di   prelevare   tutte   le
+informazioni relative alla prenotazione selezionata. L'istanza  di
+PrenotazioniManager,  tramite l'istanza di  Prenotazione,  assolve
+tale  compito  e  restituisce  i  dati  ottenuti  all'istanza   di
+GUIPrenotaVisita,   che   a   sua   volta   provvede   alla   loro
+visualizzazione  sull'apposita  maschera  relativa  alla  gestione
+delle prenotazioni (istanza di GUIPrenotaVisita).
+
+    Richiesta nuova data
+    
+     L'Operatore  richiede una nuova data in  cui  la  visita  pu•
+tenersi     ed     il     controllo    passa    all'istanza     di
+GUIPrenotaVisitaHandler,  la  quale ottenuta  la  successiva  data
+disponibile  dall'istanza  di PrenotazioniManager,  provvede  alla
+visualizzazione  di quest'ultima nell'apposita  maschera  relativa
+alla  gestione  delle prenotazioni (istanza di  GUIPrenotaVisita).
+L'Operatore conferma la data proposta dal sistema ed il  controllo
+viene restituito all'istanza di GUIPrenotaVisitaHandler.
+    
+    Salvataggio Prenotazione
+    
+    L'istanza della classe GUIPrenotaVisitaHandler a questo  punto
+procede  all'ag-giornamento  della  prenotazione  delegando   tale
+compito    all'istanza   di   PrenotazioniManager.    Quest'ultima
+attraverso  l'istanza  di  Prenotazione  provvede  innanzitutto  a
+validare la prenotazione e solo in caso affermativo al salvataggio
+dei  dati  relativi alla prenotazione. Una volta  effettuata  tale
+operazione  il  controllo  viene  restituito  a  ritroso  fino  ad
+arrivare all'istanza di GUIPrenotaVisitaHandler, la quale provvede
+a  notificare  il successo dell'operazione con un messaggio  sulla
+maschera  relativa  alla gestione delle prenotazioni  (istanza  di
+GUIPrenotaVisita).
+Tale funzionalit… Š stata descritta mediante il collaboration
+diagram di Fig. 3.19.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>44</id>
+      <content>Annulla Prenotazione
+
+    Il  servizio viene avviato a seguito dell'esplicita  richiesta
+da  parte  dell'Operatore. L'attore Operatore accede alla maschera
+principale relativa alla sezione Paziente (istanza di GUIPaziente)
+e  ivi  seleziona la funzione di eliminazione di una prenotazione.
+Il  controllo passa, quindi, all'istanza di GUIPazienteHandler, la
+quale  delega  all'istanza  di  GUIEliminaPrenotazioniHandler   il
+compito     di     gestire    il    servizio.     L'istanza     di
+GUIEliminaPrenotazioneHandler          delega          all'istanza
+PrenotazioniManager il compito di reperire l'elenco  di  tutte  le
+prenotazioni  effettuate dal Paziente. Tale oggetto attraverso  le
+istanze di Prenotazione, provvede al reperimento di tale elenco  e
+lo restituisce all'istanza di GUIEliminaPrenotazioneHandler, che a
+sua   volta  provvede  alla  visualizzazione  dei  dati   ottenuti
+nell'apposita   maschera   (istanza  di   GUIEliminaPrenotazione).
+L'Operatore seleziona dall'elenco visualizzato la prenotazione  da
+eliminare   ed   il   controllo  viene  passato   all'istanza   di
+GUIEliminaPrenotazioneHandler,  la  quale  delega   l'istanza   di
+PrenotazioniManager  di portare a termine l'operazione.  L'istanza
+di PrenotazioniManager, tramite l'istanza di Prenotazione provvede
+a   verificare   che  la  sequenza  risulta  valida   anche   dopo
+l'eliminazione della prenotazione.
+    Solo  in  caso  affermativo l'eliminazione della  prenotazione
+viene  portata a termine e si provvede a restituire  il  controllo
+all'istanza di GUIEliminaPrenotazioneHandler, la quale provvede  a
+notificare   il   successo  dell'operazione   con   un   messaggio
+sull'apposita  maschera (istanza di GUIEliminaPrenotazione).  Tale
+funzionalit…  Š stata descritta mediante il collaboration  diagram
+di Fig. 3.20.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>45</id>
+      <content>Login Paziente - Scenario validazione eseguita
+    Il  servizio viene avviato a seguito dell'esplicita  richiesta
+da  parte  del  Paziente. L'attore Paziente  accede  allo  schermo
+relativo  alla  gestione  dell'accesso  al  sistema  (istanza   di
+GUISfondo).   Il   controllo   passa,   quindi,   all'istanza   di
+GUISfondoHandler,  la quale delega all'istanza di  GUILoginHandler
+il  compito  di  gestire il servizio. Il primo passo  da  compiere
+consiste nel far inserire al Paziente Hospital Card e PIN,  quindi
+viene  presentata al Paziente stesso la pagina per  l'acquisizione
+di  tali dati (istanza di GUILogin). Il Paziente imposta i dati  e
+conferma  l'inserimento; il controllo passa nuovamente all'istanza
+di  GUILoginHandler  che  deroga  la  validazione  all'istanza  di
+HospitalCardManager. Quest'ultima si occupa  di  validare  i  dati
+inseriti dal Paziente tramite l'istanza di Hospital Card.  L'esito
+positivo   dell'operazione  viene  notificato   a   ritroso   fino
+all'istanza  di GUILoginHandler, la quale richiede all'istanza  di
+GUIPrincipaleHandler   di   abilitare   l'accesso   al    Paziente
+richiedente  e  quindi  di provvedere alla  visualizzazione  della
+maschera  principale (istanza di GUIPrincipale). Tale funzionalit…
+Š stata descritta mediante il sequence diagram di Fig. 3.7.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>46</id>
+      <content>Login paziente - Scenario validazione fallita
+    Il  servizio viene avviato a seguito della esplicita richiesta
+da  parte  del  Paziente. L'attore Paziente  accede  allo  schermo
+relativo  alla  gestione  dell'accesso  al  sistema  (istanza   di
+GUISfondo).   Il   controllo   passa,   quindi,   all'istanza   di
+GUISfondoHandler,  la quale delega all'istanza di  GUILoginHandler
+il  compito  di  gestire il servizio. Il primo passo  da  compiere
+consiste nel far inserire al Paziente Hospital Card e PIN,  quindi
+viene  presentata al Paziente stesso la pagina per  l'acquisizione
+di  tali dati (istanza di GUILogin). Il Paziente imposta tali dati
+e  conferma  l'inserimento; il controllo quindi  passa  nuovamente
+all'istanza   di   GUILoginHandler  che  deroga   la   validazione
+all'istanza  di  HospitalCardManager. Quest'ultima  si  occupa  di
+validare  i  dati  inseriti  dal  Paziente  tramite  l'istanza  di
+Hospital Card. L'esito negativo dell'operazione viene notificato a
+ritroso  fino  all'istanza di GUILoginHandler, il  quale  provvede
+alla  visualizzazione  di un apposito messaggio  di  errore  sulla
+maschera  di  accesso (istanza di GUILogin). Tale  funzionalit…  Š
+stata descritta mediante il sequence diagram di Fig. 3.8.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>47</id>
+      <content>Visualizza anagrafica
+    Il  servizio viene avviato a seguito dell'esplicita  richiesta
+da  parte  del  Paziente. L'attore Paziente accede  alla  maschera
+principale  (istanza di GUIPrincipale) relativa alla  gestione  di
+tutti  i servizi forniti dal sistema per le richieste dei pazienti
+e  ivi  seleziona la funzione di visualizzazione dei  propri  dati
+anagrafici.   Il   controllo   passa,   quindi,   all'istanza   di
+GUIPrincipaleHandler,    la   quale    delega    all'istanza    di
+GUIAnagraficaHandler il compito di gestire il servizio.  A  questo
+punto  il  controllo viene passato all'istanza di PazienteManager,
+la  quale si occupa di reperire, tramite l'istanza di Paziente,  i
+dati  anagrafici  del  Paziente richiedente. I  risultati  vengono
+inviati a ritroso fino all'istanza di GUIAnagraficaHandler, che  a
+sua  volta  si  occupa della loro visualizzazione  sulla  maschera
+relativa alla gestione delle anagrafiche dei pazienti (istanza  di
+GUIAnagrafica).  Tale funzionalit… Š stata descritta  mediante  il
+collaboration diagram di Fig. 3.9.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>48</id>
+      <content>Visualizza elenco prenotazioni
+    Il  servizio viene avviato a seguito della esplicita richiesta
+da  parte  del  Paziente. L'attore Paziente accede  allo  maschera
+principale  (istanza di GUIPrincipale) relativa alla  gestione  di
+tutti  i servizi forniti dal sistema per le richieste dei pazienti
+e  ivi seleziona la funzione di visualizzazione delle prenotazione
+effettuate.   Il   controllo   passa,   quindi,   all'istanza   di
+GUIPrincipaleHandler,    la   quale    delega    all'istanza    di
+GUIPrenotazioniHandler il compito di gestire il servizio. A questo
+punto    il    controllo    viene    passato    all'istanza     di
+PrenotazioniManager,  la quale si occupa di reperire,  tramite  le
+istanze  di  Prenotazione,  tutte le prenotazioni  effettuate  dal
+Paziente  richiedente. I risultati vengono inviati a ritroso  fino
+all'istanza di GUIPrenotazioniHandler, che a sua volta  si  occupa
+della  loro visualizzazione sulla maschera relativa alla  gestione
+delle prenotazioni dei pazienti (istanza di GUIPrenotazioni). Tale
+funzionalit…  Š stata descritta mediante il collaboration  diagram
+di Fig. 3.10.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>49</id>
+      <content>Visualizza cartella clinica
+Il servizio viene avviato a seguito della esplicita richiesta da
+parte del Paziente. L'attore Paziente accede alla maschera
+principale (istanza di GUIPrincipale) relativa alla gestione di
+tutti i servizi forniti dal sistema per le richieste dei pazienti
+e ivi seleziona la funzione di visualizzazione della propria
+cartella clinica. Il controllo passa quindi, all'istanza di
+GUIPrincipaleHandler, la quale delega all'istanza di
+GUICartellaClinicaHandler il compito di gestire il servizio. Il
+primo passo da compiere consiste nel reperire i dati relativi a
+tutte le visite, ed i relativi esami, effettuate dal Paziente
+richiedente; pertanto il controllo passa all'istanza di
+CartellaClinicaManager. A questo punto, attraverso un procedimento
+iterativo si provvede al reperimento di tutte le visite, ed ogni
+passo viene effettuato nel modo seguente:  l'istanza di
+VisiteManager  reperisce tramite l'istanza di Visite i dati
+relativi ad una visita e successivamente passa il controllo
+all'istanza di EsamiManager che provvede tramite le istanze di
+Esame al reperimento di tutti gli esami relativi alla visita
+stessa. Al termine di tale procedimento i risultati sono inviati
+all'istanza di CartellaClinicaManager. Il passo successivo
+consiste nel reperire i dati anagrafici relativi al Paziente
+richiedente; pertanto il controllo passa all'istanza di
+PazienteManager la quale mediante l'istanza di Paziente recupera
+tali dati e li invia a ritroso fino all'istanza di
+CartellaClinicaManager. A questo punto il controllo passa
+all'istanza di GUICartellaClinicaHandler che provvede alla
+visualizzazione dei dati anagrafici del Paziente e delle visite
+effettuate sulla maschera relativa alla gestione delle cartelle
+cliniche (istanza di GUICartellaClinica). Tale funzionalit… Š
+stata descritta mediante il collaboration diagram di Fig. 3.11.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>50</id>
+      <content>Visualizza dettagli visita
+    Il  servizio viene avviato a seguito dell'esplicita  richiesta
+da  parte  del  Paziente. L'attore Paziente accede  alla  maschera
+(istanza  di  GUICartellaClinica)  relativa  alla  gestione  delle
+cartelle  cliniche  dei  pazienti e ivi seleziona  una  visita  da
+visualizzare  dall'elenco  delle visite effettuate.  Il  controllo
+passa  quindi all'istanza di GUICartellaClinicaHandler,  la  quale
+delega  all'istanza di GUIVisitaHandler il compito di  gestire  il
+servizio.  Il  primo passo consiste nel reperire  le  informazioni
+relative  alla  visita selezionata, pertanto  il  controllo  passa
+all'istanza di VisiteManager. Quest'ultima, innanzitutto, mediante
+l'istanza  di  Visite recupera tali informazioni e successivamente
+delega  all'istanza  di  EsamiManager il compito  di  reperire  le
+informazioni  associate  a tutti gli esami  relativi  alla  visita
+selezionata. Tale oggetto, recuperate le informazioni mediante  le
+istanze   di   Esame,   fornisce  i   risultati   all'istanza   di
+VisiteManager   la  quale  a  sua  volta  restituisce   tutte   le
+informazioni    reperite   a   ritroso   fino    all'istanza    di
+GUIVisitaHandler.    Quest'ultima,    infine,    provvede     alla
+visualizzazione   delle  informazioni  ricevute   sulla   maschera
+relativa alla visualizzazione dettagliata delle visite (istanza di
+GUIVisita).  Tale  funzionalit…  Š  stata  descritta  mediante  il
+collaboration diagram di Fig. 3.12.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

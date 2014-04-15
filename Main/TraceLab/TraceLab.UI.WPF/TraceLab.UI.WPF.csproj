@@ -1,0 +1,907 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E8980EAF-6E96-4A24-890B-D72D67AA60ED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TraceLab.UI.WPF</RootNamespace>
+    <AssemblyName>TraceLab.UI.WPF</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Deploy|AnyCPU'">
+    <OutputPath>..\Deploy\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>..\bin\Release\TraceLab.UI.WPF.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AvalonDock, Version=1.3.3571.0, Culture=neutral, PublicKeyToken=85a1e0ada7ec13e4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\external\AvalonDock\AvalonDock.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AvalonDock.Themes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\external\AvalonDock\AvalonDock.Themes.dll</HintPath>
+    </Reference>
+    <Reference Include="GraphSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\external\lib\GraphSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="GraphSharp.Controls, Version=1.0.3980.32821, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\external\lib\GraphSharp.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\external\NLog\.NET Framework 4.0\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Ookii.Dialogs.Wpf">
+      <HintPath>..\..\external\Ookii.Dialogs\Ookii.Dialogs.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="QuickGraph, Version=3.3.51106.0, Culture=neutral, PublicKeyToken=f3fb40175eec2af3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\external\lib\QuickGraph.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\external\WPFToolkit\Binaries\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WPFExtensions, Version=1.0.3974.32767, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\external\lib\WPFExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="WPG">
+      <HintPath>..\..\external\lib\WPG.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adorners\ResizingAdorner.cs" />
+    <Compile Include="Controls\AdornedControl\AdornedControl.cs" />
+    <Compile Include="Controls\AdornedControl\AdornerPlacement.cs" />
+    <Compile Include="Controls\AdornedControl\FrameworkElementAdorner.cs" />
+    <Compile Include="Controls\AuthenticationAndUploadControl.xaml.cs">
+      <DependentUpon>AuthenticationAndUploadControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DirectoryPathTypeEditor.cs" />
+    <Compile Include="Controls\EditableTextBlock.xaml.cs">
+      <DependentUpon>EditableTextBlock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ExperimentBreadcrumb.cs" />
+    <Compile Include="Controls\FixedWidthGridViewColumn.cs" />
+    <Compile Include="Controls\RoutePointsItemsPanel.cs" />
+    <Compile Include="Controls\RoutePointThumb.cs" />
+    <Compile Include="Controls\ScreenshotDialog.xaml.cs">
+      <DependentUpon>ScreenshotDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\CountToBoolConverter.cs" />
+    <Compile Include="Converters\RectConverter.cs" />
+    <Compile Include="Converters\RoutePointsConverter.cs" />
+    <Compile Include="Selectors\PackageBuilderWizardSelector.cs" />
+    <Compile Include="Selectors\WorkspaceUnitValueDisplaySelector.cs" />
+    <Compile Include="Utilities\VisualCaptureUtil.cs" />
+    <Compile Include="ViewModels\Nodes\ComponentNodeInfo.cs" />
+    <Compile Include="ViewModels\Nodes\CompositeComponentNodeInfo.cs" />
+    <Compile Include="ViewModels\Nodes\LoopDecisionNodeInfo.cs" />
+    <Compile Include="ViewModels\Nodes\DecisionNodeInfo.cs" />
+    <Compile Include="ViewModels\Nodes\ExperimentNodeInfo.cs" />
+    <Compile Include="Views\AboutExperimentDialog.xaml.cs">
+      <DependentUpon>AboutExperimentDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AboutTraceLabDialog.xaml.cs">
+      <DependentUpon>AboutTraceLabDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FolderPickerDialog.xaml.cs">
+      <DependentUpon>FolderPickerDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GraphView.cs" />
+    <Compile Include="Controls\InputItemComboBox.cs" />
+    <Compile Include="Controls\PathTypeEditor.cs" />
+    <Page Include="Controls\ScreenshotDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ZoomControl\ScopeZoomStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Controls\ZoomControl\ZoomControl.cs" />
+    <Compile Include="Converters\AnyAllButtonVisibilityConverter.cs" />
+    <Compile Include="Controls\TreeListView\converters.cs" />
+    <Compile Include="Controls\TreeListView\treelistview.cs" />
+    <Compile Include="Converters\ComponentGraphToExperimentViewModelConverter.cs" />
+    <Compile Include="Converters\ErrorMessageShortenerConverter.cs" />
+    <Compile Include="Converters\MultiBindingMultiValueConverter.cs" />
+    <Compile Include="Converters\BoolConverter.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\EmptyStringToVisibilityConverter.cs" />
+    <Compile Include="Converters\EnumerableToStringConverter.cs" />
+    <Compile Include="Converters\EnumMatchToBooleanConverter.cs" />
+    <Compile Include="Controls\IOSpecFilterCheckBox.cs" />
+    <Compile Include="Converters\NullToBoolConverter.cs" />
+    <Compile Include="Converters\NullToVisibilityConverter.cs" />
+    <Compile Include="Converters\SubLevelNodeConfigConverter.cs" />
+    <Compile Include="Converters\BoolToWidthConverter.cs" />
+    <Compile Include="Converters\ThicknessMaxConverter.cs" />
+    <Compile Include="Resources\ColorToneEffect.cs" />
+    <Compile Include="Selectors\DefiningCompositeComponentWizardSelector.cs" />
+    <Compile Include="Utilities\ListViewAutoScrollExtension.cs" />
+    <Compile Include="Utilities\ScopeHelper.cs" />
+    <Compile Include="ViewModels\BaseLevelExperimentViewModel.cs" />
+    <Compile Include="ViewModels\ComponentExceptionDisplayViewModel.cs" />
+    <Compile Include="ViewModels\ComponentLibraryNodes\CLVBaseNode.cs" />
+    <Compile Include="ViewModels\ComponentLibraryNodes\CLVComponentNode.cs" />
+    <Compile Include="ViewModels\ComponentLibraryNodes\CLVReferenceContainerNode.cs" />
+    <Compile Include="ViewModels\ComponentLibraryNodes\CLVReferenceNode.cs" />
+    <Compile Include="ViewModels\ComponentLibraryNodes\CLVTagNode.cs" />
+    <Compile Include="ViewModels\ComponentLibraryNodes\IGetCLNode.cs" />
+    <Compile Include="ViewModels\DefiningCompositeComponentSetupViewModel.cs" />
+    <Compile Include="ViewModels\TopLevelEditableExperimentViewModel.cs" />
+    <Compile Include="ViewModels\TopLevelExperimentViewModel.cs" />
+    <Compile Include="ViewModels\WpfWorkspaceUnitWrapper.cs" />
+    <Compile Include="Views\ComponentExceptionDisplay.xaml.cs">
+      <DependentUpon>ComponentExceptionDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewExperimentDialog.xaml.cs">
+      <DependentUpon>NewExperimentDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Nodes\BaseComponentNodeInfoControl.cs" />
+    <Compile Include="Views\Nodes\BasicNodeControl.xaml.cs">
+      <DependentUpon>BasicNodeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ConfigPathsDataTemplatesBenchmark.xaml.cs">
+      <DependentUpon>ConfigPathsDataTemplatesBenchmark.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Selectors\BenchmarkWizardSelector.cs" />
+    <Compile Include="Selectors\DefineBenchmarkDialogSelector.cs" />
+    <Compile Include="Utilities\BehaviorFactory.cs" />
+    <Compile Include="Utilities\CollectionWrapper.cs" />
+    <Compile Include="Commands\DelegateCommand.cs" />
+    <Compile Include="Commands\RoutedCommands.cs" />
+    <Compile Include="Controls\AngleBorder.cs" />
+    <Compile Include="Controls\AssistListPopup.xaml.cs">
+      <DependentUpon>AssistListPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ComboBoxStatement.cs" />
+    <Compile Include="Controls\ConnectedBorder.cs" />
+    <Compile Include="Controls\RichTextBoxWithIntellisense.cs" />
+    <Compile Include="Controls\RichToolTip.cs" />
+    <Compile Include="Controls\SearchTextBox.cs" />
+    <Compile Include="Controls\UIHelpers.cs" />
+    <Compile Include="Converters\CollapseThicknessConverter.cs" />
+    <Compile Include="Converters\CountEmptyToVisConverter.cs" />
+    <Compile Include="Converters\FilePathToStringConverter.cs" />
+    <Compile Include="Controls\FilePathTypeEditor.cs" />
+    <Compile Include="Converters\FlowDocumentToStringConverter.cs" />
+    <Compile Include="Converters\GetVertexControlConverter.cs" />
+    <Compile Include="Converters\NegateBoolConverter.cs" />
+    <Compile Include="Converters\ExperimentWrapperToExperimentConverter.cs" />
+    <Compile Include="EventArgs\DropLinkEventArgs.cs" />
+    <Compile Include="EventArgs\FillItemsNeededEventArgs.cs" />
+    <Compile Include="EventArgs\GraphDragEventArgs.cs" />
+    <Compile Include="EventArgs\SelectedStatementEventArgs.cs" />
+    <Compile Include="Resources\ConfigPathsDataTemplates.xaml.cs">
+      <DependentUpon>ConfigPathsDataTemplates.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\DataResourceWithNullCommandSupport.cs" />
+    <Compile Include="Resources\GrayscaleEffect.cs" />
+    <Compile Include="Views\Nodes\ReadOnlyLoopDecisionNodeInfoControl.xaml.cs">
+      <DependentUpon>ReadOnlyLoopDecisionNodeInfoControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Nodes\DecisionInfoControlBase.cs" />
+    <Compile Include="Views\Nodes\LoopDecisionNodeInfoControl.xaml.cs">
+      <DependentUpon>LoopDecisionNodeInfoControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Nodes\ExitLoopScopeNodeControl.xaml.cs">
+      <DependentUpon>ExitLoopScopeNodeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Nodes\EnterLoopScopeNodeControl.xaml.cs">
+      <DependentUpon>EnterLoopScopeNodeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Nodes\LoopScopeNodeControl.xaml.cs">
+      <DependentUpon>LoopScopeNodeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Nodes\ExitScopeNodeControl.xaml.cs">
+      <DependentUpon>ExitScopeNodeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Nodes\EnterScopeNodeControl.xaml.cs">
+      <DependentUpon>EnterScopeNodeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Nodes\ExitDecisionNodeControl.xaml.cs">
+      <DependentUpon>ExitDecisionNodeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Nodes\ScopeNodeControl.xaml.cs">
+      <DependentUpon>ScopeNodeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Nodes\DecisionNodeControl.xaml.cs">
+      <DependentUpon>DecisionNodeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Selectors\ConfigPropertyTemplateSelector.cs" />
+    <Compile Include="Selectors\IVertexControlSelector.cs" />
+    <Page Include="Controls\AuthenticationAndUploadControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\EditableTextBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ExperimentBreadcrumb.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TreeListView\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ZoomControl\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\IOIcons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ScreenCaptureIcon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AboutTraceLabDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ComponentExceptionDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AboutExperimentDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\FolderPickerDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NewExperimentDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Nodes\BasicNodeControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Nodes\ReadOnlyLoopDecisionNodeInfoControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Nodes\LoopDecisionNodeInfoControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Nodes\ExitLoopScopeNodeControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Nodes\EnterLoopScopeNodeControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Nodes\LoopScopeNodeControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Nodes\ExitScopeNodeControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Nodes\EnterScopeNodeControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Nodes\ExitDecisionNodeControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Nodes\RoutePointThumbStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Nodes\ScopeNodeControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Nodes\NodeInfoCommonResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Nodes\NodeResourcesReadOnly.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Nodes\NodeResourcesForSubLevelExperiment.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ConfigPathsDataTemplatesBenchmark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ConfigPathsEditorsStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Import_icon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Sequence_icon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\SystemStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GraphDocument.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Utilities\GridLengthAnimation.cs" />
+    <Compile Include="Utilities\FileOutsideDirectoryWarningBox.cs" />
+    <Compile Include="Utilities\PasswordBoxAssistant.cs" />
+    <Compile Include="Utilities\RegexValidationRule.cs" />
+    <Compile Include="ViewModels\AuthenticationAndUploadViewModel.cs" />
+    <Compile Include="ViewModels\BenchmarkWizardViewModel.cs" />
+    <Compile Include="ViewModels\ComponentLibraryNodes\IOSpecFilter.cs" />
+    <Compile Include="ViewModels\ComponentLibraryNodes\NodeComparer.cs" />
+    <Compile Include="ViewModels\ComponentLibraryOrganizerVM.cs" />
+    <Compile Include="ViewModels\DefiningBenchmarkViewModel.cs" />
+    <Compile Include="ViewModels\ExperimentCrumb.cs" />
+    <Compile Include="ViewModels\ExperimentCrumbGatherer.cs" />
+    <Compile Include="ViewModels\FileDialogs.cs" />
+    <Compile Include="ViewModels\PackageContentItem.cs" />
+    <Compile Include="ViewModels\PackageFileContentItem.cs" />
+    <Compile Include="ViewModels\PackageFolderContentItem.cs" />
+    <Compile Include="ViewModels\PackageManagerViewModel.cs" />
+    <Compile Include="ViewModels\PackageViewModel.cs" />
+    <Compile Include="ViewModels\SubLevelExperimentViewModel.cs" />
+    <Compile Include="ViewModels\IGraphViewModel.cs" />
+    <Compile Include="ViewModels\IZoomableViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="Views\BenchmarkWizardDialog.xaml.cs">
+      <DependentUpon>BenchmarkWizardDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ErrorDisplay.xaml.cs">
+      <DependentUpon>ErrorDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ComponentLibraryOrganizer.xaml.cs">
+      <DependentUpon>ComponentLibraryOrganizer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ComponentsLibraryWindow.xaml.cs">
+      <DependentUpon>ComponentsLibraryWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DefineBenchmarkDialog.xaml.cs">
+      <DependentUpon>DefineBenchmarkDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExperimentImportManagerView.xaml.cs">
+      <DependentUpon>ExperimentImportManagerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DefineCompositeComponentWizard.xaml.cs">
+      <DependentUpon>DefineCompositeComponentWizard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FilePickerDialog.xaml.cs">
+      <DependentUpon>FilePickerDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Nodes\ComponentNodeControl.xaml.cs">
+      <DependentUpon>ComponentNodeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Nodes\ReadOnlyComponentNodeInfo.xaml.cs">
+      <DependentUpon>ReadOnlyComponentNodeInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Nodes\ReadOnlyDecisionNodeInfo.xaml.cs">
+      <DependentUpon>ReadOnlyDecisionNodeInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PackageBuilder\CellTemplateSelector.cs" />
+    <Compile Include="Views\PackageBuilder\IconExtractor.cs" />
+    <Compile Include="Views\PackageBuilder\PackageBuilderMainWindow.xaml.cs">
+      <DependentUpon>PackageBuilderMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PackageBuilder\PackageSource\PackageBuilderViewModel.cs" />
+    <Compile Include="Views\PackageBuilder\PackageSource\PackageFileSourceInfo.cs" />
+    <Compile Include="Views\PackageBuilder\PackageSource\PackageHeirarchyItem.cs" />
+    <Compile Include="Views\PackageBuilder\PackageSource\PackageSourceInfo.cs" />
+    <Compile Include="Views\PackageBuilder\SafeHBitmapHandle.cs" />
+    <Compile Include="Views\ReadonlyDockableGraph.xaml.cs">
+      <DependentUpon>ReadonlyDockableGraph.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ScopeGraph.xaml.cs">
+      <DependentUpon>ScopeGraph.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubExperimentControl.xaml.cs">
+      <DependentUpon>SubExperimentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\StartPageModel.cs" />
+    <Compile Include="Views\StartPage.xaml.cs">
+      <DependentUpon>StartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WorkspaceWindow.xaml.cs">
+      <DependentUpon>WorkspaceWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DockableGraph.xaml.cs">
+      <DependentUpon>DockableGraph.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Selectors\NodeControlSelector.cs" />
+    <Compile Include="Views\ExceptionDisplay.xaml.cs">
+      <DependentUpon>ExceptionDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Nodes\ComponentNodeInfoControl.xaml.cs">
+      <DependentUpon>ComponentNodeInfoControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Nodes\DecisionNodeInfoControl.xaml.cs">
+      <DependentUpon>DecisionNodeInfoControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Nodes\NodeInfoContainer.xaml.cs">
+      <DependentUpon>NodeInfoContainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Nodes\NodeInfoItemsPanel.cs" />
+    <Compile Include="Views\OutputWindow.xaml.cs">
+      <DependentUpon>OutputWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NodeGraphLayout.cs" />
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProgressControl.xaml.cs">
+      <DependentUpon>ProgressControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\WindowThreadingHelpers.cs" />
+    <Compile Include="ViewModels\ApplicationViewModelWrapper.cs" />
+    <Compile Include="ViewModels\ComponentsLibraryViewModelWrapper.cs" />
+    <Compile Include="ViewModels\EnabledFlowDocument.cs" />
+    <Compile Include="ViewModels\LogViewModelWrapper.cs" />
+    <Compile Include="ViewModels\Statement.cs" />
+    <Compile Include="ViewModels\ExperimentViewModel.cs" />
+    <Compile Include="ViewModels\WorkspaceViewModelWrapper.cs" />
+    <Compile Include="Utilities\WpfHelpers.cs" />
+    <Compile Include="WpfMain.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\AssistListPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\ConfigPathsDataTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Nodes\DecisionNodeControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Nodes\EdgeStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Nodes\NodeResources.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\SearchTextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BenchmarkWizardDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ErrorDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ComponentLibraryOrganizer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ComponentsLibraryWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DefineBenchmarkDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ExperimentImportManagerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DefineCompositeComponentWizard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FilePickerDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Nodes\ComponentNodeControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Nodes\NodeResourcesForExperiment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Nodes\ReadOnlyComponentNodeInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Nodes\ReadOnlyDecisionNodeInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Nodes\EdgeStyleReadOnly.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Nodes\VertexControlStyleReadOnly.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Nodes\VertexControlStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PackageBuilder\PackageBuilderMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ReadonlyDockableGraph.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ScopeGraph.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubExperimentControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StartPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WorkspaceWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DockableGraph.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ExceptionDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Nodes\ComponentNodeInfoControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Nodes\DecisionNodeInfoControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Nodes\NodeInfoContainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutputWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ProgressControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TraceLab.Core\TraceLab.Core.csproj">
+      <Project>{D22496F8-7E72-4B36-9FCA-630CD1679943}</Project>
+      <Name>TraceLab.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TraceLabSDK.Types\TraceLabSDK.Types.csproj">
+      <Project>{94A3E4E6-2EB7-4715-8A11-D8CF119D7458}</Project>
+      <Name>TraceLabSDK.Types</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\TraceLabSDK\TraceLabSDK.csproj">
+      <Project>{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}</Project>
+      <Name>TraceLabSDK</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RunProcessIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\eventlogInfo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\saveHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NewDocumentHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\openHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\grayscale.ps" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ColorTone.ps" />
+    <None Include="Resources\ColorTone.fx" />
+    <None Include="Resources\grayscale.fx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DefineCompositeComponent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tagorganizertag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\Nodes\NodeColors.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\busy_indicator_big.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Settings-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\RunBenchmarkIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DefineBenchmarkIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\saveAs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\remove_filter_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\remove_filter_icon_mouseover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AuthenticateLargeIcon.png" />
+    <Resource Include="Resources\CoEST_logo.png" />
+    <Resource Include="Resources\UploadLargeIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HyperlinkIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\HyperlinkIconSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ResultsIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\arrow.png" />
+    <Resource Include="Resources\loupe.png" />
+    <Resource Include="Resources\trashBin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\all16.png" />
+    <Resource Include="Resources\any16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder_open.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\112_Plus_Green.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VSObject_Assembly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VSFolder_closed_virtual.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VSProject_genericfile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ClearAll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_warning_12x12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_error_12x12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_debug_12x12.png" />
+    <Resource Include="Resources\icon_trace_12x12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\grab.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\enterScopeIcon.png" />
+    <Resource Include="Resources\exitScopeIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image_StartPageHeader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\openhandicon.png" />
+    <Resource Include="Resources\openhand.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\arrowcursor_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\help_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icon_info_12x12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image_NSFLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon_Link32-Alt.png" />
+    <Resource Include="Resources\Icon_Link32.png" />
+    <Resource Include="Resources\Icon_Play32-Alt.png" />
+    <Resource Include="Resources\Icon_Play32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon_Organizer16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon_Refresh16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon_Play16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon_TraceLab16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon_TraceLab48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon_Help16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon_Link16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon_Video16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\moveIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\addscope.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon_PkgBuilder16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon_Stop16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon_About16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon_AddFilter16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon_Settings16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon_Search16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon_PkgCreate16.png" />
+    <Resource Include="Resources\Icon_PkgReference16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icon_PkgBuilder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\workspaceViewer.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

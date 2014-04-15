@@ -1,0 +1,70 @@
+F1	A user must be able to place a call.~
+F2	A user must be able to receive a call.~	
+F3	A user must be able to forward a call to any extension~
+F4	To forward a call a user must press the “#” key and then dial the extension~
+F5	When a user forwards a call and the destination extension is busy, the other party of the initial call gets busy signal~
+F6	The user must be able to globally forward calls to their extension to another extension~
+F7	A caller must be able to leave a voice message~
+F8	A user must be able to sign for a Voice Mail service~
+F9	A user must be able to log in to the Voice Mail System from any phone that is part of the system~
+F10	To log in to the Voice Mail system a user must dial extension 6000~
+F11	A user must be able to change the greeting message for their Voice Mail.~
+F12	A user must be able to change the password of their voice mail box.~
+F13	A user must be able to listen to voice messages in their voice mail box~
+F14	A user must be able to delete voice messages from their voice mail box.~
+F15	Once a connection between two users is established, they must be able to hear each other.~
+F16	A call must end when either the caller or callee hangs up.~
+F17	A user must hear dial tone once they pick the receiver.~
+F18	A caller must hear busy tone after the extension of the callee has been dialed.~
+F19	A caller must hear ring tone after the extension of the callee has been dialed.~
+F20	A caller must hear fast busy tone after the extension of the callee has been dialed~
+F21	A user must hear a tone after pressing a key on the keypad of the phone~
+F22	A user must hear voice mail instructions when interacting with the Voice Mail system~
+F23	A user must not be charged for checking their voice mail~
+F24	The system must not charge a user when a call to administrator is placed~
+F25	Billing for calls must be by the minute.~
+F26	Only the caller is billed for a phone call~
+F27	There is no upper limit on the duration of any call~
+F28	Call processing must start once four digits (extension) are dialed by a caller~
+F29	If a call is dropped for any reason, the charge for that call is for the duration of the call until the drop time~
+F30	A user must not be able to call their own extension~
+F31	A user must be able to change their calling plan~
+F32	Administrator must be able to log in~
+F33	Administrator must be able to log out~	
+F34	Administrator must be able to record a bill payment on the behalf of a user~
+F35	Administrator must be able to print bill(s)~
+F36	Administrator must be able to suspend a user account~
+F37	Administrator must be able to activate a suspended user account~
+F38	Administrator must be able to delete a user account~
+F39	Administrator must be able to create a new user account~
+F40	Administrator must be able to view user account history~
+F41	Administrator must be able to modify user account attributes~
+F42	Administrator must be able to add a new phone to the VIOP Network system~
+F43	Administrator must be able to remove a phone from the VIOP Network system~	
+F44	Administrator must be able to set an upper bound on the number of live calls in the VOIP Network system at one time~
+F45	Administrator must be able to request a hardware test~
+F46	Administrator must be able to add a new calling plan to the system	~
+F47	Administrator must be able to delete a calling plan from the system	~
+F48	Administrator must be able to reset a call process	~
+F49	The VOIP Network system will have only one administrator~	
+F50	The system must notify the administrator and suspend an account in case of hardware and/or software failure	~
+F51	The system should prompt the administrator to print the last bill in case of account cancellation	~
+F52	Each bill should contain a list of phone records and the total charge for the billing period	~
+F53	The default billing period is the current period	~
+F54	The system should not allow more simultaneous calls than specified my the administrator	~
+F56	The system must provide a means for the administrator to check whether an extension is in use	~
+F57	The system must not permit a user to utilize the services provided by the network until an administrator has initialized their account	~
+F58	The system must provide a method for the administrator to initialize a user account	~
+F59	The system must provide a method for the administrator to view a user’s outstanding bill~	
+F60	The system must provide a method for the administrator to access logs of previously-run system tests	~
+N1	A user may have more than one account	~
+N2	The maximum number of active user accounts in the system cannot be more than the phones part of the system	~
+N3	There should be no restriction on the available extensions	~
+N4	The system does not need to be scalable beyond 10000 users	~
+N5	The system should log all activities of the administrator	~
+N6	All IP part of the system should be static	~
+N7	There should be only one administrator logged in at a time	~
+N8	When the system is connecting two IP telephones in a voice call, the call must be connected within 1 second to ensure a reasonable system response time	~
+N9	Time for administrator to learn how to comfortably use the administrator interface should not exceed one week when proper training and/or documentation is offered	~
+N10	System should be easily adaptable from a subscription-based service to an unlimited private internal communication network	~
+N11	Time for a user to learn how to comfortably operate supplementary services such as voice mail and call forwarding should not exceed one week 	~

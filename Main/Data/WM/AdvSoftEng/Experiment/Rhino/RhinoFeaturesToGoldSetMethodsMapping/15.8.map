@@ -1,0 +1,4 @@
+org.mozilla.javascript.NativeMath.NativeMath
+org.mozilla.javascript.NativeMath.init
+org.mozilla.javascript.ScriptRuntime.initStandardObjects
+org.mozilla.javascript.IdScriptableObject.initPrototypeValue

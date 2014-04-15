@@ -1,0 +1,6 @@
+org.mozilla.javascript.regexp.NativeRegExp.parseTerm
+org.mozilla.javascript.regexp.NativeRegExp.emitREBytecode
+org.mozilla.javascript.regexp.NativeRegExp.flatNMatcher
+org.mozilla.javascript.regexp.NativeRegExp.compileRE
+org.mozilla.javascript.regexp.NativeRegExp.executeREBytecode
+org.mozilla.javascript.regexp.NativeRegExp.doFlat

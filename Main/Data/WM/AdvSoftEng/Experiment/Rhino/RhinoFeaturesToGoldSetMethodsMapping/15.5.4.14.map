@@ -1,0 +1,11 @@
+org.mozilla.javascript.regexp.RegExpImpl.find_split
+org.mozilla.javascript.NativeString.execIdCall
+org.mozilla.javascript.regexp.SubString.toString
+org.mozilla.javascript.NativeString.find_split
+org.mozilla.javascript.NativeString.findPrototypeId
+org.mozilla.javascript.regexp.RegExpImpl.isRegExp
+org.mozilla.javascript.NativeString.js_split
+org.mozilla.javascript.regexp.NativeRegExp.executeRegExp
+org.mozilla.javascript.regexp.SubString.SubString
+org.mozilla.javascript.regexp.RegExpImpl.getParenSubString
+org.mozilla.javascript.NativeString.initPrototypeId

@@ -1,0 +1,27 @@
+Class GUILoginPaziente Date: 19/09/03 
+                                               Version: 0 01 000 
+Description Make the mask that manages access by 
+                   Part of the section Patient 
+Attributes 
+       Name Access Description 
+Private btnValida button that starts the process 
+                           access to this patient 
+Private btnAnnulla button that lets you exit the 
+                           login mask 
+Private editCodiceHC Text box used to 
+                           allow the operator to enter 
+                           the code of dell'Hospital Card 
+                           Patient 
+Private editCodoceFiscal Text box used to 
+and enable the operator to enter 
+                           the tax code Patient 
+Methods 
+       Signature showLoginError () Public Access 
+    Description Show an error message if 
+                   the procedure for access to the section 
+                   Patient fails 
+       Signature login () Public Access 
+    Description Manages the event generated when the Operator 
+                   insert the code card or dell'hospital 
+                   Patient tax code and run the 
+                   validation procedure

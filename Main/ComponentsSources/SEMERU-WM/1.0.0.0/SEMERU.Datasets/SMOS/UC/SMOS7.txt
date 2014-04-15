@@ -1,0 +1,14 @@
+
+Nome: VisualizzaDettagliUtente
+Attori: Amministratore
+Descrizione: Visualizza i dettagli di un utente
+Precondizioni:
+• •
+•
+L’utente è loggato come amministratore L’utente ha svolto il caso d’uso “VisualizzaElencoUtenti” e il sistema sta visualizzando l’elenco degli utenti presenti nel sistema L’utente clicca sul pulsante “Dettagli”
+Sequenza degli eventi
+Utente
+Sistema
+1. Visualizza le informazioni dettagliate dell’utente ed in particolare: Nome, Cognome, e-mail, cell, login, password.
+Postcondizioni:
+•	Il sistema visualizza le informazioni dettagliate relative ad un utente •	Connessione al server SMOS interrotta

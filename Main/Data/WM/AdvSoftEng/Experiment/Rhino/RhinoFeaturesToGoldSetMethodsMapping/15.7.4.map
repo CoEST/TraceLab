@@ -1,0 +1,15 @@
+org.mozilla.javascript.DToA.stripTrailingZeroes
+org.mozilla.javascript.DToA.roundOff
+org.mozilla.javascript.DToA.pow5mult
+org.mozilla.javascript.NativeNumber.getClassName
+org.mozilla.javascript.DToA.hi0bits
+org.mozilla.javascript.DToA.word1
+org.mozilla.javascript.DToA.JS_dtoa
+org.mozilla.javascript.DToA.JS_dtostr
+org.mozilla.javascript.DToA.d2b
+org.mozilla.javascript.DToA.stuffBits
+org.mozilla.javascript.DToA.word0
+org.mozilla.javascript.DToA.lo0bits
+org.mozilla.javascript.IdScriptableObject.incompatibleCallError
+org.mozilla.javascript.ScriptRuntime.numberToString
+org.mozilla.javascript.DToA.setWord0

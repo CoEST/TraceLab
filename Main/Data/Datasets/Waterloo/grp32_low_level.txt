@@ -1,0 +1,167 @@
+S1	Scenario Number:	S1
+Name:	Issue bill for specific user
+Authors:	M1, M3, M2
+Event:	Administrator tells the system to create a bill for a specific user for the billing period, and then print it out to send
+System:	Administration Module
+Actors:	Administrator (has special privileges to use administrative module)
+Overview:	This use case captures the process of an administrator generating the bill to be sent to the customer. Bills automatically are generated every month, and when the account gets terminated. This issue bill will be for other circumstances~
+S2	Scenario Number:	S2
+Name:	Record bill payment
+Authors:	M1, M3, M2
+Event:	Administrator records the payment of a bill that comes from a user of the phone system
+System:	Administration Module
+Actors:	Administrator (has special privileges to use administrative module)
+Overview:	This use case captures the process of an administrator recording a bill payment into the system. This balances the specific users account.~
+S3	Scenario Number:	S3
+Name:	Display User Information
+Authors:	M1, M3, M2
+Event:	Administrator displays user information on screen.
+System:	Administration Module
+Actors:	Administrator (has special privileges to use administrative module)
+Overview:	This use case captures the process of an administrator bringing up user information (user information includes voicemail security code)~
+S4	Scenario Number:	S4
+Name:	Changing User Information (Except Phone #)
+Authors:	M1, M3, M2
+Event:	Administrator changes specific information about a user (except the phone number).
+System:	Administration Module
+Actors:	Administrator (has special privileges to use administrative module)
+Overview:	This use case captures the process of an administrator going into a specific user record and changing the data.~
+S5	Scenario Number:	S5
+Name:	Search for User
+Authors:	M1, M3, M2
+Event:	Administrator searches for a specific user, or groups of users.
+System:	Administration Module
+Actors:	Administrator (has special privileges to use administrative module)
+Overview:	This use case captures the process of an administrator using search parameters to find the user he or she wants to manipulate on the system.~
+s6	Scenario Number:	S6
+Name:	Change Phone Number
+Authors:	M1, M3, M2
+Event:	Administrator changes the phone number of a user
+System:	Administration Module
+Actors:	Administrator (has special privileges to use administrative module)
+Overview:	This use case captures the process of an administrator changing the extension of a user. This is generated randomly.~
+s7	Scenario Number:	S7
+Name:	Set maximum number of calls
+Authors:	M1, M3, M2
+Event:	Administrator sets the maximum number of calls allowed at any given time in system.
+System:	Administration Module
+Actors:	Administrator (has special privileges to use administrative module)
+Overview:	This use case captures the process of an administrator setting the maximum number of calls allowed in the system. The system checks if the number of calls has exceeded the maximum when users pick up the phone, so calls that are currently happening will not be cut off.~
+s8	Scenario Number:	S8
+Name:	Change billing rate
+Authors:	M1, M3, M2
+Event:	Administrator tells the system to change the billing rate for callers
+System:	Administration Module
+Actors:	Administrator (has special privileges to use administrative module)
+Overview:	This use case captures the process of an administrator setting a different billing rate on the system. The rate for executives is always half as much as the rate for regular users.~
+s9	Scenario Number:	S9
+Name:	Display System Options
+Authors:	M1, M3, M2
+Event:	Administrator gets list of changes that can be made to the system.
+System:	Administration Module
+Actors:	Administrator (has special privileges to use administrative module)
+Overview:	This use case captures the process of an administrator retrieving the menu options that affect the system as a whole.~
+s10	Scenario Number:	S10
+Name:	Change discount period
+Authors:	M1, M3, M2
+Event:	Administrator tells the system to change period that is considered nighttime and daytime.
+System:	Administration Module
+Actors:	Administrator (has special privileges to use administrative module)
+Overview:	This use case captures the process of an administrator setting the hours for nighttime and daytime (for billing purposes).~
+s11	Scenario Number:	S11
+Name:	Change billing period
+Authors:	M1, M3, M2
+Event:	Administrator tells the system to change the billing period (how often the bills are sent out)
+System:	Administration Module
+Actors:	Administrator (has special privileges to use administrative module)
+Overview:	This use case captures the process of an administrator setting the period for which bills are issued.~
+s12	Scenario Number:	S12
+Name:	Restore Default System State
+Authors:	M1, M3, M2
+Event:	Administrator tells the system to reset the state of the system
+System:	Administration Module
+Actors:	Administrator (has special privileges to use administrative module)
+Overview:	This use case captures the process of an administrator resetting the state of the system to its original form.~
+s13	Scenario Number:	S13
+Name:	Display phone status information
+Authors:	M1, M3, M2
+Event:	Administrator displays the status information of all the phones in the system
+System:	Administration Module
+Actors:	Administrator (has special privileges to use administrative module)
+Overview:	This use case captures the process of an administrator displaying on the screen the status of each phone connected to the network. Phones maybe in the disconnected state, or in the ready state, or in an error state.~
+s14	Scenario Number:	S14
+Name:	Test specific phone
+Authors:	M1, M3, M2
+Event:	Administrator tells the system to test a specific phone in the network, and displays the status of the phone on screen
+System:	Administration Module
+Actors:	Administrator (has special privileges to use administrative module)
+Overview:	This use case captures the process of an administrator testing and displaying on the screen the status of a specific phone connected to the network. This phone maybe in the disconnected state, or in the ready state, or in an error state.~
+s15	Scenario Number:	S15
+Name:	Reset phone status
+Authors:	M1, M3, M2
+Event:	Administrator tells the system to reset the phone status to ‘available’
+System:	Administration Module
+Actors:	Administrator (has special privileges to use administrative module)
+Overview:	This use case captures the process of an administrator resetting the status of a phone to available because something has gone wrong in the system.~
+s16	Scenario Number:	S16
+Name:	Caller making a call
+Authors:	M1, M3, M2
+Event:	Caller makes a call to another person in the network. The extension number of callee is passed as input into the system by caller.
+System:	Call Manager Block, Call Processes, Phones
+Actors:	Caller (initiator of call), Callee (receiver of call)
+Overview:	This use case captures the process of a caller making a call to a callee till completion.~
+s17	Scenario Number:	S17
+Name:	Caller is Blocked by Callee
+Authors:	M1, M3, M2
+Event:	Caller places a call through to a user that has blocked the caller
+System:	Administration Module
+Actors:	Administrator (has special privileges to use administrative module)
+Overview:	This use case captures the process of a caller placing a call to another user on the network, that has requested through the administrator that the caller be blocked.~
+s18	Scenario Number:	S18
+Name:	Caller making a call when callee has one other person on the line
+Authors:	M1, M3, M2
+Event:	Caller makes a call to another person in the network. The callee has call waiting service, so callee will hear a ringing noise in the middle of the conversation.
+System:	Call Manager Block, Call Processes, Phones
+Actors:	Caller (initiator of call), Callee (receiver of call)
+Overview:	This use case captures the process of a caller making a call to a callee that is already on the phone.~
+s19	Scenario Number:	S19
+Name:	Caller making a call when callee is using two lines (is in one conversation, and has another user on hold)
+Authors:	M1, M3, M2
+Event:	Caller makes a call to another person in the network. The callee has call waiting service, but has used up the call waiting service on 1 person already.
+System:	Call Manager Block, Call Processes, Phones`
+Actors:	Caller (initiator of call), Ca\llee (receiver of call)~
+s20	Scenario Number:	S20
+Name:	User trying to check their voice mail
+Authors:	M1, M3, M2
+Event:	User uses phone to check own voicemail.
+System:	Call Manager Block, Call Processes, Phones
+Actors:	Caller (initiator of call), Callee (receiver of call)
+Overview:	This use case captures the process of a user dialing ‘1000’ in order to check own voicemail when there is 1 message in the voicemail box.~
+s21	Scenario Number:	S21
+Name:	Caller leaving a voicemail
+Authors:	M1, M3, M2
+Event:	Caller calls into callee, saves a message for the callee that can be retrieved later
+System:	Call Manager Block, Call Processes, Phones
+Actors:	Caller (initiator of call), Callee (receiver of call)
+Overview:	This use case captures the process of a caller making a call to a callee, and the callee is not available, so a voice message prompt is given.~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

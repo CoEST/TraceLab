@@ -1,0 +1,6 @@
+org.mozilla.javascript.ScriptRuntime.toNumber
+org.mozilla.javascript.ScriptRuntime.isArrayObject
+org.mozilla.javascript.ScriptRuntime.toUint32
+org.mozilla.javascript.ScriptRuntime.initStandardObjects
+org.mozilla.javascript.NativeJavaObject.coerceTypeImpl
+org.mozilla.javascript.NativeJavaObject.getConversionWeight

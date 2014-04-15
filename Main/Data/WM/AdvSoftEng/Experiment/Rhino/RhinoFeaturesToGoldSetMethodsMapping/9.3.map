@@ -1,0 +1,4 @@
+org.mozilla.javascript.FunctionObject.convertArg
+org.mozilla.javascript.ScriptRuntime.toNumber
+org.mozilla.javascript.Context.toNumber
+org.mozilla.javascript.NativeJavaObject.toDouble

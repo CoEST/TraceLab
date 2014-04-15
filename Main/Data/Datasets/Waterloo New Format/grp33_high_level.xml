@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp33_high_level</id>
+    <name>Waterloo grp33_high_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp33_high_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>FA1</id>
+      <content>System shall be able to connect two phones for a voice conversation. Caller is charged according to applicable billing plan.
+FA2	As soon as a phone is picked up, it allocates resources and indicates success by playing a dial tone.
+FA3	If dialing does not begin in 10s, phone goes back into on-hook state and resources are released.
+FA4	Most phones can make and receive calls.
+FA5	Some phones are unable to make calls.
+FA6	Some phones are unable to receive calls.
+FA7	If unable to secure resources when picked up, phone plays fast-busy tone.
+FA8	User is able to dial a four digit number indicating the requested callee. Connection is established as soon as fourth digit is entered.
+FA9	User has 30s to enter the callee phone number. Otherwise the phone goes back into on-hook state.
+FA10	Before the call is connected, caller may cancel a call by hanging up the phone.
+FA11	A conversation can be terminated at any time by either party hanging up. The caller is billed as per the calling plan.
+FA12	If callee is in a conversation, callee hears beeps indicating caller�s rings.
+FA13	Callee answers the incoming call and the previous call goes on hold.
+FA14	The current conversation goes on hold and the user is connected to the holding party.
+FA15	Callee does not answer and caller goes to VM after 4 rings.
+FA16	Callee does not exist or may not receive calls. Caller gets a notification.
+FA17	Callee is unable to hear phone ring. Caller goes to VM after 1 ring.
+FA18	All phones may make special calls and not be charged.
+FA19	Callee sees Caller�s phone number.
+FA20	The system maintains a bidirectional mapping between phone numbers and IPs.
+FB1	A phone number may not be assigned to a phone if it is already assigned to another phone.
+FB2	When registering a new user, the administrator may pick a phone number to assign to the user.
+FB3	When a user is unregistered, the phone number is made available.
+FB4	Administrator can change a user�s phone number.
+FB5	Employee ID is used to uniquely identify the user.
+FB6	Administrator may register new users for the system.
+FB7	System verifies all new and changed values for consistency.
+FB8	When a phone is associated with a user, such as when registering or reregistering, the system checks for connectivity with and functionality of the phone device.
+FB9	User is removed from active service.
+FB10	A user that has previously been registered and subsequently unregistered can be reregistered again.
+FB11	User is disallowed from making or receiving calls.
+FB12	User is again allowed to make and/or receive calls.
+FB13	Administrator can edit user�s personal information.
+FB14 	Users can be searched for by name, phone number, employee ID, or cubicle.
+FC1	Two billing plans.
+FC2	Calls are billed to the caller, per second, rounded down.
+FC3	Call start and end times are recorded and the caller�s calling plan rate is applied for the duration of the call.
+FC4	Administrator can view the current bill of a user.
+FC5	System prints bills at the administrator-specified billing period.
+FC6	System prints the bill for a user upon unregistration.
+FC7	Administrator can request the system to print the current bill for a user.
+FC8	When a bill payment is received, administrator can enter it into the billing system.
+FC9	Administrator can edit user�s billing address.
+FC10	Administrator can set the time when weekday rate applies as opposed to evening and weekend rate.
+FC11	Administrator can set the weekday rate and the evening and weekend rate.
+FC12	Administrator can adjust the period with which the automatic periodic bills are printed.
+FD1	Administrator may administer the system at the switching server.
+FD2	The administration must enter a password to access the functionality of the administrator console.
+FD3	Administrator sees number of current calls, number of phones connected, number of phones down.
+FD4	Alerts sent by email.
+FD5	System performs self-checks at specified intervals.
+FD6	Administrator can modify the period between automatic hardware tests.
+FD7	System validates all text fields contain text, all numeric fields contain numbers, all time fields contain times
+FD8	Problems such as hardware or network failures and insufficient resource conditions are logged.
+FD9	Administration events such as addition of new users are logged.
+N1	To enhance user usability, IP Phones shall behave similar to regular phones.
+N2	Documentation shall be supplied when the system is delivered.
+N3	Programming language choice is up to the design and implementation team.
+N4	System shall not interrupt user conversations in at least 90% of the cases
+N5	An uptime ratio of 90% or better required.
+N6	System shall be designed and developed in a modular manner.
+N7	Time to connect calls shall be not much more than 2s.
+N8	The administrative console is secured with the administrator password.
+N9	The underlying data store is secured and not accessible directly to the administrator.
+N10	The logging database is secured and accessible with the administrator password.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

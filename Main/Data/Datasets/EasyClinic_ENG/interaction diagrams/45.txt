@@ -1,0 +1,20 @@
+Patient Login Scenario validation run 
+     The service was launched following the express request 
+by the Patient The actor Patient access to the screen 
+on the management of the system (for instance 
+GUISfondo) Control then goes to the instance of 
+GUISfondoHandler which delegates to the instance of GUILoginHandler 
+the task of managing the service The first step to take 
+is to enter the Hospital Patient Card and PIN and then 
+Patient is presented to the same page for the acquisition 
+such data (for instance GUILogin) The patient data sets and 
+confirms the insertion, and the scrutiny goes back to the application 
+GUILoginHandler of derogating the validation of the application 
+HospitalCardManager latter deals to validate the information 
+entered the patient through the application of the outcome Hospital Card 
+is notified of the positive backward up 
+GUILoginHandler the application of which requires the application of 
+Allow GUIPrincipaleHandler of access to patient 
+applicant and then to arrange for display 
+main form (for instance GUIPrincipale) This feature 
+it was described by the sequence diagram of Fig 3 7

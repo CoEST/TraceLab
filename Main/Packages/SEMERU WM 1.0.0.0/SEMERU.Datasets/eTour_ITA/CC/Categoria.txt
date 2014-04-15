@@ -1,0 +1,121 @@
+﻿package unisa.gps.etour.control.fuzzy;
+
+import java.io. Serializable;
+import java.util. Hashtable;
+
+public class  Categoria implements  Serializable
+{
+
+	/**
+	 *  Classe che descrive le caratteristiche di una  Categoria
+	 * contiene una  Hashtable che rappresenta il dizionario relativo 
+	 * alla  Categoria che contiene quindi per ogni termine associato 
+	 * alla  Categoria i valori di frequenza, distanza e rilevanza.
+	 *  Offre metodi di accesso, modifica e metodi ausiliari.
+	 */
+	private static final long serial Version U I D = -                    L;
+	private  String nome; //nome della categoria
+	private  Hashtable< String, float[]> termini; //elenco di termini con relativa frequenza, rilavanza e distanza
+
+	/*
+	 *  Costruttore:
+	 *  Riceve come parametro il nome della  Categoria da creare
+	 */
+	public  Categoria( String p Nome)
+	{
+		nome = p Nome;
+		termini = new  Hashtable< String,float[]>();
+	}
+
+	/*
+	 *  Restituisce in output la  Hashtable contenente i termini 
+	 * con i rispettivi valori di frequenza, rilevanza e distanza
+	 */
+	public  Hashtable< String, float[]> get Termini()
+	{
+		return termini;
+	}
+
+	/*
+	 *  Restituisce in output il nome della  Categoria
+	 */
+	public  String get Name()
+	{
+		return nome;
+	}
+
+	/*
+	 *  Prende come parametro la stringa rappresentante il termine
+	 * di cui si vuole prelevare i valori di frequenza, distanza e rilevanza
+	 */
+	public float[] get Val( String p Termine) throws  Null Pointer Exception
+	{
+		if (esiste Termine(p Termine))
+			return termini.get(p Termine);
+
+		return null;
+	}
+
+	/*
+	 *  Aggiunge un termine al dizionario della categoria
+	 */
+	public void add Termine( String p Termine)
+	{
+		termini.put(p Termine, new float[ ]);
+	}
+
+	/*
+	 *  Aggiunge un termine al dizionario della categoria 
+	 * settando anche i valori di frequenza, distanza e rilavanza
+	 */
+	public boolean add Termine( String p Termine, float[] p Val)
+	{
+		if((p Val==null)||(p Termine.equals("")))
+			return false;
+		termini.put(p Termine, p Val);
+		
+		return true;
+	}
+
+	/*
+	 *  Setta i valori relativi al termine p Termine
+	 */
+	public boolean set Val Termine( String p Termine, float[] p Val)
+			throws  Null Pointer Exception
+	{
+		if (esiste Termine(p Termine))
+		{
+			termini.put(p Termine, p Val);
+			return true;
+		}
+
+		return false;
+	}
+	
+	
+	public void set Termini( Hashtable< String,float[]> p Termini)
+	{
+		termini = p Termini;
+	}
+
+	/*
+	 *  Restituisce  True se il termine è presente nel 
+	 * dizionario della  Categoria  False altrimenti
+	 */
+	public boolean esiste Termine( String p Termine)
+	{
+		try
+		{
+			float [] ret = termini.get(p Termine);
+			if(ret!=null)
+				return true;
+		}
+		catch ( Null Pointer Exception e)
+		{
+			return false;
+		}
+		
+		return false;
+	}
+
+}

@@ -1,0 +1,12 @@
+org.mozilla.javascript.Parser.statementHelper
+org.mozilla.javascript.NodeTransformer.transformCompilationUnit_r
+org.mozilla.javascript.IRFactory.createReturn
+org.mozilla.javascript.TokenStream.stringToKeyword
+org.mozilla.javascript.Node.toString
+org.mozilla.javascript.NodeTransformer.replaceCurrent
+org.mozilla.javascript.Decompiler.decompile
+org.mozilla.javascript.Interpreter.bytecodeName
+org.mozilla.javascript.Interpreter.interpretLoop
+org.mozilla.javascript.Interpreter.visitStatement
+org.mozilla.javascript.IRFactory.initFunction
+org.mozilla.javascript.Token.name

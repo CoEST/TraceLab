@@ -1,0 +1,176 @@
+﻿<graph>
+  <References />
+  <ExperimentInfo>
+    <Version>2</Version>
+    <Id>0f25c040-b13f-4fab-a229-ac254c4e5e3a</Id>
+    <Name>Stanford NLP - POS Test</Name>
+    <LayoutName>EfficientSugiyama</LayoutName>
+    <Author>Evan Moritz</Author>
+  </ExperimentInfo>
+  <node id="Start">
+    <SerializedVertexData Version="1" X="278" Y="70">
+      <Metadata type="TraceLab.Core.Components.StartNodeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Start" />
+    </SerializedVertexData>
+  </node>
+  <node id="End">
+    <SerializedVertexData Version="1" X="274" Y="275">
+      <Metadata type="TraceLab.Core.Components.EndNodeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="End" WaitsForAllPredecessors="True" />
+    </SerializedVertexData>
+  </node>
+  <node id="4a999d1e-4311-440a-95fc-4e6a4cf6ea06">
+    <SerializedVertexData Version="1" X="277" Y="116">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="SEMERU - Artifacts Importer" ComponentMetadataDefinitionID="06301e57-0363-5901-a2dc-052978a8831e" WaitsForAllPredecessors="True">
+        <IOSpec Version="2">
+          <Input />
+          <Output>
+            <IOItem>
+              <IOItemDefinition Name="Artifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" IOType="Output" />
+              <MappedTo>Artifacts</MappedTo>
+            </IOItem>
+          </Output>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>3</Version>
+              <Name>Artifacts</Name>
+              <DisplayName>Artifacts</DisplayName>
+              <Description />
+              <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Culture=neutral, PublicKeyToken=2c83cea59a8bb151</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <FilePath>
+                  <Version>2</Version>
+                  <Relative>..\..\SEMERU.Datasets\EasyClinic_ENG\EasyClinic_ENG.corpus.source.txt</Relative>
+                </FilePath>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="8d3b4bbd-5f6d-478d-90c2-8c2b49fa8cb5">
+    <SerializedVertexData Version="1" X="274.532" Y="163.24">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Cleanup Preprocessor" ComponentMetadataDefinitionID="8aa25dc8-2d50-59a3-9021-db0a3bd05084" WaitsForAllPredecessors="True">
+        <IOSpec Version="2">
+          <Input>
+            <IOItem>
+              <IOItemDefinition Name="listOfArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" IOType="Input" />
+              <MappedTo>Artifacts</MappedTo>
+            </IOItem>
+          </Input>
+          <Output>
+            <IOItem>
+              <IOItemDefinition Name="listOfArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" IOType="Output" />
+              <MappedTo>CleanArtifacts</MappedTo>
+            </IOItem>
+          </Output>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>3</Version>
+              <Name>RemoveDigits</Name>
+              <DisplayName>Remove digits?</DisplayName>
+              <Description>Option to remove lone numbers from text during cleanup (ex. 1001)</Description>
+              <ActualValueType>TraceLab.Core.Components.EnumValueCollection, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151</ActualValueType>
+              <ValueType>Preprocessor.PreprocessorCleanUpComponentEnum, PreprocessorCleanUp, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>True</IsEnum>
+              <EnumInfo>
+                <EnumValueCollection>
+                  <SourceEnum>Preprocessor.PreprocessorCleanUpComponentEnum, PreprocessorCleanUp, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null</SourceEnum>
+                  <Value>Yes</Value>
+                  <PossibleValues>
+                    <ArrayOfEnumValue xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                      <EnumValue>
+                        <Value>No</Value>
+                      </EnumValue>
+                      <EnumValue>
+                        <Value>Yes</Value>
+                      </EnumValue>
+                    </ArrayOfEnumValue>
+                  </PossibleValues>
+                </EnumValueCollection>
+              </EnumInfo>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="47a9e5ed-fcff-4478-ad3e-f25182c3ffee">
+    <SerializedVertexData Version="1" X="275.532" Y="217.24">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Stanford POS Extractor" ComponentMetadataDefinitionID="84336708-3b09-5406-8fcc-b6f0f163378f" WaitsForAllPredecessors="True">
+        <IOSpec Version="2">
+          <Input>
+            <IOItem>
+              <IOItemDefinition Name="ListOfArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" IOType="Input" />
+              <MappedTo>CleanArtifacts</MappedTo>
+            </IOItem>
+          </Input>
+          <Output>
+            <IOItem>
+              <IOItemDefinition Name="ListOfArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" IOType="Output" />
+              <MappedTo>NounArtifacts</MappedTo>
+            </IOItem>
+          </Output>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>3</Version>
+              <Name>POS</Name>
+              <DisplayName>Part of Speech</DisplayName>
+              <Description>The desired part of speech for extraction.</Description>
+              <ActualValueType>TraceLab.Core.Components.EnumValueCollection, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151</ActualValueType>
+              <ValueType>Stanford.nlp.models.POSTagger+POSTaggerSpeechType, Stanford.NLP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>True</IsEnum>
+              <EnumInfo>
+                <EnumValueCollection>
+                  <SourceEnum>Stanford.nlp.models.POSTagger+POSTaggerSpeechType, Stanford.NLP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</SourceEnum>
+                  <Value>Noun</Value>
+                  <PossibleValues>
+                    <ArrayOfEnumValue xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                      <EnumValue>
+                        <Value>Noun</Value>
+                      </EnumValue>
+                      <EnumValue>
+                        <Value>Verb</Value>
+                      </EnumValue>
+                      <EnumValue>
+                        <Value>Other</Value>
+                      </EnumValue>
+                    </ArrayOfEnumValue>
+                  </PossibleValues>
+                </EnumValueCollection>
+              </EnumInfo>
+            </PropertyObject>
+            <PropertyObject>
+              <Version>3</Version>
+              <Name>ModelFile</Name>
+              <DisplayName>Training Model</DisplayName>
+              <Description>The training model used to tag the parts of speech.</Description>
+              <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Culture=neutral, PublicKeyToken=2c83cea59a8bb151</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <FilePath>
+                  <Version>2</Version>
+                  <Relative>..\..\..\..\..\TraceLab\Components\Stanford POS Tagger Models\wsj-0-18-left3words.tagger</Relative>
+                </FilePath>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <edge id="a044d6cb-4ba3-40bd-a774-b60ffe84d51d" source="Start" target="4a999d1e-4311-440a-95fc-4e6a4cf6ea06" />
+  <edge id="ef041484-f75a-492b-b974-91dbf7cd3d8c" source="4a999d1e-4311-440a-95fc-4e6a4cf6ea06" target="8d3b4bbd-5f6d-478d-90c2-8c2b49fa8cb5" />
+  <edge id="cb02b9a1-0910-419c-be37-5d9f8d98f59a" source="8d3b4bbd-5f6d-478d-90c2-8c2b49fa8cb5" target="47a9e5ed-fcff-4478-ad3e-f25182c3ffee" />
+  <edge id="6602bd9d-6ed9-4a3a-9af6-dccb07bcc75b" source="47a9e5ed-fcff-4478-ad3e-f25182c3ffee" target="End" />
+</graph>

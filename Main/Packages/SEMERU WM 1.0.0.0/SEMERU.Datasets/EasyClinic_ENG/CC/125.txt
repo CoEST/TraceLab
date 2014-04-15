@@ -1,0 +1,1 @@
+activ allow mask name oper examin will visit held outpati outpati result result conduct date reserv access access report report descript descript descript 9 1 button button method attribut version btnuscita guiprincipal grid abstract defin class gridrisultati guiresocontovisit guiresocontoesami guiresocontoprenotaz guiresoconto repres visualizzarisultati btnricerca 

@@ -1,0 +1,8 @@
+C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\bin\Test\Debug\PackageSystem\PackageSystemTestResources\Components\Importer.dll
+C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\bin\Test\Debug\PackageSystem\PackageSystemTestResources\Types\DictionaryTermWeights.dll
+C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\bin\Test\Debug\TraceLab.Core.Test.dll.config
+C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\bin\Test\Debug\TraceLab.Core.Test.dll
+C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\bin\Test\Debug\TraceLab.Core.Test.pdb
+C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core.Test\obj\Debug\TraceLab.Core.Test.csprojResolveAssemblyReference.cache
+C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core.Test\obj\Debug\TraceLab.Core.Test.dll
+C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core.Test\obj\Debug\TraceLab.Core.Test.pdb

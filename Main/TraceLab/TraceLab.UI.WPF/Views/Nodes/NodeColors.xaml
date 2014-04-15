@@ -1,0 +1,88 @@
+﻿<!--
+TraceLab - Software Traceability Instrument to Facilitate and Empower Traceability Research
+Copyright (C) 2012-2013 CoEST - National Science Foundation MRI-R2 Grant # CNS: 0959924
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see<http://www.gnu.org/licenses/>.
+-->
+
+<ResourceDictionary
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:GraphSharp_Controls="clr-namespace:GraphSharp.Controls;assembly=GraphSharp.Controls"
+             xmlns:Converters="clr-namespace:GraphSharp.Converters;assembly=GraphSharp.Controls"
+             xmlns:WPFExtensions_AttachedBehaviours="clr-namespace:WPFExtensions.AttachedBehaviours;assembly=WPFExtensions"
+             xmlns:controlsToolkit="clr-namespace:TraceLab.UI.WPF.Controls"
+             xmlns:wpg="clr-namespace:WPG;assembly=WPG"
+             xmlns:commands="clr-namespace:TraceLab.UI.WPF.Commands"
+             xmlns:local="clr-namespace:TraceLab.UI.WPF.Views"
+             xmlns:localConverters="clr-namespace:TraceLab.UI.WPF.Converters"
+             xmlns:newConverters="clr-namespace:TraceLab.UI.WPF.Converters"
+             xmlns:viewModels="clr-namespace:TraceLab.Core.Experiments;assembly=TraceLab.Core"
+             xmlns:settings="clr-namespace:TraceLab.Core.Settings;assembly=TraceLab.Core"
+             xmlns:wpfViewModels="clr-namespace:TraceLab.UI.WPF.ViewModels"
+             xmlns:Selectors="clr-namespace:TraceLab.UI.WPF.Selectors"
+             xmlns:Resources="clr-namespace:TraceLab.UI.WPF.Resources"
+             xmlns:Controls="clr-namespace:TraceLab.UI.WPF.Controls"
+             xmlns:NodeControls="clr-namespace:TraceLab.UI.WPF.Views.Nodes"
+             mc:Ignorable="d"
+             xmlns:diagnostics="clr-namespace:System.Diagnostics;assembly=WindowsBase"
+             >
+
+    <Color x:Key="DefaultBorderColor" A="0xFF" R="0x39" G="0x39" B="0x39" />
+    <Color x:Key="DefaultBackgroundColor" A="0xFF" R="0xE3" G="0xE3" B="0xE3" />
+    <Color x:Key="DefaultForegroundColor">Black</Color>
+
+    <Color x:Key="HighlightedBorderColor">Black</Color>
+    <Color x:Key="HighlightedForegroundColor">Black</Color>
+    <Color x:Key="HighlightedBackgroundColor">#FF1DBA00</Color>
+    <Color x:Key="PreviousNodeColor">#FFD6A51C</Color>
+    <Color x:Key="NextNodeColor">SkyBlue</Color>
+
+    <Color x:Key="SelectedBorderColor">DarkBlue</Color>
+    <Color x:Key="SelectedBackgroundColor">RoyalBlue</Color>
+    <Color x:Key="SelectedForegroundColor">AliceBlue</Color>
+
+    <Color x:Key="RunningBorderColor">Black</Color>
+    <Color x:Key="RunningForegroundColor">Black</Color>
+    <Color x:Key="RunningBackgroundColor">#FF5BF73E</Color>
+
+    <SolidColorBrush x:Key="HighlightedNodeBorderBrush" Color="{StaticResource HighlightedBorderColor}" />
+    <SolidColorBrush x:Key="HighlightedNodeBackgroundBrush" Color="{StaticResource HighlightedBackgroundColor}" />
+    <SolidColorBrush x:Key="HighlightedNodeForegroundBrush" Color="{StaticResource HighlightedForegroundColor}" />
+    
+    <SolidColorBrush x:Key="SelectedNodeBorderBrush" Color="{StaticResource SelectedBorderColor}" />
+    <SolidColorBrush x:Key="SelectedNodeBackgroundBrush" Color="{StaticResource SelectedBackgroundColor}" />
+    <SolidColorBrush x:Key="SelectedNodeForegroundBrush" Color="{StaticResource SelectedForegroundColor}" />
+
+    <SolidColorBrush x:Key="SemiHighlightedSourceNodeBorderBrush" Color="Black" />
+    <SolidColorBrush x:Key="SemiHighlightedSourceNodeBackgroundBrush" Color="{StaticResource DefaultBackgroundColor}" />
+    <!--<SolidColorBrush x:Key="SemiHighlightedSourceNodeBackgroundBrush" Color="#FF1DBA00" />-->
+    <SolidColorBrush x:Key="SemiHighlightedTargetNodeBorderBrush" Color="Black" />
+    <SolidColorBrush x:Key="SemiHighlightedTargetNodeBackgroundBrush" Color="{StaticResource DefaultBackgroundColor}" />
+    <!--<SolidColorBrush x:Key="SemiHighlightedTargetNodeBackgroundBrush" Color="#FFD6A51C" />-->
+
+    <SolidColorBrush x:Key="HighlightedEdgeBrush" Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}" />
+    <SolidColorBrush x:Key="SemiHighlightedInEdgeBrush" Color="{StaticResource PreviousNodeColor}" />
+    <SolidColorBrush x:Key="SemiHighlightedOutEdgeBrush" Color="{StaticResource NextNodeColor}" />
+    <!--<SolidColorBrush x:Key="SemiHighlightedInEdgeBrush" Color="#FF1DBA00" />
+    <SolidColorBrush x:Key="SemiHighlightedOutEdgeBrush" Color="#FFD6A51C" />-->
+    <SolidColorBrush x:Key="InvalidEdgeBrush" Color="Red" />
+
+    <SolidColorBrush x:Key="DefaultNodeBorderBrush" Color="{StaticResource DefaultBorderColor}"/>
+    <SolidColorBrush x:Key="DefaultNodeBackground" Color="{StaticResource DefaultBackgroundColor}"/>
+    <SolidColorBrush x:Key="DefaultNodeForeground" Color="{StaticResource DefaultForegroundColor}"/>
+
+</ResourceDictionary>

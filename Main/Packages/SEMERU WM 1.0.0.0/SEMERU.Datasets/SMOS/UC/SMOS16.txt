@@ -1,0 +1,13 @@
+Nome: EliminaClasse
+Attori: Amministratore
+Descrizione: Elimina una classe dall’archivio
+Precondizioni:
+• • • •
+L’utente è loggato al sistema come Amministratore L’utente ha eseguito il caso d’uso “VisualizzaDettagliClasse” L’utente visualizza le informazione dettagliate di una classe L’utente Clicca sul pulsante “Elimina”
+Sequenza degli eventi
+Utente
+Sistema
+1.	Elimina la classe dall’archivio
+2.	Visualizza l’elenco delle classi aggiornato
+Postcondizioni:
+•	L’utente ha eliminato una classe •	Connessione al server SMOS interrotta

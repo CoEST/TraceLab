@@ -1,0 +1,27 @@
+Class LaboratoriManager Date: 
+                                                    16/09/2003 
+                                                    Version: 
+                                                    0 01 000 
+Description has the task to manage operations 
+                   require access to data for 
+                   Laboratories 
+Attributes 
+       Name Access Description 
+                                
+Methods 
+       Signature delLaboratorio () Public Access 
+    Its task description control deletion of data 
+                   on a laboratory 
+Methods 
+       Signature editLaboratorio () Public Access 
+    Description Its task is to manage the change data 
+                   a laboratory 
+       Signature getElencoLaboratori () Public Access 
+    Description Its task is to obtain a list of all 
+                   Laboratories 
+       Signature getLaboratorioAt () Public Access 
+    Description Its task is to find all the information 
+                   on a laboratory 
+       Signature newLaboratorio () Public Access 
+    Description Its task is to manage the insertion of a 
+                   new laboratory 

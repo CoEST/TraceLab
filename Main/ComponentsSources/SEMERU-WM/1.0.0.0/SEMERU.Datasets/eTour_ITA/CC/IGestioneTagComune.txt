@@ -1,0 +1,27 @@
+package unisa.gps.etour.control. Gestione Tag;
+
+import java.rmi. Remote;
+import java.rmi. Remote Exception;
+import java.util. Array List;
+
+import unisa.gps.etour.bean. Bean Tag;
+
+/**
+ *  Interfaccia comune per la gestione dei  Tag
+ * 
+ * @author  Morelli  Giuseppe
+ * @version  .  �      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I �  University
+ *          of  Salerno
+ */
+public interface  I Gestione Tag Comune extends  Remote
+{
+
+	/**
+	 *  Metodo che restituisce tutti i  Tag memorizzati nel  Data Base
+	 * 
+	 * @return un  Array List di  Bean Tag
+	 * @throws  Remote Exception  Eccezione  Remota
+	 */
+	public  Array List< Bean Tag> ottieni Tags() throws  Remote Exception;
+
+}

@@ -1,0 +1,16 @@
+Nome: VisualizzaElencoGiustifiche
+Attori: Amministratore
+Descrizione: Visualizza i l'elenco delle giustifiche
+Precondizioni:
+• • •
+L'utente deve essere loggato al sistema come Amministratore L'utente ha svolto il caso d'uso “VisualizzaDettagliSingoloRegistro” Clicca il tasto “Giustifiche” relativo ad un alunno
+Sequenza degli eventi
+Utente
+Sistema
+1.	Mostra	tutte	le	assenze dell'alunno
+registrate scolastico selezionato Le assenze già giustificate vengono
+visualizzate in verde, quelle da giustificare in rosso
+durante	l'anno
+Postcondizioni:
+• • •
+Il sistema sta visualizzando l'elenco delle giustifiche inerenti allo studente L’amministratore interrompe l’operazione Connessione al server SMOS interrotta

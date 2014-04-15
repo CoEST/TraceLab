@@ -1,0 +1,6 @@
+org.mozilla.javascript.FunctionObject.convertArg
+org.mozilla.javascript.NativeBoolean.execIdCall
+org.mozilla.javascript.regexp.NativeRegExpCtor.setInstanceIdValue
+org.mozilla.javascript.Context.toBoolean
+org.mozilla.javascript.Interpreter.stack_boolean
+org.mozilla.javascript.ScriptRuntime.toBoolean

@@ -1,0 +1,78 @@
+package unisa.gps.etour.bean;
+import java.io. Serializable;
+
+/**
+ *  Bean contenente dati relativi alle preferenze di ricerca
+ * 
+ * @author  Martone  Giuseppe
+ * @version  .  �      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I �  University
+ *          of  Salerno
+ */
+public class  Bean Preferenza Di Ricerca implements  Serializable
+{
+	private static final long serial Version U I D =                     L;
+	private int id;
+	private  String nome;
+
+	/**
+	 *  Costruttore parametrizzato
+	 * 
+	 * @param p Id
+	 * @param p Nome
+	 */
+	public  Bean Preferenza Di Ricerca(int p Id,  String p Nome)
+	{
+		set Id(p Id);
+		set Nome(p Nome);
+	}
+
+	/**
+	 *  Costruttore  Vuoto
+	 * 
+	 */
+	public  Bean Preferenza Di Ricerca()
+	{
+
+	}
+
+	/**
+	 *  Restituisce il valore di nome
+	 * 
+	 * @return  Valore di nome.
+	 */
+	public  String get Nome()
+	{
+		return nome;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di nome
+	 * 
+	 * @param p Nome  Nuovo valore di nome.
+	 */
+	public void set Nome( String p Nome)
+	{
+		nome = p Nome;
+	}
+
+	/**
+	 *  Restituisce il valore di id
+	 * 
+	 * @return  Valore di id.
+	 */
+	public int get Id()
+	{
+		return id;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di id
+	 *
+	 * @param p Id  Nuovo valore di id.
+	 */
+	public void set Id(int p Id)
+	{
+		id = p Id;
+	}
+
+}

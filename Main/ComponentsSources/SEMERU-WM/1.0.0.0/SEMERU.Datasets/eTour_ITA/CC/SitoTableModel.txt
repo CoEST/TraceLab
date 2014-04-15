@@ -1,0 +1,83 @@
+/*
+ *  Sito Table Model.java
+ *
+ *  . 
+ *
+ *   /  /    
+ *
+ * ©      e Tour  Project -  Copyright by  S E@ S A  Lab -  D M I –  University of  Salerno
+ */
+package  Palmare;
+
+import  Bean. Bean Punto Di Ristoro;
+import javax.swing.table. Abstract Table Model;
+import  Bean.*;
+import  Util. Punto  D;
+
+/**
+ * <b> Sito Table Model</b>
+ * <p> Funge da contenitore dei dati dei beni culturali o dei punti di ristoro che devono
+ * essere visualizzati in una  J Table.</p>
+ * @see javax.swing.table. Abstract Table Model
+ * @see javax.swing. J Table
+ * @see unisa.gps.etour.bean. Bean Bene Culturale
+ * @see unisa.gps.etour.bean. Bean Punto Di Ristoro
+ * @version  . 
+ * @author  Landi  Raffaele
+ */
+
+public class  Sito Table Model extends  Abstract Table Model{
+     String[] column Names = {" Nome",
+    " Città"," Distanza"};
+     Object[][] cells;
+     Punto  D posizione Sito;
+     Punto  D mia Posizione;
+    
+     Sito Table Model( Bean Punto Di Ristoro[] pr,  Punto  D mia Posizione){
+        super();
+        cells=new  Object[pr.length][ ]; //  Prima valore = righe     secondo=colonne
+        for(int i= ;i<pr.length;i++){
+            cells[i][ ]=pr[i].get Nome();
+            cells[i][ ]=pr[i].get Citta();
+            
+            
+            
+            
+        }
+    }
+    
+     Sito Table Model( Bean Bene Culturale[] bc,  Punto  D mia Posizione){
+        super();
+        cells=new  Object[bc.length][ ]; //  Prima valore = righe     secondo=colonne
+        for(int i= ;i<bc.length;i++){
+            cells[i][ ]=bc[i].get Nome();
+            cells[i][ ]=bc[i].get Citta();
+            
+        }
+    }
+    
+    public int get Row Count(){
+        return cells.length;
+    }
+    
+    public int get Column Count(){
+        return column Names.length;
+    }
+    
+    public  Object get Value At(int r, int c){
+        if (c < column Names.length -  )
+            return cells[r][c];
+        else{
+            double value=mia Posizione.distanza(posizione Sito);
+            return new  Double(value);
+        }
+        
+    }
+    
+    public  String get Column Name(int c){
+        return column Names[c];
+    }
+}
+
+
+

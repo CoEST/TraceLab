@@ -1,0 +1,52 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf110
+{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;\f1\ftech\fcharset0 Wingdings-Regular;\f2\fnil\fcharset0 LucidaGrande;
+}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f0\b\fs24 \cf0 Nome caso d\'92uso\
+
+\b0 BandiEConcorsi\
+
+\b Attori partecipanti\
+
+\b0 Iniziato da Cittadino\
+
+\b Flusso di eventi\
+
+\b0 1. Il Cittadino accede alla schermata iniziale per poter visionare la possibilit\'e0 di visionare le associazioni che affiancano la Protezione Civile.\
+2.	Il	sistema	risponde	all'esigenza permettendo al Cittadino di visualizzare tutte le associazioni che fanno capo alla Protezione Civile e che assumono personale, con una piccola immagine dell'associazione, con accanto la possibilit\'e0 di ricevere il download del bando messo a disposizione dalla associazione in questione.\
+3.	Il Cittadino prende atto di ci\'f2 che fornisce la scheda, e sceglie da quale, tra le associazioni messe a disposizione, ricevere notizie per una eventuale assunzione o partecipazione al concorso, circa le modalit\'e0 dello stesso.\
+4. Il sistema risponde a tale esigenza permettendogli di visualizzare il bando di concorso corrispondente.\
+
+\b Condizione di entrata\
+
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Il Cittadino si \'e8 autenticato nel sistema comunale, OR\
+
+\f1 \uc0\u61656 
+\f2  
+\f0 Il Cittadino ha avuto accesso al sistema comunale.\
+
+\b Condizioni di uscita\
+
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Il Cittadino ha completato il download del bando che \'e8 associato univocamente alla associazione per cui ha scelto di partecipare, OR\
+
+\f1 \uc0\u61656 
+\f2  
+\f0 Il Cittadino non riesce a visualizzare la schermata introduttiva con tutte le associazioni e pertanto, verr\'e0 esteso il caso d'uso 
+\b ServizioNonDisponibile 
+\b0 che gestisce i casi di failure tecniche.\
+
+\b Requisiti di qualita
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Il	Cittadino	riesce	a	visualizzare	la pagina in modo corretto, ci\'f2 significa che i tempi di risposta del sistema sono nell'ordine dei centesimi di secondo, OR\
+
+\f1 \uc0\u61656 
+\f2  
+\f0 Il	Cittadino	non	riesce	a	visualizzare correttamente la schermata introduttiva e pertanto il sistema impiegherebbe tempo di risposta nell'ordine dei secondi, da un minimo di 3 ad un massimo di 7.}

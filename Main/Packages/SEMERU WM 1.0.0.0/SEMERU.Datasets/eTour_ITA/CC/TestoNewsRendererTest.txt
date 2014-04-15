@@ -1,0 +1,110 @@
+/**
+ *  Test case per la classe  Testo News Renderer
+ * 
+ * @author  Mario  Gallo
+ * @version  .  &#   ;      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I -
+ *           University of  Salerno
+ */
+package unisa.gps.etour.gui.operatore agenzia .tables.test;
+
+import java.util. Date;
+import javax.swing. J Table;
+import javax.swing. J Text Area;
+import unisa.gps.etour.bean. Bean News;
+import unisa.gps.etour.gui.operatore agenzia .tables. News Table Model;
+import unisa.gps.etour.gui.operatore agenzia .tables. Testo News Renderer;
+import junit.framework. Test Case;
+
+public class  Testo News Renderer Test extends  Test Case
+{
+
+	private  Testo News Renderer renderer;
+	private  Bean News a News Attiva;
+	private  Bean News a News Scaduta;
+	private  J Table a Table;
+
+	public  Testo News Renderer Test()
+	{
+		super();
+		renderer = new  Testo News Renderer();
+		a News Attiva = new  Bean News(" Ecco una news attiva", new  Date(),
+				new  Date(   ,  ,  ),  ,  );
+		a News Scaduta = new  Bean News(" Ecco una news scaduta", new  Date(),
+				new  Date(),  ,  );
+		a Table = new  J Table(new  News Table Model());
+	}
+
+	/*
+	 *  Verifica del comportamento del metodo con parametri corretti.
+	 */
+	public void test Get Table Cell Renderer Parametri Corretti()
+	{
+		 News Table Model a Model = ( News Table Model) a Table.get Model();
+		a Model.insert News(a News Attiva);
+		a Model.insert News(a News Scaduta);
+
+		//  Test del renderer con una news attiva.
+		 J Text Area a Area = ( J Text Area) renderer.get Table Cell Renderer Component(
+				a Table, " Ecco una news attiva", true, true,  ,  );
+		assert Equals(a News Attiva.get News(), a Area.get Text());
+
+		//  Test del renderer con una news scaduta.
+		a Area = ( J Text Area) renderer.get Table Cell Renderer Component(a Table,
+				" Ecco una news scaduta", true, true,  ,  );
+		assert Equals(a News Scaduta.get News(), a Area.get Text());
+
+	}
+
+	/*
+	 *  Verifica del comporamento del table con una table senza  News Table Model
+	 * associato.
+	 */
+	public void test Get Tabel Cell Renderer No News Model()
+	{
+
+		 J Table another Table = new  J Table();
+		try
+		{
+			renderer.get Table Cell Renderer Component(another Table,
+					" Ecco una news", true, true,  ,  );
+			fail(" Dovrebbe essere sollevata un'eccezione.");
+		}
+		catch ( Illegal Argument Exception success)
+		{
+		}
+	}
+
+	/*
+	 *  Verifica del comportamento del metodo con un parametro a null.
+	 */
+	public void test Get Table Cell Renderer Parametro Null()
+	{
+		try
+		{
+			renderer.get Table Cell Renderer Component(a Table, null, true, true,  ,
+					 );
+			fail(" Dovrebbe essere sollevata un'eccezione.");
+		}
+		catch ( Illegal Argument Exception success)
+		{
+		}
+	}
+
+	/*
+	 *  Verifica del comportamento del metodo con un tipo di dato inatteso.
+	 */
+	public void test Get Table Cell Renderer Tipo Inatteso()
+	{
+		try
+		{
+			renderer
+					.get Table Cell Renderer Component(a Table,   , true, true,  ,  );
+			fail(" Dovrebbe essere sollevata un'eccezione.");
+		}
+		catch ( Illegal Argument Exception success)
+		{
+		}
+
+	}
+
+}

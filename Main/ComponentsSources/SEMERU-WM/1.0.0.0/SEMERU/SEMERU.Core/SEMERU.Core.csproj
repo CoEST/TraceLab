@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{46BA739C-49F4-475D-B0B2-B692F2A3D41D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SEMERU.Core</RootNamespace>
+    <AssemblyName>SEMERU.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IKVM.OpenJDK.Core">
+      <HintPath>..\..\external\TraceLab\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="stanford-postagger">
+      <HintPath>..\..\external\Stanford POS-Tagger\stanford-postagger.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TraceLabSDK, Version=0.5.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\external\TraceLab\TraceLabSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="TraceLabSDK.Types, Version=0.5.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\external\TraceLab\TraceLabSDK.Types.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IO\Artifacts.cs" />
+    <Compile Include="IO\Oracle.cs" />
+    <Compile Include="IO\Similarities.cs" />
+    <Compile Include="IO\Stopwords.cs" />
+    <Compile Include="Metrics\MeanAveragePrecision.cs" />
+    <Compile Include="Metrics\MetricsPerSourceArtifact.cs" />
+    <Compile Include="Metrics\MetricsUtil.cs" />
+    <Compile Include="Metrics\OverallMetricsComputation.cs" />
+    <Compile Include="Metrics\RecallLevel.cs" />
+    <Compile Include="Models\Affine.cs" />
+    <Compile Include="Models\JSD.cs" />
+    <Compile Include="Models\TermDocumentMatrix.cs" />
+    <Compile Include="Models\VSM.cs" />
+    <Compile Include="Preprocessors\POSTagger.cs" />
+    <Compile Include="Preprocessors\SmoothingFilter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\DoubleComparison.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SEMERU.Types\SEMERU.Types.csproj">
+      <Project>{9383DEC8-64CB-43A5-AC96-6CFE407430FD}</Project>
+      <Name>SEMERU.Types</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetPath)" "$(SolutionDir)..\bin\Components"
+copy "$(SolutionDir)..\external\Stanford POS-Tagger\stanford-postagger.dll" "$(SolutionDir)..\bin\Components"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

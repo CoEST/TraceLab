@@ -1,0 +1,63 @@
+Prenota visita         
+Consente  all'Operatore di  soddisfare  la
+                richiesta di prenotazione di un  servizio
+                ambulatoriale presentata da un Paziente 
+                L'Operatore  ha interesse a registrare  la
+                prenotazione  di un servizio ambulatoriale
+                richiesto da un Paziente 
+L'Operatore   è`  stato  riconosciuto   dal
+                Sistema  (Cfr  UcValOp)  Il  Paziente  è`
+                stato   riconosciuto  dal  Sistema   (Cfr 
+                UcValPaz) ed ha rilasciato all'Operatore
+                il modulo R S A  correttamente compilato 
+I dati all'interno del  S I O 
+                non vengono modificati 
+                Successo:    Il   servizio   ambulatoriale
+                richiesto viene correttamente prenotato 
+L'Operatore   attiva   l'esecuzione    del
+                servizio  di  prenotazione di un  servizio
+                ambulatoriale 
+1   
+      Prima visita
+    
+       L'Operatore          ha
+       ricevuto  una richiesta
+       di   prima  visita   da
+       parte di un paziente 
+    
+       Inserimento  anagrafica
+    paziente
+2   Visualizza   la   maschera 
+    per  la  prenotazione  di
+    un                servizio
+    ambulatoriale 
+3                              Seleziona il tipo di visita
+                               che   il   Paziente   vuole
+                               effettuare 
+4                              Inserisce   la  motivazione
+                               della richiesta 
+5                              Conferma i dati inseriti 
+6   Verifica  che la  sequenza 
+    di    prenotazioni    sia
+    valida 
+    (Cfr  BrValSeq)
+7   Include(Seleziona     date 
+    disponibili)
+8                              Conferma la prenotazione 
+9   Memorizza i dati           
+10  Comunica     all'Operatore 
+    che  l'operazione  si   è`
+    conclusa con successo 
+Sequenza prenotazioni non valida
+  6 1    Visualizza un opportuno messaggio
+  6 2    Riprende l'esecuzione dal punto 2 
+Operatore annulla l'operazione di
+prenotazione
+ 5 1    Termina il caso d'uso con insuccesso 
+  8 1
+  9 1    Nel  caso  di una Prima visita è` in questo  punto
+         che  verranno memorizzati anche i dati anagrafici
+         del  paziente   Inoltre sempre nel  caso  di  una
+         Prima    visita    il   sistema   provvederà    a
+         visualizzare  e  a stampare l'hospital  card  del
+         paziente 

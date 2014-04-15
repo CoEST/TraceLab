@@ -1,0 +1,18 @@
+Validation test case Patient Data: 
+    C08 Card Hospital through 20/06/2003 
+            correct (5 digits) and 
+            in S I O 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcValPaz necessary to authenticate an 
+            Patient 
+High Priority 
+The Hospital set up 00,001 Card must be 
+            recorded in S I O 
+Description test 
+Hospital Input Card: 00,001 
+The oracle Operator access to the operation 
+            validated patient 
+Classes cover valid: CE1 CE2 
+            Classes are not valid: None

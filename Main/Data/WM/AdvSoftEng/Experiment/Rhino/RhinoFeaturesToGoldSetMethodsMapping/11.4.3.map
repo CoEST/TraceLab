@@ -1,0 +1,11 @@
+org.mozilla.javascript.TokenStream.stringToKeyword
+org.mozilla.javascript.ScriptOrFnNode.getParamOrVarIndex
+org.mozilla.javascript.IRFactory.createUnary
+org.mozilla.javascript.Decompiler.decompile
+org.mozilla.javascript.Interpreter.bytecodeName
+org.mozilla.javascript.Parser.unaryExpr
+org.mozilla.javascript.Interpreter.interpretLoop
+org.mozilla.javascript.ScriptRuntime.typeofName
+org.mozilla.javascript.ScriptRuntime.typeof
+org.mozilla.javascript.Token.name
+org.mozilla.javascript.Interpreter.visitExpression

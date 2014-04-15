@@ -1,0 +1,1 @@
+Setting Hardware Windowing		The hardware windowing function of the DCI can be activated and controlled  via tmaliDciWindowSet().  This function activates the hardware windowing function and transfers the specified window parameters to the DCI driver.

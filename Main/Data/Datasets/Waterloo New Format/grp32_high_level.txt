@@ -1,0 +1,86 @@
+F1	User sends calls to another user~
+F2	User receives calls from another user~
+F3	Administrator needs to log in to use system console~
+F4	Administrator needs to find an available phone number~
+F5	System validates input of the administrator~
+F6	Administrator adds a user to the system~
+F7	Administrator finds available IP ~
+F8	Associate a phone number with an IP~
+F9	Cancel a user’s service~
+F10	Disassociate an IP and phone number pair, freeing them to use again~
+F11	Disassociate phone number and IP from a user account~
+F12	A cancelled user’s records must be retained in the system~
+F13	Server can display the status of the phones~
+F14	System has HW tests to run in order to check HW functionality~
+F15	System alerts administrator if errors are detected~
+F16	System checks for offline phones and reports to administrator~
+F17	System checks for SW failure and reports to administrator~
+F18	System checks for any corrections after failure and re-establishes phone~
+F19	System is hung and automatically recovers to a default state after a certain period~
+F20	Administrator can set the maximum number of concurrent calls~
+F21	System must track all phone calls~
+F22	Administrator can display a user’s bill through console~
+F23	System issues bills at the end of each billing period~
+F24	Administrator can display a specified user account~
+F25	Administrator can update user account to reflect bill payment~
+F26	Administrator can suspend the service of a user~
+F27	Administrator can change the billing rate of billing plans~
+F28	Administrator can change a specified user account~
+F29	Administrator can change a user’s phone number~
+F30	Initialize/set up a new phone~
+F31	Assign a phone number to a user~
+F32	Check if the customer exists, based on the phone number~
+F33	Poll the phone for its status~
+F34	List system errors & suggestions of which programs to run to fix/evaluate further.~
+F35	Change the start/end time of the discount billing period~
+F36	Change the length of the billing period~
+F37	Print a user’s bill upon request~
+F38	Print a user’s bill when his service is terminated~
+F39	Announce a hardware failure in a phone~
+F40	Modify the status of the phone~
+F41	Press a digit on the phone’s keypad~
+F42	Collect the dialed digits ~
+F43	Validate the phone number belongs to a user~
+F44	Return the IP address that corresponds to a phone number~
+F45	Validate that the caller can make outgoing calls, and the number is not blocked~
+F46	Validate the callee is online to receive a call~
+F47	Start billing users for their calls~
+F48	Calculate the amount owing for a bill~
+F49	Display a user’s bill on the screen~
+F50	Create a user’s bill at the beginning of a billing period~
+F51	The caller hears a message saying the number does not exist.~
+F52	Find a user based on user data~
+F53	Edit a user’s information~
+F54	Administrator logs out of the console~
+F55	Change the user’s originator/ receiver privileges~
+F56	Add a phone number to the disallowed caller’s list~
+F57	Add a phone number to the special numbers list.~
+F58	Remove a phone number from the special numbers list~
+F59	The caller picks up the phone and hears a dial tone~
+F60	A user hangs up the phone~
+F61	The callee picks up the phone to start a call~
+F62	A tone is played (dial, playtone, busy signal, etc.)~
+F63	A beep is heard by the callee while he is on the phone~
+F64	The user presses “#” to switch to other line~
+F65	The caller is forwarded to the callee’s voice mailbox~
+F66	The caller is forwarded to the callee’s voice mailbox~
+F67	A greeting message is heard by the caller~
+F68	The caller can record a message for the callee~
+F69	The caller cannot leave a message because the mailbox is full~
+F70	A user can access his voice mailbox by dialing “1000”.~
+F71	A user can delete his message by pressing the “7” button.~
+F72	A user can replay his message by pressing the “3” button.~
+F73	A user must enter a password before having access to his voicemail~
+F74	That caller can now reach the callee~
+F75	A user can delete his message by pressing the “9” button.~
+N1	Any function can be access via the menu or a button (instead of command line)~
+N2	One administrator at a time, with option to extend to multiple administrators~
+N3	The maximum time it takes for the user to receive either a ring tone or busy signal should be 2 seconds~
+N4	The maximum time it takes for sound to travel from speaker to receiver should be 500 milliseconds.~
+N5	The maximum time it takes for the caller to hear the dial tone when he picks up the phone should be 500 milliseconds.~
+N6	There must be a way to retrieve lost passwords.~
+N7	The system should be backed up every night during a period where few calls take place~
+N8	If there is a delay of 5 seconds after a key is pressed and the number is not complete, the call is timed out and a fast busy signal is heard~
+N9	If the caller hangs up any time during dialing or while in the call, the connection is terminated~
+N10	The callee is busy~
+N11	Are performed every ten minutes to ensure system is in functional state~

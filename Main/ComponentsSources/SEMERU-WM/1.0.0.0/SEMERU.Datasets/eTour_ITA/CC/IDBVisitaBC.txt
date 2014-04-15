@@ -1,0 +1,67 @@
+package unisa.gps.etour.repository;
+
+import java.sql. S Q L Exception;
+import java.util. Array List;
+
+import unisa.gps.etour.bean. Bean Visita B C;
+
+/**
+ *  Interfaccia per la gestione dei feedback relativi ad un determinato  Bene
+ *  Culturale
+ * 
+ * @author  Martone  Giuseppe
+ * @version  .  �      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I �  University
+ *          of  Salerno
+ */
+public interface  I D B Visita B C
+{
+
+	/**
+	 *  Inserisce una visita
+	 * 
+	 * @param p Visita  Visita da inserire
+	 * @throws  S Q L Exception
+	 */
+	public boolean inserisci Visita B C( Bean Visita B C p Visita) throws  S Q L Exception;
+
+	/**
+	 *  Modifica una visita
+	 * 
+	 * @param p Visita  Visita da modificare
+	 * @throws  S Q L Exception
+	 * @return  True se e' stata modificata false altrimenti
+	 */
+	public boolean modifica Visita B C( Bean Visita B C p Visita) throws  S Q L Exception;
+
+	/**
+	 *  Estrae la lista delle visite di un bene culturale
+	 * 
+	 * @param p Id Bene Culturale  Identificativo del bene culturale
+	 * @throws  S Q L Exception
+	 * @return  Lista delle visite del bene culturale
+	 */
+	public  Array List< Bean Visita B C> ottieni Lista Visita B C(int p Id Bene Culturale)
+			throws  S Q L Exception;
+
+	/**
+	 *  Estrae la lista dei beni culturali visitati da un turista
+	 * 
+	 * @param p Id Turista  Identificativo del turista
+	 * @throws  S Q L Exception
+	 * @return  Array List di tutti i feedback rilasciati da un turista per un
+	 *         determinato bene culturale
+	 */
+	public  Array List< Bean Visita B C> ottieni Lista Visita B C Turista(int p Id Turista)
+			throws  S Q L Exception;
+
+	/**
+	 *  Estrae una visita effettuata da un turista ad un bene culturale
+	 * 
+	 * @param p Id Bene Culturale  Identificativo del bene culturale
+	 * @param p Id Turista  Identificativo del turista
+	 * @throws  S Q L Exception
+	 * @return  Visita
+	 */
+	public  Bean Visita B C ottieni Visita B C(int p Id Bene Culturale, int p Id Turista)
+			throws  S Q L Exception;
+}

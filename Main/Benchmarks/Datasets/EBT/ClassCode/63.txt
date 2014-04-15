@@ -1,0 +1,64 @@
+           Doors Thread
+           "static private int count = 0  ;
+           private int task  Number  ;
+           protected Done done  ;
+           Server  Socket the  Server  ;
+          
+           private Connection conn  ;
+           private Statement stmt  ;
+           private Result  Set rs  ;"
+           "DOORs  Thread  (  Server  Socket ss  )
+           {
+           the  Server = ss  ;
+             count  ++;
+             task  Number = count  ;
+           }"
+           "public void run  ()
+           {
+          
+           while  ( true  )
+           {
+             try
+             {
+          
+              Socket client = the  Server  . accept  ();
+              Buffered  Reader input = new Buffered  Reader  ( new Input  Stream  Reader  ( client  . get  Input  Stream  ()));
+              Print  Writer output = new Print  Writer  ( client  . get  Output  Stream  () true  );
+          
+             String Exec  String = input  . read  Line  ();
+             System  . out  . println  (  Exec  String  );
+          
+             if (  Exec  String  . region  Matches  ( true    0  ""  DOORS  ""  0    5  ))
+             {
+              Runtime r = Runtime  . get  Runtime  ();
+              Process p = null  ;
+              System  . out  . println  (  Exec  String  );
+          
+              p = r  . exec  (  Exec  String  );
+              p  . wait  For  ();
+          
+              Buffered  Reader in =
+               new Buffered  Reader  ( new Input  Stream  Reader  ( p  . get  Input  Stream  ()));
+          
+              String line  1 = in  . read  Line  ();
+              // Just tells the Port Number and Server IP Address  .
+              String line  2 = in  . read  Line  ();
+              // Get the description from the DOORS
+          
+              output  . println  ( line  1  );
+              output  . println  ( line  2  );
+             }
+          
+             input  . close  ();
+             output  . close  ();
+             client  . close  ();
+          
+             }
+             catch (  Exception e  )
+             {
+          
+              e  . print  Stack  Trace  ();
+             }
+          
+            }
+           }"

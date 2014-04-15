@@ -1,0 +1,184 @@
+package unisa.gps.etour.repository;
+
+import java.sql. Connection;
+import java.sql. Result Set;
+import java.sql. S Q L Exception;
+import java.sql. Statement;
+import java.util. Array List;
+
+import unisa.gps.etour.bean. Bean Piatto;
+
+/**
+ *  Classe che implementa l'interfaccia  Piatto
+ * 
+ * @author  Martone  Giuseppe
+ * @version  .  �      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I �  University
+ *          of  Salerno
+ */
+public class  D B Piatto implements  I D B Piatto
+{
+	//  Costruttore vuoto
+	public  D B Piatto()
+	{
+
+	}
+
+	public boolean cancella Piatto(int p Id Piatto) throws  S Q L Exception
+	{
+		//  Variabile per la connessione al database
+		 Connection conn = null;
+		//  Variabile per le query
+		 Statement stat = null;
+		try
+		{
+			//  Ottengo la connessione
+			conn =  D B Connessione Pool.ottieni Connessione();
+			//  Creazione dello  Statement
+			stat = conn.create Statement();
+			//  Query di cancellazione
+			 String query = " D E L E T E  F R O M piatti  W H E R E  Id =" + p Id Piatto;
+			//  Si esegue la query di  Cancellazione
+			int i = stat.execute Update(query);
+			//  Si restituisce il backup
+			return (i ==  );
+		}
+		//  Viene eseguito sempre e si occupa di chiudere lo  Statement e la
+		//  Connessione
+		finally
+		{
+			if (stat != null)
+			{
+				stat.close();
+			}
+			if (conn != null)
+			{
+				 D B Connessione Pool.rilascia Connessione(conn);
+			}
+		}
+	}
+
+	public boolean inserisci Piatto( Bean Piatto p Piatto) throws  S Q L Exception
+	{
+		//  Variabile per la connessione al database
+		 Connection conn = null;
+		//  Variabile per le query
+		 Statement stat = null;
+		try
+		{
+			//  Ottengo la connessione
+			conn =  D B Connessione Pool.ottieni Connessione();
+			//  Creazione dello  Statement
+			stat = conn.create Statement();
+			//  Query per l'inserimento
+			 String query = " I N S E R T  I N T O piatti( Nome,  Prezzo,  Id Menu)  V A L U E S ('"
+					+ p Piatto.get Nome() + "'," + p Piatto.get Prezzo() + ","
+					+ p Piatto.get Id Menu() + ")";
+			//  Si esegue la query di  Inserimento
+			int i = stat.execute Update(query);
+			//  Si ritorna il backup
+			return (i ==  );
+		}
+		//  Viene eseguito sempre e si occupa di chiudere lo  Statement e la
+		//  Connessione
+		finally
+		{
+			if (stat != null)
+			{
+				stat.close();
+			}
+			if (conn != null)
+			{
+				 D B Connessione Pool.rilascia Connessione(conn);
+			}
+		}
+	}
+
+	public boolean modifica Piatto( Bean Piatto p Piatto) throws  S Q L Exception
+	{
+		//  Variabile per la connessione al database
+		 Connection conn = null;
+		//  Variabile per le query
+		 Statement stat = null;
+		try
+		{
+			//  Ottengo la connessione
+			conn =  D B Connessione Pool.ottieni Connessione();
+			//  Creazione dello  Statement
+			stat = conn.create Statement();
+			//  Query di modifica
+			 String query = " U P D A T E piatti   S E T " + "  Nome = '"
+					+ p Piatto.get Nome() + "' ,  Prezzo = " + p Piatto.get Prezzo()
+					+ ",  Id Menu = " + p Piatto.get Id Menu() + "   W H E R E  Id = "
+					+ p Piatto.get Id();
+			//  Si esegue la query di  Modifica
+			int i = stat.execute Update(query);
+			//  Si ritorna il backup
+			return (i ==  );
+		}
+		//  Viene eseguito sempre e si occupa di chiudere lo  Statement e la
+		//  Connessione
+		finally
+		{
+			if (stat != null)
+			{
+				stat.close();
+			}
+			if (conn != null)
+			{
+				 D B Connessione Pool.rilascia Connessione(conn);
+			}
+		}
+	}
+
+	public  Array List< Bean Piatto> ottieni Piatto(int p Id Menu) throws  S Q L Exception
+	{
+		//  Variabile per la connessione al database
+		 Connection conn = null;
+		//  Variabile per le query
+		 Statement stat = null;
+		//  Variabile per i risultati delle query
+		 Result Set result = null;
+		try
+		{
+			//  Ottengo la connessione
+			conn =  D B Connessione Pool.ottieni Connessione();
+			//  Creazione dello  Statement
+			stat = conn.create Statement();
+			//  Query per l'estrazione della lista dei piatti dato l'id del  Menu
+			 String query = " S E L E C T *  F R O M piatti  W H E R E  Id Menu = " + p Id Menu;
+			//  Viene eseguita la query
+			result = stat.execute Query(query);
+			//  Lista che conterrà tutti i  Piatti ottenuti
+			 Array List< Bean Piatto> lista = new  Array List< Bean Piatto>();
+			//  Si estraggono i risultati dal result set e si inseriscono nella
+			// lista
+			// da restituire
+			while (result.next())
+			{
+				//  Aggiungo nella lista il  Bean Piatto
+				lista.add(new  Bean Piatto(result.get Int(" Prezzo"), result
+						.get String(" Nome"), result.get Int(" Id Menu"), result
+						.get Int(" Id")));
+			}
+			return lista;
+		}
+		//  Viene eseguito sempre e si occupa di chiudere il  Result, lo  Statement
+		// e la  Connessione
+		finally
+		{
+			if (result != null)
+			{
+				result.close();
+			}
+			if (stat != null)
+			{
+				stat.close();
+			}
+			if (conn != null)
+			{
+				 D B Connessione Pool.rilascia Connessione(conn);
+			}
+		}
+	}
+
+}

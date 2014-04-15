@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package ID="6504c6de-29cb-4806-b3f3-38f156ce574f" Name="Standard Components">
+  <DataFiles>
+    <PackageFile ID="6d1a6230-0488-4e64-b726-b450df9bcec1" Path=".\Components\TraceLab.Components.DevelopmentKit.dll" CompressedHash="i4WK0kea/wwRL3qW8ewgD/xYD5uTS98RA5lypUNRCX8=" CompressedSize="60140" UncompressedHash="i13i+ojHZX5w4fLU060PhxEZThgfosHE5coeZNsA+Ow=" UncompressedSize="176640" />
+    <PackageFile ID="802b800f-c3d4-406a-9c7f-9947c2613e6c" Path=".\Components\TraceLab.Components.Library.dll" CompressedHash="z1i1DkE6pjw475OceOU1jO5ixUhBnzrlHC1vUz8DLYk=" CompressedSize="20189" UncompressedHash="ZHfgcQ4FQj5MiylB7A5LcIFJroPsu2jQURw+r2aPoPA=" UncompressedSize="63488" />
+    <PackageFile ID="87b756d0-d997-46b1-843f-412da1544654" Path=".\Types\TraceLab.Components.Types.dll" CompressedHash="kA7dsyVZEOANVJ/0vItuhNDxd6DmAlzN/iNCXyYxiMs=" CompressedSize="3728" UncompressedHash="LWyOqX0Fq5ze/R+m7DfV+sRnUg1AxuBBW9lhnRG3Gbw=" UncompressedSize="8192" />
+  </DataFiles>
+  <References />
+  <ComponentLocations>
+    <Location>.\Components</Location>
+  </ComponentLocations>
+  <TypeLocations>
+    <Location>.\Types</Location>
+  </TypeLocations>
+</Package>

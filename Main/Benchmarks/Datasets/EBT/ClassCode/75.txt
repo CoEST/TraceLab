@@ -1,0 +1,74 @@
+           Driver
+           "String id  ;
+           double value  From  ;
+           double value  To  ;
+           String name  ;"
+           "Driver  (  String id   double value  From   double value  To   String name  )
+           {
+            this  . id = id  ;
+            this  . value  From = value  From  ;
+            this  . value  To = value  To  ;
+            this  . name = name  ;
+           }"
+           "public String to  String  ()
+           {
+            String temp  ;
+            temp = ""  ID = "" + id + "" value  From = "" + value  From + "" value  To = "" + value  To + "" Name = "" + name  ;
+            return temp  ;
+           }"
+           "/**
+            * Returns the id  .
+            * @return int
+            */
+           public String get  Id  ()
+           {
+            return id  ;
+           }"
+           "/**
+            * Returns the name  .
+            * @return String
+            */
+           public String get  Name  ()
+           {
+            return name  ;
+           }"
+           "/**
+            * Returns the value  .
+            * @return double
+            */
+           public double get  Value  From  ()
+           {
+            return value  From  ;
+           }"
+           "public double get  Value  To  ()
+           {
+            return value  To  ;
+           }"
+           "/**
+            * Sets the id  .
+            * @param id The id to set
+            */
+           public void set  Id  (  String id  )
+           {
+            this  . id = id  ;
+           }"
+           "**
+            * Sets the name  .
+            * @param name The name to set
+            */
+           public void set  Name  (  String name  )
+           {
+            this  . name = name  ;
+           }"
+           "**
+            * Sets the value  .
+            * @param value The value to set
+            */
+           public void set  Value  From  ( double value  )
+           {
+            this  . value  From = value  From  ;
+           }"
+           "public void set  Value  To  ( double value  )
+           {
+            this  . value  To = value  To  ;
+           }"

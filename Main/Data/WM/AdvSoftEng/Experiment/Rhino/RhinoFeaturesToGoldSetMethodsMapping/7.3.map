@@ -1,0 +1,12 @@
+org.mozilla.javascript.TokenStream.getChar
+org.mozilla.javascript.TokenStream.getToken
+org.mozilla.javascript.TokenStream.getLineno
+org.mozilla.javascript.Decompiler.decompile
+org.mozilla.javascript.regexp.NativeRegExp.isLineTerm
+org.mozilla.javascript.TokenStream.skipLine
+org.mozilla.javascript.TokenStream.TokenStream
+org.mozilla.javascript.Parser.peekTokenOrEOL
+org.mozilla.javascript.TokenStream.getLine
+org.mozilla.javascript.TokenStream.readRegExp
+org.mozilla.javascript.ScriptRuntime.isJSLineTerminator
+org.mozilla.javascript.Token.name

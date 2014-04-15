@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.5</ProductVersion>
+    <ProjectGuid>{59713b02-c291-4fbf-90bc-7c3730cee702}</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>TraceLab Installer</OutputName>
+    <OutputType>Package</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <IncludeSearchPaths>
+    </IncludeSearchPaths>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+    <SccProjectName></SccProjectName>
+    <SccProvider></SccProvider>
+    <SccAuxPath></SccAuxPath>
+    <SccLocalPath></SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>Debug</DefineConstants>
+    <LinkerAdditionalOptions>-ext WixNetFxExtension</LinkerAdditionalOptions>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <LinkerAdditionalOptions>-ext WixNetFxExtension</LinkerAdditionalOptions>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Deploy|x86' ">
+    <DefineConstants />
+    <LinkerAdditionalOptions>-ext WixNetFxExtension</LinkerAdditionalOptions>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Deploy|AnyCPU' ">
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Deploy|Any CPU' ">
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Deploy|x86' ">
+    <DefineConstants />
+    <LinkerAdditionalOptions>-ext WixNetFxExtension</LinkerAdditionalOptions>
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Deploy|AnyCPU' ">
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Deploy|Any CPU' ">
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="CoreTypes.wxs" />
+    <Compile Include="Packages.wxs" />
+    <Compile Include="Product.wxs" />
+    <Compile Include="TraceLabMain.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Exclusions.txt" />
+    <Content Include="Fragments.wxi" />
+    <Content Include="Transforms.xsl" />
+    <Compile Include="Tutorials.wxs" />
+    <Compile Include="UpgradeCustomActions.wxs" />
+    <Content Include="Variables.wxi" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InstallerActions\InstallerActions.csproj">
+      <Name>InstallerActions</Name>
+      <Project>{2617b9a1-0db0-40fb-b3ea-009578acde3a}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(WixTargetsPath)" />
+  <PropertyGroup>
+    <PreBuildEvent>%40echo off
+rmdir /S /Q %TEMP%\TraceLabInstaller
+
+xcopy $(SolutionDir)Deploy %TEMP%\TraceLabInstaller /I /R /K /Y /Q /S /exclude:$(ProjectDir)Exclusions.txt
+
+xcopy $(SolutionDir)..\Types\%2a.dll %TEMP%\TraceLabInstaller\Types /I /R /K /Y /Q /Exclude:$(ProjectDir)Exclusions.txt
+"%wix%\bin\heat" dir %TEMP%\TraceLabInstaller\Types -cg CoreTypes -sreg -sfrag -gg -srd -var var.TypesSource -t $(ProjectDir)Transforms.xsl -dr TYPESDIR -o $(ProjectDir)CoreTypes.wxs
+
+xcopy $(SolutionDir)..\Tutorials %TEMP%\TraceLabInstaller\Tutorials /I /R /K /Y /Q /S
+"%wix%\bin\heat" dir %TEMP%\TraceLabInstaller\Tutorials -cg Tutorials -sreg -sfrag -gg -srd -var var.TutorialSource -t $(ProjectDir)Transforms.xsl -dr TRACELAB_USER_TUTORIALS -o $(ProjectDir)Tutorials.wxs
+
+xcopy $(SolutionDir)..\Packages %TEMP%\TraceLabInstaller\Packages /I /R /K /Y /Q /S
+"%wix%\bin\heat" dir %TEMP%\TraceLabInstaller\Packages -cg Packages -sreg -sfrag -gg -srd -var var.PackagesSource -t $(ProjectDir)Transforms.xsl -dr PACKAGESDIR -o $(ProjectDir)Packages.wxs</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>%40echo off
+rmdir /S /Q %TEMP%\TraceLabInstaller
+
+copy "$(TargetPath)" "$(SolutionDir)..\bin\$(TargetFileName)"</PostBuildEvent>
+  </PropertyGroup>
+  <!--
+	To modify your build process, add your task inside one of the targets below and uncomment it.
+	Other similar extension points exist, see Wix.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

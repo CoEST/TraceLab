@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GUIDReport.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Outfile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\Evan\Documents\TraceLab\Components\GUIDs.txt</Value>
+    </Setting>
+    <Setting Name="ComponentDirectoriesFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ComponentDirectories.txt</Value>
+    </Setting>
+    <Setting Name="DecisionDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\Evan\Documents\TraceLab\Decisions</Value>
+    </Setting>
+    <Setting Name="DataRoot" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\Evan\Documents\TraceLab</Value>
+    </Setting>
+    <Setting Name="TypeDirectoriesFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TypeDirectories.txt</Value>
+    </Setting>
+    <Setting Name="GUIDLength" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">36</Value>
+    </Setting>
+    <Setting Name="NameLength" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">50</Value>
+    </Setting>
+    <Setting Name="VersionLength" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">12</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,381 @@
+package unisa.gps.etour.bean;
+import java.io. Serializable;
+import java.util. Date;
+/**
+ *  Bean  Contenente i dati relativi a un  Turista
+ * 
+ * @author  Miranda  Mauro
+ * @version  .  �      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I �  University
+ *          of  Salerno
+ */
+public class  Bean Turista implements  Serializable
+{
+	private static final long serial Version U I D =                     L;
+	private int id;
+	private  String username;
+	private  String nome;
+	private  String cognome;
+	private  String citta Nascita;
+	private  String citta Residenza;
+	private  String telefono;
+	private  String cap;
+	private  String via;
+	private  String provincia;
+	private  String email;
+	private  String password;
+	private  Date data Nascita;
+	private  Date data Registrazione;
+	private boolean attiva;
+
+	/**
+	 *  Costruttore parametrizzato
+	 * 
+	 * @param pid
+	 * @param p Username
+	 * @param p Nome
+	 * @param p Cognome
+	 * @param p Citta Nascita
+	 * @param p Citta Residenza
+	 * @param p Telefono
+	 * @param p Cap
+	 * @param p Via
+	 * @param p Provincia
+	 * @param p Email
+	 * @param p Password
+	 * @param p Data Nascita
+	 * @param p Data Registrazione
+	 * @param p Attiva
+	 */
+	public  Bean Turista(int pid,  String p Username,  String p Nome,
+			 String p Cognome,  String p Citta Nascita,  String p Citta Residenza,
+			 String p Telefono,  String p Cap,  String p Via,  String p Provincia,
+			 String p Email,  String p Password,  Date p Data Nascita,
+			 Date p Data Registrazione, boolean p Attiva)
+	{
+		set Id(pid);
+		set Username(p Username);
+		set Nome(p Nome);
+		set Cognome(p Cognome);
+		set Citta Nascita(p Citta Nascita);
+		set Citta Residenza(p Citta Residenza);
+		set Telefono(p Telefono);
+		set Cap(p Cap);
+		set Via(p Via);
+		set Provincia(p Provincia);
+		set Email(p Email);
+		set Password(p Password);
+		set Data Nascita(p Data Nascita);
+		set Data Registrazione(p Data Registrazione);
+		set Attiva(p Attiva);
+	}
+
+	/**
+	 *  Costruttore  Vuoto
+	 */
+	public  Bean Turista()
+	{
+
+	}
+
+	/**
+	 *  Restituisce il valore di cap
+	 * 
+	 * @return  Valore di cap.
+	 */
+	public  String get Cap()
+	{
+		return cap;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di cap
+	 * 
+	 * @param p Cap  Nuovo valore di cap.
+	 */
+	public void set Cap( String p Cap)
+	{
+		cap = p Cap;
+	}
+
+	/**
+	 *  Restituisce il valore di citta Nascita
+	 * 
+	 * @return  Valore di citta Nascita.
+	 */
+	public  String get Citta Nascita()
+	{
+		return citta Nascita;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di citta Nascita
+	 * 
+	 * @param p Citta Nascita  Nuovo valore di citta Nascita.
+	 */
+	public void set Citta Nascita( String p Citta Nascita)
+	{
+		citta Nascita = p Citta Nascita;
+	}
+
+	/**
+	 *  Restituisce il valore di citta Residenza
+	 * 
+	 * @return  Valore di citta Residenza.
+	 */
+	public  String get Citta Residenza()
+	{
+		return citta Residenza;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di citta Residenza
+	 * 
+	 * @param p Citta Residenza  Nuovo valore di citta Residenza.
+	 */
+	public void set Citta Residenza( String p Citta Residenza)
+	{
+		citta Residenza = p Citta Residenza;
+	}
+
+	/**
+	 *  Restituisce il valore di cognome
+	 * 
+	 * @return  Valore di cognome.
+	 */
+	public  String get Cognome()
+	{
+		return cognome;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di cognome
+	 * 
+	 * @param p Cognome  Nuovo valore di cognome.
+	 */
+	public void set Cognome( String p Cognome)
+	{
+		cognome = p Cognome;
+	}
+
+	/**
+	 *  Restituisce il valore di data Nascita
+	 * 
+	 * @return  Valore di data Nascita.
+	 */
+	public  Date get Data Nascita()
+	{
+		return data Nascita;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di data Nascita
+	 * 
+	 * @param p Data Nascita  Nuovo valore di data Nascita.
+	 */
+	public void set Data Nascita( Date p Data Nascita)
+	{
+		data Nascita = p Data Nascita;
+	}
+
+	/**
+	 *  Restituisce il valore di data Registrazione
+	 * 
+	 * @return  Valore di data Registrazione.
+	 */
+	public  Date get Data Registrazione()
+	{
+		return data Registrazione;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di data Registrazione
+	 * 
+	 * @param p Data Registrazione  Nuovo valore di data Registrazione.
+	 */
+	public void set Data Registrazione( Date p Data Registrazione)
+	{
+		data Registrazione = p Data Registrazione;
+	}
+
+	/**
+	 *  Restituisce il valore di email
+	 * 
+	 * @return  Valore di email.
+	 */
+	public  String get Email()
+	{
+		return email;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di email
+	 * 
+	 * @param p Email  Nuovo valore di email.
+	 */
+	public void set Email( String p Email)
+	{
+		email = p Email;
+	}
+
+	/**
+	 *  Restituisce il valore di nome
+	 * 
+	 * @return  Valore di nome.
+	 */
+	public  String get Nome()
+	{
+		return nome;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di nome
+	 * 
+	 * @param p Nome  Nuovo valore di nome.
+	 */
+	public void set Nome( String p Nome)
+	{
+		nome = p Nome;
+	}
+
+	/**
+	 *  Restituisce il valore di password
+	 * 
+	 * @return  Valore di password.
+	 */
+	public  String get Password()
+	{
+		return password;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di password
+	 * 
+	 * @param p Password  Nuovo valore di password.
+	 */
+	public void set Password( String p Password)
+	{
+		password = p Password;
+	}
+
+	/**
+	 *  Restituisce il valore di provincia
+	 * 
+	 * @return  Valore di provincia.
+	 */
+	public  String get Provincia()
+	{
+		return provincia;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di provincia
+	 * 
+	 * @param p Provincia  Nuovo valore di provincia.
+	 */
+	public void set Provincia( String p Provincia)
+	{
+		provincia = p Provincia;
+	}
+
+	/**
+	 *  Restituisce il valore di telefono
+	 * 
+	 * @return  Valore di telefono.
+	 */
+	public  String get Telefono()
+	{
+		return telefono;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di telefono
+	 * 
+	 * @param p Telefono  Nuovo valore di telefono.
+	 */
+	public void set Telefono( String p Telefono)
+	{
+		telefono = p Telefono;
+	}
+
+	/**
+	 *  Restituisce il valore di via
+	 * 
+	 * @return  Valore di via.
+	 */
+	public  String get Via()
+	{
+		return via;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di via
+	 * 
+	 * @param p Via  Nuovo valore di via.
+	 */
+	public void set Via( String p Via)
+	{
+		via = p Via;
+	}
+
+	/**
+	 *  Restituisce il valore di username
+	 * 
+	 * @return  Valore di username.
+	 */
+	public  String get Username()
+	{
+		return username;
+	}
+
+	/**
+	 *  Restituisce come valore   oppure  , indicando se un turista � o non �
+	 * attivo
+	 * 
+	 * @return  Valore di attivazione
+	 */
+	public boolean is Attiva()
+	{
+		return attiva;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di attiva
+	 * 
+	 * @param p Attiva  Nuovo valore di attiva.
+	 */
+	public void set Attiva(boolean p Attiva)
+	{
+		attiva = p Attiva;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di username
+	 * 
+	 * @param p Username  Nuovo valore di username.
+	 */
+	public void set Username( String p Username)
+	{
+		username = p Username;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di id
+	 * 
+	 * @param pid  Nuovo valore di id.
+	 */
+	public void set Id(int pid)
+	{
+		id = pid;
+	}
+
+	/**
+	 *  Restituisce il valore di id
+	 * 
+	 * @return  Valore di id.
+	 */
+	public int get Id()
+	{
+		return id;
+	}
+
+}

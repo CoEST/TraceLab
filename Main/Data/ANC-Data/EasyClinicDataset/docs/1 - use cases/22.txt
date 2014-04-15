@@ -1,0 +1,33 @@
+Show Reservations 
+Allows a patient of view 
+                The list of reservation profits 
+                using the appropriate locations 
+                displaced of the outpatient 
+                He has an interest in access to the 
+                their reservations profits 
+`The patient has been recognized by 
+                system 
+                (See UcAccTB) 
+The patient obtains 
+                Display the list of its 
+                Reservations 
+The patient activates the execution of 
+                service displaying the 
+                their reservations 
+1 Access to the database and 
+     retrieves information 
+     on the reservation
+     Patient information useful 
+2 View the list of 
+     bookings 
+     the patient in order 
+     chronological 
+Patient decides to print the list 
+reservations 
+   2 1 Start printing the list of 
+          Reservations 
+   2 2 generates the report and sends it to 
+          Printer 
+   2 1 for each reservation lists the date 
+          time type of access and why 
+          visit

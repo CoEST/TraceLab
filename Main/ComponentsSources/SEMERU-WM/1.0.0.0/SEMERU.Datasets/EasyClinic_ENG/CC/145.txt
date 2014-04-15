@@ -1,0 +1,1 @@
+data data data name oper updat patient patient patient patient patient relat requir date person person new access access access access access access given find check descript descript descript descript descript descript 9 1 method attribut manag manag version task task task creat newpazient editpazient findpazient getdatipazient pazientemanag 

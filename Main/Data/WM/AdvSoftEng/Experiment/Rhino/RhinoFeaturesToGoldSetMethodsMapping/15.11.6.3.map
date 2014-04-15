@@ -1,0 +1,7 @@
+org.mozilla.javascript.ScriptRuntime.nameIncrDecr
+org.mozilla.javascript.NativeGlobal.init
+org.mozilla.javascript.ScriptRuntime.nameOrFunction
+org.mozilla.javascript.ScriptRuntime.name
+org.mozilla.javascript.ScriptRuntime.callRef
+org.mozilla.javascript.ScriptRuntime.notFoundError
+org.mozilla.javascript.ScriptRuntime.getNameFunctionAndThis

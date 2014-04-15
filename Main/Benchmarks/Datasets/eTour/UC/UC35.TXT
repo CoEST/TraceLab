@@ -1,0 +1,15 @@
+Use case name LOGIN 
+Ensures a registered user to access the system with the privileges that fall. 
+Partecipating 
+Actor initialization Registered User 
+Entry 
+conditions • A registered user has access to the system. 
+Flow of events User System 
+1. Activate the login feature. 
+2 Displays the corresponding form. 
+3 Fill out the form with login information and submit. 
+4 Check the correctness of the data, if not corrected on the use case LoginErrato. 
+Exit conditions • The system displays the area of work registered. 
+• The registered user cancels the operation. 
+• Interruption of the connection to the server ETOUR .. 
+Quality requirements

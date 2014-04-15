@@ -1,0 +1,2 @@
+org.mozilla.javascript.ScriptRuntime.toUint16
+org.mozilla.javascript.ScriptRuntime.toNumber

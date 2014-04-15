@@ -1,0 +1,13 @@
+Use case name	VISUALIZZA FEEDBACK
+Visualizza tutti i feedback di un determinato sito.
+Participating
+Actor	Inizializzato da Operatore Agenzia
+Entry
+conditions	•	L’Operatore Agenzia ha effettuato il login.
+Flow of events 		User	System
+	1.		Visualizza la lista dei siti come risultato del caso d’uso ricerca sito,  ne seleziona uno e attiva la funzionalità per visualizzare i feedback.	
+	2.			Carica i feedback del sito selezionato.
+Exit conditions	•	Il sistema visualizza tutti i feedback relativi al sito selezionato.
+•	Interruzione della connessione al server 
+Quality 
+requirements	

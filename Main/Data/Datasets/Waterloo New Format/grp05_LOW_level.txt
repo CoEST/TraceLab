@@ -1,0 +1,172 @@
+UC1	UC 1: Administrator Logs into System
+Event: Administrator logs into the System Console. A user name and password are provided.
+System: The server controlling the Telephone Exchange System.
+Actors: System Administrator(initiator), administrator’s terminal
+Overview: This use case captures the process of the administrator logging into the System Console. The administrator will provide a user name and password, and if they are correct, then the system will let the administrator access it.~
+UC2	UC 2: Add a New User
+Event: The administrator adds a new user account to the system. The user data is an input.
+System:  The server controlling the Telephone Exchange System.
+Actor: Administrator (initiator), administrator’s terminal
+Overview: When a user is added to the system, an administrator must find an unassigned phone number, an available IP address, and associate the phone number with the IP address. ~
+UC3	UC 3: Assigning User a Phone Number to IP Mapping
+Event: The administrator assigns a user a phone number which is mapped to an IP address. This event requires the user, a unique phone number, and a unique IP address.  
+System: The server controlling the Telephone Exchange System.
+Actor: The administrator (initiator), the administrator’s terminal
+Overview: The administrator adds an unassigned phone number and an available IP address to a user account, and associates the phone number with the IP address~
+UC4	UC 4: Validate Phone Number
+Event: Administrator checks that a specific phone number has not been mapped.
+System: The server controlling the Telephone Exchange System.
+Actors: The administrator (initiator), administrator’s terminal.
+Overview: The user requests a specific phone number for their account. The administrator validates that the number is available before mapping it to the IP and user.~
+UC5	UC 5: Assigning User Privileges
+Event: Administrator assigns a user some combination of phone privileges. This event accepts the targeted user and the desired privileges as inputs.
+System: The server controlling the Telephone Exchange System.
+Actors: the administrator (initiator), administrator’s terminal
+Overview: The administrator can assign a user with some combination of the following privileges: originate calls, receive calls.~
+UC6	UC 6: Administrator Suspends User’s Account
+Event: Administrator chooses to suspend user’s account.
+System: The server controlling the Telephone Exchange System.
+Actors: The administrator (initiator), administrator’s terminal.
+Overview: This use case captures the process of suspending a user’s account, be it because of a hardware malfunction or a user’s request~
+UC7	UC 7: Administrator Reactivates User’s Account
+Event: Administrator chooses to reactivate user’s account.
+System: The server controlling the Telephone Exchange System.
+Actors: The administrator (initiator), administrator’s terminal
+Overview: This use case captures the process of reactivating a user’s account~
+UC8	UC 8: Cancel A User’s Service
+Event: The user decides to unsubscribe from the telephone service. The administrator needs to know the user’s name.
+System: The server controlling the Telephone Exchange System.
+Actors: The administrator, the administrator’s terminal
+Overview: The administrator dissociates the phone number and IP from the user’s file. This is done because the user decided to end the service~
+UC9	UC 9: Administrator Conducts Hardware Tests
+Event: The administrator initiates hardware tests. It is to be conducted whenever a user complains about the service.
+System: The server controlling the Telephone Exchange System.
+Actors: The administrator (initiator), the administrator’s terminal
+Overview: The Administrator requests that tests be conducted to ensure that the system is functioning properly.~
+UC10	UC 10: Display Hardware Information
+Event: The administrator checks that all the hardware is fully functional.
+System: The server controlling the Telephone Exchange System.
+Actors: The administrator (initiator), the administrator’s terminal
+Overview: Periodically, the administrator needs to check that the VoIP system is functioning properly. If errors are detected, the administrator must fix it.~
+UC11	UC 11: Set Maximum Number of Calls on the System
+Event: The load of the system is set. A number for the load is required.
+System: The server controlling the Telephone Exchange System.
+Actors: The administrator (initiator), the administrator’s terminal
+Overview: The administrator sets the number of calls that the system can handle at once. This number changes based on added resources or customer complaints.~
+UC12	UC 12: Search for User
+Event: The administrator chooses to search for a specific user. The user name is needed for this event to occur.
+System: The server controlling the Telephone Exchange System.
+Actors: The administrator (initiator), the administrator’s terminal
+Overview: In the main screen of the system console, a search function will be available to the administrator to search for a specific user by first and/or last name. It will filter out the matching user names in a list. It is assumed that the administrator is already logged into the system~
+UC13	UC 13: Automated Hardware Diagnostic Test
+Event: Hardware diagnostic tests will automatically run every x seconds.
+System: The server controlling the Telephone Exchange System.
+Actors: Time (initiator), phone
+Overview: This is a check that the phone is operating normally. If there is a resource leakage, the resource will be released. When the error has been fixed, the phone will be available again.~
+UC14	UC 14: Administrator Views User Bill
+Event: Administrator chooses to view user bill.
+System: The server controlling the Telephone Exchange System.
+Actors: The administrator (initiator), administrator’s terminal.
+Overview: This use case captures the process of the administrator viewing a user’s bill.~
+UC15	UC 15: Administrator Records Bill Payment
+Event: Administrator chooses to record user’s bill payment.
+System: The server controlling the Telephone Exchange System.
+Actors: The administrator (initiator), administrator’s terminal.
+Overview: This use case captures the process of the administrator recording a bill payment into the system.~
+UC16	UC 16: Automatic Bill Generation
+Event: Server generates a monthly bill and sends it to customer.
+System: The server controlling the Telephone Exchange System.
+Actors: Time (initiator).
+Overview: This use case captures the process of the server automatically generating a user’s bill and sending it to the user.~
+UC17	UC 17: Print Bill
+Event: Administrator wants to print a user’s bill.
+System: The server controlling the Telephone Exchange System.
+Actors: The administrator (initiator), administrator’s terminal.
+Overview: The administrator needs a bill printed and they system prints one.~
+UC18	UC 18: Administrator Registers New Billing Plan
+Event: Administrator chooses to register new billing plan.
+System: The server controlling the Telephone Exchange System.
+Actors: The administrator (initiator), administrator’s terminal.
+Overview: This use case captures the process of the administrator creating and registering a new billing plan.~
+UC19	UC 19: Administrator Modifies Billing Plan
+Event: Administrator chooses to modify billing plan.
+System: The server controlling the Telephone Exchange System.
+Actors: The administrator (initiator), administrator’s terminal.
+Overview: This use case captures the process of the administrator modifying an already existing billing plan.~
+UC20	UC 20: Administrator Deletes Existing Billing Plan
+Event: Administrator chooses to delete an existing billing plan.
+System: System Console that controls the VoIP system
+Actors: The administrator (initiator), administrator’s terminal.
+Overview: This use case captures the process of the administrator deleting an existing billing plan.~
+UC21	UC 21: Administrator Subscribing Billing Plan to User
+Event: Administrator chooses to attach billing plan to user.
+System: The server controlling the Telephone Exchange System.
+Actors: The administrator (initiator), administrator’s terminal.
+Overview: This use case captures the process of the administrator subscribing a billing plan to a user.~
+UC22	UC 22: User Places a Phone Call
+Event: User decides to make a phone call to another user of telephone exchange system.
+System: The server controlling the Telephone Exchange System.
+Actors: Caller (initiator).
+Overview: This use case captures the process of one user making a phone call to another user.~
+UC23	UC 23: User Receives a Phone Call
+Event: User receives a phone call from another user of telephone exchange system.
+System: The server controlling the Telephone Exchange System.
+Actors: Caller (initiator), Callee.
+Overview: This use case captures the process of one user receiving a phone call from another user.~
+UC24	UC 24: User Hangs Up Phone
+Event: User ends a phone call by hanging up.
+System: The server controlling the Telephone Exchange System.
+Actors: Caller (initiator), Callee.
+Overview: This use case captures the process of a user ending a phone call by hanging up.~
+UC25	UC 25: View Administrator Accounts
+Event: The administrator wishes to view the system’s other administrator accounts.
+System: The server controlling the Telephone Exchange System.
+Actors: The administrator (initiator), the administrator’s terminal
+Overview: The administrator opens the “Administrator’s Account” module of the system~
+UC26	UC 26: Change Administrator Password
+Event: The administrator changes his/her login password.
+System: The server controlling the Telephone Exchange System.
+Actors: The administrator (initiator), the administrator’s terminal
+Overview: The administrator can change his/her password. He/She must supply the old password, the new password.~
+UC27	UC 27: Add New Administrator Account
+Event: The administrator adds a new administrator account.
+System: The server controlling the Telephone Exchange System.
+Actors: The administrator (initiator), the administrator’s terminal
+Overview: The administrator can add a new administrator account by providing a new username and password.~
+UC28	UC 28: Remove Administrator Account
+Event: The administrator removes an existing administrator account.
+System: The server controlling the Telephone Exchange System.
+Actors: The administrator (initiator), the administrator’s terminal
+Overview: The administrator can remove the account of an existing administrator.~
+UC29	UC 29: Enable An IP Phone
+Event: The IP phone has been fixed.
+System: System Console that controls the VoIP system.
+Actors: The administrator, the administrator’s terminal
+Overview: The IP Phone was disabled due to errors. Since it has been fixed, the phone is enabled again and resources are reallocated.~
+UC30	UC 30: Disable An IP Phone
+Event: The physical phone is broken or the software on the phone is erroneous, leading to resource leakage.
+System: System Console that controls the VoIP system.
+Actors: The administrator, the administrator’s terminal
+Overview: There is a problem with the phone and it is disabled to save resources.~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

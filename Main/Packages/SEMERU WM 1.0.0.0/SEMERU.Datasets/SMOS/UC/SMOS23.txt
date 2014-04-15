@@ -1,0 +1,15 @@
+Nome:InserisciNuovoInsegnamento
+Attori: Amministratore
+Descrizione: Inserisce un nuovo insegnamento nell’archivio
+Precondizioni:
+•	L’utente è loggato al sistema come Amministratore • L’utente ha già eseguito il caso d’uso “VisualizzaElencoInsegnamenti” e il
+sistema sta visualizzando l’elenco degli insegnamenti •	L’utente clicca sul pulsante “Nuovo Insegnamento”
+Sequenza degli eventi
+Utente
+2.	Compila il form 3.	Clicca sul pulsante “Salva”
+Sistema
+1. Il sistema mostra il form da compilare	con:	nome insegnamento.
+4. Effettua dei controlli sulla validità dei dati immessi e inserisce il nuovo insegnamento nell’archivio; nel caso in cui i dati inseriti non sono validi, attiva il caso d’uso “ErroreDati”.
+Postcondizioni:
+• • • •
+L’utente ha inserito un insegnamento Viene notificato l’errore Connessione al server SMOS interrotta L’Amministratore interrompe l’operazione

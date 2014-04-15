@@ -1,0 +1,50 @@
+Changing examination 
+It allows the operator to change a 
+                 examination  previously recorded 
+                 The Operator has an interest in change 
+                 examination  previously recorded 
+The Operator has been recognized by ` 
+                 System (See UcValOp) examination is 
+                 registered in the S I O and 
+                 The Operator has received the results of 
+                 to be change
+The Clinic of Folder 
+                 Patient who has undergone ` 
+                 is not changed 
+                 Success: Information on examination 
+                 to be updated within 
+                 of the patient's Clinic Folder
+The operator activates the execution of 
+                 service to modify an examination 
+1 View a list of 
+     tests carried out in 
+     chronological order 
+2 Select the examination by 
+                                change 
+3 Confirm your selection 
+4 View the mask 
+     for the modification of a 
+     examination 
+5 Change of data 
+6 Confirm Changes 
+7 Verify the data inserted
+     by operator
+Remember the 8 
+     updates 
+Communicate to the operator 9 
+     that the operation was ` 
+     concluded successfully 
+Invalid data set 
+   7 1 Show an appropriate message 
+   7 2 take back running from 4 
+          underpinned the fields of the form with data 
+          inserted by operator 
+Operator cancels the operation 
+Review 
+  3 1 ends the use case with failure 
+   6 1 
+   4 1 The data required for registration of a 
+          consideration are: the type of examination 
+          information relating to the laboratory where they 
+          made the values of the results and 
+          diagnostic evaluation made by the doctor

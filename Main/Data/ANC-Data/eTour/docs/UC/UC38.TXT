@@ -1,0 +1,19 @@
+Use case name INSERISCIBANNER 
+Inserting a new banner associated with the point of rest. 
+Partecipating 
+Actor initialization Operator Point Of Restaurants 
+Entry 
+conditions • The Point Of Restaurant Operator has successfully authenticated to the system. 
+Flow of events User System 
+1. Select the feature for the insertion of a new banner. 
+2 Displays a form for the selection of an image. 
+3 Select an image and sends the request for entering the system. 
+4 Check the characteristics of the inserted, check that the number of banner did not exceed the maximum point of the restaurant and asks for confirmation of the insertion of the banner. In the event that the inserted image is not valid, enable the use case Errored. 
+
+5 Confirm the operation of insertion. 
+6. Remember the banners associated with the point of rest. 
+Exit conditions • The notification about the insertion of new banner. 
+• The Point Of Operator Restaurant cancels the operation. 
+• The point of eating has already entered the maximum number of banners allowed. 
+• Interruption of the connection to the server ETOUR. 
+Quality requirements

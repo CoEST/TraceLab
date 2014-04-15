@@ -1,0 +1,1 @@
+anagrafica data data name patient patient patient detail record clinic visit date access access access access find find medic descript descript descript descript descript 9 1 method attribut manag version task task getcartellaclinica getdatipazient getdettag filder cartellaclinicamanag load 

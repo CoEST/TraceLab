@@ -1,0 +1,35 @@
+Show anagrafica
+Allows a patient of view 
+                their anagrafica data using the 
+                specific locations displaced 
+                of the outpatient
+                He has an interest in access to your 
+                anagrafica information  
+`The patient has been recognized by 
+                system 
+                (See UcAccTB) 
+The patient obtains 
+                display of their data 
+                anagrafica
+The patient activates the execution of 
+                service display their 
+                data anagrafica
+1 Access to the database and 
+     retrieves information 
+     about anagrafica 
+     Patient 
+2 View 
+     information anagrafiche 
+     Patient 
+Patient decides to print 
+Information displayed 
+   2 1 Start printing the list of 
+          Reservations 
+   2 2 generates the report and sends it to 
+          Printer 
+   2 1 The age of a patient is characterized by ` 
+          following data: name surname sex code 
+          Tax date of birth place of birth 
+          province of birth place of address 
+          home province of residence address ZIP code 
+          Additional telephone and Notes

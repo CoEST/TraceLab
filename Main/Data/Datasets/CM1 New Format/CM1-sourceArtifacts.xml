@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>cm1-high</id>
+    <name>CM 1 Source Artifacts</name>
+    <version>1.32</version>
+    <description>Collection of Source Artifacts for the CM1 dataset (high)</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>SRS5.12.2.1</id>
+      <content>  The DPU-CCM shall implement a mechanism whereby large memory loads and dumps can be accomplished incrementally.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>SRS5.12.2.2</id>
+      <content>  The DPU-CCM shall process real-time non-deferred commands within B ms of receipt from the ICU or the SCU.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>SRS5.12.3.1</id>
+      <content> The DPU-CCM shall record an error to the LAST_BOOT_IVEC location in EEPROM and discontinue strobing the Watchdog Timer should an unrecoverable software error occur.  An unrecoverable software error is defined as an error that causes a loss of commandability or ground communication.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>SRS5.12.3.2</id>
+      <content> The DPU-CCM shall provide a mechanism for other CSCs to report errors for inclusion in the DPU_HK.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>SRS5.12.3.3</id>
+      <content> The DPU-CCM shall collect a TASK_HBEAT from  DPU-SCUI, DPU-CCM, DPU-DCX, DPU-TMALI, and DPU-DPA .  Non-responsive tasks will be reported in DPU_HK.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>SRS5.12.3.4</id>
+      <content>  The DPU-CCM shall be able to count a consecutively reported error.  When the the count for a particular error ID, exceeds 250 for a particular reporting period, the error code will be replaced with a error code sequence which shall include the original error code and the number of times the error was reported.  
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>SRS5.12.3.5</id>
+      <content>  The DPU-CCM shall check the length of a received DPU_CMD against an expected value from a lookup table indexed by FUNCTION code.  If the received value does not match the expected, then the command will be discarded, and an error will be enqueued.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>SRS5.12.3.6</id>
+      <content>  The DPU-CCM shall, in rejecting a command, report an error in DPU_HK indicating  the byte-code of the command being rejected in the LSB of the errno as described in 03691-DPUSDP-01.  
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>SRS5.12.3.7</id>
+      <content>  The DPU-CCM shall maintain counts of both the number of commands successfully received and rejected and report the parameters in DPU_HK.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>SRS5.12.4.1</id>
+      <content> The DPU-CCM shall use DPU-EEPRM to access the EEPROM.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>SRS5.12.4.2</id>
+      <content> The DPU-CCM shall use DPU-ICUI to communicate with the ICU.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>SRS5.13.1.1</id>
+      <content> The DPU-TMALI shall install callbacks for handling all DPU-DCI interrupts including Error interrupt, Ping-Pong Timeout interrupt, and Ping-Pong Complete Flag interrupt.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>SRS5.13.1.2</id>
+      <content> The DPU-TMALI shall be capable of making data available from the DCI to DPU-DPA.  DPU-TMALI will populate a ring buffer with frames of data for application task retrieval.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>SRS5.13.1.3</id>
+      <content>  The DPU-TMALI shall provide a function which sets the current event bit ordering mode in the DCI driver.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>SRS5.13.1.4</id>
+      <content> The DPU-TMALI  shall provide TMALI_HK to the DPU-CCM on request.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>SRS5.13.2.1</id>
+      <content> The DPU-TMALI shall allocate a ring buffer of size specified by TMALI_BUFFER_SIZE provided during initialization for storing incoming frames of data.  The default buffer size shall be 15 MB.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>SRS5.13.2.2</id>
+      <content> The DPU-TMALI shall configure the ping-pong frame limit at startup as specified by TMALI_PP_LIMIT provided during initialization.  The default value shall be M frames and shall be capable of being modified dynamically.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>SRS5.13.2.3</id>
+      <content> The DPU-TMALI shall configure the DCI interface data timeout at startup as specified by TMALI_TIMEOUT provided during initialization.  The default value shall be N milliseconds and shall be capable of being modified dynamically.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>SRS5.13.3.1</id>
+      <content> The DPU-TMALI shall utilize SCM_DCI_SR, along with ERRNO provided by DPU-DCI to decode errors and place them on an error queue for DPU-CCM.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>SRS5.13.3.2</id>
+      <content> The DPU-TMALI shall install a callback routine to respond to the DCI Error Interrupt.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>SRS5.13.3.3</id>
+      <content>  The DPU-TMALI shall place the starting address of the event ring buffer in TMALI_HK.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>SRS5.13.4.1</id>
+      <content> The DPU-TMALI shall use DPU-DCI to communicate with the DCI Interface.
+</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

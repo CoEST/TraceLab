@@ -1,0 +1,18 @@
+Validation test case Patient Data: 
+    C12 tax code through 20/06/2003 
+            correct (16 digits) and 
+            in S I O 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcValPaz necessary to authenticate an 
+            Patient 
+High Priority 
+Set up the tax code must ZCCRCC80D13G942U 
+            be registered in S I O 
+Description test 
+Input: Company ID: ZCCRCC80D13G942U 
+Oracle: The Operator access to the operation 
+            Validated patient 
+Classes cover valid: CE6 
+: Classes invalid: CE7

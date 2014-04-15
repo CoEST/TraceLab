@@ -1,0 +1,14 @@
+org.mozilla.javascript.BaseFunction.realFunction
+org.mozilla.javascript.NativeWith.getDefaultValue
+org.mozilla.javascript.NativeArray.getDefaultValue
+org.mozilla.javascript.FieldAndMethods.getDefaultValue
+org.mozilla.javascript.NativeDate.getDefaultValue
+org.mozilla.javascript.ScriptableObject.getDefaultValue
+org.mozilla.javascript.NativeBoolean.getDefaultValue
+org.mozilla.javascript.NativeJavaClass.getDefaultValue
+org.mozilla.javascript.NativeJavaObject.getParentScope
+org.mozilla.javascript.NativeJavaObject.getDefaultValue
+org.mozilla.javascript.Scriptable.getDefaultValue
+org.mozilla.javascript.Delegator.getDefaultValue
+org.mozilla.javascript.NativeJavaPackage.toString
+org.mozilla.javascript.NativeJavaPackage.getDefaultValue

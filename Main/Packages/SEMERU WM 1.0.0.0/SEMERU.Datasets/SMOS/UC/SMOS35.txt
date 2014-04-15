@@ -1,0 +1,13 @@
+Nome: VisualizzaElencoNote
+Attori: Amministratore
+Descrizione: Visualizza l'elenco delle note inerente allo studente
+Precondizioni:
+• • •
+L'utente deve essere loggato al sistema come Amministratore L'utente ha svolto il caso d'uso “VisualizzaDettagliSingoloRegistro” Clicca sul pulsante “Note” associato ad uno studente
+Sequenza degli eventi
+Utente
+Sistema
+1.	Mostra tutte le note dell'alunno registrate durante l'anno scolastico
+Postcondizioni:
+• • •
+Il sistema sta visualizzando l'elenco note riferite allo studente L’amministratore interrompe l’operazione Connessione al server SMOS interrotta

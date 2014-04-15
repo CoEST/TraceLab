@@ -1,0 +1,1 @@
+Ring buffer data structure	A separate pointer indicates the end of the buffer: pEnd. This pointer points to the last available location in the buffer. Before advancing either  pointer it should be verified whether the pointer points to the last location, in that case the pointer is reset to the start of the buffer,  pointed to by pBuf, otherwise it can just be incremented.

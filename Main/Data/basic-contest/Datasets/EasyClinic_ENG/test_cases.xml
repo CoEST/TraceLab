@@ -1,0 +1,1702 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>TC</id>
+    <name>TC</name>
+    <version>1.1</version>
+    <description>Easy Clinic Test Cases</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>100</id>
+      <content>Testing houses delete a Visit Date: 
+    C50 control following a 20/06/2003 
+            Visit control and 
+            precedes a visit by 
+            check 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for delete of 
+UcAnnPre a booking service 
+            made by an ambulatory patient 
+High Priority 
+Set up the previous reservation is `: 
+             02/10/2003 hours 09 00 Visit control 
+            The reservation is `Next: 
+            07/10/2003 hours 09 00 Visit control 
+Description test 
+Input Visit selected: 
+            06/10/2003 hours 09 00 Visit control 
+The oracle system deletes the reservation 
+            selected 
+Classes cover valid: CE4 CE8 CE13 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>101</id>
+      <content>Test case of a First Amendment to visit Date: 
+    C51 followed by a Day Hospital 20/06/2003 
+            in a location 
+            between two visits Control 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for modification of a 
+UcModVis service by Outpatient a 
+            patient 
+High Priority 
+Set up There are no previous reservations 
+            The reservation is `Next: 
+                29/09/2003 hours 08 00 Day Hospital 
+            New reservation was 
+             02/10/2003 hours 09 00 Visit Control 
+            New reservaion later: 
+             07/10/2003 hours 09 00 Visit Control 
+Description test 
+Input Visit selected: 
+                26/09/2003 hours 11 00 First visit 
+            Review: 
+                        03/10/2003 hours 11 00 
+Oracle Sequence invalid The system 
+            the changing of the reservation 
+Classes cover valid: CE1 CE8 CE14 CE19 CE21 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>102</id>
+      <content>Edit test case of a Day Hospital Date: 
+    C52 preceded by a First 20/06/2003 
+            visit and followed by a 
+            Visit control in a 
+            position between a 
+            Day Hospital and a Visit 
+            Control 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for modification of a 
+UcModVis service by Outpatient a 
+            patient 
+High Priority 
+Set up the previous reservation is `: 
+                26/09/2003 hours 11 00 First visit 
+            The reservation is `Next: 
+             02/10/2003 hours 09 00 Visit Control 
+            New reservation was 
+                03/10/2003 hours 08 00 Day Hospital 
+            New reservation later: 
+             06/10/2003 hours 09 00 Visit Control 
+Description test 
+Input: Visit selected: 
+                29/09/2003 hours 08 00 Day Hospital 
+            Review: 
+                        06/10/2003 hours 08 00 
+Oracle: Sequence invalid The system 
+            the changing of the reservation 
+Classes cover valid: CE2 CE9 CE13 CE19 CE22 
+: Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>103</id>
+      <content>Edit test case of a Day Hospital Date: 
+    C53 preceded by a First 20/06/2003 
+            visit and followed by a 
+            Visit control in a 
+            position between two 
+            monitoring visits 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for modification of a 
+UcModVis service by Outpatient a 
+            patient 
+High Priority 
+Set up the previous reservation is `: 
+                26/09/2003 hours 11 00 First visit 
+            The reservation is `Next: 
+             02/10/2003 hours 09 00 Visit Control 
+            New reservation was 
+             06/10/2003 hours 09 00 Visit Control 
+            New reservation later: 
+             13/10/2003 hours 09 30 Visit Control 
+Description test 
+Input Visit selected: 
+                29/09/2003 hours 08 00 Day Hospital 
+            Review: 
+                        08/10/2003 hours 08 00 
+The Oracle system does not allow editing of 
+            Reservations 
+Classes cover valid: CE2 CE9 CE14 CE19 CE22 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>104</id>
+      <content>Edit test case of a visit by Date: 
+    C54 preceded by a control 20/06/2003 
+            Day Hospital and followed by a 
+            Day in Hospital 
+            final position of 
+            sequence of reservations and 
+            preceded by a Day 
+            Hospital 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for modification of a 
+UcModVis service by Outpatient a 
+            patient 
+High Priority 
+Set up the previous reservation is `: 
+                29/09/2003 hours 08 00 Day Hospital 
+            The reservation is `Next: 
+                03/10/2003 hours 08 00 Day Hospital 
+            New reservation was 
+                10/10/2003 hours 08 00 Day Hospital 
+            There are no reservations after the next 
+            Review 
+Description test 
+Input Visit selected: 
+             02/10/2003 hours 09 00 Visit control 
+            Review: 
+                        02/10/2003 hours 10 30 
+Oracle Sequence invalid The system 
+            the changing of the reservation 
+Classes cover valid: ce3 CE8 CE13 CE16 CE23 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>105</id>
+      <content>Edit test case of a visit by Date: 
+    C55 preceded by a control 20/06/2003 
+            Day Hospital and followed by 
+            Visit a control 
+            a location between 
+            A Day Hospital and a Visit 
+            control 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for modification of a 
+UcModVis service by Outpatient a 
+            patient 
+Media Priorities 
+Set up the previous reservation is `: 
+                29/09/2003 hours 08 00 Day Hospital 
+            The reservation is `Next: 
+             06/10/2003 hours 09 00 Visit control 
+            New reservation was 
+                08/10/2003 hours 08 00 Day Hospital 
+            New reservation later: 
+             13/10/2003 hours 09 00 Visit control 
+Description test 
+Input Visit selected: 
+             02/10/2003 hours 09 00 Visit control 
+            Review: 
+                        09/10/2003 hours 10 00 
+The Oracle system allows the change of 
+            Reservations 
+Classes cover valid: ce3 CE9 CE13 CE19 CE23 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>106</id>
+      <content>Edit test case of a Day Hospital Date: 
+    C56 between two visits 20/06/2003 
+            control in a position 
+            between two visits 
+            check 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for modification of a 
+UcModVis service by Outpatient a 
+            patient 
+Media Priorities 
+Set up the previous reservation is `: 
+             07/10/2003 hours 09 30 Visit control 
+            The reservation is `Next: 
+             09/10/2003 hours 10 00 Visit control 
+            New reservation was 
+             09/10/2003 hours 9 00 Visit control 
+            New reservation later: 
+             13/10/2003 hours 9 00 Visit control 
+Description test 
+Input: Visit selected: 
+                08/10/2003 hours 08 00 Day Hospital 
+            Review: 
+                        08/10/2003 hours 8 00 
+Oracle: The system allows the change of 
+            Reservations 
+Classes cover valid: CE4 CE9 CE14 CE19 CE22 
+: Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>107</id>
+      <content>Login test case by Patient Data: 
+    Hospital C57 Card correct PIN 20/06/2003 
+            correct and the couple 
+            (Hospital Card PIN) 
+            in S I O 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcLogPaz necessary to authenticate an 
+            patient 
+High Priority 
+The couple set up (Hospital Card PIN) = (00,001 
+            65323) is registered in the `S I O 
+Description test 
+Hospital Input Card: 00,001 
+            PIN: 65,323 
+The Oracle system allows access to the patient 
+Classes cover valid: CE1 CE2 CE6 CE7 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>108</id>
+      <content>Login test case by Patient Data: 
+    C58 Card Hospital incorrect 20/06/2003 
+            (fewer digits) 
+            and PIN recorded in S I O 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcLogPaz necessary to authenticate an 
+            patient 
+High Priority 
+Set up 65,323 The PIN is recorded in the `S I O 
+Description test 
+Hospital Input Card: 0000 
+            PIN: 65,323 
+Oracle Invalid Input: Hospital Card 
+Classes cover valid: CE7 
+            Classes invalid: ce3</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>109</id>
+      <content>Login test case by Patient Data: 
+    C59 Card Hospital incorrect 20/06/2003 
+            (higher number of digits) 
+            and PIN recorded in S I O 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcLogPaz necessary to authenticate an 
+            patient 
+High Priority 
+Set up 65,323 The PIN is recorded in the `S I O 
+Description test 
+Hospital Input Card: 000,000 
+            PIN: 65,323 
+Oracle Invalid Input: Hospital Card 
+Classes cover valid: CE7 
+            Classes invalid: CE4</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>110</id>
+      <content>Login test case by Patient Data: 
+    C60 Card Hospital recorded 20/06/2003 
+            in S I O and PIN 
+            correct (fewer 
+            figures) 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcLogPaz necessary to authenticate an 
+            patient 
+High Priority 
+The Hospital set up 00,001 Card is `recorded in 
+            I S O 
+Description test 
+Hospital Input Card: 00,001 
+            PIN: 6532 
+Oracle Invalid Input: PIN 
+Classes cover valid: CE2 
+            Classes invalid: CE8</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>111</id>
+      <content>Login test case by Patient Data: 
+    C61 Card Hospital recorded 20/06/2003 
+            in S I O and PIN 
+            proper (higher 
+            figures) 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcLogPaz necessary to authenticate an 
+            patient 
+High Priority 
+The Hospital set up 00,001 Card is `recorded in 
+            I S O 
+Description test 
+Hospital Input Card: 00,001 
+            PIN: 65323555 
+Oracle Invalid Input: PIN 
+Classes cover valid: CE2 
+            Classes invalid: CE9</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>112</id>
+      <content>Login test case by Patient Data: 
+    C62 Card Hospital recorded 20/06/2003 
+            in S I O and correct PIN but 
+            not recorded in S I O 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcLogPaz necessary to authenticate an 
+            patient 
+High Priority 
+The Hospital set up 00,001 Card is `recorded in 
+            I S O 
+            The PIN is not `47,389 recorded in S I O 
+Description test 
+Input: Hospital Card: 00,001 
+            PIN: 47,389 
+Oracle: The system does not allow access to 
+            patient 
+Classes cover valid: CE2 
+: Classes invalid: CE10</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>113</id>
+      <content>Login test case by Patient Data: 
+    C63 Card Hospital but correct 20/06/2003 
+            not stored on the S I O and 
+            PIN recorded in S I O 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcLogPaz necessary to authenticate an 
+            patient 
+High Priority 
+The Hospital set up 00,034 Card is not registered in ` 
+            I S O 
+            The PIN is `65,323 recorded in S I O 
+Description test 
+Hospital Input Card: 00,034 
+            PIN: 65,323 
+The Oracle system does not allow access to 
+            patient 
+Classes cover valid: CE1 CE7 
+            Classes invalid: CE5</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>51</id>
+      <content>Test case Operator Login Date: 
+    C01's login through 20/06/2003 
+            correct and incorrect password 
+            torque (login password) 
+            in S I O 
+                                            Version: 
+                                             0 02 000 
+Use Case He performs the functions 
+UcValOpe necessary to authenticate an 
+            Operator 
+High Priority 
+The couple set up (login password) = (Rocolo 
+            Virago) is recorded in the `S I O 
+Description test 
+Input Login: Rocolo 
+            Password: Virago 
+The Oracle system allows access 
+            the operator 
+Classes cover valid: CE1 CE2 CE6 CE7 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>52</id>
+      <content>Login Operator test case by Date: 
+    C02 login incorrect (number 20/06/2003 
+            fewer characters) and 
+            passwords stored on the 
+            I S O 
+                                            Version: 
+                                             0 02 000 
+Use Case He performs the functions 
+UcValOpe necessary to authenticate an 
+            Operator 
+High Priority 
+Set up Virago The password is `recorded in the SIO 
+Description test 
+Input Login: roc 
+            Password: Virago 
+Oracle Invalid Input: login 
+Classes cover valid: CE7 
+            Classes invalid: ce3</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>53</id>
+      <content>Login Operator test case by Date: 
+    C03 login incorrect (number 20/06/2003 
+            top character) and 
+            passwords stored on the 
+            I S O 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcValOpe necessary to authenticate an 
+            Operator 
+High Priority 
+Set up Virago The password is `recorded in the SIO 
+Description test 
+Input Login: roccoliveto 
+            Password: Virago 
+Oracle Invalid Input: login 
+Classes cover valid: CE7 
+            Classes invalid: CE4</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>54</id>
+      <content>Login Operator test case by Date: 
+    C04 login registered in S I O and 20/06/2003 
+            incorrect password 
+            (fewer 
+            characters) 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcValOpe necessary to authenticate an 
+            Operator 
+High Priority 
+Set up the login Rocolo is `recorded in the SIO 
+Description test 
+Input Login: Rocolo 
+            Password: vir 
+Oracle Invalid Input: Password 
+Classes cover valid: CE2 
+            Classes invalid: CE8</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>55</id>
+      <content>Login Operator test case by Date: 
+    C05 login registered in S I O and 20/06/2003 
+            incorrect password 
+            (higher 
+            characters) 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcValOpe necessary to authenticate an 
+            Operator 
+High Priority 
+Set up the login Rocolo is `recorded in the SIO 
+Description test 
+Input Login: Rocolo 
+            Password: rocolivirago 
+Oracle Invalid Input: Password 
+Classes cover valid: CE2 
+            Classes invalid: CE9</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>56</id>
+      <content>Login Operator test case by Date: 
+    C06 login registered in S I O 20/06/2003 
+            and password correctly but not 
+            recorded in S I O 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcValOpe necessary to authenticate an 
+            Operator 
+High Priority 
+Set up the login Rocolo is `recorded in the SIO 
+            The password is `rocco not registered in 
+            I S O 
+Description test 
+Input Login: Rocolo 
+            Password: rocco 
+The Oracle system does not allow access to 
+            patient 
+Classes cover valid: CE2 
+            Classes invalid: CE10</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>57</id>
+      <content>Login Operator test case by Date: 
+    C07 login correct but not 20/06/2003 
+            recorded in S I O and 
+            passwords stored on the 
+            I S O 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcValOpe necessary to authenticate an 
+            Operator 
+High Priority 
+Set up the login olive grove is not registered in ` 
+            I S O 
+            The password is `Virago registered in S I O 
+Description test 
+Input Login: olive grove 
+            Password: Virago 
+The Oracle system does not allow access to 
+            patient 
+Classes cover valid: CE1 CE7 
+            Classes invalid: CE5</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>58</id>
+      <content>Validation test case Patient Data: 
+    C08 Card Hospital through 20/06/2003 
+            correct (5 digits) and 
+            in S I O 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcValPaz necessary to authenticate an 
+            Patient 
+High Priority 
+The Hospital set up 00,001 Card must be 
+            recorded in S I O 
+Description test 
+Hospital Input Card: 00,001 
+The oracle Operator access to the operation 
+            validated patient 
+Classes cover valid: CE1 CE2 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>59</id>
+      <content>Validation test case Patient Data: 
+    C09 Card Hospital by not 20/06/2003 
+            sound (fewer 
+            figures) 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcValPaz necessary to authenticate an 
+            Patient 
+High Priority 
+Set up not identified 
+Description test 
+Hospital Input Card: 0000 
+Oracle Input Invalid 
+Classes cover valid: None 
+            Classes invalid: ce3</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>60</id>
+      <content>Validation test case Patient Data: 
+    C10 Card Hospital by not 20/06/2003 
+            proper (higher 
+            figures) 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcValPaz necessary to authenticate an 
+            Patient 
+High Priority 
+Set up not identified 
+Description test 
+Hospital Input Card: 000,000 
+Oracle Input Invalid 
+Classes cover valid: None 
+            Classes invalid: CE4</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>61</id>
+      <content>Validation test case Patient Data: 
+    C11 Card Hospital through 20/06/2003 
+            but not stored properly 
+            in S I O 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcValPaz necessary to authenticate an 
+            Patient 
+High Priority 
+The Hospital set up 99,999 Card should not be 
+            recorded in S I O 
+Description test 
+Hospital Input Card: 99,999 
+The Oracle system does not allow access to 
+            section on Patient 
+Classes cover valid: CE1 
+            Classes invalid: CE5</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>62</id>
+      <content>Validation test case Patient Data: 
+    C12 tax code through 20/06/2003 
+            correct (16 digits) and 
+            in S I O 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcValPaz necessary to authenticate an 
+            Patient 
+High Priority 
+Set up the tax code must ZCCRCC80D13G942U 
+            be registered in S I O 
+Description test 
+Input: Company ID: ZCCRCC80D13G942U 
+Oracle: The Operator access to the operation 
+            Validated patient 
+Classes cover valid: CE6 
+: Classes invalid: CE7</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>63</id>
+      <content>Validation test case Patient Data: 
+    C13 tax code by not 20/06/2003 
+            correct (fewer 
+            figures) 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcValPaz necessary to authenticate an 
+            Patient 
+High Priority 
+Set up not identified 
+Description test 
+Input Tax: ZCCRCC80D 
+Oracle Input Invalid 
+Classes cover valid: None 
+            Classes invalid: CE8</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>64</id>
+      <content>Validation test case Patient Data: 
+    C14 tax code by not 20/06/2003 
+            correct (higher 
+            figures), but not this 
+            in S I O 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcValPaz necessary to authenticate an 
+            Patient 
+High Priority 
+Set up not identified 
+Description test 
+Input Tax: ZCCRCC80D13G942UZCCRCC 
+Oracle Input Invalid 
+Classes cover valid: None 
+            Classes invalid: CE9</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>65</id>
+      <content>Validation test case Patient Data: 
+    C15 tax code through 20/06/2003 
+            correct but not registered 
+            in S I O 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcValPaz necessary to authenticate an 
+            Patient 
+High Priority 
+Set up the tax code should not RGANLL80C14H703E 
+            be registered in S I O 
+Description test 
+Input Tax: RGANLL80C14H703E 
+The Oracle system does not allow access to 
+            section on Patient 
+Classes cover valid: CE6 
+            Classes invalid: CE10</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>66</id>
+      <content>Entering Data: 
+Master test case of a patient 20/06/2003 
+    C16 is not registered in S I O 
+            (tax code and correct 
+            not recorded in S I O) 
+            The data are not included 
+            null 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcInsPaz necessary for input
+            the anagrafica of a new patient 
+Media Priorities 
+Set up the tax code should not ZCCRCC80D13G942U 
+            be registered in S I O 
+Description test 
+Input Tax: ZCCRCC80D13G942U 
+            Name: Rocco 
+            Surname: Zaccagnino 
+            Sex: M 
+            Birth date: 13/04/1980 
+            Place of birth: Power 
+            Province of birth: PCS 
+            Address: fraz Paoladoce 26 
+            Place of residence: Avigliano 
+            Province of residence: PCS 
+            ZIP code: 85020 
+            Contact information: 0971/87267 347/9908973 
+The Oracle system allows registration of 
+            data 
+Classes cover valid: CE1 ce3 CE5 CE8 CE10 
+            CE12 CE14 CE16 CE18 CE20 CE23 CE24 
+            CE28 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>67</id>
+      <content>Entering test case data Date: 
+    C17 details of a patient 20/06/2003 
+            not recorded in S I O 
+            (tax code and correct 
+            not recorded in S I O) 
+            The data are not included 
+            none except the name 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcInsPaz necessary for input of anagrafica of 
+             a new patient 
+Media Priorities 
+Set up the tax code should not ZCCRCC80D13G942U 
+            be registered in S I O 
+Description test 
+Input Tax: ZCCRCC80D13G942U 
+            Name: 
+            Surname: Rocco 
+            Sex: M 
+            Birth date: 13/04/1980 
+            Place of birth: Power 
+            Province of birth: PCS 
+            Address: fraz Paoladoce 26 
+            Place of residence: Avigliano 
+            Province of residence: PCS 
+            ZIP code: 85020 
+            Contact information: 0971/87267 347/9908973 
+Oracle Invalid Input: Name 
+Classes cover valid: ce3 CE5 CE8 CE10 CE12 
+            CE14 CE16 CE18 CE20 CE23 CE24 CE28 
+            Classes invalid: CE2</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>68</id>
+      <content>input test case data Date: 
+    C18 details of a patient 20/06/2003 
+            not recorded in S I O 
+            (tax code and correct 
+            not recorded in S I O) 
+            The data are not included 
+            none except 
+            last name 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcInsPaz necessary for input of anagrafica of 
+             a new patient 
+Media Priorities 
+Set up the tax code should not ZCCRCC80D13G942U 
+            be registered in S I O 
+Description test 
+Input: Company ID: ZCCRCC80D13G942U 
+            Name: Rocco 
+            Surname: 
+            Sex: M 
+            Birth date: 13/04/1980 
+            Place of birth: Power 
+            Province of birth: PCS 
+            Address: fraz Paoladoce 26 
+            Place of residence: Avigliano 
+            Province of residence: PCS 
+            ZIP code: 85020 
+            Contact information: 0971/87267 347/9908973 
+Oracle: Invalid Input: Surname 
+Classes cover valid: CE1 CE5 CE8 CE10 CE12 
+: CE14 CE16 CE18 CE20 CE23 CE24 CE28 
+            Classes invalid: CE4</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>69</id>
+      <content>input test case data Date: 
+    C19 details of a patient 20/06/2003 
+            not recorded in S I O 
+            (tax code and correct 
+            not recorded in S I O) 
+            The data are not included 
+            zero and the field is `sex 
+            Incorrectly 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcInsPaz necessary for input of anagrafica of 
+             a new patient 
+Media Priorities 
+Set up the tax code should not ZCCRCC80D13G942U 
+            be registered in S I O 
+Description test 
+Input Tax: ZCCRCC80D13G942U 
+            Name: Rocco 
+            Surname: Zaccagnino 
+            Sex: B 
+            Birth date: 13/04/1980 
+            Place of birth: Power 
+            Province of birth: PCS 
+            Address: fraz Paoladoce 26 
+            Place of residence: Avigliano 
+            Province of residence: PCS 
+            ZIP code: 85020 
+            Contact information: 0971/87267 347/9908973 
+Oracle Invalid Input: Sex 
+Classes cover valid: CE1 ce3 CE8 CE10 CE12 
+            CE14 CE16 CE18 CE20 CE23 CE24 CE28 
+            Classes invalid: CE7</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>70</id>
+      <content>input test case data Date: 
+    C20 details of a patient 20/06/2003 
+            not recorded in S I O 
+            (tax code and correct 
+            not recorded in S I O) 
+            The data are not included 
+            zero and the field 
+            the date of birth is not ` 
+            valid 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcInsPaz necessary for input of anagrafica of 
+             a new patient 
+Media Priorities 
+Set up the tax code should not ZCCRCC80D13G942U 
+            be registered in S I O 
+Description test 
+Input Tax: ZCCRCC80D13G942U 
+            Name: Rocco 
+            Surname: Zaccagnino 
+            Sex: M 
+            Birth date: 55/66/7777 
+            Place of birth: Power 
+            Province of birth: PCS 
+            Address: fraz Paoladoce 26 
+            Place of residence: Avigliano 
+            Province of residence: PCS 
+            ZIP code: 85020 
+            Contact information: 0971/87267 347/9908973 
+Oracle Invalid Input: Birth Date 
+Classes cover valid: CE1 ce3 CE5 CE10 CE12 
+            CE14 CE16 CE18 CE20 CE23 CE24 CE28 
+            Classes invalid: CE9</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>71</id>
+      <content>input test case data Date: 
+    C21 details of a patient 20/06/2003 
+            not recorded in S I O 
+            (tax code and correct 
+            not recorded in S I O) 
+            The data are not included 
+            none except the place 
+            Birth 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcInsPaz necessary for input of anagrafica of 
+             a new patient 
+Media Priorities 
+Set up the tax code should not ZCCVTN77D53G942U 
+            be registered in S I O 
+Description test 
+Input Tax: ZCCVTN77D53G942U 
+            Name: Vitina 
+            Surname: Zaccagnino 
+            Sex: F 
+            Birth date: 13/04/1977 
+            Place of Birth: 
+            Province of birth: PCS 
+            Address: via La Frasca 36 
+            Place of residence: Atella 
+            Province of residence: PCS 
+            ZIP code: 85020 
+            Contact information: 0972/720897 340/9008171 
+Oracle Invalid Input: Place of Birth 
+Classes cover valid: CE1 ce3 CE6 CE8 CE12 
+            CE14 CE16 CE18 CE20 CE23 CE24 CE28 
+            Classes invalid: CE11</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>72</id>
+      <content>input test case data Date: 
+    C22 details of a patient 20/06/2003 
+            not recorded in S I O 
+            (tax code and correct 
+            not recorded in S I O) 
+            The data are not included 
+            none except 
+            province of birth 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcInsPaz necessary for input of anagrafica of 
+             a new patient 
+Media Priorities 
+Set up the tax code should not ZCCRCC80D13G942U 
+            be registered in S I O 
+Description test 
+Input Tax: ZCCRCC80D13G942U 
+            Name: Rocco 
+            Surname: Zaccagnino 
+            Sex: M 
+            Birth date: 13/04/1980 
+            Place of birth: Power 
+            Province of Birth: 
+            Address: fraz Paoladoce 26 
+            Place of residence: Avigliano 
+            Province of residence: PCS 
+            ZIP code: 85020 
+            Contact information: 0971/87267 347/9908973 
+Oracle Invalid Input: Country of Birth 
+Classes cover valid: CE1 ce3 CE5 CE8 CE10 
+            CE14 CE16 CE18 CE20 CE23 CE24 CE28 
+            Classes invalid: CE13</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>73</id>
+      <content>input test case data Date: 
+    C23 details of a patient 20/06/2003 
+            not recorded in S I O 
+            (tax code and correct 
+            not recorded in S I O) 
+            The data are not included 
+            none other than 
+            address 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcInsPaz necessary for input of anagrafica of 
+             a new patient 
+Media Priorities 
+Set up the tax code should not ZCCRCC80D13G942U 
+            be registered in S I O 
+Description test 
+Input Tax: ZCCRCC80D13G942U 
+            Name: Rocco 
+            Surname: Zaccagnino 
+            Sex: M 
+            Birth date: 13/04/1980 
+            Place of birth: Power 
+            Province of birth: PCS 
+            Address: 
+            Place of residence: Avigliano 
+            Province of residence: PCS 
+            ZIP code: 85020 
+            Contact information: 0971/87267 347/9908973 
+Oracle Invalid Input: Address 
+Classes cover valid: CE1 ce3 CE5 CE8 CE10 
+            CE12 CE16 CE18 CE20 CE23 CE24 CE28 
+            Classes invalid: EC15</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>74</id>
+      <content>input test case data Date: 
+    C24 details of a patient 20/06/2003 
+            not recorded in S I O 
+            (tax code and correct 
+            not recorded in S I O) 
+            The data are not included 
+            none except the place 
+            residence 
+                                          Version: 
+                                          0 02 000 
+                                          
+Use Case He performs the functions 
+UcInsPaz necessary for input of anagrafica of 
+             a new patient 
+Media Priorities 
+Set up the tax code should not ZCCRCC80D13G942U 
+            be registered in S I O 
+Description test 
+Input Tax: ZCCRCC80D13G942U 
+            Name: Rocco 
+            Surname: Zaccagnino 
+            Sex: M 
+            Birth date: 13/04/1980 
+            Place of birth: Power 
+            Province of birth: PCS 
+            Address: fraz Paoladoce 26 
+            Place of residence: 
+            Province of residence: PCS 
+            ZIP code: 85020 
+            Contact information: 0971/87267 347/9908973 
+Oracle Invalid Input: Place of residence 
+Classes cover valid: CE1 ce3 CE5 CE8 CE10 
+            CE12 CE14 CE18 CE20 CE23 CE24 CE28 
+            Classes invalid: CE17</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>75</id>
+      <content>input test case data Date: 
+    C25 details of a patient 20/06/2003 
+            not recorded in S I O 
+            (tax code and correct 
+            not recorded in S I O) 
+            The data are not included 
+            none except 
+            province of residence 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcInsPaz necessary for input of anagrafica of 
+             a new patient 
+Media Priorities 
+Set up the tax code should not ZCCRCC80D13G942U 
+            be registered in S I O 
+Description test 
+Input Tax: ZCCRCC80D13G942U 
+            Name: Rocco 
+            Surname: Zaccagnino 
+            Sex: M 
+            Birth date: 13/04/1980 
+            Place of birth: Power 
+            Address: fraz Paoladoce 26 
+            Province of birth: PCS 
+            Place of residence: Avigliano 
+            Province of residence: 
+            ZIP code: 85020 
+            Contact information: 0971/87267 347/9908973 
+Oracle Invalid Input: Country of residence 
+Classes cover valid: CE1 ce3 CE5 CE8 CE10 
+            CE12 CE14 CE16 CE20 CE23 CE24 CE28 
+            Classes invalid: CE19</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>76</id>
+      <content>input test case data Date: 
+    C26 details of a patient 20/06/2003 
+            not recorded in S I O 
+            (tax code and correct 
+            not recorded in S I O) 
+            The data are not included 
+            and no ZIP code incorrectly 
+            (fewer digits) 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcInsPaz necessary for input of anagrafica of 
+             a new patient 
+Media Priorities 
+Set up the tax code should not ZCCRCC80D13G942U 
+            be registered in S I O 
+Description test 
+Input Tax: ZCCRCC80D13G942U 
+            Name: Rocco 
+            Surname: Zaccagnino 
+            Sex: M 
+            Birth date: 13/04/1980 
+            Place of birth: Power 
+            Province of birth: PCS 
+            Address: fraz Paoladoce 26 
+            Place of residence: Avigliano 
+            Province of residence: PCS 
+            ZIP code: 850 
+            Contact information: 0971/87267 347/9908973 
+Oracle Invalid Input: CAP 
+Classes cover valid: CE1 ce3 CE5 CE8 CE10 
+            CE12 CE14 CE16 CE18 CE23 CE24 CE28 
+            Classes valid: CE21</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>77</id>
+      <content>input test case data Date: 
+    C27 details of a patient 20/06/2003 
+            not recorded in S I O 
+            (tax code and correct 
+            not recorded in S I O) 
+            The data are not included 
+            and no ZIP code incorrectly 
+            (higher number of digits) 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcInsPaz necessary for input of anagrafica of 
+             a new patient 
+Media Priorities 
+Set up the tax code should not ZCCRCC80D13G942U 
+            be registered in S I O 
+Description test 
+Input Tax: ZCCRCC80D13G942U 
+            Name: Rocco 
+            Surname: Zaccagnino 
+            Sex: M 
+            Birth date: 13/04/1980 
+            Place of birth: Power 
+            Province of birth: PCS 
+            Address: fraz Paoladoce 26 
+            Place of residence: Avigliano 
+            Province of residence: PCS 
+            ZIP code: 8500000000000000 
+            Contact information: 0971/87267 347/9908973 
+Oracle Invalid Input: CAP 
+Classes cover valid: CE1 ce3 CE5 CE8 CE10 
+            CE12 CE14 CE16 CE18 CE23 CE24 CE28 
+            Classes invalid: CE22</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>78</id>
+      <content>input test case data Date: 
+    C28 details of a patient I 20/06/2003 
+            data are not invalid 
+            and the tax code is `not 
+            correct (fewer 
+            Character) 
+                                          Version: 
+                                          0 02 000 
+                                          
+Use Case He performs the functions 
+UcInsPaz necessary for input of anagrafica of 
+             a new patient 
+Media Priorities 
+Set up not identified 
+Description test 
+Input Tax: ZCCRCC 
+            Name: Rocco 
+            Surname: Zaccagnino 
+            Sex: M 
+            Birth date: 13/04/1980 
+            Place of birth: Power 
+            Province of birth: PCS 
+            Address: fraz Paoladoce 26 
+            Place of residence: Avigliano 
+            Province of residence: PCS 
+            ZIP code: 85020 
+            Contact information: 0971/87267 347/9908973 
+Oracle Invalid Input: Tax 
+Classes cover valid: CE1 ce3 CE5 CE8 CE10 
+            CE12 CE14 CE16 CE18 CE20 CE28 
+            Classes invalid: CE25</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>79</id>
+      <content>input test case data Date: 
+    C29 details of a patient I 20/06/2003 
+            data are not invalid 
+            and the tax code is `not 
+            proper (higher 
+            Character) 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcInsPaz necessary for input of anagrafica of 
+             a new patient 
+Media Priorities 
+Set up not identified 
+Description test 
+Input Tax: 
+            ZCCRCC80D13G942UZCCRCCCCCCCCC 
+            Name: Rocco 
+            Surname: Zaccagnino 
+            Sex: M 
+            Birth date: 13/04/1980 
+            Place of birth: Power 
+            Province of birth: PCS 
+            Address: fraz Paoladoce 26 
+            Place of residence: Avigliano 
+            Province of residence: PCS 
+            ZIP code: 85020 
+            Contact information: 0971/87267 347/9908973 
+Oracle: Invalid Input: Tax 
+Classes cover valid: CE1 ce3 CE5 CE8 CE10 
+: CE12 CE14 CE16 CE18 CE20 EC 28 
+            Classes invalid: CE26 
+
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>80</id>
+      <content>input test case data Date: 
+    C30 details of a patient 20/06/2003 
+            already registered within 
+            the S I O Data included 
+            are not zero 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcInsPaz necessary for input of anagrafica of 
+             a new patient 
+Media Priorities 
+Set up the tax code must RGANLL80C14H703E 
+            be registered in S I O 
+Description test 
+Input Tax: RGANLL80C14H703E 
+            Name: Aniello 
+            Surname: Rago 
+            Sex: M 
+            Birth date: 14/03/1980 
+            Place of birth: Salerno 
+            Province of birth: SA 
+            Address: Via Francesco De Sanctis 18 
+            Place of residence: Antessano 
+            Province of residence: SA 
+            ZIP code: 84021 
+            Contact information: 089/951257339/3166793 
+Oracle: Patient already registered the system 
+            allows data storage 
+            details 
+Classes cover valid: CE1 ce3 CE5 CE8 CE10 
+: CE12 CE14 CE16 CE18 CE20 CE28 
+            Classes invalid: CE27</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>81</id>
+      <content>Test case reservation a First Date: 
+    C31 from a visit 20/06/2003 
+            new patient 
+            of the outpatient
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for a reservation 
+UcPreVis service by Outpatient a 
+            patient 
+High Priority 
+Set up There are no reservations 
+Description test 
+Input type selected visit: First visit 
+The Oracle system enables the reservation of 
+            visit 
+Classes cover valid: CE1 CE5 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>82</id>
+      <content>Test case reservation a First Date: 
+    C32 visit preceded by another 20/06/2003 
+            First visit 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for a reservation 
+UcPreVis service by Outpatient a 
+            patient 
+High Priority 
+Set up The last reservation is `: 
+                24/09/2003 hours 09 00 First visit 
+Description test 
+Input type selected visit: First visit 
+Oracle Sequence invalid The system 
+            allows the reservation of the visit 
+Classes cover valid: CE1 CE6 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>83</id>
+      <content>Test case reservation a First Date: 
+    C33 visit preceded by a Day 20/06/2003 
+            Hospital 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for a reservation 
+UcPreVis service by Outpatient a 
+            patient 
+High Priority 
+Set up The last reservation is `: 
+                25/09/2003 hours 08 00 Day Hospital 
+Description test 
+Input type selected visit: First visit 
+Oracle Sequence invalid The system 
+            allows the reservation of the visit 
+Classes cover valid: CE1 CE7 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>84</id>
+      <content>Test case reservation a First Date: 
+    C34 preceded by a visit 20/06/2003 
+            Visit control 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for a reservation 
+UcPreVis service by Outpatient a 
+            patient 
+Media Priorities 
+Set up The last reservation is `: 
+            30/09/2003 hours 10 30 Visit control 
+Description test 
+Input type selected visit: First visit 
+Oracle Sequence invalid The system 
+            allows the reservation of the visit 
+Classes cover valid: CE1 CE8 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>85</id>
+      <content>Test case reservation a Day Date: 
+    C35 Hospital preceded by a 20/06/2003 
+            First visit 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for a reservation 
+UcPreVis service by Outpatient a 
+            patient 
+High Priority 
+Set up The last reservation is `: 
+                26/09/2003 hours 11 00 First visit 
+Description test 
+Input type selected visit: Day Hospital 
+The Oracle system enables the reservation of 
+            visit 
+Classes cover valid: CE2 CE6 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>86</id>
+      <content>Test case reservation a Day Date: 
+    C36 Hospital preceded by a 20/06/2003 
+            Visit control 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for a reservation 
+UcPreVis service by Outpatient a 
+            patient 
+High Priority 
+Set up The last reservation is `: 
+             02/10/2003 hours 09 00 Visit control 
+Description test 
+Input type selected visit: Day Hospital 
+The Oracle system enables the reservation of 
+            Visit 
+Classes cover valid: CE2 CE8 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>87</id>
+      <content>Test case reservation a Day Date: 
+    C37 Hospital preceded by a 20/06/2003 
+            Other Day Hospital 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for a reservation 
+UcPreVis service by Outpatient a 
+            patient 
+High Priority 
+Set up The last reservation is `: 
+                03/10/2003 hours 08 00 Day Hospital 
+Description test 
+Input type selected visit: Day Hospital 
+Oracle Sequence invalid The system 
+            allows the reservation of the visit 
+Classes cover valid: CE2 CE7 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>88</id>
+      <content>Test case reservation a Day Date: 
+    C38 Hospital by a 20/06/2003 
+            new patient 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for a reservation 
+UcPreVis service by Outpatient a 
+            patient 
+High Priority 
+Set up There are no previous reservations 
+Description test 
+Input type selected visit: Day Hospital 
+Oracle Sequence invalid The system 
+            allows the reservation of the visit 
+Classes cover valid: CE2 CE5 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>89</id>
+      <content>Test case reservation a visit Date: 
+    C39 control by 20/06/2003 
+            a new patient 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for a reservation 
+UcPreVis service by Outpatient a 
+            patient 
+High Priority 
+Set up There are no previous reservations 
+Description test 
+Input type selected visit: Visit 
+            check 
+Oracle Sequence invalid The system 
+            allows the reservation of the visit 
+Classes cover valid: ce3 CE5 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>90</id>
+      <content>Test case reservation a visit Date: 
+    C40 control preceded by 20/06/2003 
+            A Day Hospital 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for a reservation 
+UcPreVis service by Outpatient a 
+            patient 
+High Priority 
+Set up The last reservation is `: 
+                03/10/2003 hours 08 00 Day Hospital 
+Description test 
+Input type selected visit: Visit 
+            check 
+The Oracle system enables the reservation of 
+            visit 
+Classes cover valid: ce3 CE7 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>91</id>
+      <content>Test case reservation a visit Date: 
+    C41 control preceded by 20/06/2003 
+            another visit 
+            check 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for a reservation 
+UcPreVis service by Outpatient a 
+            patient 
+Media Priorities 
+Set up The last reservation is `: 
+             06/10/2003 hours 12 00 Visit control 
+Description test 
+Input type selected visit: Visit 
+            check 
+The Oracle system enables the reservation of 
+            visit 
+Classes cover valid: ce3 CE8 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>92</id>
+      <content>Test case reservation a visit Date: 
+    C42 control preceded by 20/06/2003 
+            Before a visit 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for a reservation 
+UcPreVis service by Outpatient a 
+            patient 
+Media Priorities 
+Set up The last reservation is `: 
+                03/09/2003 hours 09 00 First visit 
+Description test 
+Input type selected visit: Visit 
+            check 
+Oracle Sequence invalid The system 
+            allows the reservation of the visit 
+Classes cover valid: ce3 CE6 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>93</id>
+      <content>Reservation test case for a type of date: 
+    C43 is not expected visit 20/06/2003 
+            preceded by a visit by 
+            check 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for a reservation 
+UcPreVis service by Outpatient a 
+            patient 
+Media Priorities 
+Set up The last reservation is `: 
+             07/10/2003 hours 10 00 Visit control 
+Description test 
+Input type selected visit: NP 
+Oracle Input Invalid 
+Classes cover valid: CE8 
+            Classes invalid: CE4</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>94</id>
+      <content>Testing houses delete a First Date: 
+    C44 visit 20/06/2003 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for delete of 
+UcAnnPre a reservation service 
+            made by an ambulatory patient 
+High Priority 
+Set up There are no previous reservations and 
+            Reservations subsequent 
+Description test 
+Input Visit selected: 
+                03/09/2003 hours 09 00 First visit 
+The oracle system eliminates the reservation and 
+            delete the patient from S I O 
+Classes cover valid: CE1 CE6 CE10 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>95</id>
+      <content>Testing houses delete a Day Date: 
+    C45 Hospital following a First 20/06/2003 
+            visit and that is 
+            The last booking 
+            made 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for delete of 
+UcAnnPre a booking service 
+            made by an ambulatory patient 
+High Priority 
+Set up the previous reservation is `: 
+                26/09/2003 hours 11 00 First visit 
+            There are no reservations after 
+            selected 
+Description test 
+Input Visit selected: 
+            30/09/2003 hours 08 00 Day Hospital 
+The oracle system deletes the reservation 
+            selected 
+Classes cover valid: CE2 CE7 CE10 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>96</id>
+      <content>Testing houses delete a Visit Date: 
+    C46 control following a 20/06/2003 
+            Day Hospital and rap 
+            presents the latest 
+            reservation 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for delete of 
+UcAnnPre a reservation service 
+            made by an ambulatory patient 
+High Priority 
+Set up the previous reservation is `: 
+                29/09/2003 hours 08 00 Day Hospital 
+            There are no reservations after 
+            selected 
+Description test 
+Input Visit selected: 
+             30/09/2003 hours 09 00 Visit control 
+The oracle system deletes the reservation 
+            selected 
+Classes cover valid: ce3 CE8 CE10 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>97</id>
+      <content>Testing houses delete a Day Date: 
+    C47 Hospital following a First 20/06/2003 
+            and precedes a visit Visit 
+            Control 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for delete of 
+UcAnnPre a booking service 
+            made by an ambulatory patient 
+High Priority 
+Set up the previous reservation is `: 
+                26/09/2003 hours 11 00 First visit 
+            The reservation is `Next: 
+              30/09/2003 hours 09 00 Visit Control 
+Description test 
+Input Visit selected: 
+                29/09/2003 hours 08 00 Day Hospital 
+Oracle Sequence invalid The system 
+            allows cancellations 
+Classes cover valid: CE2 CE7 CE13 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>98</id>
+      <content>Testing houses delete a Visit Date: 
+    C48 control following a 20/06/2003 
+            Day Hospital and precedes a 
+            Other Day Hospital 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for delete of 
+UcAnnPre a booking service 
+            made by an ambulatory patient 
+Media Priorities 
+Set up the previous reservation is `: 
+                29/03/2003 hours 08 00 Day Hospital 
+            The reservation is `Next: 
+                01/10/2003 hours 08 00 Day Hospital 
+Description test 
+Input Visit selected: 
+              30/09/2003 hours 09 00 Visit control 
+Oracle Sequence invalid The system 
+            allows delete 
+Classes cover valid: ce3 CE8 CE12 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>99</id>
+      <content>Testing houses delete a Visit Date: 
+    C49 control following a 20/06/2003 
+            Day Hospital and precedes a 
+            Visit control 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for delete of 
+UcAnnPre a booking service 
+            made by an ambulatory patient 
+High Priority 
+Set up the previous reservation is `: 
+                29/03/2003 hours 08 00 Day Hospital 
+            The reservation is `Next: 
+              02/10/2003 hours 09 00 Visit Control 
+Description test 
+Input Visit selected: 
+            30/09/2003 hours 12 00 Visit control 
+The oracle system eliminates the reservation 
+            selected 
+Classes cover valid: ce3 CE8 CE13 
+            Classes are not valid: None</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

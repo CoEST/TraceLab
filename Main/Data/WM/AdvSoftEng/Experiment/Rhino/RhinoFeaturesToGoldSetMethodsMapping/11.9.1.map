@@ -1,0 +1,10 @@
+org.mozilla.javascript.ScriptableObject.equivalentValues
+org.mozilla.javascript.TokenStream.getToken
+org.mozilla.javascript.ScriptRuntime.eqString
+org.mozilla.javascript.Decompiler.decompile
+org.mozilla.javascript.Parser.eqExpr
+org.mozilla.javascript.ScriptRuntime.eq
+org.mozilla.javascript.ScriptRuntime.eqNumber
+org.mozilla.javascript.Interpreter.interpretLoop
+org.mozilla.javascript.Token.name
+org.mozilla.javascript.Interpreter.visitExpression

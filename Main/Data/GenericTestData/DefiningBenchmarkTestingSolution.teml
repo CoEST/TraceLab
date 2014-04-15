@@ -1,0 +1,74 @@
+﻿<graph>
+  <ExperimentInfo>
+    <Version>1</Version>
+    <Id>72587d87-92f1-404b-a94c-2e72798c2b35</Id>
+    <Name>Test New Defined Benchmark</Name>
+    <LayoutName>EfficientSugiyama</LayoutName>
+  </ExperimentInfo>
+  <node id="Start">
+    <SerializedVertexData Version="1" X="205" Y="44">
+      <Metadata type="TraceLab.Core.Components.StartNodeMetadata, TraceLab.Core, Version=0.3.3.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Start" />
+    </SerializedVertexData>
+  </node>
+  <node id="End">
+    <SerializedVertexData Version="1" X="206" Y="217">
+      <Metadata type="TraceLab.Core.Components.EndNodeMetadata, TraceLab.Core, Version=0.3.3.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="End" />
+    </SerializedVertexData>
+  </node>
+  <node id="97edb57c-2cd7-4772-8f00-5d21431cb1da">
+    <SerializedVertexData Version="1" X="205" Y="101">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.3.3.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="PoirotXMLImporter" ComponentMetadataDefinitionID="d98bd1e6-1db5-11e0-bfa9-3ee4dfd72085">
+        <IOSpec Version="1">
+          <Input />
+          <Output />
+          <Import>
+            <ImportItem>
+              <ImportItemDefinition Name="listOfArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" />
+              <ImportAs>listOfArtifacts</ImportAs>
+            </ImportItem>
+          </Import>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>Path</Name>
+              <DisplayName>Path</DisplayName>
+              <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Version=0.3.3.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="True" />
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="d0697b03-35be-46fc-ae1f-4570aa6f4caf">
+    <SerializedVertexData Version="1" X="204" Y="159">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.3.3.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="English Porter Stemmer" ComponentMetadataDefinitionID="420775e4-1afc-4142-9145-f32a7d1ed8c4">
+        <IOSpec Version="1">
+          <Input>
+            <InputItem>
+              <InputItemDefinition Name="listOfArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" />
+              <MappedTo>listOfArtifacts</MappedTo>
+            </InputItem>
+          </Input>
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="listOfArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" />
+              <OutputAs>listOfArtifacts</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import />
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues />
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <edge id="b07b1a35-c5b6-4245-81ac-3172ef2467bb" source="Start" target="97edb57c-2cd7-4772-8f00-5d21431cb1da" />
+  <edge id="8899dd3d-d7f0-4036-b557-4b3b708af6db" source="97edb57c-2cd7-4772-8f00-5d21431cb1da" target="d0697b03-35be-46fc-ae1f-4570aa6f4caf" />
+  <edge id="27ae6219-83d6-4892-85f5-4c0cc42d25b1" source="d0697b03-35be-46fc-ae1f-4570aa6f4caf" target="End" />
+</graph>

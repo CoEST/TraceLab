@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp02_high_level</id>
+    <name>Waterloo grp02_high_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp02_high_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>F1</id>
+      <content>User makes a phone call by dialing a phone number</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F2</id>
+      <content>User picks up phone when it rings</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F3</id>
+      <content>System detects a off hook phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F4</id>
+      <content>Should be able to open an audio connection to allow two users to talk to each other</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F5</id>
+      <content>The caller dials an invalid number which is detected by the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F6</id>
+      <content>The caller dials a line that is busy</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F7</id>
+      <content>Maximum connections have been reached</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F8</id>
+      <content>System must maintain a mapping from all phone numbers of clients to IP addresses</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F9</id>
+      <content>User should be able to hang up at any time without breaking the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F10</id>
+      <content>Users should be able to make long distance calls</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F11</id>
+      <content>System should be able to handle unanswered calls</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F12</id>
+      <content>Administrators must be able to login to the system console using a login name and password</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F13</id>
+      <content>Administrators must be able to get user account information</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F14</id>
+      <content>Administrators must be able to obtain an available phone number</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F15</id>
+      <content>Administrator must be able to create a new account for a new user</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F16</id>
+      <content>Administrator must be able to delete a user</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F17</id>
+      <content>Administrator must be able to change a user�s info (user name and address)</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F18</id>
+      <content>Administrator must be able to cancel a user account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F19</id>
+      <content>Administrator must be able to suspend an account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F20</id>
+      <content>Administrator must be able to unsuspend an account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F21</id>
+      <content>The IP address can be unmapped from the phone number</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F22</id>
+      <content>The IP address of a particular phone number can be changed</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F23</id>
+      <content>Verify that the user�s phone is connected to the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F24</id>
+      <content>Able to remove a phone from the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F25</id>
+      <content>Reset the status of a particular phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F26</id>
+      <content>Able to determine whether all phones are optimal</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F27</id>
+      <content>Administrator can set the maximum number of calls in the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F28</id>
+      <content>Administrator can change amounts charged for calls by editing existing billing plans on the system console</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F29</id>
+      <content>Administrator can change amounts charged for calls by adding new billing plans on the system console</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F30</id>
+      <content>Administrator can set a billing plan for a customer on the system console</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F31</id>
+      <content>Administrator can reset the outstanding billing balance for a customer to zero.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F32</id>
+      <content>Administrator can set the discount rate for each period</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F33</id>
+      <content>Administrator can remove a billing plan from the system console</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F34</id>
+      <content>Administrator can change which plan a user subscribes to</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N1</id>
+      <content>The system must perform with a low response time.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N2</id>
+      <content>The system must be easy to pick up and use.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N3a</id>
+      <content>The system must be maintainable.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N3</id>
+      <content>The system must be secured.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N4</id>
+      <content>The system must be portable.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N5</id>
+      <content>The system must be scalable.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N6</id>
+      <content>The system should function in a stable state.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N7</id>
+      <content>The system should have a low cost.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

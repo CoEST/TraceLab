@@ -1,0 +1,154 @@
+           Driver Description
+           "private String project  Name = null  ;
+           private String module  Path = null  ;
+           private String requirement  ID = null  ;
+          
+           private String description = null  ; // Description of the requirement  .
+           private String changed  Arrtibute = null  ;
+           private String from  Attribute = null  ;
+           private String to  Attribute = null  ;"
+           "public Driver  Description  (
+            String project  Name  
+            String module  Path  
+            String requirement  ID  
+            String description  
+            String changed  Attribute  
+            String from  Attribute  
+            String to  Attribute  )
+           {
+          
+            this  . project  Name = project  Name  ;
+            this  . module  Path = module  Path  ;
+            this  . requirement  ID = requirement  ID  ;
+            this  . description = description  ;
+            this  . changed  Attribute = changed  Attribute  ;
+            this  . from  Attribute = from  Attribute  ;
+            this  . to  Attribute = to  Attribute  ;
+          
+           }"
+           "public String get  Changed  Attribute  ()
+           {
+            return changed  Attribute  ;
+           }"
+           "public String get  Description  ()
+           {
+            return description  ;
+           }"
+           "public String get  From  Attribute  ()
+           {
+            return from  Attribute  ;
+           }"
+           "public String get  Module  Path  ()
+           {
+            return module  Path  ;
+           }"
+           "public String get  Project  Name  ()
+           {
+            return project  Name  ;
+           }"
+           "public String get  Requirement  ID  ()
+           {
+            return requirement  ID  ;
+           }"
+           "public String get  To  Attribute  ()
+           {
+            return to  Attribute  ;
+           }"
+           "public void set  Changed  Attribute  (  String changed  Attribute  )
+           {
+            this  . changed  Attribute = changed  Attribute  ;
+           }"
+           "public void set  Description  (  String description  )
+           {
+            this  . description = description  ;
+           }"
+           "public void set  From  Attribute  (  String from  Attribute  )
+           {
+            this  . from  Attribute = from  Attribute  ;
+           }"
+           "public void set  Module  Path  (  String module  Path  )
+           {
+            this  . module  Path = module  Path  ;
+           }"
+           "public void set  Project  Name  (  String project  Name  )
+           {
+            this  . project  Name = project  Name  ;
+           }"
+           "public void set  Requirement  ID  (  String requirement  ID  )
+           {
+            this  . requirement  ID = requirement  ID  ;
+           }"
+           "public void set  To  Attribute  (  String to  Attribute  )
+           {
+            this  . to  Attribute = to  Attribute  ;
+           }"
+           "public String create  Key  ()
+           {
+            String key =
+             this  . project  Name + this  . module  Path + ""\\"" + this  . requirement  ID  ;
+          
+            return key  . to  Lower  Case  ();
+          
+           }"
+           "public boolean equals  (  Object o  )
+           {
+            if (!( o instance of Driver  Description  ))
+             return false  ;
+          
+            Driver  Description dd = (  Driver  Description  ) o  ;
+          
+            if ( dd  . project  Name  . equals  Ignore  Case  ( this  . project  Name  )
+             && dd  . module  Path  . equals  Ignore  Case  ( this  . module  Path  )
+             && dd  . requirement  ID  . equals  Ignore  Case  ( this  . requirement  ID  ))
+            {
+             return true  ;
+            }
+          
+          
+            return false  ;
+           }"
+           "public String to  String  ()
+           {
+          
+            String str =
+             ""\ n  Project Name = ""
+              + this  . project  Name
+              + ""\ n  ""
+              + ""  Module Path = ""
+              + this  . module  Path
+              + ""\ n  ""
+              + ""  Requirement ID = ""
+              + this  . requirement  ID
+              + ""\ n  ""
+              + ""  Description  = ""
+              + this  . description
+              + ""\ n  ""
+              + ""  Changed Attribute ""
+              + this  . changed  Attribute
+              + ""\ n  ""
+              + ""  From = ""
+              + this  . from  Attribute
+              + ""\ n  ""
+              + ""  To = ""
+              + this  . to  Attribute
+              + ""\ n  "";
+          
+            return str  ;
+           }"
+           "public int hash  Code  ()
+           {
+          
+            int hash  Code = 0  ;
+          
+            if ( hash  Code == 0  )
+            {
+             int result = 17  ;
+             result = 37 * result + this  . project  Name  . hash  Code  ();
+             result = 37 * result + this  . module  Path  . hash  Code  ();
+             result = 37 * result + this  . requirement  ID  . hash  Code  ();
+          
+             hash  Code = result  ;
+          
+            }
+            return hash  Code  ;
+           }"

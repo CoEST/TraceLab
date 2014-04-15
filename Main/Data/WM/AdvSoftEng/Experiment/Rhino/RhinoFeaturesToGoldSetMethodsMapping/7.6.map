@@ -1,0 +1,11 @@
+org.mozilla.javascript.CompilerEnvirons.isReservedKeywordAsIdentifier
+org.mozilla.javascript.TokenStream.getStringFromBuffer
+org.mozilla.javascript.TokenStream.getToken
+org.mozilla.javascript.ScriptRuntime.isValidIdentifierName
+org.mozilla.javascript.TokenStream.addToString
+org.mozilla.javascript.ContextFactory.hasFeature
+org.mozilla.javascript.TokenStream.getString
+org.mozilla.javascript.TokenStream.isKeyword
+org.mozilla.javascript.CompilerEnvirons.setReservedKeywordAsIdentifier
+org.mozilla.javascript.CompilerEnvirons.CompilerEnvirons
+org.mozilla.javascript.Token.name

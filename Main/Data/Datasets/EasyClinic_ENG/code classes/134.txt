@@ -1,0 +1,47 @@
+Class GUIPrenotaVisita Date: 16/09/2003 
+                                                Version: 0 01 000 
+Description Make the mask on the management 
+                   booking a visit 
+Attributes 
+       Name Access Description 
+Private btnAnnulla button that allows you to return 
+                            implemented by the mask 
+                            GUIPaziente 
+Private btnConfermaTipo button that allows you to confirm 
+                            type of access to reservation
+Private btnPrenota button that allows you to confirm 
+                            Reservations 
+Private panelDataVisita panel containing the date of 
+                            proposed visit by the system 
+Private panelDati panel containing the necessary data 
+                            to make a reservation 
+Private panelTipoVisita panel containing the various types of 
+                            visit which can be booked 
+Methods 
+       Signature notificaSuccesso () Public Access 
+    Description Its task is to notify the success 
+                   of 
+       Signature show () Public Access 
+    Description View mask 
+       Signature visualizzaDataVisi Public Access 
+                   ta () 
+    Description View date proposed by the system 
+       Signature visualizzaDatiVisi Public Access 
+                   ta () 
+    Description View data for a reservation 
+       Signature eliminaPrenotazione () Public Access 
+    Description Manages the event generated when the Operator 
+                   Select a reservation and start the procedure 
+                   delete
+       Signature modificaPrenotazione () Public Access 
+    Description Manages the event generated when the Operator 
+                   Select a reservation and start the procedure 
+                   changing
+       Signature prenotaVisita () Public Access 
+    Description Manages the event generated when the Operator 
+                   select and start the reservation process 
+                   a new visit 
+       Signature primaVisita () Public Access 
+    Description Manages the event generated when the Operator 
+                   Select a reservation and start the procedure 
+                   reservation a first visit

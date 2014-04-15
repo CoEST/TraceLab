@@ -1,0 +1,13 @@
+Use case name VISUALIZZASCHEDABENECULTURALE 
+View the details of the selected cultural. 
+Partecipating 
+Actor initialization Agency Operator 
+Entry 
+Operator conditions • The agency has logged. 
+Flow of events User System 
+1. View the list of cultural goods as a result of the use case RicercaBeneCulturale, it selects and activates a function to view the card. 
+2 Loads the data for the selected cultural. 
+Exit conditions • The system displays the details of the selected cultural. 
+• Interruption of the connection to the server ETOUR. 
+Quality 
+requirements

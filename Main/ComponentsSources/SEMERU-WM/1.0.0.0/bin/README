@@ -1,0 +1,10 @@
+The components and types must be built yourself at least once after checkout.
+The post-build events will copy them to the appropriate folder in /bin.
+You may then run CopyAll.bat to copy them to your TraceLab components folder.
+
+BUILD ORDER
+===========
+SEMERU
+SEMERU.Custom
+SEMERU.Tools
+Stanford.NLP

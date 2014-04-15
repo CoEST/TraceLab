@@ -1,0 +1,13 @@
+Use case name FEEDBACKGIA'RILASCIATO 
+E 'already been issued with a feedback for the selected site. 
+Partecipating 
+Actor initialization 
+Entry 
+conditions • E 'already been issued with a feedback for the selected site. 
+Flow of events User System 
+1. Notification that the user has already issued a feedback for the site and cancel the operation to insert a new feedback. 
+2 Confirmation of the reading of the notification. 
+3 Recovers the previous state. 
+Exit conditions • The system returns control to the user interaction. 
+Quality 
+requirements

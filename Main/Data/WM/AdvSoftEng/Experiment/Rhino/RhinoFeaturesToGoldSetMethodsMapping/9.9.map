@@ -1,0 +1,4 @@
+org.mozilla.javascript.FunctionObject.convertArg
+org.mozilla.javascript.Context.toObject
+org.mozilla.javascript.ScriptRuntime.toObjectOrNull
+org.mozilla.javascript.ScriptRuntime.toObject

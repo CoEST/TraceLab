@@ -1,0 +1,1 @@
+allow display mask mask name result date reserv reserv reserv request request time time time access access obtain find calcul calcul calcul serv serv serv averag averag averag averag descript descript descript panel 9 1 button method attribut numer version btnuscita guiprincipal task repres guitempimedi chart panelrisultati pend graphrisultati occur occur tempimedi demand 

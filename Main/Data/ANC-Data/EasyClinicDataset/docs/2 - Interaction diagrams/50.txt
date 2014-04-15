@@ -1,0 +1,23 @@
+Show details visit 
+     The service was launched following the express request 
+by the Patient The actor Patient access to the mask 
+(instance of GUICartellaClinica) on the management of 
+clinic folder of patients and there select a visit from 
+see from the list of visits Control 
+then the application of which GUICartellaClinicaHandler 
+GUIVisitaHandler delegation to the instance of the task of managing the 
+The service first step is to gather the information 
+on the selected visit therefore control passes 
+The application of VisiteManager primarily through 
+The body of visits retrieves this information and then 
+EsamiManager delegation to the instance of the task of finding the 
+information associated with all examinations related to the visit 
+The selected object retrieved information through the 
+Consideration of instances provides the results of the application 
+VisiteManager which in turn returns all 
+information found backward up to the instance of 
+The latter finally GUIVisitaHandler shall 
+displaying the information received on the mask 
+on the detailed display of visits (for instance 
+GUIVisita) This feature is was described by 
+collaboration diagram of Fig 3 12

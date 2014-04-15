@@ -1,0 +1,14 @@
+Use case name VISUALIZZASTORICOCONVENZIONI 
+View the history of conventions derived from a selected point of rest. 
+Partecipating 
+Actor initialization Agency Operator 
+Entry 
+Operator conditions • The Agency is in the form of a designated point of rest. 
+
+Flow of events User System 
+1. Access the features on the display of historical conventions. 
+2 Upload data on conventions from the restaurant selected. 
+Exit conditions • The system displays the history of conventions concerning the point of eating selected. 
+• Interruption of the connection to the server ETOUR. 
+Quality 
+requirements

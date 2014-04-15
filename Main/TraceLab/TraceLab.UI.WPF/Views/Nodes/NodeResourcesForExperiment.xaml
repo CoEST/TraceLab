@@ -1,0 +1,125 @@
+﻿<!--
+TraceLab - Software Traceability Instrument to Facilitate and Empower Traceability Research
+Copyright (C) 2012-2013 CoEST - National Science Foundation MRI-R2 Grant # CNS: 0959924
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see<http://www.gnu.org/licenses/>.
+-->
+
+<ResourceDictionary
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:NodeControls="clr-namespace:TraceLab.UI.WPF.Views.Nodes"
+             xmlns:Views="clr-namespace:TraceLab.UI.WPF.Views"
+             xmlns:ViewModelsNodes="clr-namespace:TraceLab.UI.WPF.ViewModels.Nodes"
+             xmlns:Experiments="clr-namespace:TraceLab.Core.Experiments;assembly=TraceLab.Core"
+             xmlns:GraphSharp_Controls="clr-namespace:GraphSharp.Controls;assembly=GraphSharp.Controls" 
+             xmlns:WPFExtensions_AttachedBehaviours="clr-namespace:WPFExtensions.AttachedBehaviours;assembly=WPFExtensions"
+             mc:Ignorable="d">
+    <!-- Node resources for the top level expriments -->
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Views/Nodes/VertexControlStyle.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Views/Nodes/EdgeStyle.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- Template for StartNode control -->
+    <DataTemplate DataType="{x:Type GraphSharp_Controls:VertexControl}" x:Key="StartNodeControl">
+        <NodeControls:BasicNodeControl DisplayLinkCreationButton="True" IsAnyAllButtonEnabled="False" />
+    </DataTemplate>
+
+    <!-- Template for EndNode control -->
+    <DataTemplate DataType="{x:Type GraphSharp_Controls:VertexControl}" x:Key="EndNodeControl">
+        <NodeControls:BasicNodeControl DisplayLinkCreationButton="False" IsAnyAllButtonEnabled="True" />
+    </DataTemplate>
+
+    <!-- Template for ComponentNode control -->
+    <DataTemplate DataType="{x:Type GraphSharp_Controls:VertexControl}" x:Key="ComponentNodeControl">
+        <NodeControls:ComponentNodeControl ComponentNode="{Binding Vertex}" 
+                                           DisplayLinkCreationButton="True"
+                                           DisplayRemoveNodeButton="True"
+                                           DisplayToogleInfoButton="True"
+                                           DisplayMagnifierButton="False"
+                                           IsAnyAllButtonEnabled="True"
+                                           CornerRadius="10,10,10,10" />
+    </DataTemplate>
+
+    <!-- Template for CompositeComponentNode control -->
+    <DataTemplate DataType="{x:Type GraphSharp_Controls:VertexControl}" x:Key="CompositeComponentNodeControl">
+        <NodeControls:ComponentNodeControl ComponentNode="{Binding Vertex}" 
+                                           DisplayLinkCreationButton="True"
+                                           DisplayRemoveNodeButton="True"
+                                           DisplayToogleInfoButton="True"
+                                           DisplayMagnifierButton="True"
+                                           IsAnyAllButtonEnabled="True"
+                                           CornerRadius="0,0,0,0" />
+    </DataTemplate>
+
+    <!-- Template for DecisionNode control -->
+    <DataTemplate DataType="{x:Type GraphSharp_Controls:VertexControl}" x:Key="DecisionNodeControl">
+        <NodeControls:DecisionNodeControl DisplayLinkCreationButton="False"
+                                          DisplayRemoveNodeButton="True"
+                                          DisplayToogleInfoButton="True"
+                                          DisplayAddScopeButton="True"
+                                          IsAnyAllButtonEnabled="True" />
+    </DataTemplate>
+
+    <!-- Template for old Goto DecisionNode control (hide AddScope, and display LinkCreationButton) -->
+    <DataTemplate DataType="{x:Type GraphSharp_Controls:VertexControl}" x:Key="GotoDecisionNodeControl">
+        <NodeControls:DecisionNodeControl DisplayLinkCreationButton="True"
+                                          DisplayRemoveNodeButton="True"
+                                          DisplayToogleInfoButton="True"
+                                          DisplayAddScopeButton="False"
+                                          IsAnyAllButtonEnabled="True" />
+    </DataTemplate>
+
+    <!-- Template for ScopeNode control -->
+    <DataTemplate DataType="{x:Type GraphSharp_Controls:VertexControl}" x:Key="ScopeNodeControl">
+        <NodeControls:ScopeNodeControl DisplayRemoveNodeButton="True" />
+    </DataTemplate>
+
+    <!-- Template for Exit Decision Node; ie exit node from scope -->
+    <DataTemplate DataType="{x:Type GraphSharp_Controls:VertexControl}" x:Key="ExitDecisionNodeControl">
+        <NodeControls:ExitDecisionNodeControl DisplayLinkCreationButton="True" />
+    </DataTemplate>
+
+    <!-- Template for LoopScopeNodeControl control -->
+    <DataTemplate DataType="{x:Type GraphSharp_Controls:VertexControl}" x:Key="LoopScopeNodeControl">
+        <NodeControls:LoopScopeNodeControl DisplayLinkCreationButton="True"
+                                           DisplayRemoveNodeButton="True"
+                                           DisplayToogleInfoButton="True" />
+    </DataTemplate>
+
+    <!-- Template for component info pane -->
+    <DataTemplate DataType="{x:Type ViewModelsNodes:ComponentNodeInfo}">
+        <NodeControls:ComponentNodeInfoControl />
+    </DataTemplate>
+
+    <!-- Template for decision info pane -->
+    <DataTemplate DataType="{x:Type ViewModelsNodes:DecisionNodeInfo}">
+        <NodeControls:DecisionNodeInfoControl />
+    </DataTemplate>
+
+    <!-- Template for composite component info pane -->
+    <DataTemplate DataType="{x:Type ViewModelsNodes:CompositeComponentNodeInfo}">
+        <NodeControls:ComponentNodeInfoControl />
+    </DataTemplate>
+
+    <!-- Template for loop decision info pane -->
+    <DataTemplate DataType="{x:Type ViewModelsNodes:LoopDecisionNodeInfo}">
+        <NodeControls:LoopDecisionNodeInfoControl />
+    </DataTemplate>
+
+</ResourceDictionary>

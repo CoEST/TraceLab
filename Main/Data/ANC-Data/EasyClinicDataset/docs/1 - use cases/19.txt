@@ -1,0 +1,25 @@
+Access section patient 
+It allows access to this patient 
+                 by enabling the operator to 
+                 meet one or more Requests received 
+                 by Patient 
+                 The Operator's interest to access the section of
+                 the patient in order to 
+                 enslave the requests received from 
+                 Patient 
+The Operator has been recognized by ` 
+                 System (See UcValOp) 
+The system denies access to 
+                 section patient 
+                 Success: The operator gets access 
+                 section and enabled the patient to 
+                 meet the requests received from 
+                 Patient 
+The operator activates the execution of 
+                 service access to section patient 
+Includes 1 (valid patient) 
+2 View mask of
+     section patient 
+Operator cancels the operation 
+access to patient session 
+  3 1 ends the use case with failure

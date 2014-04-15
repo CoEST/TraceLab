@@ -1,0 +1,2 @@
+org.mozilla.javascript.TokenStream.getToken
+org.mozilla.javascript.TokenStream.skipLine

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:poirot="http://www.w3schools.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.w3schools.com">
+<xs:element name="artifacts">
+	<xs:complexType mixed="true">
+    	<xs:sequence>
+			<xs:element maxOccurs="1" minOccurs="1" name="project_id" type="xs:positiveInteger"/>
+			<xs:element maxOccurs="1" minOccurs="1" name="artifact_type" type="xs:string"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="artifact">
+				<xs:complexType>
+    				<xs:sequence>
+    					<xs:element name="art_id">
+	    					<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="50"/>
+									<xs:whiteSpace value="collapse"/>
+								</xs:restriction>
+							</xs:simpleType>
+    					</xs:element>
+    					<xs:element name="art_title" nillable="false">
+	    					<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="500"/>
+									<xs:whiteSpace value="collapse"/>
+								</xs:restriction>
+							</xs:simpleType>
+    					</xs:element>
+    					<xs:element minOccurs="0" name="art_parent">
+	    					<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="50"/>
+								</xs:restriction>
+							</xs:simpleType>
+    					</xs:element>
+    					<xs:element minOccurs="0" name="art_content" type="xs:string"/>
+						<xs:element minOccurs="0" name="art_type" type="xs:string"/>
+    				</xs:sequence>
+    			</xs:complexType>
+			</xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+</xs:element>
+</xs:schema>

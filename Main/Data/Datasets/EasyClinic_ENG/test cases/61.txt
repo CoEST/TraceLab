@@ -1,0 +1,18 @@
+Validation test case Patient Data: 
+    C11 Card Hospital through 20/06/2003 
+            but not stored properly 
+            in S I O 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcValPaz necessary to authenticate an 
+            Patient 
+High Priority 
+The Hospital set up 99,999 Card should not be 
+            recorded in S I O 
+Description test 
+Hospital Input Card: 99,999 
+The Oracle system does not allow access to 
+            section on Patient 
+Classes cover valid: CE1 
+            Classes invalid: CE5

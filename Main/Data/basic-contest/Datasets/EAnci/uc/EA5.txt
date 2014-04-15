@@ -1,0 +1,61 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf110
+{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;\f1\ftech\fcharset0 Wingdings-Regular;\f2\fnil\fcharset0 LucidaGrande;
+\f3\fnil\fcharset77 ZapfDingbatsITC;\f4\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f0\b\fs24 \cf0 Nome caso d\'92uso\
+
+\b0 CancellazioneImpiegato\
+
+\b Attori partecipanti\
+
+\b0 Iniziato da amministratore\
+
+\b Flusso di eventi\
+
+\b0 1. L'amministratore preme il pulsante di cancellazione impiegato.\
+2. Il sistema chiede all'amministratore una conferma.\
+3.	L'amministratore conferma l'operazione. 4.	Il sistema cancella l' impiegato.\
+
+\b Condizione di entrata\
+
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 L'amministratore	si	\'e8	autenticato	nel sistema.\
+
+\f1 \uc0\u61656 
+\f2  
+\f0 Questo	caso	d\'92uso	include 
+\b RicercaImpiegato 
+\b0 e si verifica quando l'amministratore vuole cancellare un impiegato.\
+
+\b Condizioni di uscita\
+
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 L'amministratore	non	conferma l'operazione, OR\
+
+\f1 \uc0\u61656 
+\f2  
+\f0 Il sistema cancella l' impiegato,OR 
+\f3 \uc0\u10146 
+\f4  
+\f0 Nel caso in cui il servizio non \'e8 disponibile viene richiamato il caso\
+d'uso 
+\b ServizioNonDisponibile
+\b0 .\
+
+\b Requisiti di qualita
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 La	stringa	matricola	\'e8	presente	nel sistema, \'e8 formata solo da caratteri numerici ed ha lunghezza di 6 caratteri.\
+
+\f1 \uc0\u61656 
+\f2  
+\f0 La stringa nome deve essere presente nel sistema ed associata al cognome, pu\'f2 contenere caratteri [ a..z A..Z ' \'e0\'e9\'e8\'ec\'f2\'f9 ] e deve avere una lunghezza massima di 30 caratteri.\
+
+\f1 \uc0\u61656 
+\f2  
+\f0 La stringa cognome deve essere presente nel sistema ed associata al nome, pu\'f2 contenere caratteri [ a..z A..Z ' \'e0\'e9\'e8\'ec\'f2\'f9 ] e deve avere una lunghezza massima di 30 caratteri.}

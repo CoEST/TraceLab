@@ -1,0 +1,3253 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>ComponentLoggerImplementation Members</title>
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="ComponentLoggerImplementation class" />
+    <meta name="System.Keywords" content="ComponentLoggerImplementation class, all members" />
+    <meta name="System.Keywords" content="TraceLabSDK.ComponentLoggerImplementation class" />
+    <meta name="Microsoft.Help.Id" content="AllMembers.T:TraceLabSDK.ComponentLoggerImplementation" />
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    <link rel="stylesheet" type="text/css" href="../styles/Presentation.css" />
+    <link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <meta name="container" content="TraceLabSDK" />
+    <meta name="file" content="598280d0-1c7a-f0e2-bf0b-7b6986f6171e" />
+    <meta name="guid" content="598280d0-1c7a-f0e2-bf0b-7b6986f6171e" />
+    <xml>
+      <MSHelp:Attr Name="AssetID" Value="AllMembers.T:TraceLabSDK.ComponentLoggerImplementation" />
+      <MSHelp:TOCTitle Title="ComponentLoggerImplementation Members" />
+      <MSHelp:RLTitle Title="ComponentLoggerImplementation Members (TraceLabSDK)" />
+      <MSHelp:Keyword Index="A" Term="AllMembers.T:TraceLabSDK.ComponentLoggerImplementation" />
+      <MSHelp:Keyword Index="A" Term="frlrfTraceLabSDKComponentLoggerImplementationMembersTopic" />
+      <MSHelp:Keyword Index="K" Term="ComponentLoggerImplementation class" />
+      <MSHelp:Keyword Index="K" Term="ComponentLoggerImplementation class, all members" />
+      <MSHelp:Keyword Index="K" Term="TraceLabSDK.ComponentLoggerImplementation class" />
+      <MSHelp:Attr Name="HelpPriority" Value="1" />
+      <MSHelp:Attr Name="DevLang" Value="CSharp" />
+      <MSHelp:Attr Name="DevLang" Value="VB" />
+      <MSHelp:Attr Name="Locale" Value="en-us" />
+      <MSHelp:Attr Name="TopicType" Value="kbSyntax" />
+      <MSHelp:Attr Name="TopicType" Value="apiref" />
+      <MSHelp:Attr Name="AssemblyVersion" Value="0.5.0.0" />
+    </xml>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+    <img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+    <div id="header">
+      <table id="topTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+              <img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label><label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span>    </span>
+            <span id="devlangsDropdown" class="filter" tabindex="0">
+              <img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> <label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label><label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label><label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label><label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label><label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label></span>
+            <span>    </span>
+            <span id="memberOptionsDropdown" class="filter" tabindex="0">
+              <img id="memberOptionsDropdownImage" src="../icons/dropdown.gif" /> <label id="memberOptionsMenuAllLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Show All </nobr></label><label id="memberOptionsMenuMultipleLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered </nobr></label><label id="memberOptionsMenuProtectedLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered </nobr></label><label id="memberOptionsMenuInheritedLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered </nobr></label></span>
+          </td>
+        </tr>
+      </table>
+      <div id="devlangsMenu">
+        <input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="CSharpCheckbox">C#</label>
+        <br />
+        <input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label>
+        <br />
+        <input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label>
+        <br />
+      </div>
+      <div id="memberOptionsMenu">
+        <input id="ProtectedCheckbox" type="checkbox" data="Protected" value="on" onClick="SetMemberOptions(this, 'vis')" />
+        <label class="checkboxLabel" for="ProtectedCheckbox">Include Protected Members</label>
+        <br />
+        <input id="InheritedCheckbox" type="checkbox" data="Inherited" value="on" onClick="SetMemberOptions(this, 'decl')" />
+        <label class="checkboxLabel" for="InheritedCheckbox">Include Inherited Members</label>
+        <br />
+      </div>
+      <table id="bottomTable" cellpadding="0" cellspacing="0">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">A Sandcastle Documented Class Library</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">ComponentLoggerImplementation Members</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td align="left">
+            <a href="c1399d5c-e5e5-98a4-785c-e1ff5252ea76.htm">ComponentLoggerImplementation Class</a> <a href="#constructorTableToggle" onclick="OpenSection(constructorTableToggle)">Constructors</a> <a href="#methodTableToggle" onclick="OpenSection(methodTableToggle)">Methods</a> <a href="#propertyTableToggle" onclick="OpenSection(propertyTableToggle)">Properties</a> <a href="#seeAlsoToggle" onclick="OpenSection(seeAlsoToggle)">See Also</a> <span id="headfeedbackarea" class="feedbackhead"><a href="javascript:SubmitFeedback('','A Sandcastle Documented Class Library','','','','%0\dYour%20feedback%20is%20used%20to%20improve%20the%20documentation%20and%20the%20product.%20Your%20e-mail%20address%20will%20not%20be%20used%20for%20any%20other%20purpose%20and%20is%20disposed%20of%20after%20the%20issue%20you%20report%20is%20resolved.%20%20While%20working%20to%20resolve%20the%20issue%20that%20you%20report,%20you%20may%20be%20contacted%20via%20e-mail%20to%20get%20further%20details%20or%20clarification%20on%20the%20feedback%20you%20sent.%20After%20the%20issue%20you%20report%20has%20been%20addressed,%20you%20may%20receive%20an%20e-mail%20to%20let%20you%20know%20that%20your%20feedback%20has%20been%20addressed.%0\A%0\d','Customer%20Feedback');">Send Feedback</a></span></td>
+        </tr>
+      </table>
+      <table id="gradientTable">
+        <tr>
+          <td class="nsrBottom" background="../icons/gradient.gif" />
+        </tr>
+      </table>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <span style="color: DarkGray"></span>
+        <p />
+        <p>The <a href="c1399d5c-e5e5-98a4-785c-e1ff5252ea76.htm">ComponentLoggerImplementation</a> type exposes the following members.</p>
+        <h1 class="heading">
+          <span onclick="ExpandCollapse(constructorTableToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(constructorTableToggle, event)" tabindex="0">
+            <img id="constructorTableToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Constructors</span>
+        </h1>
+        <div id="constructorTableSection" class="section" name="collapseableSection" style="">
+          <table id="memberList" class="members" frame="lhs" cellpadding="2">
+            <col width="10%" />
+            <tr>
+              <th class="iconColumn">
+               
+            </th>
+              <th class="nameColumn">Name</th>
+              <th class="descriptionColumn">Description</th>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="c0b6461a-5b4e-0074-07d6-70076bc9b25e.htm">ComponentLoggerImplementation</a>
+              </td>
+              <td>
+                <div class="summary">Initializes a new instance of the <a href="c1399d5c-e5e5-98a4-785c-e1ff5252ea76.htm">ComponentLoggerImplementation</a> class</div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <h1 class="heading">
+          <span onclick="ExpandCollapse(methodTableToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(methodTableToggle, event)" tabindex="0">
+            <img id="methodTableToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Methods</span>
+        </h1>
+        <div id="methodTableSection" class="section" name="collapseableSection" style="">
+          <table id="memberList" class="members" frame="lhs" cellpadding="2">
+            <col width="10%" />
+            <tr>
+              <th class="iconColumn">
+               
+            </th>
+              <th class="nameColumn">Name</th>
+              <th class="descriptionColumn">Description</th>
+            </tr>
+            <tr data="public;inherited;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="http://msdn2.microsoft.com/en-us/library/2ch65xad" target="_blank">CreateObjRef</a>
+              </td>
+              <td>
+                <div class="summary">Creates an object that contains all the relevant information required to generate a proxy used to communicate with a remote object.</div> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/w4302s1f" target="_blank">MarshalByRefObject</a>.)</td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="8e2da23e-bf3d-0d13-5e6c-8dd9ea1116a8.htm">Debug(Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="8358f14f-df7c-d5d9-c5fe-7e4d0ac56bd8.htm">Debug(String)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="50b7d7cc-6591-e211-226e-1bb17360d29e.htm">Debug(IFormatProvider, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="7d99534e-de51-09ed-ecf1-e2e94e31b2e4.htm">Debug(String, Boolean)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="a60da792-8d0d-b1dc-f61e-1572f0821946.htm">Debug(String, Byte)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="7870a240-74cd-23cf-2de6-53e137151e50.htm">Debug(String, Char)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="32d17dd9-24b7-9e4d-0d3e-de39c0fa9517.htm">Debug(String, Decimal)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="1978b9e3-9c77-04e8-776f-c776ba54fdf8.htm">Debug(String, Double)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="e5c9be3d-831e-d424-b988-a2f5f9e8c273.htm">Debug(String, Int32)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="75faa099-778c-f9e0-856d-8e7841d043d1.htm">Debug(String, Int64)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="49bb09f4-cd62-d311-9617-645400b5496b.htm">Debug(String, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="840504ad-aa85-fd64-4d31-4e6e8c673afb.htm">Debug(String, <span class="languageSpecificText"><span class="cpp">array&lt;</span></span>Object<span class="languageSpecificText"><span class="cpp">&gt;</span><span class="cs">[]</span><span class="vb">()</span><span class="nu">[]</span><span class="fs">[]</span></span>)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified parameters
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="b806d1a9-99aa-5da6-bd69-9bf099bd13fc.htm">Debug(String, Single)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="9d7d3b22-2326-2cf5-3f7a-76d3e313d544.htm">Debug(String, String)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="8cc36354-6e41-7a87-3dd6-f83b83df38ea.htm">Debug(IFormatProvider, String, Boolean)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="6d262cef-525d-8ff3-8222-d1f2830ead7e.htm">Debug(IFormatProvider, String, Byte)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="0b7e9c41-60d2-5186-3475-c9adb4daeffb.htm">Debug(IFormatProvider, String, Char)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="5b8d770b-77ce-9091-9b38-62d24e2f4126.htm">Debug(IFormatProvider, String, Decimal)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="7e59a92b-3c68-887c-3529-680c8846f9c6.htm">Debug(IFormatProvider, String, Double)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="5130f561-ac7a-3b22-bdc2-0ce971f9e453.htm">Debug(IFormatProvider, String, Int32)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="7dab83c2-9605-3ee3-30ed-3334d8de14f8.htm">Debug(IFormatProvider, String, Int64)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="19019825-2a50-3167-9736-c0352ac59ae7.htm">Debug(IFormatProvider, String, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="a12f805f-4d26-fb13-99f7-b06e64d99fbc.htm">Debug(IFormatProvider, String, <span class="languageSpecificText"><span class="cpp">array&lt;</span></span>Object<span class="languageSpecificText"><span class="cpp">&gt;</span><span class="cs">[]</span><span class="vb">()</span><span class="nu">[]</span><span class="fs">[]</span></span>)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified parameters
+            and formatting them with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="ef4a1f7c-628e-9fdb-e5d2-0da8dd554f77.htm">Debug(IFormatProvider, String, Single)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="7df2742d-1fa1-9ee3-6804-83e5b899675c.htm">Debug(IFormatProvider, String, String)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="752feb73-d7be-e206-3757-062da20a3035.htm">Debug(String, Object, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified parameters
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="c76db441-a483-fc18-c0fe-972c8693c588.htm">Debug(String, Object, Object, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified parameters.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="cb2f8918-b653-9235-8661-2239ed0eafdc.htm">Debug<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>T<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(T)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="38e6496f-bcc2-267c-2c55-0aebb98d76ae.htm">Debug<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>T<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, T)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="d2c1f88d-376d-f0e3-22b4-884c8bd1c49f.htm">Debug<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(String, TArgument)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified parameter
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="b5f904b7-2bc2-99ea-e6f5-a358a5a58fff.htm">Debug<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, String, TArgument)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified parameter
+            and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="f0548ed8-35cf-f973-64eb-f6be9c1db641.htm">Debug<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(String, TArgument1, TArgument2)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified parameters
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="1074c8ee-8d83-3606-3e4e-8f4ec4a180fc.htm">Debug<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, String, TArgument1, TArgument2)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified arguments
+            formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="1f583c31-65b9-0666-3ca1-4829ce1cc68b.htm">Debug<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2, TArgument3<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(String, TArgument1, TArgument2, TArgument3)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified parameters.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="56c3929e-9995-b5e5-b8dc-f7494dd206e3.htm">Debug<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2, TArgument3<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, String, TArgument1, TArgument2, TArgument3)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified arguments
+            formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="480cddab-464f-7836-6dc5-4c0db7ae9b14.htm">DebugException</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message and exception at the Debug level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;inherited;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="http://msdn2.microsoft.com/en-us/library/bsc2ak47" target="_blank">Equals</a>
+              </td>
+              <td>
+                <div class="summary">Determines whether the specified <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a> is equal to the current <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.</div> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="f757a281-582f-5a61-dc6b-a71a0a1c37c3.htm">Error(Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="33324ffd-838f-a7e2-1bc6-7a72ab608163.htm">Error(String)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="acab4275-17dd-7b3a-90b2-b738560677c8.htm">Error(IFormatProvider, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="373bf00d-f3a2-23e1-c7fd-5f660144462a.htm">Error(String, Boolean)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="bba89a08-c3e9-2a0f-0e4b-77570ba345b9.htm">Error(String, Byte)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="43a3d194-a80e-b57a-c017-0443529d742c.htm">Error(String, Char)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="2cd9a52f-c87c-7ef1-1cae-c7599a20d195.htm">Error(String, Decimal)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="5a6964ca-14b9-d38a-7d5a-9b80ca186ed1.htm">Error(String, Double)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="617a0843-bfc2-10d2-d1f5-1c6b45bb7aab.htm">Error(String, Int32)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="535508b5-552f-a7d3-775f-9000707c31b2.htm">Error(String, Int64)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="82aaa6a2-5052-a04f-5c9c-351e7f974687.htm">Error(String, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="2b3632d5-e7df-af11-f3b0-0db0b33fb3a8.htm">Error(String, <span class="languageSpecificText"><span class="cpp">array&lt;</span></span>Object<span class="languageSpecificText"><span class="cpp">&gt;</span><span class="cs">[]</span><span class="vb">()</span><span class="nu">[]</span><span class="fs">[]</span></span>)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified parameters
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="ec3569ba-1e59-2a2a-d93c-1a590aa8f127.htm">Error(String, Single)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified value as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="11b2f1dd-b2d1-b675-dae7-5dcd09cd0493.htm">Error(String, String)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="cdc938f8-8774-dee3-dcdf-19d5b33efdd6.htm">Error(IFormatProvider, String, Boolean)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="97796d20-ed25-c98c-9269-c99ebd942df0.htm">Error(IFormatProvider, String, Byte)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="43759f9c-4166-843d-15f7-d1fad4af72aa.htm">Error(IFormatProvider, String, Char)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="1067cca6-f5d5-9116-4d27-e0f1f8b1e05c.htm">Error(IFormatProvider, String, Decimal)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="82743db0-8054-b7f7-0252-21e7b5aaf2d7.htm">Error(IFormatProvider, String, Double)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="b3f5ed4b-f7c5-88bd-e95b-214ae2240484.htm">Error(IFormatProvider, String, Int32)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="d3762257-9e54-d075-8977-edba4d893996.htm">Error(IFormatProvider, String, Int64)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="4c559668-611c-e502-9ad2-5fedf142b9b3.htm">Error(IFormatProvider, String, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="0e3fa0b2-10d9-be13-fa51-06423597df5a.htm">Error(IFormatProvider, String, <span class="languageSpecificText"><span class="cpp">array&lt;</span></span>Object<span class="languageSpecificText"><span class="cpp">&gt;</span><span class="cs">[]</span><span class="vb">()</span><span class="nu">[]</span><span class="fs">[]</span></span>)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified parameters
+            and formatting them with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="e75efaeb-10eb-31e7-43c5-a9946e4a5079.htm">Error(IFormatProvider, String, Single)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="c7acc4f2-4911-e88a-7835-3708b18485a9.htm">Error(IFormatProvider, String, String)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="143b405b-ab9a-ad3a-3158-916fc3343f6c.htm">Error(String, Object, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified parameters
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="0116fcb1-79d6-df83-b316-6a3e3a34c467.htm">Error(String, Object, Object, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified parameters.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="f5f8e20a-490e-75b4-42ee-dd473985feb6.htm">Error<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>T<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(T)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="1d17dc0d-147a-3d8b-f238-39f24cc325bd.htm">Error<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>T<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, T)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="a21de820-ab0c-1362-41ec-63c440682d60.htm">Error<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(String, TArgument)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified parameter
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="ca0177c9-bd20-3c7b-40d9-9e283b4fbf74.htm">Error<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, String, TArgument)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified parameter
+            and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="0618f02b-c5fe-9830-f6ce-db336c891a86.htm">Error<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(String, TArgument1, TArgument2)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified parameters
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="e72e29eb-108a-aad5-04e1-28fd79957e53.htm">Error<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, String, TArgument1, TArgument2)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified arguments
+            formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="6eef40ce-6a4c-3743-d78e-92c45d6d90d7.htm">Error<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2, TArgument3<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(String, TArgument1, TArgument2, TArgument3)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified parameters.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="b616f364-3da8-a7cd-db4a-b07ccc20f354.htm">Error<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2, TArgument3<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, String, TArgument1, TArgument2, TArgument3)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Error level using the specified arguments
+            formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="3318f719-7191-eda0-2b00-901acd51d709.htm">ErrorException</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message and exception at the Error level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="c26a4537-cf16-18c4-6fc7-78c370d0e395.htm">Fatal(Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="4f3180c3-abe7-32a4-4f56-a224b5de9408.htm">Fatal(String)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="dbd5a680-b5ae-c455-8b47-7426a4318cbe.htm">Fatal(IFormatProvider, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="928871ea-1db1-676f-7a06-7c8a7efb53a8.htm">Fatal(String, Boolean)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="22be957b-3be6-27f6-bdb6-17577435ddd3.htm">Fatal(String, Byte)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="6c6e58a2-6e73-278f-69bd-6add50797279.htm">Fatal(String, Char)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="032415b9-e93a-4588-4a17-ca93a657e905.htm">Fatal(String, Decimal)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="846c89bb-e979-92fc-5fb8-1a4c05552a45.htm">Fatal(String, Double)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="41c7aeda-9d6f-ef58-7fbb-d3273a0c5ee8.htm">Fatal(String, Int32)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="41caab9a-4a5b-3c03-b837-f12987ca0adf.htm">Fatal(String, Int64)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="395583bb-8088-16bb-edf4-4b6b4ea73fe1.htm">Fatal(String, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="5e18a047-a339-245a-def4-7a74b867c2a7.htm">Fatal(String, <span class="languageSpecificText"><span class="cpp">array&lt;</span></span>Object<span class="languageSpecificText"><span class="cpp">&gt;</span><span class="cs">[]</span><span class="vb">()</span><span class="nu">[]</span><span class="fs">[]</span></span>)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified parameters
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="e4aa7f50-1fe4-e3bd-a9a4-fe7c8cf8995b.htm">Fatal(String, Single)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified value as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="77d007f2-cb53-d92f-213b-665d1a1f3902.htm">Fatal(String, String)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="bd58483c-1078-3402-6487-5ae5c9e0519d.htm">Fatal(IFormatProvider, String, Boolean)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="971f9fdc-3a98-0416-e77f-1c08aeab8fd5.htm">Fatal(IFormatProvider, String, Byte)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="ee07f9f3-19bc-326f-b31f-9bc28f8d1b3c.htm">Fatal(IFormatProvider, String, Char)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="b044dea0-cfc4-1728-1482-4c79dbd89bab.htm">Fatal(IFormatProvider, String, Decimal)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="a03ed019-4c63-284a-7937-b538a5c6af57.htm">Fatal(IFormatProvider, String, Double)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="bb41ca78-0566-93e6-81d9-f58f4ef666d4.htm">Fatal(IFormatProvider, String, Int32)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="788bf5a4-baca-bf63-2499-4b65191d17be.htm">Fatal(IFormatProvider, String, Int64)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="c7f5794a-9c87-c493-da8d-5dd91f0b2f89.htm">Fatal(IFormatProvider, String, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="b4cc4db4-f8fa-1de6-de5a-0673a4bae6da.htm">Fatal(IFormatProvider, String, <span class="languageSpecificText"><span class="cpp">array&lt;</span></span>Object<span class="languageSpecificText"><span class="cpp">&gt;</span><span class="cs">[]</span><span class="vb">()</span><span class="nu">[]</span><span class="fs">[]</span></span>)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified parameters
+            and formatting them with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="19e0a1f3-1b02-4c18-5b67-1035cc28bba8.htm">Fatal(IFormatProvider, String, Single)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="5ab23b24-b359-ee48-ded1-9e22636fc350.htm">Fatal(IFormatProvider, String, String)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="4b421908-34ac-1b0f-3b92-db794564864b.htm">Fatal(String, Object, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified parameters
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="282d6a10-71ff-f3df-66b8-7657fe193004.htm">Fatal(String, Object, Object, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified parameters.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="56af7310-0f31-da66-e943-ebecec969337.htm">Fatal<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>T<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(T)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="07ff6428-618c-638c-51ea-6842ab05ffc3.htm">Fatal<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>T<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, T)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="9de66e1e-aabc-b648-28ec-618364d22840.htm">Fatal<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(String, TArgument)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified parameter
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="23ac56eb-2638-7224-f7d2-2b15d5e8b38b.htm">Fatal<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, String, TArgument)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified parameter
+            and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="88b76071-15f0-b94d-17f5-4448ea643683.htm">Fatal<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(String, TArgument1, TArgument2)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified parameters
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="93bcbf68-456b-05df-af32-df48ecc86a6d.htm">Fatal<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, String, TArgument1, TArgument2)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified arguments
+            formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="fd3d3806-e755-4bf6-7444-a5ee07acc3fb.htm">Fatal<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2, TArgument3<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(String, TArgument1, TArgument2, TArgument3)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified parameters.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="44484589-da7e-0d19-89e4-5233bb6dd86b.htm">Fatal<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2, TArgument3<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, String, TArgument1, TArgument2, TArgument3)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Fatal level using the specified arguments
+            formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="3d6c9ce0-189f-00f7-b3fc-241fc56bcd0c.htm">FatalException</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message and exception at the Fatal level.
+            </div>
+              </td>
+            </tr>
+            <tr data="protected;inherited;notNetfw;">
+              <td>
+                <img src="../icons/protmethod.gif" alt="Protected method" title="Protected method" />
+              </td>
+              <td>
+                <a href="http://msdn2.microsoft.com/en-us/library/4k87zsw7" target="_blank">Finalize</a>
+              </td>
+              <td>
+                <div class="summary">Allows an object to try to free resources and perform other cleanup operations before it is reclaimed by garbage collection.</div> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td>
+            </tr>
+            <tr data="public;inherited;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="http://msdn2.microsoft.com/en-us/library/zdee4b3y" target="_blank">GetHashCode</a>
+              </td>
+              <td>
+                <div class="summary">Serves as a hash function for a particular type. </div> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td>
+            </tr>
+            <tr data="public;inherited;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="http://msdn2.microsoft.com/en-us/library/c6y7316f" target="_blank">GetLifetimeService</a>
+              </td>
+              <td>
+                <div class="summary">Retrieves the current lifetime service object that controls the lifetime policy for this instance.</div> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/w4302s1f" target="_blank">MarshalByRefObject</a>.)</td>
+            </tr>
+            <tr data="public;inherited;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="http://msdn2.microsoft.com/en-us/library/dfwy45w9" target="_blank">GetType</a>
+              </td>
+              <td>
+                <div class="summary">Gets the type of the current instance.</div> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="8506fdfe-6b3f-825b-7781-7b9186069243.htm">Info(Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="42f4d408-0943-da25-beea-b244833baa0d.htm">Info(String)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="876ae943-5304-3d0c-bdb6-f27fc8349b35.htm">Info(IFormatProvider, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="7e682d63-889f-6452-0f74-85c4e3a84127.htm">Info(String, Boolean)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="296c7f2f-1ac5-a594-fb82-2d416b0208b0.htm">Info(String, Byte)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="365712c1-b78b-bba7-b301-8d67a4e95763.htm">Info(String, Char)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="9f0c1085-0257-7651-9cea-39bc23a90086.htm">Info(String, Decimal)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="fbffa076-2622-763b-e2fc-3bba3b0b4ead.htm">Info(String, Double)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="e5a7ab09-cfd6-006c-934e-d45321069c5f.htm">Info(String, Int32)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="38ea21db-b27b-dae7-c840-69695d3a2835.htm">Info(String, Int64)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="26d9ae99-1a1e-30bf-6340-f1b433835d5d.htm">Info(String, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="0aed69fc-908f-b908-dc43-c012b1e8c70b.htm">Info(String, <span class="languageSpecificText"><span class="cpp">array&lt;</span></span>Object<span class="languageSpecificText"><span class="cpp">&gt;</span><span class="cs">[]</span><span class="vb">()</span><span class="nu">[]</span><span class="fs">[]</span></span>)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified parameters
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="98a7108d-f512-1b72-1f0f-12806fbdb21a.htm">Info(String, Single)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified value as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="f6eb6f01-898f-90db-e8a2-88eed48d8136.htm">Info(String, String)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="68e1674c-774b-d9f8-c1e4-992322986d6a.htm">Info(IFormatProvider, String, Boolean)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="09ac5d11-c908-b6fd-c3d2-82b2e64c1441.htm">Info(IFormatProvider, String, Byte)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="edded732-8fa3-a615-c291-4436b647008d.htm">Info(IFormatProvider, String, Char)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="38608588-6954-3a8b-751d-28d3e8c15d26.htm">Info(IFormatProvider, String, Decimal)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="f49259e3-84ce-0ccb-e90d-ab5a290bc3e9.htm">Info(IFormatProvider, String, Double)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="fbdef703-b7f9-10ae-46e4-7028d869c481.htm">Info(IFormatProvider, String, Int32)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="be862a90-4d67-763e-00ce-0e552192d0d8.htm">Info(IFormatProvider, String, Int64)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="328b4400-1f86-dcff-014b-dbc558a1c92c.htm">Info(IFormatProvider, String, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="7a5a464e-507f-9887-7b24-f5de753b87a4.htm">Info(IFormatProvider, String, <span class="languageSpecificText"><span class="cpp">array&lt;</span></span>Object<span class="languageSpecificText"><span class="cpp">&gt;</span><span class="cs">[]</span><span class="vb">()</span><span class="nu">[]</span><span class="fs">[]</span></span>)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified parameters
+            and formatting them with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="cf4a3c9d-bcbd-f519-94fd-8bd6481f5481.htm">Info(IFormatProvider, String, Single)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="8666df72-3ecf-ce9b-c97b-9cf0bac59204.htm">Info(IFormatProvider, String, String)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="ab488dcc-e996-03eb-1b9e-32b5f8e46969.htm">Info(String, Object, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified parameters
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="5811998f-9e53-719b-31b1-0df680a2430a.htm">Info(String, Object, Object, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified parameters.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="63fdf776-9819-04a8-6d23-ed8d09682285.htm">Info<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>T<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(T)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="201de562-8df0-7f0d-be19-c9dcea9ca04f.htm">Info<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>T<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, T)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="e3b35a2e-4410-211c-8dcc-56b40049e1a7.htm">Info<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(String, TArgument)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified parameter
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="0ed82a81-9ff3-fefa-9ba9-9e15a107aa73.htm">Info<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, String, TArgument)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified parameter
+            and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="c4c774f7-3376-4816-315d-0b30130aaeae.htm">Info<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(String, TArgument1, TArgument2)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified parameters
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="9faec28d-0d81-85ed-9a49-1e6fc97f4286.htm">Info<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, String, TArgument1, TArgument2)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified arguments
+            formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="334a405a-ff37-7e2d-8c2d-3160fe3508d6.htm">Info<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2, TArgument3<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(String, TArgument1, TArgument2, TArgument3)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified parameters.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="81c66288-da92-b304-a2a8-b8de70afd02a.htm">Info<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2, TArgument3<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, String, TArgument1, TArgument2, TArgument3)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Info level using the specified arguments
+            formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="38bd6a1d-4135-7200-b6a6-4ce9e337f2fa.htm">InfoException</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message and exception at the Info level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="3a9e60ad-d660-9b7d-797b-91afb604ab75.htm">InitializeLifetimeService</a>
+              </td>
+              <td>
+                <div class="summary">
+            Obtains a lifetime service object to control the lifetime policy for this instance.
+            </div> (Overrides <a href="http://msdn2.microsoft.com/en-us/library/zwt5tzck" target="_blank">MarshalByRefObject<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>InitializeLifetimeService<span class="languageSpecificText"><span class="cs">()</span><span class="cpp">()</span><span class="nu">()</span><span class="fs">()</span></span></a>.)</td>
+            </tr>
+            <tr data="protected;inherited;notNetfw;">
+              <td>
+                <img src="../icons/protmethod.gif" alt="Protected method" title="Protected method" />
+              </td>
+              <td>
+                <a href="http://msdn2.microsoft.com/en-us/library/57ctke0a" target="_blank">MemberwiseClone<span class="languageSpecificText"><span class="cs">()</span><span class="cpp">()</span><span class="nu">()</span><span class="fs">()</span></span></a>
+              </td>
+              <td>
+                <div class="summary">Creates a shallow copy of the current <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.</div> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td>
+            </tr>
+            <tr data="protected;inherited;notNetfw;">
+              <td>
+                <img src="../icons/protmethod.gif" alt="Protected method" title="Protected method" />
+              </td>
+              <td>
+                <a href="http://msdn2.microsoft.com/en-us/library/ms131262" target="_blank">MemberwiseClone(Boolean)</a>
+              </td>
+              <td>
+                <div class="summary">Creates a shallow copy of the current <a href="http://msdn2.microsoft.com/en-us/library/w4302s1f" target="_blank">MarshalByRefObject</a> object.</div> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/w4302s1f" target="_blank">MarshalByRefObject</a>.)</td>
+            </tr>
+            <tr data="public;inherited;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="http://msdn2.microsoft.com/en-us/library/7bxwbwt2" target="_blank">ToString</a>
+              </td>
+              <td>
+                <div class="summary">Returns a string that represents the current object.</div> (Inherited from <a href="http://msdn2.microsoft.com/en-us/library/e5kfa45b" target="_blank">Object</a>.)</td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="fa26ec71-6583-e30a-dae6-ace7cebac987.htm">Trace(Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="3015c801-f5e2-9269-fcc3-64ecf760f61b.htm">Trace(String)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="419790af-c706-eefe-4d1d-adb11ef31705.htm">Trace(IFormatProvider, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="d4c60842-8cd2-c023-1325-02ff288c0f0c.htm">Trace(String, Boolean)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="41a9d3aa-d4ff-9fcb-162c-305ef8a22c73.htm">Trace(String, Byte)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="c7ef731d-a048-cf8f-99fd-933685690355.htm">Trace(String, Char)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="ea241d2a-8d4f-9310-a6b6-2e8499b62774.htm">Trace(String, Decimal)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="47fd1aaa-f795-2547-b340-3b6ab3e1134f.htm">Trace(String, Double)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="47811f56-4bd1-b4b8-7cd7-b7eb9dbf1eb8.htm">Trace(String, Int32)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="55da230a-9e12-d6a6-ad6c-b3cf0bab67ad.htm">Trace(String, Int64)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="b60cbd95-7358-2312-e1d1-835db84bb53b.htm">Trace(String, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="4867b16d-8219-4f95-43c6-bb1ae2951cca.htm">Trace(String, <span class="languageSpecificText"><span class="cpp">array&lt;</span></span>Object<span class="languageSpecificText"><span class="cpp">&gt;</span><span class="cs">[]</span><span class="vb">()</span><span class="nu">[]</span><span class="fs">[]</span></span>)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified parameters
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="bea9f3f8-c7d4-a1fc-e62f-402cdedf54db.htm">Trace(String, Single)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="64193666-b368-3cb9-3a39-a6d342472537.htm">Trace(String, String)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="d97e6cea-f623-e917-f9c1-cb36f38d2577.htm">Trace(IFormatProvider, String, Boolean)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="8739152b-1868-d426-b37e-158924b573f4.htm">Trace(IFormatProvider, String, Byte)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="f60e4af6-eb88-3940-fad8-00bca1068d99.htm">Trace(IFormatProvider, String, Char)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="af0f7d16-c164-9dfc-a091-520179fe9456.htm">Trace(IFormatProvider, String, Decimal)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="59bb7312-fe26-fb1a-40dc-503770cb772f.htm">Trace(IFormatProvider, String, Double)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="0324e5b8-3744-39ea-cc80-585749f4d822.htm">Trace(IFormatProvider, String, Int32)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="40156060-1d28-e5f0-113e-099eaf042e27.htm">Trace(IFormatProvider, String, Int64)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="d81f5fc7-8cbb-3861-d471-cf0c380be039.htm">Trace(IFormatProvider, String, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="dcfe8dc8-a4f6-5a1e-9905-f2b89d4af1d3.htm">Trace(IFormatProvider, String, <span class="languageSpecificText"><span class="cpp">array&lt;</span></span>Object<span class="languageSpecificText"><span class="cpp">&gt;</span><span class="cs">[]</span><span class="vb">()</span><span class="nu">[]</span><span class="fs">[]</span></span>)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified parameters
+            and formatting them with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="c8439f9f-1290-40d4-7c77-7220d9f2fcb4.htm">Trace(IFormatProvider, String, Single)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="70a36ac1-c069-a7f7-af4a-df8490e208ca.htm">Trace(IFormatProvider, String, String)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="dba210cc-9d9f-2f62-d0e9-bda1919bf467.htm">Trace(String, Object, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified parameters
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="32214195-6f9c-978f-6187-d16421be2fdc.htm">Trace(String, Object, Object, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified parameters.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="571ee4c4-7e14-e6ef-e9c7-e76c5667499a.htm">Trace<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>T<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(T)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="482bfedd-c593-0917-e109-efbd83745c78.htm">Trace<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>T<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, T)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="753b41b4-3a7a-b4b4-a30e-b33523eec39b.htm">Trace<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(String, TArgument)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified parameter
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="cf5c89b2-b0dc-918d-ce6e-386f093c4a3b.htm">Trace<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, String, TArgument)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified parameter
+            and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="429381f3-3f2b-1f4e-42c1-e19bc74f5022.htm">Trace<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(String, TArgument1, TArgument2)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified parameters
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="04893597-a292-0e1b-c5a0-26a13a0d4dd5.htm">Trace<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, String, TArgument1, TArgument2)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified arguments
+            formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="ea276611-fc61-2d40-41bf-a3b2526eb0fa.htm">Trace<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2, TArgument3<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(String, TArgument1, TArgument2, TArgument3)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified parameters.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="995ed9cf-0196-2cc6-636f-0522b8d77571.htm">Trace<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2, TArgument3<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, String, TArgument1, TArgument2, TArgument3)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified arguments
+            formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="92b6bd5a-27e5-af42-0f0d-3133e87717da.htm">TraceException</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message and exception at the Trace level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="0e7aa366-7e5b-fa16-4816-fbbbf6786b9f.htm">Warn(Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="7106ed7f-fdab-5cbe-5014-98bc352b3f2b.htm">Warn(String)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="c879e2e1-7c08-a108-4271-b6c0e397e9a1.htm">Warn(IFormatProvider, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="54205d95-e161-0c76-fe5d-aa880696843a.htm">Warn(String, Boolean)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="03752167-b4ad-020f-5b92-2db5bcecb2e9.htm">Warn(String, Byte)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="2fc32b62-60cd-749c-2c32-c66f07f9f9d6.htm">Warn(String, Char)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="54a3dd86-fd53-25a5-9253-4a27f9be5518.htm">Warn(String, Decimal)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="ca64ea6d-0007-942e-770c-d19924148e00.htm">Warn(String, Double)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="ce452d34-ee8e-23e4-7cb5-c6c02f91f0eb.htm">Warn(String, Int32)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="88a7a956-8370-3d2c-aaf3-da82a7254b4d.htm">Warn(String, Int64)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="c0f381eb-f367-aa97-aaea-b22ff05d1949.htm">Warn(String, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="16cea8dc-8542-cd1e-a140-edac4af3458f.htm">Warn(String, <span class="languageSpecificText"><span class="cpp">array&lt;</span></span>Object<span class="languageSpecificText"><span class="cpp">&gt;</span><span class="cs">[]</span><span class="vb">()</span><span class="nu">[]</span><span class="fs">[]</span></span>)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified parameters
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="d12cf02e-b10e-a5ad-1476-c52271692150.htm">Warn(String, Single)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified value as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="29cf005f-b9cf-b8c1-f806-566bb3f4d43b.htm">Warn(String, String)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="b88605c1-ed2d-c4a1-06a1-6d8271251e1f.htm">Warn(IFormatProvider, String, Boolean)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="f6d02aa5-c6e0-5ff8-769a-4fc774ccd795.htm">Warn(IFormatProvider, String, Byte)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="3d59e7f4-d23c-543c-6da4-9993c5037414.htm">Warn(IFormatProvider, String, Char)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="c931877d-db61-9e94-9caa-4cd38b528de3.htm">Warn(IFormatProvider, String, Decimal)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="50d0cb0f-2e9e-1c81-5293-dc9793c898fb.htm">Warn(IFormatProvider, String, Double)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="dba6c8e1-46ba-1a97-26cd-78e9b42d2f27.htm">Warn(IFormatProvider, String, Int32)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="5e27b3ea-3c38-8c33-ef30-aca1ca0f3c89.htm">Warn(IFormatProvider, String, Int64)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="9e57731f-0a5c-3975-6d03-abb632e46f22.htm">Warn(IFormatProvider, String, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="8f91d079-afda-44ec-5ee9-b36df191aea6.htm">Warn(IFormatProvider, String, <span class="languageSpecificText"><span class="cpp">array&lt;</span></span>Object<span class="languageSpecificText"><span class="cpp">&gt;</span><span class="cs">[]</span><span class="vb">()</span><span class="nu">[]</span><span class="fs">[]</span></span>)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified parameters
+            and formatting them with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="cfeedef6-945f-2d8c-abbd-b7c28d02ad13.htm">Warn(IFormatProvider, String, Single)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="8e592a2a-2b1b-9a4a-5264-3f4b69f3fae1.htm">Warn(IFormatProvider, String, String)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="0b926267-24f1-7e80-928f-56d89a16aa8e.htm">Warn(String, Object, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified parameters
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="f284ac8e-11b9-87d0-9472-6ae2eb80a098.htm">Warn(String, Object, Object, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified parameters.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="b6eda952-befe-902e-0bc5-d8f4563c3ad1.htm">Warn<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>T<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(T)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="3547a7af-1283-485f-37ef-77ab3b66387f.htm">Warn<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>T<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, T)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="2b52012c-4c27-7265-2cbc-1e9a8c19fe86.htm">Warn<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(String, TArgument)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified parameter
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="925e4437-bb27-4aa0-e083-c7a33e8246dc.htm">Warn<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, String, TArgument)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified parameter
+            and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="372be79a-cff5-933c-f338-0ec1540ed578.htm">Warn<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(String, TArgument1, TArgument2)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified parameters
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="ec70156f-8067-8f65-9f4e-7652020775c9.htm">Warn<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, String, TArgument1, TArgument2)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified arguments
+            formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="cf622aa9-e431-6956-8853-d472e9d7884a.htm">Warn<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2, TArgument3<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(String, TArgument1, TArgument2, TArgument3)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified parameters.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="58d90267-1463-cc55-83b0-abad8adf4047.htm">Warn<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2, TArgument3<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, String, TArgument1, TArgument2, TArgument3)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Warn level using the specified arguments
+            formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="d960fb77-140b-e26f-7a04-ad16a73c455e.htm">WarnException</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message and exception at the Warn level.
+            </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <h1 class="heading">
+          <span onclick="ExpandCollapse(propertyTableToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(propertyTableToggle, event)" tabindex="0">
+            <img id="propertyTableToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Properties</span>
+        </h1>
+        <div id="propertyTableSection" class="section" name="collapseableSection" style="">
+          <table id="memberList" class="members" frame="lhs" cellpadding="2">
+            <col width="10%" />
+            <tr>
+              <th class="iconColumn">
+               
+            </th>
+              <th class="nameColumn">Name</th>
+              <th class="descriptionColumn">Description</th>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubproperty.gif" alt="Public property" title="Public property" />
+              </td>
+              <td>
+                <a href="695a3540-3ca1-4391-e254-9931b59dc5fe.htm">Name</a>
+              </td>
+              <td />
+            </tr>
+          </table>
+        </div>
+        <h1 class="heading">
+          <span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+            <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See Also</span>
+        </h1>
+        <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+          <div class="seeAlsoStyle">
+            <a href="c1399d5c-e5e5-98a4-785c-e1ff5252ea76.htm">ComponentLoggerImplementation Class</a>
+          </div>
+          <div class="seeAlsoStyle">
+            <a href="23af86fa-6a55-b6e1-c801-36be425319a2.htm">TraceLabSDK Namespace</a>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+        </div>
+        <A NAME="feedback"></A>
+        <span id="fb" class="feedbackcss"></span>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+﻿<graph>
+  <ExperimentInfo>
+    <Version>1</Version>
+    <Id>0ab0cdf6-5a6f-4b84-83b0-1047bcf69fd4</Id>
+    <Name>Graph with loop</Name>
+    <Author>Author</Author>
+    <Contributors>Contributors</Contributors>
+    <Description>Testing graph for the loop with decision node</Description>
+  </ExperimentInfo>
+  <node id="Start">
+    <SerializedVertexData Version="1" X="292" Y="65">
+      <Metadata type="TraceLab.Core.Components.StartNodeMetadata, TraceLab.Core, Version=0.4.1.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Start" />
+    </SerializedVertexData>
+  </node>
+  <node id="End">
+    <SerializedVertexData Version="1" X="291" Y="363">
+      <Metadata type="TraceLab.Core.Components.EndNodeMetadata, TraceLab.Core, Version=0.4.1.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="End" />
+    </SerializedVertexData>
+  </node>
+  <node id="6ab325a9-f117-46a0-8484-8bfc7810de87">
+    <SerializedVertexData Version="1" X="292" Y="138.04">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.4.1.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Test writer" ComponentMetadataDefinitionID="3e60ccf8-5ed0-4ee4-aa27-d3ae0ee2f0cc" WaitsForAllPredecessors="True">
+        <IOSpec Version="1">
+          <Input />
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="testoutput" Type="System.Int32" />
+              <OutputAs>test</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import />
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues />
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="048f6fd5-c0cb-4fa7-a25c-6f71e9255dfe">
+    <SerializedVertexData Version="1" X="291" Y="210.04">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.4.1.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Test reader" ComponentMetadataDefinitionID="25b373b0-e3ae-41a7-8915-914cc0c8637b" WaitsForAllPredecessors="False">
+        <IOSpec Version="1">
+          <Input>
+            <InputItem>
+              <InputItemDefinition Name="testinput" Type="System.Int32" />
+              <MappedTo>test</MappedTo>
+            </InputItem>
+          </Input>
+          <Output />
+          <Import />
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues />
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="532e7deb-ec04-41b5-b42b-893c93224b95">
+    <SerializedVertexData Version="1" X="166" Y="253.04">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.4.1.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Incrementer" ComponentMetadataDefinitionID="d45519de-360c-11e0-9a39-3e21e0d72085" WaitsForAllPredecessors="True">
+        <IOSpec Version="1">
+          <Input>
+            <InputItem>
+              <InputItemDefinition Name="testinput" Type="System.Int32" />
+              <MappedTo>test</MappedTo>
+            </InputItem>
+          </Input>
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="testoutput" Type="System.Int32" />
+              <OutputAs>test</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import />
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues />
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="bb61d6cf-d91c-44d2-be2d-58e35bf053b9">
+    <SerializedVertexData Version="1" X="291" Y="294.04">
+      <Metadata type="TraceLab.Core.Components.DecisionMetadata, TraceLab.Core, Version=0.4.1.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Decision" WaitsForAllPredecessors="True">
+        <DecisionCode>x = Load("test");
+if(x&lt;5) {
+   Select("Incrementer");
+} else {
+   Select("End");
+}</DecisionCode>
+        <DecisionMetadataDefinition>
+          <ID>31a6efa8-b231-4b24-941e-f3ba237f6e6b</ID>
+        </DecisionMetadataDefinition>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <edge id="68af34ab-2998-4e83-91f4-8fdb168cc666" source="Start" target="6ab325a9-f117-46a0-8484-8bfc7810de87" />
+  <edge id="ea543885-e27e-40c5-9fac-82c127136a0b" source="6ab325a9-f117-46a0-8484-8bfc7810de87" target="048f6fd5-c0cb-4fa7-a25c-6f71e9255dfe" />
+  <edge id="29a8be58-1db9-4834-83bd-33f3feb551ab" source="048f6fd5-c0cb-4fa7-a25c-6f71e9255dfe" target="bb61d6cf-d91c-44d2-be2d-58e35bf053b9" />
+  <edge id="c1a09fa4-62d3-4d7f-9841-f28fcb615cf6" source="532e7deb-ec04-41b5-b42b-893c93224b95" target="048f6fd5-c0cb-4fa7-a25c-6f71e9255dfe" />
+  <edge id="2cf9fb13-fb34-4724-8e87-e4811488bd62" source="bb61d6cf-d91c-44d2-be2d-58e35bf053b9" target="532e7deb-ec04-41b5-b42b-893c93224b95" />
+  <edge id="83c88353-95a8-4138-a485-0164d93505af" source="bb61d6cf-d91c-44d2-be2d-58e35bf053b9" target="End" />
+</graph>

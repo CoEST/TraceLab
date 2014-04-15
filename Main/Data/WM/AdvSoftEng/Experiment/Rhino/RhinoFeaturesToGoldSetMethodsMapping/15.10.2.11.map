@@ -1,0 +1,7 @@
+org.mozilla.javascript.regexp.NativeRegExp.backrefMatcher
+org.mozilla.javascript.regexp.REGlobalData.parens_index
+org.mozilla.javascript.regexp.NativeRegExp.parseTerm
+org.mozilla.javascript.regexp.NativeRegExp.emitREBytecode
+org.mozilla.javascript.regexp.REGlobalData.set_parens
+org.mozilla.javascript.regexp.NativeRegExp.executeREBytecode
+org.mozilla.javascript.regexp.REGlobalData.parens_length

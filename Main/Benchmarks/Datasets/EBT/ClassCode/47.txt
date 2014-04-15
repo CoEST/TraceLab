@@ -1,0 +1,593 @@
+           Impact Report
+           "private String server  IP = "" local host  "";
+           private JPanel center  Panel = null  ;
+          
+           private JPanel driver  Panel = new JPanel  ();
+          
+           private JPanel driver  Inner  Panel = null  ;
+          
+           private JPanel impact  Panel = null  ;
+           private JPanel impact  Inner  Panel = null  ;
+          
+           private Container container = null  ;
+          
+           private Performance  Model performance  Model = null  ;
+          
+           private Vector driver  Vector = null  ;
+           private Driver  Description driver = null  ;
+           private Driver  Inner  Panel inner  Panel  1 = null  ;
+          
+           private Vector constraint  Vector = null  ;
+           private Constraints  Description constraint = null  ;
+           private Constraint  Inner  Panel inner  Panel  2 = null  ;
+          
+           private Insets insets = null  ;
+          
+           private String query  ID = null  ;
+          
+           private int constraint  Number = 0  ;
+           private int driver  Number = 0  ;
+           private int performance  Model  Number = 0  ;
+          
+           private JPanel summary  Panel = null  ;
+          
+           private JLabel summary  Performance  Model = null  ;
+           private JLabel summary  Drivers = null  ;
+           private JLabel summary  Constraints = null  ;
+          
+          
+           private Vector performance  Model  Name  Vector = new Vector  ();
+          
+          
+           private JPanel panel = null  ;
+          
+           private JCombo  Box date  Combo = null  ;
+           private JCombo  Box query  String  Combo = null  ;
+          
+           private JLabel date  Label = null  ;
+           private JLabel string  Label = null  ;
+          
+           private JButton exit  Button = null  ;
+           private JButton submit  Button = null  ;
+          
+           private Vector date  Vector = null  ;
+          
+           private String date = null  ;
+          
+          
+           private Vector pair  Vector = null  ;"
+           "public Impact  Report  ()
+           {
+          
+            super  (""  Search Result GUI  "");
+          
+            container = get  Content  Pane  ();
+          
+            set  Size  (  800   250  );
+          
+            panel = new JPanel  ();
+          
+            panel  . set  Layout  ( null  );
+          
+            this  . server  IP =
+             JOption  Pane
+              . show  Input  Dialog  (""  Please Enter the IP Address of eventserver  "")
+              . trim  ();
+          
+          
+            insets = panel  . get  Insets  ();
+          
+            date  Label = new JLabel  (""  Query Date  : "");
+            date  Label  . set  Bounds  (  10 + insets  . left   10 + insets  . top   90   20  );
+          
+            date  Vector = search  Date  ();
+          
+            // System  . out  . println  ( date  Vector  );
+          
+            date  Combo = new JCombo  Box  ( date  Vector  );
+            date  Combo  . set  Bounds  (  110 + insets  . left   10 + insets  . top   200   25  );
+          
+            string  Label = new JLabel  (""  Query String  : "");
+            string  Label  . set  Bounds  (  10 + insets  . left   45 + insets  . top   90   20  );
+          
+            query  String  Combo = new JCombo  Box  ();
+            query  String  Combo  . set  Bounds  (  110 + insets  . left   45 + insets  . top   650   25  );
+            query  String  Combo  . add  Item  (""  Select Query String  "");
+          
+            exit  Button = new JButton  (""  Exit  "");
+            exit  Button  . set  Bounds  (  150 + insets  . left   90 + insets  . top   90   25  );
+          
+            submit  Button = new JButton  (""  Submit  "");
+            submit  Button  . set  Bounds  (  300 + insets  . left   90 + insets  . top   90   25  );
+          
+            date  Combo  . add  Action  Listener  ( new Select  Actions  ());
+            submit  Button  . add  Action  Listener  ( new Button  Actions  ());
+            exit  Button  . add  Action  Listener  ( new Button  Actions  ());
+          
+            panel  . add  ( date  Label  );
+            panel  . add  ( date  Combo  );
+            panel  . add  ( string  Label  );
+            panel  . add  ( query  String  Combo  );
+            panel  . add  ( exit  Button  );
+            panel  . add  ( submit  Button  );
+          
+            container  . add  ( panel  );
+          
+            Dimension screen  Size = Toolkit  . get  Default  Toolkit  (). get  Screen  Size  ();
+            Dimension size = get  Size  ();
+            screen  Size  . height = screen  Size  . height / 2  ;
+            screen  Size  . width = screen  Size  . width / 2  ;
+            size  . height = size  . height / 2  ;
+            size  . width = size  . width / 2  ;
+            int y = screen  Size  . height - size  . height  ;
+            int x = screen  Size  . width - size  . width  ;
+            set  Location  ( x   y  );
+          
+            set  Visible  ( true  );
+          
+          
+          
+           }"
+           "public static void main  (  String [] args  )
+           {
+          
+            Impact  Report im = new Impact  Report  ();
+          
+          
+          
+           }"
+           "public Vector search  Date  ()
+           {
+          
+            date  Vector = new Vector  ();
+            date  Vector  . add  (""  Select Query Date  "");
+            Socket server  ;
+            String line = new String  ();
+          
+          
+            try
+            {
+          
+             server = new Socket  ( server  IP    1701  );
+             if ( server  . is  Connected  () )
+             {
+              Buffered  Reader from  Server = new Buffered  Reader  ( new Input  Stream  Reader  ( server  . get  Input  Stream  ()));
+              Print  Writer to  Server = new Print  Writer  ( server  . get  Output  Stream  () true  );
+          
+              to  Server  . println  (""  GETDATA  | search  Date  "");
+          
+              line = from  Server  . read  Line  ();
+              // Just tells the Port Number and Server IP Address  .
+          
+              System  . out  . println  ( line  );
+          
+              from  Server  . close  ();
+              to  Server  . close  ();
+             }
+             server  . close  ();
+          
+            }
+            catch (  Connect  Exception e  )
+            {
+             System  . out  . println  (""  Remote Server Does not exist  "");
+            }
+            catch (  Exception e  )
+            {
+             e  . print  Stack  Trace  ();
+            }
+          
+            int count  ;
+          
+            String  Tokenizer tokens = new String  Tokenizer  ( line   ""|"");
+            // Get Project Type   Number   and Date  .
+          
+            count = new Integer  ( tokens  . next  Token  ()). int  Value  ();
+            String m  Dates = tokens  . next  Token  ();
+          
+            String  Tokenizer tk  Date = new String  Tokenizer  ( m  Dates   """");
+          
+            for ( int i  =0  ; i  < count  ; i  ++)
+            {
+          
+             String temp  Date = tk  Date  . next  Token  ();
+             date  Vector  . add  ( temp  Date  );
+          
+            } // end of while loop for Result Set
+          
+            return date  Vector  ;
+          
+           }"
+           "public void search  Query  ID  (  String date  )
+           {
+          
+            pair  Vector = new Vector  ();
+          
+            query  String  Combo  . remove  All  Items  ();
+          
+            query  String  Combo  . add  Item  (""  Select Query String  "");
+          
+            Socket server  ;
+            String line = new String  ();
+          
+          
+            try
+            {
+             server = new Socket  ( server  IP    1701  );
+          
+             if ( server  . is  Connected  () )
+             {
+              Buffered  Reader from  Server = new Buffered  Reader  ( new Input  Stream  Reader  ( server  . get  Input  Stream  ()));
+              Print  Writer to  Server = new Print  Writer  ( server  . get  Output  Stream  () true  );
+          
+              to  Server  . println  (""  GETDATA  | search  Query  ID  |"" + date  );
+          
+              line = from  Server  . read  Line  ();
+          
+              from  Server  . close  ();
+              to  Server  . close  ();
+             }
+             server  . close  ();
+          
+            }
+            catch (  Connect  Exception e  )
+            {
+             System  . out  . println  (""  Remote Server Does not exist  "");
+            }
+            catch (  Exception e  )
+            {
+             e  . print  Stack  Trace  ();
+            }
+          
+            int count  ;
+          
+            String  Tokenizer tokens = new String  Tokenizer  ( line   "":"");
+            // Get Project Type   Number   and Date  .
+          
+            count = new Integer  ( tokens  . next  Token  ()). int  Value  ();
+          
+            for ( int i  =0  ; i  < count  ; i  ++)
+            {
+             String m  Queries = tokens  . next  Token  ();
+             String  Tokenizer tk  Query = new String  Tokenizer  ( m  Queries   "";"");
+          
+             this  . query  ID = tk  Query  . next  Token  ();
+             String query  String = tk  Query  . next  Token  ();
+          
+             query  String  Combo  . insert  Item  At  ( query  String   i  +  1  );
+             Pair pair = new Pair  ( query  ID   query  String  );
+             pair  Vector  . add  ( pair  );
+          
+            } // end of while loop for Result Set
+          
+          
+          
+           }"
+           Select Actions
+           "public void action  Performed  (  Action  Event e  )
+            {
+          
+             if ( date  Combo == (  JCombo  Box  ) e  . get  Source  ())
+             {
+              date = (  String  ) date  Combo  . get  Selected  Item  ();
+              search  Query  ID  ( date  );
+             }
+            }"
+           Button Actions
+           "public void action  Performed  (  Action  Event e  ) {
+          
+             if ( submit  Button == e  . get  Source  ()) {
+          
+              for ( int i = 0  ; i < pair  Vector  . size  (); i  ++) {
+          
+               Pair pair = (  Pair  ) pair  Vector  . get  ( i  );
+          
+               if ( pair
+                . get  Query  String  ()
+                . equals  Ignore  Case  (
+                 (  String  ) query  String  Combo  . get  Selected  Item  ())) {
+                String id = pair  . get  Query  ID  ();
+                container  . remove  All  ();
+                impact  Report  ( id  );
+          
+                break  ;
+               }
+          
+              }
+          
+             }
+          
+             if ( exit  Button == e  . get  Source  ()) {
+              System  . exit  (  0  );
+          
+             }
+          
+            }"
+           "public void impact  Report  (  String id  )
+           {
+          
+            // super  (""  Impact Report  "");
+          
+            container = get  Content  Pane  ();
+          
+            set  Size  (  1020   740  );
+          
+            this  . query  ID = id  ;
+          
+            System  . out  . println  (""  Impact Report Constructor ..... ID "" + query  ID  );
+          
+            center  Panel = new JPanel  ();
+          
+            center  Panel  . set  Layout  ( null  );
+          
+            insets = center  Panel  . get  Insets  ();
+          
+            driver  Panel = new JPanel  ();
+          
+            driver  Panel  . set  Border  (
+             new Titled  Border  ( new Etched  Border  () ""  Performance Model Drivers  ""));
+          
+            driver  Panel  . set  Layout  ( null  );
+          
+            driver  Panel  . set  Bounds  (  250 + insets  . left   10 + insets  . top   700   235  );
+          
+            driver  Panel  . set  Background  (  Color  .  LIGHT  _  GRAY  );
+          
+            driver  Inner  Panel = new JPanel  ();
+          
+            driver  Inner  Panel  . set  Layout  (
+             new Box  Layout  ( driver  Inner  Panel   Box  Layout  .  Y  _  AXIS  ));
+          
+            Insets ins = driver  Panel  . get  Insets  ();
+          
+            driver  Vector = get  Driver  From  Data  Base  ();
+          
+            JPanel temp  Driver  Panel = null  ;
+          
+            for ( int i = 0  ; i < driver  Vector  . size  (); i  ++)
+            {
+             driver = (  Driver  Description  ) driver  Vector  . get  ( i  );
+          
+             inner  Panel  1 =
+              new Driver  Inner  Panel  (
+               driver  . get  Project  Name  ()
+               driver  . get  Module  Path  ()
+               driver  . get  Requirement  ID  ()
+               driver  . get  Description  ()
+               driver  . get  Changed  Attribute  ()
+               driver  . get  From  Attribute  ()
+               driver  . get  To  Attribute  ());
+          
+             temp  Driver  Panel = inner  Panel  1  . create  Panel  ();
+          
+             driver  Inner  Panel  . add  ( temp  Driver  Panel  );
+          
+             driver  Number  ++;
+          
+            }
+          
+            Insets ins  2 = driver  Inner  Panel  . get  Insets  ();
+          
+            JScroll  Pane scroll  Pane = new JScroll  Pane  ( driver  Inner  Panel  );
+          
+            scroll  Pane  . set  Bounds  (  10 + ins  2  . left   20 + ins  2  . top   670   200  );
+          
+            driver  Panel  . add  ( scroll  Pane  );
+          
+            center  Panel  . add  ( driver  Panel  );
+          
+            /**
+             *
+             * Constraint Panel
+             *
+             *
+             *  Constraints  Description
+             */
+          
+            impact  Panel = new JPanel  ();
+          
+            impact  Panel  . set  Border  (
+             new Titled  Border  (
+              new Etched  Border  ()
+              ""  Performance Model Constraint  ""));
+          
+            impact  Panel  . set  Layout  ( null  );
+          
+            impact  Panel  . set  Bounds  (  10 + insets  . left   250 + insets  . top   950   350  );
+          
+            impact  Inner  Panel = new JPanel  ();
+          
+            impact  Inner  Panel  . set  Layout  (
+             new Box  Layout  ( impact  Inner  Panel   Box  Layout  .  Y  _  AXIS  ));
+          
+            Insets ins  1 = impact  Panel  . get  Insets  ();
+          
+            constraint  Vector = get  Constraint  From  Data  Base  ();
+            System  . out  . println  ("" constraint  Vector size  "" + constraint  Vector  . size  ());
+          
+            JPanel temp  Constraint  Panel = null  ;
+          
+            for ( int i = 0  ; i < constraint  Vector  . size  (); i  ++)
+            {
+          
+             constraint = (  Constraints  Description  ) constraint  Vector  . get  ( i  );
+             inner  Panel  2 =
+              new Constraint  Inner  Panel  (
+               constraint  . get  Performance  Model  Name  ()
+               constraint  . get  Project  Name  ()
+               constraint  . get  Module  Path  ()
+               constraint  . get  Requirement  ID  ()
+               constraint  . get  Description  ()
+               constraint  . get  Logic  ()
+               constraint  . get  Units  ()
+               constraint  . get  Value  ()
+               constraint  . get  Impacted  Constraint  ()
+               constraint  . get  Attribute  ());
+          
+             temp  Constraint  Panel = inner  Panel  2  . get  Panel  ();
+          
+             impact  Inner  Panel  . add  ( temp  Constraint  Panel  );
+          
+             if (! performance  Model  Name  Vector  . contains  ( constraint  . get  Performance  Model  Name  ()))
+             {
+              performance  Model  Name  Vector  . add  ( constraint  . get  Performance  Model  Name  ());
+             }
+          
+          
+             constraint  Number  ++;
+             System  . out  . println  ("" constraint  Number  : "" +"
+           "public Vector get  Constraint  From  Data  Base  ()
+           {
+          
+            Vector v = new Vector  ();
+          
+            Socket server  ;
+            String line = new String  ();
+          
+          
+            try
+            {
+             server = new Socket  ( server  IP    1701  );
+          
+             if ( server  . is  Connected  () )
+             {
+              Buffered  Reader from  Server = new Buffered  Reader  ( new Input  Stream  Reader  ( server  . get  Input  Stream  ()));
+              Print  Writer to  Server = new Print  Writer  ( server  . get  Output  Stream  () true  );
+          
+              to  Server  . println  (""  GETDATA  | get  Constraint  |"" + query  ID  );
+          
+              line = from  Server  . read  Line  ();
+              System  . out  . println  (""  Constraint  : "" + line  );
+              from  Server  . close  ();
+              to  Server  . close  ();
+             }
+             server  . close  ();
+          
+            }
+            catch (  Connect  Exception e  )
+            {
+             System  . out  . println  (""  Remote Server Does not exist  "");
+            }
+            catch (  Exception e  )
+            {
+             e  . print  Stack  Trace  ();
+            }
+          
+            int count  ;
+          
+            String  Tokenizer tokens = new String  Tokenizer  ( line   ""|"");
+            // Get Project Type   Number   and Date  .
+          
+            count = new Integer  ( tokens  . next  Token  ()). int  Value  ();
+          
+            for ( int i  =0  ; i  < count  ; i  ++)
+            {
+          
+             String m  Queries = tokens  . next  Token  ();
+          
+             String  Tokenizer tk  Query = new String  Tokenizer  ( m  Queries   "":"");
+          
+             String performance  Model  Name = tk  Query  . next  Token  ();
+             String project  Name = tk  Query  . next  Token  ();
+             String module  Path = tk  Query  . next  Token  ();
+             String requirement  ID = tk  Query  . next  Token  ();
+             String description = tk  Query  . next  Token  ();
+             String impacted  Value = tk  Query  . next  Token  ();
+             String logic = tk  Query  . next  Token  ();
+             String units = tk  Query  . next  Token  ();
+             String attribute = tk  Query  . next  Token  ();
+             String value = tk  Query  . next  Token  ();
+          
+             constraint = new Constraints  Description  ( project  Name   module  Path   requirement  ID  );
+             constraint  . set  Performance  Model  Name  ( performance  Model  Name  );
+             constraint  . set  Description  ( description  );
+             constraint  . set  Value  ( value  );
+             constraint  . set  Impacted  Constraint  ( impacted  Value  );
+             constraint  . set  Logic  ( logic  );
+             constraint  . set  Units  ( units  );
+             constraint  . set  Attribute  ( attribute  );
+          
+             System  . out  . println  ( constraint  );
+             System  . out  . println  (""  ADD Constraint  "");
+             v  . add  ( constraint  );
+             System  . out  . println  (""  Constraint added  "");
+            }
+          
+            return v  ;
+          
+           }"
+           "public Vector get  Driver  From  Data  Base  ()
+           {
+          
+            Vector v = new Vector  ();
+          
+               Socket server  ;
+            String line = new String  ();
+          
+          
+            try
+            {
+             server = new Socket  ( server  IP    1701  );
+          
+             if ( server  . is  Connected  () )
+             {
+              Buffered  Reader from  Server = new Buffered  Reader  ( new Input  Stream  Reader  ( server  . get  Input  Stream  ()));
+              Print  Writer to  Server = new Print  Writer  ( server  . get  Output  Stream  () true  );
+          
+              to  Server  . println  (""  GETDATA  | get  Driver  |"" + query  ID  );
+          
+              line = from  Server  . read  Line  ();
+              System  . out  . println  (""  Driver  : "" + line  );
+              from  Server  . close  ();
+              to  Server  . close  ();
+             }
+             server  . close  ();
+          
+            }
+            catch (  Connect  Exception e  )
+            {
+             System  . out  . println  (""  Remote Server Does not exist  "");
+            }
+            catch (  Exception e  )
+            {
+             e  . print  Stack  Trace  ();
+            }
+          
+            int count  ;
+          
+            String  Tokenizer tokens = new String  Tokenizer  ( line   ""|"");
+            // Get Project Type   Number   and Date  .
+          
+            count = new Integer  ( tokens  . next  Token  ()). int  Value  ();
+          
+            for ( int i  =0  ; i  < count  ; i  ++)
+            {
+          
+             String m  Queries = tokens  . next  Token  ();
+          
+             String  Tokenizer tk  Query = new String  Tokenizer  ( m  Queries   "":"");
+          
+              String project  Name = tk  Query  . next  Token  ();
+              String module  Path = tk  Query  . next  Token  ();
+              String requirement  ID = tk  Query  . next  Token  ();
+              String description = tk  Query  . next  Token  ();
+              String attribute = tk  Query  . next  Token  ();
+              String from  Value = tk  Query  . next  Token  ();
+              String to  Value = tk  Query  . next  Token  ();
+          
+              driver =
+               new Driver  Description  (
+                project  Name  
+                module  Path  
+                requirement  ID  
+                description  
+                attribute  
+                from  Value  
+                to  Value  );
+          
+              if (! v  . contains  ( driver  ))
+               v  . add  ( driver  );
+          
+             }
+            return v  ;
+          
+           }"

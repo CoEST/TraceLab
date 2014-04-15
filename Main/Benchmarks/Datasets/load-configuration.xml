@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<load_datasets_config>
+  <datasets>
+	<dataset>
+		<dataset_name>Easy Clinic</dataset_name>
+		<source_artifacts_location>EasyClinic_ENG\use_cases.xml</source_artifacts_location>
+		<target_artifacts_location>EasyClinic_ENG\code_classes.xml</target_artifacts_location>
+		<answer_set_location>EasyClinic_ENG\trace matrices\UC_CC.xml</answer_set_location>
+	</dataset>
+	<dataset>
+		<dataset_name>eTour</dataset_name>
+		<source_artifacts_location>eTour\source_req.xml</source_artifacts_location>
+		<target_artifacts_location>eTour\target_code.xml</target_artifacts_location>
+		<answer_set_location>eTour\answerSet_req_code.xml</answer_set_location>
+	</dataset>
+	<dataset>
+		<dataset_name>EAnci</dataset_name>
+		<source_artifacts_location>EAnci\source_req.xml</source_artifacts_location>
+		<target_artifacts_location>EAnci\target_code.xml</target_artifacts_location>
+		<answer_set_location>EAnci\answer_req_code.xml</answer_set_location>
+	</dataset>
+	<dataset>
+		<dataset_name>Smos</dataset_name>
+		<source_artifacts_location>Smos\source_req.xml</source_artifacts_location>
+		<target_artifacts_location>Smos\target_code.xml</target_artifacts_location>
+		<answer_set_location>Smos\answer_req_code.xml</answer_set_location>
+	</dataset>
+	<!--<dataset>
+		<dataset_name>iTrust</dataset_name>
+		<source_artifacts_location>iTrust\source_req.xml</source_artifacts_location>
+		<target_artifacts_location>iTrust\target_code.xml</target_artifacts_location>
+		<answer_set_location>iTrust\answer_req_code.xml</answer_set_location>
+	</dataset>-->
+	<!--<dataset>
+		<dataset_name>EBT</dataset_name>
+		<source_artifacts_location>Ebt\source_Req.xml</source_artifacts_location>
+		<target_artifacts_location>Ebt\target_CC.xml</target_artifacts_location>
+		<answer_set_location>Ebt\answer_Req_CC.xml</answer_set_location>
+	</dataset>-->
+  </datasets>
+</load_datasets_config>

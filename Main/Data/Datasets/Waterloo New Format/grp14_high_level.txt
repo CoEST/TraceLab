@@ -1,0 +1,56 @@
+F1	A user can make a phone call~
+F2	If user can set up his phone to forward incoming calls to another phone~
+F3	If a user receives a call while on the phone, he is notified by beeps and can switch between calls~
+F4	An incoming phone call displays the callers name and number~
+F5	A voicemail system that is protected by a password~
+F6	User can specify the users that can call their phone~
+F7	Each user account has a unique user name~
+F8	Create a new account to use a certain telephone~
+F9	Disables the user by suspending the account, so a history of the user can be kept.~
+F10	Update a user’s account~
+F11	Place a user’s account on hold, so he/she can’t use any telephone services~
+F12	An invoice must list the following information for every incoming and outgoing call in the department:
+	-   Caller and callee number
+	-   Call start times
+	-   Call duration
+	-   Billing plan
+	-   Invoice balance
+	-   Department billing plan
+	- Any warnings like feature suspension or late payments~
+F13	System generates log information for each call placed, like the call’s start time, callee number, and duration~
+F14	A billing plan specifies a set of price rates of a call and the conditions that come with it. Call features are also specified in the plan~
+F15	Administrator can change the price/options for a billing plan~
+F16	Department managers must pay monthly invoices for the department’s phone services~
+F17	After an invoice is generated, it is sent to the corresponding department~
+F18	System must be able to generate invoice statements for all departments~
+F19	Invoices are generated automatically at least  once a month~
+F20	Error messages are sent to the administrator and user phone when an error is detected on the phone~
+F21	New phones can be added into the system, and assigned an IP~
+F22	Phones can be disabled and removed from the system~
+F23	Phones can be reset~
+F24	Admin can find which IP is assigned to which user~
+F25	Admin can see the status of a phone, whether it is enabled or disabled.~
+F26	The max number of calls that the system can handle~
+F27	Make a phone usable to an employee~
+F28	Disable phone from being used~
+F29	Display how many concurrent calls are in progress~
+F30	The system can run automated tests to check the status of phones~
+F31	Admin can run manual tests against individual phones~
+F32	The system can handle erroneous input (ie. Invalid IP, phone number, etc) and generate an appropriate error message~
+F33	If a caller dials an invalid number then the system tells the caller to hang up and try again~
+F34	The administrator can reset an employees password or change it~
+F35	If all IP addresses have already been assigned to users, then no more user accounts can be created~
+F36	If all possible phone numbers have already been assigned to users, then no more user accounts can be created~
+F37	The user account creation process can verify that proper data is inputted in its appropriate fields (ie. Phone numbers are digits only, unique user name)~
+F38	If a device is being added to the system, and it is already registered with a system, then the system assigns the device its old IP address~
+F39	The system can send the following messages to a phone
+	-   No available IP
+	-   Disabled
+	-   Error~
+F40	If there are no available IP addresses to be mapped to a phone, then the system sends a message to the phone displaying “No available IP”~
+F41	If the system is testing a phone, and the phone does not reply, then the system will stop waiting and conclude the phone has timed out after 1 second~
+N1	This system can be upgraded to support 2000 employees in the future~
+N2	This system can be run manual and automatic tests, display phone status, and support adding, removing and resetting phones in less than 10 minutes.~
+N3	99.9% of all phone conversations will not be disconnected midway through, and the system will only be down for a total of 24 hours a year~
+N4	VoIP phone must operate the same as a regular phone to an employee~
+N5	Each user can protect their voicemail with a PIN, and only administrators will have access to the system~

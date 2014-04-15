@@ -1,0 +1,16 @@
+ Use case name	ELIMINA BENE CULTURALE
+Elimina un bene culturale presente nel sistema.
+Partecipating
+Actor	Inizializzato da Operatore Agenzia
+Entry
+conditions	•	L’Operatore Agenzia ha effettuato il login.
+Flow of events 		User	System
+	1.		Visualizza la lista dei beni culturali come risultato del caso d’uso ricerca bene culturale,  ne seleziona uno e attiva la funzionalità di eliminazione.	
+	2.			Chiede conferma dell’eliminazione.
+	3.		Conferma l’operazione.	
+	4.			Elimina il bene culturale scelto.
+Exit conditions	•	Il sistema notifica l’avvenuta eliminazione del bene culturale.
+•	Operatore Agenzia annulla l’operazione.
+•	Interruzione connessione al server di eTour.
+Quality 
+requirements	Il sistema blocca i controlli di input una volta ricevuta la conferma della cancellazione per evitare sottomissioni multiple prima del termine dell’operazione.

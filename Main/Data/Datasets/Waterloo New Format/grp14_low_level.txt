@@ -1,0 +1,41 @@
+UC1	Use Case #:	UC1
+Name:	Manage user accounts
+Authors:	M4
+Event:	Administrator performs create, retrieve, update, and cancel actions on various user accounts.
+System:
+Administrator and system console
+Actors:	Administrator
+Overview:	This use case utilizes various sub-use cases to demonstrate the administrative activities done on users.~
+UC2	Use Case #:	UC2
+Name:	Manage devices
+Authors:	M1
+Event:	An administrator performs add, remove, enable, disable, test, and reset on new and existing devices. 
+System:
+Administrator, system console, phone subsystem
+Actors:	Administrator
+Overview:	This use case captures the process of the administrator adding a new phone to the system using the system console. It also captures the process of the administrator removing, enabling, disabling, test, and resetting an existing phone in the system.~
+UC3	Use Case #:
+UC3
+Name:	Manage billing
+Authors:	M3
+Event:	An administrator updates the billing plan for a department or registers a payment. 
+System:
+Administrator and system console
+Actors:	Administrator, department manager
+Overview:	This use case captures the process of the administrator changing the billing plan of a department, and registering the payment of an invoice to the system.~
+UC4	Use Case #:	UC4
+Name:	Access voicemail
+Authors:	M3
+Event:	An employee accesses his or her voicemail for messages or to change voicemail options
+System:
+Employee, phone subsystem and system console
+Actors:	Employee
+Overview:	This use case captures the process of an employee accessing his or her voicemail~
+UC5	Use Case #:	UC5
+Name:	Make call
+Authors:	M2
+Event:	User places a call.
+System:
+System console
+Actors:	Caller, Callee
+Overview:	The process of a call being attempted, connected, and completed.~

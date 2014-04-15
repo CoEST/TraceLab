@@ -1,0 +1,18 @@
+Login Operator test case by Date: 
+    C03 login incorrect (number 20/06/2003 
+            top character) and 
+            passwords stored on the 
+            I S O 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcValOpe necessary to authenticate an 
+            Operator 
+High Priority 
+Set up Virago The password is `recorded in the SIO 
+Description test 
+Input Login: roccoliveto 
+            Password: Virago 
+Oracle Invalid Input: login 
+Classes cover valid: CE7 
+            Classes invalid: CE4

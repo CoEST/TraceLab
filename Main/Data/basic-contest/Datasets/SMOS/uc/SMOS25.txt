@@ -1,0 +1,15 @@
+Nome:ModificaInsegnamento
+Attori: Amministratore
+Descrizione: Modifica dettagli di un insegnamento
+Precondizioni:
+•	L’utente è loggato al sistema come Amministratore •	L’utente ha eseguito il caso d’uso “VisualizzaDettagliInsegnamento” •	L’utente visualizza le informazione dettagliate di un insegnamento • L’utente modifica una delle informazioni contenute nel form di
+visualizzazione dei dettagli dell’insegnamento
+Sequenza degli eventi
+Utente
+Sistema
+1.	Clicca sul pulsante “Salva”
+2. Effettua dei controlli sulla validità dei dati immessi e modifica l’insegnamento nell’archivio; nel caso in cui i dati inseriti non sono validi,	attiva	il	caso	d’uso “ErroreDati”.
+3. Visualizza	l’elenco	degli insegnamenti aggiornato
+Postcondizioni:
+• • • •
+L’utente ha modificato un insegnamento Viene notificato l’errore dati Connessione al server SMOS interrotta L’Amministratore interrompe l’operazione

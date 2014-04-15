@@ -1,0 +1,1 @@
+ The DPU-TMALI shall configure the ping-pong frame limit at startup as specified by TMALI_PP_LIMIT provided during initialization.  The default value shall be M frames and shall be capable of being modified dynamically.

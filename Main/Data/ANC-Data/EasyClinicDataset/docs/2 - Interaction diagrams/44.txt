@@ -1,0 +1,30 @@
+Cancel Reservation 
+
+     The service was launched following the express request 
+by the actor The Operator logs on to form 
+on the main section patient (for instance GUIPaziente) 
+and there select the elimination of a reservation 
+The control then goes to the instance of the GUIPazienteHandler 
+which delegates to the instance of the GUIEliminaPrenotazioniHandler 
+task of managing the service The request for 
+GUIEliminaPrenotazioneHandler delegation application 
+PrenotazioniManager is to obtain a list of all 
+Reservations from Patient This object through the 
+Requests for reservations to ensure retrieval of the list and 
+return to the instance of that GUIEliminaPrenotazioneHandler 
+turn provides viewing data obtained 
+in the mask (for instance GUIEliminaPrenotazione) 
+The operator selects from the list by the reservation 
+delete and control is passed to the instance of 
+GUIEliminaPrenotazioneHandler which the request for delegation 
+PrenotazioniManager of completing the transaction The application 
+PrenotazioniManager through to the application for reservation shall 
+to verify that the sequence is valid even after 
+the elimination of reservation 
+     Only if so the elimination of reservation 
+is completed and will return control 
+GUIEliminaPrenotazioneHandler to the instance of which shall 
+notify the success of the transaction with a message 
+on the screen (for instance GUIEliminaPrenotazione) This 
+feature is was described by the collaboration diagram 
+Fig 3 of 20

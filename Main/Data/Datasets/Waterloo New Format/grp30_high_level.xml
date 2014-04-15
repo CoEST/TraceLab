@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp30_high_level</id>
+    <name>Waterloo grp30_high_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp30_high_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>F1</id>
+      <content>Administrators shall create new users and associate them with Plans</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F2</id>
+      <content>New phones can be connected</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F3</id>
+      <content>Phones will be associated with users &amp; activated</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F4</id>
+      <content>Users shall be able to call other internal phones</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F5</id>
+      <content>Users shall be able to answer a phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F6</id>
+      <content>Users shall be able to call outside lines through local telephone company</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F7</id>
+      <content>External users calling in will be presented with a interface to dial and connect to their required extension</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F8</id>
+      <content>Users shall be billed for each phone call at a rate determined by their selected Plan</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F9</id>
+      <content>Users shall be able to have/ access Voicemail</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F10</id>
+      <content>Persons calling shall be able to leave messages on Users Voicemail</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F11</id>
+      <content>All Dial Tones shall as closely as possible resemble external phone system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F12</id>
+      <content>Privileged Internal users shall be able to make/participate in Conference Calls</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F13</id>
+      <content>Users can make/change the outgoing messages</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F14</id>
+      <content>Administration Login must be authenticated</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F15</id>
+      <content>Administrator can look up unused extensions</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F16</id>
+      <content>Administrator can deactivate a Telephoneat any time</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F17</id>
+      <content>Administrator can reset a phone status if phone is misbehaving</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F18</id>
+      <content>Administrator can collect a telephone's status</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F19</id>
+      <content>Administrator can set a users privileges tomake particular calls (e.g. conference, etc</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F20</id>
+      <content>Administrator can collect details on the system load at a given time</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F21</id>
+      <content>The System should prevent the Administrator from entering erroneous input</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F22</id>
+      <content>The system shall produce a digital bill which can be read by existing software every billing period</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F23</id>
+      <content>The system shall produce a letter detailinoverdue bill details</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F24</id>
+      <content>Biller can create plans detailing rate, discount period and discount rate.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F25</id>
+      <content>Biller can change a users plan, taking effect immediately</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F26</id>
+      <content>Extensions will be 4 digits long</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F27</id>
+      <content>In order to dial to an external telephone users shall dial `9'</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F28</id>
+      <content>Phones shall be organised into subnets for organisation and routing</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F29</id>
+      <content>Phones will display the Caller's ID when the phone is ringing</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F30</id>
+      <content>System may support multiple phones to one extension. The first to answer takes the call</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F31</id>
+      <content>Emergency Numbers will be free</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F32</id>
+      <content>Only Privileged users can make Long Distance Calls</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F33</id>
+      <content>All internal calls will be billed at rate according to there plan</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N1</id>
+      <content>System must have suitable maximum number of calls at a time</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N2</id>
+      <content>System Load Counter shall be incremented after number is dialled</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N3</id>
+      <content>Phone system shall operate on VoIP Protocol over a LAN</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N4</id>
+      <content>The System shall maintain a mapping of IP addresses to Extensions</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N5</id>
+      <content>The System shall detect if a telephone is behaving incorrectly</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N6</id>
+      <content>The system shall have support for 8000 users.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N7</id>
+      <content>The Network should aim for 99.999% uptime.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N8</id>
+      <content>There should have no successful security breaches.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N9</id>
+      <content>The system has a life expectancy of 10-15 years.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N10</id>
+      <content>Installing this system will make communication easier within the organisation.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N11</id>
+      <content>Through the installation of this system, maintenance will be localised and as a result yield a faster response time</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N12</id>
+      <content>The system must enable growth/expansion up 4 times over it's expected life</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N13</id>
+      <content>The timing it takes for the system to respond</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N14</id>
+      <content>Through imitating existing telephones, it will be easy to use.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N15</id>
+      <content>The software could be used elsewhere with little or no modification</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

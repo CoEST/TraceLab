@@ -1,0 +1,244 @@
+﻿<!--
+TraceLab - Software Traceability Instrument to Facilitate and Empower Traceability Research
+Copyright (C) 2012-2013 CoEST - National Science Foundation MRI-R2 Grant # CNS: 0959924
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see<http://www.gnu.org/licenses/>.
+-->
+
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:zoom="clr-namespace:TraceLab.UI.WPF.Controls.ZoomControl"
+                    xmlns:Controls="clr-namespace:WPFExtensions.Controls;assembly=WPFExtensions"
+                    xmlns:WPFExtensionsConverters="clr-namespace:WPFExtensions.Converters;assembly=WPFExtensions"
+                    xmlns:Converters="clr-namespace:TraceLab.UI.WPF.Converters">
+
+    <WPFExtensionsConverters:DoubleToLog10Converter x:Key="log10Converter" />
+    <WPFExtensionsConverters:EqualityToBooleanConverter x:Key="equalityConverter" />
+
+    <Style TargetType="{x:Type zoom:ZoomControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type zoom:ZoomControl}">
+                    <Grid>
+                        <Border BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}"
+                                ClipToBounds="{TemplateBinding ClipToBounds}">
+                            <Controls:ZoomContentPresenter x:Name="PART_Presenter" ClipToBounds="False" />
+                        </Border>
+                        <Canvas>
+                            
+                            <!-- Controls -->
+                            <Border Padding="5"
+                                    CornerRadius="5"
+                                    Background="#88C0C0C0"
+                                    Canvas.Left="20"
+                                    Canvas.Top="20"
+                                    ToolTipService.InitialShowDelay="0">
+                                <StackPanel Orientation="Vertical">
+                                    <StackPanel.Resources>
+                                        <Style TargetType="{x:Type RadioButton}">
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="{x:Type RadioButton}">
+                                                        <Border x:Name="border"
+                                                                BorderBrush="Black"
+                                                                Background="LightGray"
+                                                                BorderThickness="1"
+                                                                CornerRadius="5"
+                                                                Width="20"
+                                                                Height="20"
+                                                                Margin="2"
+                                                                HorizontalAlignment="Center"
+                                                                VerticalAlignment="Center">
+                                                            <ContentPresenter HorizontalAlignment="Center"
+                                                                              VerticalAlignment="Center" />
+                                                        </Border>
+
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsMouseOver"
+                                                                     Value="True">
+                                                                <Setter TargetName="border"
+                                                                        Property="Background"
+                                                                        Value="WhiteSmoke" />
+                                                            </Trigger>
+                                                            <Trigger Property="IsChecked"
+                                                                     Value="True">
+                                                                <Setter TargetName="border"
+                                                                        Property="Background"
+                                                                        Value="DarkGray" />
+                                                                <Setter TargetName="border"
+                                                                        Property="TextBlock.FontWeight"
+                                                                        Value="Bold" />
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+
+                                        <Style TargetType="{x:Type CheckBox}">
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="{x:Type CheckBox}">
+                                                        <Border x:Name="border"
+                                                                BorderBrush="Black"
+                                                                Background="LightGray"
+                                                                BorderThickness="1"
+                                                                CornerRadius="5"
+                                                                Width="20"
+                                                                Height="20"
+                                                                Margin="2"
+                                                                HorizontalAlignment="Center"
+                                                                VerticalAlignment="Center">
+                                                            <ContentPresenter HorizontalAlignment="Center"
+                                                                              VerticalAlignment="Center" />
+                                                        </Border>
+
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsMouseOver"
+                                                                     Value="True">
+                                                                <Setter TargetName="border"
+                                                                        Property="Background"
+                                                                        Value="WhiteSmoke" />
+                                                            </Trigger>
+                                                            <Trigger Property="IsChecked"
+                                                                     Value="True">
+                                                                <Setter TargetName="border"
+                                                                        Property="Background"
+                                                                        Value="DarkGray" />
+                                                                <Setter TargetName="border"
+                                                                        Property="TextBlock.FontWeight"
+                                                                        Value="Bold" />
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </StackPanel.Resources>
+                                    <Slider Height="150"
+                                            Minimum="{TemplateBinding MinZoom,Converter={StaticResource log10Converter}}"
+                                            Maximum="{TemplateBinding MaxZoom,Converter={StaticResource log10Converter}}"
+                                            Value="{Binding RelativeSource={RelativeSource TemplatedParent},Path=Zoom,Mode=TwoWay,Converter={StaticResource log10Converter}}"
+                                            HorizontalAlignment="Center"
+                                            Ticks="0.1, 0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 2"
+                                            AutoToolTipPlacement="BottomRight"
+                                            AutoToolTipPrecision="1"
+                                            TickPlacement="BottomRight"
+                                            TickFrequency="1"
+                                            LargeChange="1"
+                                            SmallChange="0.1"
+                                            Orientation="Vertical" />
+                                    <TextBlock Text="{Binding RelativeSource={RelativeSource TemplatedParent},Path=Zoom,StringFormat='{}{0:F2}x'}"
+                                               HorizontalAlignment="Center"
+                                               FontWeight="Bold" />
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition />
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+                                        <RadioButton Grid.Row="0" Grid.Column="0"
+                                                 Content="1:1" GroupName="rbgZoomMode"
+                                                 IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent},Path=Mode,Converter={StaticResource equalityConverter},ConverterParameter={x:Static Controls:ZoomControlModes.Original}, FallbackValue={x:Static Controls:ZoomControlModes.Custom}}" />
+                                        <RadioButton Grid.Row="0" Grid.Column="1"
+                                                 Content="Fill" GroupName="rbgZoomMode"
+                                                 IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent},Path=Mode,Converter={StaticResource equalityConverter},ConverterParameter={x:Static Controls:ZoomControlModes.Fill}, FallbackValue={x:Static Controls:ZoomControlModes.Custom}}" />
+
+                                        <Separator Grid.Row="1" Grid.ColumnSpan="2" />
+                                        
+                                        <RadioButton Grid.Row="2" Grid.Column="0"
+                                                 Name="FixedPanMode" GroupName="panningMode"
+                                                 IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent},Path=FixedPanModeSelected}">
+                                            <Image Source="/TraceLab.UI.WPF;component/Resources/openhandicon.png" Width="14" Height="14" />
+                                        </RadioButton>
+                                        <!-- Name 'NormalMode' is important as zoom control checks its hit when it is in Fixed Pan Mode (see HitNormalModeButtonTest)-->
+                                        <RadioButton Grid.Row="2" Grid.Column="1"
+                                                 Name="NormalMode" GroupName="panningMode"
+                                                 IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent},Path=FixedPanModeSelected, Converter={Converters:NegateBoolConverter}}">
+                                            <Image Source="/TraceLab.UI.WPF;component/Resources/arrowcursor_icon.png" Width="14" Height="14" />
+                                        </RadioButton>
+
+                                        <Separator Grid.Row="3" Grid.ColumnSpan="2" />
+                                        
+                                        <CheckBox Grid.Row="4" Grid.ColumnSpan="2" x:Name="HelpButton">
+                                            <Image Source="/TraceLab.UI.WPF;component/Resources/help_icon.png" Width="14" Height="14" />
+                                        </CheckBox>
+                                    </Grid>
+                                    </StackPanel>
+                            </Border>
+
+                            <Border CornerRadius="5" Background="#66D4D4D4" Canvas.Left="20" Canvas.Top="285" Visibility="{Binding ElementName=HelpButton, Path=IsChecked, Converter={Converters:BoolToVisConverter}}">
+                                <StackPanel Orientation="Vertical" Margin="5">
+                                    <TextBlock>Zoom In / Out: <Run FontWeight="Bold">CTRL + Wheel</Run></TextBlock>
+                                    <TextBlock>ZoomBox: <Run FontWeight="Bold">ALT + Drag</Run></TextBlock>
+                                    <TextBlock>Pan: <Run FontWeight="Bold">Right Mouse + Drag</Run> or <Run FontWeight="Bold">SHIFT + Drag</Run></TextBlock>
+                                </StackPanel>
+                            </Border>
+                            
+                            <!-- ZoomBox -->
+                            <Border BorderBrush="{TemplateBinding ZoomBoxBorderBrush}"
+                                    BorderThickness="{TemplateBinding ZoomBoxBorderThickness}"
+                                    Canvas.Left="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ZoomBox.X}"
+                                    Canvas.Top="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ZoomBox.Y}"
+                                    Opacity="{TemplateBinding ZoomBoxOpacity}"
+                                    Background="{TemplateBinding ZoomBoxBackground}"
+                                    Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ZoomBox.Width}"
+                                    Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ZoomBox.Height}" />
+                        </Canvas>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background"
+                Value="White" />
+        <Setter Property="ZoomBoxBackground">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0.0, 0.0"
+                                     EndPoint="1.0, 1.0">
+                    <GradientStop Color="Silver"
+                                  Offset="0.0" />
+                    <GradientStop Color="DarkGray"
+                                  Offset="1.0" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ZoomBoxBorderBrush"
+                Value="Black" />
+        <Setter Property="ZoomBoxBorderThickness"
+                Value="1" />
+        <Setter Property="ClipToBounds"
+                Value="True" />
+        <Style.Triggers>
+            <Trigger Property="ModifierMode"
+                     Value="Pan">
+                <Setter Property="Cursor"
+                        Value="/TraceLab.UI.WPF;component/Resources/openhand.cur" />
+            </Trigger>
+            <Trigger Property="ModifierMode"
+                     Value="ZoomBox">
+                <Setter Property="Cursor"
+                        Value="Hand" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

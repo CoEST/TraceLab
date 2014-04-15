@@ -1,0 +1,588 @@
+﻿<graph>
+  <References>
+    <PackageReference ID="f2b198ee-3595-4ff3-8a3a-1a6f5c10c341" Name="TraceLab Components" />
+  </References>
+  <ExperimentInfo>
+    <Version>2</Version>
+    <Id>666cc00a-4873-4ea3-abf1-6e560a60aa69</Id>
+    <Name>Decision scope test experiment</Name>
+    <LayoutName>EfficientSugiyama</LayoutName>
+    <Description>Experiment tests if setup and teardown of nested scope workspace wrappers work properly.  </Description>
+  </ExperimentInfo>
+  <node id="Start">
+    <SerializedVertexData Version="1" X="417" Y="86">
+      <Metadata type="TraceLab.Core.Components.StartNodeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Start" />
+    </SerializedVertexData>
+  </node>
+  <node id="End">
+    <SerializedVertexData Version="1" X="381" Y="635">
+      <Metadata type="TraceLab.Core.Components.EndNodeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="End" WaitsForAllPredecessors="True" />
+    </SerializedVertexData>
+  </node>
+  <node id="dbb110f5-9ada-48c6-a818-dbcfc8803dba">
+    <SerializedVertexData Version="1" X="256" Y="237">
+      <Metadata type="TraceLab.Core.Components.DecisionMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Go to scope 1" WaitsForAllPredecessors="True">
+        <DecisionCode>Select("Scope 1"); 
+</DecisionCode>
+        <DecisionMetadataDefinition>
+          <ID>cb34a85e-33ec-421d-8155-b9a62e0aefd3</ID>
+          <Classname>DecisionModule_cb34a85e_33ec_421d_8155_b9a62e0aefd3</Classname>
+          <Assembly>c:\p4root\RELab\branches\aczauderna\Decisions\cb34a85e-33ec-421d-8155-b9a62e0aefd3.dll</Assembly>
+        </DecisionMetadataDefinition>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="a8f0aa23-5e96-4c5a-a1c9-808852934c25">
+    <SerializedVertexData Version="1" X="256" Y="477">
+      <Metadata type="TraceLab.Core.Components.ExitDecisionMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="" />
+    </SerializedVertexData>
+  </node>
+  <node id="45cf532e-7619-4b50-9c31-320c2db584bf">
+    <SerializedVertexDataWithSize Version="1" X="156" Y="357" Width="160" Height="160">
+      <Metadata type="TraceLab.Core.Components.ScopeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Scope 1">
+        <ComponentGraph>
+          <graph>
+            <References>
+              <PackageReference ID="f2b198ee-3595-4ff3-8a3a-1a6f5c10c341" Name="TraceLab Components" />
+            </References>
+            <ExperimentInfo>
+              <Version>2</Version>
+              <Id>b515aa98-68ca-44ac-9f4b-81fa023f8264</Id>
+            </ExperimentInfo>
+            <node id="fc1312e1-4c22-4b77-a6c9-9d5dbdbc17bb">
+              <SerializedVertexData Version="1" X="115" Y="15">
+                <Metadata type="TraceLab.Core.Components.StartNodeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Start" />
+              </SerializedVertexData>
+            </node>
+            <node id="3533cc40-e8b5-4504-8296-5136854af0b9">
+              <SerializedVertexData Version="1" X="134.167" Y="122">
+                <Metadata type="TraceLab.Core.Components.EndNodeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="End" WaitsForAllPredecessors="True" />
+              </SerializedVertexData>
+            </node>
+            <node id="f075b7f4-0eb8-4e78-9674-f50452d80dfc">
+              <SerializedVertexData Version="1" X="79" Y="65">
+                <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="a += 1" ComponentMetadataDefinitionID="b2adca30-0a24-552a-85e2-4167589a024d" WaitsForAllPredecessors="True">
+                  <IOSpec Version="2">
+                    <Input>
+                      <IOItem>
+                        <IOItemDefinition Name="integer" Type="System.Int32" IOType="Input" />
+                        <MappedTo>a</MappedTo>
+                      </IOItem>
+                    </Input>
+                    <Output>
+                      <IOItem>
+                        <IOItemDefinition Name="integer" Type="System.Int32" IOType="Output" />
+                        <MappedTo>a</MappedTo>
+                      </IOItem>
+                    </Output>
+                  </IOSpec>
+                  <ConfigWrapper Version="1" IsJava="False">
+                    <ConfigValues>
+                      <PropertyObject>
+                        <Version>3</Version>
+                        <Name>IncrementBy</Name>
+                        <DisplayName>Increment by value</DisplayName>
+                        <Description />
+                        <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+                        <Visible>True</Visible>
+                        <IsEnum>False</IsEnum>
+                        <Value IsNull="False">
+                          <int>1</int>
+                        </Value>
+                      </PropertyObject>
+                    </ConfigValues>
+                  </ConfigWrapper>
+                </Metadata>
+              </SerializedVertexData>
+            </node>
+            <edge id="b0d03e9e-f518-450e-9a91-24554e3caa06" source="fc1312e1-4c22-4b77-a6c9-9d5dbdbc17bb" target="f075b7f4-0eb8-4e78-9674-f50452d80dfc" isFixed="False" />
+            <edge id="b240ccf9-b35c-4bdb-b498-70ae729dcd55" source="f075b7f4-0eb8-4e78-9674-f50452d80dfc" target="3533cc40-e8b5-4504-8296-5136854af0b9" isFixed="False" />
+          </graph>
+        </ComponentGraph>
+      </Metadata>
+    </SerializedVertexDataWithSize>
+  </node>
+  <node id="8be39806-188f-4bdd-917e-c0d82abf3bbe">
+    <SerializedVertexDataWithSize Version="1" X="355" Y="356" Width="160" Height="160">
+      <Metadata type="TraceLab.Core.Components.ScopeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Scope 2">
+        <ComponentGraph>
+          <graph>
+            <References>
+              <PackageReference ID="f2b198ee-3595-4ff3-8a3a-1a6f5c10c341" Name="TraceLab Components" />
+            </References>
+            <ExperimentInfo>
+              <Version>2</Version>
+              <Id>6198418a-6ff7-474c-800c-ca5b6847f8d1</Id>
+            </ExperimentInfo>
+            <node id="6511c7bb-ddfc-4da8-aca1-20a1d43b9009">
+              <SerializedVertexData Version="1" X="45.059" Y="15">
+                <Metadata type="TraceLab.Core.Components.StartNodeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Start" />
+              </SerializedVertexData>
+            </node>
+            <node id="672d426f-4d07-47ed-9449-7f36170e378e">
+              <SerializedVertexData Version="1" X="26.818" Y="122">
+                <Metadata type="TraceLab.Core.Components.EndNodeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="End" WaitsForAllPredecessors="True" />
+              </SerializedVertexData>
+            </node>
+            <node id="48f512f4-c741-4d69-bea9-c4b290619e30">
+              <SerializedVertexData Version="1" X="61" Y="69">
+                <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="a += 5" ComponentMetadataDefinitionID="b2adca30-0a24-552a-85e2-4167589a024d" WaitsForAllPredecessors="True">
+                  <IOSpec Version="2">
+                    <Input>
+                      <IOItem>
+                        <IOItemDefinition Name="integer" Type="System.Int32" IOType="Input" />
+                        <MappedTo>a</MappedTo>
+                      </IOItem>
+                    </Input>
+                    <Output>
+                      <IOItem>
+                        <IOItemDefinition Name="integer" Type="System.Int32" IOType="Output" />
+                        <MappedTo>a</MappedTo>
+                      </IOItem>
+                    </Output>
+                  </IOSpec>
+                  <ConfigWrapper Version="1" IsJava="False">
+                    <ConfigValues>
+                      <PropertyObject>
+                        <Version>3</Version>
+                        <Name>IncrementBy</Name>
+                        <DisplayName>Increment by value</DisplayName>
+                        <Description />
+                        <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+                        <Visible>True</Visible>
+                        <IsEnum>False</IsEnum>
+                        <Value IsNull="False">
+                          <int>5</int>
+                        </Value>
+                      </PropertyObject>
+                    </ConfigValues>
+                  </ConfigWrapper>
+                </Metadata>
+              </SerializedVertexData>
+            </node>
+            <edge id="959e40d4-2ae9-49f8-abb4-00241df32f19" source="6511c7bb-ddfc-4da8-aca1-20a1d43b9009" target="48f512f4-c741-4d69-bea9-c4b290619e30" isFixed="False" />
+            <edge id="a8b12f5e-3588-431e-ba89-f4dc40aa751c" source="48f512f4-c741-4d69-bea9-c4b290619e30" target="672d426f-4d07-47ed-9449-7f36170e378e" isFixed="False" />
+          </graph>
+        </ComponentGraph>
+      </Metadata>
+    </SerializedVertexDataWithSize>
+  </node>
+  <node id="d44dd98c-4d68-48fe-a97c-a3a4b3604a05">
+    <SerializedVertexData Version="1" X="683" Y="211">
+      <Metadata type="TraceLab.Core.Components.DecisionMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Go to scope 4" WaitsForAllPredecessors="True">
+        <DecisionCode>Select("Scope 4");
+</DecisionCode>
+        <DecisionMetadataDefinition>
+          <ID>31cfabd2-319b-4f51-a882-bc88140ccf09</ID>
+          <Classname>DecisionModule_31cfabd2_319b_4f51_a882_bc88140ccf09</Classname>
+          <Assembly>c:\p4root\RELab\branches\aczauderna\Decisions\31cfabd2-319b-4f51-a882-bc88140ccf09.dll</Assembly>
+        </DecisionMetadataDefinition>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="6fa34f13-d369-48cf-bd2b-dbfd87125846">
+    <SerializedVertexData Version="1" X="661" Y="633">
+      <Metadata type="TraceLab.Core.Components.ExitDecisionMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="" />
+    </SerializedVertexData>
+  </node>
+  <node id="ecb8493f-ace5-4988-aef0-ac1b691dc79f">
+    <SerializedVertexDataWithSize Version="1" X="579" Y="345.5" Width="160" Height="181">
+      <Metadata type="TraceLab.Core.Components.ScopeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Scope 3">
+        <ComponentGraph>
+          <graph>
+            <References>
+              <PackageReference ID="f2b198ee-3595-4ff3-8a3a-1a6f5c10c341" Name="TraceLab Components" />
+            </References>
+            <ExperimentInfo>
+              <Version>2</Version>
+              <Id>c9d5d4f0-645b-4ec4-abee-2dd2b81f4f42</Id>
+            </ExperimentInfo>
+            <node id="de99b135-4b57-4e5a-a7a0-5d05903a6604">
+              <SerializedVertexData Version="1" X="120.595" Y="15">
+                <Metadata type="TraceLab.Core.Components.StartNodeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Start" />
+              </SerializedVertexData>
+            </node>
+            <node id="7b2b3abc-e976-4f96-83c3-08ced68d43e4">
+              <SerializedVertexData Version="1" X="101.534" Y="143">
+                <Metadata type="TraceLab.Core.Components.EndNodeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="End" WaitsForAllPredecessors="True" />
+              </SerializedVertexData>
+            </node>
+            <node id="8b954752-4ad8-45f9-85a6-9b296a432d2e">
+              <SerializedVertexData Version="1" X="72" Y="76">
+                <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="b += 1" ComponentMetadataDefinitionID="b2adca30-0a24-552a-85e2-4167589a024d" WaitsForAllPredecessors="True">
+                  <IOSpec Version="2">
+                    <Input>
+                      <IOItem>
+                        <IOItemDefinition Name="integer" Type="System.Int32" IOType="Input" />
+                        <MappedTo>b</MappedTo>
+                      </IOItem>
+                    </Input>
+                    <Output>
+                      <IOItem>
+                        <IOItemDefinition Name="integer" Type="System.Int32" IOType="Output" />
+                        <MappedTo>b</MappedTo>
+                      </IOItem>
+                    </Output>
+                  </IOSpec>
+                  <ConfigWrapper Version="1" IsJava="False">
+                    <ConfigValues>
+                      <PropertyObject>
+                        <Version>3</Version>
+                        <Name>IncrementBy</Name>
+                        <DisplayName>Increment by value</DisplayName>
+                        <Description />
+                        <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+                        <Visible>True</Visible>
+                        <IsEnum>False</IsEnum>
+                        <Value IsNull="False">
+                          <int>1</int>
+                        </Value>
+                      </PropertyObject>
+                    </ConfigValues>
+                  </ConfigWrapper>
+                </Metadata>
+              </SerializedVertexData>
+            </node>
+            <edge id="f18d72b6-c7b8-43a3-ab17-d5e468864d55" source="de99b135-4b57-4e5a-a7a0-5d05903a6604" target="8b954752-4ad8-45f9-85a6-9b296a432d2e" isFixed="False" />
+            <edge id="59868cdf-12c3-4672-8e13-4c222bbc845d" source="8b954752-4ad8-45f9-85a6-9b296a432d2e" target="7b2b3abc-e976-4f96-83c3-08ced68d43e4" isFixed="False" />
+          </graph>
+        </ComponentGraph>
+      </Metadata>
+    </SerializedVertexDataWithSize>
+  </node>
+  <node id="2490fbdd-288a-4fad-b3e8-136bca4d20ae">
+    <SerializedVertexDataWithSize Version="1" X="904" Y="449.5" Width="424" Height="393">
+      <Metadata type="TraceLab.Core.Components.ScopeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Scope 4">
+        <ComponentGraph>
+          <graph>
+            <References>
+              <PackageReference ID="f2b198ee-3595-4ff3-8a3a-1a6f5c10c341" Name="TraceLab Components" />
+            </References>
+            <ExperimentInfo>
+              <Version>2</Version>
+              <Id>6829a9c1-1f18-4299-a8bf-93ee42be9348</Id>
+            </ExperimentInfo>
+            <node id="81eb1f09-859e-4caa-8995-8f92a72bbc4e">
+              <SerializedVertexData Version="1" X="65.13" Y="15">
+                <Metadata type="TraceLab.Core.Components.StartNodeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Start" />
+              </SerializedVertexData>
+            </node>
+            <node id="5b930915-1677-4dc0-ba7d-3b900e32b188">
+              <SerializedVertexData Version="1" X="15" Y="322.263">
+                <Metadata type="TraceLab.Core.Components.EndNodeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="End" WaitsForAllPredecessors="True" />
+              </SerializedVertexData>
+            </node>
+            <node id="9e25727b-1796-4edf-a9d2-56096cac3f26">
+              <SerializedVertexData Version="1" X="197" Y="73">
+                <Metadata type="TraceLab.Core.Components.DecisionMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Go to scope 4.1" WaitsForAllPredecessors="True">
+                  <DecisionCode>Select("Scope 4.1");
+</DecisionCode>
+                  <DecisionMetadataDefinition>
+                    <ID>0894b964-0ecb-4baf-b2c4-804660ed9172</ID>
+                    <Classname>DecisionModule_0894b964_0ecb_4baf_b2c4_804660ed9172</Classname>
+                    <Assembly>c:\p4root\RELab\branches\aczauderna\Decisions\0894b964-0ecb-4baf-b2c4-804660ed9172.dll</Assembly>
+                  </DecisionMetadataDefinition>
+                </Metadata>
+              </SerializedVertexData>
+            </node>
+            <node id="120937e0-4d65-43ce-b650-03ce83d46c1e">
+              <SerializedVertexData Version="1" X="196" Y="303">
+                <Metadata type="TraceLab.Core.Components.ExitDecisionMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="" />
+              </SerializedVertexData>
+            </node>
+            <node id="577d7968-c0b2-43b4-a5e1-21b4426fe0bc">
+              <SerializedVertexDataWithSize Version="1" X="96" Y="183" Width="160" Height="160">
+                <Metadata type="TraceLab.Core.Components.ScopeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Scope 4.1">
+                  <ComponentGraph>
+                    <graph>
+                      <References>
+                        <PackageReference ID="f2b198ee-3595-4ff3-8a3a-1a6f5c10c341" Name="TraceLab Components" />
+                      </References>
+                      <ExperimentInfo>
+                        <Version>2</Version>
+                        <Id>1f76ae52-294e-4962-a1bb-2b7810306e39</Id>
+                      </ExperimentInfo>
+                      <node id="b9a35423-0a0f-4e3d-9523-584b888e0b24">
+                        <SerializedVertexData Version="1" X="118.564" Y="15">
+                          <Metadata type="TraceLab.Core.Components.StartNodeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Start" />
+                        </SerializedVertexData>
+                      </node>
+                      <node id="76466607-104f-4dcd-b03f-9019ccda175b">
+                        <SerializedVertexData Version="1" X="134.167" Y="122">
+                          <Metadata type="TraceLab.Core.Components.EndNodeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="End" WaitsForAllPredecessors="True" />
+                        </SerializedVertexData>
+                      </node>
+                      <node id="8f806f81-c3d8-49ed-8cda-0776f1c356f8">
+                        <SerializedVertexData Version="1" X="74" Y="67">
+                          <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="b += 5" ComponentMetadataDefinitionID="b2adca30-0a24-552a-85e2-4167589a024d" WaitsForAllPredecessors="True">
+                            <IOSpec Version="2">
+                              <Input>
+                                <IOItem>
+                                  <IOItemDefinition Name="integer" Type="System.Int32" IOType="Input" />
+                                  <MappedTo>b</MappedTo>
+                                </IOItem>
+                              </Input>
+                              <Output>
+                                <IOItem>
+                                  <IOItemDefinition Name="integer" Type="System.Int32" IOType="Output" />
+                                  <MappedTo>b</MappedTo>
+                                </IOItem>
+                              </Output>
+                            </IOSpec>
+                            <ConfigWrapper Version="1" IsJava="False">
+                              <ConfigValues>
+                                <PropertyObject>
+                                  <Version>3</Version>
+                                  <Name>IncrementBy</Name>
+                                  <DisplayName>Increment by value</DisplayName>
+                                  <Description />
+                                  <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+                                  <Visible>True</Visible>
+                                  <IsEnum>False</IsEnum>
+                                  <Value IsNull="False">
+                                    <int>5</int>
+                                  </Value>
+                                </PropertyObject>
+                              </ConfigValues>
+                            </ConfigWrapper>
+                          </Metadata>
+                        </SerializedVertexData>
+                      </node>
+                      <edge id="758c2663-e6dc-492f-8b06-747caded6902" source="b9a35423-0a0f-4e3d-9523-584b888e0b24" target="8f806f81-c3d8-49ed-8cda-0776f1c356f8" isFixed="False" />
+                      <edge id="6b334cd6-30a8-442d-bda8-0c25667518f0" source="8f806f81-c3d8-49ed-8cda-0776f1c356f8" target="76466607-104f-4dcd-b03f-9019ccda175b" isFixed="False" />
+                    </graph>
+                  </ComponentGraph>
+                </Metadata>
+              </SerializedVertexDataWithSize>
+            </node>
+            <node id="92fe20a6-acc5-4124-8385-4cccd7b83028">
+              <SerializedVertexDataWithSize Version="1" X="296" Y="183" Width="160" Height="160">
+                <Metadata type="TraceLab.Core.Components.ScopeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Scope 4.2">
+                  <ComponentGraph>
+                    <graph>
+                      <References>
+                        <PackageReference ID="f2b198ee-3595-4ff3-8a3a-1a6f5c10c341" Name="TraceLab Components" />
+                      </References>
+                      <ExperimentInfo>
+                        <Version>2</Version>
+                        <Id>5166d780-ea52-4dc7-867d-20f094e0c011</Id>
+                      </ExperimentInfo>
+                      <node id="f0eb2cc2-7510-4a07-a558-c6e014367cbc">
+                        <SerializedVertexData Version="1" X="42.2" Y="15">
+                          <Metadata type="TraceLab.Core.Components.StartNodeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Start" />
+                        </SerializedVertexData>
+                      </node>
+                      <node id="243c74d8-1276-4ff9-9b6d-8fde9d8761ed">
+                        <SerializedVertexData Version="1" X="25.833" Y="122">
+                          <Metadata type="TraceLab.Core.Components.EndNodeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="End" WaitsForAllPredecessors="True" />
+                        </SerializedVertexData>
+                      </node>
+                      <node id="83f60bc7-d2bc-4442-a552-c05cbf360fad">
+                        <SerializedVertexData Version="1" X="68" Y="68">
+                          <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="b += 10" ComponentMetadataDefinitionID="b2adca30-0a24-552a-85e2-4167589a024d" WaitsForAllPredecessors="True">
+                            <IOSpec Version="2">
+                              <Input>
+                                <IOItem>
+                                  <IOItemDefinition Name="integer" Type="System.Int32" IOType="Input" />
+                                  <MappedTo>b</MappedTo>
+                                </IOItem>
+                              </Input>
+                              <Output>
+                                <IOItem>
+                                  <IOItemDefinition Name="integer" Type="System.Int32" IOType="Output" />
+                                  <MappedTo>b</MappedTo>
+                                </IOItem>
+                              </Output>
+                            </IOSpec>
+                            <ConfigWrapper Version="1" IsJava="False">
+                              <ConfigValues>
+                                <PropertyObject>
+                                  <Version>3</Version>
+                                  <Name>IncrementBy</Name>
+                                  <DisplayName>Increment by value</DisplayName>
+                                  <Description />
+                                  <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+                                  <Visible>True</Visible>
+                                  <IsEnum>False</IsEnum>
+                                  <Value IsNull="False">
+                                    <int>10</int>
+                                  </Value>
+                                </PropertyObject>
+                              </ConfigValues>
+                            </ConfigWrapper>
+                          </Metadata>
+                        </SerializedVertexData>
+                      </node>
+                      <edge id="6843eac2-67a5-4773-9e72-65053d329d12" source="f0eb2cc2-7510-4a07-a558-c6e014367cbc" target="83f60bc7-d2bc-4442-a552-c05cbf360fad" isFixed="False" />
+                      <edge id="de400266-2ce7-443e-8802-c375b9c96a6c" source="83f60bc7-d2bc-4442-a552-c05cbf360fad" target="243c74d8-1276-4ff9-9b6d-8fde9d8761ed" isFixed="False" />
+                    </graph>
+                  </ComponentGraph>
+                </Metadata>
+              </SerializedVertexDataWithSize>
+            </node>
+            <node id="ec57e6c9-2629-41f3-86cf-82c9976a3751">
+              <SerializedVertexData Version="1" X="198" Y="28">
+                <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="b += 1" ComponentMetadataDefinitionID="b2adca30-0a24-552a-85e2-4167589a024d" WaitsForAllPredecessors="True">
+                  <IOSpec Version="2">
+                    <Input>
+                      <IOItem>
+                        <IOItemDefinition Name="integer" Type="System.Int32" IOType="Input" />
+                        <MappedTo>b</MappedTo>
+                      </IOItem>
+                    </Input>
+                    <Output>
+                      <IOItem>
+                        <IOItemDefinition Name="integer" Type="System.Int32" IOType="Output" />
+                        <MappedTo>b</MappedTo>
+                      </IOItem>
+                    </Output>
+                  </IOSpec>
+                  <ConfigWrapper Version="1" IsJava="False">
+                    <ConfigValues>
+                      <PropertyObject>
+                        <Version>3</Version>
+                        <Name>IncrementBy</Name>
+                        <DisplayName>Increment by value</DisplayName>
+                        <Description />
+                        <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+                        <Visible>True</Visible>
+                        <IsEnum>False</IsEnum>
+                        <Value IsNull="False">
+                          <int>1</int>
+                        </Value>
+                      </PropertyObject>
+                    </ConfigValues>
+                  </ConfigWrapper>
+                </Metadata>
+              </SerializedVertexData>
+            </node>
+            <node id="25d3f269-33df-4fc5-ae99-d5d64fed6e17">
+              <SerializedVertexData Version="1" X="104" Y="316">
+                <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="b += 1" ComponentMetadataDefinitionID="b2adca30-0a24-552a-85e2-4167589a024d" WaitsForAllPredecessors="True">
+                  <IOSpec Version="2">
+                    <Input>
+                      <IOItem>
+                        <IOItemDefinition Name="integer" Type="System.Int32" IOType="Input" />
+                        <MappedTo>b</MappedTo>
+                      </IOItem>
+                    </Input>
+                    <Output>
+                      <IOItem>
+                        <IOItemDefinition Name="integer" Type="System.Int32" IOType="Output" />
+                        <MappedTo>b</MappedTo>
+                      </IOItem>
+                    </Output>
+                  </IOSpec>
+                  <ConfigWrapper Version="1" IsJava="False">
+                    <ConfigValues>
+                      <PropertyObject>
+                        <Version>3</Version>
+                        <Name>IncrementBy</Name>
+                        <DisplayName>Increment by value</DisplayName>
+                        <Description />
+                        <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+                        <Visible>True</Visible>
+                        <IsEnum>False</IsEnum>
+                        <Value IsNull="False">
+                          <int>1</int>
+                        </Value>
+                      </PropertyObject>
+                    </ConfigValues>
+                  </ConfigWrapper>
+                </Metadata>
+              </SerializedVertexData>
+            </node>
+            <edge id="1e95b073-fa82-4947-8df8-286838a8f694" source="81eb1f09-859e-4caa-8995-8f92a72bbc4e" target="ec57e6c9-2629-41f3-86cf-82c9976a3751" isFixed="False" />
+            <edge id="5074e564-f9c7-4248-bba1-b477563b667c" source="9e25727b-1796-4edf-a9d2-56096cac3f26" target="577d7968-c0b2-43b4-a5e1-21b4426fe0bc" isFixed="True" />
+            <edge id="5a8b06a0-52aa-415d-8044-0e7cf99e6530" source="9e25727b-1796-4edf-a9d2-56096cac3f26" target="92fe20a6-acc5-4124-8385-4cccd7b83028" isFixed="True" />
+			<edge id="5074e564-f9c7-4248-bba1-b477563b667c" source="9e25727b-1796-4edf-a9d2-56096cac3f26" target="120937e0-4d65-43ce-b650-03ce83d46c1e" isFixed="True" />
+            <edge id="7a80ebc5-6acc-4de8-a1a6-d18e8103b4f0" source="120937e0-4d65-43ce-b650-03ce83d46c1e" target="25d3f269-33df-4fc5-ae99-d5d64fed6e17" isFixed="False" />
+            <edge id="e786f4db-0946-4a8c-a87b-d6f376409c00" source="577d7968-c0b2-43b4-a5e1-21b4426fe0bc" target="120937e0-4d65-43ce-b650-03ce83d46c1e" isFixed="True" />
+            <edge id="ab1c2ec7-76f6-4c7f-8f02-5b85fdf4158c" source="92fe20a6-acc5-4124-8385-4cccd7b83028" target="120937e0-4d65-43ce-b650-03ce83d46c1e" isFixed="True" />
+            <edge id="4d2d17e8-ac47-41a0-8eda-699dc2e7e9bf" source="ec57e6c9-2629-41f3-86cf-82c9976a3751" target="9e25727b-1796-4edf-a9d2-56096cac3f26" isFixed="False" />
+            <edge id="bdc3c8e7-853f-498c-97cc-2795ec25a78f" source="25d3f269-33df-4fc5-ae99-d5d64fed6e17" target="5b930915-1677-4dc0-ba7d-3b900e32b188" isFixed="False" />
+          </graph>
+        </ComponentGraph>
+      </Metadata>
+    </SerializedVertexDataWithSize>
+  </node>
+  <node id="315f3073-3ae3-4a51-b167-cc18fc3bbd1f">
+    <SerializedVertexData Version="1" X="336" Y="165">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="write a = 0" ComponentMetadataDefinitionID="1f2c04e4-4426-539b-803f-4f06810a332c" WaitsForAllPredecessors="True">
+        <IOSpec Version="2">
+          <Input />
+          <Output>
+            <IOItem>
+              <IOItemDefinition Name="integer" Type="System.Int32" IOType="Output" />
+              <MappedTo>a</MappedTo>
+            </IOItem>
+          </Output>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>3</Version>
+              <Name>OutputInteger</Name>
+              <DisplayName>Output integer</DisplayName>
+              <Description />
+              <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <int>0</int>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="c29850eb-a523-4210-a9b3-88f36ef07ddf">
+    <SerializedVertexData Version="1" X="529" Y="163">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="write b = 0" ComponentMetadataDefinitionID="1f2c04e4-4426-539b-803f-4f06810a332c" WaitsForAllPredecessors="True">
+        <IOSpec Version="2">
+          <Input />
+          <Output>
+            <IOItem>
+              <IOItemDefinition Name="integer" Type="System.Int32" IOType="Output" />
+              <MappedTo>b</MappedTo>
+            </IOItem>
+          </Output>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>3</Version>
+              <Name>OutputInteger</Name>
+              <DisplayName>Output integer</DisplayName>
+              <Description />
+              <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <int>0</int>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <edge id="555ed18e-9bc2-4293-87da-a0cbdbdf4763" source="Start" target="315f3073-3ae3-4a51-b167-cc18fc3bbd1f" isFixed="False" />
+  <edge id="0ac76095-abc3-4ec5-8612-76cc65ae304c" source="Start" target="c29850eb-a523-4210-a9b3-88f36ef07ddf" isFixed="False" />
+  <edge id="ad48566d-3efe-44aa-9498-f223d54420b8" source="dbb110f5-9ada-48c6-a818-dbcfc8803dba" target="45cf532e-7619-4b50-9c31-320c2db584bf" isFixed="True" />
+  <edge id="8f60be01-9c4d-46fc-9e7b-656e2de43fd8" source="dbb110f5-9ada-48c6-a818-dbcfc8803dba" target="8be39806-188f-4bdd-917e-c0d82abf3bbe" isFixed="True" />
+  <edge id="4527f011-6185-47d7-9db1-22ba8e24a12c" source="dbb110f5-9ada-48c6-a818-dbcfc8803dba" target="a8f0aa23-5e96-4c5a-a1c9-808852934c25" isFixed="True" />
+  <edge id="2d5db53b-5b09-40b1-962a-9693904a6bad" source="a8f0aa23-5e96-4c5a-a1c9-808852934c25" target="End" isFixed="False" />
+  <edge id="3ecaa23b-b955-4d51-968a-f05b55662621" source="45cf532e-7619-4b50-9c31-320c2db584bf" target="a8f0aa23-5e96-4c5a-a1c9-808852934c25" isFixed="True" />
+  <edge id="a3a4f33f-5141-4a76-939c-1b32596669c4" source="8be39806-188f-4bdd-917e-c0d82abf3bbe" target="a8f0aa23-5e96-4c5a-a1c9-808852934c25" isFixed="True" />
+  <edge id="2037196c-fe4f-4df2-9042-51bd8a2434cd" source="d44dd98c-4d68-48fe-a97c-a3a4b3604a05" target="ecb8493f-ace5-4988-aef0-ac1b691dc79f" isFixed="True" />
+  <edge id="c8cb3aa9-b727-408e-96c9-0f825bae5237" source="d44dd98c-4d68-48fe-a97c-a3a4b3604a05" target="2490fbdd-288a-4fad-b3e8-136bca4d20ae" isFixed="True" />
+  <edge id="cf09c42a-0e8b-4219-8e1c-957c201c9ec6" source="d44dd98c-4d68-48fe-a97c-a3a4b3604a05" target="6fa34f13-d369-48cf-bd2b-dbfd87125846" isFixed="True" />
+  <edge id="0a3b1598-7207-4510-8e79-1c6d93bf96e0" source="6fa34f13-d369-48cf-bd2b-dbfd87125846" target="End" isFixed="False" />
+  <edge id="8c60f6c0-9821-4298-a07d-0dd47ebf24e3" source="ecb8493f-ace5-4988-aef0-ac1b691dc79f" target="6fa34f13-d369-48cf-bd2b-dbfd87125846" isFixed="True" />
+  <edge id="68a8864f-8ab9-47b4-9ae6-be30241cf93d" source="2490fbdd-288a-4fad-b3e8-136bca4d20ae" target="6fa34f13-d369-48cf-bd2b-dbfd87125846" isFixed="True" />
+  <edge id="323ebee8-c318-4edf-b1d9-925417c8f283" source="315f3073-3ae3-4a51-b167-cc18fc3bbd1f" target="dbb110f5-9ada-48c6-a818-dbcfc8803dba" isFixed="False" />
+  <edge id="ca6ecc31-f82d-4893-8134-49d1df567171" source="c29850eb-a523-4210-a9b3-88f36ef07ddf" target="d44dd98c-4d68-48fe-a97c-a3a4b3604a05" isFixed="False" />
+  
+</graph>

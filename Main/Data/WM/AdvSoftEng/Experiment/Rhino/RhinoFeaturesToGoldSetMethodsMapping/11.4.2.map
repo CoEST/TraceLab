@@ -1,0 +1,9 @@
+org.mozilla.javascript.TokenStream.stringToKeyword
+org.mozilla.javascript.FunctionObject.FunctionObject
+org.mozilla.javascript.Decompiler.decompile
+org.mozilla.javascript.IRFactory.createExprStatement
+org.mozilla.javascript.Interpreter.bytecodeName
+org.mozilla.javascript.Parser.unaryExpr
+org.mozilla.javascript.Interpreter.interpretLoop
+org.mozilla.javascript.Token.name
+org.mozilla.javascript.Interpreter.visitExpression

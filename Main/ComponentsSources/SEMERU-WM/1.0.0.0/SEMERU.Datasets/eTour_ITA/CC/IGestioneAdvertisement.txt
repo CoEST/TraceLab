@@ -1,0 +1,56 @@
+package unisa.gps.etour.control. Gestione Advertisement;
+
+import java.rmi. Remote;
+import java.rmi. Remote Exception;
+import java.util. Hash Map;
+
+import javax.swing. Image Icon;
+
+import unisa.gps.etour.bean. Bean Banner;
+
+/**
+ *  Interfaccia generale di  Gestione dei  Banner e della news.
+ *
+ * @author  Palladino  Fabio
+ * @version  . 
+ * 
+ * �      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I  University of  Salerno
+ */
+public interface  I Gestione Advertisement extends  Remote
+{
+	/**
+	 *  Inserisce un nuovo banner.
+	 * 
+	 * @param p Banner  Bean contenente i dati del banner
+	 * @throws  Remote Exception
+	 */
+	public boolean inserisci Banner(int p Id Punto Di Ristoro, Image Icon p Immagine Banner) 
+		throws  Remote Exception;
+	/**
+	 *  Elimina un  Banner dal sistema.
+	 * 
+	 * @param p Banner I D  I D del banner da cancellare.
+	 * @return true se l'operazione va a buon fine false altrimenti.
+	 * @throws  Remote Exception
+	 */
+	public boolean cancella Banner(int p Banner I D) throws  Remote Exception;
+	/**
+	 *  Modifica i dati del banner o l'immagine associata.
+	 * 
+	 * @param p Banner  Bean contenente i dati del banner.
+	 * @return true se l'operazione va a buon fine, false altrimenti.
+	 * @throws  Remote Exception
+	 */
+	public boolean modifica Banner(int p Banner I D, Image Icon p Immagine) 
+		throws  Remote Exception;
+	/**
+	 *  Restituisce una lista di  Banner di un determinato punto di ristoro.
+	 * 
+	 * @param p Punto Di Ristoro I D  Id del punto di ristoro proprietario dei banner
+	 * @return  Array List  Lista contenete i banner del punto di ristoro
+	 * @throws  Remote Exception
+	 */
+	public  Hash Map< Bean Banner, Image Icon> ottieni Banners Da I D(int p Id Punto Di Ristoro)
+		throws  Remote Exception;
+	
+}

@@ -1,0 +1,5 @@
+org.mozilla.javascript.NativeError.findPrototypeId
+org.mozilla.javascript.NativeError.initPrototypeId
+org.mozilla.javascript.NativeError.getString
+org.mozilla.javascript.NativeError.js_toString
+org.mozilla.javascript.NativeError.execIdCall

@@ -1,0 +1,106 @@
+/**
+ *  Descrizione
+ *
+ * @author  Palladino  Fabio
+ * @version  . 
+ * 
+ * &#   ;      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I -  University of  Salerno
+ */
+package unisa.gps.etour.control. Gestione Advertisement.test.stubs;
+
+import java.sql. S Q L Exception;
+import java.util. Array List;
+import java.util. Date;
+
+import unisa.gps.etour.bean. Bean Convenzione;
+import unisa.gps.etour.bean. Bean Punto Di Ristoro;
+import unisa.gps.etour.repository. I D B Convenzione;
+
+public class  D B Convenzione implements  I D B Convenzione
+{
+	private static int  N U M_ T E S T =  ;
+	/* (non- Javadoc)
+	 * @see unisa.gps.etour.repository. I D B Convenzione#cancella Convenzione(int)
+	 */
+	public boolean cancella Convenzione(int p Id Convenzione) throws  S Q L Exception
+	{
+		//  T O D O  Auto-generated method stub
+		return false;
+	}
+
+	/* (non- Javadoc)
+	 * @see unisa.gps.etour.repository. I D B Convenzione#get Storico Convenzione(int)
+	 */
+	public  Array List< Bean Convenzione> ottieni Storico Convenzione(int id Punto Di Ristoro)
+			throws  S Q L Exception
+	{
+		//  T O D O  Auto-generated method stub
+		return null;
+	}
+
+	/* (non- Javadoc)
+	 * @see unisa.gps.etour.repository. I D B Convenzione#inserisci Convenzione(unisa.gps.etour.bean. Bean Convenzione)
+	 */
+	public boolean inserisci Convenzione( Bean Convenzione p Convenzione)
+			throws  S Q L Exception
+	{
+		//  T O D O  Auto-generated method stub
+		return false;
+	}
+
+	/* (non- Javadoc)
+	 * @see unisa.gps.etour.repository. I D B Convenzione#modifica Convenzione(unisa.gps.etour.bean. Bean Convenzione)
+	 */
+	public boolean modifica Convenzione( Bean Convenzione p Convenzione)
+			throws  S Q L Exception
+	{
+		//  T O D O  Auto-generated method stub
+		return false;
+	}
+
+	/* (non- Javadoc)
+	 * @see unisa.gps.etour.repository. I D B Convenzione#ottieni Convezione Attiva(int)
+	 */
+	public  Bean Convenzione ottieni Convezione Attiva(int p Id Punto Di Ristoro)
+			throws  S Q L Exception
+	{
+		 Bean Convenzione convenzione = new  Bean Convenzione();
+		convenzione.set Attiva(true);
+		convenzione.set Data Fine(new  Date());
+		convenzione.set Data Inizio(new  Date());
+		convenzione.set Id(  );
+		convenzione.set Id Punto Di Ristoro( );
+		convenzione.set Prezzo(   );
+		
+		if( N U M_ T E S T ==  )
+		{
+			/* test inserimento banner consentito */
+			convenzione.set Max Banner( );
+			return convenzione;
+		}
+		else if( N U M_ T E S T ==  )
+		{
+			/* test inserimento banner non consentito */
+			convenzione.set Max Banner( );
+			return convenzione;
+		}else{
+			return null;
+		}
+	}
+
+	/* (non- Javadoc)
+	 * @see unisa.gps.etour.repository. I D B Convenzione#ottieni Lista Convenzione Attiva P R()
+	 */
+	public  Array List< Bean Punto Di Ristoro> ottieni Lista Convenzione Attiva P R()
+			throws  S Q L Exception
+	{
+		//  T O D O  Auto-generated method stub
+		return null;
+	}
+	
+	public static void set N U M_ T E S T(int num_test)
+	{
+		 N U M_ T E S T = num_test;
+	}
+
+}

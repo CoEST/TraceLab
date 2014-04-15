@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp17_high_level</id>
+    <name>Waterloo grp17_high_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp17_high_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>F1</id>
+      <content>Administrator can shutdown the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F2</id>
+      <content>Users can make and receive calls; user is notified if user does not have the appropriate privileges</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F3</id>
+      <content>Dial tone is given to user when the phone is taken offhook</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F4</id>
+      <content>4 digit phone number, with the first digit as a prefix and the last 3 digits mapping to a specific phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F5</id>
+      <content>System load is checked, incremented and decremented appropriately during the call process</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F6</id>
+      <content>Phone number dialed is mapped to another user�s IP</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F7</id>
+      <content>Call must completed within a specified time</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F8</id>
+      <content>If callee�s phone is busy, caller will receive a busy tone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F9</id>
+      <content>Callee�s phone will ring after caller places a call to the callee</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F10</id>
+      <content>Audio connection will connect to caller and callee</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F11</id>
+      <content>Caller will receive a timeout signal if callee does not pick up the phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F12</id>
+      <content>Connection is terminated when either party hangs up</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F13</id>
+      <content>Important numbers are dialed by pressing one button</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F14</id>
+      <content>Each phone number must be distinctly mapped to an IP</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F15</id>
+      <content>Administrator has a higher priority in accessing the mapping than a caller</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F16</id>
+      <content>Administrator must have access to all features of the system console</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F17</id>
+      <content>Administrator must login to the system console using a correct combination of login and password</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F18</id>
+      <content>Administrator login will timeout after a specified time or failures</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F19</id>
+      <content>Only one administrator can login to the system at one time</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F20</id>
+      <content>Only one administrator modify system data at one time</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F21</id>
+      <content>System should check administrator�s data input to ensure data integrity</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F22</id>
+      <content>Administrator can add, edit and remove an user account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F23</id>
+      <content>User records are retained indefinitely when an user account is remove</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F24</id>
+      <content>Administrator can see hardware information through System Console</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F25</id>
+      <content>Administrator can request a hardware test through the System Console</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F26</id>
+      <content>System will issue automatic hardware test every 30 seconds</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F27</id>
+      <content>Automatic hardware test results are logged into a file</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F28</id>
+      <content>Administrator can enable and disable a specific phone in the system through the System Console</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F29</id>
+      <content>Administrator can reset a specific phone�s call processing software through the System Console</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F30</id>
+      <content>Administrator can specify the maximum system capacity in the System Console</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F31</id>
+      <content>All calls will be recorded onto the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F32</id>
+      <content>Bills are issued to all users with outstanding balance at the end of each billing period</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F33</id>
+      <content>Administrator can see the phone bill through the System Console</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F34</id>
+      <content>Bill payments are recorded by the system administrator through the System Console</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F35</id>
+      <content>Administrator can specify billing plan for each user through the System Console</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F36</id>
+      <content>System should check administrator�s input to ensure billing period is valid</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F37</id>
+      <content>Caller can choose to block certain incoming calls</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F38</id>
+      <content>System finds available IP and phone number and assigns to phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F39</id>
+      <content>Administrator can change the phone number and the IP assigned to a phone device</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F40</id>
+      <content>Administrator can disassociate and IP and a phone number from a phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F41</id>
+      <content>Verify there exists a callee for the dialed phone number and mapped IP</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F42</id>
+      <content>Phone Subsystem collects digits dialed by the phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F43</id>
+      <content>Administrator can add a new phone number IP mapping</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F44</id>
+      <content>Administrator can look up a phone number IP mapping via the System Console</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F45</id>
+      <content>Administrator can update phone number IP mapping via the System Console</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F46</id>
+      <content>System checks if an user is already existing before adding an user</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F47</id>
+      <content>System checks if a phone is available before adding an user</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F48</id>
+      <content>Administrator can modify a phone number or an IP of an user account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F49</id>
+      <content>Administrator can assign a phone number and an IP to an user account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F50</id>
+      <content>Administrator can assign a specific phone number to an user account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F51</id>
+      <content>Administrator can assign a random phone number to an user account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N1</id>
+      <content>Response time of establishing an audio connection should be reasonable</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N2</id>
+      <content>System must be easy to use for the caller and callee, without any prior training; conform to the norm of a regular telephone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N3</id>
+      <content>A correct connection from caller to callee is made if the system load can handle it</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N4</id>
+      <content>Contents of an established connection will not be overheard</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N5</id>
+      <content>The failure of one phone will not cause the entire system to fail.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N6</id>
+      <content>System should be easily extendable to support multiple Administrators</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

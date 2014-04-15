@@ -1,0 +1,140 @@
+           Balance
+           "/**
+               * Symbol represents what will be placed on the stack  .
+               */
+              private static class Symbol
+              {
+                  public char  token  ;
+                  public int   the  Line  ;
+          
+                  public Symbol  ( char tok   int line )
+                  {
+                      token   = tok  ;
+                      the  Line = line  ;
+                  }
+              }"
+           "/**
+               * Constructor  .
+               * @param in  Stream the stream containing a program  .
+               */
+              public Balance  ( Reader in  Stream )
+              {
+                  errors = 0  ;
+                  tok = new Tokenizer  ( in  Stream );
+              }"
+           "/**
+               * Print an error message for unbalanced symbols  .
+               * @return number of errors detected  .
+               */
+              public int check  Balance  ( )
+              {
+                  char ch  ;
+                  Symbol match = null  ;
+                  Stack pending  Tokens = new Stack  ( );
+          
+                  while  ( ( ch = tok  . get  Next  Open  Close  ( ) ) !  = '  \  0' )
+                  {
+                      Symbol last  Symbol = new Symbol  ( ch   tok  . get  Line  Number  ( ) );
+          
+                      switch  ( ch )
+                      {
+                        case '  (  '  : case '  [  '  : case '  {  '  :
+                          pending  Tokens  . push  ( last  Symbol );
+                          break  ;
+                  
+                        case '  )  '  : case '  ]  '  : case '  }  '  :
+                          if  ( pending  Tokens  . is  Empty  ( ) )
+                          {
+                              errors  ++;
+                              System  . out  . println  ( ""  Extraneous "" + ch +
+                                                  "" at line "" + tok  . get  Line  Number  ( ) );
+                          }
+                          else
+                          {
+                              match = (  Symbol  ) pending  Tokens  . pop  ( );
+                              check  Match  ( match   last  Symbol );
+                          }
+                          break  ;
+          
+                        default  : // Cannot happen
+                          break  ;
+                      }
+                  }
+          
+                  while  ( ! pending  Tokens  . is  Empty  ( ) )
+                  {
+                      match = (  Symbol  ) pending  Tokens  . pop  ( );
+                      System  . out  . println  ( ""  Unmatched "" + match  . token +
+                                          "" at line ""  + match  . the  Line );
+                      errors  ++;
+                  }
+                  return errors + tok  . get  Error  Count  ( );
+              }"
+           "private Tokenizer tok  ;
+              private int errors  ;"
+           "/**
+               * Print an error message if cl  Sym does not match op  Sym  .
+               * Update errors  .
+               */
+              private void check  Match  ( Symbol op  Sym   Symbol cl  Sym )
+              {
+                  if  ( op  Sym  . token == '  (  ' && cl  Sym  . token !  = '  )  ' ||
+                      op  Sym  . token == '  [  ' && cl  Sym  . token !  = '  ]  ' ||
+                      op  Sym  . token == '  {  ' && cl  Sym  . token !  = '  }  ' )
+                  {
+                      System  . out  . println  ( ""  Found "" + cl  Sym  . token + "" on line "" +
+                            tok  . get  Line  Number  ( ) + ""; does not match "" + op  Sym  . token
+                            + "" at line "" + op  Sym  . the  Line );
+                      errors  ++;
+                  }
+              }"
+           "/**
+               * main routine for balanced symbol checker  .
+               * Slightly different from text  .
+               * If no command line parameters   standard input is used  .
+               * Otherwise   files in command line are used  .
+               */
+              public static void main  ( String [ ] args )
+              {
+          
+                  Balance p  ;
+          
+                  if  ( args  . length == 0 )
+                  {
+                      p = new Balance  ( new Input  Stream  Reader  ( System  . in ) );
+                      if  ( p  . check  Balance  ( ) == 0 )
+                          System  . out  . println  ( ""  No errors  !"" );
+                      return  ;
+                  }
+          
+                  for  ( int i = 0  ; i < args  . length  ; i  ++ )
+                  {
+                      File  Reader f = null  ;
+                      try 
+                      {
+                          f = new File  Reader  ( args  [ i ] );
+          
+                          System  . out  . println  ( args  [ i ] + "": "" );
+                          p = new Balance  ( f );
+                          if  ( p  . check  Balance  ( ) == 0 ) 
+                              System  . out  . println  ( ""   ... no errors  !"" );
+                      }
+                      catch  ( IO Exception e )
+                      {
+                          System  . err  . println  ( e + args  [ i ] );
+                      }
+                      finally
+                      {
+                          try 
+                          {
+                              if  ( f !  = null )
+                                  f  . close  ( );
+                          }
+                          catch  ( IO Exception e )
+                          {
+                          }
+                      }
+          
+                  }
+              }
+          }"

@@ -1,0 +1,1 @@
+Public Functions	This routine is called by the MIL-STD-1553 Command ISR at 1 Hz (arrival of the Clock Message) to wakeup the CCM Control Task, which blocks on a semaphore after completing its processing.

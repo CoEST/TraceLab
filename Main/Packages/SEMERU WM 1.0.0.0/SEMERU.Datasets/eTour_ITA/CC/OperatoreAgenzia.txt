@@ -1,0 +1,115 @@
+package beans;
+
+import java.sql. Date;
+
+public class  Operatore Agenzia 
+{
+	private  String  Nome, Cognome, Città Residenza, Telefono, Cap, Indirizzo, Email, Password, Username;	
+	private  Date  Data Nascita;
+	
+	public  Operatore Agenzia() {}
+	public  Operatore Agenzia( String nome, String cognome, String citta, String telefono, String cap, String indirizzo, String email, String pass, String user,  Date data) 
+	{
+		this. Nome = nome;
+		this. Cognome = cognome;
+		this. Città Residenza = citta;
+		this. Telefono = telefono;
+		this. Cap = cap;
+		this. Indirizzo = indirizzo;
+		this. Email = email;
+		this. Password = pass;
+		this. Username = user;
+		this. Data Nascita = data;
+	}
+	
+	public void set Nome( String par )
+	{
+			this. Nome = par ;
+	}
+	public  String get Nome()
+	{
+		return  Nome;
+	}
+	
+	public void set Cognome( String par )
+	{
+			this. Cognome = par ;
+	}
+	public  String get Cognome()
+	{
+		return  Cognome;
+	}
+	
+	public void set Città Residenza( String par )
+	{
+			this. Città Residenza = par ;
+	}
+	public  String get Città Residenza()
+	{
+		return  Città Residenza;
+	}
+	
+	public void set Telefono( String par )
+	{
+			this. Telefono = par ;
+	}
+	public  String get Telefono()
+	{
+		return  Telefono;
+	}
+	
+	public void set Cap( String par )
+	{
+			this. Cap = par ;
+	}
+	public  String get Cap()
+	{
+		return  Cap;
+	}
+	
+	public void set Indirizzo( String par )
+	{
+			this. Indirizzo = par ;
+	}
+	public  String get Indirizzo()
+	{
+		return  Indirizzo;
+	}
+	
+	public void set Email( String par )
+	{
+			this. Email = par ;
+	}
+	public  String get Email()
+	{
+		return  Email;
+	}
+	
+	public void set Password( String par )
+	{
+			this. Password = par ;
+	}
+	public  String get Password()
+	{
+		return  Password;
+	}
+	
+	public void set Username( String par )
+	{
+			this. Username = par ;
+	}
+	public  String get Username()
+	{
+		return  Username;
+	}
+	
+	public void set Data Nascita( Date par )
+	{
+			this. Data Nascita = par ;
+	}
+	public  Date get Data Nascita()
+	{
+		return  Data Nascita;
+	}
+}
+

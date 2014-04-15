@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DB5BE4A2-244B-448D-ACBB-E6336B719ED3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MetricComputationEngine</RootNamespace>
+    <AssemblyName>MetricComputationEngine</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="alglibnet2">
+      <HintPath>lib\alglibnet2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TraceLabSDK">
+      <HintPath>..\..\..\..\TraceLab\lib\TraceLabSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="TraceLabSDK.Types">
+      <HintPath>..\..\..\..\Types\TraceLabSDK.Types.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GroupOfTracingResults.cs" />
+    <Compile Include="MetricComputationComponent.cs" />
+    <Compile Include="MetricComputationComponentForSingleDataset.cs" />
+    <Compile Include="MetricComputationEngine.cs" />
+    <Compile Include="MetricComputationComponentConfig.cs" />
+    <Compile Include="MetricComputationEngineService.cs" />
+    <Compile Include="MetricComputations\AveragePrecision.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MetricComputations\AveragePrecisionMetricComputation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MetricComputations\IMetricComputation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MetricComputations\IStatisticallyComparableMetric.cs" />
+    <Compile Include="MetricComputations\MetricComputationForSingleDataset.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MetricComputations\Precision.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MetricComputations\PrecisionAtRecall100.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MetricComputations\PrecisionAtRecall100MetricComputation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MetricComputations\PrecisionMetricComputation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MetricComputations\PrecisionRecallCurveMetricComputation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MetricComputations\Recall.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MetricComputations\RecallMetricComputation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MetricComputations\SummaryStatistics.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MetricComputations\WilcoxonSignedRankTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScoreComputation.cs" />
+    <Compile Include="ScoreComputationHelper.cs" />
+    <Compile Include="SingleTracingResults.cs" />
+    <Compile Include="ITracingResults.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetPath)" "$(SolutionDir)..\..\..\Packages\TraceLab Components\Components\$(TargetFileName)"
+copy "$(ProjectDir)lib\alglibnet2.dll" "$(SolutionDir)..\..\..\Packages\TraceLab Components\Components\alglibnet2.dll"
+
+set TRACELABDIR=%25CD%25
+cd $(SolutionDir)..\..\
+
+p4 edit .\Data\GenericTestData\TestComponents\$(TargetFileName)
+copy $(TargetPath) .\Data\GenericTestData\TestComponents\$(TargetFileName)
+
+p4 edit .\Data\GenericTestData\TestComponents\alglibnet2.dll
+copy "$(ProjectDir)lib\alglibnet2.dll" .\Data\GenericTestData\TestComponents\alglibnet2.dll
+
+cd %25TRACELABDIR%25</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

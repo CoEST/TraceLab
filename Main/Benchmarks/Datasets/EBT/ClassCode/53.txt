@@ -1,0 +1,118 @@
+           Performance Model
+           "private String name = null  ;
+           private Vector driver  Vector = null  ;
+           private Vector constraint  Vector = null  ;
+          
+           private long query  ID = 0  ;
+          
+           public static int count = 0  ;"
+           "public Performance  Model  (  String name   long query  ID  )
+           {
+            this  . name = name  ;
+            this  . query  ID = query  ID  ;
+          
+            this  . driver  Vector = new Vector  ();
+            this  . constraint  Vector = new Vector  ();
+           }"
+           "public Vector get  Constraints  ()
+           {
+            return constraint  Vector  ;
+           }"
+           "public Vector get  Drivers  ()
+           {
+            return driver  Vector  ;
+           }"
+           "public String get  Name  ()
+           {
+            return name  ;
+           }"
+           "public void set  Name  (  String name  )
+           {
+            this  . name = name  ;
+           }"
+           "public void add  Driver  (  Driver  Description driver  )
+           {
+          
+            if ( driver  Vector  . contains  ( driver  ))
+            {
+            }
+            else
+             this  . driver  Vector  . add  ( driver  );
+          
+           }"
+           "public void remove  Driver  (  Driver  Description driver  )
+           {
+            this  . driver  Vector  . remove  ( driver  );
+           }"
+           "public boolean contains  Driver  (  Driver  Description driver  )
+           {
+            return this  . driver  Vector  . contains  ( driver  );
+           }"
+           "public void add  Constraint  (  Constraints  Description constraint  )
+           {
+            this  . constraint  Vector  . add  ( constraint  );
+           }"
+           "public boolean contains  Constraint  (  Constraints  Description constraint  )
+           {
+            return this  . constraint  Vector  . contains  ( constraint  );
+           }"
+           "public void remove  Constraint  (  Constraints  Description constraint  )
+           {
+            this  . constraint  Vector  . remove  ( constraint  );
+           }"
+           "public Driver  Description get  Driver  (  Driver  Description driver  )
+           {
+            Driver  Description dd = null  ;
+          
+            for ( int i = 0  ; i < this  . driver  Vector  . size  (); i  ++)
+            {
+             dd = (  Driver  Description  ) this  . driver  Vector  . get  ( i  );
+          
+             if ( dd  . equals  ( driver  ))
+             {
+              return dd  ;
+             }
+            }
+          
+            return null  ;
+           }"
+           "public Constraints  Description get  Constraint  (  Constraints  Description constraint  )
+           {
+            Constraints  Description cd = null  ;
+          
+            for ( int i = 0  ; i < this  . constraint  Vector  . size  (); i  ++)
+            {
+             cd = (  Constraints  Description  ) this  . constraint  Vector  . get  ( i  );
+          
+             if ( cd  . equals  ( constraint  ))
+             {
+              return cd  ;
+             }
+            }
+          
+            return null  ;
+          
+           }"
+           "public long get  Query  ID  ()
+           {
+            return this  . query  ID  ;
+           }"
+           "public void set  Query  ID  ( long id  )
+           {
+            this  . query  ID = id  ;
+           }"
+           "public String to  String  ()
+           {
+            return ""  performance modelName = ""
+             + this  . name
+             + ""\ n  ""
+             + ""  Query ID = ""
+             + this  . query  ID
+             + ""\ n  ""
+             + ""  Drivers = ""
+             + this  . driver  Vector
+             + ""\ n  ""
+             + ""  Constraints = ""
+             + this  . constraint  Vector  ;
+          
+           }"

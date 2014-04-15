@@ -1,0 +1,196 @@
+           EBT
+           "private JSplit  Pane split  Pane  ;
+              private JSplit  Pane split  Pane  2  ;
+              private Frame Frame  Parent  ;
+              private JPanel Menu  Panel  ;
+              private Text  Model Work  Area  ;
+              private Event  Model Visual  Panel  ;
+              private Merge  Model Merge  Panel  ;
+              private Decompose  Model Decompose  Panel  ;
+              private Refine  Model Refine  Panel  ;
+              private Obsolete  Model Obsolete  Panel  ;
+              private Modify  Model Modify  Panel  ;
+              private New  Model New  Panel  ;
+              private JButton Test  Button  ;
+              private JLabel lbl  requirement No  ;
+              private JText  Field txt  requirement No  ;
+              private Grid  Bag  Layout gb  Layout  ;
+              private Grid  Bag  Constraints gb  Constraints  ;
+              private int Current  Event  ;
+              public String server  IP = null  ;
+              private Merge  Model mm  ;
+           private JList Event  List  ;"
+           "public EBT  (  Frame f  )
+              {
+          
+                  Frame  Parent = f  ;
+              Current  Event = -1  ;
+          
+            this  . server  IP =
+             JOption  Pane
+              . show  Input  Dialog  (""  Please Enter the IP Address of eventserver  "")
+            . trim  ();
+          
+             // Set up JList Selection widget
+                  String labels [] = {""  New  """"  Decompose  """"  Merge  """"  Refine  """"  Modify Value  """"  Obsolete  """" ""};
+                  Event  List = new JList  ( labels  );
+              Event  List  . set  Visible  Row  Count  (  6  );
+              Event  List  . add  List  Selection  Listener  ( new Value  Reporter  ());
+             Scroll  Pane pane = new Scroll  Pane  ();
+                  pane  . add  (  Event  List  );
+          
+             // Create a panel for the menu on the LHS of the screen & add selection list and buttons  .
+                  Menu  Panel = new JPanel  ();
+              Flow  Layout gl = new Flow  Layout  ();
+              // gl  . set  Columns  (  1  );
+              // gl  . set  Rows  (  7  );
+          
+              Menu  Panel  . set  Layout  ( gl  );
+              //  Menu  Panel  . set  Layout  ( new Flow  Layout  ());
+          
+              JLabel jl = new JLabel  (""      "");
+              JLabel j  2 = new JLabel  (""    "");
+              JLabel j  3 = new JLabel (""    "");
+              JLabel j  4 = new JLabel (""    "");
+              JLabel j  5 = new JLabel (""    "");
+                  Menu  Panel  . add  ( jl  );
+              Menu  Panel  . add  ( pane  );
+              Menu  Panel  . add  ( j  2  );
+              Menu  Panel  . add  ( j  3  );
+              Menu  Panel  . add  ( j  4  );
+              Menu  Panel  . add  ( j  5  );
+          
+              // Create a panel for the RHS of the screen
+              Work  Area = new Text  Model  ( this  );
+          
+             // Create the Visual Panel and the Text Panel and place them into the Work  Area
+              Visual  Panel = new Event  Model  ( this  );
+              Visual  Panel  . get  IP Server  ( server  IP  );
+              Merge  Panel = new Merge  Model  ( this  );
+                  Decompose  Panel = new Decompose  Model  ( this  );
+              Refine  Panel = new Refine  Model  ( this  );
+              New  Panel = new New  Model  ( this  );
+                  Obsolete  Panel = new Obsolete  Model  ( this  );
+                  Modify  Panel = new Modify  Model  ( this  );
+          
+                  //  Create a split pane with the two scroll panes in it
+                  split  Pane  2 = new JSplit  Pane  (  JSplit  Pane  .  VERTICAL  _  SPLIT   Visual  Panel   Work  Area  );
+                  split  Pane = new JSplit  Pane  (  JSplit  Pane  .  HORIZONTAL  _  SPLIT  
+                                             Menu  Panel   split  Pane  2  );
+                  split  Pane  2  . set  Divider  Size  (  2  );
+              split  Pane  . set  Divider  Size  (  4  );
+                  split  Pane  . set  Divider  Location  (  150  );
+              Visual  Panel  . add  Mouse  Listener  ( this  );
+                  Merge  Panel  . add  Mouse  Listener  ( this  );
+                  Decompose  Panel  . add  Mouse  Listener  ( this  );
+                  Refine  Panel  . add  Mouse  Listener  ( this  );
+                  New  Panel  . add  Mouse  Listener  ( this  );
+                  Obsolete  Panel  . add  Mouse  Listener  ( this  );
+                  Modify  Panel  . add  Mouse  Listener  ( this  );
+          
+              split  Pane  . set  Preferred  Size  ( new Dimension  (  550    430  ));
+                  split  Pane  2  . set  Divider  Location  (  300  );
+          
+              Work  Area  . set  Layout  ( null  );
+          
+           }"
+           "public void get  requirement Text  (  EBShape sh  )
+              {
+            Work  Area  . show  Text  ( sh  );
+           }"
+           "public boolean mouse  Down  ( java  . awt  .  Event  e   int x   int y  )
+           {
+             return true  ;
+           }"
+           "public boolean mouse  Up  ( java  . awt  .  Event  e   int x   int y  )
+              {
+            return true  ;
+           }"
+           "public void mouse  Clicked  ( java  . awt  . event  .  Mouse  Event  e  )
+              {
+            Visual  Panel  .  Clicked  ( e  . get  X  () e  . get  Y  ());
+              }"
+           public void mouse  Exited  ( java  . awt  . event  .  Mouse  Event  e  ){}
+           public void mouse  Pressed  ( java  . awt  . event  .  Mouse  Event  e  ){}
+           public void mouse  Released  ( java  . awt  . event  .  Mouse  Event  e  ){}
+           public void mouse  Entered  ( java  . awt  . event  .  Mouse  Event  e  ){}
+           public void paint  (  Graphics g  ) {}
+           public void update  (  Graphics g  ) {}
+           "public JSplit  Pane get  Split  Pane  ()
+              {
+                  return split  Pane  ;
+              }"
+           "public void value  Changed  (  List  Selection  Event e  )
+              {
+                  if ( e  . get  Value  Is  Adjusting  ())
+                      return  ;
+              }"
+           "private class Value  Reporter implements List  Selection  Listener
+              {
+          
+            public void value  Changed  (  List  Selection  Event event  )
+            {
+             if (! event  . get  Value  Is  Adjusting  ())
+             {
+              switch  (  Event  List  . get  Selected  Index  ())
+              {
+               case 0  :
+                Visual  Panel = New  Panel  ;
+                Current  Event = 0  ;
+                break  ;
+               case 1  :
+                Visual  Panel = Decompose  Panel  ;
+                Current  Event = 1  ;
+                break  ;
+               case 2  :
+                Visual  Panel = Merge  Panel  ;
+                     Current  Event = 2  ;
+                break  ;
+               case 3  :
+                Visual  Panel = Refine  Panel  ;
+                     Current  Event = 3  ;
+                break  ;
+               case 4  :
+                Visual  Panel = Modify  Panel  ;
+                Current  Event = 4  ;
+                break  ;
+               case 5  :
+                Visual  Panel = Obsolete  Panel  ;
+                Current  Event = 5  ;
+                break  ;
+              }// end switch
+          
+              Work  Area  .  Show  Info  (  Current  Event  );
+              split  Pane  2  . set  Top  Component  (  Visual  Panel  );
+                  split  Pane  2  . set  Divider  Location  (  300  );
+              Visual  Panel  .  Build  Event  ();
+              Visual  Panel  . draw  Model  ();
+              Work  Area  . draw  Model  ();
+          
+             }// end if
+            }// enf value changed method
+              }// end value  Reporter Class"
+           "public void Redraw  All  (  EBShape sh  )
+              {
+            Visual  Panel  . draw  Model  ( sh  );
+            Visual  Panel  .  Check  Notify  Status  ();
+              }"
+           "public static void main  (  String s  [])
+              {
+                  JFrame mainframe = new JFrame  (""  Trigger an Event Notification  "");
+          
+                  mainframe  . add  Window  Listener  ( new Window  Adapter  ()
+                  {
+                      public void window  Closing  (  Window  Event e  )
+                      {
+              System  . exit  (  0  );
+          
+                   }
+                });
+          
+                  // mainframe  . set  Cursor  (  Frame  .  HAND  _  CURSOR  );
+                  EBT ebt = new EBT  ( mainframe  );
+                  mainframe  . get  Content  Pane  (). add  ( ebt  . get  Split  Pane  ());
+                  mainframe  . pack  ();
+                  mainframe  . set  Visible  ( true  );
+              }"

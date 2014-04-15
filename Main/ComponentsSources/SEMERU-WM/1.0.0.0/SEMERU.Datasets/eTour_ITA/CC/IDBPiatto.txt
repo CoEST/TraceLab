@@ -1,0 +1,50 @@
+﻿package unisa.gps.etour.repository;
+
+import java.sql. S Q L Exception;
+import java.util. Array List;
+
+import unisa.gps.etour.bean. Bean Piatto;
+
+/**
+ *  Interfaccia per la gestione dei  Piatti nel database
+ * 
+ * @author  Martone  Giuseppe
+ * @version  .  �      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I �  University
+ *          of  Salerno
+ */
+public interface  I D B Piatto
+{
+	/**
+	 *  Aggiunge un piatto
+	 * 
+	 * @param p Piatti  Piatto da aggiungere
+	 */
+	public boolean inserisci Piatto( Bean Piatto p Piatto) throws  S Q L Exception;
+
+	/**
+	 *  Modifica i dati di un piatto nel database
+	 * 
+	 * @param p Piatti  Dati del piatto da inserire nel database
+	 * @return  True se c'e' stata una modifica false altrimenti
+	 */
+	public boolean modifica Piatto( Bean Piatto p Piatto) throws  S Q L Exception;
+
+	/**
+	 *  Elimina un piatto dal database
+	 * 
+	 * @param p Id Piatto  Identificativo  Piatto da eliminare
+	 * @throws  S Q L Exception
+	 * @return  True se e' stato cancellato false altrimenti
+	 */
+	public boolean cancella Piatto(int p Id Piatto) throws  S Q L Exception;
+
+	/**
+	 *  Restituisce la lista dei piatti di un menu
+	 * 
+	 * @param p Id Menu  Identificativo del menu
+	 * @throws  S Q L Exception
+	 * @return  Lista dei piatti contenuti nel menu
+	 */
+	public  Array List< Bean Piatto> ottieni Piatto(int p Id Menu) throws  S Q L Exception;
+
+}

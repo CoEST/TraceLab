@@ -1,0 +1,16 @@
+Use case name	MODIFICA DATI ACCOUNT TURISTA
+Modifica i dati di un selezionato account Turista.
+Partecipating
+Actor	Inizializzato da Operatore Agenzia
+Entry
+conditions	•	L’Operatore Agenzia ha effettuato il login.
+Flow of events 		User	System
+	1.		Dalla lista dei turisti ottenuta attivando il caso d’uso ricerca turista ne seleziona uno e attiva la funzionalità per la modifica dei dati dell’account.	
+	2.			Carica i dati dell’account selezionato e li visualizza in una form permettendone la modifica.
+	3.		Modifica i campi della form e la sottomette.	
+	4.			Verifica i dati e chiede conferma dell’operazione di modifica. Nel caso in cui i dati inseriti siano invalidi o insufficienti, il sistema attiva il caso d’uso errore dati.
+	5.		Conferma l’operazione.	
+	6.			Memorizza i dati modificati dell’account selezionato.
+Exit conditions	•	Il sistema notifica l’avvenuta modifica dei dati del selezionato account Turista.
+•	Interruzione della connessione al server di eTour.
+Quality requirements	

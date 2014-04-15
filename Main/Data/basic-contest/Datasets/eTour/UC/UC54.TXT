@@ -1,0 +1,15 @@
+Use case name MODIFICACOMMENTO 
+Edit the comment previously issued. 
+Partecipating 
+Actor initialized by Tourist 
+Entry 
+• Tourist conditions is in the details of a particular site. 
+Flow of events User System 
+1. Choose to change the comment on the feedback for the site issued by the appropriate functionality. 
+2 Verify the data entered and asks for confirmation of the change. Where the data is invalid or insufficient, the system activates the use case Errored. 
+3 Confirm the change of the comment. 
+4 Edit commentary on selected feedback 
+Exit conditions • The system shall notify the alterations of the comment 
+• Interruption of the connection to the server ETOUR. 
+Quality 
+requirements

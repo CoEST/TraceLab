@@ -1,0 +1,79 @@
+F1	Administrators must be able to log in. An Administrator must be authenticated before logging in. ~
+F2	Administrators should be able to view the system load, the number of phones in the system and number of phones currently involved in a call ~
+F3	Administrators must be able to exit the system when they will be away.~
+F4	Administrators must be able to create new user profiles.~
+F5	Administrators must be able to view and edit user profiles they have created.~
+F6	Administrators must be able to create new accounts for users.~
+F7	Administrators must be able to view and edit user accounts they have created.~
+F8	Administrators have the option of suspending the service of a user if they have not paid their bill, and reinstating it after they have paid.~
+F9	Administrators have the option of cancelling the service of a user if they have not paid their bill.~
+F10	Administrators must have the option of creating new billing plans.~
+F11	Administrators must be able to view and edit a user’s bills.~
+F12	Administrators must record when a user has paid his bill.~
+F13	Administrators can test the functionality of a specified phone or all phones in the system.~
+F14	Administrators must be able to specify the maximum number of calls on the system, maximum load of the system .~
+F15	Administrators may have to reset the call processing software for a particular phone.~
+F16	Administrators must be able to get summary information on the status of all phones.~
+F17	Administrator must be able to change status of a phone. e.g. disable, enable~
+F18	System should maintain calling plan history for each user account~
+F19	System should monitor all phone process and periodically run some tests to verify that the phone is operating normally ~
+F20	System must be able to receive error messages. The System must alert the Administrator whenever there is an error~
+F21	Users should be able to originate calls provided their accounts have been allocated this capability. ~
+F22	Users should be able to receive calls provided their accounts have been allocated this capability.~
+F23	System should monitor each phone for events, such as, off-hook, numbers being dialled~
+F24	The system must generate user bills and automatically send them through e-mail at the end of a billing period or when a user’s account is cancelled.~
+F25	System must keep a record of every established call for billing purposes~
+F26	System is responsible for checking Administrators inputs to ensure the system does not become inconsistent.~
+F27	User records should be retained indefinitely ~
+F28	Phone numbers or extensions are 4 digits long~
+F29	Sockets are the default form of inter-process communication~
+F30	System needs to construct and maintain a mapping from dialled numbers to pairs~
+F31	Always round up to the next minute when calculating the length of the call~
+F32	Administrator must be able to view associated phone information for given IP address~
+F33	System automatically adds new IPs when new phones are connected to the system and removes IPs when phones are disconnected from the system~
+F34	Administrator must be able to modify the calling plan for a particular user account ~
+F35	Administrator must be able to modify an existing calling plan ~
+F36	Administrator must be able to change the phone number or IP of a user’s phone account.~
+F37	A phone process must acquire a resource before it is able to receive or send signals to a particular phone.   ~
+F38	Before making a call, the phone must acquire a line.  The line is released once the call ends.  It is the caller’s responsibility to acquire and release lines.~
+F39	Source code should be available for debugging if required.~
+F40	When a user is in the process of dialling a number, the system remembers the digits that have already been dialled.~
+F41	The Administrator must be able to resend a bill to a user at any time.~
+F42	When phones are added to the system, they must be properly enabled. ~
+F43	An administrator must be able to specify an activation date for a user’s account.  ~
+F44	When a user picks up their phone, they will not be able to make a call if they do not have the capability to originate calls or if they cannot acquire a line.~
+F45	After a caller picks up the phone, they may hang up at any time.  The system must be ready to release the resource if it has been acquired, or to send the necessary signal to the callee.~
+F46	After the callee picks up the phone, the callee may hang up at any time.~
+F47	Once a number has been dialled, it is checked to see if it is a valid number within the system.  If so, to make the connection the IP corresponding to it is retrieved.~
+F48	When the caller receives a line, they may only hold it for a limited amount of time before dialling a complete number.  Otherwise, the line will be freed and they must hang up before they can try again.~
+F49	The administrator can modify a user’s ability to originate or receive calls.~
+F50	If the caller dials a number of a phone which is busy or cannot receive calls, the phone will not ring and no connection can be made.~
+F51	If the caller dials the number of a phone that can receive calls and is not busy, the phone will ring. ~
+F52	A callee is busy if their phone is off the hook or if their phone is ringing.~
+F53	A user may have multiple phone accounts.  ~
+F54	If a user does not pay the bill on time, on the following bill a warning notice will appear.~
+F55	Every call is billed by the rate in effect at the end of the call.~
+F56	Administrator can modify, view and remove calling plans~
+F57	If a caller ends a call during a period covered by their calling plan, the rate per minute used is the default rate multiplied by the discount rate.~
+F58	Bills are e-mailed out on the user’s billing day.  The billing period end date is the day before the billing day.~
+F59	A user with a Billing Day of 29, 30, or 31 will get their bill sent to them on the last day of a month if the month does not contain these days (ie: February)~
+F60	The Administrator may modify the frequency that automated tests are performed.~
+F61	The Administrator may remove an entire user (including all accounts)  instead of having to remove each account individually.~
+F62	The Administrator may suspend all of a user’s accounts by using the “Suspend User” button.~
+F63	If all the numbers in the system have been assigned, the Administrator may not create any more user accounts.~
+F64	When the system starts up, all phone processes are created and all system constants are initialized.~
+F65	All phone calls must be terminated rapidly and billing information is retained.  System constants must be saved so they can be restored after shutdown.~
+N1	Measurement of operating speed, such as system output over a period of time (throughput) or time it takes the system to respond to a request (response time).   ~
+N2	How easy to use is the system.  Important attributes include adaptability, clarity, and intuitiveness. ~
+N3	How effectively does a system use its available resources, ~
+N4	The storage of the server in a secure location such as a locked room.  This is to prevent unauthorised tampering with the hardware, software, and data.  It also prevents theft of equipment.~
+N5	System needs to restrict access to administrator functions.~
+N6	The system must be capable of functioning 24 hours a day, 7 days a week.~
+N7	The system software must be able to expand the maximum number of users/accounts in the system.~
+N8	The system software must be able to expand the maximum number of connections the system can handle at any one time.~
+N9	The system will be able to run on any server that has the same capabilities as commando.math server,~
+N10	The system must be able to integrate new features with a reasonable amount of effort.~
+N11	System can display hardware information, request hardware tests at any time, receive error messages, reset the call processing software for a particular phone~
+N12	Documents and code must be easy to understand.~
+N13	System matches requirements.~
+N14	The software should handle errors and unexpected cases.  It has a high fault tolerance and does not crash.~

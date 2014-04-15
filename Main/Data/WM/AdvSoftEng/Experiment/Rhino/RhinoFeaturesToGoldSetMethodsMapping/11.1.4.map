@@ -1,0 +1,14 @@
+org.mozilla.javascript.Parser.primaryExpr
+org.mozilla.javascript.Interpreter.dumpICode
+org.mozilla.javascript.Decompiler.decompile
+org.mozilla.javascript.Node.propToString
+org.mozilla.javascript.Interpreter.bytecodeName
+org.mozilla.javascript.Interpreter.generateICodeFromTree
+org.mozilla.javascript.Interpreter.interpretLoop
+org.mozilla.javascript.ScriptRuntime.newArrayLiteral
+org.mozilla.javascript.NativeArray.toStringHelper
+org.mozilla.javascript.Interpreter.visitExpression
+org.mozilla.javascript.IRFactory.createArrayLiteral
+org.mozilla.javascript.TokenStream.getToken
+org.mozilla.javascript.Interpreter.visitLiteral
+org.mozilla.javascript.Token.name

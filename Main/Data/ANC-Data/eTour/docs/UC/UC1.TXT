@@ -1,0 +1,16 @@
+Use case name ELIMINABENECULTURALE 
+Delete a cultural object in the system. 
+Partecipating 
+Actor initialization Agency Operator 
+Entry 
+Operator conditions • The agency has logged. 
+Flow of events User System 
+1. View the list of BeniCulturali as a result of the use case RicercaBeneCulturale, it selects and activates a function of elimination. 
+2 Asks confirmation. 
+3 Confirm the operation. 
+4 Delete the cultural choice. 
+Exit conditions • The system shall notify the successful elimination of the cultural. 
+• Operator Agency cancels the operation. 
+• Interruption of connection to the server ETOUR. 
+Quality 
+The system requirements blocks of input controls on receipt of confirmation of cancellation to avoid multiple submissions before the end of the operation.

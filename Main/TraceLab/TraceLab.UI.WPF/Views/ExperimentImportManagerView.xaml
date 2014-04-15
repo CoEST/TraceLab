@@ -1,0 +1,135 @@
+﻿<!--
+TraceLab - Software Traceability Instrument to Facilitate and Empower Traceability Research
+Copyright (C) 2012-2013 CoEST - National Science Foundation MRI-R2 Grant # CNS: 0959924
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see<http://www.gnu.org/licenses/>.
+-->
+
+<UserControl x:Class="TraceLab.UI.WPF.Views.ExperimentImportManagerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:l="clr-namespace:TraceLab.UI.WPF.Views"
+             xmlns:ViewModels="clr-namespace:TraceLab.UI.WPF.ViewModels"
+             xmlns:Controls="clr-namespace:TraceLab.UI.WPF.Controls"
+             Background="SlateGray"
+             MaxWidth="400">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Controls/TreeListView/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <HierarchicalDataTemplate DataType="{x:Type ViewModels:PackageReferenceCollection}" ItemsSource="{Binding }">
+                <DockPanel>
+                    <Controls:TreeListViewExpander x:Name="ImportsExpander" />
+                    <Grid Height="16" Width="16" VerticalAlignment="Center" Margin="-1,0,5,0">
+                        <Image Source="pack://application:,,,/TraceLab.UI.WPF;component/Resources/VSFolder_closed_virtual.png" />
+                        <Image Source="pack://application:,,,/TraceLab.UI.WPF;component/Resources/VSObject_Assembly.png" Height="10" Width="10" Margin="-1,1,0,0"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Grid>
+                    <TextBlock Text="Imports" />
+                </DockPanel>
+                <HierarchicalDataTemplate.Triggers>
+                    <DataTrigger Binding="{Binding Count}" Value="0">
+                        <Setter TargetName="ImportsExpander" Property="Visibility" Value="Hidden" />
+                    </DataTrigger>
+                </HierarchicalDataTemplate.Triggers>
+            </HierarchicalDataTemplate>
+
+            <HierarchicalDataTemplate DataType="{x:Type ViewModels:PackageContentCollection}" ItemsSource="{Binding }">
+                <DockPanel>
+                    <Controls:TreeListViewExpander />
+                    <Image Source="pack://application:,,,/TraceLab.UI.WPF;component/Resources/folder_open.ico" Height="18" />
+                    <TextBlock Text="Contents" />
+                </DockPanel>
+            </HierarchicalDataTemplate>
+
+            <HierarchicalDataTemplate DataType="{x:Type ViewModels:PackageViewModel}" ItemsSource="{Binding Visible}">
+                <DockPanel LastChildFill="True">
+                    <Controls:TreeListViewExpander />
+                    <Image Source="pack://application:,,,/TraceLab.UI.WPF;component/Resources/VSObject_Assembly.png" Height="16" Width="16" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-1,0,5,0" />
+                    <TextBlock Text="{Binding Label}" />
+                </DockPanel>
+            </HierarchicalDataTemplate>
+            
+            <HierarchicalDataTemplate DataType="{x:Type ViewModels:PackageContentItem}" ItemsSource="{Binding Contents}">
+                <DockPanel>
+                    <Controls:TreeListViewExpander />
+                    <Image Source="pack://application:,,,/TraceLab.UI.WPF;component/Resources/folder_open.ico" Height="16" />
+                    <TextBlock Text="{Binding Label}" />
+                </DockPanel>
+            </HierarchicalDataTemplate>
+
+            <DataTemplate DataType="{x:Type ViewModels:PackageFileContentItem}" >
+                <DockPanel>
+                    <Controls:TreeListViewExpander Visibility="Hidden" />
+                    <Image Source="pack://application:,,,/TraceLab.UI.WPF;component/Resources/VSProject_genericfile.png" Height="16" Width="16" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-1,0,5,0" />
+                    <TextBlock Text="{Binding Label}" />
+                </DockPanel>
+            </DataTemplate>
+
+            <Style x:Key="myHeaderStyle" TargetType="{x:Type GridViewColumnHeader}">
+                <Setter Property="Visibility" Value="Collapsed" />
+            </Style>
+            
+            <DataTemplate x:Key="EmptyTemplate">
+            </DataTemplate>
+
+            <DataTemplate x:Key="PackageIncludeColumn">
+                <CheckBox IsChecked="{Binding IsChecked}" />
+            </DataTemplate>
+
+            <Style x:Key="hcs" TargetType="{x:Type GridViewColumnHeader}">
+                <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+            </Style>
+
+            <l:IsPackageIncludedSelector x:Key="aaafff" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <StackPanel Orientation="Vertical" Margin="5" HorizontalAlignment="Stretch" MaxHeight="400">
+        <Grid Visibility="Hidden" Width="300">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1" Name="PlaceHolderWidth" />
+        </Grid>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <Controls:TreeListView Grid.Row="2" x:Name="ImportLibrary" ItemsSource="{Binding Packages}" 
+                                   HeaderVisible="True" MaxHeight="300">
+                <Controls:TreeListView.Columns>
+                    <GridViewColumnCollection>
+                        <GridViewColumn Header="Include" CellTemplateSelector="{StaticResource aaafff}" />
+                        <GridViewColumn Header="Package" Width="{Binding Path=ActualWidth, ElementName=PlaceHolderWidth}" />
+                    </GridViewColumnCollection>
+                </Controls:TreeListView.Columns>
+
+                <Controls:TreeListView.ItemContainerStyle>
+                    <Style x:Name="override" TargetType="{x:Type Controls:TreeListViewItem}" BasedOn="{StaticResource {x:Type Controls:TreeListViewItem}}">
+                        <Setter Property="HorizontalAlignment" Value="Stretch" />
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        <!--<Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />-->
+                    </Style>
+                </Controls:TreeListView.ItemContainerStyle>
+            </Controls:TreeListView>
+        </ScrollViewer>
+
+        <Button Margin="0 5 0 0" Width="80" HorizontalAlignment="Center" Content="Close" Click="Button_Click" />
+    </StackPanel>
+</UserControl>

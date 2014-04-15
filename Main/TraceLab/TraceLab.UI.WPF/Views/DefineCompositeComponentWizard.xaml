@@ -1,0 +1,522 @@
+﻿<!--
+TraceLab - Software Traceability Instrument to Facilitate and Empower Traceability Research
+Copyright (C) 2012-2013 CoEST - National Science Foundation MRI-R2 Grant # CNS: 0959924
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see<http://www.gnu.org/licenses/>.
+-->
+
+<Window x:Class="TraceLab.UI.WPF.Views.DefineCompositeComponentWizard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock"
+             xmlns:wpg="clr-namespace:WPG;assembly=WPG"
+             xmlns:Converters="clr-namespace:TraceLab.UI.WPF.Converters"
+             xmlns:Views="clr-namespace:TraceLab.UI.WPF.Views"
+             xmlns:ViewModels="clr-namespace:TraceLab.UI.WPF.ViewModels"
+             xmlns:Selectors="clr-namespace:TraceLab.UI.WPF.Selectors"
+             xmlns:Commands="clr-namespace:TraceLab.UI.WPF.Commands"
+             Title="Define Composite Component"
+             WindowStartupLocation="CenterOwner"
+             Height="600" Width="960" MinHeight="600" MinWidth="960"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="550">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Views/Nodes/BasicNodeControl.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Views/Nodes/ComponentNodeControl.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Views/Nodes/DecisionNodeControl.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Views/Nodes/ScopeNodeControl.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Views/Nodes/LoopScopeNodeControl.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Views/Nodes/ExitDecisionNodeControl.xaml"/>
+                
+                <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Controls/ExperimentBreadcrumb.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Views/Nodes/NodeResourcesReadOnly.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Resources/IOIcons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- all headers align to left -->
+            <Style TargetType="{x:Type GridViewColumnHeader}">
+                <Setter Property="HorizontalContentAlignment" Value="Left"></Setter>
+            </Style>
+
+            <Style x:Key="BackgroundStyle" TargetType="{x:Type DockPanel}">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Offset="0" Color="LightBlue" />
+                            <GradientStop Offset="0.55" Color="White" />
+                            <GradientStop Offset="0.85" Color="White" />
+                            <GradientStop Offset="1" Color="LightBlue" />
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="LabelStyle" TargetType="{x:Type TextBlock}">
+                <Setter Property="Margin" Value="10 5" />
+            </Style>
+            <Style x:Key="TextBoxStyle" TargetType="{x:Type TextBox}">
+                <Setter Property="Margin" Value="1 1 10 1" />
+                <Setter Property="Padding" Value="2" />
+                <Setter Property="Width" Value="Auto" />
+            </Style>
+            <Style x:Key="ComboBoxStyle" TargetType="{x:Type ComboBox}">
+                <Setter Property="Margin" Value="1 1 10 1" />
+                <Setter Property="Padding" Value="2" />
+                <Setter Property="Width" Value="Auto" />
+            </Style>
+            <Style x:Key="DescStyle" TargetType="{x:Type TextBox}">
+                <Setter Property="Margin" Value="1 1 10 1" />
+                <Setter Property="MinLines" Value="6" />
+                <Setter Property="MaxLines" Value="6" />
+                <Setter Property="TextWrapping" Value="WrapWithOverflow" />
+                <Setter Property="VerticalScrollBarVisibility" Value="Visible" />
+                <Setter Property="Width" Value="Auto" />
+            </Style>
+            <Style x:Key="HelpTextBlock" TargetType="{x:Type TextBlock}">
+                <Setter Property="Margin" Value="10" />
+                <Setter Property="TextWrapping" Value="Wrap" />
+            </Style>
+            <Style x:Key="MainStackPanel" TargetType="{x:Type StackPanel}">
+                <Setter Property="Margin" Value="10" />
+            </Style>
+            <Style x:Key="ListViewStyle" TargetType="{x:Type ListView}">
+                <Setter Property="Margin" Value="10 5 5 1" />
+            </Style>
+            <Style x:Key="ConfirmationMessageBlockStyle" TargetType="{x:Type TextBlock}">
+                <Setter Property="Margin" Value="10 20 10 10" />
+                <Setter Property="Width" Value="Auto" />
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+            <Style x:Key="ErrorMessageHeader" TargetType="{x:Type TextBlock}">
+                <Setter Property="Width" Value="Auto" />
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="Foreground" Value="Crimson" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+            <Style x:Key="ErrorMessageBlockStyle" TargetType="{x:Type TextBlock}">
+                <Setter Property="Margin" Value="0 10 0 0" />
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="Foreground" Value="Crimson" />
+                <Setter Property="FontSize" Value="11" />
+            </Style>
+            <Style x:Key="ErrorMessageBorderStyle" TargetType="{x:Type Border}">
+                <Setter Property="BorderThickness" Value="1,1,1,1" />
+                <Setter Property="BorderThickness" Value="2,2,2,2" />
+                <Setter Property="BorderBrush" Value="Crimson" />
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="Margin" Value="15" />
+                <Setter Property="Background" Value="MistyRose" />
+            </Style>
+
+            <!-- Input/Output Definition Panel-->
+            <DataTemplate x:Key="ioSpecPanel">
+                <DockPanel>
+
+                    <TextBlock DockPanel.Dock="Top" Style="{StaticResource HelpTextBlock}">
+                        Component is defined by its inputs and outputs. 
+                        Please select inputs that your component will require to do its computation, and final outputs.
+                    </TextBlock>
+
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel Style="{StaticResource MainStackPanel}">
+
+                            <!--Input-->
+                            <ListView Style="{StaticResource ListViewStyle}" 
+                                Visibility="{Binding Path=InputSettings.Count, Converter={Converters:CountEmptyToVisConverter}}" 
+                                ItemsSource="{Binding Path=InputSettings}">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn>
+                                            <GridViewColumn.Header>
+                                                <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
+                                                    <Image Source="{StaticResource InputIcon}" Width="10" Height="10" Margin="0,0,5,0" />
+                                                    <TextBlock>Input</TextBlock>
+                                                </StackPanel>
+                                            </GridViewColumn.Header>
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding Path=Key}" />
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <GridViewColumn Width="200">
+                                            <GridViewColumn.Header>
+                                                <StackPanel Orientation="Horizontal" Margin="3,0,3,0">
+                                                    <TextBlock>Type</TextBlock>
+                                                </StackPanel>
+                                            </GridViewColumn.Header>
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding Path=Value.Type}"/>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <GridViewColumn>
+                                            <GridViewColumn.Header>
+                                                <StackPanel Orientation="Horizontal" Margin="3,0,3,0">
+                                                    <TextBlock>Include</TextBlock>
+                                                </StackPanel>
+                                            </GridViewColumn.Header>
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <CheckBox IsChecked="{Binding Path=Value.Include}" />
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                    </GridView>
+                                </ListView.View>
+                                <ListView.ItemContainerStyle>
+                                    <Style TargetType="{x:Type ListViewItem}">
+                                        <EventSetter Event="MouseEnter" Handler="IOItem_MouseEnterHandler" />
+                                        <EventSetter Event="MouseLeave" Handler="IOItem_MouseLeaveHandler" />
+                                        <Setter Property="Background" Value="Transparent"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter Property="Background"  Value="{x:Null}" />
+                                                <Setter Property="BorderBrush" Value="{x:Null}" />
+                                            </Trigger>
+                                            <DataTrigger Binding="{Binding Path=Value.IsHighlighted}" Value="True">
+                                                <Setter Property="Background" Value="LightSteelBlue"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ListView.ItemContainerStyle>
+                            </ListView>
+
+                            <!-- Output -->
+                            <ListView Style="{StaticResource ListViewStyle}"
+                                Visibility="{Binding Path=OutputSettings.Count, Converter={Converters:CountEmptyToVisConverter}}"
+                                ItemsSource="{Binding Path=OutputSettings}">
+
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn>
+                                            <GridViewColumn.Header>
+                                                <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
+                                                    <Image Source="{StaticResource OutputIcon}" Width="10" Height="10" Margin="0,0,5,0" />
+                                                    <TextBlock>Output</TextBlock>
+                                                </StackPanel>
+                                            </GridViewColumn.Header>
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding Path=Key}" />
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <GridViewColumn Width="200">
+                                            <GridViewColumn.Header>
+                                                <StackPanel Orientation="Horizontal" Margin="3,0,3,0">
+                                                    <TextBlock>Type</TextBlock>
+                                                </StackPanel>
+                                            </GridViewColumn.Header>
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding Path=Value.Type}"/>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <GridViewColumn>
+                                            <GridViewColumn.Header>
+                                                <StackPanel Orientation="Horizontal" Margin="3,0,3,0">
+                                                    <TextBlock>Include</TextBlock>
+                                                </StackPanel>
+                                            </GridViewColumn.Header>
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <CheckBox IsChecked="{Binding Path=Value.Include}" />
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                    </GridView>
+                                </ListView.View>
+                                <ListView.ItemContainerStyle>
+                                    <Style TargetType="{x:Type ListViewItem}">
+                                        <EventSetter Event="MouseEnter" Handler="IOItem_MouseEnterHandler" />
+                                        <EventSetter Event="MouseLeave" Handler="IOItem_MouseLeaveHandler" />
+                                        <Setter Property="Background" Value="Transparent"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter Property="Background"  Value="{x:Null}" />
+                                                <Setter Property="BorderBrush" Value="{x:Null}" />
+                                            </Trigger>
+                                            <DataTrigger Binding="{Binding Path=Value.IsHighlighted}" Value="True">
+                                                <Setter Property="Background" Value="LightSteelBlue"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ListView.ItemContainerStyle>
+                            </ListView>
+                        </StackPanel>
+                    </ScrollViewer>
+
+                </DockPanel>
+            </DataTemplate>
+
+            <!-- Configuration Definition Panel-->
+            <DataTemplate x:Key="configurationPanel">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" Style="{StaticResource HelpTextBlock}">
+                        Component is defined also by the configuration parameters.
+                        All configuration parameters can be set by the component's user, but only some are visible in the top level view of component in its info pane. 
+                        Please select config parameters that are going to be visible at the top level.
+                    </TextBlock>
+
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel Style="{StaticResource MainStackPanel}">
+                            <!-- Config -->
+                            <ListView Style="{StaticResource ListViewStyle}" 
+                                Visibility="{Binding Path=ConfigSettings.Count, Converter={Converters:CountEmptyToVisConverter}}" 
+                                ItemsSource="{Binding Path=ConfigSettings}">
+
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Config Parameter" Width="150">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding Path=Key}" />
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <GridViewColumn Header="Alias" Width="150">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBox Style="{StaticResource TextBoxStyle}" Text="{Binding Value.Alias, UpdateSourceTrigger=PropertyChanged}" />
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <GridViewColumn Header="Type" Width="150">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding Path=Value.Type}"/>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <GridViewColumn Header="Include">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <CheckBox IsChecked="{Binding Path=Value.Include}" />
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                            
+                            <!-- Label if there are no configs -->
+                            <TextBlock Visibility="{Binding Path=ConfigSettings.Count, Converter={Converters:CountEmptyToVisConverter True=Collapsed, False=Visible}}"
+                                       FontWeight="Bold">
+                                Current composite component does not have any configuration parameters. You can continue. 
+                            </TextBlock>
+                        </StackPanel>
+                    </ScrollViewer>
+                </DockPanel>
+            </DataTemplate>
+            
+            <!-- Composite Component Info Panel -->
+            <DataTemplate x:Key="componentInfoPanel">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" Style="{StaticResource HelpTextBlock}">
+                        Finally define component's name, version and optionally provide description.<LineBreak />
+                        Note, that component's Name, Version, Input and Output, and Configuration determines its unique ID.
+                    </TextBlock>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <!--labels-->
+                            <ColumnDefinition Width="*" />
+                            <!--values-->
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource LabelStyle}">Component name:</TextBlock>
+                        <TextBox Grid.Column="1" Grid.Row="0" Style="{StaticResource TextBoxStyle}" Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource LabelStyle}">Author:</TextBlock>
+                        <TextBox Grid.Column="1" Grid.Row="1" Style="{StaticResource TextBoxStyle}" Text="{Binding Path=Author, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource LabelStyle}">Version:</TextBlock>
+                        <TextBox Grid.Column="1" Grid.Row="2" Style="{StaticResource TextBoxStyle}" Text="{Binding Path=Version, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <TextBlock Grid.Column="0" Grid.Row="3" Style="{StaticResource LabelStyle}">Description:</TextBlock>
+                        <TextBox Grid.Column="1" Grid.Row="3" Style="{StaticResource DescStyle}" Text="{Binding Path=Description, UpdateSourceTrigger=PropertyChanged}" />
+
+                        <TextBlock Grid.Column="0" Grid.Row="4" Style="{StaticResource LabelStyle}">Components directory:</TextBlock>
+                        <ComboBox Grid.Column="1" Grid.Row="4" Style="{StaticResource ComboBoxStyle}" SelectedItem="{Binding SelectedComponentsDirectory}">
+                            <ComboBox.ItemsSource>
+                                <Binding Path="ComponentPaths" />
+                            </ComboBox.ItemsSource>
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate DataType="{x:Type ViewModels:SettingsPathViewModel}">
+                                    <TextBlock Text="{Binding Path}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+
+                        <TextBlock Grid.Column="0" Grid.Row="5" Style="{StaticResource LabelStyle}">Final location:</TextBlock>
+                        <TextBox Grid.Column="1" Grid.Row="5" Style="{StaticResource TextBoxStyle}" Text="{Binding Path=CompositeComponentLocationFilePath}" IsEnabled="False"></TextBox>
+                    </Grid>
+                </DockPanel>
+            </DataTemplate>
+
+            <!-- Confirmation Panel -->
+            <DataTemplate x:Key="confirmationPanel">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource ConfirmationMessageBlockStyle}"  Text="{Binding Path=ConfirmationMessage}"
+                                   Visibility="{Binding Path=ConfirmationMessage, Converter={Converters:EmptyStringToVisibilityConverter}, ConverterParameter=Hidden}"
+                                   TextWrapping="Wrap"
+                                   />
+                    <Border Style="{StaticResource ErrorMessageBorderStyle}"
+                            Visibility="{Binding Path=ErrorMessage, Converter={Converters:EmptyStringToVisibilityConverter}, ConverterParameter=Hidden}">
+                        <StackPanel>
+                            <TextBlock Style="{StaticResource ErrorMessageHeader}" Text="Failed to create component" />
+                            <TextBlock Style="{StaticResource ErrorMessageBlockStyle}"
+                                    Text="{Binding Path=ErrorMessage, Converter={Converters:ErrorMessageShortenerConverter}, ConverterParameter=256}" 
+                                    TextWrapping="Wrap" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </DataTemplate>
+
+            <Selectors:DefiningCompositeComponentWizardSelector x:Key="wizardSelector" />
+
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.Style>
+        <Style TargetType="Views:DefineCompositeComponentWizard">
+            <Setter Property="OpenComponentGraphCommand" Value="{Binding CompositeComponentGraph.OpenComponentGraph}" />
+            <Setter Property="ToggleInfoPaneForNodeCommand" Value="{Binding CompositeComponentGraph.CurrentView.ToggleInfoPaneForNode}" />
+        </Style>
+    </Window.Style>
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static Commands:RoutedCommands.OpenComponentGraphCommand}"
+                    Executed="ExecuteOpenComponentGraphCommand" CanExecute="CanExecuteOpenComponentGraphCommand" />
+
+        <CommandBinding Command="{x:Static Commands:RoutedCommands.ToggleNodeInfoCommand}"
+                    Executed="ExecuteToggleNodeInfo"/>
+    </Window.CommandBindings>
+    
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Component Preview -->
+        <ContentPresenter Grid.Column="0" Content="{Binding CompositeComponentGraph}"/>
+
+        <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Background="LightSteelBlue" />
+
+        <DockPanel Grid.Column="2" Style="{StaticResource BackgroundStyle}">
+
+            <!-- top labels -->
+            <ContentPresenter DockPanel.Dock="Top" Content="{Binding CurrentState}">
+                <ContentPresenter.ContentTemplate>
+                    <DataTemplate DataType="{x:Type ViewModels:DefiningCompositeComponentWizardState}">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                            <Label Height="28" Name="ioSpecLabel" Margin="10,10,10,10">1. IOSpec</Label>
+                            <Label Height="28" Name="configurationLabel" Margin="10,10,10,10">2. Configuraton</Label>
+                            <Label Height="28" Name="infoLabel" Margin="10,10,10,10">3. Component info</Label>
+                            <Label Height="28" Name="confirmationLabel" Margin="10,10,10,10">4. Confirmation</Label>
+                        </StackPanel>
+                        <DataTemplate.Triggers>
+                            <DataTrigger Binding="{Binding }" Value="{x:Static ViewModels:DefiningCompositeComponentWizardState.IOSpec}">
+                                <Setter Property="FontWeight" Value="Bold" TargetName="ioSpecLabel"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding }" Value="{x:Static ViewModels:DefiningCompositeComponentWizardState.Configuration}">
+                                <Setter Property="FontWeight" Value="Bold" TargetName="configurationLabel"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding }" Value="{x:Static ViewModels:DefiningCompositeComponentWizardState.Info}">
+                                <Setter Property="FontWeight" Value="Bold" TargetName="infoLabel"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding }" Value="{x:Static ViewModels:DefiningCompositeComponentWizardState.Confirmation}">
+                                <Setter Property="FontWeight" Value="Bold" TargetName="confirmationLabel"/>
+                            </DataTrigger>
+                        </DataTemplate.Triggers>
+                    </DataTemplate>
+                </ContentPresenter.ContentTemplate>
+            </ContentPresenter>
+
+            <!-- control buttons -->
+            <Grid DockPanel.Dock="Bottom" Height="30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="15"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                <Button Height="23" Name="backButton" Width="80" Command="{Binding BacktrackState}" Grid.Column="1">
+                    Back
+                </Button>
+                <Button Height="23" Name="nextButton" Width="80" Command="{Binding AdvanceState}" Grid.Column="3"
+                        Visibility="{Binding IsNextStep, Converter={Converters:BoolConverter True=Visible, False=Hidden}}">
+                    Next
+                </Button>
+                <Button Height="23" Name="defineButton" Width="80" Command="{Binding Path=DefineComponent}" Grid.Column="3"
+                        Visibility="{Binding IsInfoStep, Converter={Converters:BoolConverter True=Visible, False=Hidden}}">
+                    Define
+                </Button>
+                <Button Height="23" Name="closeButton" Width="80"  Click="close_Click" Grid.Column="3"
+                        Visibility="{Binding IsConfirmationStep, Converter={Converters:BoolConverter True=Visible, False=Hidden}}">
+                    Close
+                </Button>
+                <Button Height="23" Name="cancelButton" Width="80" Click="close_Click" Grid.Column="5"
+                        Visibility="{Binding IsConfirmationStep, Converter={Converters:BoolConverter True=Hidden, False=Visible}}">
+                    Cancel
+                </Button>
+            </Grid>
+
+            <Border Name="mainPanel" BorderThickness="0,2,0,2" BorderBrush="White" Background="Transparent">
+                <DockPanel Name="content">
+
+                    <ContentPresenter ContentTemplateSelector="{StaticResource wizardSelector}">
+                        <ContentPresenter.Content>
+                            <MultiBinding Converter="{Converters:MultiBindingMultiValueConverter}">
+                                <MultiBinding.Bindings>
+                                    <Binding Path="."/>
+                                    <!-- Provide the binding for the content panel -->
+                                    <Binding Path="CurrentState" UpdateSourceTrigger="PropertyChanged"/>
+                                    <!-- Implicit binding to wizard state for the selector -->
+                                </MultiBinding.Bindings>
+                            </MultiBinding>
+                        </ContentPresenter.Content>
+                    </ContentPresenter>
+
+                </DockPanel>
+
+            </Border>
+
+        </DockPanel>
+
+        
+        
+    </Grid>
+</Window>

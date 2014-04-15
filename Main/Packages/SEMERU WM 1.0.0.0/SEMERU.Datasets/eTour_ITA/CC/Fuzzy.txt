@@ -1,0 +1,555 @@
+﻿package unisa.gps.etour.control.fuzzy;
+
+import java.io. File;
+import java.io. File Input Stream;
+import java.io. File Not Found Exception;
+import java.io. File Output Stream;
+import java.io. File Reader;
+import java.io. I O Exception;
+import java.io. Object Input Stream;
+import java.io. Object Output Stream;
+import java.rmi. Remote Exception;
+import java.util. Enumeration;
+import java.util. Hashtable;
+import java.util. Scanner;
+
+public class  Fuzzy
+{
+	/**
+	 *  Classe che implementa i metodi  Fuzzy utilizzati per calcolare la
+	 *  Categoria di appartenenza di un  Punto  Di  Ristoro o di un  Bene  Culturale.
+	 */
+
+	/**
+	 *  Metodo per il calcolo della rilevanza di un termine.
+	 * 
+	 * @param distanza:  Contiene la distanza del termine dalla categoria
+	 *            analizzata
+	 * @param p Max Dist:  Contiene la distanza massima di tutti i termini in tutte
+	 *            le categorie.
+	 * @return  Restituisce il rilevanza del termine nella categoria.
+	 */
+	private static float rilevanza(float distanza, float p Max Dist)
+	{
+		return (distanza / p Max Dist);
+
+	}
+
+	/**
+	 *  Metodo per il calcolo della distanza fra un termine ed una categoria
+	 * 
+	 * @param p Termine:  Contiene il termine analizzato
+	 * @param p Tot Termini:  Tabelle delle frequenze totali dei termini.
+	 * @param frequenza Testo:  Tabella dei termimi del testo analizzato.
+	 * @param p Categoria:  Categoria analizzata.
+	 * @return  Restituisce la distanza del termine p Termine dalla categoria
+	 *         p Categoria
+	 */
+	private static float distanza( String p Termine,
+			 Hashtable< String, float[]> p Tot Termini, float frequenza Testo,
+			 Categoria p Categoria)
+	{
+
+		// la prima variabile tiene traccia della frequenza di un termine
+		// relativa ad una categoria
+		// la seconda tiene traccia della frequenza di un termine per tutte le
+		// categorie
+		float[] frequenza Categoria = new float[ ], frequenza Totale = new float[ ];
+
+		if (p Categoria.esiste Termine(p Termine))// se il termine è presente
+		// nella categoria
+		{
+			// la sua frequenza nella categoria è uguale alla frequenza presente
+			// nella base di conoscenza
+			// più la frequenza nel testo analizzato
+			frequenza Categoria = p Categoria.get Val(p Termine);
+			frequenza Categoria[ ] += frequenza Testo;
+		}
+		else
+		{
+
+			// altrimenti è uguale alla frequenza del termine nel testo
+			// analizzato
+			frequenza Categoria[ ] = frequenza Testo;
+		}
+		if (p Tot Termini.get(p Termine) != null)// se il termine esiste nella
+			// tabella dei termini totali
+			frequenza Totale = p Tot Termini.get(p Termine);// preleva il suo valore
+
+		frequenza Totale[ ] += frequenza Testo;// la frequenza totale è data
+		// dalla frequenza nel testo
+		// analizza tp 
+		// più l'eventuale frequenza salvata in memoria nella tabella dei
+		// termini totali
+
+		return (frequenza Categoria[ ] / frequenza Totale[ ]);// la distanza è
+		// uguale alla
+		// frequenza nella
+		// categoria
+		// fratto al frequenza totale
+
+	}
+
+	/**
+	 *  Metodo per il calcolo della distanza di un termine da una categoria.
+	 *  Utilizzato per il training
+	 * 
+	 * @param p Termine termine da analizzare
+	 * @param p Categoria categoria da cui ci si deve calcolare la distanza
+	 * @param p Tot Termini tabella dei termini totali
+	 * @return restituisce la distanza di un termine da una categoria
+	 */
+	private static float distanza( String p Termine,  Categoria p Categoria,
+			 Hashtable< String, float[]> p Tot Termini)
+	{
+		return ((p Categoria.get Val(p Termine))[ ] / (p Tot Termini.get(p Termine))[ ]);
+	}
+
+	/**
+	 *  Implementazione di una funzione  T- Norm
+	 * 
+	 * @param a primo valore
+	 * @param b secondo valore
+	 * @return restituisce il valore calcolato tramite una funzione  T- Norm
+	 */
+	private static float t Norm(float a, float b)
+	{
+		return ((a * b) / ((  - ((a + b) - (a * b)))));
+		// return  Math.min(a, b);
+		// return a*b;
+		// return  Math.max( ,a+b- );
+	}
+
+	/**
+	 *  Implementazione di una funzione  S- Norm
+	 * 
+	 * @param a primo valore
+	 * @param b secondo valore
+	 * @return restituisce il valore calcolato tramite una funzione  S- Norm
+	 */
+	private static float s Norm(float a, float b)
+	{
+		return ((a + b) / (  + a * b));
+		// return  Math.max(a, b);
+		// return (a+b-(a*b));
+		// return  Math.min( , +b);
+	}
+
+	/**
+	 *  Calcolo della similarity fra una categoria ed un testo dato in input
+	 * 
+	 * @param p Termini tabella dei termini del testo.  Esso deve contenere per
+	 *            pgni termine i valori di rilevanza e appartenenza situati nel
+	 *            vettore di float nelle posizioni   e  .
+	 * @return restituisce un valore numerico che indica la similarity di un
+	 *         testo con la categoria su cui ci si è calcolati i valori di
+	 *         rilevanza e appartenenza
+	 */
+	private static float similarity( Hashtable< String, float[]> p Termini)
+	{
+		float sum =  ;// valore da restituire
+
+		for (float[] val : p Termini.values())// per tutti gli elementi della
+		// tabella
+		{
+			sum += (t Norm(val[ ], val[ ])) / (s Norm(val[ ], val[ ]));// effettua
+			// una somma fra i valori dati dalla divisione della funzione  T- Norm
+			// con la funzione  S- Norm effettuate
+			// fra rilevanza e appartenenza
+		}
+
+		return sum;
+	}
+
+	/**
+	 *  Metodo per il calcolo dell'appartenenza di un testo ad una categoria
+	 * 
+	 * @param val indica la similarity di un testo con una categoria
+	 * @param max Similarity indica la massima similarity ritrovata
+	 * @return restituisce un valore nell'intervallo [ , ] che indica il grado di
+	 *         appartenenza del testo alla categoria x
+	 */
+	private static float appartenenza(float val, float max Similarity)
+	{
+		return (val / max Similarity);
+
+	}
+
+	/**
+	 *  Metodo per eliminare da un teso i caratteri speciali e per riportare
+	 * tutte le lettere maiuscole in minuscolo
+	 * 
+	 * @param p Str stringa da trasformare
+	 * @return restituisce il testo in minuscolo e senza caretteri speciali
+	 */
+	private static  String replace And Lower( String p Str)
+	{
+		p Str = p Str.to Lower Case();
+		p Str = p Str.replace(",", " ");
+		p Str = p Str.replace(".", " ");
+		p Str = p Str.replace("!", " ");
+		p Str = p Str.replace("?", " ");
+		p Str = p Str.replace("'", " ");
+
+		return p Str;
+	}
+
+	/**
+	 *  Metodo che consente di ritrovare la categoria appartenete ad un testo
+	 * 
+	 * @param p Descrizione testo da analizzare
+	 * @return restuisce una stringa indicante la categoria
+	 * @throws  Remote Exception
+	 */
+	public static  String calcola Categoria( String p Descrizione)
+			throws  Remote Exception
+	{
+		if ((p Descrizione == null) || (p Descrizione.equals("")))
+			return " N U L L";
+		 String testo = p Descrizione;
+		// tabella dei termini associata al testo da analizzare.  Conterrà i
+		// valori di frequenza, rilevanza, appartenenza per ogni termine
+		 Hashtable< String, float[]> dati Testo = new  Hashtable< String, float[]>();
+		// tabella delle categorie, conterrà per ogni categoria il valore di
+		// similarity e di appartenenza del testo
+		 Hashtable< String, float[]> testo Categoria = new  Hashtable< String, float[]>();
+		testo = replace And Lower(testo);// elimina caratteri spaeciali e
+		// restituisce il testo rimpiazzando le
+		// maiuscole con le minuscole
+		 String[] testo Split = testo.split(" ");
+		for (int i =  ; i < testo Split.length; i++)
+		{// per ogni termine del testo
+			float[] to Put = new float[ ];// valori da assegnare alla stringa
+			// nella tabella hash
+			float[] val Tmp;// variabile temporanea contenente i valori
+			// associati alla stringa se già presente nella tabelle hash
+			// se la stringa è presente nella tabella preleva i valori
+			// e li incrementa di uno salvandoli in to put
+			// altrimenti inizializza la nuova stringa con frequenza =  
+			if (testo Split[i].length() <=  )// si eliminano termini poco
+				// rilevanti come da, del, fra...
+				continue;
+			if (esiste(testo Split[i], dati Testo))// se il termine analizzato
+			// è presente nella tebella dei termini del testo analizzato
+			{
+				// si preleva il valore di frequenza presente nella tabella e vi
+				// si aggiunge uno
+				val Tmp = dati Testo.get(testo Split[i]);
+				to Put[ ] = val Tmp[ ];
+				to Put[ ] += (float)   / testo Split.length;
+
+			}
+			else
+			{
+				to Put[ ] = (float)   / testo Split.length;
+				// altrimenti si inizializza il valore di frequenza ad uno
+				// fratto il numero di termini totali ( frequenza relativa )
+			}
+			// si inserisce la nuova entrata nella tabella
+			//  System.out.println(to Put[ ]);
+			dati Testo.put(testo Split[i], to Put);
+		}
+
+		// si cerca di aprire la base di conoscenza
+		 Elenco Categorie elenco;
+		try
+		{
+			elenco = apri Elenco();
+		}
+		catch ( Class Not Found Exception e)// errore nell'apertura del file kb.sbt
+		{
+			throw new  Remote Exception(
+					" La base di conoscenza è assente o danneggiata!");
+		}
+		catch ( I O Exception e)
+		{
+			throw new  Remote Exception(
+					" La base di conoscenza è assente o danneggiata!");
+		}
+
+		// si preleva dalla base i di conoscenza la tabella dei termini totali
+		 Hashtable< String, float[]> tot Termini = elenco.get Tot Termini();
+		float max Similarity = - ;// mantiene il valore di massima similarity
+		for ( String nome Categoria : elenco. Categorie())
+		{// per tutte le categorie presenti nella base di conoscenza
+			float[] to Put = new float[ ];// valori da assegnare alla stringa
+			// nella tabella hash
+			for ( Enumeration< String> val = dati Testo.keys(); val
+					.has More Elements();)
+			{// per tutti gli elementi della tabella dei termini del testo
+				 String termine = val.next Element();
+				// si preleva il valore di un termine
+				float[] tmp = dati Testo.get(termine);
+				// si calcola distanza e rilevanza
+				tmp[ ] = distanza(termine, tot Termini, tmp[ ], elenco
+						.get Categoria(nome Categoria));
+				tmp[ ] = rilevanza(tmp[ ], elenco.get Max Dist());
+				dati Testo.put(termine, tmp);
+			}
+			// ci si calcola la similarity una volta terminata l'analisi di
+			// tutti i termini con una categoria
+			to Put[ ] = similarity(dati Testo);
+			testo Categoria.put(nome Categoria, to Put);
+			if (max Similarity < to Put[ ])// si aggiorna il valore di massima
+			// similarity se necessario
+			{
+				max Similarity = to Put[ ];
+			}
+		}
+
+		for ( String nome Categoria : elenco. Categorie())
+		{// per ogni categoria
+			// si preleva il valore di similarity del testo con la categoria
+			// analizzata
+			float[] tmp = testo Categoria.get(nome Categoria);
+			tmp[ ] = appartenenza(tmp[ ], max Similarity);// ci si calcola
+			// l'appartenenza
+			// del testo alla similarity
+			testo Categoria.put(nome Categoria, tmp);// si salva tutto nella
+			// tabella delle categorie
+		}
+
+		return max Appartenenza(testo Categoria);// si ritorna in output il nome
+		// della categoria
+		// con il massimo grado di appartenenza
+	}
+
+	/**
+	 *  Metodo per ricercare la categoria con cui il testo ha il massimo grado di
+	 * appartenenza
+	 * 
+	 * @param p Testo Categoria tabella delle categorie associate al testo
+	 * @return restituisce una stringa indicante il nome della categoria con cui
+	 *         il testo ha il massimo grado di appartenenza
+	 */
+	private static  String max Appartenenza(
+			 Hashtable< String, float[]> p Testo Categoria)
+	{
+		 String to Return = null;// valore di ritorno
+		float max = - ;// valore di appartenenza massimo
+
+		for ( Enumeration< String> elm = p Testo Categoria.keys(); elm
+				.has More Elements();)
+		{// per tutte le categorie della tabella delle categorie del testo
+			 String categoria = elm.next Element();
+			// si prelevano i valori di similarity e appartenenza associati alla
+			// categoria
+			float[] tmp = p Testo Categoria.get(categoria);
+			if (tmp[ ] > max)
+			{// se il grado di appartenenza appartenenza appena caricato
+				// è maggiore del precedente si aggiornano i dati max e to Return
+				to Return = categoria;
+				max = tmp[ ];
+			}
+
+		}
+		return to Return;
+	}
+
+	/**
+	 *  Metodo utilizzato per verificare se un termine è presente nella tabella
+	 * dei termini del testo
+	 * 
+	 * @param p Str termine da analizzare
+	 * @param p Table tabelle dei termini del testo
+	 * @return restituisce vero se il termine esiste falso altrimenti
+	 */
+	private static boolean esiste( String p Str,  Hashtable< String, float[]> p Table)
+	{
+		try
+		{
+			if (p Table.get(p Str) != null)
+				return true;
+		}
+		catch ( Null Pointer Exception e)
+		{
+			return false;
+		}
+
+		return false;
+	}
+
+	/**
+	 *  Metodo utilizzato per il recupero della base di conoscenza
+	 * 
+	 * @return restituisce un oggetto di tipo  Elenco Categorie rappresentante la
+	 *         base di conoscenza
+	 * @throws  I O Exception
+	 * @throws  Class Not Found Exception
+	 */
+	private static  Elenco Categorie apri Elenco() throws  I O Exception,
+			 Class Not Found Exception
+	{
+		 File k Base = new  File("kb.sbt");// si apre il file kb.sbt
+		 File Input Stream k Base Stream = new  File Input Stream(k Base);// si crea
+		// uno stream con il file
+		 Object Input Stream k Base Obj = new  Object Input Stream(k Base Stream);// si
+		// crea uno stream di oggetti con il file
+		 Elenco Categorie to Return;
+
+		to Return = ( Elenco Categorie) k Base Obj.read Object();
+		// viene estratto l'oggetto salvato nel file e restituito in output
+		return to Return;
+	}
+
+	/**
+	 *  Metodo utilizzato per la creazione del file.  Usato nel training
+	 * 
+	 * @param path stringa che indica il path in cui creare il file
+	 * @return restituisce un  Object Output Stream al file creato
+	 * @throws  I O Exception
+	 */
+	private static  Object Output Stream create File( String path)
+			throws  I O Exception
+	{
+		 Object Output Stream to Return;
+		 File f = new  File(path);// si crea il file
+		if (f.exists())
+			f.delete();
+
+		 File Output Stream f Out = new  File Output Stream(path);
+		to Return = new  Object Output Stream(f Out);// creazione dello stream
+
+		return to Return;
+	}
+
+	/**
+	 *  Metodo utilizzato per la creazione della base di conoscenza
+	 * 
+	 * @throws  Remote Exception
+	 */
+	public static void training() throws  Remote Exception
+	{
+
+		 String[] elenco Categorie = new  String[ ];// array contenente i nomi
+		// delle categorie  da analizzare
+		// base di conoscenza
+		 Elenco Categorie elenco = new  Elenco Categorie();
+
+		 Object Output Stream elenco Out;
+		try
+		{
+			// si tenta la creazione del file
+			elenco Out = create File("kb.sbt");
+		}
+		catch ( I O Exception e)
+		{
+			throw new  Remote Exception(" Errore nella creazione del file kb.sbt");
+		}
+
+		elenco Categorie[ ] = "arte";
+		elenco Categorie[ ] = "cinema";
+		elenco Categorie[ ] = "sport";
+		// elenco Categorie[ ]="";
+
+		for (int i =  ; i <  ; i++)// per ogni categoria
+		{
+			// si crea un nuovo oggetto di tipo  Categoria che conterrà tutti i
+			// dati della categoria da analizzare
+			 Categoria to Put Cat = new  Categoria(elenco Categorie[i]);
+			// se l'inserimento della categoria nella tabella delle categorie
+			// non ha successo
+			// si lancia un eccezione
+			if (!elenco.add Categoria(elenco Categorie[i], to Put Cat))
+			{
+				throw new  Remote Exception(
+						" Errore nella creazione dei dati della categoria "
+								+ elenco Categorie[i]);
+			}
+			// si tenta di leggere dalla cartella contenente i testi di una
+			// categoria
+			//     testi di esempio
+			for ( Integer j = new  Integer( ); j <=    ; j++)
+			{
+				// path della cartella della categoria 
+				 String path = "kb/" + elenco Categorie[i] + "/" + j.to String();
+				// si tenta di leggere il file iesimo
+				 File Reader testo Reader;
+				try
+				{
+					testo Reader = new  File Reader(path);
+				}
+				catch ( File Not Found Exception e)
+				{
+					// nel caso il file non esista si continua l'esecuzione dal
+					// file i+ 
+					//  System.out.println(" Errore sul file " + path);
+					continue;
+				}
+				 Scanner testo Scanner = new  Scanner(testo Reader);
+				while (testo Scanner.has Next Line())
+				{
+					// si legge il testo del file linea per linea
+					 String txt = testo Scanner.next Line();
+					txt = replace And Lower(txt);
+					 String[] to Iterate = txt.split(" ");
+					for (int k =  ; k < to Iterate.length; k++)
+					{// per ogni termine della linea
+						if (to Iterate[k].length() <=  )// si eliminano i
+														// termini poco
+														// rilevanti
+							continue;
+						float[] val Term, val Tot Term;
+						// se il termine è presente nella tabella dei termini
+						// della categoria analizzata
+						if (elenco.get Categoria(elenco Categorie[i])
+								.esiste Termine(to Iterate[k]))
+						{
+							// la sua frequenza è uguale al valore salvato nella
+							// tabella più uno fratto il numero totale di
+							// termini del testo
+							val Term = elenco.get Categoria(elenco Categorie[i])
+									.get Val(to Iterate[k]);
+							val Term[ ] += (float)   / to Iterate.length;
+							val Tot Term = elenco.get Termine(to Iterate[k]);
+							val Tot Term[ ] += (float)   / to Iterate.length;
+						}
+						else
+						{
+							//altrimenti è uguale ad uno fratto il numero totale dei termini del testo
+							val Term = new float[ ];
+							val Tot Term = new float[ ];
+							val Term[ ] = (float)   / to Iterate.length;
+							val Tot Term[ ] = (float)   / to Iterate.length;
+						}
+						//si salvano i valori calcolati nella tabella dei termini della categoria analizzata
+						elenco.set Termine(to Iterate[k], val Tot Term);
+						elenco.get Categoria(elenco Categorie[i]).add Termine(
+								to Iterate[k], val Term);
+						if (elenco.get Max Dist() < val Tot Term[ ])
+							elenco.set Max Dist(val Tot Term[ ]);
+					}
+				}
+
+			}
+		}
+		for ( String nome Categoria : elenco. Categorie())
+		{//per ogni categoria 
+			//viene prelevata la tabella dei termini
+			 Hashtable< String, float[]> termini Categoria = elenco.get Categoria(
+					nome Categoria).get Termini();
+
+			//vengono analizzati tutti i termini presenti nella tabella dei termini caricata
+			for ( Enumeration< String> enum Term = termini Categoria.keys(); enum Term
+					.has More Elements();)
+			{
+				//viene effattuato il calcolo di rilevanza e distanza
+				 String termine = enum Term.next Element();
+				float[] val = termini Categoria.get(termine);
+				val[ ] = distanza(termine, elenco.get Categoria(nome Categoria),
+						elenco.get Tot Termini());
+				val[ ] = rilevanza(val[ ], elenco.get Max Dist());
+			}
+			//i dati vengono salvati nella tabella dei termini della categoria
+			elenco.get Categoria(nome Categoria).set Termini(termini Categoria);
+		}
+		try
+		{//si scrive il risultato delle operazioni su file
+			elenco Out.write Object(elenco);
+		}
+		catch ( I O Exception e)
+		{
+			throw new  Remote Exception(" Errore nella scrittura del file!");
+		}
+	}
+}

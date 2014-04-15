@@ -1,0 +1,1 @@
+Global Data	the global data items which are accessed by this CSC

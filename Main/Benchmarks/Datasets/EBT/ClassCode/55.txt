@@ -1,0 +1,371 @@
+           eventserver Thread
+           "static private int count = 0  ;
+           private int task  Number  ;
+           protected Done done  ;
+           Server  Socket the  Server  ;
+          
+           private Connection conn  ;
+           private Statement stmt  ;
+           private Result  Set rs  ;
+          
+           private Event  Parser ep  ;
+           private int id  ;"
+           "Event  Server  Thread  (  Server  Socket ss  )
+           {
+           the  Server = ss  ;
+             count  ++;
+             task  Number = count  ;
+             ep = new Event  Parser  ();
+           }"
+           "public void run  ()
+           {
+          
+           while  ( true  )
+           {
+             try
+             {
+          
+              Socket client = the  Server  . accept  ();
+              Buffered  Reader input = new Buffered  Reader  ( new Input  Stream  Reader  ( client  . get  Input  Stream  ()));
+              Print  Writer output = new Print  Writer  ( client  . get  Output  Stream  () true  );
+          
+             String str  Socket = input  . read  Line  ();
+             System  . out  . println  ( str  Socket  );
+          
+          
+             System  . out  . println  (""  H1  "");
+             if ( str  Socket  . region  Matches  ( true    0  ""  EVENT  ""  0    5  ))
+             {
+              //  Get an ID for this Event from the database  .
+              //  Then send the string to the event  Parser
+              // for updating the event  .
+              String next  ID = this  . get  Next  ID  ();
+              System  . out  . println  (""  The next Event Id is  : ""+ next  ID  );
+              ep  . update  Event  ( str  Socket   next  ID  );
+             }
+             else if ( str  Socket  . region  Matches  ( true    0  ""  Speculate  ""  0    9  ))
+             {
+              System  . out  . println  (""  H2  "");
+              // case if the incoming string concerns the speculate request
+              ep  . speculate  ( str  Socket  );
+              System  . out  . println  (""  H3  "");
+             }
+             else if ( str  Socket  . region  Matches  ( true    0  ""  Impact  Report  ""  0    12  ))
+             {
+              // case if the incoming string concerns an impact report request
+              ep  . impact  Report  ( str  Socket  );
+             }
+             else if ( str  Socket  . region  Matches  ( true    0  ""  ADD  _  SUBSCRIPTION  ""  0    16  ))
+             {
+              // case of add subscription request
+              //  Add subscription updating
+              ep  .  Add  Subscription  ( str  Socket   this  . id  );
+             }
+             else if ( str  Socket  . region  Matches  ( true    0  ""  REMOVE  _  SUBSCRIPTION  ""  0    19  ))
+             {
+              // Add subscription updating code here  .
+              ep  .  Delete  Subscription  ( str  Socket   this  . id  );
+             }
+             else if ( str  Socket  . region  Matches  ( true    0  ""  CHECK  _  SUBSCRIPTION  ""  0    18  ))
+             {
+              // Check if a subscription exists for specified requirement & subscriber
+              // Return a response
+              System  . out  . println  (""  Sending message to check subscription  "");
+              boolean check  Result = ep  .  Check  Subscription  ( str  Socket  );
+          
+              if ( check  Result == true  )
+               output  . println  ( new String  ( str  Socket + ""|  TRUE  ""));
+              else
+               output  . println  ( new String  ( str  Socket + ""|  FALSE  ""));
+          
+              output  . flush  ();
+             }
+             else if ( str  Socket  . region  Matches  ( true    0  ""  GETDATA  ""  0    7  ))
+             {
+              //  Here is the code for processing the request of selecting data
+              // from EBT Database  .
+              //  This string comes from gui  .  Impact  Report
+          
+              String  Tokenizer tokens = new String  Tokenizer  ( str  Socket   ""|"");
+              // Get Project Type   Number   and Date  .
+          
+              String m  String  Type = tokens  . next  Token  (); // Should always be ""  GETDATA  "" in this case  .
+              String m  String  Msg = tokens  . next  Token  (); //  For example   "" search  Date  "".
+          
+              if ( m  String  Msg  . region  Matches  ( true    0  "" search  Date  ""  0    10  ))
+              {
+               output  . println  ( search  Date  ());
+              }
+              else if ( m  String  Msg  . region  Matches  ( true    0  "" search  Query  ID  ""  0    13  ))
+              {
+               String date = tokens  . next  Token  ();
+               output  . println  ( search  Query  ID  ( date  ));
+              }
+              else if  ( m  String  Msg  . region  Matches  ( true    0  "" get  Constraint  ""  0    13  ))
+              {
+               String query  ID = tokens  . next  Token  ();
+               output  . println  ( get  Constraint  From  Data  Base  ( query  ID  ));
+              }
+              else if  ( m  String  Msg  . region  Matches  ( true    0  "" get  Driver  ""  0    9  ))
+              {
+               String query  ID = tokens  . next  Token  ();
+               output  . println  ( get  Driver  From  Data  Base  ( query  ID  ));
+              }
+          
+             }
+          
+             input  . close  ();
+             output  . close  ();
+             client  . c"
+           "public String get  Next  ID  ()
+           {
+          
+            try
+            {
+                Class  . for  Name  ("" sun  . jdbc  . odbc  .  jdbc  odbc  Driver  "");
+                this  . conn = Driver  Manager  . get  Connection  ("" jdbc  : odbc  :  EBT  """"  EBT  """"  EBT  "");
+                this  . stmt = conn  . create  Statement  ();
+               }
+               catch (  Exception e  )
+               {
+                    System  . out  . println  (""  A problem occurred establishing the database connection  "");
+            }
+          
+            String m  SQL  ;
+            m  SQL = ""  SELECT EVENTID FROM SYSDATA  "";
+            int Ev  ID  ;
+            String Ev  Str  ID = """";
+          
+          
+            try
+            {
+                  rs = stmt  . execute  Query  ( m  SQL  );
+             if  ( rs  . next  ())
+             {
+              Ev  Str  ID = rs  . get  String  (  1  );
+             }
+            }
+            catch (  Exception e  )
+            {
+                    System  . out  . println  (""  Error in getting next ID "" + e  );
+               }
+          
+          
+            Ev  ID = Integer  . parse  Int  (  Ev  Str  ID  );
+            Ev  ID = Ev  ID + 1  ;
+            String new  Str = new String  (( new Integer  (  Ev  ID  ). to  String  ()));
+          
+            int len = new  Str  . length  ();
+            String Update  String = ( new String  (""  0000000000  "")). substring  (  0    9-len  ) + new  Str  ;
+          
+                 // Update master file  .
+          
+                 m  SQL = ""  UPDATE SYSDATA SET Event  ID = '  "" + Update  String + ""  ' WHERE TAG = ' Event  Counter  '  "";
+          
+                 try
+                 {
+                    stmt  . execute  Update  ( m  SQL  );
+                 }
+                 catch (  Exception e  )
+                 {
+                   System  . out  . println  (""  Error in updating Sys  Data with next Event  ID  "" + e  );
+                 }
+          
+            return Update  String  ;
+           }// end of get  Next  ID method"
+           "public String search  Date  ()
+           {
+          
+            String date  String = new String  ();
+            Vector date  Vector = new Vector  ();
+          
+            try
+            {
+          
+             Class  . for  Name  ("" sun  . jdbc  . odbc  .  jdbc  odbc  Driver  "");
+             Connection conn = Driver  Manager  . get  Connection  ("" jdbc  : odbc  :  EBT  "" ""  EBT  "" ""  EBT  "");
+             Statement stmt = conn  . create  Statement  ();
+          
+             String sql = ""  SELECT * FROM Speculate  Query  "";
+          
+             rs = stmt  . execute  Query  ( sql  );
+          
+             String temp = new String  ();
+          
+             while ( rs  . next  ())
+             {
+          
+              String temp  Date = rs  . get  String  (""  Query  Date  "");
+          
+              if (! date  Vector  . contains  ( temp  Date  ))
+               date  Vector  . add  ( temp  Date  );
+          
+             } // end of while loop for Result Set
+          
+             date  String = """" + date  Vector  . size  () + ""|"";
+          
+             for ( int i  =0  ; i  < date  Vector  . size  (); i  ++)
+              date  String = date  String + (  String  ) date  Vector  . element  At  ( i  ) + """";
+          
+             conn  . close  ();
+             stmt  . close  ();
+          
+            }
+            catch (  Exception ex  )
+            {
+             System  . out  . println  (""  A problem occured "");
+            }
+          
+            return date  String  ;
+          
+           }"
+           "public String search  Query  ID  (  String date  )
+           {
+            Vector query  Vector = new Vector  ();
+          
+            String search  Query = new String  ();
+          
+            try
+            {
+             Class  . for  Name  ("" sun  . jdbc  . odbc  .  Jdbc  Odbc  Driver  "");
+             conn = Driver  Manager  . get  Connection  ("" jdbc  : odbc  :  EBT  "" ""  EBT  "" ""  EBT  "");
+             stmt = conn  . create  Statement  ();
+          
+             String sql =
+              ""  SELECT   * FROM Speculate  Query  ""
+               + "" WHERE Query  Date = '  ""
+               + date
+               + ""  '  "";
+          
+             rs = stmt  . execute  Query  ( sql  );
+          
+             String search  Temp = new String  ();
+          
+             while ( rs  . next  ())
+             {
+              query  Vector  . add  ( rs  . get  String  (""  Query  ID  "") + "";"" + rs  . get  String  (""  Query  String  ""));
+             } // end of while loop for Result Set
+          
+          
+             for ( int i  =0  ; i  < query  Vector  . size  (); i  ++)
+              if ( i  ==0  )
+               search  Temp = (  String  ) query  Vector  . element  At  ( i  );
+              else
+               search  Temp = search  Temp + "":"" + (  String  ) query  Vector  . element  At  ( i  );
+          
+          
+             search  Query = """" + query  Vector  . size  () + "":"" + search  Temp  ;
+             conn  . close  ();
+             stmt  . close  ();
+          
+          
+          
+            }
+            catch (  Exception ex  )
+            {
+             System  . out  . println  (""  A problem occured "");
+            }
+          
+            return search  Query  ;
+          
+           }"
+           "public String get  Constraint  From  Data  Base  (  String query  ID  )
+           {
+          
+            String Const  String = new String  ();
+          
+          
+            try
+            {
+          
+             Class  . for  Name  ("" sun  . jdbc  . odbc  .  Jdbc  Odbc  Driver  "");
+          
+             conn = Driver  Manager  . get  Connection  ("" jdbc  : odbc  :  EBT  "" ""  EBT  "" ""  EBT  "");
+          
+             stmt = conn  . create  Statement  ();
+          
+             String sql =
+              ""  SELECT *  FROM Constraints ""
+               + "" WHERE Query  Id = '  ""
+               + query  ID
+               + ""  ' ORDER BY Subscriber  Name  "";
+          
+             rs = stmt  . execute  Query  ( sql  );
+          
+             int count = 0  ;
+             while ( rs  . next  ())
+             {
+              Const  String = Const  String + rs  . get  String  (""  Subscriber  Name  "") + "":"" + rs  . get  String  (""  Subscription  Projname  "");
+              Const  String = Const  String + "":"" + rs  . get  String  (""  Subscription  Module  "") + "":"" + rs  . get  String  (""  Subscription  requirement No  "");
+              Const  String = Const  String + "":"" + rs  . get  String  (""  Description  "") + "":"" + rs  . get  String  (""  Impacted  Value  "");
+              Const  String = Const  String + "":"" + rs  . get  String  (""  Logic  "") + "":"" + rs  . get  String  (""  Units  "");
+              Const  String = Const  String + "":"" + rs  . get  String  (""  Attribute  "") + "":"" + rs  . get  String  (""  Constraint  Value  "") + ""|"";
+          
+              count  ++;
+             }
+          
+             Const  String = count + ""|"" + Const  String  ;
+             conn  . close  ();
+             stmt  . close  ();
+          
+          
+          
+            }
+            catch (  Exception ex  )
+            {
+             System  . out  . println  (""  A problem occurred Accessing the Database  "");
+             ex  . print  Stack  Trace  ();
+            }
+          
+            return Const  String  ;
+          
+           }"
+           "public String get  Driver  From  Data  Base  (  String query  ID  )
+           {
+          
+            String driver  String = new String  ();
+          
+            try
+            {
+          
+             Class  . for  Name  ("" sun  . jdbc  . odbc  .  Jdbc  Odbc  Driver  "");
+          
+             conn = Driver  Manager  . get  Connection  ("" jdbc  : odbc  :  EBT  "" ""  EBT  "" ""  EBT  "");
+          
+             stmt = conn  . create  Statement  ();
+          
+             String sql =
+              ""  SELECT distinct *  FROM Driver ""
+               + "" WHERE Query  Id = '  ""
+               + query  ID
+               + ""  '  "";
+          
+             rs = stmt  . execute  Query  ( sql  );
+          
+             int count = 0  ;
+          
+             while ( rs  . next  ())
+             {
+          
+              driver  String = driver  String + rs  . get  String  (""  Subscription  Projname  "") + "":"" + rs  . get  String  (""  Subscription  Module  "");
+              driver  String = driver  String + "":"" + rs  . get  String  (""  Subscription  requirement No  "") + "":"" + rs  . get  String  (""  Description  "");
+              driver  String = driver  String + "":"" + rs  . get  String  (""  Attribute  "") + "":"" + rs  . get  String  (""  From  Value  "");
+              driver  String = driver  String + "":"" + rs  . get  String  (""  To  Value  "") + ""|"";
+          
+              count  ++;
+             }
+          
+             driver  String = """" + count + ""|"" + driver  String  ;
+             conn  . close  ();
+             stmt  . close  ();
+          
+            }
+            catch (  Exception ex  )
+            {
+             System  . out  . println  (""  A problem occurred "");
+             ex  . print  Stack  Trace  ();
+            }
+          
+            return driver  String  ;
+          
+           }"

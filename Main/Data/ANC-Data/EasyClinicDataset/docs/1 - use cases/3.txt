@@ -1,0 +1,46 @@
+Delete anagrafica laboratory 
+It allows the operator to remove 
+                the anagrafica of a laboratory of
+                analysis 
+                He works for the elimination of data 
+                at anagrafica on a laboratory 
+                analysis 
+The Operator has been recognized by  
+                System (See UcValOp) and age 
+                Laboratory is `inside the 
+                I S O 
+The anagrafica data of 
+                laboratory are not changed: 
+                remain in the state this first 
+                of execution
+                Success: The age of the laboratory 
+                is successfully eliminated 
+The operator activates the execution of 
+                elimination of the anagrafica of 
+                Laboratory 
+1 View the list of 
+      laboratories 
+     in the S I O 
+2 Select the laboratory 
+                               which change 
+                               the anagrafica
+3 Confirm your selection 
+4 View the mask 
+     to eliminate 
+     the anagrafica of 
+     laboratory 
+6 confirm the delete of 
+                               laboratory 
+7 Delete the data 
+     about anagrafica of 
+     laboratory 
+Notify 8 that the operation 
+     it is `finished with 
+     success 
+Operator cancels operation 
+  3 1 ends the execution of use case with 
+   6 1 failure 
+   4 1 The mask will contain data on the 
+          laboratory selected to enable 
+          the operator to monitor them in detail before 
+          to act the delete

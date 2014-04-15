@@ -1,0 +1,34 @@
+Validation operator 
+He works to perform the functions 
+                necessary to authenticate an 
+                Operator 
+                It's Interest to make their 
+                validation in order to use the 
+                all features available 
+                System 
+The Operator is not recognized by 
+                system 
+                Success: The Operator is recognized by  
+                system and enabled it 
+The operator tries to log on system
+1 View the mask 
+     for validation 
+     of operator
+2 Inserts login and password 
+3 Confirm data 
+4 verify login and 
+     identify a password 
+     Operator within 
+     the S I O 
+5 allows access 
+6 View the main mask 
+
+Operator cancels the operation 
+validation 
+   3 1 System: ends the execution of use case with 
+          failure 
+Validation Failed 
+   4 1 System: Show appropriate message 
+   4 2 System: take back the execution by 1 point 
+          underpinned the fields of the form with data 
+          insert by user

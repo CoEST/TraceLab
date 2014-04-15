@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CompositeComponentMetadataDefinition xmlVersion="1">
+  <Info>
+    <ID>1829f836-c54a-4614-8924-5b91691d1c98</ID>
+    <Version />
+    <Label>3</Label>
+    <Name>3</Name>
+    <Author />
+    <Description />
+  </Info>
+  <Input />
+  <Output />
+  <Import />
+  <ConfigDefinition>
+    <IsJava>False</IsJava>
+    <ConfigProperties />
+  </ConfigDefinition>
+  <ComponentGraph>
+    <graph>
+      <ExperimentInfo>
+        <Version>1</Version>
+        <Id>697e734e-55a4-4b71-9879-9ca3f05b57cd</Id>
+        <Name>3</Name>
+        <LayoutName>EfficientSugiyama</LayoutName>
+      </ExperimentInfo>
+      <node id="Start">
+        <SerializedVertexData Version="1" X="200" Y="100">
+          <Metadata type="TraceLab.Core.Components.StartNodeMetadata, TraceLab.Core, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Start" />
+        </SerializedVertexData>
+      </node>
+      <node id="End">
+        <SerializedVertexData Version="1" X="200" Y="200">
+          <Metadata type="TraceLab.Core.Components.EndNodeMetadata, TraceLab.Core, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="End" />
+        </SerializedVertexData>
+      </node>
+      <node id="32eeed08-961e-4904-bf04-83f50897834d">
+        <SerializedVertexData Version="1" X="157" Y="154">
+          <Metadata type="TraceLab.Core.Components.CompositeComponentMetadata, TraceLab.Core, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="8" ComponentMetadataDefinitionID="5842cda3-50eb-4513-ab70-245333e7c851">
+            <IOSpec Version="1">
+              <Input />
+              <Output />
+              <Import />
+            </IOSpec>
+            <ConfigWrapper Version="1" IsJava="False">
+              <ConfigValues />
+            </ConfigWrapper>
+          </Metadata>
+        </SerializedVertexData>
+      </node>
+      <node id="51b1512c-f920-4832-954b-fa66d559a01c">
+        <SerializedVertexData Version="1" X="230" Y="153">
+          <Metadata type="TraceLab.Core.Components.CompositeComponentMetadata, TraceLab.Core, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="10" ComponentMetadataDefinitionID="dde52783-da17-4a3c-9b72-1774060b42be">
+            <IOSpec Version="1">
+              <Input />
+              <Output />
+              <Import />
+            </IOSpec>
+            <ConfigWrapper Version="1" IsJava="False">
+              <ConfigValues />
+            </ConfigWrapper>
+          </Metadata>
+        </SerializedVertexData>
+      </node>
+      <node id="4cf96ba6-d62f-4815-af68-7cdabfced02e">
+        <SerializedVertexData Version="1" X="319" Y="152">
+          <Metadata type="TraceLab.Core.Components.CompositeComponentMetadata, TraceLab.Core, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="10" ComponentMetadataDefinitionID="dde52783-da17-4a3c-9b72-1774060b42be">
+            <IOSpec Version="1">
+              <Input />
+              <Output />
+              <Import />
+            </IOSpec>
+            <ConfigWrapper Version="1" IsJava="False">
+              <ConfigValues />
+            </ConfigWrapper>
+          </Metadata>
+        </SerializedVertexData>
+      </node>
+      <edge id="38a6037c-3359-403c-8dd7-fc24a363b52b" source="Start" target="32eeed08-961e-4904-bf04-83f50897834d" />
+      <edge id="81919cba-c42f-49e4-a858-71087476cc56" source="Start" target="51b1512c-f920-4832-954b-fa66d559a01c" />
+      <edge id="856c4af6-7271-446f-8b7d-d793e4775b5a" source="Start" target="4cf96ba6-d62f-4815-af68-7cdabfced02e" />
+      <edge id="b60819f7-7345-4040-b811-63b157ee2254" source="32eeed08-961e-4904-bf04-83f50897834d" target="End" />
+      <edge id="b00b592b-4d2e-41c4-8916-f5b51eefb504" source="51b1512c-f920-4832-954b-fa66d559a01c" target="End" />
+      <edge id="a50219ad-44d0-4673-a4c6-5e81da2e5456" source="4cf96ba6-d62f-4815-af68-7cdabfced02e" target="End" />
+    </graph>
+  </ComponentGraph>
+</CompositeComponentMetadataDefinition>

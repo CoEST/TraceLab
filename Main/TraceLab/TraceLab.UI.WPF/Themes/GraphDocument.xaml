@@ -1,0 +1,118 @@
+﻿<!--
+TraceLab - Software Traceability Instrument to Facilitate and Empower Traceability Research
+Copyright (C) 2012-2013 CoEST - National Science Foundation MRI-R2 Grant # CNS: 0959924
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see<http://www.gnu.org/licenses/>.
+-->
+
+<ResourceDictionary x:Class="TraceLab.UI.WPF.Themes.GraphDocument"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:local="clr-namespace:TraceLab.UI.WPF.Views"
+  xmlns:viewModels="clr-namespace:TraceLab.UI.WPF.ViewModels"
+  xmlns:Converters="clr-namespace:TraceLab.UI.WPF.Converters"
+  xmlns:Resources="clr-namespace:TraceLab.UI.WPF.Resources"
+  xmlns:Commands="clr-namespace:TraceLab.UI.WPF.Commands"
+  xmlns:mwt="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+  xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:Double x:Key="IconSize">16</sys:Double>
+
+    <DataTemplate DataType="{x:Type viewModels:ExperimentViewModel}">
+        <ContentPresenter Content="{Binding CurrentView}"/>
+    </DataTemplate>
+
+    <Style x:Key="grayscaleEffectDisableButton" TargetType="Button">
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <Resources:GrayscaleEffect x:Name="grayscaleEffect" Factor="0" />
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <DataTemplate DataType="{x:Type viewModels:TopLevelExperimentViewModel}">
+        <DockPanel>
+            <ToolBarTray DockPanel.Dock="Top" IsLocked="True" Background="White">
+                <ToolBar Band="1" BandIndex="1">
+                    <Button ToolTip="Run experiment (F5)"
+                            Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MainWindowBase}}, 
+                                              Path=DataContext.ExperimentViewModel.RunExperiment}">
+                        <Button.CommandParameter>
+                            <MultiBinding Converter="{Converters:MultiBindingMultiValueConverter}">
+                                <MultiBinding.Bindings>
+                                    <Binding Path="ProgressBar" 
+                                             RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type local:MainWindow}}" />
+                                    <Binding Path="DataContext.WorkspaceViewModel" 
+                                             RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type local:MainWindow}}" />
+                                    <Binding Path="DataContext.ComponentLibraryViewModel" 
+                                             RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type local:MainWindow}}" />
+                                </MultiBinding.Bindings>
+                            </MultiBinding>
+                        </Button.CommandParameter>
+                        <Image Height="{StaticResource IconSize}" Source="/TraceLab.UI.WPF;component/Resources/Icon_Play16.png" />
+                    </Button>
+
+                    <Button x:Name="StopExperimentButton" Style="{StaticResource grayscaleEffectDisableButton}" 
+                            ToolTip="Stop experiment after all currently running components have finished processing (Shift + F5)"
+                            Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MainWindowBase}}, 
+                                              Path=DataContext.ExperimentViewModel.StopExperiment}"
+                            IsEnabled="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MainWindowBase}}, 
+                                        Path=DataContext.ExperimentViewModel.TopLevel.IsExperimentRunning}">
+                        <Image Height="{StaticResource IconSize}" Source="/TraceLab.UI.WPF;component/Resources/Icon_Stop16.png" />
+                    </Button>
+                    
+                    <Separator />
+
+                    <Button Style="{StaticResource grayscaleEffectDisableButton}" ToolTip="Define composite component from selected nodes"
+                            Command="{x:Static Commands:RoutedCommands.DefineCompositeComponentCommand}">
+                        <Image Height="{StaticResource IconSize}" Source="/TraceLab.UI.WPF;component/Resources/DefineCompositeComponent.png" />
+                    </Button>
+
+                    <Button Style="{StaticResource grayscaleEffectDisableButton}" ToolTip="Build package from experiment"
+                            Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MainWindowBase}}, 
+                                              Path=DataContext.ExperimentViewModel.PackExperiment}"
+                            CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MainWindowBase}}, Path=DataContext}">
+                        <Image Height="{StaticResource IconSize}" Source="/TraceLab.UI.WPF;component/Resources/Icon_PkgCreate16.png" />
+                    </Button>
+
+                    <Button Style="{StaticResource grayscaleEffectDisableButton}" ToolTip="Experiment information"
+                            Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MainWindowBase}}, 
+                                              Path=DataContext.ExperimentViewModel.AboutExperimentCommand}"
+                            CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MainWindowBase}}}">
+                        <Image Height="{StaticResource IconSize}" Source="/TraceLab.UI.WPF;component/Resources/Icon_About16.png" />
+                    </Button>
+                </ToolBar>
+            </ToolBarTray>
+            
+            <local:DockableGraph x:Name="DocumentGraph"
+                                AllowDrop="True"
+                                DropCommand="{Binding Path=Drop}"
+                                DragOverCommand="{Binding Path=DragOver}"
+                                RemoveNodeCommand="{Binding Path=RemoveNode}"
+                                RemoveSelectedNodesCommand="{Binding Path=RemoveSelectedNodes}"
+                                ToogleLogLevelCommand="{Binding Path=ToogleLogLevel}" BorderBrush="Black" />
+        </DockPanel>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:SubLevelExperimentViewModel}">
+        <DockPanel>
+            <local:SubExperimentControl x:Name="ComponentGraph" AllowDrop="False" IsConfigEnabled="True" />
+        </DockPanel>
+    </DataTemplate>
+
+</ResourceDictionary>

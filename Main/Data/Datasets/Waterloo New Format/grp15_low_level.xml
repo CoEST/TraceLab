@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp15_low_level</id>
+    <name>Waterloo grp15_low_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp15_low_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>UC1</id>
+      <content>Use Case Number:	UC1
+Name:	Make Call to Callee
+
+Author:	M2
+Event:	Caller picks up phone and dials a number of another employee. The number dialed is passed as input.
+System:	Call Manager, Caller, Callee, Resource Manager, Billing Manager, IP Manager
+Actors:	Caller (Initiator), Callee
+Overview:	This use case will show the behaviour and scenarios of the system when a caller is trying to make a phone call. This also ties in with voice mail and do not disturb status.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC2</id>
+      <content>Use Case Number:	UC2
+Name:	Make Call to System
+
+Author:	M2
+Event:	Caller picks up phone and dials a number to access the server. The number dialed is passed as input.
+System:	Call Manager, Caller, Callee, Resource Manager, DND Manager
+Actors:	Caller (Initiator)
+Overview:	This use case will show the behaviour and scenarios of the system when a caller makes a call to the system to work with their voicemail or Do Not Disturb status.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC3</id>
+      <content>Use Case Number:	UC3
+Name:	Add New Employee
+
+Author:	M2
+Event:	An administrator wishes to add a new employee account into the system. The employee�s information is passed as input.
+System:	System Console, Account Manager, PhoneIP Manager, Department Manager
+Actors:	Administrator
+
+Overview:	This use case describes the behaviour of the system when the administrator adds a new employee to the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC4</id>
+      <content>Use Case Number:	UC4
+Name:	Edit an Employee�s Information
+
+Author:	M2
+Event:	An administrator searches for an employee and selects to edit the employee. Employee�s id is passed as input.
+System:	System Console, Account Manager
+Actors:	Administrator
+
+Overview:	This use case describes the behaviour of the system when an administrator wants to edit an employee�s information. The searches an employee by their employee id.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC5</id>
+      <content>Use Case Number:	UC5
+Name:	Edit Employee�s Voice Mailbox Messages
+
+Author:	M2
+Event:	An administrator searches for an employee and selects to edit the employee�s voice mailbox messages. Employee�s id is passed as input.
+System:	System Console, VoiceMail Manager, Account Manager
+Actors:	Administrator
+
+Overview:	This use case describes the behaviour of the system when an administrator wishes to add edit an employee�s voice mailbox messages. The administrator can delete messages off an employee�s voicemail.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC6</id>
+      <content>Use Case Number:	UC6
+Name:	Edit Employee�s Do Not Disturb Status!.
+
+Author:	M2
+Event:	An administrator searches for an employee and selects to edit the employee�s do not disturb status. Employee�s id is passed as input.
+System:	System Console, Account Manager, DND Manager
+Actors:	Administrator
+
+Overview:	This use case describes the behaviour of the system when an administrator wishes to edit the do not disturb status of the employee�s phone.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC7</id>
+      <content>Use Case Number:	UC7
+Name:	Terminate Employee Service
+
+Author:	M2
+Event:	An administrator searches for an employee and selects to terminate the employee�s service. Employee�s id is passed as input.
+System:	System Console, Account Manager, PhoneIP Manager
+Actors:	Administrator
+
+Overview:	This use case describes the behaviour of the system when an administrator wants to terminate the employee�s service.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC8</id>
+      <content>Use Case Number:	UC8
+Name:	Resume Employee Service.
+
+Author:	M2
+Event:	An administrator searches for an employee and selects to resume the employee�s service. Employee�s id is passed as input.
+System:	System Console, Account Manager, PhoneIP Manager, Billing Manager
+Actors:	Administrator.
+
+Overview:	This use case describes the behaviour of the system when an administrator wants to resume an existing employee�s service. The administrator finds the employee by their employee id.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC9</id>
+      <content>Use Case Number:	UC9
+Name:	Add New Department
+
+Author:	M2
+Event:	An administrator can create a new department. Department name, location, and issue bill date are passed as input
+System:	System Console, Department Manager
+Actors:	Administrator
+
+Overview:	This use case describes the behaviour of the system when an administrator wants to create a new department.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC10</id>
+      <content>Use Case Number:	UC10
+Name:	Edit A Department.
+
+Author:	M2
+Event:	An administrator can edit an existing department. Department name is passed as input
+System:	System Console, Department Manager
+Actors:	Administrator
+
+Overview:	This use case describes the behaviour of the system when an administrator wants to edit a department. The department name is first searched and then it can be edited, which works similar to UC9.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC11</id>
+      <content>Use Case Number:	UC11
+Name:	Delete/Undelete A Department
+
+Author:	M2
+Event:	An administrator can active or inactive a department. Department name is passed as input.
+System:	System Console, Department Manager
+Actors:	Administrator
+
+Overview:	This use case describes the behaviour of the system when an administrator wants to delete or undelete a department. The department name is first searched and then it can be deleted or undeleted. Delete changes the status to inactive; undeleted changes to active.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC12</id>
+      <content>Use Case Number:	UC12
+Name:	Set Department Privileges.
+
+Author:	M2
+Event:	An administrator can modify department privileges. Department name is passed as input.
+System:	System Console, Department Manager
+Actors:	Administrator
+
+Overview:	This use case describes the behaviour of the system when an administrator wants to change the department�s privileges (voicemail, call display, DND status)</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC13</id>
+      <content>Use Case Number:	UC13
+Name:	Add Billing Plan.
+
+Author:	M2
+Event:	An administrator can add a billing plan to the system. Billing start and end times and rates are passed as input.
+System:	System Console, Plan Manager
+Actors:	Administrator
+
+Overview:	This use case describes the behaviour of the system when an administrator wishes to add a bill plan to the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC14</id>
+      <content>Use Case Number:	UC14
+Name:	Edit Billing Plan
+
+Author:	M2
+Event:	An administrator wishes to edit an existing billing plan. Billing plan information is passed as input.
+System:	System Console, Plan Manager
+Actors:	Administrator
+
+Overview:	This use case describes the behaviour of the system when an administrator wishes to edit existing billing plan. The administrator can change the name, times, and rates of the billing plan. Actions similar to UC 13.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC15</id>
+      <content>Use Case Number:	UC15
+Name:	Delete/Undelete Billing Plan
+
+Author:	M2
+Event:	An administrator wishes to delete or undelete an existing billing plan. Department is passed in as input.
+System:	System Console, Plan Manager
+Actors:	Administrator
+
+Overview:	This use case describes the behaviour of the system when an administrator wishes to delete or undelete a billing plan for a department. When deleting a plan, it will change the plan�s status to active and vise versa. An inactive plan cannot be used.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC16</id>
+      <content>Use Case Number:	UC16
+Name:	Issue Bill
+
+Author:	M2
+Event:	Issuing a bill when the department�s issue bill date matches with the current date.
+System:	Timer, Billing Manager, Plan Manager, Department Manager, Printer
+Actors:	Administrator
+
+Overview:	This use case describes the behaviour of the system when a bill needs to be issued for a department.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC17</id>
+      <content>Use Case Number:	UC17
+Name:	View Bill History.
+
+Author:	M2
+Event:	An administrator can check the department�s billing history. Department name is passed as input.
+System:	System Console, Billing Manager, Department Manager
+Actors:	Administrator
+
+Overview:	This use case describes the behaviour of an administrator checking the billing history of a department. It will show whether a department has paid a bill for a particular month.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC18</id>
+      <content>Use Case Number:	UC18
+Name:	Record Bill Payment
+
+Author:	M2
+Event:	An administrator can record that a department has paid a bill. Department name is passed as input.
+System:	System Console, Billing Manager, Department Manager
+Actors:	Administrator
+
+Overview:	This use case describes the behaviour of an administrator recording a bill paid by a department.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC19</id>
+      <content>Use Case Number:	UC19
+Name:	Lookup Available Ext Numbers and IP Addresses.
+
+Author:	M2
+Event:	An administrator can retrieve all available extension numbers and IP addresses.
+System:	System Console, PhoneIPManager
+Actors:	Administrator
+
+Overview:	This use case describes the behaviour of an administrator looks up all available ext numbers and IP addresses.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC20</id>
+      <content>Use Case Number:	UC20
+Name:	Change Load Balance.
+
+Author:	M2
+Event:	An administrator can change the load balance.
+System:	System Console, Resource Manager
+Actors:	Administrator
+
+Overview:	This use case describes the behaviour of an administrator changing the number of calls the system can handle.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC21</id>
+      <content>Use Case Number:	UC21
+Name:	Change Voice Mailbox Capacity
+
+Author:	M2
+Event:	An administrator can the voice mailbox capacity
+System:	System Console, Voicemail Manager
+Actors:	Administrator
+
+Overview:	This use case describes the behaviour of an administrator changing the maximum number of messages allowed on any employee�s voice mailbox.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC22</id>
+      <content>Use Case Number:	UC22
+Name:	Auto H/W Testing.
+
+Author:	M2
+Event:	The system will test each IP address that is currently assigned to an employee
+System:	System Console, Maintenance Manager, PhoneIP Manager
+Actors:
+Overview:	This use case describes the behaviour of the system testing if the IP addresses are working properly. If there is an error, it will print to the system console.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC23</id>
+      <content>Use Case Number:	UC23
+Name:	Manual HW Testing.
+
+Author:	M2
+Event:	An administrator can manually test an IP address. Extension number is passed as input.
+System:	System Console, Maintenance Manager, PhoneIP Manager
+Actors:	Administrator
+
+Overview:	This use case describes the behaviour of an administrator manually checking an IP address. The administrator will enter extension numbers to test the IP address.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC24</id>
+      <content>Use Case Number:	UC24
+Name:	Modify Auto Test Plan.
+
+Author:	M2
+Event:	The administrator wants to modify the auto HW test plan.
+System:	System Console, Maintenance Manager
+Actors:	Administrator, Call Subsystem
+
+Overview:	This use case describes the behavior of the system when an administrator modifies the auto hw test plan. The plan is based on time and date.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC25</id>
+      <content>Use Case Number:	UC25
+Name:	Reset Phone Status
+
+Author:	M2
+Event:	The administrator wants to reset the phone�s status
+System:	System Console, VoiceMail Manager
+Actors:	Administrator, Call Subsystem
+
+Overview:	This use case describes the behavior of the system when an administrator wants to reset a phone�s status.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC26</id>
+      <content>Use Case Number:	UC26
+Name:	Change Message Delete Time.
+
+Author:	M2
+Event:	The administrator wants to change the auto message time. Amount of days are passed as input
+System:	System Console, Maintenance Manager
+Actors:	Administrator, Call Subsystem
+
+Overview:	This use case describes the behavior of the system when an administrator wants to change the automatic time a message is deleted.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC27</id>
+      <content>Use Case Number:	UC27
+Name:	View Admin Logs.
+
+Author:	M2
+Event:	The administrator wants to view an admin�s history of actions. Administrator name is passed in as input.
+System:	System Console, Maintenance Manager
+Actors:	Administrator,
+
+Overview:	This use case describes the behavior of the system when an administrator wants to change the automatic time a message is deleted.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

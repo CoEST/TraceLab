@@ -1,0 +1,94 @@
+2009-08-14  Manuel Cerón  <ceronman@gmail.com>
+
+	* PixbufHandle.cs:
+	* PolyLineHandle.cs:
+	* UndoableHandle.cs:
+	* ToggleButtonHandle.cs:
+	* ChangeConnectionHandle.cs: Updated references to DisplayBox
+
+	* IHandle.cs:
+	* AbstractHandle.cs: Removed DisplayBox property. Changed
+	Size. Added Width and Height properties.
+
+2009-07-10  Manuel Cerón  <ceronman@gmail.com>
+
+	* AbstractHandle.cs:
+	* ToggleButtonHandle.cs: Now the cairo context is saved and
+	restored during draw
+
+2009-07-09  Manuel Cerón  <ceronman@gmail.com>
+
+	* ToggleButtonHandle.cs: Improved margin selection
+
+2009-07-09  Manuel Cerón  <ceronman@gmail.com>
+
+	* PixbufHandle.cs: Added new handle with pixbuf images
+
+2009-07-07  Manuel Cerón  <ceronman@gmail.com>
+
+	* ToggleButtonHandle.cs: Added new handle usefull for toggle
+	buttons
+
+2009-06-12  Manuel Cerón  <ceronman@gmail.com>
+
+	* UndoableHandle.cs: checking if UndoManager exists before
+	pushing undo
+
+2009-06-11  Manuel Cerón  <ceronman@gmail.com>
+
+	* ChangeConnectionEndHandle.cs:
+	* ChangeConnectionStartHandle.cs: Added FindPoint
+
+	* ChangeConnectionHandle.cs: Added UndoActivity functionality.
+
+2009-06-10  Manuel Cerón  <ceronman@gmail.com>
+
+	* PolyLineHandle.cs: Index is now public and private set
+
+	* AbstractHandle.cs: CreateUndoActivity and UpdateUndoActivity
+	now are virtual stubs
+
+	* ChangeConnectionHandle.cs: Removed CreateUndoActivity and
+	UpdateUndoActivity Stubs
+
+2009-06-10  Manuel Cerón  <ceronman@gmail.com>
+
+	* ResizeHandle.cs: Added CreateUndoActivity and
+	UpdateUndoActivity
+
+	* LocatorHandle.cs: Removed stubs for Invoke{End,Start,Step}
+	Moved to AbstractHandle
+
+	* AbstractHandle.cs: Added default stubs for InvokeStart,
+	InvokeEnd, InvokeStep. Added Stubs for UpdateUndoaActivity and
+	CreateUndoActivity
+
+	* LineConnectionHandle.cs: Invoking base in InvokeEnd().
+
+	* UndoableHandle.cs: Cosmetic changes
+
+	* PolyLineHandle.cs: Added UndoActivity
+
+	* ChangeConnectionHandle.cs: Added Stubs for
+	UpdateUndoaActivity and CreateUndoActivity.
+
+2009-06-06  Manuel Cerón  <ceronman@gmail.com>
+
+	* ResizeHandle.cs: Added ResizeHandle Class
+
+	* EastHandle.cs:
+	* WestHandle.cs:
+	* SouthHandle.cs:
+	* NorthHandle.cs:
+	* NorthWestHandle.cs:
+	* SouthWestHandle.cs:
+	* NorthEastHandle.cs:
+	* SouthEastHandle.cs: Changed father class to Resize Handle
+
+2009-06-04  Manuel Cerón  <ceronman@gmail.com>
+
+	* UndoableHandle.cs: Added UndoableHandle class
+
+	* IHandle.cs:
+	* AbstractHandle.cs: Added UndoActivity Member
+

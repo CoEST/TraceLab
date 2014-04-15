@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<artifacts_collection>
+<collection_info>
+	<id>UC</id>
+	<name>UC</name>
+	<version>1.1</version>
+	<description>Use cases</description>
+	<content_location>external</content_location>
+</collection_info>
+<artifacts>
+	<artifact><id>SMOS1</id><content>UC/SMOS1.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS10</id><content>UC/SMOS10.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS11</id><content>UC/SMOS11.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS12</id><content>UC/SMOS12.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS13</id><content>UC/SMOS13.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS14</id><content>UC/SMOS14.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS15</id><content>UC/SMOS15.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS16</id><content>UC/SMOS16.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS17</id><content>UC/SMOS17.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS18</id><content>UC/SMOS18.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS19</id><content>UC/SMOS19.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS2</id><content>UC/SMOS2.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS20</id><content>UC/SMOS20.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS21</id><content>UC/SMOS21.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS22</id><content>UC/SMOS22.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS23</id><content>UC/SMOS23.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS24</id><content>UC/SMOS24.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS25</id><content>UC/SMOS25.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS26</id><content>UC/SMOS26.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS27</id><content>UC/SMOS27.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS28</id><content>UC/SMOS28.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS29</id><content>UC/SMOS29.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS3</id><content>UC/SMOS3.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS30</id><content>UC/SMOS30.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS31</id><content>UC/SMOS31.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS32</id><content>UC/SMOS32.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS33</id><content>UC/SMOS33.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS34</id><content>UC/SMOS34.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS35</id><content>UC/SMOS35.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS36</id><content>UC/SMOS36.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS37</id><content>UC/SMOS37.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS38</id><content>UC/SMOS38.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS39</id><content>UC/SMOS39.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS4</id><content>UC/SMOS4.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS40</id><content>UC/SMOS40.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS41</id><content>UC/SMOS41.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS42</id><content>UC/SMOS42.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS43</id><content>UC/SMOS43.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS44</id><content>UC/SMOS44.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS45</id><content>UC/SMOS45.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS46</id><content>UC/SMOS46.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS47</id><content>UC/SMOS47.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS48</id><content>UC/SMOS48.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS49</id><content>UC/SMOS49.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS5</id><content>UC/SMOS5.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS50</id><content>UC/SMOS50.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS51</id><content>UC/SMOS51.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS52</id><content>UC/SMOS52.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS53</id><content>UC/SMOS53.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS54</id><content>UC/SMOS54.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS55</id><content>UC/SMOS55.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS56</id><content>UC/SMOS56.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS57</id><content>UC/SMOS57.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS58</id><content>UC/SMOS58.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS59</id><content>UC/SMOS59.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS6</id><content>UC/SMOS6.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS60</id><content>UC/SMOS60.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS61</id><content>UC/SMOS61.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS62</id><content>UC/SMOS62.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS63</id><content>UC/SMOS63.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS64</id><content>UC/SMOS64.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS65</id><content>UC/SMOS65.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS66</id><content>UC/SMOS66.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS67</id><content>UC/SMOS67.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS7</id><content>UC/SMOS7.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS8</id><content>UC/SMOS8.txt</content><parent_id/></artifact>
+	<artifact><id>SMOS9</id><content>UC/SMOS9.txt</content><parent_id/></artifact>
+</artifacts>
+</artifacts_collection>

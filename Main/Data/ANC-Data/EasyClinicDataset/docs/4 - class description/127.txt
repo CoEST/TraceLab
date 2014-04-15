@@ -1,0 +1,15 @@
+Class GUIResocontoEsami Date: 16/09/2003 
+                                                Version: 0 01 000 
+Description Make the mask on the management of 
+                   reports of the examinations prescribed in visits 
+                   incurred in outpatient 
+Attributes 
+       Name Access Description 
+Private panelParametri panel containing the parameters 
+                            necessary to set criteria 
+                            creation of reports of the examinations 
+Methods 
+        Signature resocontoEsami () Public Access 
+    It description to find all the information 
+                   necessary to generate the report in 
+                   compliance with the criteria specified

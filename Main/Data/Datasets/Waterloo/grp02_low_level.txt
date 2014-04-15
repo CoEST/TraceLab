@@ -1,0 +1,91 @@
+UC1	Use Case Number: UC1
+Authors: M1, M2, M3, M4
+Event: A Caller wishes to make a phone call to another phone user (Callee).  The phone number is passed as an input
+System: The Resource Manager checks for available phone lines while the Call Manager implements the phone connection to process the call.
+Actors: Caller (initiator), Callee
+Overview: This use cases captures the process of making a successful phone connection from a Caller to a Callee. The connection is initiated by the Caller~
+UC2	Use Case Number: UC2
+Authors: M1, M2, M3, M4
+Event: Administrator wishes to retrieve a user’s account information.
+System: The Administrator uses the system console as an interface to the system server.
+Actors: Administrator (initiator), system console
+Overview: This use case captures the process of logging into the system console~
+UC3	Use Case Number: UC3
+Authors: M1, M2, M3, M4
+Event: Administrator wishes to retrieve account information.  The search criteria (ie. Account number) is passed as the input.
+System: The Administrator uses the system console as an interface to the system server.
+Actors: Administrator (initiator), system console
+Overview: This use case captures the process of retrieving and viewing the account information linked to a specified search criteria.~
+UC4	Use Case Number: UC4
+Authors: M1, M2, M3, M4
+Event: Administrator wishes to modify a customer’s account information.  The account number is passed as the input.
+System: The Administrator uses the system console as an interface to the system server.
+Actors: Administrator (initiator), system console
+Overview: This use case captures the process of editing a customer’s account information on the system console~
+UC5	Use Case Number: UC5
+Authors: M1, M2, M3, M4
+Event: Administrator wishes to suspend a user’s account.  The account number is passed as the input.
+System: The Administrator uses the system console as an interface to the system server.
+Actors: Administrator (initiator), system console
+Overview: This use case captures the process of an administrator suspending a user’s account on the system console.~
+UC6	Use Case Number: UC6
+Authors: M1, M2, M3, M4
+Event: Administrator wishes to delete a user’s account.  The account number is passed as the input.
+System: The Administrator uses the system console as an interface to the system server.
+Actors: Administrator (initiator), system console
+Overview: This use case captures the process of an administrator deleting a user’s account on the system console.  The account is deleted permanently~
+UC7	Use Case Number: UC7
+Authors: M1, M2, M3, M4
+Event: Administrator wishes to add a new user account.
+System: The Administrator uses the system console as an interface to the system server.
+Actors: Administrator (initiator), system console
+Overview: This use case captures the process of adding a new user account.  An unused phone number is assigned to a valid IP address.~
+UC8	Use Case Number: UC8
+Authors: M1, M2, M3, M4
+Event: Administrator wishes to alter an existing billing plan.
+System: The Administrator uses the system console as an interface to the system server.
+Actors: Administrator (initiator), system console
+Overview: This use case captures the process of changing an existing billing plan.  The administrator can choose from a list of existing billing plans.  All accounts linked to the changed billing plan are updated.~
+UC9	Use Case Number: UC9
+Authors: M1, M2, M3, M4
+Event: Administrator wishes to add a new billing plan.
+System: The Administrator uses the system console as an interface to the system server.
+Actors: Administrator (initiator), system console
+Overview: This use case captures the process of an administrator adding a new billing plan on the system console.~
+UC10	Use Case Number: UC10
+Authors: M1, M2, M3, M4
+Event: Administrator wishes to cancel a user account. The user account number is passed as input.
+System: The Administrator uses the system console as an interface to the system server.
+Actors: Administrator (initiator), system console
+Overview: This use case captures the process of canceling a user account given by the specified account number.  The administrator must first logon to the system console with a user id and password.~
+UC11	Use Case Number: UC11
+Authors: M1, M2, M3, M4
+Event: Administrator wishes to enter a user’s bill payment.
+System: The Administrator uses the system console as an interface to the system server.
+Actors: Administrator (initiator), system console
+Overview: This use case captures the process of the administrator entering a user’s bill payment.  The administrator must first logon to the system console with a user id and password.~
+UC12	Use Case Number: UC12
+Authors: M1, M2, M3, M4
+Event: Administrator wishes to change the system configurations.
+System: The Administrator uses the system console as an interface to the system server.
+Actors: Administrator (initiator)
+Overview: This use case captures the procedure for the administrator to change the maximum number of concurrent calls and the hardware fault duration time.~
+UC13	Use Case Number: UC13
+Authors: M1, M2, M3, M4
+Event: Administrator chooses to view hardware status and run a connectivity test.
+System: System server, console terminals. 
+Actors: Administrator (initiator)
+Overview: This use case captures the process the administration running a connectivity test to verify that the user’s phone is connected to the system.~
+
+
+
+
+
+
+
+
+
+
+
+
+

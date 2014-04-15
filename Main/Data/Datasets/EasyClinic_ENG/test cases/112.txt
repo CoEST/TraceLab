@@ -1,0 +1,20 @@
+Login test case by Patient Data: 
+    C62 Card Hospital recorded 20/06/2003 
+            in S I O and correct PIN but 
+            not recorded in S I O 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcLogPaz necessary to authenticate an 
+            patient 
+High Priority 
+The Hospital set up 00,001 Card is `recorded in 
+            I S O 
+            The PIN is not `47,389 recorded in S I O 
+Description test 
+Input: Hospital Card: 00,001 
+            PIN: 47,389 
+Oracle: The system does not allow access to 
+            patient 
+Classes cover valid: CE2 
+: Classes invalid: CE10

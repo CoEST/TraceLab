@@ -1,0 +1,3 @@
+org.mozilla.javascript.NativeNumber.execIdCall
+org.mozilla.javascript.NativeNumber.initPrototypeId
+org.mozilla.javascript.NativeNumber.findPrototypeId

@@ -1,0 +1,649 @@
+           database Query
+           "Connection conn  =null  ;
+           Result  Set rs  =null  ;
+           Statement stmt  =null  ;
+           String m  SQL=  """";
+          
+           Vector struct  Vector = new Vector  (); // for holding the dummy variable objects used in execute  Structure  ()
+           Variable v  ;// create this object and add it to struct  Vector used in execute  Structure  ()
+           int gr  Id  =0  ; // will be used to find the Structural  Equation for current model  used in execute  Structure  ()
+           double calc  Value  =0  .  0  ;// holds the calculated values for the struct  Equation of Structural  Equation table
+           // Every Graph  Model is responsible for tracking one variable this variable name
+           // is inserted into SPE Graph table   so get that name and store it in this variable
+           String track  Variable  Name = """";"
+           "/**
+               * Construct a connection object  .
+               * @param Returns an object of type Connection
+               */
+           public Connection get  Connection  ()
+           {
+            System  . out  . println  ("" in get Connection  "");
+            Connection connect  =null  ;
+            try
+            {
+             Class  . for  Name  ("" sun  . jdbc  . odbc  .  Jdbc  Odbc  Driver  "");
+             connect = Driver  Manager  . get  Connection  ("" jdbc  : odbc  :  Graph  Model  """"  PUBLIC  """"  PUBLIC  "" );
+             System  . out  . println  ("" connection Object  "");
+            }
+            catch (  Exception ex  )
+            {
+               System  . out  . println  (""  A problem occurred establishing the database connection  "");
+            }
+            return connect  ;
+           }// end of get  Connection"
+           "/**
+              * Returns Graph  Id as int
+              * @param graph  Name performance modelHandler calls this method with graph  Name
+              * as parameter   performance modelHandler parse the Event  Server message and get the
+              * graph  Name
+              */
+           public int get  Graph  Id  (  String graph  Name  )
+           {
+            conn = this  . get  Connection  ();
+          
+            System  . out  . println  ("" into get  Graph  Id  -----  "");
+          
+            m  SQL = ""  SELECT Graph  Id FROM SPE Graph WHERE Graph  Name = '  "" +  graph  Name + ""  '  "";
+            System  . out  . println  ("" the gr Name =  "" + graph  Name + ""  ---  "" + m  SQL  );
+          
+               int graph  Id = 0  ;// initializing variable
+            try
+            {
+             stmt = conn  . create  Statement  ();
+             rs = stmt  . execute  Query  ( m  SQL  );
+             while ( rs  . next  () )
+             {
+              graph  Id = rs  . get  Int  (""  Graph  Id  "");
+             }
+             rs  . close  ();
+             stmt  . close  ();
+             conn  . close  ();
+             System  . out  . println  ("" get  Graph  Id  :: success in execution  "");
+            }
+            catch  (  Exception eeee  )
+            {
+             System  . out  . println  ("" exception in get  Graph  Id ==  "" + eeee  );
+            }
+          
+            System  . out  . println  ("" out of get  Graph  Id  -----  "");
+            return graph  Id  ;
+           }// end of get  Graph  Id"
+           "/**
+          * Copy data from one set of columns to other in table Variable
+          * @param graph  Id is the id of graph for which you want to save the
+          * current state of variables
+          */
+           public void save  Current  Model  ( int graph  Id  )
+           {
+          
+            conn = this  . get  Connection  ();
+            System  . out  . println  ("" into save  Current  Model  ~~~~~~~  "");
+          
+            m  SQL = ""  UPDATE Variable SET Temp  requirement Type  =requirement Type   Temp  Var  Value = Var  Value   Temp  Speculate  Value  =Speculate  Value   Temp  Constraint  Logic  =Constraint  Logic WHERE Graph  Id =  "" + graph  Id  ;
+            System  . out  . println  ("" the gr Name =  "" + graph  Id + ""  ---  "" + m  SQL  );
+            try
+            {
+             stmt = conn  . create  Statement  ();
+             stmt  . execute  Update  ( m  SQL  );
+             stmt  . close  ();
+             conn  . close  ();
+             System  . out  . println  ("" save  Current  Model  :: success in execution  "");
+            }
+            catch  (  Exception eeee  )
+            {
+             System  . out  . println  ("" in save  Current  Model  () exe Qu stmt **"" + eeee  );
+            }
+            System  . out  . println  ("" out of save  Current  Model  ~~~~~~~  "");
+          
+           }// end of save  Current  Model"
+           "/**
+              * Injects new value into Variable table   using Data stored in
+              * Vector of Variable object
+              * @param graph  Id is the id of graph
+              * @param Vector var is the Vector that stores the Object of type Variable
+              */
+           public void inject  Variables  ( int graph  Id   Vector var  )
+           {
+            conn = this  . get  Connection  ();
+            System  . out  . println  ("" into inject  Variables  ^^^^^^^^^"");
+            Variable obj  Var = null  ;
+            Prepared  Statement ps = null  ;
+          
+            String statement = ""  UPDATE Variable SET requirement Type  =  ? Var  Value =  ? Speculate  Value  =  ? Constraint  Logic  =  ? WHERE Graph  Id =  "" + graph  Id + ""  AND requirement Id =  ?"";
+            try
+            {
+             ps = conn  . prepare  Statement  ( statement  );
+            }
+            catch (  SQLException e  )
+            {
+             System  . out  . println  (""  Error in building Prepared Statement ***"");
+            }
+          
+            for ( int i = 0  ; i  < var  . size  (); i  ++)
+            {
+             obj  Var = (  Variable  ) var  . get  ( i  );
+             try
+             {
+              ps  . set  String  (  1   obj  Var  . get  Type  ());
+              ps  . set  Double  (  2   obj  Var  . get  Value  ());
+              ps  . set  Double  (  3   obj  Var  . get  Speculate  Value  ());
+              ps  . set  String  (  4   obj  Var  . get  Logic  ());
+              ps  . set  String  (  5   obj  Var  . get  Id  ());
+              ps  . execute  Update  ();
+             }
+             catch (  SQLException e  )
+             {
+              System  . out  . println  ("" err in executing prepared  Statement  "");
+             }
+            }
+          
+            try
+            {
+             ps  . close  ();
+             conn  . close  ();
+            }
+            catch (  SQLException e  1  )
+            {
+             System  . out  . println  ("" while closing connection  "");
+            }
+            System  . out  . println  ("" out of inject  Variables  ^^^^^^^^^"");
+           }// end of inject  Variables"
+           "/**
+            * this method will pick up the structure id from SPE Structure
+            * If Dependent  Structure  Id is 0 then select Structure  ID
+            * and invoke the execute  Structure method on Selected
+            * Structure  Id
+            * Who Invokes this method  : performance modelHandler
+            * @param graph  Id is the id of graph
+            * @param Vector var is the Vector that stores the Object of type Variable
+            */
+              //
+           public void execute  Model  ( int graph  Id   Vector var  )
+           {
+           // using the class level conn and stmt object
+            conn = this  . get  Connection  ();
+            System  . out  . println  ("" in execute  Model  "");
+          
+            Result  Set rs  =null  ;
+            int track  =1  ;// needed for debugging purpose   used in while loop down
+            int dependent  Structure  Id  =-1  ;// initialize to -1
+            int structure  Id  =-1  ;// initialize to -1
+          
+            try
+            {
+             stmt = conn  . create  Statement  ();
+            }
+            catch (  SQLException e  )
+            {
+             System  . out  . println  (""  Error in getting stmt for SPE Structure table  "");
+            }
+          
+            m  SQL = ""  SELECT * FROM SPE Structure WHERE Graph  Id =  "" + graph  Id  ;
+            System  . out  . println  ("" m  SQL  : "" + m  SQL  );
+          
+            try
+            {
+             rs = stmt  . execute  Query  ( m  SQL  );
+             // rs  . before  First  ();
+            }
+            catch  (  Exception ee  )
+            {
+             System  . out  . println  (""  Error in stmt  . execute  Query  "");
+            }
+          
+            try
+            {
+             while ( rs  . next  ())
+             {
+              System  . out  . println  (""  Round Number == "" + track  );
+          
+              dependent  Structure  Id = rs  . get  Int  (""  Dependent  Structure  Id  "");
+              structure  Id = ( rs  . get  Int  (""  Structure  Id  ""));
+          
+              if ( dependent  Structure  Id <  = 0 )
+              {
+               System  . out  . println  (""+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"");
+               // this method solve the Structure for each structure  Id
+               // put the value of calculated equation into Result  Variable  Value of Structure table
+               //  Also populate Vector struct  Vector with the object v of type Variable with only
+               // structure  Operator  Name and Result  Variable  Name
+               this  . solve  Structure  ( structure  Id   var  );
+          
+               System  . out  . println  (""+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"");
+              }
+             track  ++;
+             }
+             System  . out  . println  ("" struct  Vector and Variable is populated == ""+ struct  Vector  . to  String  ());
+            }
+            catch (  SQLException e  1  )
+            {
+             System  . out  . println  (""  Error in getting p & i or rs  Fwd  . next  ()"");
+            }
+          
+            System  . out  . println  (""  Done with all structure id  "");
+            execute  Structure  ( structure  Id   var  );
+          
+            try
+            {
+             rs  . close  ();
+             stmt  . close  ();
+             conn  . close  ();
+             System  . out  . println  ("" success in execution  "");
+          
+            }
+            catch  (  Exception eeee  )
+            {
+             System  . out  . println  (""  Error in closing connection for SPE Structure table  "");
+            }
+          
+           }// end of execute  Model"
+           "// this method is about executing the structure
+           // based on Structure  Id find all the data related to given Structure  Id
+           // and using the equation in string format call the method equation  Parser  .
+           //  I am passing Vector that has all the data about variable so that I don ' t have to
+           // make other database call
+           public void execute  Structure  ( int Structure  Id   Vector vr  )
+           {
+            System  . out  . println  (""  Inside execute  Structure  () ((((((((((((((((((((((((("");
+          
+          
+            // this method uses the class level variable struct  Vector and Variable object v
+            // to convert the Struct  Equation of Structural  Equation table into equivalent
+            // equation with values instead of variable name and then solve it
+            // stores the solved equation value into
+            solve  Structure  Equation  ();
+            get  Track  Variable  Name  ();
+            set  Calculated  Values  ();
+          
+            // set up the connection with Structure  Equation
+            // get the structure equation based on Graph  Id
+            // parse the equation to replace variable with vales
+            // execute the equation
+            // get the result back
+            // store the result into calculated result of Variable table
+            System  . out  . println  ("" leaving execute  Structure  ()  --  ))))))))))))))))))))))))))))))))))))"");
+          
+           }// end of execute  Structure"
+           "public void solve  Structure  ( int Structure  Id   Vector vr  )
+           {
+            System  . out  . println  (""  Inside solve  Structure  ()  &&&&&&&&&&&&&&&&&&&&&&&"");
+          
+            Connection conn  1 = this  . get  Connection  ();
+            System  . out  . println  ("" in solve  Structure  "");
+          
+            Statement stmt  1=null  ;
+            Result  Set rs  1=null  ;
+            double eq  Result  =0  .  0  ;
+          
+            String struct  SQL = ""  SELECT * FROM Structure WHERE Structure  Id =  "" + Structure  Id  ;
+            System  . out  . println  ("" struct  SQL  : "" + struct  SQL  );
+          
+            try
+            {
+             stmt  1 = conn  1  . create  Statement  ();
+             // will return only one record
+             rs  1 = stmt  1  . execute  Query  ( struct  SQL  );
+            }
+            catch  (  Exception e  )
+            {
+             System  . out  . println  (""  Error on stmt  1 and rs  1  "");
+            }
+          
+            try
+            {
+          
+             if ( rs  1  . next  ())
+             {
+          
+                 // holds the result of equation after the loop is over
+              // get the name of the structure operator
+              // this name is usefull as we can get the associated value
+              // from Vector Vr
+              String structure  Operator  Name = """";
+              try
+              {
+               structure  Operator  Name = rs  1  . get  String  ("" structure  Operator  Name  "");
+              }
+              catch (  SQLException e  2  )
+              {
+               System  . out  . println  ("" e  2 == ""+ e  2  );
+              }
+          
+              System  . out  . println  (""  Structure  Operator  Name  == "" + structure  Operator  Name  );
+          
+              // initial value of structural operator is zero
+              // assign it the value of matching structure  Operator  Name
+              // from Vector Vr
+              int structure  Operator  Value  =0  ;
+          
+              // looping through Vector vr to find the value of structural operator
+              System  . out  . println  ("" vr size  : "" + vr  . size  ());
+              for ( int y  =0  ; y  < vr  . size  (); y  ++)
+              {
+               if ( (((  Variable  ) vr  . get  ( y  )). get  Name  ()). equals  ( structure  Operator  Name  ))
+               {
+                structure  Operator  Value = ( int  )(((  Variable  ) vr  . get  ( y  )). get  Value  ());
+                System  . out  . println  (""  Structure  Operator  Value  1  == "" + structure  Operator  Value  );
+               }
+              }
+              System  . out  . println  (""  Structure  Operator  Value  == "" + structure  Operator  Value  );
+          
+          
+              // this is done only once as I will need gr  Id for next processing
+              // so if it is zero then extract gr  Id for given structure
+              // otherwise don ' t do anything
+              System  . out  . println  (""  Graph  ID  : "" + gr  Id  );
+              if  ( gr  Id == 0 )
+              {
+               // get the graph  Id
+               try
+               {
+                gr  Id = rs  1  . get  Int  (""  Graph  Id  "");
+               }
+               catch (  SQLException e  3  )
+               {
+                System  . out  . println  ("" e  3 == ""+ e  3  );
+               }
+              }
+          
+              //  The equation given is in the format of
+              // variable names ex ( bandwidth  / avg  Shape  Size  )
+              // we have to read these variable name and extract its value
+              // and replace the number in place of name
+              // the numbers are into string format
+              // get the equation in the number format
+              String equation  Str  =  """";
+              try
+              {
+               System  . out  . println  ("" enter equation  Str  "");
+               equation  Str = this  . equation  Parser  ( rs  1  . get  String  (""  Equation  "") vr  );
+               System  . out  . println  ("" quit equation  Str  "");
+              }
+              catch (  SQLException e  4  )
+              {
+               System  . out  . println  ("" e  4 == ""+ e  4  );
+              }
+              catch (  Exception e  0  )
+              {
+               System  . out  . println  ("" e  0 error  : "" + e  0  );
+              }
+          
+              System  . out  . println  ("" equation  Str == "" + equation  Str  );
+          
+              // get the type of structure
+              String structure  Type  =  """";
+              try
+              {
+               structure  Type = rs  1  . get  String  (""  Structure  Type  "");
+              }
+              catch (  SQLException e  5  )
+              {
+               System  . out  . println  ("" e  5 == ""+ e  5  );
+              }
+              System  . out  . println  ("" structure  Type == "" + structure  Type  );
+          
+          
+          
+              // based on structure type pick one of the foll"
+           "public void solve  Structure  Equation  ()
+           {
+            System  . out  . println  (""  Inside solve  Structure  Equation  ()  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"");
+          
+              //  Based on that result find out the equation and replace the name by its value
+              System  . out  . println  ("" creating connection object for getting Struct  Equation from  "" +
+               ""  Structural  Equation  "");
+              String struct  Eq =  """";// holds the struct  Equation from Structural  Equation table
+              String Str  Eq  Dbl = """";// holds the struct  Equation in value form
+          
+              Connection conn  2 = null  ;
+              Statement stmt  2 = null  ;
+              Result  Set rs  2 = null  ;
+          
+              try
+              {
+               conn  2 = this  . get  Connection  ();
+               stmt  2 = conn  2  . create  Statement  ();
+               rs  2 = stmt  2  . execute  Query  (""  SELECT Struct  Equation FROM Structural  Equation WHERE Graph  Id =  "" + gr  Id  );
+               while  ( rs  2  . next  ())
+               {
+                struct  Eq = rs  2  . get  String  (""  Struct  Equation  "");
+                System  . out  . println  ("" equation  Str == "" + struct  Eq  );
+          
+                Str  Eq  Dbl = this  . equation  Parser  ( struct  Eq   struct  Vector  );
+                System  . out  . println  ("" equation  Str == "" + Str  Eq  Dbl  );
+               }
+              }
+              catch (  SQLException e  2  )
+              {
+               System  . out  . println  (""  Error somewhere in getting the struct  Equation  "");
+              }
+          
+              // parse the struct  Equation and substitute
+              // the values of variable from Vector vr
+              Evaluator ev  1 = new Evaluator  (  Str  Eq  Dbl  );
+          
+          
+          
+              // assign the solved value of equation in this variable
+              // this will be used later to insert into Variable table where Struct  Operator  Name matches
+          
+              calc  Value = ev  1  . get  Value  ();
+              Decimal  Format df = new Decimal  Format  (""  0  .  ###  "");
+              String num = df  . format  ( calc  Value  );
+              calc  Value = Double  . parse  Double  ( num  );
+          
+          
+              System  . out  . println  (""  The calc  Value is =  ""+ calc  Value  );
+          
+              try
+              {
+               rs  2  . close  ();
+               stmt  2  . close  ();
+               conn  2  . close  ();
+          
+              }
+              catch (  SQLException e  3  )
+              {
+               System  . out  . println  (""  Error while closing conn  2 connection  "");
+              }
+              // by now I have calculated vale for a model and now I want to store it in Variable table
+          
+           }// solve  Structure  Equation  () method"
+           "public void get  Track  Variable  Name  ()
+           {
+            System  . out  . println  (""  Inside get  Track  Variable  Name  ()  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$  "");
+            //  This will get the variable name from SPE Graph and find the same name in variable
+            // and insert the struct  Equation value into it
+          
+            Connection conn  3 = null  ;
+            Statement stmt  3 = null  ;
+            Result  Set rs  3 = null  ;
+          
+            try
+            {
+             conn  3 = this  . get  Connection  ();
+             stmt  3 = conn  3  . create  Statement  ();
+             rs  3 = stmt  3  . execute  Query  (""  SELECT Track  Variable  Name FROM SPE Graph WHERE Graph  Id =  "" + gr  Id  );
+          
+             while  ( rs  3  . next  ())
+             {
+              track  Variable  Name = rs  3  . get  String  (""  Track  Variable  Name  "");
+             }
+            }
+            catch (  SQLException e  2  )
+            {
+             System  . out  . println  (""  Error in getting the track  Variable  Name  "");
+            }
+            System  . out  . println  ("" track  Variable  Name  == ""+ track  Variable  Name  );
+            try
+            {
+             rs  3  . close  ();
+             stmt  3  . close  ();
+             conn  3  . close  ();
+          
+            }
+            catch (  SQLException e  3  )
+            {
+             System  . out  . println  (""  Error in closing conn  3 object  "");
+            }
+          
+            // at this point I know where to insert the Struct  Equation value in Variable table
+           }// get  Track  Variable  Name  () method"
+           "public void set  Calculated  Values  ()
+           {
+            System  . out  . println  (""  Inside set  Calculated  Values  ()  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"");
+              // and at matching location put the calculated values
+              System  . out  . println  ("" enter calc  Value into Variable  "");
+          
+            Result  Set rs  5=null  ;
+            //  Result  Set rs  6=null  ;
+            Connection conn  5 = null  ;
+            Statement stmt  5 = null  ;
+            try
+            {
+             conn  5 = this  . get  Connection  ();
+             stmt  5 = conn  5  . create  Statement  (  Result  Set  .  TYPE  _  SCROLL  _  SENSITIVE   Result  Set  .  CONCUR  _  UPDATABLE  );
+             rs  5 = stmt  5  . execute  Query  (""  SELECT * FROM Variable WHERE Graph  Id =  "" + gr  Id  );
+            }
+            catch (  SQLException e  1a  )
+            {
+             System  . out  . println  ("" e  1a == ""+ e  1a  );
+            }
+          
+            try
+            {
+          
+             while  ( rs  5  . next  ())
+             {
+          
+              if  (( rs  5  . get  String  (""  Name  "")). equals  ( track  Variable  Name  ))
+              {
+               System  . out  . println  (""  Amit from if  "");
+               rs  5  . update  String  (""  Name  "" track  Variable  Name  );
+               rs  5  . update  Double  (""  Calculated  Values  "" calc  Value  );
+               rs  5  . update  Row  ();
+              }
+             }
+          
+            }
+            catch (  SQLException e  2a  )
+            {
+             System  . out  . println  ("" e  2a == "" + e  2a  );
+            }
+          
+            try
+            {
+             rs  5  . close  ();
+             stmt  5  . close  ();
+             conn  5  . close  ();
+            }
+            catch (  SQLException e  )
+            {
+             System  . out  . println  ("" e == ""+ e  );
+            }
+          
+          
+              }// end of set  Calculated  Values method"
+           "// this method creates the token for each variable name in the string
+           // and store that variable into vector
+           // it also creates the vector called var  Values
+           // var  Values has values of each variable stored in var  Name
+           //  So equation has variable name and operators
+           // and two vector has name and value at equal index but dos not know the operators
+           public String equation  Parser  (  String eq   Vector vr  )
+           {
+            // this  . get  Connection  ();
+          
+            System  . out  . println  ("" entering equation  Str  "");
+            String new  Eq = new String  ( eq  );
+            double val  =0  .  0  ;
+            System  . out  . println  ("" vr  . size  : "" + vr  . size  ());
+            for  ( int v  =0  ; v < vr  . size  (); v  ++)
+            {
+          
+             // if type of Variable object is Drivers then extract speculate  Value otherwise
+             // extract value
+             String nam = ((  Variable  ) vr  . get  ( v  )). get  Name  ();
+             System  . out  . println  ("" nam  : "" + nam  );
+          
+             if ( (((  Variable  ) vr  . get  ( v  )). get  Type  ()). equals  (""  Drivers  "") )
+             {
+              System  . out  . println  ("" h  2  "");
+              val = ((  Variable  ) vr  . get  ( v  )). get  Speculate  Value  ();
+              System  . out  . println  ("" h  3  "");
+          
+             }
+             else
+             {
+              System  . out  . println  ("" h  4  "");
+              val = ((  Variable  ) vr  . get  ( v  )). get  Value  ();
+              System  . out  . println  ("" h  5  "");
+             }
+             System  . out  . println  ("" val  : "" + String  . value  Of  ( val  ));
+             System  . out  . println  ("" nam  : "" + nam  );
+             System  . out  . println  ("" new  Eq  : "" + new  Eq  );
+          
+          
+             new  Eq = new  Eq  . replace  All  ( nam   String  . value  Of  ( val  ));
+          
+          
+          
+            }
+            // new  Eq = ""(  1400  .  0  /((  Maximum  Speed  Of  The  Approaching  Train  *  5280  )/  3600  ))  -Gate  Ability  To  Open  "";
+            System  . out  . println  ("" the equation is = "" + new  Eq  );
+          
+            return new  Eq  ;
+          
+           }// end of equation  Parser"
+           "public Vector get  Impact  Report  ()
+           {
+            //  This SPE Graph works on the assumption that each model tracks
+            // the effect of changes on one variable
+            Vector report = new Vector  ();
+            report  . add  ( track  Variable  Name  );
+            report  . add  (  String  . value  Of  ( calc  Value  ));
+            return report  ;
+           }// end of get  Impact  Report
+          
+          // ===================================================================================================
+           public void restore  Model  ( int graph  Id  )
+           {
+            Connection conn  7 = this  . get  Connection  ();
+          
+            Statement stmt  7=null  ;
+            try
+            {
+             stmt  7 = conn  7  . create  Statement  ();
+            }
+            catch (  SQLException e  )
+            {
+             System  . out  . println  (""  Error in creating statement object  ""+ e  );
+            }
+          
+          
+          
+            m  SQL = ""  UPDATE Variable SET requirement Type  =Temp  requirement Type   Var  Value = Temp  Var  Value   Speculate  Value  =Temp  Speculate  Value   Constraint  Logic  =Temp  Constraint  Logic WHERE Graph  Id =  "" + graph  Id  ;
+          
+            try
+            {
+             stmt  . execute  Update  ( m  SQL  );
+             System  . out  . println  ("" success in execution  "");
+          
+            }
+            catch  (  Exception eeee  )
+            {
+             System  . out  . println  ("" in save  Current  Model  () exe Qu stmt **"" + eeee  );
+            }
+            System  . out  . println  ("" out of save  Current  Model  ~~~~~~~  "");
+          
+            try
+            {
+             stmt  7  . close  ();
+             conn  7  . close  ();
+            }
+            catch (  SQLException e  1  )
+            {
+             System  . out  . println  (""  Error in closing ""+ e  1  );
+            }
+          
+           }// end of restore  Model method"

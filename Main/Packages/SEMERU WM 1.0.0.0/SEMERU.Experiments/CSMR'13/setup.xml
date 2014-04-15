@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<Experiment>
+
+	<Datasets Directory="../../SEMERU.Datasets/">
+
+		<Dataset Name="EasyClinic UC->CC">
+			<Corpus Directory="EasyClinic_ITA/">
+				<SourceArtifacts Extension="txt">UC/</SourceArtifacts>
+				<TargetArtifacts Extension="txt">CC/</TargetArtifacts>
+				<Stopwords>stopwords.txt</Stopwords>
+				<Relationships>relationships.txt</Relationships>
+				<Oracle>oracle.UC.txt</Oracle>
+			</Corpus>
+		</Dataset>
+
+		<Dataset Name="EasyClinic TC->CC">
+			<Corpus Directory="EasyClinic_ITA/">
+				<SourceArtifacts Extension="txt">TC/</SourceArtifacts>
+				<TargetArtifacts Extension="txt">CC/</TargetArtifacts>
+				<Stopwords>stopwords.txt</Stopwords>
+				<Relationships>relationships.txt</Relationships>
+				<Oracle>oracle.TC.txt</Oracle>
+			</Corpus>
+		</Dataset>
+
+		<Dataset Name="EasyClinic ID->CC">
+			<Corpus Directory="EasyClinic_ITA/">
+				<SourceArtifacts Extension="txt">ID/</SourceArtifacts>
+				<TargetArtifacts Extension="txt">CC/</TargetArtifacts>
+				<Stopwords>stopwords.txt</Stopwords>
+				<Relationships>relationships.txt</Relationships>
+				<Oracle>oracle.ID.txt</Oracle>
+			</Corpus>
+		</Dataset>
+
+		<Dataset Name="eTour">
+			<Corpus Directory="eTour_ITA/">
+				<SourceArtifacts Extension="txt">UC/</SourceArtifacts>
+				<TargetArtifacts Extension="txt">CC/</TargetArtifacts>
+				<Stopwords>stopwords.txt</Stopwords>
+				<Relationships>relationships.txt</Relationships>
+				<Oracle>oracle.txt</Oracle>
+			</Corpus>
+		</Dataset>
+
+		<Dataset Name="SMOS">
+			<Corpus Directory="SMOS/">
+				<SourceArtifacts Extension="txt">UC/</SourceArtifacts>
+				<TargetArtifacts Extension="txt">CC/</TargetArtifacts>
+				<Stopwords>stopwords.txt</Stopwords>
+				<Relationships>relationships.txt</Relationships>
+				<Oracle>oracle.txt</Oracle>
+			</Corpus>
+		</Dataset>
+
+	</Datasets>
+
+</Experiment>

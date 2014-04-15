@@ -1,0 +1,14 @@
+Use case name	LOCALIZZAZIONE
+Restituisce la posizione corrente del turista.
+Partecipating
+Actor	Inizializzato da Sistema
+Entry
+conditions	•	E’ stata avviata una ricerca o una ricerca avanzata.
+Flow of events 		Gps	System
+	1.		Il Sistema richiede i dati per la posizione.
+	2.	Il GPS calcola la posizione del turista.	
+	3.		Il Sistema rimane in attesa dei dati della posizione.
+Exit conditions	•	Il sistema riceve la posizione del turista.
+•	La posizione del turista non è rilevabile dal GPS.
+Quality 
+requirements	Il GPS effettua l’operazione in massimo 5 secondi.

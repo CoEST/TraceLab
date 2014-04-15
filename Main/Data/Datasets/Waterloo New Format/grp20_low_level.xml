@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp20_low_level</id>
+    <name>Waterloo grp20_low_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp20_low_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>UC1</id>
+      <content>Name: Start service
+
+Authors: M3, M2, M1, M4, Yuan Peng
+Event: A call from the user to the administrator indicating that the user would like to have a new account added. Information user passes as input includes : her first, middle and last name, her address, IP address of the Phone she would like to have activated, the new phone number she would like to have for the new IP Phone and the phone number of a temporary phone where she can be reached for feedback.
+System: Server
+Actors: System Administrator
+Overview: Description of internal behaviour while system administrator adds new account to system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC2</id>
+      <content>Name: Suspend/resume service
+
+Authors: M3, M2, M1, M4, Yuan Peng
+Event: Administrator decides to suspend or resume certain accounts due to bill payment issues.
+System: Server
+Actors: System Administrator
+Overview: Description of internal behaviour while system administrator suspends or resumes certain accounts</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC3</id>
+      <content>Name: Cancel Service
+
+Authors: M3, M2, M1, M4, Yuan Peng
+Event: Administrator decides to cancel a service either because user has skipped too many bills or user does not use the particular account anymore (probably due to the user not using the account�s phone anymore)
+System: Server
+Actors: System Administrator
+Overview: Description of internal behaviour while system administrator cancels a service in the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC4</id>
+      <content>Name: Update service
+
+Authors: M3, M2, M1, M4
+Event: System administrator decides to modify certain attributes of a particular user service/account, the attributes including everything but the �status� field (the changes of which is covered in UC1, UC2, UC3.
+System: Server
+Actors: System Administrator
+Overview: Description of internal behaviour while system administrator performs updates on a particular user account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC5</id>
+      <content>Name: Add a user
+
+Authors: M3, M2, M1, M4, Yuan Peng
+Event: While administrator is trying to start a service (create an account) for a user, administrator finds that the user does not exist in the system altogether (i.e., user has no account on system), administrator needs to add user to system before being able to add service(s) for that user.
+System: Server
+Actors: System Administrator
+Overview: Description of internal behaviour while system administrator adds a new user to the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC6</id>
+      <content>Name: Deactivate a user
+
+Authors: M3, M2, M1, M4, Yuan Peng
+Event: For reasons such as not paying bills or abusing the service, system administrator decides to deactivate a certain user in the system
+System: Server
+Actors: System Administrator
+Overview: Description of internal behaviour while system administrator performs various administrative functions on the IP Phone System.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC7</id>
+      <content>Name: Add/remove billing plan
+
+Authors: M3, M2, M1, M4, Yuan Peng
+Event: Administrator decides to add or remove a billing plan to or from the system.
+System: Server
+Actors: System Administrator
+Overview: Description of internal behaviour while system administrator adds or removes a billing plan to or from the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC8</id>
+      <content>Name: View bills
+
+Authors: M3, M2, M1, M4, Yuan Peng
+Event: Administrator decides to view a bill of an account of a particular user.
+System: Server
+Actors: System Administrator
+Overview: Description of internal behaviour while system administrator views a bill.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC9</id>
+      <content>Name: Modify bills
+
+Authors: M3, M2, M1, M4, Yuan Peng
+Event: Administrator decides to modify a bill of a particular user.
+System: Server
+Actors: System Administrator
+Overview: Description of internal behaviour while system administrator modifies a bill.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC10</id>
+      <content>Name: Print bills
+
+Authors: M3, M2, M1, M4, Yuan Peng
+Event: Administrator decides to print a bill of a particular user.
+System: Server
+Actors: System Administrator
+Overview: Description of internal behaviour while system administrator prints a bill.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC11</id>
+      <content>Name: Maintenance test
+
+Authors: M3, M2, M1, M4, Yuan Peng
+Event:
+System: Server
+Actors: System Administrator
+Overview: Description of internal behaviour while system administrator performs maintenance tests on the IP Phone System.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC12</id>
+      <content>Name: Make a call
+
+Authors: M3, M2, M1, M4
+Event: A user of the IP Phone System attempts to make a telephone communication with another user of the IP Phone System
+System: IP Phone System
+Actors: Users of IP phones
+Overview: Description of internal behaviour while user makes calls over the IP Phone System</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC13</id>
+      <content>Name: Receive a call
+
+Authors: M3, M2, M1, M4
+Event: A user of the IP Phone System notices that the ringer of her phone has gone off, she proceeds to pick up the phone and attempts to conduct a normal conversation with the initiating party at the other end.
+System: Server
+Actors: User of IP Phone System
+Overview: Description of internal behaviour before, during, and after user receives a call on the IP Phone System</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC14</id>
+      <content>Name: Clock
+Authors: Yuan Peng
+Event: This use case is initiated when the system starts running.
+System: ClockTick
+Actors: External clock
+Overview: The clock on the server machine is external to the system. It sends time updates to the system and the system carries out time-related tasks, e.g., phone status checks and automated billing.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

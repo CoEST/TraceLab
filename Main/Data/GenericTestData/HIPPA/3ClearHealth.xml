@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 												
+<artifacts>												
+  <project_id>1</project_id> 												
+  <artifact_type>Clear Health Dataset Complete</artifact_type> 												
+  <artifact>	  <art_id>	ch1	</art_id> 	  <art_title>	System will implement Full Featured Scheduling   Calendars	</art_title> 	  <art_parent /> 	  <art_content>	 	</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch2	</art_id> 	  <art_title>	System will implement a Schedule Optimizer	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch3	</art_id> 	  <art_title>	System will manage Rooms   Resources	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch4	</art_id> 	  <art_title>	System will implement Multi-facility Support 	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch5	</art_id> 	  <art_title>	System will implement Full Featured Patient Registration 	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch6	</art_id> 	  <art_title>	System will implement Participation Programs functionality	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch7	</art_id> 	  <art_title>	System will allow for patient Referral Tracking 	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch8	</art_id> 	  <art_title>	System will detec duplicate patients and allow for de-duplication	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch9	</art_id> 	  <art_title>	System will implement Health Status Alerts	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch10	</art_id> 	  <art_title>	System will provide Patient Dashboard	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch11	</art_id> 	  <art_title>	System will manage Encounters	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch12	</art_id> 	  <art_title>	System will manage Allergies	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch13	</art_id> 	  <art_title>	System will manage Social History	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch14	</art_id> 	  <art_title>	System will provide patient's Problem List	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch15	</art_id> 	  <art_title>	System will maintain Medical History	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch16	</art_id> 	  <art_title>	System will maintain Clinical Summary	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch17	</art_id> 	  <art_title>	System will provide functionality for Real-time Lab Results	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch18	</art_id> 	  <art_title>	System will provide functionality for Electronic Lab Ordering	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch19	</art_id> 	  <art_title>	System will implement LOINC Code Support 	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch20	</art_id> 	  <art_title>	System will manage Patient Pictures	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch21	</art_id> 	  <art_title>	System will allow for Barcode Generation	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch22	</art_id> 	  <art_title>	System will implement Barcode Scanning and Workflows	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch23	</art_id> 	  <art_title>	System will implement Decision Support	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch24	</art_id> 	  <art_title>	System will use SOAP	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch25	</art_id> 	  <art_title>	System will provide functionality for Drawover Images	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch26	</art_id> 	  <art_title>	System will provide ID Cards/Magstrip support	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch27	</art_id> 	  <art_title>	System will allow to view Patient Portal/History from Home	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch28	</art_id> 	  <art_title>	System will generate and print PDF Forms	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch29	</art_id> 	  <art_title>	System will generate and print PDF Reports	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch30	</art_id> 	  <art_title>	System will implement LiveBookmarks/Worklists/RSS Feeds 	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch31	</art_id> 	  <art_title>	System will allow for Data sharing/Patient Portal 	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch32	</art_id> 	  <art_title>	System will be accessible from Mobile Devices (iPhone, Blackberry)	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch33	</art_id> 	  <art_title>	System will support RSS Feeds 	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch34	</art_id> 	  <art_title>	System provides functionality for Billing 	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch35f	</art_id> 	  <art_title>	System defines a single set of credentials for each party connecting to the system	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch36f	</art_id> 	  <art_title>	The credentials system employs a standards compliant RBAC model so each user has permissions appropriate to their role	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch37f	</art_id> 	  <art_title>	System has a timer allowing automatic logoff	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch38f	</art_id> 	  <art_title>	All data is required to be encrypted using SSL (TLS).	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch39f	</art_id> 	  <art_title>	System has a comprehensive audit log, all actions (read, write, update, delete) are documented as well as the field level changes that occurred in that action. These can then be reviewed on several different axes, patient, user, etc.	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch40f	</art_id> 	  <art_title>	System doesn't allow you to delete any health information, though certain objects can be "marked as deleted" though still present in the underlying data set	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch41f	</art_id> 	  <art_title>	The audit log records any and all changes including "deletes"	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch42f	</art_id> 	  <art_title>	Patient portal that is secured using physical asset credentials	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch43f	</art_id> 	  <art_title>	everything is transmitted over SSL which offer encryption but also hashes to prevent modification in transit.	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	ch44f	</art_id> 	  <art_title>	System tracks user actions.	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+</artifacts>												

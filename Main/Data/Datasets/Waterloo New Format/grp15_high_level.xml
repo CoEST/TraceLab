@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp15_high_level</id>
+    <name>Waterloo grp15_high_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp15_high_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>F1</id>
+      <content>Users can communicate to another user by making phone calls.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F2</id>
+      <content>Occurs when callee picks up the handset, callee�s phone stops ringing, caller�s phone stops playing the ring tone, and audio connection is established between the caller and the callee.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F3</id>
+      <content>Caller picks up the phone and must successfully acquire resource</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F4</id>
+      <content>Phone numbers are 4-digits. 4-digits are collected by the caller process from a Caller through a series of four "digits" signal events within the time limit.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F5</id>
+      <content>Caller dials '*11', which toggles on/off that phone's DND setting.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F6</id>
+      <content>System automatically searches for the number in the database for the associated IP</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F7</id>
+      <content>User did not finish entering the phone number within the time limits of the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F8</id>
+      <content>Caller may hangs up before the first digit is pressed, in between any digit pressed, when the call cannot be connected, when the call is connected, or when a call is terminated.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F9</id>
+      <content>Resource Manager checks to see if there are available resource left in the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F10</id>
+      <content>Resource Manager sends "res_denied" signal to Caller Process. Caller Process plays a fast busy tone to let the user know</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F11</id>
+      <content>Resource Manager frees a resource when the caller and callee has disconnected from the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F12</id>
+      <content>The caller process checks if callee's phone is online/connectable. If yes, connect to callee's phone; otherwise, send a fast busy tone to the caller.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F13</id>
+      <content>A connection is made if the callee's phone is not busy and not in DND mode. The caller dialed a valid extension; the server had resources available, and found the IP for the Callee's phone.  The callee picks up the phone before timeout.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F14</id>
+      <content>A valid phone number contains 4 digits, no *,or #; must start with 1-9. The Caller Process validates phone numbers. Caller process sends a "valid_number" signal to the Call Manager and the Call Manager creates a Callee Process if the number is valid</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F15</id>
+      <content>Caller enters a number and the Caller Process determines the number does not exist in the Database</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F16</id>
+      <content>Callee hears the ring tone of his phone and picks up the receiver. Caller's phone ceases ring tone, and callee's phone stops ringing. Audio connection is established.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F17</id>
+      <content>Caller receives a "busy" signal from the Callee process if callee's phone is off hook</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F18</id>
+      <content>Happens when Callee does not pick up the phone within the VoiceMsg Timer, Caller is given the choice of leaving a voice message.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F19</id>
+      <content>Caller process sends a signal to the Callee process telling it the caller has hung up. The Callee Process stops the ring and disconnect</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F20</id>
+      <content>Information such as the caller�s phone number, or dnd status is on are displayed on Callee's/Caller�s phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F21</id>
+      <content>Callee Process sends "call_answered" signal to Caller Process. Caller and Callee begin communicating</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F22</id>
+      <content>Caller dials his/her own phone number to listen to the voice message left by other people from the database</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F23</id>
+      <content>Delete the current voice message.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F24</id>
+      <content>Save the current voice message.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F25</id>
+      <content>Skip listening to current voice message.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F26</id>
+      <content>The Caller and Callee processes disconnect the users when they hang up, or if there's a time out</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F27</id>
+      <content>User does not hang up within 30secs of hearing the fast busy tone, the system will disconnect the user and release the resource if the user is a caller</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F28</id>
+      <content>User does not hang up within 10 seconds of hearing the busy tone, the system will disconnect the user and release the resource if the user is a caller</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F29</id>
+      <content>Bill Manager logs the details of the call for billing purposes</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F30</id>
+      <content>Administrator logs in to the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F31</id>
+      <content>System Administrator is able to add user account to the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F32</id>
+      <content>A unique employee is identified by his/her employee ID.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F33</id>
+      <content>The Phone IP Mapping has a list of all Phone IP pairs and a Boolean value indicating whether it's available. The System returns the next available Phone IP pair to the Administrator</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F34</id>
+      <content>Administrator changes the Phone IP pair status to "Used"</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F35</id>
+      <content>Status of the account is set to "Active"</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F36</id>
+      <content>System Administrator is able to cancel a user's phone service.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F37</id>
+      <content>A phone number becomes available when the user�s phone service is canceled. The Phone IP pair status is set "Available"</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F38</id>
+      <content>Administrator reactivate a deactivated account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F39</id>
+      <content>System Administrator is able to enter a user's phone bill payment.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F40</id>
+      <content>Send a bill to the user, based on their usage for the previous billing period</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F41</id>
+      <content>Create a new billing plan</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F42</id>
+      <content>System Administrator is able to modify an existing billing plan</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F43</id>
+      <content>Administrator enter the day of the month a department wants to be billed</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F44</id>
+      <content>Administrator changes the issue date for the department's bill</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F45</id>
+      <content>The user is able to request hardware check on his/her phone.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F46</id>
+      <content>System Administrator is able to set and change the maximum number of phone calls on the system.  System will not allow new calls if the number of calls exceeds this value.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F47</id>
+      <content>Administrator can view a list of available Phone IP pairs</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F48</id>
+      <content>Administrator is allowed to change the mailbox capacity</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F49</id>
+      <content>Administrator is allowed to change the hardware test plans</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F50</id>
+      <content>Administrator is allowed to reset the phone in case of errors on the phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F51</id>
+      <content>Administrator is able to search by Employee ID</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F52</id>
+      <content>Administrator is able to search by Department</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F53</id>
+      <content>The maximum number of simultaneous calls, the expected response time for all hardware tests, the expected duration for all timeout events on a phone.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F54</id>
+      <content>Displays an error message when the administrator did not enter the proper input for an input field.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F55</id>
+      <content>Administrator enter new department name, issue bill date etc</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F56</id>
+      <content>Administrator can delete departments</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F57</id>
+      <content>Administrator can delete plans in a department</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F58</id>
+      <content>Administrator can set different privileges for departments. E.g. Voice Message, Call Display, DND Mode</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F59</id>
+      <content>Administrator can change how often the voice messages are deleted</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F60</id>
+      <content>Administrator can delete a user�s voice message</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F61</id>
+      <content>Administrator can change the DND status of a user�s phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F62</id>
+      <content>Administrator can check an administrator�s activity with the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N1</id>
+      <content>Minimal training required to use.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N2</id>
+      <content>Use efficient algorithms to minimize response time and increase capacity.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N3</id>
+      <content>Does not unexpectedly exit or malfunction.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N4</id>
+      <content>Handles errors properly without crashing.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N5</id>
+      <content>Support for new features, upgrades, or integration with other systems.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N6</id>
+      <content>Handles small and large loads (near 1000 users) while still fulfilling Requirement # N2.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N7</id>
+      <content>Application development stays on budget and on time.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

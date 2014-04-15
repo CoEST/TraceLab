@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp05_high_level</id>
+    <name>Waterloo grp05_high_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp05_high_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>F1</id>
+      <content>Administrator can log into the System Console</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F2</id>
+      <content>Ability to add new users to the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F3</id>
+      <content>Allow administrator to find unassigned phone number.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F4</id>
+      <content>Allow administrator to find available IP address</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F5</id>
+      <content>Mechanism to associate an IP address to a phone number.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F6</id>
+      <content>Allow administrator to associate privileges to a user</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F7</id>
+      <content>Users should be able to apply filters to their phone calls.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F8</id>
+      <content>Administrator must be able to associate a user to a phone number and IP</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F9</id>
+      <content>Mechanism to dissociate an IP address from a phone number.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F10</id>
+      <content>Mechanism to dissociate an IP address and phone number from a user.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F11</id>
+      <content>Deactivate the user�s telephone service</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F12</id>
+      <content>The user�s records should be kept indefinitely.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F13</id>
+      <content>Server must store results of previous tests run.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F14</id>
+      <content>The administrator may request hardware tests.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F15</id>
+      <content>The administrator may request to see the results of the most recently run tests</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F16</id>
+      <content>System must be able to calculate and give a recommendation on the load size</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F17</id>
+      <content>Allow the administrator to set the load size</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F18</id>
+      <content>Display the current maximum load size</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F19</id>
+      <content>Display the current load of the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F20</id>
+      <content>Allows administrator to search for a user</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F21</id>
+      <content>The results of the search is displayed to the administrator</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F22</id>
+      <content>The server must be able to conduct automated tests periodically.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F23</id>
+      <content>If a phone is unresponsive, system resources are released.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F24</id>
+      <content>When a phone is corrected, then resources are reassigned to it.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F25</id>
+      <content>The System Console must have a Graphical User Interface</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F26</id>
+      <content>Administrator must be able to view a user�s bill for any billing period</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F27</id>
+      <content>Administrator must be able to record a user�s payment and deduct it from their account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F28</id>
+      <content>Administrator should be able to add new billing plans</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F29</id>
+      <content>Administrator should be able to add modify existing billing plans</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F30</id>
+      <content>Administrator should be able to attach billing plan to user</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F31</id>
+      <content>Administrator should be able to suspend a user�s account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F32</id>
+      <content>Administrator should be able to reactivate a user�s account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F33</id>
+      <content>At the end of each billing period, the system must generate and send a bill to each user</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F34</id>
+      <content>User should be able to place phone calls</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F35</id>
+      <content>User should be able to receive phone calls.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F36</id>
+      <content>User should be able to terminate phone calls.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F37</id>
+      <content>The server must store important information about each successful call.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F38</id>
+      <content>The server checks that the requested number is available for use.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F39</id>
+      <content>The administrator can print a user�s bill.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F40</id>
+      <content>Administrator should be able to remove existing billing plans.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F41</id>
+      <content>Administrator should be able to view the list of administrators.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F42</id>
+      <content>Administrator should be able to change the password to his/her account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F43</id>
+      <content>Administrator should be able to create administrator accounts.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F44</id>
+      <content>Administrator should be able to delete administrator accounts.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F45</id>
+      <content>Administrator should be able to save resources.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F46</id>
+      <content>Administrator should be able to restore resources.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N1</id>
+      <content>Only one administrator can log in at a time</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N2</id>
+      <content>Administrator must provide a valid user name and password</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N3</id>
+      <content>A phone malfunction must not affect the system as a whole.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N4</id>
+      <content>An administrator can only save valid input</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N5</id>
+      <content>User Manuals will be provided for all aspects of the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N6</id>
+      <content>The system should be able to handle as many users as there are phone numbers</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N7</id>
+      <content>The system console load time should be brief</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N8</id>
+      <content>The system load will be large enough to handle the phone traffic</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

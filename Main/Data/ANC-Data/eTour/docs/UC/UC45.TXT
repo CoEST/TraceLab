@@ -1,0 +1,12 @@
+Use case name VISUALIZZASTATISTICHEPERSONALI 
+Viewing statistics for Point Of Restaurants 
+Partecipating 
+Actor initialization Operator Point Of Restaurants 
+Entry 
+conditions • The Point Of Restaurant Operator has successfully authenticated to the system. 
+Flow of events User System 
+1. Select the feature to display personal statistics. 
+2 Displays a form that shows data for the statistics associated refreshment point. 
+Exit conditions • The system displays the data on the screen. 
+• Interruption of the connection to the server. 
+Quality requirements

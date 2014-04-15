@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<graph>
+  <BenchmarkInfo>
+    <Version>1</Version>
+    <Id>010fd85c-49eb-411c-af9c-025637e7bc25</Id>
+    <Name>ICSE Demo Benchmark</Name>
+    <Author>Coest</Author>
+    <Description>Benchmark for testing tracing requirements to code classes. Tested datasets include Easy Clinic and eTour. Evaluation metrics include Average Precision and Recall vs Precision </Description>
+  </BenchmarkInfo>
+  <node id="Start">
+    <SerializedVertexData Version="1" X="125" Y="51">
+      <Metadata type="TraceLab.Core.Components.StartNodeMetadata, TraceLab.Core, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null" Label="Start" />
+    </SerializedVertexData>
+  </node>
+  <node id="End">
+    <SerializedVertexData Version="1" X="682" Y="499">
+      <Metadata type="TraceLab.Core.Components.EndNodeMetadata, TraceLab.Core, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null" Label="End" />
+    </SerializedVertexData>
+  </node>
+  <node id="1b1d2477-597d-4e4f-ab79-b574b1b70787">
+    <SerializedVertexData Version="1" X="126" Y="200">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null" Label="Start dataset index=0" ComponentMetadataDefinitionID="f09ee85f-b499-4c7b-b071-6b21aaa9ec0f">
+        <IOSpec Version="1">
+          <Input />
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="integer" Type="System.Int32" />
+              <OutputAs>datasetIndex</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import />
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>OutputInteger</Name>
+              <DisplayName>Output integer</DisplayName>
+              <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <int>0</int>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="cfab729c-6e2b-4d1f-ab0f-b9a6717fbced">
+    <SerializedVertexData Version="1" X="419" Y="265">
+      <Metadata type="TraceLab.Core.Components.DecisionMetadata, TraceLab.Core, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null" Label="Has more datasets?">
+        <DecisionCode>if(Load("datasetIndex")&lt; Load("numberOfDatasets")) {
+Select("Get next dataset");
+}
+else 
+{
+Select("Evaluation Results Gui");
+}
+</DecisionCode>
+        <DecisionMetadataDefinition>
+          <ID>3b16a2e4-09b6-4712-a748-e020f2e2eafc</ID>
+          <Classname>DecisionModule_3b16a2e4_09b6_4712_a748_e020f2e2eafc</Classname>
+          <Assembly>C:\Users\aczauder\Documents\TraceLab\Decisions\3b16a2e4-09b6-4712-a748-e020f2e2eafc.dll</Assembly>
+        </DecisionMetadataDefinition>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="5886ff05-7c97-4c30-9057-6a0a17858374">
+    <SerializedVertexData Version="1" X="419" Y="397">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null" Label="Increment dataset index++" ComponentMetadataDefinitionID="e83abfc7-a495-4458-99e0-1d756cf8d626">
+        <IOSpec Version="1">
+          <Input>
+            <InputItem>
+              <InputItemDefinition Name="integer" Type="System.Int32" />
+              <MappedTo>datasetIndex</MappedTo>
+            </InputItem>
+          </Input>
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="integer" Type="System.Int32" />
+              <OutputAs>datasetIndex</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import />
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>IncrementBy</Name>
+              <DisplayName>Increment by value</DisplayName>
+              <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <int>1</int>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="b3a245c8-533e-4594-b09b-2a29436e9817">
+    <SerializedVertexData Version="1" X="125" Y="135">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null" Label="Multiple Coest Datasets Importer" ComponentMetadataDefinitionID="55ae54a0-6e3a-468d-97b1-2d2172daf117">
+        <IOSpec Version="1">
+          <Input />
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="numberOfDatasets" Type="System.Int32" />
+              <OutputAs>numberOfDatasets</OutputAs>
+            </OutputItem>
+            <OutputItem>
+              <OutputItemDefinition Name="listOfDatasets" Type="BenchmarkHelperTypes.TLDatasetsList" />
+              <OutputAs>listOfDatasets</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import />
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>ConfigurationFile</Name>
+              <DisplayName>Configuration file</DisplayName>
+              <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <FilePath>
+                  <Version>2</Version>
+                  <Relative>Datasets\load-configuration.xml</Relative>
+                </FilePath>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="7303ff46-30e0-4b1d-bf5c-2ffbe9f4b342">
+    <SerializedVertexData Version="1" X="124" Y="395">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null" Label="Collect result matrices" ComponentMetadataDefinitionID="8b4ab546-e1b8-43d4-aa74-9f5dd1970f1b">
+        <IOSpec Version="1">
+          <Input>
+            <InputItem>
+              <InputItemDefinition Name="matrix" Type="TraceLabSDK.Types.TLSimilarityMatrix" />
+              <MappedTo>resultMatrix</MappedTo>
+            </InputItem>
+            <InputItem>
+              <InputItemDefinition Name="name" Type="System.String" />
+              <MappedTo>datasetName</MappedTo>
+            </InputItem>
+          </Input>
+          <Output />
+          <Import>
+            <ImportItem>
+              <ImportItemDefinition Name="listOfMatrices" Type="System.Collections.Generic.List`1[[TraceLabSDK.Types.TLSimilarityMatrix, TraceLabSDK.Types, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null]]" />
+              <ImportAs>currentTechniqueResultMatrices</ImportAs>
+            </ImportItem>
+          </Import>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues />
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="1849593d-ea0c-40cd-8511-2e915c089ee8">
+    <SerializedVertexData Version="1" X="623" Y="138">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null" Label="Results Loader (embedded results)" ComponentMetadataDefinitionID="7f86004f-f1f4-45b8-8013-b19a194439cc">
+        <IOSpec Version="1">
+          <Input />
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="previousTechniques" Type="System.Collections.Generic.List`1[[System.Collections.Generic.KeyValuePair`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Collections.Generic.List`1[[TraceLabSDK.Types.TLSimilarityMatrix, TraceLabSDK.Types, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" />
+              <OutputAs>previousTechniques</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import />
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues />
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="3fed0c5c-5168-4560-a641-81823871da38">
+    <SerializedVertexData Version="1" X="126" Y="264">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null" Label="Get next dataset" ComponentMetadataDefinitionID="88c78e57-5584-4b7f-a751-33209083bf5a">
+        <IOSpec Version="1">
+          <Input>
+            <InputItem>
+              <InputItemDefinition Name="listOfDatasets" Type="BenchmarkHelperTypes.TLDatasetsList" />
+              <MappedTo>listOfDatasets</MappedTo>
+            </InputItem>
+            <InputItem>
+              <InputItemDefinition Name="indexOfDataset" Type="System.Int32" />
+              <MappedTo>datasetIndex</MappedTo>
+            </InputItem>
+          </Input>
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="answerSet" Type="TraceLabSDK.Types.TLSimilarityMatrix" />
+              <OutputAs>answerSet</OutputAs>
+            </OutputItem>
+            <OutputItem>
+              <OutputItemDefinition Name="targetArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" />
+              <OutputAs>targetArtifacts</OutputAs>
+            </OutputItem>
+            <OutputItem>
+              <OutputItemDefinition Name="datasetName" Type="System.String" />
+              <OutputAs>datasetName</OutputAs>
+            </OutputItem>
+            <OutputItem>
+              <OutputItemDefinition Name="sourceArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" />
+              <OutputAs>sourceArtifacts</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import />
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues />
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="b2e9b067-6d63-40ea-a508-468515a89a0f">
+    <SerializedVertexData Version="1" X="684" Y="266">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null" Label="Evaluation Results Gui" ComponentMetadataDefinitionID="bf1462cb-5a95-437c-baa4-dd40a10cd443">
+        <IOSpec Version="1">
+          <Input>
+            <InputItem>
+              <InputItemDefinition Name="currentTechniqueResultMatrices" Type="System.Collections.Generic.List`1[[TraceLabSDK.Types.TLSimilarityMatrix, TraceLabSDK.Types, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null]]" />
+              <MappedTo>currentTechniqueResultMatrices</MappedTo>
+            </InputItem>
+            <InputItem>
+              <InputItemDefinition Name="listOfDatasets" Type="BenchmarkHelperTypes.TLDatasetsList" />
+              <MappedTo>listOfDatasets</MappedTo>
+            </InputItem>
+          </Input>
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="metrics" Type="System.Collections.Generic.List`1[[MetricsTypes.DatasetResults, MetricsTypes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]" />
+              <OutputAs>metrics</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import>
+            <ImportItem>
+              <ImportItemDefinition Name="previousTechniques" Type="System.Collections.Generic.List`1[[System.Collections.Generic.KeyValuePair`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Collections.Generic.List`1[[TraceLabSDK.Types.TLSimilarityMatrix, TraceLabSDK.Types, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" />
+              <ImportAs>previousTechniques</ImportAs>
+            </ImportItem>
+          </Import>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues />
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="4c599b54-b954-4b89-85af-25c244101e75">
+    <SerializedVertexData Version="1" X="125" Y="331">
+      <Metadata type="TraceLab.Core.Components.ComponentTemplateMetadata, TraceLab.Core, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null" Label="Defaul Solution ICSE Demo Benchmark">
+        <IOSpec Version="1">
+          <Input />
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="similarityMatrix" Type="TraceLabSDK.Types.TLSimilarityMatrix" />
+              <OutputAs>resultMatrix</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import>
+            <ImportItem>
+              <ImportItemDefinition Name="targetArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" />
+              <ImportAs>targetArtifacts</ImportAs>
+            </ImportItem>
+            <ImportItem>
+              <ImportItemDefinition Name="sourceArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" />
+              <ImportAs>sourceArtifacts</ImportAs>
+            </ImportItem>
+          </Import>
+        </IOSpec>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="331405d5-703c-4e53-8bec-83147884ab6b">
+    <SerializedVertexData Version="1" X="683" Y="397">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null" Label="CSV Dataset Results Exporter" ComponentMetadataDefinitionID="e4ae08ff-7a40-4a5c-9f7e-b0f45e57674d">
+        <IOSpec Version="1">
+          <Input>
+            <InputItem>
+              <InputItemDefinition Name="metrics" Type="System.Collections.Generic.List`1[[MetricsTypes.DatasetResults, MetricsTypes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]" />
+              <MappedTo>metrics</MappedTo>
+            </InputItem>
+          </Input>
+          <Output />
+          <Import />
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>File</Name>
+              <DisplayName>Output File</DisplayName>
+              <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Version=0.4.0.0, Culture=neutral, PublicKeyToken=null</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <FilePath>
+                  <Version>2</Version>
+                  <Relative>metrics.csv</Relative>
+                </FilePath>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <edge id="ed9bbba5-5c72-4434-ac4c-5c60e099fa55" source="Start" target="b3a245c8-533e-4594-b09b-2a29436e9817" />
+  <edge id="1534294a-51c3-4350-8e20-43801fd3c2d7" source="Start" target="1849593d-ea0c-40cd-8511-2e915c089ee8" />
+  <edge id="c5f2945a-6deb-490c-acd8-d1fba8e84460" source="1b1d2477-597d-4e4f-ab79-b574b1b70787" target="3fed0c5c-5168-4560-a641-81823871da38" />
+  <edge id="8d04f288-6bda-4024-869c-fec2bb31ed08" source="cfab729c-6e2b-4d1f-ab0f-b9a6717fbced" target="3fed0c5c-5168-4560-a641-81823871da38" />
+  <edge id="424745ff-e7b0-4938-a18d-fa223d8e85b4" source="cfab729c-6e2b-4d1f-ab0f-b9a6717fbced" target="b2e9b067-6d63-40ea-a508-468515a89a0f" />
+  <edge id="439a5a4e-67a9-42ac-ab4a-cdfd336f60f2" source="5886ff05-7c97-4c30-9057-6a0a17858374" target="cfab729c-6e2b-4d1f-ab0f-b9a6717fbced" />
+  <edge id="00aafe4a-9acd-4a6f-ad8e-14c4cf84a157" source="b3a245c8-533e-4594-b09b-2a29436e9817" target="1b1d2477-597d-4e4f-ab79-b574b1b70787" />
+  <edge id="f60ea898-f891-43d8-bc80-db102268460a" source="7303ff46-30e0-4b1d-bf5c-2ffbe9f4b342" target="5886ff05-7c97-4c30-9057-6a0a17858374" />
+  <edge id="87f4d798-c7ba-4a95-bc1c-1e161c363b6c" source="1849593d-ea0c-40cd-8511-2e915c089ee8" target="b2e9b067-6d63-40ea-a508-468515a89a0f" />
+  <edge id="ae178278-9090-4392-ad02-3b44ba74d863" source="3fed0c5c-5168-4560-a641-81823871da38" target="4c599b54-b954-4b89-85af-25c244101e75" />
+  <edge id="3759adc8-e4d1-4674-adfc-9de629d02a4f" source="b2e9b067-6d63-40ea-a508-468515a89a0f" target="331405d5-703c-4e53-8bec-83147884ab6b" />
+  <edge id="d5a5c657-3679-49be-86d0-84dc504712c7" source="4c599b54-b954-4b89-85af-25c244101e75" target="7303ff46-30e0-4b1d-bf5c-2ffbe9f4b342" />
+  <edge id="7436a808-4713-4593-859d-338e5a32c886" source="331405d5-703c-4e53-8bec-83147884ab6b" target="End" />
+</graph>

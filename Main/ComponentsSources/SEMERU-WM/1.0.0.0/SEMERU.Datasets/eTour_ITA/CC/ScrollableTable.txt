@@ -1,0 +1,88 @@
+package unisa.gps.etour.gui.operatore agenzia .tables;
+
+import java.awt.*;
+import javax.swing. J Table;
+import javax.swing. Scrollable;
+import javax.swing. Swing Constants;
+import javax.swing.table.*;
+
+/**
+ *  Crea una  J Table personalizzata che può essere visualizzata tramite
+ * componenti che consentono lo scrolling.
+ * @see javax.swing. J Table
+ * @see javax.swing. Scrollable
+ * @author _ Oni Zu Ka_
+ * @version  . 
+ */
+public class  Scrollable Table extends  J Table implements  Scrollable
+{
+
+	private static final int max Unit Increment =   ;
+	
+	public  Scrollable Table()
+	{
+		super();
+	}
+	
+	public  Scrollable Table( Table Model tm)
+	{
+		super(tm);
+		set Grid Color( Color. L I G H T_ G R A Y);
+		set Intercell Spacing(new  Dimension( , ));
+	}
+
+	public  Dimension get Preferred Scrollable Viewport Size()
+	{
+		return get Preferred Size();
+	}
+
+	public int get Scrollable Unit Increment( Rectangle visible Rect,
+			int orientation, int direction)
+	{
+
+		int pos Corrente =  ;
+		if (orientation ==  Swing Constants. H O R I Z O N T A L)
+		{
+			pos Corrente = visible Rect.x;
+		}
+		else
+		{
+			pos Corrente = visible Rect.y;
+		}
+
+		if (direction <  )
+		{
+			int new Pos = pos Corrente - (pos Corrente / max Unit Increment)
+					* max Unit Increment;
+			return (new Pos ==  ) ? max Unit Increment : new Pos;
+		}
+		else
+		{
+			return ((pos Corrente / max Unit Increment) +  ) * max Unit Increment
+					- pos Corrente;
+		}
+	}
+
+	public int get Scrollable Block Increment( Rectangle visible Rect,
+			int orientation, int direction)
+	{
+		if (orientation ==  Swing Constants. H O R I Z O N T A L)
+		{
+			return visible Rect.width - max Unit Increment;
+		}
+		else
+		{
+			return visible Rect.height - max Unit Increment;
+		}
+	}
+
+	public boolean get Scrollable Tracks Viewport Width()
+	{
+		return false;
+	}
+
+	public boolean get Scrollable Tracks Viewport Height()
+	{
+		return false;
+	}
+}

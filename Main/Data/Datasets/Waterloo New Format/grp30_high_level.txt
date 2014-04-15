@@ -1,0 +1,48 @@
+F1	Administrators shall create new users and associate them with Plans~
+F2	New phones can be connected~
+F3	Phones will be associated with users & activated~
+F4	Users shall be able to call other internal phones~
+F5	Users shall be able to answer a phone ~
+F6	Users shall be able to call outside lines through local telephone company~
+F7	External users calling in will be presented with a interface to dial and connect to their required extension~
+F8	Users shall be billed for each phone call at a rate determined by their selected Plan~
+F9	Users shall be able to have/ access Voicemail~
+F10	Persons calling shall be able to leave messages on Users Voicemail~
+F11	All Dial Tones shall as closely as possible resemble external phone system~
+F12	Privileged Internal users shall be able to make/participate in Conference Calls~
+F13	Users can make/change the outgoing messages~
+F14	Administration Login must be authenticated~
+F15	Administrator can look up unused extensions~
+F16	Administrator can deactivate a Telephoneat any time~
+F17	Administrator can reset a phone status if phone is misbehaving~
+F18	Administrator can collect a telephone's status~
+F19	Administrator can set a users privileges tomake particular calls (e.g. conference, etc~
+F20	Administrator can collect details on the system load at a given time~
+F21	The System should prevent the Administrator from entering erroneous input~
+F22	The system shall produce a digital bill which can be read by existing software every billing period~
+F23	The system shall produce a letter detailinoverdue bill details~
+F24	Biller can create plans detailing rate, discount period and discount rate.~
+F25	Biller can change a users plan, taking effect immediately~
+F26	Extensions will be 4 digits long ~
+F27	In order to dial to an external telephone users shall dial `9'~
+F28	Phones shall be organised into subnets for organisation and routing~
+F29	Phones will display the Caller's ID when the phone is ringing~
+F30	System may support multiple phones to one extension. The first to answer takes the call~
+F31	Emergency Numbers will be free ~
+F32	Only Privileged users can make Long Distance Calls~
+F33	All internal calls will be billed at rate according to there plan~
+N1	System must have suitable maximum number of calls at a time~
+N2	System Load Counter shall be incremented after number is dialled~
+N3	Phone system shall operate on VoIP Protocol over a LAN~
+N4	The System shall maintain a mapping of IP addresses to Extensions~
+N5	The System shall detect if a telephone is behaving incorrectly~
+N6	The system shall have support for 8000 users.~
+N7	The Network should aim for 99.999% uptime.~
+N8	There should have no successful security breaches.~
+N9	The system has a life expectancy of 10-15 years.~
+N10	Installing this system will make communication easier within the organisation.~
+N11	Through the installation of this system, maintenance will be localised and as a result yield a faster response time~
+N12	The system must enable growth/expansion up 4 times over it's expected life~
+N13	The timing it takes for the system to respond ~
+N14	Through imitating existing telephones, it will be easy to use.~
+N15	The software could be used elsewhere with little or no modification~

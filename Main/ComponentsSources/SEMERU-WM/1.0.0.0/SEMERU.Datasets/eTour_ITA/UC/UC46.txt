@@ -1,0 +1,18 @@
+Use case name	MODIFICA PREFERENZE DI RICERCA
+Modifica le preferenze di ricerca personali.
+Partecipating
+Actor	Inizializzato da Turista
+Entry
+conditions	•	Il Turista si è autenticato con successo al sistema.
+Flow of events 		User	System
+	1.		Accede alla funzionalità per la modifica delle preferenze di ricerca personali.	
+	2.			Carica le preferenze di ricerca e le visualizza in una form.
+	3.		Modifica i campi della form e la sottomette.	
+	4.			Chiede conferma della modifica.
+	5.		Conferma per la modifica delle preferenze di ricerca.	
+	6.			Memorizza le preferenze di ricerca modificate.
+Exit conditions	•	Il sistema notifica l’avvenuta modifica delle preferenze di ricerca.
+•	Il Turista annulla l’operazione.
+•	Interruzione della connessione al server di eTour.
+Quality 
+requirements	

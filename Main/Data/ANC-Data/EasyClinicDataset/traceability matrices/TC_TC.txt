@@ -1,0 +1,63 @@
+51.txt:52.txt 53.txt 54.txt 55.txt 56.txt 57.txt 
+52.txt:51.txt 53.txt 54.txt 55.txt 56.txt 57.txt 
+53.txt:51.txt 52.txt 54.txt 55.txt 56.txt 57.txt 
+54.txt:51.txt 52.txt 53.txt 55.txt 56.txt 57.txt 
+55.txt:51.txt 52.txt 53.txt 54.txt 56.txt 57.txt 
+56.txt:51.txt 52.txt 53.txt 54.txt 55.txt 57.txt 
+57.txt:51.txt 52.txt 53.txt 54.txt 55.txt 56.txt 
+58.txt:59.txt 60.txt 61.txt 62.txt 63.txt 64.txt 65.txt 
+59.txt:58.txt 60.txt 61.txt 62.txt 63.txt 64.txt 65.txt 
+60.txt:58.txt 59.txt 61.txt 62.txt 63.txt 64.txt 65.txt 
+61.txt:58.txt 59.txt 60.txt 62.txt 63.txt 64.txt 65.txt 
+62.txt:58.txt 59.txt 60.txt 61.txt 63.txt 64.txt 65.txt 
+63.txt:58.txt 59.txt 60.txt 61.txt 62.txt 64.txt 65.txt 
+64.txt:58.txt 59.txt 60.txt 61.txt 62.txt 63.txt 65.txt 
+65.txt:58.txt 59.txt 60.txt 61.txt 62.txt 63.txt 64.txt 
+66.txt:67.txt 68.txt 69.txt 70.txt 71.txt 72.txt 73.txt 74.txt 75.txt 76.txt 77.txt 78.txt 79.txt 80.txt 
+67.txt:66.txt 68.txt 69.txt 70.txt 71.txt 72.txt 73.txt 74.txt 75.txt 76.txt 77.txt 78.txt 79.txt 80.txt 
+68.txt:66.txt 67.txt 69.txt 70.txt 71.txt 72.txt 73.txt 74.txt 75.txt 76.txt 77.txt 78.txt 79.txt 80.txt 
+69.txt:66.txt 67.txt 68.txt 70.txt 71.txt 72.txt 73.txt 74.txt 75.txt 76.txt 77.txt 78.txt 79.txt 80.txt 
+70.txt:66.txt 67.txt 68.txt 69.txt 71.txt 72.txt 73.txt 74.txt 75.txt 76.txt 77.txt 78.txt 79.txt 80.txt 
+71.txt:66.txt 67.txt 68.txt 69.txt 70.txt 72.txt 73.txt 74.txt 75.txt 76.txt 77.txt 78.txt 79.txt 80.txt 
+72.txt:66.txt 67.txt 68.txt 69.txt 70.txt 71.txt 73.txt 74.txt 75.txt 76.txt 77.txt 78.txt 79.txt 80.txt 
+73.txt:66.txt 67.txt 68.txt 69.txt 70.txt 71.txt 72.txt 74.txt 75.txt 76.txt 77.txt 78.txt 79.txt 80.txt 
+74.txt:66.txt 67.txt 68.txt 69.txt 70.txt 71.txt 72.txt 73.txt 75.txt 76.txt 77.txt 78.txt 79.txt 80.txt 
+75.txt:66.txt 67.txt 68.txt 69.txt 70.txt 71.txt 72.txt 73.txt 74.txt 76.txt 77.txt 78.txt 79.txt 80.txt 
+76.txt:66.txt 67.txt 68.txt 69.txt 70.txt 71.txt 72.txt 73.txt 74.txt 75.txt 77.txt 78.txt 79.txt 80.txt 
+77.txt:66.txt 67.txt 68.txt 69.txt 70.txt 71.txt 72.txt 73.txt 74.txt 75.txt 76.txt 78.txt 79.txt 80.txt 
+78.txt:66.txt 67.txt 68.txt 69.txt 70.txt 71.txt 72.txt 73.txt 74.txt 75.txt 76.txt 77.txt 79.txt 80.txt 
+79.txt:66.txt 67.txt 68.txt 69.txt 70.txt 71.txt 72.txt 73.txt 74.txt 75.txt 76.txt 77.txt 78.txt 80.txt 
+80.txt:66.txt 67.txt 68.txt 69.txt 70.txt 71.txt 72.txt 73.txt 74.txt 75.txt 76.txt 77.txt 78.txt 79.txt 
+81.txt:82.txt 83.txt 84.txt 85.txt 86.txt 87.txt 88.txt 89.txt 90.txt 91.txt 92.txt 93.txt 
+82.txt:81.txt 83.txt 84.txt 85.txt 86.txt 87.txt 88.txt 89.txt 90.txt 91.txt 92.txt 93.txt 
+83.txt:81.txt 82.txt 84.txt 85.txt 86.txt 87.txt 88.txt 89.txt 90.txt 91.txt 92.txt 93.txt 
+84.txt:81.txt 82.txt 83.txt 85.txt 86.txt 87.txt 88.txt 89.txt 90.txt 91.txt 92.txt 93.txt 
+85.txt:81.txt 82.txt 83.txt 84.txt 86.txt 87.txt 88.txt 89.txt 90.txt 91.txt 92.txt 93.txt 
+86.txt:81.txt 82.txt 83.txt 84.txt 85.txt 87.txt 88.txt 89.txt 90.txt 91.txt 92.txt 93.txt 
+87.txt:81.txt 82.txt 83.txt 84.txt 85.txt 86.txt 88.txt 89.txt 90.txt 91.txt 92.txt 93.txt 
+88.txt:81.txt 82.txt 83.txt 84.txt 85.txt 86.txt 87.txt 89.txt 90.txt 91.txt 92.txt 93.txt 
+89.txt:81.txt 82.txt 83.txt 84.txt 85.txt 86.txt 87.txt 88.txt 90.txt 91.txt 92.txt 93.txt 
+90.txt:81.txt 82.txt 83.txt 84.txt 85.txt 86.txt 87.txt 88.txt 89.txt 91.txt 92.txt 93.txt 
+91.txt:81.txt 82.txt 83.txt 84.txt 85.txt 86.txt 87.txt 88.txt 89.txt 90.txt 92.txt 93.txt 
+92.txt:81.txt 82.txt 83.txt 84.txt 85.txt 86.txt 87.txt 88.txt 89.txt 90.txt 91.txt 93.txt 
+93.txt:81.txt 82.txt 83.txt 84.txt 85.txt 86.txt 87.txt 88.txt 89.txt 90.txt 91.txt 92.txt 
+94.txt:95.txt 96.txt 97.txt 98.txt 99.txt 100.txt 
+95.txt:94.txt 96.txt 97.txt 98.txt 99.txt 100.txt 
+96.txt:94.txt 95.txt 97.txt 98.txt 99.txt 100.txt 
+97.txt:94.txt 95.txt 96.txt 98.txt 99.txt 100.txt 
+98.txt:94.txt 95.txt 96.txt 97.txt 99.txt 100.txt 
+99.txt:94.txt 95.txt 96.txt 97.txt 98.txt 100.txt 
+100.txt:94.txt 95.txt 96.txt 97.txt 98.txt 99.txt 
+101.txt:102.txt 103.txt 104.txt 105.txt 106.txt 
+102.txt:101.txt 103.txt 104.txt 105.txt 106.txt 
+103.txt:101.txt 102.txt 104.txt 105.txt 106.txt 
+104.txt:101.txt 102.txt 103.txt 105.txt 106.txt 
+105.txt:101.txt 102.txt 103.txt 104.txt 106.txt 
+106.txt:101.txt 102.txt 103.txt 104.txt 105.txt 
+107.txt:108.txt 109.txt 110.txt 111.txt 112.txt 113.txt 
+108.txt:107.txt 109.txt 110.txt 111.txt 112.txt 113.txt 
+109.txt:107.txt 108.txt 110.txt 111.txt 112.txt 113.txt 
+110.txt:107.txt 108.txt 109.txt 111.txt 112.txt 113.txt 
+111.txt:107.txt 108.txt 109.txt 110.txt 112.txt 113.txt 
+112.txt:107.txt 108.txt 109.txt 110.txt 111.txt 113.txt 
+113.txt:107.txt 108.txt 109.txt 110.txt 111.txt 112.txt 

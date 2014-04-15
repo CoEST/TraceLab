@@ -1,0 +1,54 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf110
+{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;\f1\ftech\fcharset0 Wingdings-Regular;\f2\fnil\fcharset0 LucidaGrande;
+}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f0\b\fs24 \cf0 Nome caso d\'92uso\
+
+\b0 DownloadModulo\
+
+\b Attori partecipanti\
+
+\b0 Iniziato da Cittadino\
+
+\b Flusso di eventi\
+
+\b0 1. Il Cittadino accede al download della modulistica in quanto vuole entrare a far parte del Volontariato\
+3.\
+2.	Il sistema risponde a tale esigenza con la possibilit\'e0 di visionare il modulo Il Cittadino prende atto del modulo, e decide di avviare il download del file.\
+4. Il sistema risponde all'esigenza del Cittadino con il salvataggio del modulo per partecipare all'azione del volontariato.\
+
+\b Condizione di entrata\
+
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Il	Cittadino	\'e8	autenticato	nel	sistema comunale, OR\
+
+\f1 \uc0\u61656 
+\f2  
+\f0 Il Cittadino ha avuto accesso al sistema comunale.\
+
+\b Condizioni di uscita\
+
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Il Cittadino ha effettuato correttamente il download del modulo con la concessione da parte del sistema, e pertanto verr\'e0 richiamato	il	caso	d'uso 
+\b ComeDiventareVolontari, 
+\b0 OR\
+
+\f1 \uc0\u61656 
+\f2  
+\f0 Il Cittadino non riesce a visualizzare la pagina relativa al download del modulo e	verr\'e0	esteso	il	caso	d'uso 
+\b ServizioNonDisponibile
+\b0 , che gestisce I casi di failure tecniche.\
+
+\b Requisiti di qualita
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Il tempo di risposta del sistema varia dai 2 ai 4 secondi per caricare il modulo se il Cittadino	riesce	a	visualizzarlo correttamente.\
+
+\f1 \uc0\u61656 
+\f2  
+\f0 I	tempi	di	risposta	aumentano, nell'ordine dei secondi, se il Cittadino non visualizza correttamente ci\'f2 che ha richiesto.}

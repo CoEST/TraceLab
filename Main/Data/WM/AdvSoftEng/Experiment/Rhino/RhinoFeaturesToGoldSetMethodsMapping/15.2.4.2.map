@@ -1,0 +1,4 @@
+org.mozilla.javascript.NativeObject.findPrototypeId
+org.mozilla.javascript.ScriptRuntime.defaultObjectToString
+org.mozilla.javascript.NativeObject.execIdCall
+org.mozilla.javascript.NativeObject.initPrototypeId

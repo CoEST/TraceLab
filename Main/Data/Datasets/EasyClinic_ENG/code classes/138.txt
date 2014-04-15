@@ -1,0 +1,22 @@
+Class GUIEliminaPrenotazione Date: 16/09/2003 
+                                                   Version: 
+                                                   0 01 000 
+Description Make the mask used for 
+                    management of an 
+                    Reservations 
+Attributes 
+        Name Access Description 
+Private btnAnnulla button used to cancel 
+                                the delete of a visit 
+Private gridElencoPrenotaz list containing all 
+ active reservation made by 
+                                a patient 
+Methods 
+       Signature VisualizzaElencoPrenotazioni Public Access 
+                    () 
+    Description Display the list of reservations 
+                    made by Patient 
+       Signature eliminaPrenotazione () Public Access 
+    Description Its task is to find the information 
+                   necessary for the realization of 
+                   GUIEliminaPrenotazione

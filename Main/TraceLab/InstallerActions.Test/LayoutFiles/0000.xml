@@ -1,0 +1,21 @@
+<DockingManager version="1.3.0">
+    <ResizingPanel ResizeWidth="*" ResizeHeight="*" EffectiveSize="0,0" Orientation="Horizontal">
+        <DockablePane ResizeWidth="250" ResizeHeight="*" EffectiveSize="250,785" ID="d25f7dfc-cb10-40cb-aed1-6645de6b206a" Anchor="Left" SelectedIndex="1" IsAutoHidden="false">
+            <DockableContent Name="Workspace" FloatingWindowSize="250,400" ChildIndex="0" Width="292" Height="386.5" Anchor="Left" State="Docked" />
+            <DockableContent Name="Components" FloatingWindowSize="250,400" ChildIndex="0" Width="292" Height="386.5" Anchor="Left" State="Docked" />
+        </DockablePane>
+        <ResizingPanel ResizeWidth="*" ResizeHeight="*" EffectiveSize="1024,785" Orientation="Vertical">
+            <ResizingPanel ResizeWidth="*" ResizeHeight="*" EffectiveSize="1024,608.5" Orientation="Horizontal">
+                <ResizingPanel ResizeWidth="*" ResizeHeight="*" EffectiveSize="1024,608.5" Orientation="Vertical">
+                    <DocumentPane IsMain="true" ResizeWidth="*" ResizeHeight="*" EffectiveSize="1024,608.5" />
+                </ResizingPanel>
+            </ResizingPanel>
+            <DockablePane ResizeWidth="*" ResizeHeight="170.5" EffectiveSize="1024,170.5" ID="7fad0e2d-7545-4f05-8742-2ca64c332eb4" Anchor="Bottom" SelectedIndex="1" IsAutoHidden="false">
+                <DockableContent Name="ExportAsComponentWindow" FloatingWindowSize="250,400" ChildIndex="0" Width="982" Height="204" Anchor="Bottom" State="Docked" />
+                <DockableContent Name="Output" FloatingWindowSize="250,400" ChildIndex="0" Width="982" Height="204" Anchor="Bottom" State="Docked" />
+            </DockablePane>
+        </ResizingPanel>
+    </ResizingPanel>
+    <Hidden />
+    <Windows />
+</DockingManager>

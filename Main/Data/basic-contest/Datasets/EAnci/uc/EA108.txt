@@ -1,0 +1,52 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf110
+{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;\f1\ftech\fcharset0 Wingdings-Regular;\f2\fnil\fcharset0 LucidaGrande;
+}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f0\b\fs24 \cf0 Nome caso d\'92uso\
+
+\b0 NumeriUtili\
+
+\b Attori partecipanti\
+
+\b0 Iniziato da Cittadino\
+
+\b Flusso di eventi\
+
+\b0 1. Il Cittadino accede a questa pagina per usufruire dei recapiti telefonici da contattare in caso di pericolo di qualsiasi genere.\
+2. Il sistema risponde permettendo la visualizzazione di una scheda descrittiva con i numeri di telefonici degli enti che si occupano dell'incolumit\'e0 del Cittadino stesso.\
+3. Il Cittadino accedendo a questa schermata pu\'f2, inoltre, visualizzare consigli, e procedure standard, suddivisi per categorie, circa la corretta comunicazione tra lui e l'interlocutore addetto al Call Center di un determinato organo comunale.\
+4.	Il sistema risponde con una schermata di supporto all'emergenza corrispondente al servizio che il Cittadino decide di contattare.\
+
+\b Condizione di entrata\
+
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Il	Cittadino	\'e8	autenticato	nel	sistema comunale, OR\
+
+\f1 \uc0\u61656 
+\f2  
+\f0 Il Cittadino ha avuto accesso al sistema comunale.\
+
+\b Condizioni di uscita\
+
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Il Cittadino \'e8 soddisfatto del servizio offertogli e visualizza la schermata dei numeri utili e dei consigli che gli vengono forniti, OR\
+
+\f1 \uc0\u61656 
+\f2  
+\f0 Nel caso in cui il sistema non riesca a far visualizzare la scheda informativa circa numeri da chiamare in caso di emergenza, viene esteso il caso d'uso 
+\b SerivizioNonDisponibile
+\b0 , che gestisce i casi di failure tecniche.\
+
+\b Requisiti di qualita
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Il sistema risponde al servizio richiesto dal Cittadino in pochi centesimi di secondo se la descrizione dei numeri utili, viene visualizzata correttamente.\
+
+\f1 \uc0\u61656 
+\f2  
+\f0 Se ci\'f2, invece, non avviene, il sistema gestisce l'eccezione nell'ordine di 5-8 secondi per far capire all'utente che c'\'e8 qualche problema nella richiesta del servizio.}

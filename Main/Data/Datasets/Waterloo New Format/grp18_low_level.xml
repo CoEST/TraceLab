@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp18_low_level</id>
+    <name>Waterloo grp18_low_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp18_low_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>UC1</id>
+      <content>Name: Administrator login			ID:  UC1
+Event: Administrator login to the system
+System: 	IPPhone
+Actors: Administrator
+Overview: Description of internal behaviors when the administrator logins to the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC2</id>
+      <content>Name: Administrator logout			ID: UC2
+Event: Administrator logout the system
+System:
+Actors: Administrator
+Overview:  Description of internal behaviors when the administrator logouts</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC3</id>
+      <content>Name: Manage User Account				ID:  UC3
+Event: Administrator manage user accounts in the system
+System:
+Actors: Administrator
+Overview: Description of internal behaviors when the administrator manages user account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC4</id>
+      <content>Name: Manage IP and Phone Mapping			ID: UC4
+Event: Administrator manages the IP address and Phone mapping for the user account
+System:
+Actors: Administrator
+Overview: Description of internal behaviors when Administrator manages IP and Phone mapping for the user</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC5</id>
+      <content>Name: Manage Hardware				ID: UC5
+Event: Administrator manages hardwares
+System:
+Actors: Administrator
+Overview: Description of internal behaviors when Administrator manages hardwares</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC6</id>
+      <content>Name: Making a Phone Call			ID: UC6
+Event:  Caller makes a phone call
+System: the IP phone subsystem and the server
+Actors: Caller, Callee
+Overview: User picks up the phone, dials the number and starts a conversation</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC7</id>
+      <content>Name: Manage Bills				ID: UC7
+Event: Administrator manages bills for the system including generates bills, modify bill and pay bill.
+System:
+Actors: Administrator
+Overview: Description of internal behavior of generating bills for all appropriate users</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC8</id>
+      <content>Name: Manage Plans				ID: UC8
+Event: Administrator manages the plans.
+System:
+Actors: Administrator
+Overview: Description of internal behavior of managing plan for user including set discount plan and modify plan.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

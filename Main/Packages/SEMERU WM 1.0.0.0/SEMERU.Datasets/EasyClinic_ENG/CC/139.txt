@@ -1,0 +1,1 @@
+activ allow name success notifi cancel oper list patient contain date reserv access access descript descript descript btnannulla 9 1 button method attribut version task grid abstract defin notificasuccesso class 3 guiselezionaprenotaz guieliminaprenotazio gridprenotazioni still current guielencoprenotazion 

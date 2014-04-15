@@ -1,0 +1,22 @@
+Class GUIAnagraficaMedico Date: 16/09/2003 
+                                                 Version: 
+                                                 0 01 000 
+Description Make the mask on the management 
+                   the anagrafica of doctors 
+Attributes 
+       Name Access Description 
+Private gridElencoMedici list containing the information 
+                            principal of doctors registered in 
+                            I S O 
+Methods 
+       Signature visualizzaDatiMedico () Public Access 
+    Description View details of the doctor selected 
+                   Section panelDati 
+       Signature visualizzaElencoMedicii () Public Access 
+    Description View list of doctors registered in 
+                   I S O 
+       Signature gestioneAnagrafica () Public Access 
+    It description of the retrieval of all 
+                   information necessary for the organization 
+                   Mask implemented by 
+                   GUIAnagraficaMedico

@@ -1,0 +1,14 @@
+﻿Algorithm 1 - O-CSTI
+====================
+i ← 1
+while not (end of List) do
+	Get the link (s, c_j ) in position i of List
+	for all c t ∈ C do
+		if (c_j , c_t ) ∈ E then
+			Sim(s, c_t ) ← Sim(s, c_t ) + δ
+		end if
+	end for
+i ← i + 1
+end while
+Reorder List
+The user classiﬁes the links in List

@@ -1,0 +1,7 @@
+org.mozilla.javascript.FunctionObject.convertArg
+org.mozilla.javascript.tools.shell.Global.toint32
+org.mozilla.javascript.ScriptRuntime.toNumber
+org.mozilla.javascript.ScriptRuntime.wrapInt
+org.mozilla.javascript.ScriptRuntime.toInt32
+org.mozilla.javascript.tools.shell.Global.quit
+org.mozilla.javascript.NativeNumber.num_to

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package ID="76366b2a-067f-4966-a4f2-89770596dfc4" Name="Importers Sample Files">
+  <DataFiles>
+    <PackageFile ID="a466b516-bd99-4ecc-b417-84247b127f5c" Path=".\Coest Format\Coest XML ArtifactsCollection Format External.xml" CompressedHash="PdSYwt08WJS2JZ/+JrK/cQ4czi3i/j2HwvTQNa5AGkI=" CompressedSize="473" UncompressedHash="eXBdEUOsx48ya0E8As7GskiHnqLmn000GNb1BEp+VwY=" UncompressedSize="850" />
+    <PackageFile ID="e1a1a778-3ec8-403f-9f9f-44035c54fb08" Path=".\Coest Format\Coest XML ArtifactsCollection Format Internal.xml" CompressedHash="U76Uv/lbCupWp/znXwHYEhuBKeeB9nrjgS4mSKNcBCo=" CompressedSize="364" UncompressedHash="H8FfXIRikFq9W+dLt2MrO6q2hnOiWjCQiY4CCC17nVk=" UncompressedSize="599" />
+    <PackageFile ID="d0eb0f17-60bd-4e42-96cf-84b668ad66ae" Path=".\Coest Format\Coest XML SimilarityMatrix Format.xml" CompressedHash="O4Zw52QSr0ai/HdGy5nvMQrVHBsFZ67s3pDERy+mRt8=" CompressedSize="332" UncompressedHash="6RdX3KxBpYzcKdp3lMnIbIzbC2sgd2Js3KxqCCbTsqg=" UncompressedSize="670" />
+    <PackageFile ID="ed51fae5-021f-4ff8-bd32-1cff3813f66c" Path=".\Coest Format\External\EA140.txt" CompressedHash="PwYsC0MZOLadEByn0k7xmybeHSBS2U/OhSvIVIx54MQ=" CompressedSize="840" UncompressedHash="PEX+qa4tZMCENeVJEFf/X0oCk0hL1xwv3kxR/gF8Kso=" UncompressedSize="2790" />
+    <PackageFile ID="8e558b88-d221-4591-a674-cb00fd841bc2" Path=".\Coest Format\External\EA141.txt" CompressedHash="XcLCjTxf915SRkA/iNb/gPBL6D+Ij/vU1u66sTuqz2I=" CompressedSize="640" UncompressedHash="+1QKtU121GN+PQW6rjkvFKe2XGpMIPNeBV1LK+07pOk=" UncompressedSize="1617" />
+    <PackageFile ID="3d7849c6-f92b-444e-944f-3e881108891c" Path=".\Coest Format\External\EA142.txt" CompressedHash="qI3QGXCEGME/RuYWKipxQrAk+qXx+6mFtQWLlty710U=" CompressedSize="976" UncompressedHash="baMbE/DeqgYnRfPPBFRMK66cxsVKPF3GNBr7syGaWDc=" UncompressedSize="3623" />
+    <PackageFile ID="4c9184fc-129a-46ee-838e-c101a11a476f" Path=".\Coest Format\External\another\test.txt" CompressedHash="47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=" CompressedSize="0" UncompressedHash="47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=" UncompressedSize="0" />
+    <PackageFile ID="97a9b86c-f6cb-44a9-8ece-861bcd8b0250" Path=".\ANC Stemmed.csv" CompressedHash="uiFsh3uiEz2PaLcFPSQoGi5FdDkXHdnY+tQ9qlz1uZY=" CompressedSize="368817" UncompressedHash="VVlyNVWHmUzcByYD9DLc1UxuHA0ygZJYXYbjC0D87ZU=" UncompressedSize="1205270" />
+    <PackageFile ID="819cccfa-8ebf-4e8d-a253-bd9f810bdc07" Path=".\Answer Matrix Importer Format.txt" CompressedHash="0z4z5W6cgHvpXtO88U2Cp/Vl/BOBD6FSOjtDaf6cPwU=" CompressedSize="470" UncompressedHash="KgEWV2PVhJPEfZO9vCvYYJ7CeWXkcotah1uBnPV4yVQ=" UncompressedSize="1134" />
+    <PackageFile ID="5be88813-b1a0-4e36-8c0d-63166d88a1b1" Path=".\Poirot XML Importer Format.xml" CompressedHash="8klO2UIARXRgRVrOFW2LIC49BCj1uzf1jea4qLa+gQY=" CompressedSize="825" UncompressedHash="7tuZ5l38lXr9MtmJ0PWsSEFZPyb3JZx29uq+LW4s5hM=" UncompressedSize="1559" />
+    <PackageFile ID="a12fdacf-09ec-4194-8136-fcf6afd01649" Path=".\Stopwords Importer Format.txt" CompressedHash="zheSUUERYH0Qp0wb2IieL1SAxUHh6JFLQgtRnG3QTKc=" CompressedSize="1145" UncompressedHash="yGy876oeUVz5lqbYBWSkmtA0GmpLdaiwn4GM5pQT7+E=" UncompressedSize="2242" />
+  </DataFiles>
+  <References />
+  <ComponentLocations />
+  <TypeLocations />
+</Package>

@@ -1,0 +1,85 @@
+           Thread Pool
+           "/**
+            * The threads in the pool  .
+            */
+            protected Thread threads  [] = null  ;
+            /**
+            * The backlog of assignments   which are waiting
+            * for the thread pool  .
+            */
+            Collection assignments = new Array  List  (  3  );
+            /**
+            * A Done object that is used to track when the
+             * thread pool is done   that is has no more work
+             * to perform  .
+             */
+            protected Done done = new Done  ();"
+           "/**
+             * The constructor  .
+             *
+             * @param size  How many threads in the thread pool  .
+             */
+            public Thread  Pool  ( int size  )
+            {
+          
+              threads = new Worker  Thread  [ size  ];
+          
+              for ( int i  =0  ; i  < threads  . length  ; i  ++)
+              {
+                threads  [ i  ] = new Worker  Thread  ( this  );
+                threads  [ i  ]. start  ();
+              }
+            }"
+           "/**
+            * Add a task to the thread pool  . Any class
+            * which implements the Runnable interface
+            * may be assigned  . When this task runs   its
+            * run method will be called  .
+            *
+            * @param r   An object that implements the Runnable interface
+            */
+           public synchronized void assign  (  Runnable r  )
+           {
+             done  . worker  Begin  ();
+             assignments  . add  ( r  );
+             notify  ();
+           }"
+           "/**
+            * Get a new work assignment  .
+            *
+            * @return A new assignment
+            */
+           public synchronized Runnable get  Assignment  ()
+           {
+            try {
+             while ( ! assignments  . iterator  (). has  Next  () )
+              wait  ();
+          
+             Runnable r = (  Runnable  ) assignments  . iterator  (). next  ();
+             assignments  . remove  ( r  );
+             return r  ;
+            } catch (  Interrupted  Exception e  ) {
+             done  . worker  End  ();
+             return null  ;
+            }
+           }"
+           "/**
+            * Called to block the current thread until
+            * the thread pool has no more work  .
+            */
+           public void complete  ()
+           {
+            done  . wait  Begin  ();
+            done  . wait  Done  ();
+           }"
+           "protected void finalize  ()
+           {
+            done  . reset  ();
+            for ( int i  =0  ; i  < threads  . length  ; i  ++) {
+             threads  [ i  ]. interrupt  ();
+             done  . worker  Begin  ();
+             threads  [ i  ]. destroy  ();
+            }
+            done  . wait  Done  ();
+           }
+          }"

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StartPage>
+  <Videos>
+    <VideoItem Title="Introduction to TraceLab" Description="Provides a general description of TraceLab and an explanation of its main User Interface elements." URL="http://www.youtube.com/watch?v=UqqUj7KFsuE" />
+    <VideoItem Title="How to Create an Experiment - Part 1" Description="Explanation of important Traceability concepts necessary to replicate the Vector Space Model experiment provided by default with TraceLab." URL="http://www.youtube.com/watch?v=Y_9qb7rnaU4" />
+    <VideoItem Title="How to Create an Experiment - Part 2" Description="Process of creating a new experiment in TraceLab, including how to interact with the Components Library and adding your first component to the experiment." URL="http://www.youtube.com/watch?v=VfcaWexExF4" />
+    <VideoItem Title="How to Create an Experiment - Part 3" Description="Completion of the Vector Space Model Experiment replica by adding all missing components and executing the complete experiment for results visualization." URL="http://www.youtube.com/watch?v=WA4u1tDgCJA" />
+    <VideoItem Title="How to Create a Component" Description="Describes in great detail the process of creating a component for TraceLab using Visual Studio." URL="http://www.youtube.com/watch?v=vuCWWe0n_hQ" />
+    <VideoItem Title="Perforce - Branching and Source Control Bindings" Description="Describes the process of creating your own TraceLab branch from the 'dev' folder and also how to fix the Perforce source control bindings in Visual Studio." URL="http://www.youtube.com/watch?v=c3WXbJA69Jw" />
+  </Videos>
+  <Links>
+    <LinkItem Title="Wiki" Description="Extensive documentation of TraceLab including experiment creation, component/datatype development and TraceLab framework architecture." URL="http://coest.org/tracyproject/projects/tracelab/wiki" />
+    <LinkItem Title="Discussion Forum" Description="Online site where users and developers can post messages and discuss topics related to TraceLab." URL="http://coest.org/tracyproject/projects/tracelab/boards" />
+    <LinkItem Title="Issue Tracker / Bug Reporting" Description="Site that manages and mantains a list of issues regarding TraceLab framework and components." URL="http://coest.org/tracyproject/projects/tracelab/issues" />
+    <LinkItem Title="COEST" Description="Overview of the Center of Excellence for Software Traceability and its ongoing projects (including TraceLab)." URL="http://coest.org/" />
+  </Links>
+</StartPage>

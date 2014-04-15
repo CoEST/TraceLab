@@ -1,0 +1,307 @@
+﻿package unisa.gps.etour.control. Gestione Utenti Registrati;
+
+import java.rmi. Remote Exception;
+import java.sql. S Q L Exception;
+import java.util. Array List;
+import java.util. Iterator;
+import unisa.gps.etour.bean. Bean Turista;
+import unisa.gps.etour.bean. Bean Visita B C;
+import unisa.gps.etour.bean. Bean Visita P R;
+import unisa.gps.etour.repository. D B Visita B C;
+import unisa.gps.etour.repository. D B Visita P R;
+import unisa.gps.etour.repository. I D B Visita B C;
+import unisa.gps.etour.repository. I D B Visita P R;
+import unisa.gps.etour.util. Messaggi Errore;
+
+/**
+ *  Classe che implementa l'interfaccia per la gestione dei  Turisti dal lato
+ * dell'agenzia ed estende  Unicast Remote Object per la comunicazione in remoto
+ *  Offre metodi di base per la gestione e metodi aggiuntivi per la restituzione
+ * di  Turisti con particolari caratteristiche
+ * 
+ * @author  Morelli  Giuseppe
+ * @version  .  �      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I �  University
+ *          of  Salerno
+ */
+public class  Gestione Turisti Agenzia extends  Gestione Turista Comune implements
+		 I Gestione Turisti Agenzia
+{
+
+	private  I D B Visita B C feedback B C;
+	private  I D B Visita P R feedback P R;
+
+	public  Gestione Turisti Agenzia() throws  Remote Exception
+	{
+		super();
+		try
+		{
+			//  Istanzio gli oggetti per le connessioni al database
+			feedback B C = new  D B Visita B C();
+			feedback P R = new  D B Visita P R();
+		}
+		//  Eccezione relativa alla connessione al database
+		catch ( Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+		}
+	}
+
+	//  Metodo che permette di ottenere indistintamente tutti i  Turisti presenti
+	// nel database
+	public  Array List< Bean Turista> ottieni Turisti() throws  Remote Exception
+	{
+		// oggetto che conterrà il valore di ritorno
+		 Array List< Bean Turista> to Return;
+		//  Recupero i dati
+		try
+		{
+			//  Richiama il metodo con stringa vuota per ottenere tutti i  Turisti
+			to Return = turista.ottieni Turisti("");
+			if (to Return == null)
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+		//  Eccezione nelle operazioni sul  Database
+		catch ( S Q L Exception e)
+		{
+			// se dal data layer viene lanciata una eccezione  S Q L Exception
+			// si lancia l'eccezione remota  Remote Exception
+			 System.out.println(" Errore nel metodo ottieni Turisti: "
+					+ e.to String());
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+		//  Eccezione imprevista causata da altri fattori
+		catch ( Exception ee)
+		{
+			 System.out.println(" Errore nel metodo ottieni Turisti: "
+					+ ee.to String());
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+		}
+		// restituisce il risultato ottenuto dal data layer
+		if (to Return == null)
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ F O R M A T O_ B E A N);
+		return to Return;
+	}
+
+	//  Metodo che permette di ottenere tutti i  Turisti che abbiano un account
+	// attivo o meno
+	public  Array List< Bean Turista> ottieni Turisti(boolean stato Account)
+			throws  Remote Exception
+	{
+		//  Array List contenente i risultati
+		 Array List< Bean Turista> to Return;
+		//  Recupero dei dati
+		try
+		{
+			// si prelevano tutti i  Turisti con lo stato passato come parametro
+			to Return = turista.ottieni Turisti(stato Account);
+		}
+		//  Eccezione nell'esecuzione dell'operazione sul database
+		catch ( S Q L Exception e)
+		{
+			// se il data layer invia una eccezione si lancia l'eccezione remota
+			 System.out.println(" Errore nel metodo ottieni Turisti(boolean): "
+					+ e.to String());
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+		//  Eccezioni impreviste causate da altri fattori
+		catch ( Exception ee)
+		{
+			 System.out.println(" Errore nel metodo ottieni Turisti(boolean): "
+					+ ee.to String());
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+		}
+		//  Controllo i dati da ritornare, in modo da non restituire valori nulli
+		if (to Return == null)
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ F O R M A T O_ B E A N);
+		return to Return;
+	}
+
+	//  Metodo che permette l'attivazione di un  Turista non ancora attivato
+	public boolean attiva Turista(int p Id Turista) throws  Remote Exception
+	{
+		//  Controllo la validità dei dati di input
+		if (p Id Turista <  )
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D A T I);
+		// bean contenente i dati del turista da attivare
+		 Bean Turista to Change;
+		//  Recupero e modifica dei dati richiesti
+		try
+		{
+			//  Ottengo i dati dal  Database
+			to Change = turista.ottieni Turista(p Id Turista);
+			//  Controllo che il  Turista non sia già attivato
+			if (to Change.is Attiva())
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ D A T I);
+			// si setta il valore che indica lo stato di attivazione a true
+			to Change.set Attiva(true);
+			// si tenta di modificare i dati del database
+			if (turista.modifica Turista(to Change))
+				// se l'operazione di modifica va a buon fine si restituisce
+				// true
+				return true;
+		}
+		//  Eccezione nell'esecuzione delle operazioni sul  Database
+		catch ( S Q L Exception e)
+		{
+			// se il data layer invia una eccezione si lancia l'eccezione remota
+			 System.out.println(" Errore nel metodo attiva Turista: "
+					+ e.to String());
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+		//  Eccezioni impreviste causate da altri fattori
+		catch ( Exception ee)
+		{
+			 System.out.println(" Errore nel metodo attiva Turista: "
+					+ ee.to String());
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+		}
+		//  Se non sono state lanciate eccezioni ma le modifiche
+		// non sono andate a buon fine si restituisce false
+		return false;
+	}
+
+	//  Metodo che permette di disattivare un  Turista
+	public boolean disattiva Turista(int p Id Turista) throws  Remote Exception
+	{
+		//  Controllo la validità dei dati
+		if (p Id Turista <  )
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D A T I);
+		 Bean Turista to Change;// bean contenente i dati del turista da
+		// disattivare
+		//  Recupero e modifica dei dati richiesti
+		try
+		{
+			//  Ottengo i dati dal database
+			to Change = turista.ottieni Turista(p Id Turista);
+			//  Controllo che il turista sia attivo
+			if (!to Change.is Attiva())
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ D A T I);
+			// si setta il valore che indica lo stato di attivazione a false
+			to Change.set Attiva(false);
+			// si tenta di modificare i dati del database
+			if (turista.modifica Turista(to Change))
+				// se l'operazione di modifica va a buon fine si restituisce
+				// true
+				return true;
+		}
+		//  Eccezione nell'esecuzione delle operazioni sul database
+		catch ( S Q L Exception e)
+		{
+			// se il data layer invia una eccezione si lancia l'eccezione remota
+			 System.out.println(" Errore nel metodo disattiva Turista: "
+					+ e.to String());
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+		//  Eccezioni impreviste causate da altri fattori
+		catch ( Exception ee)
+		{
+			 System.out.println(" Errore nel metodo disattiva Turista: "
+					+ ee.to String());
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+		}
+		//  Se non sono state lanciate eccezioni ma le modifiche
+		// non sono andate a buon fine si restituisce false
+		return false;
+	}
+
+	//  Metodo che permette di cancellare un  Turista dal  Database
+	public boolean cancella Turista(int p Id Turista) throws  Remote Exception
+	{
+		//  Controllo la validità dei dati
+		if (p Id Turista <  )
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D A T I);
+		try
+		{
+			// se la cancellazione va a buon fine si restituisce true
+			if (turista.cancella Turista(p Id Turista))
+				return true;
+		}
+		catch ( S Q L Exception e)
+		{
+			// se il data layer invia una eccezione si lancia l'eccezione remota
+			 System.out.println(" Errore nel metodo cancella Turista: "
+					+ e.to String());
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+		//  Eccezione imprevista causata da altri fattori
+		catch ( Exception ee)
+		{
+			 System.out.println(" Errore nel metodo cancella Turista: "
+					+ ee.to String());
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+		}
+		// altrimenti se non sono state lanciate eccezioni ma la cancellazione
+		// non sono andate a buon fine si restituisce false
+		return false;
+	}
+
+	//  Metodo che restituisce un  Array List contenente i feedback rilasciati da
+	// un certo  Turista per i  Beni  Culturali
+	public  Array List< Bean Visita B C> ottieni Feedback B C(int p Id Turista)
+			throws  Remote Exception
+	{
+		//  Controllo la validità dei dati
+		if (p Id Turista <  )
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D A T I);
+		//  Array List di ritorno
+		 Array List< Bean Visita B C> to Return;
+		try
+		{
+			//  Recupero i dati dal  Database
+			to Return = feedback B C.ottieni Lista Visita B C Turista(p Id Turista);
+		}
+		catch ( S Q L Exception e)
+		{
+			// se il data layer invia una eccezione si lancia l'eccezione remota
+			 System.out.println(" Errore nel metodo ottieni Feedback B C: "
+					+ e.to String());
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+		//  Eccezione imprevista causata da altri fattori
+		catch ( Exception ee)
+		{
+			 System.out.println(" Errore nel metodo ottieni Feedback B C: "
+					+ ee.to String());
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+		}
+		//  Controllo i dati di ritorno in modo da non restituire valori nulli
+		if (to Return == null)
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ F O R M A T O_ B E A N);
+		return to Return;
+	}
+
+	//  Metodo che restituisce un  Array List contenente i feedback rilasciati da
+	// un certo  Turista per i  Beni  Culturali
+	public  Array List< Bean Visita P R> ottieni Feedback P R(int p Id Turista)
+			throws  Remote Exception
+	{
+		//  Controllo la validità dei dati
+		if (p Id Turista <  )
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D A T I);
+		 Array List< Bean Visita P R> to Return;// variabile di ritorno
+		try
+		{
+			// si inserisce in to Return il risultato
+			// restituito dal data layer
+			to Return = feedback P R.ottieni Lista Visita P R Turista(p Id Turista);
+		}
+		catch ( S Q L Exception e)
+		{
+			// se il data layer invia una eccezione si lancia l'eccezione remota
+			 System.out.println(" Errore nel metodo ottieni Feedback P R: "
+					+ e.to String());
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+		//  Eccezioni impreviste causate da altri fattori
+		catch ( Exception ee)
+		{
+			 System.out.println(" Errore nel metodo ottieni Feedback P R: "
+					+ ee.to String());
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+		}
+		//  Controllo l' Array di ritorno, in modo da non restituire valori nulli
+		if (to Return == null)
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ F O R M A T O_ B E A N);
+		return to Return;
+	}
+}

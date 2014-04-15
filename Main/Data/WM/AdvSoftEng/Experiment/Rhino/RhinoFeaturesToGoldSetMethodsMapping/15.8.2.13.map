@@ -1,0 +1,4 @@
+org.mozilla.javascript.NativeMath.findPrototypeId
+org.mozilla.javascript.NativeMath.js_pow
+org.mozilla.javascript.NativeMath.execIdCall
+org.mozilla.javascript.NativeMath.initPrototypeId

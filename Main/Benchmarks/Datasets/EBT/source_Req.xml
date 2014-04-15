@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<artifacts_collection>
+ <collection_info>
+    <id>Requirements</id> 
+    <name>Requirements</name> 
+    <version>1.1</version> 
+   <description>
+    Requirements
+   </description> 
+   <content_location>internal</content_location>
+ </collection_info>
+     <artifacts>
+        <artifact>
+           <id>100</id>
+           <content>
+           Requirements shall be managed in a 3rd party requirements management tool such as DOORS.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>101</id>
+           <content>
+           Non-requirement artifacts shall be managed in 3rd party tools such as Rational Rose or Clear case
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>102</id>
+           <content>
+           Only registered subscribers shall be allowed to establish traces.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>103</id>
+           <content>
+           A user shall register as a subscriber.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>104</id>
+           <content>
+           On registration a subscriber shall register itself under the control of a subscribermanager
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>105</id>
+           <content>
+           The user shall establish traces between requirements and other types of artifacts by establishing a subscription from an artifact to the relevant requirement
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>106</id>
+           <content>
+           Each artifact shall be placed under the control of a subscribermanager
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>107</id>
+           <content>
+           The user shall be able to delete subscriptions.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>108</id>
+           <content>
+           A subscribermanager shall register itself with the eventserver so that it may receive relevant event messages.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>109</id>
+           <content>
+           "If the subscribermanager is online; the push model shall be used to send it event notifications in real time."
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>110</id>
+           <content>
+           "Whenever the subscribermanager first comes on line; it shall implement the pull model to retrieve outstanding event messages from the eventserver."
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>111</id>
+           <content>
+           A subscribermanager shall receive event notifications on behalf of the artifacts that it manages.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>112</id>
+           <content>
+           A subscribermanager shall manage traces for one or more artifacts.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>113</id>
+           <content>
+           "On receipt of an event message; the subscribermanager shall differentiate between speculative and evolutionary events."
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>114</id>
+           <content>
+           The subscribermanager shall store information for evolutionary events in an eventlog.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>115</id>
+           <content>
+           The user shall be able to construct speculative queries using a GUI.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>116</id>
+           <content>
+           The subscribermanager shall immediately process speculative events.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>117</id>
+           <content>
+           The subscribermanager shall re execute the model using the speculative values.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>118</id>
+           <content>
+           The subscribermanager shall report results indicating whether the speculative change negatively impacts other requirements and constraints.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>119</id>
+           <content>
+           The subscribermanager shall restore the executable model to its prior state.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>120</id>
+           <content>
+           The prototype system shall utilize a driver to trigger events.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>121</id>
+           <content>
+           Event types shall include adding new requirements.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>122</id>
+           <content>
+           Event types shall include decomposing one requirement into two or more requirements.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>123</id>
+           <content>
+           Event types shall include refining one requirement by adding an additional requirement to the existing one.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>124</id>
+           <content>
+           Event types shall include modifying a requirement.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>125</id>
+           <content>
+           Event types shall include deleting a requirement.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>126</id>
+           <content>
+           Event types shall include merging requirements.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>127</id>
+           <content>
+           The eventserver shall receive event messages when a requirement changes.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>128</id>
+           <content>
+           On receipt of an event message the eventserver shall record the event in an eventlog.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>129</id>
+           <content>
+           "On receipt of an event; the eventserver shall identify all relevant subscribers for the event."
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>130</id>
+           <content>
+           The eventserver shall differentiate between evolutionary and speculative events.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>131</id>
+           <content>
+           "When an evolutionary event occurs; the eventserver shall notify subscribers of the event."
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>132</id>
+           <content>
+           "For speculative events; the eventserver shall construct a composite event message."
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>133</id>
+           <content>
+           The eventserver shall identify all related requirements and constraints for each impacted executable model.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>134</id>
+           <content>
+           The eventserver shall retrieve quantitative values related to these additional requirements and constraints through querying the requirements management tool.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>135</id>
+           <content>
+           The eventserver shall create a composite speculative message which includes the speculative event plus all related requirements and constraint values for each impacted model.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>136</id>
+           <content>
+           The eventserver shall send the customized message to each impacted executable model.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>137</id>
+           <content>
+           The user shall view all evolutionary events received for a specific artifact in the order in which they were received.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>138</id>
+           <content>
+           The user shall update related artifacts according to the information contained in the event messages.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>139</id>
+           <content>
+           The user shall eliminate unnecessary traces that were temporarily constructed by the eventserver during initial event processing.
+          </content>
+          <parent_id/>
+        </artifact>
+        <artifact>
+           <id>140</id>
+           <content>
+           The notification processing system shall automatically eliminate any events that are not longer valid as a result of the user eliminating temporary traces.
+          </content>
+          <parent_id/>
+        </artifact>
+     </artifacts>
+  </artifacts_collection>

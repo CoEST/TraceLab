@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp17_low_level</id>
+    <name>Waterloo grp17_low_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp17_low_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>UC1</id>
+      <content>Event: Administrator manages system hardware through the system console
+System: Server
+Actors: Administrator
+Overview: This use case captures how an Administrator manages the hardware of the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC2</id>
+      <content>Event: Administrator attempt to logon/off to the server
+System: Server
+Actors: Administrator
+Overview: This use case captures the process of the administrator logging on/off the server.
+User ID and password are passed as inputs.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC3</id>
+      <content>Event: Administrator making changes to the user account settings
+System: Server
+Actors: Administrator
+Overview: This use case captures the process of the administrator making changes to the user account information</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC4</id>
+      <content>Event: Hardware test running automatically (every 30 secs)
+System: Server
+Actors: Timer
+Overview: This use case captures the process of a hardware test running automatically</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC5</id>
+      <content>Event: Administrator making changes to bill plan information
+System: Server
+Actors: Administrator
+Overview: This use case captures the process of the administrator making changes to the billing plan</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC6</id>
+      <content>Event: Administrator make changes to the IP-Phone mapping
+System: Server, Phone Subsystem`
+Actors: Administrator, Caller
+Overview: This use case captures the process of the administrator making changes to the IP-Phone mapping</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC7</id>
+      <content>Event: Caller picks up the phone and dials a number to place a call to callee
+System: Server, Phone Subsystem
+Actors: Caller, Callee
+Overview: Captures the process of a complete calling sequence from caller picks up the phone to either party hangs up.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

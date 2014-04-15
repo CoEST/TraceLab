@@ -1,0 +1,18 @@
+Login Operator test case by Date: 
+    C05 login registered in S I O and 20/06/2003 
+            incorrect password 
+            (higher 
+            characters) 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcValOpe necessary to authenticate an 
+            Operator 
+High Priority 
+Set up the login Rocolo is `recorded in the SIO 
+Description test 
+Input Login: Rocolo 
+            Password: rocolivirago 
+Oracle Invalid Input: Password 
+Classes cover valid: CE2 
+            Classes invalid: CE9

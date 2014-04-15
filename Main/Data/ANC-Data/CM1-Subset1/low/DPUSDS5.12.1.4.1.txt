@@ -1,0 +1,1 @@
+Memory Upload and Download Handling	There are two ways to upload data to the DPU:* Memory Poke (D_MEM_DAT_POKE command), or* Memory Upload (D_MEM_DAT_UPLD command).The memory poke command is used when a small (<=Z bytes) of data need to be poked into a DPU memory location.  The Z byte limitation is derived from the Company X command length constraint.

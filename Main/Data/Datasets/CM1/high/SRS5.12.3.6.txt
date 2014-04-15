@@ -1,0 +1,1 @@
+  The DPU-CCM shall, in rejecting a command, report an error in DPU_HK indicating  the byte-code of the command being rejected in the LSB of the errno as described in 03691-DPUSDP-01.  

@@ -1,0 +1,789 @@
+           Call Back
+           "private Hash table requirement  Desc  Table = new Hash table  ();
+          
+           private Hash table constraint  Desc  Table = new Hash table  ();
+          
+           private Hash table performance  Model  Table = new Hash table  ();
+          
+           private Performance  Model performance model= null  ;
+          
+           private String project  Name = null  ;
+           // These four variable are common both to the driver and Constraints Objects so the scope is global in this class  .
+           private String module  Path = null  ;
+           private String module  Name = null  ;
+           private String requirement  ID = null  ;
+          
+           private long query  ID = 0  ;"
+           "public void parse  Speculate  Information  (  String str  )
+           {
+          
+            System  . out  . println  (""  Received String   = "" + str  );
+          
+            Connection conn = null  ;
+          
+            Statement stmt = null  ;
+          
+            Driver  Description dd = null  ;
+          
+            String event  Type = null  ; // In this case it will be ""  Speculate  ""
+            int loop  1 = 0  ;
+          
+            int loop  2 = 0  ;
+            //  This variable will be used to count the numbers of drivers changed  .
+          
+            //  This variable will represent the driver that is going to be changed  . Ex = WB12
+          
+            String description = null  ; // Description of the requirement  .
+            String changed  Attribute = null  ;
+            String from  Attribute = null  ;
+            String to  Attribute = null  ;
+          
+            String sub  String  1 = null  ; // The string delimited by """"
+            String sub  String  2 = null  ;
+            String sub  String  3 = null  ;
+          
+            String  Tokenizer st = new String  Tokenizer  ( str   ""|"");
+            // This object will get the tokens separated by ""|"".
+          
+            String  Tokenizer st  1 = null  ;
+            String  Tokenizer st  2 = null  ;
+            String  Tokenizer st  3 = null  ;
+          
+            event  Type = st  . next  Token  (). trim  ();
+            // In this case it will be ""  Speculate  ""
+          
+            // System  . out  . println  (""  Event Type "" + event  Type  );
+          
+            this  . query  ID = Long  . parse  Long  ( st  . next  Token  (). trim  ());
+          
+            System  . out  . println  (""  Query ID  "" + query  ID  );
+          
+            java  . sql  .  Date date = new java  . sql  .  Date  ( this  . query  ID  );
+          
+            String time = date  . to  String  ();
+            System  . out  . println  (""  Date   "" + time  );
+          
+            loop  1 = Integer  . parse  Int  ( st  . next  Token  (). trim  ());
+            System  . out  . println  (""  Loop 1 "" + loop  1  );
+          
+            Vector module  Vector = new Vector  ();
+          
+            String data  Search  String = """";
+          
+            while ( loop  1 > 0  )
+            {
+             // get the project name and module path from the string
+             sub  String  1 = st  . next  Token  (). trim  ();
+          
+             st  1 = new String  Tokenizer  ( sub  String  1   """");
+          
+             // System  . out  . println  (""  Sub String   "" + sub  String  1  );
+          
+             project  Name = st  1  . next  Token  (). trim  ();
+             System  . out  . println  (""  Project Name  "" + project  Name  );
+          
+             module  Path = st  1  . next  Token  (). trim  ();
+          
+             System  . out  . println  (""  Module Path  "" + module  Path  );
+          
+             requirement  ID = st  1  . next  Token  (). trim  ();
+             System  . out  . println  ("" requirement  Number "" + requirement  ID  );
+          
+          
+             // get the description from the speculate string
+             description = st  . next  Token  (). trim  ();
+             System  . out  . println  ("" description "" + description  );
+          
+          
+             // get the last token including the attribute name and the old and new value
+             sub  String  3 = st  . next  Token  (). trim  (); // The string separated by """".
+             System  . out  . println  ("" sub  String "" + sub  String  3  );
+          
+             st  3 = new String  Tokenizer  ( sub  String  3   """");
+          
+             changed  Attribute = st  3  . next  Token  (). trim  ();
+             System  . out  . println  ("" changed  Attribute "" + changed  Attribute  );
+          
+             from  Attribute = st  3  . next  Token  (). trim  ();
+             System  . out  . println  ("" from  Attribute "" + from  Attribute  );
+          
+             to  Attribute = st  3  . next  Token  (). trim  ();
+             System  . out  . println  ("" to  Attribute "" + to  Attribute  );
+          
+          
+          
+             data  Search  String +  = project  Name
+              + module  Path
+              + ""\\""
+              + requirement  ID
+              + ""  ""
+              + from  Attribute
+              + ""  ""
+              + to  Attribute
+              + ""| "";
+          
+             dd =
+              new Driver  Description  (
+               project  Name  
+               module  Path  
+               requirement  ID  
+               description  
+               changed  Attribute  
+               from  Attribute  
+               to  Attribute  );
+          
+             requirement  Desc  Table  . put  ( dd  . create  Key  () dd  );
+          
+             loop  1--  ;
+          
+            }
+          
+            System  . out  . println  ("""");
+            System  . out  . println  ("""");
+            System  . out  . println  ("""");
+            System  . out  . println  (
+             ""  Drivers in requirement  Des"
+           "public void identify  Performance  Models  ()
+           {
+          
+            Connection conn = null  ;
+            Result  Set rs = null  ;
+            Statement stmt = null  ;
+          
+            String subscriber  Name = null  ;
+          
+            Driver  Description dd = null  ;
+          
+            Enumeration subscriber  Table  Enumeration = null  ;
+          
+            String requirement  Key = """";
+          
+            Constraints  Description constraint  Description = null  ;
+          
+            Enumeration requirement Table  Enumeration = requirement  Desc  Table  . keys  ();
+          
+            while ( requirement Table  Enumeration  . has  More  Elements  ())
+            {
+          
+             requirement  Key = (  String  ) requirement Table  Enumeration  . next  Element  ();
+          
+             dd = (  Driver  Description  ) requirement  Desc  Table  . get  ( requirement  Key  );
+          
+             System  . out  . println  ("""");
+             System  . out  . println  ("""");
+             System  . out  . println  ("""");
+             System  . out  . println  (""  DD =   "" + dd  );
+          
+             System  . out  . println  ("""");
+             System  . out  . println  ("""");
+             System  . out  . println  ("""");
+          
+             try
+             {
+              Class  . for  Name  ("" sun  . jdbc  . odbc  .  Jdbc  Odbc  Driver  "");
+              conn =
+               Driver  Manager  . get  Connection  ("" jdbc  : odbc  :  EBT  "" ""  EBT  "" ""  EBT  "");
+              stmt = conn  . create  Statement  ();
+          
+              System  . out  . println  ( dd  . get  Project  Name  ());
+              System  . out  . println  ( dd  . get  Module  Path  ());
+              System  . out  . println  ( dd  . get  Requirement  ID  ());
+          
+              String sql =
+               ""  SELECT Subscriber  Name FROM SUBSCRIPTION ""
+                + "" WHERE Subscription  Projname = '  ""
+                + dd  . get  Project  Name  ()
+                + ""  ' AND Subscription  Module = '  ""
+                + dd  . get  Module  Path  ()
+                + ""  ' AND Subscription  requirement No = '  ""
+                + dd  . get  Requirement  ID  ()
+                + ""  '  "";
+              System  . out  . println  ("""");
+              System  . out  . println  ("""");
+              System  . out  . println  ("""");
+              System  . out  . println  (""  SQL  : "" + sql  );
+              System  . out  . println  ("""");
+              System  . out  . println  ("""");
+              System  . out  . println  ("""");
+              rs = stmt  . execute  Query  ( sql  );
+          
+              while ( rs  . next  ())
+              {
+          
+               subscriber  Name = rs  . get  String  (""  Subscriber  Name  "");
+          
+               performance model= new Performance  Model  ( subscriber  Name   this  . query  ID  );
+               // Create a new  Performance Model Object  .
+          
+               System  . out  . println  ( subscriber  Name  );
+          
+               if (!( performance  Model  Table  . contains  Key  ( subscriber  Name  )))
+               {
+                System  . out  . println  ("" true  "");
+          
+                performance  Model  Table  . put  ( subscriber  Name   performance model );
+          
+                Performance  Model  . count  ++;
+                // just the check  deleted later  .
+               }// end if
+          
+              } // end of while loop for Result Set
+          
+              System  . out  . println  (
+               ""  Values in performance  Model  Table Hash  Table  == ""
+                + performance  Model  Table  );
+          
+              conn  . close  ();
+              stmt  . close  ();
+          
+             }
+             catch (  Exception ex  )
+             {
+              System  . out  . println  (""  A problem occurred "");
+             }
+          
+             subscriber  Table  Enumeration = performance  Model  Table  . keys  ();
+          
+             while ( subscriber  Table  Enumeration  . has  More  Elements  ())
+             {
+              subscriber  Name =
+               (  String  ) subscriber  Table  Enumeration  . next  Element  ();
+          
+              //    System  . out  . println  (
+              //     ""  Performance Model Name   "" + subscriber  Name  );
+          
+              performance model=  (  Performance  Model  ) performance  Model  Table  . get  ( subscriber  Name  );
+          
+              System  . out  . println  (""  performance model1 *******  "" + performance model );
+          
+              if (! performance model . contains  Driver  ( dd  ))
+              {
+               performance model . add  Driver  ( dd  );
+          
+               System  . out  . println  ();
+               System  . out  . println  ();
+               System  . out  . println  ();
+               System  . out  . println  ();
+               System  . out  . println  (
+                ""  FOR PERFORMANCE MODEL ==   ""
+                 + performance model ."
+           "public void pull  Information  From  Doors  ()
+           {
+          
+            String server  IP = ""  140  .  192  .  37  .  150  "";
+          
+            String  [] attribute = { ""  Value  "" ""  Logic  "" ""  Units  "" ""  Attribute  "" };
+          
+            String subscriber  Name = null  ;
+          
+            Vector constraints = null  ;
+          
+            Constraints  Description cd = null  ;
+          
+            Enumeration subscriber  Table  Enumeration = performance  Model  Table  . keys  ();
+          
+            while ( subscriber  Table  Enumeration  . has  More  Elements  ())
+            {
+          
+             subscriber  Name = (  String  ) subscriber  Table  Enumeration  . next  Element  ();
+          
+             performance model= (  Performance  Model  ) performance  Model  Table  . get  ( subscriber  Name  );
+          
+             constraints = performance model . get  Constraints  ();
+          
+             for ( int i = 0  ; i < constraints  . size  (); i  ++)
+             {
+              cd = (  Constraints  Description  ) constraints  . get  ( i  );
+          
+              String project  Name = cd  . get  Project  Name  ();
+              String temp  Module = cd  . get  Module  Path  ();
+              String requirement  ID = cd  . get  Requirement  ID  ();
+          
+              String  Tokenizer st = new String  Tokenizer  ( temp  Module   ""\\"");
+          
+              Vector module  Vector = new Vector  ();
+              String module  Path = """";
+              String module  Name = null  ;
+          
+              int loop = st  . count  Tokens  ();
+          
+              while ( loop > 0  )
+              {
+               /*
+                * This loop will separate the module path from the module name  because the DOORSAPI  . exe program is
+                * designed in a way that we have to join the module path with the project name and separate the module name  .
+                */
+          
+               if ( loop == 1  )
+               {
+                module  Name = st  . next  Token  ();
+               }
+               else
+               {
+                module  Vector  . add  ( st  . next  Token  ());
+               }
+          
+               loop  --  ;
+              }
+          
+              //    System  . out  . println  (""  Module Path Vector  "" + module  Vector  );
+              //    System  . out  . println  (""  Module Name  "" + module  Name  );
+          
+              for ( int x = 0  ; x < module  Vector  . size  (); x  ++)
+              {
+               module  Path +  = (  String  ) module  Vector  . get  ( x  );
+          
+               if ( x !  = module  Vector  . size  () - 1  )
+                module  Path +  = ""\\\\"";
+              }
+          
+              if ( module  Path  . length  () !  = 0  )
+              {
+               project  Name = project  Name + ""\\\\"" + module  Path  ;
+              }
+          
+              //    System  . out  . println  ();
+              //    System  . out  . println  (""  1 "" + project  Name  );
+              //    System  . out  . println  (""  2 "" + module  Path  );
+              //    System  . out  . println  (""  3 "" + module  Name  );
+              //    System  . out  . println  (""  4 "" + requirement  ID  );
+          
+              for ( int y = 0  ; y < attribute  . length  ; y  ++)
+              {
+               String Exec  String =
+                ""  DOORS  \\  Doors  API  . exe ""
+                 + server  IP
+                 + "" ""
+                 + ""\"" pull doors for value  (""
+                 + ""\\\""""
+                 + project  Name
+                 + ""\\\""\\\""""
+                 + module  Name
+                 + ""\\\""\\\""""
+                 + requirement  ID
+                 + ""\\\""\\\""""
+                 + attribute  [ y  ]
+                 + ""\\\"")\"""";
+          
+               System  . out  . println  (""  ES  : "" + Exec  String  );
+          
+              //  Runtime r = Runtime  . get  Runtime  ();
+              //  Process p = null  ;
+              try
+              {
+               // p = r  . exec  (  Exec  String  );
+               // p  . wait  For  ();
+          
+              //  Include the connection to the Thread  Pool  Server
+               Socket server  ;
+          
+               server = new Socket  ( server  IP    2347  );
+          
+               Buffered  Reader from  Server = new Buffered  Reader  ( new Input  Stream  Reader  ( server  . get  Input  Stream  ()));
+               Print  Writer to  Server = new Print  Writer  ( server  . get  Output  Stream  () true  );
+          
+               to  Server  . println  (  Exec  String  );
+          
+          
+               //  Buffered  Reader in =
+               // new Buffered  Reader  (
+               //  new Input  Stream  Reader  ( p  . get  Input  Stream  ()));
+          
+               String line  1 = from  Server  . read  Line  ();
+               // Just tells the Port Number and Server IP Address  .
+               String line  2 = from  Server  . read  Line  ();
+               // Get the description"
+           "public void insert  Values  In  Data  Base  ()
+           {
+          
+            Connection conn = null  ;
+          
+            Statement stmt = null  ;
+          
+            String subscriber  Name = null  ;
+          
+            Driver  Description dd = null  ;
+            Vector driver  Vector = null  ;
+          
+            Constraints  Description cd = null  ;
+            Vector constraint  Vector = null  ;
+          
+            Enumeration subscriber  Table  Enumeration = performance  Model  Table  . keys  ();
+          
+            while ( subscriber  Table  Enumeration  . has  More  Elements  ())
+            {
+             subscriber  Name = (  String  ) subscriber  Table  Enumeration  . next  Element  ();
+          
+             performance model= (  Performance  Model  ) performance  Model  Table  . get  ( subscriber  Name  );
+          
+             driver  Vector = performance model . get  Drivers  ();
+          
+             for ( int i = 0  ; i < driver  Vector  . size  (); i  ++)
+             {
+              //  System  . out  . println  ( i  );
+              dd = (  Driver  Description  ) driver  Vector  . get  ( i  );
+          
+              try
+              {
+               Class  . for  Name  ("" sun  . jdbc  . odbc  .  Jdbc  Odbc  Driver  "");
+               conn =
+                Driver  Manager  . get  Connection  (
+                 "" jdbc  : odbc  :  EBT  ""
+                 ""  EBT  ""
+                 ""  EBT  "");
+               stmt = conn  . create  Statement  ();
+          
+               String sql =
+                ""  INSERT INTO DRIVER  (  Query  Id   Subscriber  Name   Subscription  Projname   Subscription  Module   Subscription  requirement No   Description   Attribute   From  Value   To  Value  ) ""
+                 + ""  VALUES (""
+                 + performance model . get  Query  ID  ()
+                 + ""  '  ""
+                 + performance model . get  Name  ()
+                 + ""  '   '  ""
+                 + dd  . get  Project  Name  ()
+                 + ""  '   '  ""
+                 + dd  . get  Module  Path  ()
+                 + ""  '   '  ""
+                 + dd  . get  Requirement  ID  ()
+                 + ""  '   '  ""
+                 + dd  . get  Description  ()
+                 + ""  '   '  ""
+                 + dd  . get  Changed  Attribute  ()
+                 + ""  '   '  ""
+                 + dd  . get  From  Attribute  ()
+                 + ""  '   '  ""
+                 + dd  . get  To  Attribute  ()
+                 + ""  '  )"";
+          
+               System  . out  . println  ( sql  );
+          
+               stmt  . execute  Update  ( sql  );
+          
+               conn  . close  ();
+               stmt  . close  ();
+          
+              }
+              catch (  Exception ex  )
+              {
+               System  . out  . println  (""  A problem occurred "");
+               ex  . print  Stack  Trace  ();
+              }
+          
+             } // End of Driver   For Loop
+          
+             constraint  Vector = performance model . get  Constraints  ();
+          
+             for ( int x = 0  ; x < constraint  Vector  . size  (); x  ++)
+             {
+          
+              cd = (  Constraints  Description  ) constraint  Vector  . get  ( x  );
+          
+              try
+              {
+               Class  . for  Name  ("" sun  . jdbc  . odbc  .  Jdbc  Odbc  Driver  "");
+          
+               conn =
+                Driver  Manager  . get  Connection  (
+                 "" jdbc  : odbc  :  EBT  ""
+                 ""  EBT  ""
+                 ""  EBT  "");
+          
+               String sql =
+                ""  INSERT INTO Constraints (  Query  Id   Subscriber  Name   Subscription  Projname   Subscription  Module   Subscription  requirement No   Description   Logic   Units   Attribute   Constraint  Value  )""
+                 + ""  VALUES (""
+                 + performance model . get  Query  ID  ()
+                 + "" '  ""
+                 + performance model . get  Name  ()
+                 + ""  '   '  ""
+                 + cd  . get  Project  Name  ()
+                 + ""  '   '  ""
+                 + cd  . get  Module  Path  ()
+                 + ""  '   '  ""
+                 + cd  . get  Requirement  ID  ()
+                 + ""  '   '  ""
+                 + cd  . get  Description  ()
+                 + ""  '   '  ""
+                 + cd  . get  Logic  ()
+                 + ""  '   '  ""
+                 + cd  . get  Units  ()
+                 + ""  '   '  ""
+                 + cd  . get  Attribute  ()
+                 + ""  '   '  ""
+                 + cd  . get  Value  ()
+                 + ""  '  )"";
+          
+               stmt = conn  . create  Statement  ();
+          
+               System  . out  . println  ( sql  );
+          
+               stmt  . execute  Update  ( sql  );
+          
+               conn  . close  ();
+               stmt  . close  ();
+          
+              }
+              catch (  Exception ex  )
+              {
+               System  . out  . println  (""  A problem occurred "");
+          
+               ex  . print  Stack  Trace  ();
+          
+              }
+          
+             }
+          
+            } //  End O"
+           "public void create  Execute  String  ()
+           {
+          
+            Connection conn = null  ;
+          
+            Statement stmt = null  ;
+          
+            Result  Set rs = null  ;
+          
+            String  Buffer sb = null  ;
+          
+            String subscriber  Name = null  ;
+          
+            Driver  Description dd = null  ;
+            Vector driver  Vector = null  ;
+          
+            Constraints  Description cd = null  ;
+            Vector constraint  Vector = null  ;
+          
+            Enumeration subscriber  Table  Enumeration = performance  Model  Table  . keys  ();
+          
+            while ( subscriber  Table  Enumeration  . has  More  Elements  ())
+            {
+          
+             sb = new String  Buffer  ();
+          
+             sb  . append  (""  Re  -execute  "");
+          
+             sb  . append  ( this  . query  ID  );
+          
+             sb  . append  ("""");
+          
+             subscriber  Name = (  String  ) subscriber  Table  Enumeration  . next  Element  ();
+          
+             sb  . append  ( subscriber  Name  );
+          
+             performance model= (  Performance  Model  ) performance  Model  Table  . get  ( subscriber  Name  );
+          
+             driver  Vector = performance model . get  Drivers  ();
+          
+             sb  . append  (""|"");
+             sb  . append  (""  Drivers  "");
+             sb  . append  ("""");
+             sb  . append  ( driver  Vector  . size  ());
+          
+             for ( int i = 0  ; i < driver  Vector  . size  (); i  ++)
+             {
+              sb  . append  (""|"");
+          
+              dd = (  Driver  Description  ) driver  Vector  . get  ( i  );
+          
+              sb  . append  ( dd  . get  Project  Name  ());
+              sb  . append  ("""");
+          
+          
+          
+              sb  . append  ( dd  . get  Module  Path  ());
+              sb  . append  ("""");
+          
+              sb  . append  ( dd  . get  Requirement  ID  ());
+              sb  . append  ("""");
+          
+              sb  . append  ( dd  . get  Changed  Attribute  ());
+              sb  . append  ("""");
+          
+          
+          
+              sb  . append  ( dd  . get  From  Attribute  ());
+              sb  . append  ("""");
+          
+              sb  . append  ( dd  . get  To  Attribute  ());
+          
+             }
+          
+             constraint  Vector = performance model . get  Constraints  ();
+          
+             sb  . append  (""|"");
+             sb  . append  (""  Constraints  "");
+             sb  . append  ("""");
+             sb  . append  ( constraint  Vector  . size  ());
+          
+             for ( int x = 0  ; x < constraint  Vector  . size  (); x  ++)
+             {
+          
+              sb  . append  (""|"");
+          
+              cd = (  Constraints  Description  ) constraint  Vector  . get  ( x  );
+          
+              sb  . append  ( cd  . get  Project  Name  ());
+              sb  . append  ("""");
+          
+          
+              sb  . append  ( cd  . get  Module  Path  ());
+              sb  . append  ("""");
+          
+              sb  . append  ( cd  . get  Requirement  ID  ());
+              sb  . append  ("""");
+          
+              sb  . append  ( cd  . get  Attribute  ());
+              sb  . append  ("""");
+          
+          
+              sb  . append  ( cd  . get  Logic  ());
+              sb  . append  ("""");
+          
+              sb  . append  ( cd  . get  Value  ());
+          
+             }// end for loop
+          
+             String execute  String = sb  . to  String  ();
+          
+             System  . out  . println  (""  Sending String  :    "" + execute  String  );
+          
+             String server  IP = null  ;
+             int port = 0  ;
+          
+             try
+             {
+          
+          
+              Class  . for  Name  ("" sun  . jdbc  . odbc  .  Jdbc  Odbc  Driver  "");
+          
+              conn =
+               Driver  Manager  . get  Connection  ("" jdbc  : odbc  :  EBT  "" ""  EBT  "" ""  EBT  "");
+          
+              stmt = conn  . create  Statement  ();
+          
+              String sql =
+               ""  SELECT SUBSCRIBERS  .  SUBSCRIBER NAME   subscribermanager  .  SUBSCRIBER IP ADDRESS    subscribermanager  .  subscribermanager   ""
+                + ""  subscribermanager  .  SUBSCRIBERPORT ""
+                + "" FROM SUBSCRIBERS   subscribermanager """
+           "public void parse  Impact  Report  (  String str  )
+           {
+          
+            Connection conn = null  ;
+          
+            Statement stmt = null  ;
+          
+            Vector constraints  Vector = null  ;
+            Vector drivers  Vector = null  ;
+          
+            Constraints  Description constraint = null  ;
+          
+            int driver  Loop = 0  ;
+            int constraint  Loop = 0  ;
+          
+            String  Tokenizer st = null  ;
+            String  Tokenizer st  1 = null  ;
+            String  Tokenizer st  2 = null  ;
+            String  Tokenizer st  3 = null  ;
+            String  Tokenizer st  4 = null  ;
+          
+            String sub  String  1 = null  ;
+            String driver  Information = null  ;
+            String sub  String  2 = null  ;
+            String constraint  Information = null  ;
+          
+            String project  Name = null  ;
+            String module  Path = null  ;
+            String requirement  ID = null  ;
+          
+            String driver  Description = null  ;
+            String driver  Attribute = null  ;
+            String from  Value = null  ;
+            String to  Value = null  ;
+          
+            String constraint  Description = null  ;
+            String constraint  Attribute = null  ;
+            String constraint  Logic = null  ;
+            String constraint  Value = null  ;
+            String impacted  Value = null  ;
+            String constraint  Units = null  ;
+          
+            st = new String  Tokenizer  ( str   ""|"");
+          
+            String event  Type = st  . next  Token  (). trim  ();
+          
+            System  . out  . println  (""  Event Type  "" + event  Type  );
+          
+            String impacted  Query  ID = st  . next  Token  (). trim  ();
+          
+            System  . out  . println  (""  Impacted Query ID  "" + impacted  Query  ID  );
+          
+            String performance  Model  Name = st  . next  Token  (). trim  ();
+          
+            System  . out  . println  (""  Performance Model Name  "" + performance  Model  Name  );
+          
+            sub  String  1 = st  . next  Token  (); // It will be Like : ""  Drivers  1  ""
+          
+            System  . out  . println  ("" Sub  String  "" + sub  String  1  );
+          
+            st  1 = new String  Tokenizer  ( sub  String  1   """");
+          
+            String start  Driver = st  1  . next  Token  (). trim  ();
+            System  . out  . println  ("" start Driver    "" + start  Driver  );
+          
+            driver  Loop = Integer  . parse  Int  ( st  1  . next  Token  (). trim  ());
+            System  . out  . println  ("" driver  Loop   "" + driver  Loop  );
+          
+            while ( driver  Loop > 0  )
+            {
+             driver  Information = st  . next  Token  (). trim  ();
+             System  . out  . println  ("" driver  Information   "" + driver  Information  );
+          
+             st  2 = new String  Tokenizer  ( driver  Information   """");
+          
+             project  Name = st  2  . next  Token  (). trim  ();
+          
+             System  . out  . println  (""  Project Name  "" + project  Name  );
+          
+             module  Path = st  2  . next  Token  (). trim  ();
+          
+             System  . out  . println  ("" module  Path  "" + module  Path  );
+          
+             requirement  ID = st  2  . next  Token  (). trim  ();
+          
+             System  . out  . println  (""  Requirement  ID  "" + requirement  ID  );
+          
+             driver  Attribute = st  2  . next  Token  (). trim  ();
+             System  . out  . println  ("" driver Attribute  "" + driver  Attribute  );
+          
+             from  Value = st  2  . next  Token  (). trim  ();
+             System  . out  . println  (""  From Value  "" + from  Value  );
+          
+             to  Value = st  2  . next  Token  (). trim  ();
+             System  . out  . println  ("" to Value  "" + to  Value  );
+          
+             driver  Loop  --  ;
+          
+            } // END of Driver  Loop .
+          
+            sub  String  2 = st  . next  Token  ();
+          
+            st  3 = new String  Tokenizer  ( sub  String  2   """");
+          
+            String srart  Constraints = st  3  . next  Token  (). trim  ();
+          
+            constraint  Loop = Integer  . parse  Int  ( st  3  . next  Token  (). trim  ());
+          
+            System  . out  . println  (""  Constraint Loop    "" + constraint  Loop  );
+          
+            while ( constraint  Loop > 0  )
+            {
+          
+             constraint  Information = st  . next  Token  (). trim  ();
+          
+             st  4 = new String  Tokenizer  ( constraint  Information   """");
+          
+             int number  Of  Tokens = st  4  . count  Tokens  ();
+          
+             System  . out  . println  (""  Constraint  Tokens  "" + number  Of  Tokens  );
+          
+             project  Name = st  4  . next  Token  (). trim  ();
+             System  . out  . println  (""  Constraint  project  Name "" + project  Name  );"

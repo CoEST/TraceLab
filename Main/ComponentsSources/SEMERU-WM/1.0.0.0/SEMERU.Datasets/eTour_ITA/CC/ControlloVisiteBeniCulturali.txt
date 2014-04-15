@@ -1,0 +1,65 @@
+package unisa.gps.etour.control. Gestione Beni Culturali;
+
+import unisa.gps.etour.bean. Bean Visita B C;
+
+/**
+ *  Questa classe ha il compito di controllare i dati di una visita di bene culturale.
+ *  Vengono effettuati vari controlli di consistenza quali la lunghezza di stringhe,
+ * riferimenti nulli, tipi dinamici errati.
+ *
+ * @author  De  Simone  Michelangelo
+ * @version  . 
+ * 
+ *  &#   ;      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I -  University of  Salerno
+ */
+public class  Controllo Visite Beni Culturali
+{
+	/**
+	 * 
+	 *  Effettua il controllo di consistenza richiamando gli opportuni metodi
+	 *
+	 * @param p V B C  Il bean visita bene culturale da controllare
+	 * @return boolean  Il risultato del controllo: true se  O K, false altrimenti
+	 */
+	public static boolean controlla Dati Visita Bene Culturale( Bean Visita B C p V B C)
+	{
+		//  Se il bean è nullo
+		if (p V B C == null || !(p V B C instanceof  Bean Visita B C))
+			return false;
+		
+		//  Controlla l' Id della visita bene culturale
+		// e l'id del relativo turista
+		if (!(p V B C.get Id Bene Culturale() >  ) || !(p V B C.get Id Turista() >  ))
+			return false;
+		
+		//  Controlla il voto (ovviamente sono accettati soltanto voti compresi tra   e  
+		if (!(p V B C.get Voto() >=   && p V B C.get Voto() <=  ))
+			return false;
+		
+		//  Controlla per riferimenti nulli nel bean
+		if (!controlla Dati Nulli(p V B C))
+			return false;
+		
+		//  Controlla la corretta lunghezza delle stringhe
+		if (!(p V B C.get Commento().length() >  ))
+			return false;
+		
+		return true;
+	}
+
+	/**
+	 * 
+	 *  Controlla la presenza di dati nulli in un bean visita bene culturale
+	 *
+	 * @param p B C  Il bean visita bene culturale da controllare
+	 * @return boolean  Il risultato del controllo: true se non ci sono riferimenti nulli; false altrimenti
+	 */
+	public static boolean controlla Dati Nulli( Bean Visita B C p B C)
+	{
+		//  Controllo sulla nullit&agrave; dei campi del feedback
+		if (p B C.get Commento() == null || p B C.get Data Visita() == null)
+			return false;
+
+		return true;
+	}
+}

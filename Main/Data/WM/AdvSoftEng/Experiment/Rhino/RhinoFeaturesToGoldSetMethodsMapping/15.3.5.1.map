@@ -1,0 +1,14 @@
+org.mozilla.javascript.NativeArray.js_concat
+org.mozilla.javascript.BaseFunction.getLength
+org.mozilla.javascript.NativeFunction.getParamCount
+org.mozilla.javascript.BaseFunction.findInstanceIdInfo
+org.mozilla.javascript.BaseFunction.setInstanceIdValue
+org.mozilla.javascript.NativeFunction.getArity
+org.mozilla.javascript.BaseFunction.getInstanceIdValue
+org.mozilla.javascript.IdFunctionObject.getArity
+org.mozilla.javascript.NativeArray.getLengthProperty
+org.mozilla.javascript.FunctionObject.getLength
+org.mozilla.javascript.BaseFunction.getInstanceIdName
+org.mozilla.javascript.IdFunctionObject.getLength
+org.mozilla.javascript.InterpretedFunction.getParamCount
+org.mozilla.javascript.NativeFunction.getLength

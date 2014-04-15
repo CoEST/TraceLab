@@ -1,0 +1,17 @@
+Show anagrafica
+     The service was launched following the express request 
+by the Patient The actor Patient access to the mask 
+main (for instance GUIPrincipale) on the management of 
+all services provided by the system to the request of patients 
+and there select the display of their anagrafica 
+Master Control then goes to the instance of 
+GUIPrincipaleHandler which delegates to the instance of 
+GUIAnagraficaHandler the task of managing the service at this 
+Point control is passed to the instance of PazienteManager 
+which deals with finding by the panel of the Patient 
+Patient data applicant Results are 
+sent backward up to the instance of that GUIAnagraficaHandler 
+turn is responsible for their display on the screen 
+on the management of registries of patients (for instance 
+GUIAnagrafica) This feature is was described by 
+collaboration diagram of Fig 3 9

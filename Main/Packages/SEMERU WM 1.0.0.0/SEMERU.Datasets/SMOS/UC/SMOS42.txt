@@ -1,0 +1,13 @@
+Nome: EliminaGiustifica
+Attori: Amministratore
+Descrizione: Elimina Giustifica
+Precondizioni:
+•	L'utente deve essere loggato al sistema come Amministratore • L'utente ha svolto il caso d'uso “VisualizzaDettagliGiustifica” e il
+sistema sta visualizzando i dettagli di una giustifica. •	Clicca su “Elimina”
+Sequenza degli eventi
+Utente
+Sistema
+1. Elimina la giustifica.
+Postcondizioni:
+• La giustifica è stata eliminata dal sistema. Il sistema ritorna alla schermata del registro.
+•	L’amministratore interrompe l’operazione •	Connessione al server SMOS interrotta

@@ -1,0 +1,1 @@
+Public Functions	This routine provides a means to set the bit arrangement used by the DCI.  When bSpecialArrangement is TRUE, the DCI is set to special bit arrangement mode, otherwise the default mode of no rearrangement is set.

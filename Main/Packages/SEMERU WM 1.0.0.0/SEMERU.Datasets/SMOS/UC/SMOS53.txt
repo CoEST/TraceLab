@@ -1,0 +1,11 @@
+Nome: VisualizzaElencoClassi
+Attori: Personale ATA
+Descrizione: Visualizzazione delle classi
+Precondizioni:
+•	L'utente deve essere loggato al sistema come personale ATA
+Sequenza degli eventi
+Utente
+Sistema
+1. Il sistema mostra all'utente una schermata con tutte le classi presenti nel database, con un tasto per accedere al registro di ogni classe.
+Postcondizioni:
+All'utente viene visualizzata una lista da cui scegliere la classe.

@@ -1,0 +1,132 @@
+﻿<!--
+TraceLab - Software Traceability Instrument to Facilitate and Empower Traceability Research
+Copyright (C) 2012-2013 CoEST - National Science Foundation MRI-R2 Grant # CNS: 0959924
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see<http://www.gnu.org/licenses/>.
+-->
+
+<local:GraphView x:Class="TraceLab.UI.WPF.Views.DockableGraph"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock"
+             xmlns:GraphSharp_Controls="clr-namespace:GraphSharp.Controls;assembly=GraphSharp.Controls" 
+             xmlns:zoom="clr-namespace:TraceLab.UI.WPF.Controls.ZoomControl"
+             xmlns:WPFExtensions_AttachedBehaviours="clr-namespace:WPFExtensions.AttachedBehaviours;assembly=WPFExtensions"
+             xmlns:local="clr-namespace:TraceLab.UI.WPF.Views" 
+             xmlns:adorner="clr-namespace:TraceLab.UI.WPF.Controls.AdornedControl"
+             xmlns:controls="clr-namespace:TraceLab.UI.WPF.Controls"
+             xmlns:commands="clr-namespace:TraceLab.UI.WPF.Commands"       
+             xmlns:NodeControls="clr-namespace:TraceLab.UI.WPF.Views.Nodes"
+             xmlns:Converters="clr-namespace:TraceLab.UI.WPF.Converters"
+             HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"
+             VerticalAlignment="Stretch" VerticalContentAlignment="Stretch"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Views/Nodes/NodeResources.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Views/Nodes/BasicNodeControl.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Views/Nodes/ComponentNodeControl.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Views/Nodes/DecisionNodeControl.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Views/Nodes/ScopeNodeControl.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Views/Nodes/LoopScopeNodeControl.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Views/Nodes/ExitDecisionNodeControl.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Views/Nodes/NodeResourcesForExperiment.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <UserControl.CommandBindings>
+        <CommandBinding Command="{x:Static commands:RoutedCommands.RemoveNodeCommand}"
+                    Executed="ExecuteRemoveNode"
+                    CanExecute="CanExecuteRemoveNode" />
+        <CommandBinding Command="{x:Static commands:RoutedCommands.RemoveSelectedNodesCommand}"
+                    Executed="ExecuteRemoveSelectedNodes" 
+                    CanExecute="CanExecuteRemoveSelectedNodes" />
+        <CommandBinding Command="{x:Static commands:RoutedCommands.ToggleLogLevelCommand}"
+                    Executed="ExecuteToggleLogLevel"
+                    CanExecute="CanToggleLogLevel" />
+        <CommandBinding Command="{x:Static commands:RoutedCommands.CreateConnectionCommand}"
+                    Executed="ExecuteCreateConnection" />
+        <CommandBinding Command="{x:Static commands:RoutedCommands.AddScopeToDecisionCommand}"
+                    Executed="ExecuteAddScopeToDecision" />
+    </UserControl.CommandBindings>
+    <DockPanel AllowDrop="True"
+          PreviewDrop="Graph_Drop"
+          PreviewDragOver="Graph_DragOver" >
+        <zoom:ZoomControl x:Name="zoomControl" PreviewMouseMove="zoomControl_PreviewMouseMove" Mode="Original" FillRectangle="{Binding FillRectangle, ElementName=graphLayout}"
+                          TranslateX="{Binding TranslateX, Mode=TwoWay}" TranslateY="{Binding TranslateY, Mode=TwoWay}" Zoom="{Binding Zoom, Mode=TwoWay}">
+            <Grid>
+                <AdornerDecorator>
+                    <adorner:AdornedControl HorizontalAdornerPlacement="Inside"  VerticalAdornerPlacement="Inside" IsAdornerVisible="True">
+                        <adorner:AdornedControl.AdornerContent>
+                            <Canvas Background="{x:Null}">
+                                <Rectangle x:Name="marqueeAdorner" Stroke="DarkGray" StrokeDashArray="4 4" StrokeThickness="1" SnapsToDevicePixels="True" Visibility="Collapsed" />
+                            </Canvas>
+                        </adorner:AdornedControl.AdornerContent>
+
+                        <controls:NodeGraphLayout x:Name="graphLayout"
+                                Graph="{Binding Path=., Converter={Converters:ExperimentWrapperToExperimentConverter}}"
+                                OverlapRemovalAlgorithmType="FSA"
+                                HighlightAlgorithmType="Simple" 
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                PreviewMouseLeftButtonDown="graphLayout_PreviewMouseLeftButtonDown"
+                                >
+                            <GraphSharp_Controls:VertexControl x:Name="HACK_Vertex" 
+                                                    WPFExtensions_AttachedBehaviours:DragBehaviour.IsDragEnabled="True"
+                                                    Visibility="Hidden" 
+                                                    Canvas.ZIndex="99">
+                                <GraphSharp_Controls:VertexControl.Template>
+                                    <ControlTemplate>
+                                        <Border CornerRadius="3" BorderThickness="1" BorderBrush="Black">
+                                            <Grid Height="6" Width="6"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </GraphSharp_Controls:VertexControl.Template>
+                            </GraphSharp_Controls:VertexControl>
+                            <GraphSharp_Controls:EdgeControl 
+                                                    Foreground="{DynamicResource HighlightedEdgeBrush}"
+                                                    x:Name="HACK_Edge" Visibility="Collapsed" Canvas.ZIndex="90" />
+                        </controls:NodeGraphLayout>
+                    </adorner:AdornedControl>
+                </AdornerDecorator>
+                
+                <NodeControls:NodeInfoItemsPanel ItemsSource="{Binding Path=NodeInfo}">
+                    <NodeControls:NodeInfoItemsPanel.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Canvas Background="{x:Null}" />
+                        </ItemsPanelTemplate>
+                    </NodeControls:NodeInfoItemsPanel.ItemsPanel>
+                    <NodeControls:NodeInfoItemsPanel.ItemContainerStyle>
+                        <Style>
+                            <Setter Property="Canvas.Top" Value="{Binding Path=Y}" />
+                            <Setter Property="Canvas.Left" Value="{Binding Path=X}" />
+                            <Setter Property="WPFExtensions_AttachedBehaviours:DragBehaviour.IsDragEnabled" Value="True"/>
+                            <Setter Property="WPFExtensions_AttachedBehaviours:DragBehaviour.X" Value="{Binding X}"/>
+                            <Setter Property="WPFExtensions_AttachedBehaviours:DragBehaviour.Y" Value="{Binding Y}"/>
+                            <Style.Triggers>
+                                <Trigger Property="UIElement.IsKeyboardFocusWithin" Value="True">
+                                    <Setter Property="Panel.ZIndex" Value="5"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </NodeControls:NodeInfoItemsPanel.ItemContainerStyle>
+                </NodeControls:NodeInfoItemsPanel>
+            </Grid>
+        </zoom:ZoomControl>
+    </DockPanel>
+</local:GraphView>

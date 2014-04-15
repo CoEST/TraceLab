@@ -1,0 +1,36 @@
+Class Data Laboratory: 
+                                                    15/09/2003 
+                                                    Version: 
+                                                    0 01 000 
+Description contains data from a laboratory where they are 
+                   been laid in the Examination 
+                   outpatient 
+Attributes 
+       Name Access Description 
+ZIP Code Private Post 
+Private City city where it is located on 
+                               laboratory 
+Private Address address where you are located on 
+                               laboratory 
+Private party VAT Laboratory 
+Private province Province where it is located on 
+                               laboratory 
+Private ragioneSociale name of the laboratory 
+Private details of the laboratory Addresses 
+Methods 
+       Signature create () Public Access 
+    Description Its task is to create a new object of type 
+                   Laboratory 
+       Signature delete () Public Access 
+    Description Provides elimination of data on 
+                   a laboratory 
+       Signature save () Public Access 
+    Description Provides storage of data 
+                   a laboratory in the S I O 
+Methods 
+       Signature GetAttributes () Public Access 
+    It description of the retrieval of all 
+                   information relating to a laboratory 
+       Signature setAttributes () Public Access 
+    It description to set the attributes of a 
+                   laboratory

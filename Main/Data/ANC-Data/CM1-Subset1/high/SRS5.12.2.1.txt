@@ -1,0 +1,1 @@
+  The DPU-CCM shall implement a mechanism whereby large memory loads and dumps can be accomplished incrementally.

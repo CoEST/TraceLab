@@ -1,0 +1,69 @@
+﻿<!--
+TraceLab - Software Traceability Instrument to Facilitate and Empower Traceability Research
+Copyright (C) 2012-2013 CoEST - National Science Foundation MRI-R2 Grant # CNS: 0959924
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see<http://www.gnu.org/licenses/>.
+-->
+
+<ResourceDictionary x:Class="TraceLab.UI.WPF.Resources.ConfigPathsDataTemplates"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:traceLabSDK="clr-namespace:TraceLabSDK.Component.Config;assembly=TraceLabSDK" 
+             xmlns:local="clr-namespace:TraceLab.UI.WPF.Resources"
+             xmlns:converters="clr-namespace:TraceLab.UI.WPF.Converters"
+             xmlns:controls="clr-namespace:TraceLab.UI.WPF.Controls"
+             xmlns:views="clr-namespace:TraceLab.UI.WPF.Views"
+             xmlns:corevm="clr-namespace:TraceLab.Core.Experiments;assembly=TraceLab.Core"
+             xmlns:diagnostics="clr-namespace:System.Diagnostics;assembly=WindowsBase">
+
+    <!-- Reference to dictionary with style for the Path Editors controls -->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ConfigPathsEditorsStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- The data template for FilePath -->
+    <DataTemplate DataType="{x:Type traceLabSDK:FilePath}">
+        <controls:FilePathTypeEditor IsEnabled="True" Grid.Column="0" Grid.Row="0" Style="{StaticResource FilePathEditorStyle}" ToolTip="{Binding Value.Absolute}">
+            <controls:FilePathTypeEditor.Path>
+                <MultiBinding Converter="{converters:FilePathConverter}" Mode="TwoWay">
+                    <MultiBinding.Bindings>
+                        <!-- The FilePath -->
+                        <Binding Path="Value" Mode="TwoWay"/>
+                        <!-- Expriment Path -->
+                        <Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type views:MainWindow}}" Path="DataContext.ExperimentDocumentWrapper[0].TopLevel.ExperimentInfo.FilePath" />
+                    </MultiBinding.Bindings>
+                </MultiBinding>
+            </controls:FilePathTypeEditor.Path>
+        </controls:FilePathTypeEditor>
+    </DataTemplate>
+
+    <!-- The data template for DirectoryPath -->
+    <DataTemplate DataType="{x:Type traceLabSDK:DirectoryPath}">
+        <controls:DirectoryPathTypeEditor IsEnabled="True" Grid.Column="0" Grid.Row="0" Style="{StaticResource DirectoryPathEditorStyle}" ToolTip="{Binding Value.Absolute}">
+            <controls:DirectoryPathTypeEditor.Path>
+                <MultiBinding Converter="{converters:FilePathConverter}" Mode="TwoWay">
+                    <MultiBinding.Bindings>
+                        <!-- DirectoryPath -->
+                        <Binding Path="Value" Mode="TwoWay"/>
+                        <!-- Expriment Path -->
+                        <Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type views:MainWindow}}" Path="DataContext.ExperimentDocumentWrapper[0].TopLevel.ExperimentInfo.FilePath" />
+                    </MultiBinding.Bindings>
+                </MultiBinding>
+            </controls:DirectoryPathTypeEditor.Path>
+        </controls:DirectoryPathTypeEditor>
+    </DataTemplate>
+
+</ResourceDictionary>

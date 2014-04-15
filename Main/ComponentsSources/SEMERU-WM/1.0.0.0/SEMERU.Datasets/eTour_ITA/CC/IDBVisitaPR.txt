@@ -1,0 +1,67 @@
+package unisa.gps.etour.repository;
+
+import java.sql. S Q L Exception;
+import java.util. Array List;
+
+import unisa.gps.etour.bean. Bean Visita P R;
+
+/**
+ *  Interfaccia per la gestione dei feedback relativi ad un determinato  Punto di
+ *  Ristoro
+ * 
+ * @author  Martone  Giuseppe
+ * @version  .  �      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I �  University
+ *          of  Salerno
+ */
+public interface  I D B Visita P R
+{
+
+	/**
+	 *  Aggiunge una visita ad un punto di ristoro
+	 * 
+	 * @param p Visita  Visita da aggiungere
+	 * @throws  S Q L Exception
+	 */
+	public boolean inserisci Visita P R( Bean Visita P R p Visita) throws  S Q L Exception;
+
+	/**
+	 *  Modifica una visita
+	 * 
+	 * @param p Visita  Visita da modificare
+	 * @throws  S Q L Exception
+	 * @return  True se e' stata modificata false altrimenti
+	 */
+	public boolean modifica Visita P R( Bean Visita P R p Visita) throws  S Q L Exception;
+
+	/**
+	 *  Estrae la lista delle visite di un punto di ristoro
+	 * 
+	 * @param p Id Punto Di Ristoro  Identificativo del punto di ristoro
+	 * @throws  S Q L Exception
+	 * @return  Lista delle visite
+	 */
+	public  Array List< Bean Visita P R> ottieni Lista Visita P R(int p Id Punto Di Ristoro)
+			throws  S Q L Exception;
+
+	/**
+	 *  Estrae una visita effettuata da un turista ad un punto di ristoro
+	 * 
+	 * @param p Id Punto Di Ristoro  Identificativo del punto di ristoro
+	 * @param p Id Turista  Identificativo del turista
+	 * @throws  S Q L Exception
+	 * @return  Visita
+	 */
+	public  Bean Visita P R ottieni Visita P R(int p Id Punto Di Ristoro, int p Id Turista)
+			throws  S Q L Exception;
+
+	/**
+	 *  Estrae la lista delle visite di un  Turista
+	 * 
+	 * @param p Id Turista  Identificativo del turista
+	 * @return  Lista delle visite
+	 * @throws  S Q L Exception
+	 */
+	public  Array List< Bean Visita P R> ottieni Lista Visita P R Turista(int p Id Turista)
+			throws  S Q L Exception;
+
+}

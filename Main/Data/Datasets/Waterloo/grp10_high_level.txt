@@ -1,0 +1,76 @@
+F1	System that acts as the Call Manager that processes the exchanges between the individual phone subsystems, and maintains a database of all the system clients.~
+F2	The Phone System, through the System Interface Console, can be turned on or off.~
+F3	Embedded code that runs on the phone’s hardware. There are multiple instances, which is dependent on the amount of units in the IP Phone network.~
+F4	System that translates the protocol information from the IP Phone hardware to the Call Managing Server and vice versa.~		
+F5	System that translates the protocol information between XML and Signaling Server/Call Manager.~		
+F6	Graphics User Interface (GUI) application that provides access to Phone System management and client account modifications.~
+F7	Nortel i2004 IPPhone~
+F8	Database application system that manages client accounts. ~
+F9	Tabular association, located on the Server, of IP Phone Numbers to IP Addresses of the Nortel i2004 IPPhones~
+F10	Tabular association, located on the Server, of IP Phone Numbers to Client Accounts~
+F11	The Phone System shall receive a communication request from an active Caller to another active Callee, and then make an audio connection to the specified Phone Number/IP mapping.~
+F12	The System Console shall be accessed by an Administrator, and provide a GUI to monitor and control a network of phones (Server) and client accounts (Client Database).~
+F13	A Caller with a disabled account can not originate a call to a Callee.~
+F14	A Caller account that has been resumed from a suspended state can originate a call to a Callee.~				
+F15	A successful network connection between a Caller and Callee creates a successful audio communication.~					
+F16	Any disruption in the development of the network connection between a Caller and Callee causes an unsuccessful audio connection.~
+F17	The Nortel i2004 IP Phone will start ringing after a successful connection from a Caller to a Callee’s phone number.~
+F18	The Nortel i2004 IP Phone will stop ringing after the Callee’s phone handset is released (i.e. “off hook”).~
+F19	A Caller with an active account is allowed to send a call request, using the IP Phone, to a specified Callee phone number.~		
+F20	A Callee with an active account is allowed to receive a call request, using the IP Phone, from a specified non-filtered Caller phone number.~				
+F21	A Caller can make a 911 emergency call at anytime.~
+F22	A Callee whose phone channel is occupied by other network activity will return a busy signal to the Caller.~
+F23	A Callee with a disabled account can not receive any phone calls from any Caller.~
+F24	A Callee account that has been resumed from a suspended state can receive a call from any Caller.~	
+F25	A Caller whose phone handset is “off hook” will return a dial tone to the Caller.~				
+F26	A Callee whose phone handset is “off hook” will return a busy signal to the Caller.~
+F27	A Caller can place the phone handset “on hook” at anytime during a communication exchange and terminate the audio and data connection.~
+F28	A Callee can place the phone handset “on hook” at anytime during a communication exchange and terminate the audio and data connection.~					
+F29	A Caller whose number is identified as being restricted under the Callee’s account can not complete the phone connection.~				
+F30	An invalid Callee phone number will not establish a phone connection~
+F31	A Caller that does not have a specified Phone feature listed in their account will not have it available for use.~
+F32	A Callee that does not have a specified Phone feature listed in their account will not have it available for use.~						
+F33	Any faults, failures, or status checks of the phone hardware system is displayed to the Administrator through the System Console GUI interface.~
+F34	Faults in specific phone hardware or in a specific network of phones are automatically alerted to the System Console. Passing alerts are also automatically sent back to the System Console.~
+F35	System and phone hardware status can be manually checked by the Administrator to ensure that they are running properly.~
+F36	Errors or exceptions that occur in the operation of the Phone System software, (i.e. phone subsystem, server, administrative console) are immediately displayed to the Administrator.~
+F37	Remote initialization of a selected IP Phone from the System Console.~
+F38	Remote disabling of a selected IP Phones functionality from the System Console.~
+F39	A reset signal from the System Console will restart the software in a specified Phone Subsystem(s).~
+F40	A new record is added into the client database through the System Console.~			
+F41	A client account is terminated from the active phone system through the System Console, but the record is archived in the client database.~
+F42	Client accounts and activities for up to 7 years are stored in the Server database.~
+F43	A client that can not pay the specified bill amount is not allowed to use the IP Phone System.~
+F44	The attributes of a client’s account can be modified through the System Console.~				
+F45	Input by an Administrator, through the System Interface Console, must maintain the consistency of the Server network and Client database. Any problems with the input will produce an equivalent error message describing the problem.~
+F46	The Phone System call processing load is adjusted through the System Console.~
+F47	All transactions in the Phone System are logged and archived in the Server database.~
+F48	After the successful completion of a communication transaction the cost of the exchange is immediately calculated.~
+F49	The Server database automatically generates a client’s bill value after a given period of time.~			
+F50	After a specified time period has been reached an email summarizing the activities and cost of the client’s account is sent.~
+F51	An Administrator can manually send a preformatted electronic or paper-based summary of the client’s account activities and cost of the client’s account. The Administrator can request additional information to be added in the bill summary.~
+F52	Termination of an account’s services results in the automatic generation of an email containing the current billing summary and costs are sent.~
+F53	Upon reception of payment for a particular account, the transaction is recorded and the user account associated with the bill is updated.~					
+F54	Any client bill can be viewed by the Administrator through the System Console.~
+F55	A new plan is created and added to the Server database through the System Console.~
+F56	The attributes of a billing plan can be modified through the System Console.~					
+F57	Changes in the status of either an IP address or phone number or both from an account are modified on the IP address/phone number mapping table automatically.~
+F58	All archived data regarding clients, bill transactions, communication logs, and Phone System history can be viewed by the Administrator through the System Console.~
+NF1	Every client that uses the Phone System through an IP Phone must have an active account in the Server database.~
+NF2	Every Administrator that modifies the Server settings or Client database must have an active account in the Server.~
+NF3	Network hardware modularity so that additional Nortel i2004 IP Phones can be easily added to the network with minimal overhead.~
+NF4	Users of standard land line connections experience the same reliability in communication with the IP Phone System.~				
+NF5	Users and Administrators should understand the documentation for the Phone Subsystem, and Server with little difficulty.~
+NF6	Changes requested/issued to a user’s account attributes are applied to the proper account.~		
+NF7	Failure in the main Phone System Server will be supported by a secondary server that substitutes for the original server.~
+NF8	Users that know how to operate, dial a phone number, and communicate with a standard telephone can use the IP Phone System~						
+NF9	Administrators that have access privileges to the Server, can access a standard a common Unix terminal, and utilize a GUI interface can use the System Administrative Console.~
+NF10	Both audio and data connections are performed seamlessly with minimal latency.~
+NF11	Network resources to support the specified load balance should be available at all times.~
+NF12	Users of the System Interface Console that can navigate a windows-based application, access and modify information in windows-based input fields will feel comfortable with the GUI design.~
+NF13	The network is compatible with other IP Phone manufactures.~
+NF14	Each major Phone System component exists independently of each other.~
+NF15	Users of the Phone Subsystem are assured of a secure audio communication.~
+NF16	Administrators of the Phone System are assured of a secure data network.~						
+NF17	Administration can run test scripts to ensure the functionality of key Phone System features and communication network integrity.~
+NF18	Faults in the phone hardware can be disabled for maintenance and re-enabled as the Phone System is active.~			

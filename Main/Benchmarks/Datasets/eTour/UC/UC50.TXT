@@ -1,0 +1,13 @@
+Use case name VISUALIZZASITIVISITATI 
+View the list of sites for which it has issued a feedback. 
+Participating 
+Actor initialized by Tourist 
+Entry 
+• conditions Turista has successfully authenticated to the system. 
+Flow of events User System 
+1. Select the feature to display the list of sites visited personal. 
+2 Upload the list of sites for which the tourist has issued a Feedback 
+Exit conditions • The system displays a list of sites visited. 
+• Interruption of the connection to the server ETOUR. 
+Quality 
+requirements

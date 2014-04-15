@@ -1,0 +1,58 @@
+F1	Grant administrator access through system console.~
+F2	Administrator can find available phone numbers.~
+F3	Administrator can find available IP address.~
+F4	Administrator can associate an IP address to a phone number.~
+F5	The administrator can map the IP address and phone number to a customer’s account.~
+F6	Grant accounts the ability to originate and receive calls.~
+F7	Administrator can block incoming calls to an account.~
+F8	Administrator can exclusively allow incoming calls to an account.~
+F9	Administrator can disassociate an IP address and number pair from a customer’s account.~
+F10	Administrator can disassociate an IP address from an number.~
+F11	Administrator can view associates between phone numbers, IP address and customer accounts.~
+F12	Administrator can view which devices, if any, are out of service.~
+F13	Administrator can take a phone out of service.~
+F14	Administrator can put a phone back in service.~
+F15	System alerts administrator of any errors that occur.~
+F16	Administrator can reset any phone.~
+F17	System periodically runs automated hardware fault tests on itself.  Administrator can view results of tests in report form.~
+F18	Administrator can set the maximum number of allowable connections between phones.~
+F19	System can store records of calls made.~
+F20	Administrator can print a bill for a customer’s account.~
+F21	System calculates and includes taxes on bills.~
+F22	If customer fails to make a bill payment, a warning appears on the next bill.~
+F23	At the end if each customer’s billing period, system will automatically print out a bill.~
+F24	Administrator can assign a billing plan to a customer.~
+F25	Administrator can create a new billing plan.~
+F26	Administrator can view the details of any customer’s account.~
+F27	Administrators can create new administrative accounts.~
+F28	The administrator can take a customer’s information and create a new account for him/her with a billing plan.~
+F29	The administrator can suspend a user’s account.~
+F30	The administrator can cancel a customer’s account.~
+F31	Accounts that have been suspended for 30 days automatically become cancelled.~
+F32	Administrator can view the history of a system loads in graph form.~
+F33	Administrator can log out of the system console.~
+F34	If an administrative is inactive for five minutes, then he is automatically logged out.~
+F35	The caller will hear a dial tone before placing a call.~
+F36	The user will be able to dial a number to make a call.~
+F37	The system will ensure that the number of current connections is less than maximum number of allowable connections before allowing a new call.~
+F38	The system can establish a connection between two phones.~
+F39	The system can disconnect a call between two phones.~
+F40	If system will be able to detect if a phone is left off the hook.~
+F41	If a phone tries to establish a connection with another phone under certain conditions, then the caller will receive a busy signal.~
+F42	Billing periods for customers can start on different days for each customer.~
+F43	Phone numbers shall belong to groups, which represent their areas.  Calling phone numbers outside the group will incur long distance charges.~
+F44	If the callee does not pick up the phone when being called, after five minutes of ringing the call disconnections.~
+F45	The system only will only allow one administrator to be logged in at one time.~
+F46	The administrator should be able to access the system console through a TCP/IP protocol.~
+F47	All error messages will be assigned severity levels.~
+F48	Administrator can reverse the suspension of a customer’s account.~
+F49	A user can call the administrator (0000) at any time~
+NF1	The phone system must be consistently available for customer use, both in making and receiving calls.~
+NF2	The phone system should be built to handle small numbers of customer accounts and phones, as well as large numbers of accounts and phones.~
+NF3	The phone network and administration systems should be secure and unavailable to unauthorized users.~
+NF4	The phone system should respond promptly to both administrators and customers using the phone system.~
+NF5	The phone system should be available for use by the customers and administrators for the vast majority of times.~
+NF6	The system should function reliably, responding correctly to the administrator and customer commands, not giving frequent errors or crashing.~
+NF7	No customers should be able to make phone calls without being charged for them.~
+NF8	The administration system console should be easy for administrators to use.  Functions should be intuitive so that administrators can use them with minimal training.~
+NF9	The telephone interface and feedback should provide customers with an experience consistent with other telephone systems.~

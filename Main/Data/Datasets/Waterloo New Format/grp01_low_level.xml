@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp01_low_level</id>
+    <name>Waterloo grp01_low_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp01_low_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>UC1</id>
+      <content>Number:	UC1
+Name:	Log On
+Authors:	N.B., C.P., S.W., C.A.
+Event:	Administrator wishes to log in.
+Username and password as input.
+Actors:	Administrator
+Overview:	The administrator logs into the administration system, gaining access to the rest of the provided functions.  The administrator cannot use the system until they log in.  The administrator enters a username and a password to log in.  Only one administrator can be longed in at a time.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC2</id>
+      <content>Number:	UC2
+Name:	Create Customer Account
+Authors:	N.B., C.P., S.W., C.A.
+Event:	Administrator wishes to create a new customer account.
+Customer�s name, address as input.
+Actors:	Administrator
+Overview:	The administrator creates a new customer account.  The administrator first inputs the new customer�s information into the system.  Then the administrator finds the customer�s IP address and assigns the correct phone to the customer�s account.  The administrator finds an unassigned phone number and assigns it to the account, and then assigns the customer a billing plan.  Finally, the administrator initializes the phone and starts the customer�s service.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC4</id>
+      <content>Number:	UC4
+Name:	Find IP Address
+Authors:	N.B.
+Event:	Administrator wishes to find the IP address of a new customer�s phone.
+Actors:	Administrator
+Overview:	The administrator finds the IP address of a new customer�s phone in order to associated it with the account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC6</id>
+      <content>Number:	UC6
+Name:	Find Unassigned Phone Number
+Authors:	N.B.
+Event:	Administrator wishes to find an unassigned phone number
+Actors:	Administrator
+Overview:	The administrator finds an unassigned phone number.  Either the administrator wants to find any unassigned phone number, or he/she wants to check if a requested phone number is free.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC7</id>
+      <content>Number:	UC7
+Name:	Assign Phone Number
+Authors:	N.B.
+Event:	Administrator wishes to assign a phone number to a customer�s phone, phone number, account ID as input
+Actors:	Administrator
+Overview:	The administrator assigns a phone number to a customer�s account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC8</id>
+      <content>Number:	UC8
+Name:	Assign Billing Plan
+Authors:	N.B., C.P., S.W., C.A.
+Event:	Administrator wishes to assign a billing plan to a customer.
+Account ID, billing plan as input.
+Actors:	Administrator
+Overview:	The administrator assigns an existing billing plan to a customer.  This use case covers both assigning a billing plan to a new customer and changing an existing customer�s plan.  If the customer is new, then the billing period starts on the day it is assigned.  If the administrator is changing an existing customer�s plan, then the customer has the option of either starting a new billing period immediately or scheduling the change of plan for when the current plan�s period ends.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC14</id>
+      <content>Number:	UC14
+Name:	Free Phone Number (*removed*)</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC15</id>
+      <content>Number:	UC15
+Name:	Cancel Service
+Authors:	N.B., C.P., S.W., C.A.
+Event:	Administrator wishes to cancel a customer�s account.
+Account ID as input.
+Actors:	Administrator
+Overview:	The administrator cancels the service of a customer.  This use case bypasses the suspension phase of a customer�s account and proceeds directly to the cancellation.  After cancellation, the account�s phone number and phone/IP address are free for reuse.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC16</id>
+      <content>Number:	UC16
+Name:	Suspend Service
+Authors:	N.B., C.P., S.W., C.A.
+Event:	Administrator wishes to suspend a customer�s service.
+Customer ID as input.
+Actors:	Administrator
+Overview:	The administrator suspends the service of one of the customers.  After the suspension, the customer cannot make or receive any calls.  The sole exception is that the customer may call the administrator number after suspension.  If an account has been suspended for 30 days, then the account is cancelled and its phone number may be reassigned to a new customer.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC17</id>
+      <content>Number:	UC17
+Name:	Resume Service
+Authors:	N.B., C.P., S.W., C.A.
+Event:	Administrator wishes to resume a suspended customer�s account.
+Customer ID as input.
+Actors:	Administrator
+Overview:	The administrator reverses the suspension of a customer�s service.  The customer may again make and receive calls.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC18</id>
+      <content>Number:	UC18
+Name:	Create Billing Plan
+Authors:	N.B., C.P., S.W., C.A.
+Event:	Administrator wishes to create a new billing plan.
+Flat rate, per minute charge, time parameters as input.
+Actors:	Administrator
+Overview:	The administrator creates a new billing plan that he/she can later assign to customers.  Each bill plan consists of two parts: the flat rate and per minute charge.  The flat rate is the base cost of the plan, charged to the user each month.  The per minute charge is the cost of making calls.  The per minute charge may vary over the time of day or day of week.  The billing period for each plan lasts for one month.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC19</id>
+      <content>Number:	UC19
+Name:	Create Administrator Account
+Authors:	N.B., C.P., S.W., C.A.
+Event:	Administrator wishes to create new administrator account.
+New account�s username and password as input.
+Actors:	Administrator
+Overview:	The administrator creates accounts for other administrators.  The administrator provides a username and a password.  Another administrator may then log in with that username and password.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC21</id>
+      <content>Number:	UC21
+Name:	Edit Filter Lists
+Authors:	N.B., C.P., S.W., C.A.
+Event:	Administrator wishes to edit customer�s filter lists.
+Customer ID, numbers to remove or add, lists to remove or add to as input.
+Actors:	Administrator
+Overview:	The administrator edits a customer�s filter lists.  Each customer has two filter lists: black list, which cause numbers on the list to be blocked; and white list, which allows only the users on the list to call, blocking everyone else.  The administrator may add or remove numbers from either filter list.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC22</id>
+      <content>Number:	UC22
+Name:	Turn On Filter
+Authors:	N.B., C.P., S.W., C.A.
+Event:	Administrator wishes to turn on a customer�s filter.
+Customer ID, filter to turn on as input.
+Actors:	Administrator
+Overview:	The administrator turns on either the black list filter or the white list filter.  The filter selection is mutually exclusive; either the black filter is on, the white filter is on, or no filter is on.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC23</id>
+      <content>Number:	UC23
+Name:	Turn Off Filter
+Authors:	N.B., C.P., S.W., C.A.
+Event:	Administrator wishes to turn off all filters on customer�s phone.
+Customer ID as input.
+Actors:	Administrator
+Overview:	The administrator turns off the filter on the customer�s phone.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC24</id>
+      <content>Number:	UC24
+Name:	Set System Parameters
+Authors:	N.B., C.P., S.W., C.A.
+Event:	Administrator wishes to set system parameters.
+Parameters as input.
+Actors:	Administrator
+Overview:	The administrator sets certain system parameters, such as the maximum allowable number of connections.  If the administrator sets the maximum allowable number of collections lower than the current number of connections, then the system will refuse to make new connections but will continue to serve the existing ones.  The administrator will also be able to view system information, such as the current system load.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC25</id>
+      <content>Number:	UC25
+Name:	View Accounts
+Authors:	N.B., C.P., S.W., C.A.
+Event:	Administrator wishes to view customer accounts.
+Custom ID as input.
+Actors:	Administrator
+Overview:	The administrator can view the account information of all customers, including their billing records.  The information about customers� accounts remain in the system regardless of the status of the account (active, suspended or cancelled).</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC27</id>
+      <content>Number:	UC27
+Name:	Print Bill
+Authors:	N.B., C.P., S.W., C.A.
+Event:	Administrator wishes to print a bill. Customer ID, billing period as input.
+Actors:	Administrator
+Overview:	The administrator prints out a customer�s billing record for a chosen billing period.  The printed bill is formatted for sending to the customer.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC29</id>
+      <content>Number:	UC29
+Name:	View Error Messages
+Authors:	N.B., C.P., S.W., C.A.
+Event:	Administrator wishes to view error messages.
+Actors:	Administrator
+Overview:	The administrator views a log of all the error messages.  The error messages all have severity levels, timestamps, and intelligible descriptions.  The most severe errors are displayed first.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC31</id>
+      <content>Number:	UC31
+Name:	Reboot Phone (*removed*)</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC32</id>
+      <content>Number:	UC32
+Name:	Enable Phone (*removed*)</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC33</id>
+      <content>Number:	UC33
+Name:	Disable Phone (*removed*)</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC35</id>
+      <content>Number:	UC35
+Name:	Log Off
+Authors:	N.B., C.P., S.W., C.A.
+Event:	Administrator wishes to log out.
+Actors:	Administrator
+Overview:	The administrator logs out of the administration system.  After the log out, the administrator cannot use the system until he/she logs in again.  After the administrator logs out, another administrator may log in.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC36</id>
+      <content>Number:	UC36
+Name:	Make Call
+Authors:	N.B., C.P., S.W., C.A.
+Event:	Caller wishes to call callee.
+Callee�s phone number as input.
+Actors:	Caller
+Overview:	This use case captures the process by which the caller places a call to the callee.  The caller picks up the phone, receives a dial tone, and then proceeds to dial 4 digits to make the call.
+If the caller�s account is cancelled, then they do not receive a dial tone.  If the caller�s account is suspended, then they receive a dial tone, but cannot call anyone but the administrator.
+If the callee is busy, then the caller receives a busy signal.  If the callee is not busy, then the caller hears the ringing signal until the callee picks up the phone, or until five minutes pass and the system drops the connection.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC40</id>
+      <content>Number:	UC40
+Authors:	N.B., C.P., S.W., C.A.
+Event:	Caller is calling callee.
+Caller ID as input.
+Name:	Receive Call
+Actors:	Callee
+Overview:	This use case captures the process by which a callee receives the caller�s call.  The receiver�s phone will ring until the callee picks up the phone.  The caller and callee can then communicate until one of them hangs up (UC21).</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC42</id>
+      <content>Number:	UC42
+Name:	Call Administrator (*removed*)</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

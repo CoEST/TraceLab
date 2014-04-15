@@ -1,0 +1,34 @@
+           Requirement
+           "public String m  _  Requirement  ID =  """";
+              public String m  _  Project =  """";
+              public String m  _  Module  Path  =  """";
+              public String m  _  Content = """";
+              public String m  _  Reg  Flag = ""  N  "";"
+           "public Requirement  () {// empty constructor
+          
+              }"
+           "public Object clone  () throws Clone  Not  Supported  Exception {
+            
+            Requirement requirement= (  Requirement  ) super  . clone  ();
+            
+            return requirement ; 
+           }"
+           "public void Read  Values  (  String Requirement  ID   String Project   String Module  Path   String Content   String Reg  Flag  ) {
+            this  . m  _  Requirement  ID = Requirement  ID  ;
+            this  . m  _  Project = Project  ;
+            this  . m  _  Module  Path = Module  Path  ;  
+            this  . m  _  Content = Content  ;
+            this  . m  _  Reg  Flag = Reg  Flag  ;
+           }"
+           "public void Parse  Requirement  (  String Text  Line  ) {
+          
+               String  Tokenizer Line  St  ;        
+                  Line  St = new String  Tokenizer  (  Text  Line   """");
+          
+                  m  _  Requirement  ID=Line  St  . next  Token  ();
+                  m  _  Project  =Line  St  . next  Token  ();
+                  m  _  Module  Path  =Line  St  . next  Token  ();
+                  m  _  Content  =Line  St  . next  Token  ();
+                  m  _  Reg  Flag  =Line  St  . next  Token  ();  
+            
+           }"

@@ -1,0 +1,290 @@
+           Event Parser
+           "private Connection conn  ;
+           private Result  Set rs  ;
+           private Statement stmt  ;"
+           "//  Event  Parser Constructor
+           // initializes the Database connection
+           public Event  Parser  ()
+           {
+            try
+            {
+             Class  . for  Name  ("" sun  . jdbc  . odbc  .  Jdbc  Odbc  Driver  "");
+             this  . conn = Driver  Manager  . get  Connection  ("" jdbc  : odbc  :  EBT  "" ""  EBT  "" ""  EBT  "");
+             this  . stmt = conn  . create  Statement  ();
+            }
+            catch (  Exception ex  )
+            {
+             System  . out  . println  (""  A problem occurred establishing the database connection  "");
+            }
+           }// end of Event  Parser  ()"
+           "public void update  Event  (  String str   String ID  )
+           {
+          
+            String m  Project  ;
+            String m  Event  ;
+            String m  Type  ;
+            String m  Num  ;
+            String m  requirement ;
+            String m  Module  ;
+            String m  SQL  ;
+            String m  Date  ;
+            String m  Reqtext  ;
+            String m  Required  ;
+            String m  String  Type  ;
+            int m  Loop  ;
+            Result  Set rs  ;
+          
+          
+            m  Event = ID  ;
+          
+            // Tokenize the metadata from the string into fields
+            String  Tokenizer tokens = new String  Tokenizer  ( str   ""|"");
+            // Get Project Type   Number   and Date  .
+          
+            m  String  Type = tokens  . next  Token  (); // Should always be ""  EVENT  "" in this case  .
+          
+            m  Type = tokens  . next  Token  (); //  For example   ""  Decompose  "".
+            m  Loop = new Integer  ( tokens  . next  Token  ()). int  Value  (); // Number of Events that are included in this string  .
+          
+            m  Date = tokens  . next  Token  ();
+          
+            // Update master file of Events  .
+            m  SQL =
+             ""  INSERT INTO EBT  _  Event  Master (  Event  ID   Event  Type   Event  Time  ) VALUES (  '  ""
+              + m  Event  // This is the ID of the Event  .
+              + ""  '    '  ""
+              + m  Type
+              + ""  '    '  ""
+              + m  Date
+              + ""  '  )"";
+            try
+            {
+             this  . stmt = this  . conn  . create  Statement  ();
+             this  . stmt  . execute  Update  ( m  SQL  );
+            }
+            catch (  Exception e  )
+            {
+             System  . out  . println  (""  Error in updating Event  Master  "" + e  );
+            }
+          
+            // Get tokens for individual requirements
+            // by tokenizing the fields in each requirement
+            String temp  requirement ;
+            //  The following loop travels through all the events included in the string
+            // and the token starts from after the date part  .
+            while ( m  Loop  -- > -1  )
+            {
+             temp  requirement= tokens  . next  Token  ();
+             String  Tokenizer requirement Tokens = new String  Tokenizer  ( temp  requirement  """");
+             m  requirement= requirement Tokens  . next  Token  (); //  requirementnumber
+             m  Project = requirement Tokens  . next  Token  (); //  Project name
+             m  Module = requirement Tokens  . next  Token  (); //  Modular Path
+             m  Reqtext = requirement Tokens  . next  Token  (); //  This is used for processing not updating
+             m  Required = requirement Tokens  . next  Token  (); // ' Y ' or ' N '
+          
+             // Update individual requirements related to the event  .
+             m  SQL =
+              ""  INSERT INTO EBT  _  Event  Detail (  Event  ID   Requirement  No   Project  Name   Module  Path   Subscribed  To  ) VALUES (  '  ""
+               + m  Event
+               + ""  '    '  ""
+               + m  Req
+               + ""  '    '  ""
+               + m  Project
+               + ""  '    '  ""
+               + m  Module
+               + ""  '    '  ""
+               + m  Required
+               + ""  '  )"";
+          
+             // Here is some comments from Haroon
+             // If this is a subscribable requirement send it to the event  Notifier
+             // Need to check m  Required  .
+             // For example in a Decompose event - only the first requirement that existed prior to the event
+             // is marked as ' Y '  .
+             // This may need to be changed - incase a keyword subscription exists in a decomposed requirement  .
+          
+             //  Try to notify the subscriber
+             if ( m  Required  . equals  (""  Y  ""))
+             {
+          
+              Event  Notifier ed = new Event  Notifier  (
+                    m  requirement 
+                    m  Project  
+                    m  Module  
+                    m  Reqtext  
+                    m  Event  
+                    str  
+                    m  Type  );
+             }
+          
+             // implement the update to the table EBT  _  Event  Detail
+             try
+             {
+              this  . stmt = this  . conn  . create  Statement  ();
+              this  . stmt  . execute  Update  ( m  SQL  );
+             }
+             catch (  Exception e  )
+             {
+              System  . out  . println  (""  ERRO  "");
+             }
+            }// end of while ( requirementnumber  )
+           }// end of update  Event  ()"
+           "//  Check if a subscription exists
+           public boolean Check  Subscription  (  String str  )
+           {
+          
+            String  Tokenizer tokens = new String  Tokenizer  ( str   ""|"");
+            String Message type = tokens  . next  Token  ();
+            String Subscriber  Name = tokens  . next  Token  ();
+            String requirement= tokens  . next  Token  ();
+          
+            String  Tokenizer sub tokens = new String  Tokenizer  ( requirement  """");
+            String Requirement  ID = sub tokens  . next  Token  ();
+            String Project = sub tokens  . next  Token  ();
+            String Module  Path = sub tokens  . next  Token  ();
+          
+            String m  SQL =
+             ""  SELECT Subscriber  Name   Subscription  requirement No   Subscription  Module FROM SUBSCRIPTION ""
+              + "" WHERE Subscription  Projname = '  ""
+              + Project
+              + ""  ' AND Subscription  requirement No = '  ""
+              + Requirement  ID
+              + ""  ' AND Subscription  Module = '  ""
+              + Module  Path
+              + ""  ' AND Subscriber  Name = '  ""
+              + Subscriber  Name
+              + ""  ' AND Subscriber  Dependency = ' Requirements  '  "";
+          
+            try
+            {
+             this  . rs = this  . stmt  . execute  Query  ( m  SQL  );
+            }
+            catch (  Exception e  )
+            {
+             System  . out  . println  (""  Error in updating Event  Master  "" + e  );
+            }
+          
+            boolean found  Status = false  ;
+          
+            try
+            {
+             if ( this  . rs  . next  ())
+              found  Status = true  ;
+            }
+            catch (  Exception e  )
+            {
+             System  . out  . println  (""  Error in testing for a result  "");
+            }
+          
+            return found  Status  ;
+           }"
+           "//  Insert a subscription into the ""  Subscription  "" table
+           public void Add  Subscription  (  String str   int ID  )
+           {
+          
+            // Parse the message string and get the fields
+          
+            String  Tokenizer tokens = new String  Tokenizer  ( str   ""|"");
+            String Message type = tokens  . next  Token  ();
+            String Subscriber  User = tokens  . next  Token  ();
+            String Subscriber  Name = tokens  . next  Token  ();
+            String requirement= tokens  . next  Token  ();
+            String Subscriber  Dependency = tokens  . next  Token  ();
+          
+            String  Tokenizer sub tokens = new String  Tokenizer  ( requirement  """");
+            String Requirement  ID = sub tokens  . next  Token  ();
+            String Project = sub tokens  . next  Token  ();
+            String Module  Path = sub tokens  . next  Token  ();
+          
+            // Check whether this subscription already exists  
+            // if so then return
+            String Check  Message =
+             new String  (
+              ""  CHECK  _  SUBSCRIPTION  |""
+               + Subscriber  Name
+               + ""|""
+               + Requirement  ID
+               + """"
+               + Project
+               + """"
+               + Module  Path  );
+          
+            boolean check  Result = Check  Subscription  (  Check  Message  );
+          
+            if ( check  Result == true  )
+             return  ;
+          
+            try
+            {
+             String m  SQL =
+              ""  INSERT INTO Subscription ""
+               + ""(  Subscriber  Name   Subscriber  User   Subscription  Projname   Subscription  Module   Subscription  requirement No   Subscriber  Dependency  )""
+               + "" VALUES (  '  ""
+               + Subscriber  Name
+               + ""  '    '  ""
+               + Subscriber  User
+               + ""  '    '  ""
+               + Project
+               + ""  '    '  ""
+               + Module  Path
+               + ""  '    '  ""
+               + Requirement  ID
+               + ""  '    '  ""
+               + Subscriber  Dependency
+               + ""  '  )"";
+             this  . stmt = conn  . create  Statement  ();
+             this  . stmt  . execute  Update  ( m  SQL  );
+            }
+            catch (  Exception e  )
+            {
+             System  . out  . println  (""  Error in adding subscription  : "" + e  );
+            }
+           }// end of Add  Sub  Scription  ()"
+           "//  Delete  Subscription from the ""  Subscription  "" table
+           public void Delete  Subscription  (  String str   int ID  )
+           {
+            // Parse the message string and get the fields
+            String  Tokenizer tokens = new String  Tokenizer  ( str   ""|"");
+            String Message type = tokens  . next  Token  ();
+            String Subscriber  Name = tokens  . next  Token  ();
+            String requirement= tokens  . next  Token  ();
+          
+            String  Tokenizer sub tokens = new String  Tokenizer  ( requirement  """");
+            String Requirement  ID = sub tokens  . next  Token  ();
+          
+            try
+            {
+          
+             String m  SQL =
+              ""  DELETE FROM Subscription WHERE Subscriber  Name  ='  ""
+               + Subscriber  Name
+               + ""  ' AND Subscription  requirement No  ='  ""
+               + Requirement  ID
+               + ""  '  "";
+             this  . stmt = this  . conn  . create  Statement  ();
+             this  . stmt  . execute  Update  ( m  SQL  );
+            }
+            catch (  Exception e  )
+            {
+             System  . out  . println  (""  Error in deleting subscription  : "" + e  );
+            }
+           }// end of Delete  Subscription"
+           "//  Speculate method will receive a string from the Speculative GUI
+           // tool and parse it using Call  Back class to identify the
+           // performance models
+           public void speculate  (  String str  )
+           {
+            System  . out  . println  (""  Speculate  "");
+            Call  Back cb = new Call  Back  ();
+          
+            cb  . parse  Speculate  Information  ( str  );
+            cb  . identify  Performance  Models  ();
+            cb  . pull  Information  From  Doors  ();
+            cb  . insert  Values  In  Data  Base  ();
+            cb  . create  Execute  String  ();
+           }// end speculate  ()"
+           "public void impact  Report  (  String str  )
+           {
+            Call  Back cb = new Call  Back  ();
+            cb  . parse  Impact  Report  ( str  );
+           }// end impact  Report  ()"

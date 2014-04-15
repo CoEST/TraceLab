@@ -1,0 +1,31 @@
+input test case data Date: 
+    C28 details of a patient I 20/06/2003 
+            data are not invalid 
+            and the tax code is `not 
+            correct (fewer 
+            Character) 
+                                          Version: 
+                                          0 02 000 
+                                          
+Use Case He performs the functions 
+UcInsPaz necessary for input of anagrafica of 
+             a new patient 
+Media Priorities 
+Set up not identified 
+Description test 
+Input Tax: ZCCRCC 
+            Name: Rocco 
+            Surname: Zaccagnino 
+            Sex: M 
+            Birth date: 13/04/1980 
+            Place of birth: Power 
+            Province of birth: PCS 
+            Address: fraz Paoladoce 26 
+            Place of residence: Avigliano 
+            Province of residence: PCS 
+            ZIP code: 85020 
+            Contact information: 0971/87267 347/9908973 
+Oracle Invalid Input: Tax 
+Classes cover valid: CE1 ce3 CE5 CE8 CE10 
+            CE12 CE14 CE16 CE18 CE20 CE28 
+            Classes invalid: CE25

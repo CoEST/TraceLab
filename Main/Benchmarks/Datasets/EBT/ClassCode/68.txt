@@ -1,0 +1,511 @@
+           Events Processor
+           "// event list
+           private JList event  List  ;
+           private Default  List  Model list  Model  ;
+           private Array  List events  ;
+          
+           // popup menu
+           private JPopup  Menu popup  ;
+          
+           // Subscriber name
+           String m  _  Subscriber  Name  ;
+          
+           // list of requirements to be deleted
+           Array  List m  _  Delete  requirement List  ;
+          
+           // list of events to be deleted
+           Array  List m  _  Delete  Event  List  ;
+          
+           // database and eventserver information
+           String m  _  User  Name  =  """";
+           String m  _  DSN=  """";
+           String m  _  Event  Server  IP=  """";
+           String m  _  Event  Server  Port  =  """";
+          
+           Connection m  _ conn  ;
+           Result  Set rs  ;
+           Result  Set rs  1  ;
+           Statement stmt  ;
+           Statement stmt  1  ;
+          
+           Notification  _  Processing m  _ parent  ;"
+           "public Events  Processor  (  Notification  _  Processing parent   boolean modal   String Subs  Name  )
+           {
+          
+               set  Title  (""  Events  Processor  "");
+          
+            add  Window  Listener  ( new Window  Adapter  ()
+            {
+             public void window  Closing  (  Window  Event evt  )
+             {
+              try {
+                    exit  Application  ();
+              }
+              catch (  Exception e  ) {
+              }
+             }
+            });
+          
+               // Get database info from parent
+          
+               m  _  User  Name  =parent  . m  _  User  Name  ;
+            m  _  DSN=parent  . m  _  DSN  ;
+            m  _  Event  Server  IP=parent  . m  _  Event  Server  IP  ;
+            m  _  Event  Server  Port  =parent  . m  _  Event  Server  Port  ;
+          
+               System  . out  . println  (""  Events  Processor  : User Name  : ""+ m  _  User  Name  );
+               System  . out  . println  (""  Events  Processor  : eventlog DSN  : ""+ m  _  DSN  );
+            System  . out  . println  (""  Events  Processor  : eventserver IP  : ""+ m  _  Event  Server  IP  );
+            System  . out  . println  (""  Events  Processor  : eventserver Port  : ""+ m  _  Event  Server  Port  );
+          
+               // Get Subscriber name
+          
+               m  _  Subscriber  Name = Subs  Name  ;
+            m  _ parent = parent  ;
+            m  _  Delete  requirement List = new Array  List  ();
+            m  _  Delete  Event  List = new Array  List  ();
+          
+                  // Create a scroll pane to hold the list
+                  list  Model = new Default  List  Model  ();
+                  event  List = new JList  ( list  Model  );
+                  event  List  . set  Selection  Mode  (  List  Selection  Model  .  SINGLE  _  SELECTION  );
+                  JScroll  Pane scroll  Pane = new JScroll  Pane  ( event  List  );
+                  get  Content  Pane  (). add  ( scroll  Pane  );
+                  list  Model  . clear  ();
+          
+                  events = new Array  List  ();
+          
+                  // Create popup menu
+          
+                  popup = new JPopup  Menu  ();
+          
+              JMenu  Item popup  Open = new JMenu  Item  ();
+              popup  Open  . set  Text (""  Open First Record  "");
+              popup  Open  . add  Action  Listener ( new Action  Listener () {
+                public void action  Performed (  Action  Event evt  ) {
+                   popup  Open  Action  Performed ( evt  );
+                  }
+              }
+              );
+              popup  . add  ( popup  Open  );
+          
+              JMenu  Item popup  View = new JMenu  Item  ();
+              popup  View  . set  Text (""  View Current Record  "");
+              popup  View  . add  Action  Listener ( new Action  Listener () {
+                public void action  Performed (  Action  Event evt  ) {
+                   popup  View  Action  Performed ( evt  );
+                  }
+              }
+              );
+              popup  . add  ( popup  View  );
+          
+              // Add mouse event for popup menu
+              event  List  . add  Mouse  Listener ( new Mouse  Adapter () {
+                   public void mouse  Released (  Mouse  Event evt  ) {
+              if ( evt  . is  Popup  Trigger  ()){
+                       popup  . show  ( evt  . get  Component  () evt  . get  X  () evt  . get  Y  ());
+                       }
+               }
+                  public void mouse  Clicked (  Mouse  Event evt  ) {
+              int click  Count = evt  . get  Click  Count  ();
+              if  ( click  Count  >  =2  ) {
+               double  Click  Event  List  ( evt  );
+              }
+               }
+                 }
+                 );
+          
+                 // get the event list
+          
+                 try {
+             Class  . for  Name  ("" sun  . jdbc  . odbc  .  Jdbc  Odbc  Driver  "");
+             m  _ conn = Driver  Manager  . get  Connection  ("" jdbc  : odbc  :""+ m  _  DSN  """""""");
+             stmt = m  _ conn  . create  Statement  ();
+             stmt  1 = m  _ conn  . create  Statement  ();
+            }
+            catch (  Exception ex  ) {
+             System  . out  . println  (""  Problem with connection  :  "" + ex  );
+               }
+          
+            String m  SQL = ""  SELECT * FROM Event  Details WHERE Subscriber  Name = '  "" + Subs  Name + ""  '  "";
+               System  . out  . println  (""  Events  Processor  : m  SQL  : ""+ m  SQL  );
+          
+            try {
+          
+             rs = stmt  . execute  Query  ( m  SQL  );
+          
+             while ( rs  . next  ())
+             {
+          
+              Notification  _  Event n  Evt = new Notification  _  Event  ();
+                 n  Evt  . m  _  Subscriber  Name = rs  . get  String  (  1  );
+                 n  Evt  . m  _  Event  ID = rs  . get  String  (  2  );"
+           "void exit  Application  () {
+              m  _ parent  .  Update  Display  List  ();
+               this  . set  Visible  ( false  );
+               this  . dispose  ();
+              }"
+           "// action for "" double click on Event List  ""
+           private void double  Click  Event  List (  Mouse  Event evt  )
+           {
+          
+            int index = event  List  . get  Selected  Index  ();
+                  if ( index !  = -1  )
+                  {
+                   try
+                   {
+                    Notification  _  Event n  Evt  1 = (  Notification  _  Event  ) events  . get  ( index  );
+                    Notification  _  Event n  Evt  2 = (  Notification  _  Event  ) n  Evt  1  . clone  ();
+                    if ( index == 0  )
+                    {
+                        new Event  Detail  Dialog  ( this   true   n  Evt  2   true  ). show  ();
+                       }
+                       else
+                       {
+                        new Event  Detail  Dialog  ( this   true   n  Evt  2   false  ). show  ();
+                       }
+                      }
+                   catch  (  Exception e  )
+                   {
+              System  . out  . println  (""  Problem when viewing current record  :  "" + e  );
+                   }
+                  }
+          
+           }"
+           "// action for ""  Open First Record  "" in popup menu
+           private void popup  Open  Action  Performed (  Action  Event evt  )
+           {
+            if (! list  Model  . is  Empty  ())
+            {
+             int index =0  ;
+             try
+             {
+                    Notification  _  Event n  Evt  1 = (  Notification  _  Event  ) events  . get  ( index  );
+                    Notification  _  Event n  Evt  2 = (  Notification  _  Event  ) n  Evt  1  . clone  ();
+                       new Event  Detail  Dialog  ( this   true   n  Evt  2   true  ). show  ();
+                      }
+                   catch  (  Exception e  )
+                   {
+              System  . out  . println  (""  Problem when opening first record  :  "" + e  );
+                   }
+            }
+           }"
+           "/ action for ""  View Current Record  "" in popup menu
+           private void popup  View  Action  Performed (  Action  Event evt  )
+           {
+            int index = event  List  . get  Selected  Index  ();
+                  if ( index !  = -1  )
+                  {
+                   try
+                   {
+                    Notification  _  Event n  Evt  1 = (  Notification  _  Event  ) events  . get  ( index  );
+                    Notification  _  Event n  Evt  2 = (  Notification  _  Event  ) n  Evt  1  . clone  ();
+                       new Event  Detail  Dialog  ( this   true   n  Evt  2   false  ). show  ();
+                      }
+                   catch  (  Exception e  )
+                   {
+              System  . out  . println  (""  Problem when viewing current record  :  "" + e  );
+                   }
+                  }
+           }"
+           "void Delete  Event  (  String Subscriber  Name   String Event  ID  )
+           {
+          
+            try
+            {
+          
+             int i   j  =-1  ;
+             for ( i  =0  ; i  < events  . size  (); i  ++)
+             {
+              Notification  _  Event n  Evt = (  Notification  _  Event  ) events  . get  ( i  );
+              if (( n  Evt  . m  _  Subscriber  Name  . equals  (  Subscriber  Name  ))&&( n  Evt  . m  _  Event  ID  . equals  (  Event  ID  ))) {
+               j  =i  ;
+              }
+             }
+          
+             if ( j  !  =-1  )
+             {
+              events  . remove  ( j  );
+             }
+          
+             Update  Display  List  ();
+          
+             String m  SQL = ""  DELETE FROM Event  Details WHERE Subscriber  Name  ='  ""+  Subscriber  Name
+                +""  ' AND Event  ID='  ""+  Event  ID  +""  '  "";
+                System  . out  . println  (""  Events  Processor  : Delete  Event  : ""+ m  SQL  );
+                stmt = m  _ conn  . create  Statement  ();
+                   stmt  . execute  Update  ( m  SQL  );
+          
+             m  SQL = ""  DELETE FROM Requirement  Details WHERE Subscriber  Name  ='  ""+  Subscriber  Name
+               +""  ' AND Event  ID='  ""+  Event  ID  +""  '  "";
+                System  . out  . println  (""  Events  Processor  : Delete  Event  : ""+ m  SQL  );
+                stmt = m  _ conn  . create  Statement  ();
+                   stmt  . execute  Update  ( m  SQL  );
+          
+            }
+                  catch  (  Exception e  )
+                  {
+             System  . out  . println  (""  Problem with deleting events  :  "" + e  );
+                  }
+          
+           }"
+           "void Delete  Related  Events  ()
+           {
+          
+            while ( m  _  Delete  requirement List  . size  ()!  =0  )
+            {
+          
+             Requirement requirement= (  Requirement  )( m  _  Delete  requirement List  . get  (  0  ));
+          
+             m  _  Delete  requirement List  . remove  (  0  );
+             Delete  Subscription  ( m  _  Subscriber  Name   requirement );
+          
+             Iterator i = events  . iterator  ();
+          
+             while  ( i  . has  Next  ())
+             {
+              Notification  _  Event n  Evt = (  Notification  _  Event  )( i  . next  ());
+              if ( n  Evt  . m  _  Event  Type  . equals  (""  New  "")) {}
+              else if ( n  Evt  . m  _  Event  Type  . equals  (""  Obsolete  ""))
+              {
+               Requirement requirement 1 = (  Requirement  )( n  Evt  . m  _  Left  Side  . get  (  0  ));
+               if ( requirement 1  . m  _  Requirement  ID  . equals  ( requirement . m  _  Requirement  ID  ))
+               {
+                m  _  Delete  Event  List  . add  ( n  Evt  . m  _  Event  ID  );
+               }
+                 }
+               else if ( n  Evt  . m  _  Event  Type  . equals  (""  Modify  ""))
+               {
+               Requirement requirement 1 = (  Requirement  )( n  Evt  . m  _  Left  Side  . get  (  0  ));
+               if ( requirement 1  . m  _  Requirement  ID  . equals  ( requirement . m  _  Requirement  ID  ))
+               {
+                m  _  Delete  Event  List  . add  ( n  Evt  . m  _  Event  ID  );
+               }
+                 }
+              else if ( n  Evt  . m  _  Event  Type  . equals  (""  Refine  ""))
+              {
+               Requirement requirement 1 = (  Requirement  )( n  Evt  . m  _  Left  Side  . get  (  0  ));
+          
+               if ( requirement 1  . m  _  Requirement  ID  . equals  ( requirement . m  _  Requirement  ID  ))
+               {
+                m  _  Delete  Event  List  . add  ( n  Evt  . m  _  Event  ID  );
+                Iterator j = n  Evt  . m  _  Right  Side  . iterator  ();
+                while  ( j  . has  Next  ())
+                {
+                 Requirement requirement 2 = (  Requirement  )( j  . next  ());
+                 try
+                 {
+                  Requirement requirement 3 = (  Requirement  ) requirement 2  . clone  ();
+                  m  _  Delete  requirement List  . add  ( requirement 3  );
+                 }
+                 catch  (  Exception e  )
+                 {
+                  System  . out  . println  (""  Error  :  ""+ e  );
+                 }
+          
+                }
+          
+               }
+                    }
+              else if ( n  Evt  . m  _  Event  Type  . equals  (""  Replace  ""))
+              {
+               Requirement requirement 1 = (  Requirement  )( n  Evt  . m  _  Left  Side  . get  (  0  ));
+               if ( requirement 1  . m  _  Requirement  ID  . equals  ( requirement . m  _  Requirement  ID  ))
+               {
+                m  _  Delete  Event  List  . add  ( n  Evt  . m  _  Event  ID  );
+                Iterator j = n  Evt  . m  _  Right  Side  . iterator  ();
+                while  ( j  . has  Next  ())
+                {
+                 Requirement requirement 2 = (  Requirement  )( j  . next  ());
+                 try
+                 {
+                  Requirement requirement 3 = (  Requirement  ) requirement 2  . clone  ();
+                  m  _  Delete  requirement List  . add  ( requirement 3  );
+                 }
+                 catch  (  Exception e  )
+                 {
+                  System  . out  . println  (""  Error  :  ""+ e  );
+                 }
+          
+                }
+          
+               }
+                    }
+              else if ( n  Evt  . m  _  Event  Type  . equals  (""  Decompose  ""))
+              {
+               Requirement requirement 1 = (  Requirement  )( n  Evt  . m  _  Left  Side  . get  (  0  ));
+               if ( requirement 1  . m  _  Requirement  ID  . equals  ( requirement . m  _  Requirement  ID  ))
+               {
+                m  _  Delete  Event  List  . add  ( n  Evt  . m  _  Event  ID  );
+                Iterator j = n  Evt  . m  _  Right  Side  . iterator  ();
+                while  ( j  . has  Next  ())
+                {
+                 Requirement requirement 2 = (  Requirement  )( j  . next  ());
+                 try
+                 {
+                  Requirement requirement 3 = (  Requirement  ) requirement 2  . clone  ();
+                  m  _  Delete  requirement List  . add  ( requirement 3  );
+                 }
+                 catch  (  Exception e  )
+                 {
+                  System  . out  . println  (""  Error  :  ""+ e  );
+                 }
+                }
+               }
+              }
+                    else if ( n  Evt  . m  _  Event  Type  . equals  (""  Merge  ""))"
+           "void Add  Subscription  (  String Subscriber  Name   Requirement requirement )
+           {
+          
+            String Subscriber  Dependency = ""  Requirements  "";
+          
+            String Message = ""  ADD  _  SUBSCRIPTION  ""+""|"";
+            Message +  = m  _  User  Name + ""|"";
+            Message +  = Subscriber  Name + ""|"";
+            Message +  = requirement . m  _  Requirement  ID + """";
+            Message +  = requirement . m  _  Project + """";
+            Message +  = requirement . m  _  Module  Path + ""|"";
+            Message +  = Subscriber  Dependency  ;
+          
+            int Port  No = Integer  . parse  Int  ( m  _  Event  Server  Port  );
+          
+            try
+            {
+             Socket socket = new Socket  ( m  _  Event  Server  IP    Port  No  );
+             Output  Stream os = socket  . get  Output  Stream  ();
+             Output  Stream  Writer osw = new Output  Stream  Writer  ( os  );
+             Print  Writer pw = new Print  Writer  ( osw  );
+             pw  . println  (  Message  );
+             System  . out  . println  (""  Sent message  :  ""+ Message + ""  to  : "" + m  _  Event  Server  IP
+                  + ""  "" + m  _  Event  Server  Port  );
+             pw  . flush  ();
+             socket  . close  ();
+            }
+            catch (  IO Exception e  )
+            {
+             System  . err  . println  (""  Failed to send Add  Subscription request  : "" + e  );
+            }
+          
+           }"
+           "void Delete  Subscription  (  String Subscriber  Name   Requirement requirement )
+           {
+            String Message = ""  REMOVE  _  SUBSCRIPTION  ""+""|"";
+            Message +  = Subscriber  Name + ""|"";
+            Message +  = requirement . m  _  Requirement  ID + """";
+            Message +  = requirement . m  _  Project + """";
+            Message +  = requirement . m  _  Module  Path  ;
+          
+            int Port  No = Integer  . parse  Int  ( m  _  Event  Server  Port  );
+          
+            try
+            {
+             Socket socket = new Socket  ( m  _  Event  Server  IP    Port  No  );
+             Output  Stream os = socket  . get  Output  Stream  ();
+             Output  Stream  Writer osw = new Output  Stream  Writer  ( os  );
+             Print  Writer pw = new Print  Writer  ( osw  );
+             pw  . println  (  Message  );
+             System  . out  . println  (""  Sent message  :  ""+ Message + ""  to  : ""
+                 + m  _  Event  Server  IP  + ""  "" + m  _  Event  Server  Port  );
+             pw  . flush  ();
+             socket  . close  ();
+            }
+            catch (  IO Exception e  )
+            {
+             System  . err  . println  (""  Failed to send Delete  Subscription request  : "" + e  );
+            }
+          
+           }"
+           "void Update  Display  List  ()
+           {
+          
+                  list  Model  . remove  All  Elements  ();
+          
+            for ( int j  =0  ; j  < events  . size  (); j  ++)
+            {
+          
+             Notification  _  Event n  Evt = (  Notification  _  Event  ) events  . get  ( j  );
+          
+             String display  String = n  Evt  . m  _  Subscriber  Name + "": "" + ""(""+ n  Evt  . m  _  Event  Type  +"")    "";
+          
+             Iterator i = n  Evt  . m  _  Left  Side  . iterator  ();
+          
+                   while  ( i  . has  Next  ())
+                   {
+                    display  String +  = ((  Requirement  )( i  . next  ())). m  _  Requirement  ID  ;
+                    display  String +  = "" "";
+                   }
+                   display  String +  = "" =  > "";
+              i = n  Evt  . m  _  Right  Side  . iterator  ();
+          
+                   while  ( i  . has  Next  ())
+                   {
+                    display  String +  = ((  Requirement  )( i  . next  ())). m  _  Requirement  ID  ;
+                    display  String +  = "" "";
+                   }
+          
+                   list  Model  . add  Element  ( display  String  );
+          
+            }
+          
+           }"
+           "// Passes a CHECK  _  SUBSCRIPTION message to the eventserver and waits for a response
+              private boolean Check  _  Subscription  (  String ip  
+                         int Port  No  
+                         String Subscriber  Name  
+                         String Requirement  Number  
+                         String Project  Name  
+                         String Path  Name  )
+              {
+               String Result  String = new String  ();
+          
+            try
+            {
+          
+             // Open a socket
+             Socket socket = new Socket  ( ip    Port  No  );
+          
+             // Send a CHECK  _  SUBSCRIPTION request to the eventserver
+             Output  Stream os = socket  . get  Output  Stream  ();
+             Output  Stream  Writer osw = new Output  Stream  Writer  ( os  );
+             Print  Writer pw = new Print  Writer  ( osw  );
+          
+             String Message = new String  (""  CHECK  _  SUBSCRIPTION  |""+ Subscriber  Name + ""|""
+               + Requirement  Number + """" + Project  Name +"""" + Path  Name  );
+             pw  . println  (  Message  );
+             System  . out  . println  (""  Sent message  :  ""+ Message + ""  to  : ""
+                 + m  _  Event  Server  IP  + ""  "" + m  _  Event  Server  Port  );
+             pw  . flush  ();
+          
+             // Get a reply from CHECK  _  SUBSCRIPTION request
+             Input  Stream is = socket  . get  Input  Stream  ();
+             Input  Stream  Reader isr = new Input  Stream  Reader  ( is  );
+             Buffered  Reader br = new Buffered  Reader  ( isr  );
+             Result  String = br  . read  Line  ();
+             System  . out  . println  (""  Result String  :  ""+  Result  String  );
+          
+             socket  . close  ();
+          
+            }
+            catch (  IO Exception e  )
+            {
+             System  . err  . println  (""  Failed to send CHECK  _  SUBSCRIPTION to eventserver  : "" + e  );
+            }
+          
+            if (  Analyze  _  Check  Subscription  (  Result  String  ) == true  ) return true  ;
+            else return false  ;
+              }"
+           "// Takes an event string returned from the eventserver and
+              // extracts True or False response
+              private boolean Analyze  _  Check  Subscription  (  String str  )
+              {
+            String  Tokenizer tokens = new String  Tokenizer  ( str  ""|"");
+            String Message type = tokens  . next  Token  ();
+            String Subscriber  Name = tokens  . next  Token  ();
+            String requirement= tokens  . next  Token  ();
+            String result = tokens  . next  Token  ();
+          
+            if  ( result  . region  Matches  ( true    0  ""  TRUE  ""  0    4  ))
+             return true  ;
+          
+            return false  ;
+             }"

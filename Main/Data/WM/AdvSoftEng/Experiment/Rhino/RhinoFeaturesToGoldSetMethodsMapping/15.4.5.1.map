@@ -1,0 +1,2 @@
+org.mozilla.javascript.regexp.RegExpImpl.match_glob
+org.mozilla.javascript.NativeArray.put

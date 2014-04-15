@@ -1,0 +1,28 @@
+Inserting anagrafica laboratory 
+      The service was launched following the express request 
+by the actor The Operator logs on to form 
+main (for instance GUIPrincipale) and there select the function 
+The laboratories certified management control then 
+GUIPrincipaleHandler to the instance of the delegation which application 
+GUIAnagraficaLaboratorioHandler to the task of providing the 
+The service first step is to obtain a list of all 
+Laboratories therefore control passes to the instance of 
+LaboratorioManager through which instances of Laboratory 
+retrieves the list and return it backward up the application 
+of GUIAnagraficaLaboratorioHandler Now that object 
+shall display the list of laboratories received 
+the mask on the management of database 
+laboratories (for instance GUIAnagraficaLaboratorio) The Operator 
+activates the function of the register inclusion of the laboratory 
+inserts the data of a new outpatient and confirm the data 
+control passes to the instance of the GUIAnagraficaLaboratorioHandler 
+which delegation is to include a new laboratory 
+The application of LaboratorioManager through 
+The body of Laboratory to ensure the inclusion and 
+saving data on the new lab passes the 
+Subsequent GUIAnagraficaLaboratorioHandler which in turn 
+deals with notification by the success of the 
+displaying a message on the screen 
+to managing the laboratories (for instance 
+GUIAnagraficaLaboratorio) This feature has been described ` 
+through collaboration diagram of Fig 3 4

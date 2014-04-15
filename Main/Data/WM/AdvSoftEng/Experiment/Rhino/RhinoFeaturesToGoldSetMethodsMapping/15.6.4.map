@@ -1,0 +1,2 @@
+org.mozilla.javascript.NativeBoolean.getClassName
+org.mozilla.javascript.IdScriptableObject.incompatibleCallError

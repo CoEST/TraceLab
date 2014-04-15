@@ -1,0 +1,28 @@
+Class Patient Data: 
+                                                    15/09/2003 
+                                                    Version: 
+                                                    0 01 000 
+Description contains the age of the patients who are 
+                   at outpatient 
+Attributes 
+       Name Access Description 
+dataRegistrazion Private Data in which the patient has 
+and contacted for the first time 
+                               the outpatient 
+Methods 
+       Signature create () Public Access 
+    Description Its task is to create a new object of type 
+                   Patient 
+       Signature GetAttributes () Public Access 
+    It description to find all the information to 
+                   relating to it 
+       Signature save () Public Access 
+    Description Provides storage of data from an 
+                   Patient in the S I O 
+       Signature setAttributes () Public Access 
+    It description to set the attributes of a 
+                   Patient 
+Methods 
+       Signature validaPaziente () Public Access 
+    It description of the procedure for validation 
+                   Patient

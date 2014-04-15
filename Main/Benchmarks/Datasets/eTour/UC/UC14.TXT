@@ -1,0 +1,14 @@
+Use case name RICERCATURISTA 
+Returns the list of tourist account in the system according to certain parameters. 
+Partecipating 
+Actor initialization Agency Operator 
+Entry 
+Operator conditions • The agency has logged. 
+Flow of events User System 
+1. Access the search functionality of a tourist. 
+2 Show the form. 
+3 Fill out the form and submit. 
+4 Processing the request. 
+Exit conditions • The system returns a list of accounts that meet Turista your search criteria. 
+• Interruption of the connection to the server ETOUR. 
+Quality requirements

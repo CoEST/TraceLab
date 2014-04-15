@@ -1,0 +1,198 @@
+           subscribermanager
+           "Socket a  Socket  ;
+           int ID  ;
+           String Event  Log  ;
+          
+           Connection conn  ;
+           Result  Set rs  ;
+           Statement stmt  ;"
+           "// constructor   this object will be created in the main method of these class
+           Subscriber  Listener  () { }"
+           "// constructor   this object will be created in the main method of these class
+           Subscriber  Listener  (  Socket socket   int ID   String ELog  )
+           {
+          
+               this  . a  Socket = socket  ;
+            this  .  ID = ID  ;
+            this  .  Event  Log = ELog  ;
+          
+            try
+            {
+             Class  . for  Name  ("" sun  . jdbc  . odbc  .  Jdbc  Odbc  Driver  "");
+             conn = Driver  Manager  . get  Connection  ("" jdbc  : odbc  :""+  Event  Log  """""""");
+             stmt = conn  . create  Statement  ();
+            }
+            catch (  Exception ex  )
+            {
+                System  . out  . println  (""  A problem occurred establishing the database connection  "");
+               }
+           }// end of constructor"
+           "public void send  Impact  Report  To  Event  Server  (  String text  )
+           {
+          
+            //  String impact  Report = text  ;
+            System  . out  . println  (""  WOW IN SEND REPORT  "");
+            System  . out  . println  (""  The IR = ""+ text  );
+            String server  IP = ""  140  .  192  .  37  .  150  "";
+            int port = 1701  ;
+            String execute  String = text  ;
+          
+            try
+            {
+          
+             Socket socket = new Socket  ( server  IP   port  );
+          
+             Output  Stream os = socket  . get  Output  Stream  ();
+             Output  Stream  Writer osw = new Output  Stream  Writer  ( os  );
+             Print  Writer pw = new Print  Writer  ( osw  );
+          
+             System  . out  . println  (""  Sending to ip address  :    "" + server  IP  );
+             System  . out  . println  ("" sending to port number  :    "" + port  );
+          
+             pw  . println  ( execute  String  );
+             pw  . flush  ();
+          
+            }
+            catch (  Unknown  Host  Exception e  )
+            {
+             System  . out  . println  (""  Unknown Host Exception  "");
+             System  . out  . println  (""  Problem occurred in the create  Execute  String  () method  .  Unknown Host Exception  "");
+             e  . print  Stack  Trace  ();
+            }
+            catch (  IO Exception e  )
+            {
+             System  . out  . println  (""  IO Exception  "");
+             System  . out  . println  (""  Problem occurred in the create  Execute  String  () method  . I  /  O Exception  "");
+             e  . print  Stack  Trace  ();
+            }
+           }// end of method send  Impact  Report  To  Event  Server  ()"
+           "// run method will be execute from the main method when u say Thread  . start  () in main
+           public void run  ()
+           {
+          
+            System  . out  . println  (""  Inside Run method  "");
+          
+            String str  =  """";
+            try
+            {
+             // set up for reading the byte data in to character data
+             Input  Stream is = a  Socket  . get  Input  Stream  ();
+          
+             Input  Stream  Reader isr = new Input  Stream  Reader  ( is  );
+          
+             Buffered  Reader br = new Buffered  Reader  ( isr  );
+          
+             // read buffer until the end and assign it to a string object
+             str = br  . read  Line  ();
+            }
+            catch (  IO Exception e  1  )
+            {
+             System  . out  . println  (""  AROR n RUN 1st try  "" + e  1  );
+            }
+          
+            // if  ( str  . trim  (). equals  ("" quit  "")) break  ;
+            System  . out  . println  (""  ID "" + ID );
+            System  . out  . println  (""  The string from a  Socket is =  "" + str  );
+            // Log incoming event to the log DB
+          
+            try
+            {
+          
+             System  . out  . println  (""  Inside notify try  "");
+             // create Notification  _  Event Object
+             Notification  _  Event evt = new Notification  _  Event  ();
+             // call parse event method with string object
+             evt  .  Parse  Event  ( str  );
+          
+             String m  SQL = ""  INSERT INTO Event  Details (  Subscriber  Name   Event  ID   Message  Type   Event  Type   Number  Of  Requirements   Event  Time  ) VALUES (  '  "" + evt  . m  _  Subscriber  Name + ""  '    '  ""+ evt  . m  _  Event  ID + ""  '    '  "" + evt  . m  _  Message type + ""  '    '  "" + evt  . m  _  Event  Type + ""  '  "" + evt  . m  _  Number  Of  Requirements + ""  '  "" + evt  . m  _  Event  Time + ""  '  )"" ;
+             //  System  . out  . println  (""  1   ""+ m  SQL  );
+             stmt  . execute  Update  ( m  SQL  );
+          
+                   Iterator i = evt  . m  _  Left  Side  . iterator  ();
+          
+                   while  ( i  . has  Next  ())
+                   {
+                    Requirement requirement 1 = (  Requirement  )( i  . next  ());
+              m  SQL = ""  INSERT INTO Requirement  Details (  Subscriber  Name   Event  ID   Requirement  ID   Requirement  Project   Requirement  Path   Requirement  Text   LHS  _  RHS  ) VALUES (  '  "" + evt  . m  _  Subscriber  Name + ""  '    '  ""+ evt  . m  _  Event  ID + ""  '    '  "" + requirement 1  . m  _  Requirement  ID + ""  '    '  "" + requirement 1  . m  _  Project + ""  '    '  "" + requirement 1  . m  _  Module  Path + ""  '    '  "" + requirement 1  . m  _  Content + ""  '     ' left  '  )"" ;
+              //  System  . out  . println  ( m  SQL  );
+              stmt  . execute  Update  ( m  SQL  );
+                   }
+          
+                i = evt  . m  _  Right  Side  . iterator  ();
+                   while  ( i  . has  Next  ())
+                   {
+                    Requirement requirement 1 = (  Requirement  )( i  . next  ());
+              m  SQL = ""  INSERT INTO Requirement  Details (  Subscriber  Name   Event  ID   Requirement  ID   Requirement  Project   Requirement  Path   Requirement  Text   LHS  _  RHS  ) VALUES (  '  "" + evt  . m  _  Subscriber  Name + ""  '    '  ""+ evt  . m  _  Event  ID + ""  '    '  "" + requirement 1  . m  _  Requirement  ID + ""  '    '  "" + requirement 1  . m  _  Project + ""  '    '  "" + requirement 1  . m  _  Module  Path + ""  '    '  "" + requirement 1  . m  _  Content + ""  '     ' right  '  )"" ;
+              //  System  . out  . println  ( m  SQL  );
+              stmt  . execute  Update  ( m  SQL  );
+                  }
+                  }
+                  catch (  Exception e  )
+                  {
+             System  . err  . println  (""  Catching here = "" + e  );
+            }
+            finally
+            {
+             System  . out  . println  (""  Disconnect  ! ID=  "" + ID  );
+             try
+             {
+              a  Socket  . close  ();
+              System  . out  . println  ("" socket closed  "");
+             }
+              catch (  IO Exception e  ) { System  . out  . println  ("" sublis  "" + e  ); }
+             }
+            }// end of run method"
+           "// start of class from here
+           public static void main  (  String  [] args  )
+           {
+            // default port number
+            int port = 1705  ;
+            // the message coming from eventserver
+            String Log  Name = ""  Event  Log  "";
+            //  Log  Name is the database name used to log the details of event
+            //  Comment Added By Amit Uchat
+            if ( args  . length < 2  )
+            {
+             System  . out  . println  (""  Default port of 1705 used  "");
+             System  . out  . println  (""  Default Event  Log Data  Source name  :  ' Event  Log  ' used  "");
+            }
+            else
+            {
+             // assign the values to the data members
+             port = Integer  . parse  Int  ( args  [  0  ]);
+             Log  Name = args  [  1  ];
+            }
+          
+            int count = 0  ;
+            try
+            {
+             // create server socket with either default or given port number
+             Server  Socket s = new Server  Socket  ( port  );
+          
+              // keep on listening for any incoming request for connection
+             while  ( true  )
+             {
+              // create accept socket
+              System  . out  . println  (""  Waiting on port  : "" + port  );
+               Socket socket = s  . accept  ();
+          
+              System  . out  . println  (""  Connect  ! ID=  "" + ++ count  );
+              // create self object with given parameters
+              Subscriber  Listener server = new Subscriber  Listener  ( socket   count   Log  Name  );
+          
+          
+             // create new thread with the server object just now we created
+               Thread thread = new Thread  ( server  );
+               // execute run method of the thread
+                thread  . start  ();
+          
+          
+             }
+            }
+            catch (  Exception e  )
+            {
+             System  . err  . println  (""  Server error  "");
+             System  . err  . println  ( e  );
+            }
+          
+           }"

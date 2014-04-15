@@ -1,0 +1,12 @@
+Nome:VisualizzaDettagliClasse
+Attori: Amministratore
+Descrizione: Permette di visualizzare i dettagli di una classe
+Precondizioni:
+•	L’utente ha già effettuato il login • L’utente ha già eseguito il caso d’uso “VisualizzaElencoClassi” e il sistema
+sta visualizzando l’elenco delle classi di un anno accademico •	Clicca sul pulsante “mostra dettagli classe”
+Sequenza degli eventi
+Utente
+Sistema
+1.	Visualizza la scherma con i dettagli di una singola classe: nome, indirizzo, anno scolastico.
+Postcondizioni:
+•	L’utente visualizza le informazioni dettagliate relative ad una classe. •	Connessione al server SMOS interrotta

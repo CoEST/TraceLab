@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>cm1-low</id>
+    <name>CM 1 Target Artifacts </name>
+    <version>1.32</version>
+    <description>Collection of Target Artifacts for the CM1 dataset (low)</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>DPUSDS5.12.0.1</id>
+      <content>Command and Control CSC	The Command and Control (CCM) CSC is a Level 2 reuse component from the INSTRUMENT Y project.  The Command and Control CSC includes the following components:
+* A Control Task, ccmCtrlTask(), which initializes the DPU FSW and spawns other tasks at bootup, schedules the production of DPU housekeeping data packets, monitors the execution of other tasks, and schedules the execution of other periodic tasks such as the heartbeat message and the watchdog strobe; and
+* A Command Dispatch Task, ccmCmdTask(), which receives and dispatches real-time commands received from the SCU or the ICU.
+Major data structures include:
+* A Static Data table that keeps track of the operational state.  Data included in this table includes housekeeping production rates, CCM specific flags, and the number of commands executed.
+* A Command Queue into which commands are placed when they arrive, via interrupt, from the ICU or the SCU.
+* An Error/Event Queue which accumulates error and event codes which are reported by the DPU FSW.  These error and event codes are removed from the queue and placed into a telemetry packet at a given interval and included in DPU housekeeping data.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.12.1.1.1</id>
+      <content>Flight Software Initialization	The Command and Control CSC is initialized by spawning the CCM Control Task, ccmCtrlTask(), from the operating system startup task, usrRoot().  After the task is spawned it calls a function, ccmInit(), which creates the error/event queue, instantiates needed semaphores and installs various ISRs.  Finally, it spawns the remaining tasks which comprise the DPU FSW. When the CCM Control Task starts up, it reads DPU configuration startup defaults from the SYSTEM_CONFIG_AREA in EEPROM.  If the SYSTEM_CONFIG_AREA checksum is bad, hard-coded defaults are used.  The CCM Control Task initializes the remaining CSCs by calling the applicable initialization function, or if the CSC has an associated task, by spawning the task using the VxWorks® function, taskSpawn().  When the CCM Control Task initializes a CSC, it passes the startup defaults read from EEPROM as parameters to the task initialization function. In addition to its task initialization activities, ccmInit(), also initializes the command length verification table by calling ccmCmdLengthInit().  The command processor uses the created table to verify expected command lengths for newly received commands.
+
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.12.1.2.1</id>
+      <content>Control and Monitoring	the CCM Control Task initializes the DPU FSW. It is the responsibility of the CCM Control Task to establish a successful boot.  It does so by blocking on temporary semaphores, each with a 5 second timeout, after spawning the SCU Interface Task and the CCM Command Task.  If both of these tasks report a successful initialization by giving the semaphore, the CCM Control Task toggles the BC_INDEX parameter in EEPROM to indicate a successful boot.  If either task does not report a successful initialization, the CCM Control Task disables the watchdog strobe to effect a reboot of the DPU.  The rationale for selecting the successful initialization of these two tasks as the definition of a successful boot is that the DPU FSW requires these tasks, as a minimum, to establish ground contact and provide commandability.Once this initialization is complete, the task blocks on a binary semaphore which is given by the SCUI Command ISR upon arrival of the 1 Hz Clock Message.  In the event a Clock Message does not arrive, the semaphore will time out after 1.5 seconds.  The CCM Control Task remains alive to create and transmit DPU housekeeping at the appropriate intervals, perform various periodic processing tasks, and to process memory dump commands.	The final call to ccmErrEnq() is performed in order that if an error occurs in an interrupt service routine, a global variable is set to the value of the errno which is then enqueued into the Error/Event Queue as part of this task’s normal processing.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.12.1.2.2</id>
+      <content>Control and Monitoring	The DPU produces eight types of housekeeping packets.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.12.1.2.3</id>
+      <content>Control and Monitoring	Every time the CCM Control executes, it calls ccmPerProcess() to handle periodic processing responsibilities.  Such responsibilities include analog to digital conversion updates, DPU task monitoring, ICU heartbeat message production, and watchdog strobe. The ccmHealthChk() function, called by ccmPerProcess() verifies the execution of other tasks by monitoring the amount of time that has elapsed since each task last reported.  Other tasks report their execution to the CCM Control Task by calling the function, ccmTaskReport(), providing their task index.  Each task has an expected execution frequency, and if a task does not execute as expected, an error is reported in DPU housekeeping.  If the Command Dispatch Task fails to report for an extended period, the DPU will execute a reboot, since it is impossible to command the DPU if this task is not executing, otherwise it will strobe the watchdog
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.12.1.2.4</id>
+      <content>Control and Monitoring	the CCM Control Task also handles memory dump commands.  In the event of a data dump command, the CCM Control Task will break the dump into manageable pieces and dump a small portion at a time, each time the task is awakened.  The purpose of this “deferred” activity is to prevent a large dump from consuming available CPU time by keeping the high-priority CCM Command Dispatch Task busy for an extended period.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.12.1.3.1</id>
+      <content>Command Handling	The DPU accepts commands via two interfaces – from the Spacecraft via the MIL-STD-1553 interface, and from the ICU via the SSI interface.  Any of the DPU commands can be sent from the SCU or the ICU.  The source for a command from the DPU is one of the following:
+* ICU – command is generated and sent by the ICU via the SSI.
+* SCU – command is generated and sent by the SCU via the 1553.
+* G-ICU – command is generated on the ground and sent to the DPU via the ICU/SSI.
+* G-SCU – command is generated on the ground and sent to the DPU via the SCU/1553.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.12.1.3.2</id>
+      <content>Command Handling	When a command arrives from the SCU (via the 1553 interface) or the ICU (via the SSI interface), the respective ISR will enqueue the command packet into a Command Queue, and then give the semaphore to awaken the ccmCmdTask().  Since it is possible for the DPU to send a command to itself, commands may arrive at interrupt context or task context.  Therefore the CCM maintains two queues – one for interrupt context which is not semaphore protected, and one for task context which is semaphore protected.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.12.1.3.3</id>
+      <content>Command Handling	Commands are dequeued from the Command Queue and executed by the Command Dispatch Task, ccmCmdTask().  This task blocks on a semaphore which is given by ccmCmdEnq(). The ccmCmdTask() wakes on the semaphore and calls ccmCmdProcess() to process waiting commands.  The ccmCmdProcess() function subsequently retrieves waiting commands from the Command Queue and invokes ccmCmdDispatch() to verify the expected length of the command and execute it.  If command echo is enabled, ccmCmdDispatch() will call ccmHkMkCmdEcho() to blindly echo the command back to the ground.  Counts for both rejected and executed commands are maintained. If the command sent to ccmCmdEnq() is either a 1 Hz Clock Time message or an Attitude message from the spacecraft, the command will not be forwarded to the Command Queue, but instead will be executed directly while still in interrupt context.  Attitude messages are forwarded to dpaCommandSend(), while the 1 Hz Clock Time message’s parameters are passed to tisTimeSync() in order to synchronize the current time.  Any other non DPU or spacecraft observatory messages are quietly discarded without reporting an error.In order to guarantee that ccmCmdTask() task reports in with the CCM Control Task periodically in absence of a ground command, the semaphore has a timeout value of 20 seconds.  If the semaphore times out, the task will verify no commands are on the Command Queue, and then report in to the CCM Control Task by calling ccmTaskReport().
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.12.1.4.1</id>
+      <content>Memory Upload and Download Handling	There are two ways to upload data to the DPU:
+* Memory Poke (D_MEM_DAT_POKE command), or
+* Memory Upload (D_MEM_DAT_UPLD command).
+The memory poke command is used when a small (&lt;=Z bytes) of data need to be poked into a DPU memory location.  The Z byte limitation is derived from the Company X command length constraint.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.12.1.4.2</id>
+      <content>Memory Upload and Download Handling	When larger amounts of memory must be uploaded to the DPU, such as in the case of a software patch or full software upload, the regular memory upload is used.  Memory uploads are accomplished by sending a series of individual D_MEM_DAT_UPLD commands, resulting in a single “virtual” upload. CCSDS-like sequence (grouping) flags are employed to allow the DPU FSW to accept up to a maximum of 65535 bytes in a single “virtual” upload.  The data contained in each D_MEM_DAT_UPLD command is stored in a temporary DRAM buffer until all of the sequence numbers in the entire upload have been successfully received.  When the DPU FSW receives the last command in the series, the FSW will verify that all sequence numbers have been received, verify the end-end upload checksum, and then write the entire temporary buffer to the target location specified in the first upload command.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.12.1.4.3</id>
+      <content>Memory Upload and Download Handling	If more than 65535 bytes need to be uploaded, the upload file must be broken up into multiple smaller files, each less than or equal to 65535 bytes, and then each of the virtual uploads should be sent in series.  Because of the sequence numbers, the DPU FSW can receive individual upload commands out of sequence.  There is no time limit for the accomplishment of a single virtual upload, and so a long upload can continue across ground contacts.  If an upload is in progress, the last sequence number can be sent to the DPU FSW and it will report the list of missing sequence numbers via event number S_ccm_MISSING_SEQNO.  If an upload is in progress and needs to be cancelled, it can be discarded by issuing the D_MEM_DAT_CNCL command.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.12.1.4.4</id>
+      <content>Memory Upload and Download Handling	Data can be upload to several types of locations, including
+* DRAM
+* EEPROM
+* hardware registers, and
+* EEPROM filesystem.
+ial D_MEM_DAT_UPLD command specify the target location.  If the destination is the EEPROM filesystem, a “block number” is provided in lieu of a memory address , which is used by the DPU FSW to formulate a filename of the form eefs1:DPU_blk.##, where ## is the block number.  In this case, once the entirety of the uploaded data is received by the DPU FSW, the uploaded data is then written to that file in the EEPROM filesystem.  If a file already exists with that name, it is overwritten.  The EEPROM filesystem can be reinitialized using the command D_MEM_DISK_INIT.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.12.1.4.5</id>
+      <content>Memory Upload and Download Handling 	The command D_MEM_BLK_DNLD is used to download data from a file contained in the EEPROM filesystem.  As in the upload command, only the block number need be provided, and the entire contents of the filename formed from the block number will be downloaded.  To download data from any location other than the EEPROM filesystem, the command D_MEM_DAT_DNLD is used.  As described previously, downloads handled in a deferred fashion to avoid consuming excessive CPU time.  A single “virtual” download will appear on the ground as a series of download packets, the contents of which must be extracted and concatenated in order to recreated the original data sequence.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.12.1.5.1</id>
+      <content>Error Collection and Reporting	The DPU-CCM CSC provides a centralized error reporting interface, ccmErrEnq(), that other FSW tasks use to report errors.  Each time it wakes, ccmTask() checks to see if it is time to form an error/event packet for transmission to the ground.  If so, ccmTask() calls ccmHkMkError() to actually create the packet and forward it to DPU-SCUI for transmission to the ground.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.12.1.5.2</id>
+      <content>Error Collection and Reporting	The ccmErrEnq() function tracks the last error reported and its frequency of occurrence.  Once an error code has been reported it becomes the previously reported error code maintained by ccmErrEnq().  A repetition count is then incremented for each subsequent, consecutively reported, identical instance of this previously reported error.  If this error code is reported more than once in one high-rate housekeeping reporting period, then a special error, S_ccm_ERR_REPEAT is enqueued with the repetition count for the error encoded in the least significant byte. This mechanism effectively reduces the potential for housekeeping telemetry to become flooded with a single repeated error.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.12.1.5.3</id>
+      <content>Error Collection and Reporting	The S_ccm_ERR_REPEAT error encodes the count of the last repeated error in its low order byte.  If a new error is reported as discussed above, ccmErrEnq() will enqueue a S_ccm_ERR_REPEAT  for any previously repeated error, along with the newly reported error.   In order to keep the original error codes and their repeated counts together in the same error packet, ccmMkHkErr(), enqueues a special error code, S_ccm_ERRQ_FLUSH, as a special signal to ccmErrEnq() that it needs to clear its error tracking mechanism and enqueue any  repeated error counts associated with a particular error.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.12.1.5.4</id>
+      <content>Error Collection and Reporting	In order to insure that error counts are not lost due to rollover, ccmErrEnq(), checks to insure that the count for a given error has not gone above 250 in one high rate housekeeping reporting period.  If the error count exceeds 250 for a particular reporting period, ccmErrEnq() will enqueue S_ccm_ERR_REPEAT error with the current error count and will clear its error tracking mechanism.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.12.1.5.5</id>
+      <content>Error Collection and Reporting	The ccmErrEnq() may also be called from Interrupt context.  In interrupt context, the mutual exclusion mechanism implemented on the Error Queue cannot be used since it is illegal to take a semaphore in an interrupt context.  To circumvent this limitation, the global variable ccmISRerror is set with the appropriate error code.  The error will be queued the next time ccmTask() runs.  Due to the manner in which errors are handled in interrupt context, it is possible to loose errors if more than one error occurs in interrupt context before ccmTask() executes; the previous error will be overwritten by the new error.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.12.1.5.6</id>
+      <content>Error Collection and Reporting	At boot time, no error queue exists because it has yet to be created.  Errors that occur in this early stage of error reporting are assigned directly to the global task variable errno.  The reader may refer to the VxWorks® Programmer’s Guide, section 2.3.7 for more information on errno.  If errno is set after the error queues are created, it is queued to the Error Queue by calling ccmErrEnq(). 
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.12.2.1</id>
+      <content>Public Functions	This routine is called by the MIL-STD-1553 Command ISR and the SSI Interface ISR any time a command arrives from the SCU or the ICU, to enqueue the command and to wakeup the CCM Command Dispatch Task so that the command can be executed.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.12.2.2</id>
+      <content>Public Functions	This routine is called by any CSC in order to report an error or event that should be included in DPU housekeeping.  If this routine is called from interrupt context a static global variable, ccmISRError, is set so that the error can be enqueued later (see ccmCtrlTask()).  This is done since the error/event queue is semaphore-protected and a semaphore cannot be taken in an ISR.  The error queue semaphore has priority inversion set to reduce conflicts between multiple callers should a priority inversion situation arise. This routine also replaces frequently occuring errors with a special repeat error code.  The repeat error code is a special error code that follows a normally reported error code to indicate that the normally reported error code previously reported has occurred more than once in the last high rate reporting period
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.12.2.3</id>
+      <content>Public Functions	This routine is called by each DPU FSW task to report that the task has executed, so that the ccmCtrlTask() can assess the health of the DPU FSW execution.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.12.2.4</id>
+      <content>Public Functions	This routine is called by the MIL-STD-1553 Command ISR at 1 Hz (arrival of the Clock Message) to wakeup the CCM Control Task, which blocks on a semaphore after completing its processing.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.12.3.1</id>
+      <content>Global Data	the global data items which are accessed by this CSC
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.0.1</id>
+      <content>Telescope Module Access Library and Interface CSC	The Telescope Module Access Library and Interface (TMALI) CSC manages the detector event queue and provides an API for the retrieval of detector events from that queue to the data processing algorithms.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.0.2</id>
+      <content>Telescope Module Access Library and Interface CSC	The TMALI CSC includes the following components:
+* A queue, TMALI_EVENT_QUEUE, implemented using a ring buffer, which contains the detector events which have been received over the data capture interface from the DCI Driver, but which have not yet been retrieved by the DPA CSC;
+* An API which facilitates the retrieval of detector events from the queue by the DPA CSC.  The API consists of the tmaliNextEvent() and tmaliWait() functions.
+* An set of API functions used by the DPA CSC to configure the DCI interface, including tmaliBitArrangementSet(), tmaliDciFrameDepthGet(), tmaliDciFrameDepthSet(), tmaliDciWindowSet(), tmaliDataTimeoutSet(), and tmaliDataTimeoutGet().
+* An API housekeeping function, tmaliHkGet(), which gathers  CSC housekeeping data at the request of the Command and Control Task.
+* The task tmaliTask() and an ISR tmaliTransferToQueueISR() work together via a semaphore to synchronize the transfer of data from the DCI to the  queue
+An error handling ISR, tmaliDciErrorReportedISR(), is installed as a hook routine to the DCI Driver, and is used to keep track of the number of errors reported by the DCI driver.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.1.1.1</id>
+      <content>Normal Data Exchange Sequence	The TMALI CSC serves as an intermediate manager of EVENT data supplied by the DCI Driver CSC and eventually delivered to the DPA CSC.  The TMALI CSC waits for notification from the DCI CSC that a frame limit (or data timeout) has been reached in the Ping-Pong buffer indicating the EVENT data is ready to be served to TMALI.   TMALI reads all EVENT data from the DCI and notifies the DCI that it can swap Ping-Pong buffers when ready.   TMALI gives a semaphore to unblock the tmaliWait() call from the DPA.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.1.1.2</id>
+      <content>Normal Data Exchange Sequence	The DPA CSC calls tmaliWait() to determine how many EVENTs are waiting to be read.  When tmaliWait() returns with a number greater than zero, the DPA calls tmaliNextEvent() for each EVENT to be collected.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.1.2.1</id>
+      <content>Initialization	The TMALI CSC is initialized by spawning the tmaliTask() with the startup default parameters.  This task will allocate memory for the TMALI_EVENT_QUEUE, install DCI ISRs, initialize static variables and data structures, and then enter an end-less loop in which it transfers the data from the DCI to the TMALI queue, throttled by the semaphore semDciWait.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.1.3.1</id>
+      <content>Data Transfer to Queue	During initialization, the TMALI CSC installs an ISR hook routine, tmaliTransferToQueueISR(),  into the DCI Driver which is invoked when:
+* the DCI interface reaches the programmed frame limit in the Ping-Pong buffer, or
+* the DCI interface detects a data receipt timeout.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.1.3.2</id>
+      <content>Data Transfer to Queue	When the tmaliTransferToQueueISR() ISR is invoked, it gives a semaphore to awaken tmaliTask() that will transfer data to the  queue over the VME bus.  The tmaliTask() uses the read() function in the DCI Driver, which implements a data transfer using a high speed assembly language routine.  Because the TMALI ring buffer is implemented as an array, the tmaliTask() function must first examine the TMALI_EVENT_QUEUE to determine whether the data resident in the DCI buffer can be retrieved using a single read() call, or whether two calls are required in order to correctly handle the wrap-around case at the end of the ring buffer.  In addition, the tmaliTask() function must perform an error check to verify that there is sufficient space to receive the data available in the Ping-Pong buffer.  If there is insufficient space for the complete set of frames, the entire contents of the readable Ping-Pong buffer are discarded and the error S_TMALI_QUEUE_FULL is reported using ‘ccmErrEnq’ mechanism.  Such discarded data constitutes an integral number of CCD frames, since the DCI hardware design ensures that Ping-Pong transitions occur at CCD frame boundaries.  This policy of discarding the newer data supports the scientific viewpoint that events collected right after a burst have more scientific value than events collected later.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.1.3.3</id>
+      <content>Data Transfer to Queue	Once the events in the Ping-Pong buffer have been completely transferred to the TMALI_EVENT_QUEUE, the tamliTask() function must re-arm the hardware to swap the Ping-Pong buffer when ready.  In the event that TMALI does not finish transferring the data from the ping buffer before the pong buffer is full, the DCI Driver will issue an error interrupt, invoking the tmaliDciErrorReportedISR().  In response, the tmaliDciErrorReportedISR() will set an error flag so that the tmaliTask() can recover.  The tmaliDciErrorReportedISR() also gives the semDciWait semaphore to awaken the tmaliTask() even though it is likely already awake, since it is possible that the tmaliTask() has just completed transfer of the data at the time the error occurs.  The error will also be counted in TMALI_HK.  The DCI hardware will discard events until the tmaliTask() function completes the prior transfer, recognizes the error flag, and in response manually forces a Ping-Pong swap and re-enables data acquisition.  This guarantees that only complete frames end up in the Ping-Pong buffer and will be considered for processing.  In normal operation this error should not occur as the TMALI task should be fast enough to retrieve data from the DCI Ping-Pong buffer.  When events can’t be handled fast enough the problem should result in an TMALI queue full condition which is reported as an S_TMALI_QUEUE_FULL error using the ccmErrEnq() mechanism.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.1.4.1</id>
+      <content>Event Retrieval From Queue	Events are retrieved from the TMALI_EVENT_QUEUE by the DPA CSC via an API consisting of two functions: tmaliWait() and tmaliNextEvent().  For efficiency, the following API usage points are relevant:
+* The DPA CSC will “inline” the tmaliNextEvent() function in order to avoid a function call for each event,
+* The DPA CSC will place each event received into a register, and complete the processing for a given event while resident in a register before retrieving the next event, and
+* The tmaliNextEvent() function performs no error checking in order to maximize the efficiency of the function.  Therefore, the DPA CSC must keep track of the number of events retrieved versus the number provided in return from tmaliWait().
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.1.5.1</id>
+      <content>Ring buffer data structure	The  CSC maintains a FIFO implemented as a ring buffer to temporarily store the data received from the DCI before it is processed. The ring buffer uses two pointers called pIn and pOut to keep track of the data in the buffer. The pointers were defined such that reading from the buffer is the simplest operation and only a single compare is needed to verify if the buffer is empty. The buffer only stores Events so the pointers point to these four byte entities. As the DCI specifies all data in bytes, sizes have to be converted before reading data.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.1.5.2</id>
+      <content>Ring buffer data structure	The pIn and pOut pointers are defined  as follows:
+* pIn	- last location filled with data
+* pOut	- last empty location
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.1.5.3</id>
+      <content>Ring buffer data structure	This definition results in the following:
+* administration is simple but one location is wasted in the buffer full situation, the pIn pointer is one less that the pOut pointer,
+* buffer empty when the pIn pointer and the pOut pointer are equal.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.1.5.4</id>
+      <content>Ring buffer data structure	A separate pointer indicates the end of the buffer: pEnd. This pointer points to the last available location in the buffer. Before advancing either  pointer it should be verified whether the pointer points to the last location, in that case the pointer is reset to the start of the buffer,  pointed to by pBuf, otherwise it can just be incremented.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.1.6.1</id>
+      <content>Setting DCI Bit Arrangement	The bit arrangement of the DCI control/status register can be set via tmaliBitArrangementSet().
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.1.6.2</id>
+      <content>Setting Hardware Windowing		The hardware windowing function of the DCI can be activated and controlled  via tmaliDciWindowSet().  This function activates the hardware windowing function and transfers the specified window parameters to the DCI driver.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.1.6.3</id>
+      <content>Setting Frame Depth in DCI	The optimum frame depth will be determined with benchmark testing.  The default frame depth is 10 frames.  Given the above data, it will take approximately 24 msec to read 10 maximum-sized frames at the maximum data transfer rate.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.1.6.4</id>
+      <content>Setting Data Timeout in DCI	During nominal operation, frames arrive approximately every 11 msecs.  The DCI hardware will generate an interrupt if event data has been received in one of the Ping-Pong buffers, and a configurable amount of time has passed during which no additional events have been received.  A data timeout interrupt is not an error, but rather typically indicates that the current exposure has been completed.  The data timeout interrupt allows the TMALI CSC to retrieve the “trailing” events from the DCI Ping-Pong buffer.  The function tmaliDciTimeoutSet() provides an API to the DCI Driver to allow the timeout setting to be altered.	
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.1.7.1</id>
+      <content>Housekeeping	The TMALI CSC collects housekeeping data that can be retrieved via a call to tmaliHkGet().   TMALI CSC housekeeping is returned via the TMALI_HK data structure.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.2.1</id>
+      <content>Public Functions	This routine provides a means to set the bit arrangement used by the DCI.  When bSpecialArrangement is TRUE, the DCI is set to special bit arrangement mode, otherwise the default mode of no rearrangement is set.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.2.10</id>
+      <content>Public Functions	When no data is available in the TMALI queue this routine blocks on a semaphore awaiting availability of events on the TMALI queue as indicated by the ISR.  When data is already available on the TMALI queue, or the semaphore is taken, the number of events on the TMALI queue is determined and returned to the caller.  The parameter ‘TickstoWait’ specifies the maximum time which the function can wait until data becomes available in kernel-ticks.  The parameter may be set to a symbolic value ‘FOREVER’ which causes the function only to return when data is available.  When the function is called with a timeout value and no data becomes avialable within that period the function will return zero (events available).If the tmali task has not been initialized the function returns an error.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.2.2</id>
+      <content>Public Functions	This function gets the frame depth of the Ping-Pong buffers used by the DCI CSC.  The frame depth determines how many frames are read into the selected Ping-Pong buffer before interrupting.  The initial value for the frame depth setting is determined by the parameter provided when stating the tmaliTask.  The returned value is the current active value, this may differ from the last commanded value as the commanded value only takes effect when data is transferred from the hardware Ping-Pong buffer to the TMALI queue (in response to a frame or timeout interrupt, see section 5.13.2.3).
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.2.3</id>
+      <content>Public Functions	This function sets the frame depth of the Ping-Pong buffers used by the DCI CSC.  The frame depth determines how many frames are read into the selected Ping-Pong buffer before interrupting.  The initial value for the frame depth setting is determined by the parameter provided when starting the tmaliTask.  The maximum value to which the frame depth can be commanded is 64 frames, an attempt to command the frame depth to a value larger than this maximum will result in setting the timeout to the default value of V frames.The actual setting of the frame depth could be delayed by a small amount of time if there is activity on the DCI bus, and is typically changed when the DCI has just reported a frame level reached or timeout condition.  This minimizes the chance of changing the setting while the hardware is close to detecting a frame event.  Changing the frame depth while the DCI CSC is processing data could cause unpredictable results.  When a new ‘tmaliDciFrameDepthSet’ command is send before the previous setting has been activated the new request will overwrite the previous request and the DCI will be commanded to the new value at the first available opportunity.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.2.4</id>
+      <content>Public Functions	This routine provides a means to get the current data timeout value used by the DCI.  The returned value is the current timeout in milliseconds.The timeout is discussed in document 036911400, section 4.3.2.4.1.3.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.2.5</id>
+      <content>Public Functions	This routine provides a means to set the data timeout used by the DCI, the value requested indicates the timeout in milliseconds.  The initial value for the frame depth setting is determined by the parameter provided when starting the tmaliTask.  The maximum value to which the timeout can be commanded is X seconds, an attempt to set the timeout to a number larger than this maximum will result in setting the timeout to the default value of X milliseconds
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.2.6</id>
+      <content>Public Functions	This routine provides a means to set DCI windowing parameters used by the DCI data acquisition.  Before commanding the DCI driver to change the DCI hardware windowing parameters the window specification is verified. If the setting is incorrect the function returns an error and the hardware windowing function is not activated.The function both sets the requested hardware window specification and activates the hardware windowing function.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.2.7</id>
+      <content>Public Functions	This routine gets housekeeping data stored for the TMALI CSC including some DCI parameters and resets the tmali internal counters to zero.  When the caller supplied pointer to a TMALI_HK structure is NIL no data is returned but the tmali internal counters are still reset to zero.Two of the four error counters are updated within an ISR context, this requires a task switch safe implementation of these counters.  Within VxWorks this could be solved using a counting semaphore.  In the TMALI CSC design a faster method was used by using a free running error counter and a careful update of the reported number of errors, using an extra temporary variable.  As the increment and assignment of the 32 bit unsigned integers themselves are ‘atomic’ operations the resulting counters are task safe and no error events are lost.  This means that the sum of the errors reported by the tmaliHkGet() function is equal to the total numbers of errors that occurred, no error reports are lost due to the update of the internal structures.
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.2.8</id>
+      <content>Public Functions	This function returns the next EVENT in the queue to the caller.  The caller should store the value returned by this function in a variable defined locally within the scope of the function from which it is called.  If the return value is stored as described above, the EVENT value is stored in a RAD6000 register rather than memory.  Processing is therefore much faster since register accesses on the RAD6000 are much faster than memory accesses.A compilation option ‘TMALI_NOCHECKS’ is provided for the disabling of buffer empty checks. This results in slightly faster code but should only be used when the application using this function is known to make proper calls to the function.  If the TMALI module is compiled with the ‘TMALI_NOCHECKS’ option an improper call to the tmaliNextEvent function (calling it when no data is available in the TMALI buffer) will compromise the TMALI buffer data structure.The queue structure and the related pointers are described in the local ‘tmaliP.h’ header file. As only the write pointer (pOut) is manipulated here and the operations on the 32 bit pointers themselves are 'atomic' no mutual exclusion problem can occur.  
+</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>DPUSDS5.13.2.9</id>
+      <content>Public Functions	This task initializes the TMALI CSC and then continues to read data from the DCI and store it in the TMALI buffer each time the DCI driver signals that data is available in the Ping-Pong buffer.  The availability of data in the DCI Ping-Pong buffer is signaled to the tmaliTask using a semaphore.  Unless a fatal error is detected during initialization this task will never terminate.The specified 3 parameters specify the size of the TMALI queue and the initial parameters for the DCI, if the specified values are outside the allowed range default values will be used.The specified QueueSize is the allocated buffersize (in 4 byte EVENTS), the ring buffer is full when ‘QueueSize-1’ EVENTS are stored in the buffer.
+</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

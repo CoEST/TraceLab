@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp20_high_level</id>
+    <name>Waterloo grp20_high_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp20_high_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>F1</id>
+      <content>Login screen	A screen in the console allowing the administrator to login</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F2</id>
+      <content>Exit Console	Console screen has a button for exiting from the program</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F3</id>
+      <content>Logout	Each screen in console should give administrator the option of logging out</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F4</id>
+      <content>Correct Login handling	When user/pass are entered, the system is able to check that and display the right error messages</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F5</id>
+      <content>Back	Administrator can return to the previous screen at any time by pressing back</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F6</id>
+      <content>User Management option	Administrator can click on user management button to go to the screen that does user related tasks</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F7</id>
+      <content>System Management option	Administrator can click on system management button to go to the screen that does system related tasks</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F8</id>
+      <content>New  User	Create a new user in system from the User Management screen</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F9</id>
+      <content>Search User	Administrator can choose to search for users from the User Management screen</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F10</id>
+      <content>Open User	Administrator can open a user from the search results screen</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F11</id>
+      <content>Edit User	Administrator can edit any of the user fields and save changes afterward</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F12</id>
+      <content>Deactivate User	Administrator can deactivate a user from the User Management screen.  All accounts of the user are suspended.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F13</id>
+      <content>New User Account	Add a new account for an existing user from the User Management screen</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F14</id>
+      <content>Open User Account	Administrator can open up a user account from the User Management screen</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F15</id>
+      <content>Edit User fields	Administrator can edit all the fields from the User Management screen</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F16</id>
+      <content>Edit User Account fields	Administrator can edit user account fields like IP address and phone # from the User Account Management screen</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F17</id>
+      <content>Correct Phone and IP addresses	In User Account Management screen, system console fetches all available phone #s and IP Addresses</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F18</id>
+      <content>Choose Billing Plan	Administrator can choose the right plan from the User Account Management screen</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F19</id>
+      <content>Suspend Account	Administrator can suspend an account from the User account management screen.  Status becomes suspended</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F20</id>
+      <content>Resume Account	Administrator can resume an account from the User account management screen</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F21</id>
+      <content>Deactivate Account	Administrator can deactivate an account from the User account management screen</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F22</id>
+      <content>Account status	User management screen shows the updated status of all the accounts of the user.  Status switches between suspended, active and inactive</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F23</id>
+      <content>Billing Plan option	Administrator can click on billing plans button to go to the screen that does billing plans related tasks from System Management screen</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F24</id>
+      <content>New Billing Plan	Administrator can start to create a new billing plan by clicking on �new plan� button</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F25</id>
+      <content>Select Billing Plan	Administrator can select a billing plan from the list of plans in the Billing Plans screen.  That plan�s details will show up in the screen.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F26</id>
+      <content>Edit Billing Plan	Administrator can edit any of the fields of the plan in the Billing Plan screen</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F27</id>
+      <content>Save Billing Plan	Administrator can save the values of an edited or a new plan by clicking on the Save Plan button</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F28</id>
+      <content>Delete Billing Plan	Administrator can delete the currently selected plan by clicking on the Delete Plan button</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F29</id>
+      <content>User Account synchronization	When a Bill Plan is deleted, any user account using this billing plan reverts to the default billing plan (regular one)</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F30</id>
+      <content>Open Discount	Administrator can open one of the plan�s discounts by using the open discount button.  The discount shows up in the Discounts screen.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F31</id>
+      <content>Edit Discount	The fields of the opened discount can be edited by the administrator</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F32</id>
+      <content>New Discount	Administrator can choose to create a new discount from the Discounts screen</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F33</id>
+      <content>Save Discount	Administrator can choose to save the new discount or changes to the discount being edited</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F34</id>
+      <content>Delete Discount	Administrator can choose to delete the currently selected discount</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F35</id>
+      <content>Enter View Bills Screen	Administrator can enter the bills screen by clicking on the view bills button in the User Account Management screen</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F36</id>
+      <content>All Bills Listed	Administrator can see and sort all of the bills of the service from Bills screen</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F37</id>
+      <content>Display Bills	Administrator can display all the bills by clicking on �view bill detail� button</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F38</id>
+      <content>Print Bills	Administrator can print a bill by clicking on issue bill button in bills screen</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F39</id>
+      <content>Pay Bill	Administrator can pay part of the bill or the whole bill from the bill details screen</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F40</id>
+      <content>Override Bill details	Administrator can manually change details of the bill</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F41</id>
+      <content>Correct bill override handling	If bill modified incorrectly, the system will recognize and send error signals</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F42</id>
+      <content>System Maintenance option	Administrator can click on system maintenance button to open the system maintenance screen from the system management screen</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F43</id>
+      <content>System Load	The maximum and current system load are displayed in the system maintenance screen</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F44</id>
+      <content>Change Load	Administrator can change the maximum load of the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F45</id>
+      <content>View System Logs	Administrator can view system log of a previous date via the system maintenance screen</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F46</id>
+      <content>Add Phone to test	Administrator can add a phone into the to be tested list</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F47</id>
+      <content>Phone details	Both the phone number and IP address are displayed in the test list</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F48</id>
+      <content>Test All	Administrator can select to test all of the active phones</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F49</id>
+      <content>Test/Not Test	Administrator can unselect the phones that are not to be tested from the list</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F50</id>
+      <content>Test OnHook	Administrator can choose to test OnHook of target phone(s)</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F51</id>
+      <content>Test OffHook	Administrator can choose to test OffHook of target phone(s)</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F52</id>
+      <content>Test DigitPressed	Administrator can choose to test DigitPressed of target phone(s)</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F53</id>
+      <content>Test DigitReleased	Administrator can choose to test DigitReleased of target phone(s)</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F54</id>
+      <content>Test Results	Test results can be seen in the system maintenance screen</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F55</id>
+      <content>Check Resource	When the caller picks up the phone, system will check to see if the maximum load has been reached.  If it has, the caller cannot make the call</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F56</id>
+      <content>Resource and phone status updated	When a call is in progress, the system will update the status of caller and callee.  System increments resource when a call is initialized and decrements when the call finishes.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F57</id>
+      <content>Pick Up Tone	When the caller picks up the phone, system sends the correct tone over to the phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F58</id>
+      <content>Inactive Phone	If the caller is picking up an inactive phone, then there will be no dial tone and the caller would not be able to make the call</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F59</id>
+      <content>Phone lies off hook	If 4 digits are not dialed and the phone is off the hook, then system will timeout and keep on sending ready tone until the phone is hung up</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F60</id>
+      <content>Dial 4 digits	The system can pick up on the first 4 digits that the user is dialing when the phone is picked up</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F61</id>
+      <content>Ignore following digits	If the user dials more digits afterward, the system will ignore the digits</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F62</id>
+      <content>Check privilege	System checks to see if the caller can make this call and if callee can receive this call</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F63</id>
+      <content>Check dialed number	System checks to see if the dialed number is active.  If not, system will send the not active message to the caller phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F64</id>
+      <content>Check busy	System checks to see if the dialed number is busy.  If it is, system will send the busy tone to the caller phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F65</id>
+      <content>Callee unavailable	If callee does not pick up the phone, then the system will eventually timeout and send busy ring tone to the caller</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F66</id>
+      <content>Start call log	Once the other side picks up the phone, the system will start keeping a call log for billing purposes</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F67</id>
+      <content>Establish Connection	Once the other side picks up the phone, the system will stop sending �ready� tone to caller side and establish connection between 2 sides</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F68</id>
+      <content>Audio signal relay	Successfully encrypted audio signals sent between the 2 sides via TCP/IP protocol</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F69</id>
+      <content>One side hangs up	Other side receives the �end call� tone from the system after one side hangs up.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F70</id>
+      <content>Finish call log	Once one side hangs up, the system will finish the call log, add it to the bill and recalculate the bill</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F71</id>
+      <content>Send ring tone	If the callee is active and not busy, the system will send signal to start the ringer on the callee</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F72</id>
+      <content>Callee picks up	The ringer will stop ringing on callee�s phone and the system will mark the callee as busy.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F73</id>
+      <content>Get Time	System will automatically poll the time of the clock of the server machine</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N1</id>
+      <content>Fast Connection	Fast connection to other phone or quick return of busy signal</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N2</id>
+      <content>Availability	The system is available most of the time</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N3</id>
+      <content>Security	The calls must be secure</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N4</id>
+      <content>Friendly Interface	The system console is very intuitive</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N5</id>
+      <content>Meaningful Feedback	The phone feedback is meaningful</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N6</id>
+      <content>Audible Ringing	The ringing has to be loud enough</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N7</id>
+      <content>Clear Reception	Both sides have to be able to hear the other side easily</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N8</id>
+      <content>Minimal Delay of Calls	Voice transmission must be very fast</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N9</id>
+      <content>Readability	Bill statements must be readable</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N10</id>
+      <content>Advanced Warning of System Check	System checks are announced to users well in advance</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N11</id>
+      <content>9 to 6 system support	The system should always have a support person</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N12</id>
+      <content>Language Fluency	Administrator is preferred to be fluent in different languages</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N13</id>
+      <content>Admin number	Administrator number is easily be remembered</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N14</id>
+      <content>Testability	System can easily be tested by the administrator</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N15</id>
+      <content>Maintainability	System can easily be maintained</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N16</id>
+      <content>Extendability	Ability to extend the system console</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N17</id>
+      <content>Migratible	Can migrate easily between languages</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N18</id>
+      <content>Reliability	System must be very reliable and does not crash often</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N19</id>
+      <content>Reusability	Much of the code is being reused in different modules</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N20</id>
+      <content>Understandability	Much of the code is commented and documented</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

@@ -1,0 +1,1 @@
+Telescope Module Access Library and Interface CSC	The Telescope Module Access Library and Interface (TMALI) CSC manages the detector event queue and provides an API for the retrieval of detector events from that queue to the data processing algorithms.

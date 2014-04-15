@@ -1,0 +1,257 @@
+           Event Detail Dialog
+           "private Grid  Bag  Layout grid bag  ;
+              private Grid  Bag  Constraints c  ;
+          
+              // objects in top panel
+              private JPanel top  Panel  ;
+              private JLabel model  Label  ;
+              private JLabel type  Label  ;
+              private JText  Field model  Field  ;
+              private JText  Field type  Field  ;
+              private JLabel empty  Label  1  ;
+              private JLabel empty  Label  2  ;
+          
+              // objects in middle panel
+              private JPanel middle  Panel  ;
+              private JPanel middle  Panel  1   middle  Panel  2  ;
+              private JList Left  List   Right  List  ;
+           private Default  List  Model Left  Model   Right  Model  ;
+           private JScroll  Pane Left  Pane   Right  Pane   Bottom  Pane  ;
+           private JButton arrow  Button  ;
+           private JText  Area comments  ;
+           private String comment  1  ;
+          
+              // objects in bottom panel
+              private JPanel bottom  Panel  ;
+              private JButton ok  Button  ;
+              private JButton cancel  Button  ;
+          
+              // display mode
+              private boolean display  Mode  ;
+           private Events  Processor parent  Frame  ;
+          
+           // database and eventserver information
+           String m  _  User  Name  =  """";
+           String m  _  DSN=  """";
+           String m  _  Event  Server  IP=  """";
+           String m  _  Event  Server  Port  =  """";
+          
+           Connection m  _ conn  ;
+           Result  Set rs  ;
+           Statement stmt  ;
+          
+           // Event which is presented by this dialog box
+          
+           Notification  _  Event m  _  Evt  ;
+           Events  Processor m  _ parent  ;"
+           "public Event  Detail  Dialog  (  Events  Processor parent   boolean modal    Notification  _  Event n  Evt   boolean mode  )
+              {
+          
+                  super ( parent   modal  );
+               set  Title  (""  Event Details  "");
+                 get  Content  Pane (). set  Layout ( new Border  Layout ());
+          
+                  add  Window  Listener  ( new Window  Adapter  () {
+                      public void window  Closing  (  Window  Event evt  )
+                      {
+                          close  Dialog  ( evt  );
+                      }
+                  }
+                  );
+          
+               // Get database info from parent
+          
+                m  _  User  Name  =parent  . m  _  User  Name  ;
+            m  _  DSN=parent  . m  _  DSN  ;
+            m  _  Event  Server  IP=parent  . m  _  Event  Server  IP  ;
+            m  _  Event  Server  Port  =parent  . m  _  Event  Server  Port  ;
+          
+            System  . out  . println  (""  Events  Processor  : mode  : ""+ mode  );
+            System  . out  . println  (""  Events  Processor  : modal  : ""+ modal  );
+               System  . out  . println  (""  Events  Processor  : User Name  : ""+ m  _  User  Name  );
+               System  . out  . println  (""  Event  Detail  Dialog  : eventlog DSN  : ""+ m  _  DSN  );
+            System  . out  . println  (""  Event  Detail  Dialog  : eventserver IP  : ""+ m  _  Event  Server  IP  );
+            System  . out  . println  (""  Event  Detail  Dialog  : eventserver Port  : ""+ m  _  Event  Server  Port  );
+          
+            display  Mode = mode  ;
+            parent  Frame = parent  ;
+          
+            // Get event info and parent info
+          
+            m  _  Evt = n  Evt  ;
+            m  _ parent = parent  ;
+          
+            // create top panel
+          
+            top  Panel = new JPanel  ();
+                 get  Content  Pane  (). add  ( top  Panel  ""  North  "");
+                 top  Panel  . set  Layout  ( new Grid  Layout  (  2    3  ));
+                 Color background  Color = top  Panel  . get  Background  ();
+          
+               model  Label = new JLabel  (""  Model ID  : "");
+               model  Label  . set  Background  ( background  Color  );
+               type  Label = new JLabel  (""  Event Type  : "");
+               type  Label  . set  Background  ( background  Color  );
+               empty  Label  1 = new JLabel  ();
+               empty  Label  1  . set  Background  ( background  Color  );
+               empty  Label  2 = new JLabel  ();
+               empty  Label  2  . set  Background  ( background  Color  );
+          
+               model  Field = new JText  Field  ( n  Evt  . m  _  Subscriber  Name  );
+            model  Field  . set  Editable  ( false  );
+            model  Field  . set  Background  ( background  Color  );
+            if ( mode == true  ) model  Field  . set  Foreground  (  Color  . red  );
+          
+               type  Field = new JText  Field  ( n  Evt  . m  _  Event  Type  );
+            type  Field  . set  Editable  ( false  );
+            type  Field  . set  Background  ( background  Color  );
+            if ( mode == true  ) type  Field  . set  Foreground  (  Color  . red  );
+          
+                  top  Panel  . add  ( model  Label  );
+                 top  Panel  . add  ( model  Field  );
+                 top  Panel  . add  ( empty  Label  1  );
+                 top  Panel  . add  ( type  Label  );
+                 top  Panel  . add  ( type  Field  );
+                 top  Panel  . add  ( empty  Label  2  );
+          
+                 // create middle panel
+          
+            middle  Panel = new JPanel  ();
+                 get  Content  Pane  (). add  ( middle  Panel  ""  Center  "");
+                 // middle  Panel  . set  Layout ( new Border  Layout  ());
+            grid bag = new Grid  Bag  Layout  ();
+                  c = new Grid  Bag  Constraints  ();
+                 middle  Panel  . set  Layout  ( grid bag  );
+          
+                 middle  Panel  1 = new JPanel  ();
+                 // middle  Panel  . add  ( middle  Panel  1  ""  North  "");
+                middle  Panel  1  . set  Layout  ( new Grid  Layout  (  1    3  ));
+          
+                 middle  Panel  2 = new JPanel  ();
+                 // middle  Panel  . add  ( middle  Panel  2  ""  Center  "");
+                 middle  Panel  2  . set  Layout  ( new Border  Layout  ());
+          
+                 c  . fill = Grid  Bag  Constraints  .  BOTH  ;
+                 c  . weightx = 0  .  2  ;
+                 c  . weighty = 0  .  2  ;
+                 c  . insets = new Insets  (  10    30    10    30  );
+                 c  . gridx = 0  ;
+                  c  . gridy = 0  ;
+                  grid bag  . set  Constraints  ( mid"
+           "private void close  Dialog  (  Window  Event evt  )
+              {
+                  set  Visible ( false  );
+                  dispose ();
+              }"
+           "// event listener for ""  Ok  /  Update  "" button
+              private void ok  Button  Action  Performed (  Action  Event evt  )
+              {
+          
+               if ( display  Mode == true  )
+               {
+          
+                // m  _ parent  .  Delete  Event  ( m  _  Evt  . m  _  Subscriber  Name   m  _  Evt  . m  _  Event  ID  );
+          
+                Array  List Select  List = new Array  List  ();
+                Array  List Delete  List = new Array  List  ();
+          
+                // find the selected requirements and the
+                // initial list of requirements to be deleted
+          
+                for  ( int i  =0  ; i  <  Right  Model  . size  (); i  ++)
+                {
+                 if  (  Right  List  . is  Selected  Index  ( i  ))
+                 {
+                  Requirement requirement 1 = (  Requirement  )( m  _  Evt  . m  _  Right  Side  . get  ( i  ));
+                  Select  List  . add  ( requirement 1  );
+                 }
+                 else
+                 {
+                  Requirement requirement 1 = (  Requirement  )( m  _  Evt  . m  _  Right  Side  . get  ( i  ));
+                  Delete  List  . add  ( requirement 1  );
+                 }
+                }
+          
+                for  ( int i  =0  ; i  <  Left  Model  . size  (); i  ++)
+                {
+                 Requirement requirement 1 = (  Requirement  )( m  _  Evt  . m  _  Left  Side  . get  ( i  ));
+                 Delete  List  . add  ( requirement 1  );
+                }
+          
+                // If a requirement in the delete list is also in selected list  
+                // then do not copy it to the parent delete list   otherwise
+                // copy it
+          
+                for  ( int i  =0  ; i  <  Delete  List  . size  (); i  ++)
+                {
+          
+                 Requirement requirement 1=  (  Requirement  )(  Delete  List  . get  ( i  ));
+                 int Delete  Flag = 1  ;
+          
+                 for ( int j  =0  ; j  <  Select  List  . size  (); j  ++)
+                 {
+                  Requirement requirement 2=  (  Requirement  )(  Select  List  . get  ( j  ));
+          
+                  if ( requirement 1  . m  _  Requirement  ID  . equals  ( requirement 2  . m  _  Requirement  ID  ))
+                  {
+                   Delete  Flag = 0  ;
+                  }
+                 }
+          
+                 if (  Delete  Flag ==1  )
+                  m  _ parent  . m  _  Delete  requirement List  . add  ( requirement 1  );
+          
+                }
+          
+                // send Add  Subscription Event for Select  List
+                for ( int i  =0  ; i  <  Select  List  . size  (); i  ++)
+                {
+                 Requirement requirement 1=  (  Requirement  )(  Select  List  . get  ( i  ));
+              m  _ parent  .  Add  Subscription  ( m  _  Evt  . m  _  Subscriber  Name   requirement 1  );
+                }
+          
+                // call parent function to delete related events
+             System  . out  . println  (""  Delete  Related  Events  "");
+                m  _ parent  .  Delete  Related  Events  ();
+          
+               }
+            System  . out  . println  ("" finish  "");
+                  set  Visible ( false  );
+                  dispose ();
+              }"
+           "// event listener for ""  Cancel  "" button
+              private void cancel  Button  Action  Performed (  Action  Event evt  )
+              {
+                  set  Visible ( false  );
+                  dispose ();
+              }"
+           "private void Left  List  Clicked  (  Mouse  Event e  ){
+          
+               if (!  Left  List  . is  Selection  Empty  ()) {
+          
+                   int index = Left  List  . get  Selected  Index  ();
+                   Requirement requirement= (  Requirement  ) m  _  Evt  . m  _  Left  Side  . get  ( index  );
+          
+                   comments  . set  Text  ( comment  1  );
+                   comments  . append  (""\ r  \ n  ID  : ""+ requirement . m  _  Requirement  ID  );
+                   comments  . append  (""\ r  \ n  Project  : ""+ requirement . m  _  Project  );
+                   comments  . append  (""\ r  \ n  Module Path  : ""+ requirement . m  _  Module  Path  );
+                   comments  . append  (""\ r  \ n  Content  : ""+ requirement . m  _  Content  );
+               }
+          
+           }"
+           "private void Right  List  Clicked  (  Mouse  Event e  ){
+          
+               if (!  Right  List  . is  Selection  Empty  ()) {
+          
+                   int index = Right  List  . get  Selected  Index  ();
+                   Requirement requirement= (  Requirement  ) m  _  Evt  . m  _  Right  Side  . get  ( index  );
+          
+                   comments  . set  Text  ( comment  1  );
+                   comments  . append  (""\ r  \ n  ID  : ""+ requirement . m  _  Requirement  ID  );
+                   comments  . append  (""\ r  \ n  Project  : ""+ requirement . m  _  Project  );
+                   comments  . append  (""\ r  \ n  Module Path  : ""+ requirement . m  _  Module  Path  );
+                   comments  . append  (""\ r  \ n  Content  : ""+ requirement . m  _  Content  );
+               }
+          
+           }"

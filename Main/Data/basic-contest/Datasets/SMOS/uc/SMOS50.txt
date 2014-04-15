@@ -1,0 +1,13 @@
+Nome: AccettaIscrizioneStudente
+Attori: Amministratore
+Descrizione: Consente all'amministratore di accettare l'iscrizione al sistema di uno studente
+Precondizioni:
+•	L'utente ha già svolto il caso d'uso “Visualizza Richieste di Iscrizione” •	L'utente clicca sul pulsante “Accetta” associato ad una richiesta di iscrizione
+Sequenza degli eventi
+Utente
+Sistema
+1 . Attiva il nuovo utente nel sistema.
+2. Visualizza l'elenco delle iscrizioni ancora da attivare
+Postcondizioni:
+• • •
+L’utente ha accettato una richiesta di iscrizione al sistema L'utente interrompe l'operazione Connessione al server SMOS interrotta

@@ -1,0 +1,63 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf110
+{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;\f1\ftech\fcharset0 Wingdings-Regular;\f2\fnil\fcharset0 LucidaGrande;
+}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f0\b\fs24 \cf0 Nome caso d\'92uso\
+
+\b0 Attivit\'e0Utili\
+
+\b Attori partecipanti\
+
+\b0 Iniziato da Cittadino\
+
+\b Flusso di eventi\
+
+\b0 1.	Selezionando questo caso d'uso, il Cittadino accede ad una schermata di scelta di due casi d'uso: 
+\b Boschi, Rifiuti\
+
+\b0 2. Il sistema mette a disposizione una semplice ed intuitiva schermata che permette di scegliere quale dei due servizi visitare, per aiutare indirettamente a mantenere	accettabili,	le	condizioni ambientali comunali.\
+3. Il Cittadino sceglie uno dei due casi d'uso 
+\b Boschi, 
+\b0 o 
+\b Rifiuti. 
+\b0 4. Il sistema risponde all'esigenza del Cittadino facendogli visualizzare la pagina desiderata che aveva richiesto.\
+
+\b Condizione di entrata\
+
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Il Cittadino si \'e8 autenticato nel sistema comunale, OR\
+
+\f1 \uc0\u61656 
+\f2  
+\f0 Il Cittadino ha avuto accesso al sistema.\
+
+\b Condizioni di uscita\
+
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Il	Cittadino	ha	correttamente visualizzato la schermata introduttiva e decide di accedere ad una delle schermate proposte richiamando il caso d'uso 
+\b Boschi
+\b0 , o il caso d'uso 
+\b Rifiuti
+\b0 .\
+
+\f1 \uc0\u61656 
+\f2  
+\f0 Il Cittadino non riesce a visualizzare la pagina introduttiva ai due casi d'uso, 
+\b Boschi, Rifiuti 
+\b0 e pertanto si estende il caso d'uso 
+\b ServizioNonDisponibile 
+\b0 che gestisce i casi di failure tecniche.\
+
+\b Requisiti di qualita
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 I tempi di risposta del sistema sono da ricercarsi nell'ordine dei centesimi di secondo se il Cittadino visualizza in modo corretto la pagina di scelta su quale caso d'uso proiettarsi, OR\
+
+\f1 \uc0\u61656 
+\f2  
+\f0 I tempi di risposta sono rallentati a causa di problemi esterni e vanno nell'ordine dei secondi, dai 3 ai 7.}

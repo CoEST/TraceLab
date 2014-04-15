@@ -1,0 +1,10 @@
+org.mozilla.javascript.NativeArray.setLengthProperty
+org.mozilla.javascript.NativeArray.jsGet_length
+org.mozilla.javascript.NativeArray.setInstanceIdValue
+org.mozilla.javascript.NativeArray.get
+org.mozilla.javascript.NativeArray.getLength
+org.mozilla.javascript.NativeArray.has
+org.mozilla.javascript.NativeArray.delete
+org.mozilla.javascript.NativeArray.getLengthProperty
+org.mozilla.javascript.NativeArray.put
+org.mozilla.javascript.NativeArray.NativeArray

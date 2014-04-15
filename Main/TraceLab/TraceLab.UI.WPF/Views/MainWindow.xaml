@@ -1,0 +1,275 @@
+﻿<!--
+TraceLab - Software Traceability Instrument to Facilitate and Empower Traceability Research
+Copyright (C) 2012-2013 CoEST - National Science Foundation MRI-R2 Grant # CNS: 0959924
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see<http://www.gnu.org/licenses/>.
+-->
+
+<local:MainWindowBase x:Class="TraceLab.UI.WPF.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:TraceLab.UI.WPF.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:avalon="clr-namespace:AvalonDock;assembly=AvalonDock"
+    xmlns:GraphSharp_Controls="clr-namespace:GraphSharp.Controls;assembly=GraphSharp.Controls" 
+    xmlns:Converters="clr-namespace:TraceLab.UI.WPF.Converters"
+    xmlns:WPFExtensions_AttachedBehaviours="clr-namespace:WPFExtensions.AttachedBehaviours;assembly=WPFExtensions"
+    xmlns:viewModels="clr-namespace:TraceLab.UI.WPF.ViewModels"
+    xmlns:Selectors="clr-namespace:TraceLab.UI.WPF.Selectors"
+    xmlns:Commands="clr-namespace:TraceLab.UI.WPF.Commands"
+    xmlns:controls="clr-namespace:TraceLab.UI.WPF.Controls"
+    xmlns:Resources="clr-namespace:TraceLab.UI.WPF.Resources"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    Title="{Binding ExperimentName}"
+    Icon="/TraceLab.UI.WPF;component/Resources/Icon_TraceLab48.png"
+    Padding="0" Margin="0" Background="White"
+    x:Name="mainWindow">
+
+    <local:MainWindowBase.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Views/Nodes/NodeResources.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/AvalonDock;component/Themes/aero.normalcolor.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Themes/Generic.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Resources/ScreenCaptureIcon.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <Color x:Key="ControlLightColor">White</Color>
+            <Color x:Key="ControlMediumColor">#FF7381F9</Color>
+            <Color x:Key="ControlDarkColor">#FF211AA9</Color>
+
+            <DataTemplate DataType="{x:Type viewModels:StartPageModel}">
+                <local:StartPage DataContext="{Binding .}"/>
+            </DataTemplate>
+
+            <Style x:Key="grayscaleEffectDisableButton" TargetType="Button">
+                <Style.Triggers>
+                    <Trigger Property="IsEnabled" Value="False">
+                        <Setter Property="Effect">
+                            <Setter.Value>
+                                <Resources:GrayscaleEffect x:Name="grayscaleEffect" Factor="0" />
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <sys:Double x:Key="IconSize">16</sys:Double>
+
+            <Image x:Key="TLIcon" x:Shared="false" Height="16" Source="/TraceLab.UI.WPF;component/Resources/Icon_TraceLab16.png" />
+            <Image x:Key="LinkIcon" x:Shared="false" Height="16" Source="/TraceLab.UI.WPF;component/Resources/Icon_Link16.png" />
+            <Image x:Key="VideoIcon" x:Shared="false" Height="16" Source="/TraceLab.UI.WPF;component/Resources/Icon_Video16.png" />
+        </ResourceDictionary>
+    </local:MainWindowBase.Resources>
+
+    <local:MainWindowBase.Style>
+        <Style TargetType="{x:Type local:MainWindow}">
+            <Setter Property="IsExperimentRunning" Value="{Binding Experiment.IsExperimentRunning}" />
+            <Setter Property="OpenComponentGraphCommand" Value="{Binding ElementName=DockManager, Path=ActiveDocument.OpenComponentGraph}" />
+            <Setter Property="ToggleInfoPaneForNodeCommand" Value="{Binding ElementName=DockManager, Path=ActiveDocument.CurrentView.ToggleInfoPaneForNode}" />
+            <Setter Property="ProgressBar" Value="{Binding ElementName=Progress}" />
+        </Style>
+    </local:MainWindowBase.Style>
+
+    <local:MainWindowBase.CommandBindings>
+        <CommandBinding Command="{x:Static Commands:RoutedCommands.OpenComponentGraphCommand}"
+                    Executed="ExecuteOpenComponentGraphCommand" CanExecute="CanExecuteOpenComponentGraphCommand" />
+
+        <CommandBinding Command="{x:Static Commands:RoutedCommands.ToggleNodeInfoCommand}"
+                    Executed="ExecuteToggleNodeInfo"/>
+
+        <CommandBinding Command="{x:Static Commands:RoutedCommands.DefineCompositeComponentCommand}"
+                    Executed="ShowDefineCompositeComponentWizard" CanExecute="CanShowDefineCompositeComponentWizard" />
+
+        <CommandBinding Command="{x:Static Commands:RoutedCommands.CaptureScreenShotCommand}"
+                        Executed="CaptureScreenShot" CanExecute="CanCaptureScreenShot" />
+    </local:MainWindowBase.CommandBindings>
+
+    <local:MainWindowBase.InputBindings>
+        <KeyBinding Gesture="CTRL+N" Command="{Binding Path=New}" />
+        <KeyBinding Gesture="CTRL+O" Command="{Binding Path=Open}" />
+        <KeyBinding Gesture="CTRL+S" Command="{Binding Path=Save}" />
+        <KeyBinding Gesture="CTRL+SHIFT+S" Command="{Binding Path=SaveAs}" />
+        <KeyBinding Gesture="CTRL+OemComma" Command="{Binding Path=OpenSettings}" />
+        <KeyBinding Gesture="F5" 
+                    Command="{Binding ExperimentViewModel.RunExperiment}">
+            <KeyBinding.CommandParameter>
+                <MultiBinding Converter="{Converters:MultiBindingMultiValueConverter}">
+                    <MultiBinding.Bindings>
+                        <Binding ElementName="Progress" />
+                        <Binding Path="WorkspaceViewModel" />
+                        <Binding Path="ComponentLibraryViewModel" />
+                    </MultiBinding.Bindings>
+                </MultiBinding>
+            </KeyBinding.CommandParameter>
+        </KeyBinding>
+        <KeyBinding Gesture="CTRL+F3" Command="{x:Static Commands:RoutedCommands.CaptureScreenShotCommand}" />
+    </local:MainWindowBase.InputBindings>
+
+    <Grid x:Name="ModalHost">
+
+        <DockPanel>
+            <ToolBarTray DockPanel.Dock="Top" IsLocked="True" Background="White">
+                <ToolBar Band="1" BandIndex="1">
+
+                    <Button Command="{Binding Path=New}" Style="{StaticResource grayscaleEffectDisableButton}"
+                            CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:MainWindow}}}"
+                            ToolTip="Create new experiment (Ctrl+N)">
+                        <Image Height="{StaticResource IconSize}" Source="/TraceLab.UI.WPF;component/Resources/NewDocumentHS.png" />
+                    </Button>
+                    <Button Command="{Binding Path=Open}" Style="{StaticResource grayscaleEffectDisableButton}"
+                            ToolTip="Open experiment from file (Ctrl+O)">
+                        <Image Height="{StaticResource IconSize}" Source="/TraceLab.UI.WPF;component/Resources/openHS.png" OpacityMask="{x:Null}" />
+                    </Button>
+                    <Button Height="24" Click="TBButton_Click" ContextMenuOpening="TBButton_ContextMenuOpening" 
+                            Visibility="{Binding Path=RecentExperiments.Count, Converter={Converters:CountEmptyToVisConverter}}"
+                            ToolTip="Select recent opened experiment">
+                        <Path Fill="Black" Data="M 0 0 L 4 4 L 8 0 Z"/>
+                        <Button.ContextMenu>
+                            <ContextMenu ItemsSource="{Binding RecentExperiments}">
+                                <ContextMenu.ItemContainerStyle>
+                                    <Style TargetType="MenuItem">
+                                        <Setter Property="Header" Value="{Binding Filename}" />
+                                        <Setter Property="Icon" Value="{StaticResource TLIcon}" />
+                                        <Setter Property="ToolTip" Value="{Binding FullPath}" />
+                                        <Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, 
+                                            AncestorType={x:Type ContextMenu}}, Path=PlacementTarget.DataContext.Open}" />
+                                        <Setter Property="CommandParameter" Value="{Binding FullPath}" />
+                                    </Style>
+                                </ContextMenu.ItemContainerStyle>
+                            </ContextMenu>
+                        </Button.ContextMenu>
+                    </Button>
+                    <Button Command="{Binding Path=Save}" Style="{StaticResource grayscaleEffectDisableButton}"
+                            ToolTip="Save experiment (Ctrl+S)">
+                        <Image Height="{StaticResource IconSize}" Source="/TraceLab.UI.WPF;component/Resources/saveHS.png" />
+                    </Button>
+                    <Button Command="{Binding Path=SaveAs}" Style="{StaticResource grayscaleEffectDisableButton}"
+                            ToolTip="Save experiment as... (Ctrl+Shift+S)">
+                        <Image Height="{StaticResource IconSize}" Source="/TraceLab.UI.WPF;component/Resources/saveAs.png" />
+                    </Button>
+
+                    <!--<Separator />
+
+                    <Button DockPanel.Dock="Top" IsEnabled="False" Style="{StaticResource grayscaleEffectDisableButton}"
+                            Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:MainWindow}}, 
+                                Path=ShowBenchmarkWizardDialogCommand}" >
+                        <DockPanel Margin="2, 0, 2, 0">
+                            <Image Height="{StaticResource IconSize}" Source="/TraceLab.UI.WPF;component/Resources/RunBenchmarkIcon.png" VerticalAlignment="Center" />
+                        </DockPanel>
+                        <Button.ToolTip>
+                            <ToolTip Content="Enter contest" />
+                        </Button.ToolTip>
+                    </Button>
+                    <Button DockPanel.Dock="Top" IsEnabled="False" Style="{StaticResource grayscaleEffectDisableButton}"
+                            Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MainWindow}}, 
+                                Path=ShowDefineBenchmarkDialogCommand}" >
+                        <DockPanel Margin="2, 0, 2, 0">
+                            <Image Height="{StaticResource IconSize}" Source="/TraceLab.UI.WPF;component/Resources/DefineBenchmarkIcon.png" VerticalAlignment="Center" />
+                        </DockPanel>
+                        <Button.ToolTip>
+                            <ToolTip Content="Define contest" />
+                        </Button.ToolTip>
+                    </Button>-->
+
+                    <Separator />
+
+                    <Button ToolTip="Launch Package Builder" Click="OpenPkgBuilder_Click">
+                        <Image Height="{StaticResource IconSize}" Source="/TraceLab.UI.WPF;component/Resources/Icon_PkgBuilder16.png" />
+                    </Button>
+                    <Button Command="{Binding Path=OpenSettings}" Style="{StaticResource grayscaleEffectDisableButton}"
+                            ToolTip="Settings (Ctrl+,)">
+                        <Image Height="{StaticResource IconSize}" Source="/TraceLab.UI.WPF;component/Resources/Icon_Settings16.png" />
+                    </Button>
+                    <Button Click="TBButton_Click" ContextMenuOpening="TBButton_ContextMenuOpening" ToolTip="Help menu">
+                        <Image Height="{StaticResource IconSize}" Source="/TraceLab.UI.WPF;component/Resources/Icon_Help16.png" />
+                        <Button.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Online Resources" ItemsSource="{Binding Links}">
+                                    <MenuItem.ItemContainerStyle>
+                                        <Style TargetType="MenuItem">
+                                            <Setter Property="Header" Value="{Binding Title}" />
+                                            <Setter Property="Icon" Value="{StaticResource LinkIcon}" />
+                                            <Setter Property="ToolTip" Value="{Binding Description}" />
+                                            <EventSetter Event="PreviewMouseLeftButtonUp" Handler="HelpMenuItem_MouseLeftButtonUp" />
+                                        </Style>
+                                    </MenuItem.ItemContainerStyle>
+                                </MenuItem>
+                                <MenuItem Header="Video Tutorials" ItemsSource="{Binding Videos}">
+                                    <MenuItem.ItemContainerStyle>
+                                        <Style TargetType="MenuItem">
+                                            <Setter Property="Header" Value="{Binding Title}" />
+                                            <Setter Property="Icon" Value="{StaticResource VideoIcon}" />
+                                            <Setter Property="ToolTip" Value="{Binding Description}" />
+                                            <EventSetter Event="PreviewMouseLeftButtonUp" Handler="HelpMenuItem_MouseLeftButtonUp" />
+                                        </Style>
+                                    </MenuItem.ItemContainerStyle>
+                                </MenuItem>
+                                <MenuItem Header="About TraceLab" PreviewMouseLeftButtonDown="AboutTraceLabMouseLeftButtonUp">
+                                    <MenuItem.Icon>
+                                        <Image Height="{StaticResource IconSize}" Source="/TraceLab.UI.WPF;component/Resources/Icon_TraceLab16.png" />
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                            </ContextMenu>
+                        </Button.ContextMenu>
+                    </Button>
+
+                </ToolBar>
+            </ToolBarTray>
+
+            <!-- Status bar -->
+            <DockPanel DockPanel.Dock="Bottom">
+                <Button Width="22" Height="20" DockPanel.Dock="Right" 
+                        ToolTip="Capture Screenshot (CTRL+F3)" Command="{x:Static Commands:RoutedCommands.CaptureScreenShotCommand}">
+                    <Image Source="{DynamicResource screenCaptureIcon}" />
+                </Button>
+                
+                <controls:ProgressControl x:Name="Progress" />
+            </DockPanel>
+
+            <avalon:DockingManager DocumentsSource="{Binding ExperimentDocumentWrapper}" x:Name="DockManager">
+                <avalon:DockingManager.DocumentContainerStyle>
+                    <Style TargetType="{x:Type avalon:DocumentContent}" BasedOn="{StaticResource DocumentTabItemStyle}">
+                        <Setter Property="Title" Value="{Binding RelativeSource={RelativeSource Self}, Path=Content.CurrentView.Title}" />
+                        <Setter Property="IsFloatingAllowed" Value="False" />
+                    </Style>
+                </avalon:DockingManager.DocumentContainerStyle>
+                <avalon:ResizingPanel>
+                    <avalon:ResizingPanel Orientation="Horizontal">
+                        <avalon:DockablePane avalon:ResizingPanel.ResizeWidth="160" avalon:ResizingPanel.ResizeHeight="250">
+                            <local:WorkspaceWindow DataContext="{Binding Path=DataContext, ElementName=DockManager}"
+                                                Title="Workspace View" x:Name="Workspace" IsCloseable="false" DockableStyle="DockableToBorders" />
+                            <local:ComponentsLibraryWindow DataContext="{Binding Path=DataContext.ComponentLibraryViewModel, ElementName=DockManager}"
+                                                Title="Components Library" x:Name="Components" IsCloseable="false" DockableStyle="DockableToBorders" />
+                        </avalon:DockablePane>
+                        <avalon:ResizingPanel Orientation="Vertical">
+                            <avalon:DocumentPane ShowHeader="False">
+
+                            </avalon:DocumentPane>
+                            <avalon:DockablePane avalon:ResizingPanel.ResizeWidth="120" avalon:ResizingPanel.ResizeHeight="120" >
+                                <local:OutputWindow DataContext="{Binding Path=DataContext, ElementName=DockManager}"
+                                                         Title="Output" x:Name="Output" IsCloseable="false" DockableStyle="DockableToBorders" />
+                            </avalon:DockablePane>
+                        </avalon:ResizingPanel>
+
+                    </avalon:ResizingPanel>
+                </avalon:ResizingPanel>
+            </avalon:DockingManager>
+
+        </DockPanel>
+
+    </Grid>
+</local:MainWindowBase>
+    

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>Sample Collection 1</id>
+    <name>Name of the collection</name>
+    <version>1.1</version>
+    <description>This is sample coest format</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>Artifact Id 1</id>
+      <content>Artifact text here....  </content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>Artifact Id 2</id>
+      <content>Another artifact text here</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

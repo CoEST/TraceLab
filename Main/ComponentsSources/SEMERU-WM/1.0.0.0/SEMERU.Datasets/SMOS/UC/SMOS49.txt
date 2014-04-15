@@ -1,0 +1,14 @@
+Nome: VisualizzaRichiesteDiIscrizione
+Attori: Amministratore
+Descrizione: Consente all'amministratore di visualizzare l'elenco delle richieste di iscrizione giunte al sistema
+Precondizioni:
+•	L'utente è loggato al sistema come amministratore •	L'utente clicca sul pulsante “Visualizza Elenco Richieste di Iscrizione”
+presente nella home
+Sequenza degli eventi
+Utente
+Sistema
+1 . Visualizza l'elenco delle iscrizioni ancora da attivare.
+Postcondizioni:
+•
+• •
+L’utente sta visualizzando l'elenco di richieste di iscrizione al sistema da parte degli studenti L'utente interrompe l'operazione Connessione al server SMOS interrotta

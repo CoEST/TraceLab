@@ -1,0 +1,15 @@
+Use case name	RICERCA BENE CULTURALE
+Restituisce la lista dei beni culturali presenti nel sistema in base ad alcuni parametri.
+Partecipating
+Actor	
+Entry
+conditions	
+Flow of events 		User	System
+	1.		Attiva la funzionalità di ricerca di un bene culturale.	
+	2.			Visualizza la form per la ricerca.
+	3.		Compila la form di ricerca e la sottomette.	
+	4.			Elabora la richiesta.
+Exit conditions	•	Il sistema restituisce la lista dei beni culturali che soddisfano i criteri di ricerca.
+•	Interruzione della connessione al server di eTour.
+Quality 
+requirements	Il sistema deve restituire i risultati entro un tempo massimo prefissato.

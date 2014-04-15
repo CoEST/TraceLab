@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<graph>
+  <WorkflowInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Name>New Experiment</Name>
+    <LayoutName>EfficientSugiyama</LayoutName>
+  </WorkflowInfo>
+  <node id="Start">
+    <SerializedVertexData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" X="200" Y="100">
+      <Metadata xsi:type="StartNodeMetadata" />
+    </SerializedVertexData>
+  </node>
+  <node id="End">
+    <SerializedVertexData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" X="203" Y="293">
+      <Metadata xsi:type="EndNodeMetadata" />
+    </SerializedVertexData>
+  </node>
+  <node id="8b202321-24fe-4de4-95b3-238af627187d">
+    <SerializedVertexData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" X="201" Y="165.04">
+      <Metadata xsi:type="ComponentMetadata" Label="Test writer" ComponentMetadataDefinitionID="3e60ccf8-5ed0-4ee4-aa27-d3ae0ee2f0cc">
+        <IOSpec>
+          <Input />
+          <Output>
+            <item>
+              <key>
+                <string>testoutput</string>
+              </key>
+              <value>
+                <OutputItem>
+                  <OutputAs>testoutput</OutputAs>
+                  <OutputItemDefinition Name="testoutput" Type="System.Int32" />
+                </OutputItem>
+              </value>
+            </item>
+          </Output>
+        </IOSpec>
+        <ConfigWrapper>
+          <IsJava>false</IsJava>
+          <ConfigValues />
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="97181ef7-ccc3-4de9-a329-0ce6e0ab4f93">
+    <SerializedVertexData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" X="202" Y="228.04">
+      <Metadata xsi:type="ComponentMetadata" Label="Test reader" ComponentMetadataDefinitionID="25b373b0-e3ae-41a7-8915-914cc0c8637b">
+        <IOSpec>
+          <Input>
+            <item>
+              <key>
+                <string>testinput</string>
+              </key>
+              <value>
+                <InputItem>
+                  <InputItemDefinition Name="testinput" Type="System.Int32" />
+				  <MappedTo>testoutput</MappedTo>
+                </InputItem>
+              </value>
+            </item>
+          </Input>
+          <Output />
+        </IOSpec>
+        <ConfigWrapper>
+          <IsJava>false</IsJava>
+          <ConfigValues />
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <edge id="0b3dae89-202b-4ca4-bb57-8076ebf8ec4a" source="Start" target="8b202321-24fe-4de4-95b3-238af627187d" />
+  <edge id="e9bf4c47-6093-4171-b520-823bb17c7c7c" source="8b202321-24fe-4de4-95b3-238af627187d" target="97181ef7-ccc3-4de9-a329-0ce6e0ab4f93" />
+  <edge id="9a826004-e3e2-4edb-9d7a-a9e6a15deaa6" source="97181ef7-ccc3-4de9-a329-0ce6e0ab4f93" target="End" />
+</graph>

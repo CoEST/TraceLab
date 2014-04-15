@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<graph>
+  <BenchmarkInfo>
+    <Version>2</Version>
+    <Id>141772b1-6834-4b4f-abb8-f1dba8333cc6</Id>
+    <Name>Test Benchmark</Name>
+    <LayoutName>EfficientSugiyama</LayoutName>
+    <Description>Test Benchmark Description</Description>
+  </BenchmarkInfo>
+  <node id="Start">
+    <SerializedVertexData Version="1" X="654.965" Y="118.9">
+      <Metadata type="TraceLab.Core.Components.StartNodeMetadata, TraceLab.Core, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Start" />
+    </SerializedVertexData>
+  </node>
+  <node id="End">
+    <SerializedVertexData Version="1" X="965.815" Y="544.9">
+      <Metadata type="TraceLab.Core.Components.EndNodeMetadata, TraceLab.Core, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="End" />
+    </SerializedVertexData>
+  </node>
+  <node id="017869a3-4a2f-452c-98fc-8a7491e9a46c">
+    <SerializedVertexData Version="1" X="969" Y="222.04">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="AnswerMatrixImporter" ComponentMetadataDefinitionID="e95dbb36-1db8-11e0-8f08-2ee7dfd72085">
+        <IOSpec Version="1">
+          <Input />
+          <Output />
+          <Import>
+            <ImportItem>
+              <ImportItemDefinition Name="answerMatrix" Type="TraceLabSDK.Types.TLSimilarityMatrix" />
+              <ImportAs>benchmarkAnswerMatrix</ImportAs>
+            </ImportItem>
+          </Import>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>Path</Name>
+              <DisplayName>Path</DisplayName>
+              <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <FilePath>
+                  <Version>1</Version>
+                  <Relative>TestBenchmarkData\allManualTraces.txt</Relative>
+                </FilePath>
+              </Value>
+            </PropertyObject>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>Separator</Name>
+              <DisplayName>Separator</DisplayName>
+              <ValueType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <string>,</string>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="18e6e329-9e39-4ef1-a105-b338873ae919">
+    <SerializedVertexData Version="1" X="741" Y="221">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Benchmark Source Artifacts" ComponentMetadataDefinitionID="d98bd1e6-1db5-11e0-bfa9-3ee4dfd72085">
+        <IOSpec Version="1">
+          <Input />
+          <Output />
+          <Import>
+            <ImportItem>
+              <ImportItemDefinition Name="listOfArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" />
+              <ImportAs>benchmarkSourceArtifacts</ImportAs>
+            </ImportItem>
+          </Import>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>Path</Name>
+              <DisplayName>Path</DisplayName>
+              <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <FilePath>
+                  <Version>1</Version>
+                  <Relative>TestBenchmarkData\11HIPAA_Goal_Model.xml</Relative>
+                </FilePath>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="3cb15e92-f85e-4e54-8a8f-3e3115313f6f">
+    <SerializedVertexData Version="1" X="623" Y="363">
+      <Metadata type="TraceLab.Core.Components.ComponentTemplateMetadata, TraceLab.Core, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Default Solution">
+        <IOSpec Version="1">
+          <Input />
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="similarityMatrix" Type="TraceLabSDK.Types.TLSimilarityMatrix" />
+              <OutputAs>resultsMatrix</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import>
+            <ImportItem>
+              <ImportItemDefinition Name="originalTargetArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" />
+              <ImportAs>benchmarkTargetArtifacts</ImportAs>
+            </ImportItem>
+            <ImportItem>
+              <ImportItemDefinition Name="originalSourceArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" />
+              <ImportAs>benchmarkSourceArtifacts</ImportAs>
+            </ImportItem>
+          </Import>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues />
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="915976dc-d949-4839-844a-be56f4e8b88e">
+    <SerializedVertexData Version="1" X="968.215" Y="410.04">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Results Metric Computation" ComponentMetadataDefinitionID="7cba9f2d-730b-43c3-8ba8-ed9fe53650fb">
+        <IOSpec Version="1">
+          <Input>
+            <InputItem>
+              <InputItemDefinition Name="answerMatrix" Type="TraceLabSDK.Types.TLSimilarityMatrix" />
+              <MappedTo>benchmarkAnswerMatrix</MappedTo>
+            </InputItem>
+            <InputItem>
+              <InputItemDefinition Name="sourceArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" />
+              <MappedTo>benchmarkSourceArtifacts</MappedTo>
+            </InputItem>
+            <InputItem>
+              <InputItemDefinition Name="similarityMatrix" Type="TraceLabSDK.Types.TLSimilarityMatrix" />
+              <MappedTo>resultsMatrix</MappedTo>
+            </InputItem>
+          </Input>
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="recallData" Type="TraceLabSDK.Types.TLMetricsContainer" />
+              <OutputAs>recallData</OutputAs>
+            </OutputItem>
+            <OutputItem>
+              <OutputItemDefinition Name="precisionData" Type="TraceLabSDK.Types.TLMetricsContainer" />
+              <OutputAs>precisionData</OutputAs>
+            </OutputItem>
+            <OutputItem>
+              <OutputItemDefinition Name="averagePrecisionData" Type="TraceLabSDK.Types.TLMetricsContainer" />
+              <OutputAs>averagePrecisionData</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import />
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>Threshold</Name>
+              <DisplayName>Threshold</DisplayName>
+              <ValueType>System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <double>0.01</double>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="60f4117b-7021-4f44-9f50-7ea62754e590">
+    <SerializedVertexData Version="1" X="508" Y="222">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Benchmark Target Artifacts" ComponentMetadataDefinitionID="d98bd1e6-1db5-11e0-bfa9-3ee4dfd72085">
+        <IOSpec Version="1">
+          <Input />
+          <Output />
+          <Import>
+            <ImportItem>
+              <ImportItemDefinition Name="listOfArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" />
+              <ImportAs>benchmarkTargetArtifacts</ImportAs>
+            </ImportItem>
+          </Import>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>Path</Name>
+              <DisplayName>Path</DisplayName>
+              <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <FilePath>
+                  <Version>1</Version>
+                  <Relative>TestBenchmarkData\1Care2x.xml</Relative>
+                </FilePath>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <edge id="c778657e-ae47-4ad3-985a-4778956ea4b0" source="Start" target="017869a3-4a2f-452c-98fc-8a7491e9a46c" />
+  <edge id="a7b3c877-137a-48de-9b0a-43b77bd0fbc6" source="Start" target="18e6e329-9e39-4ef1-a105-b338873ae919" />
+  <edge id="35919887-4fa2-4bb4-8e2d-d116cebcd2b3" source="Start" target="60f4117b-7021-4f44-9f50-7ea62754e590" />
+  <edge id="d3a30ac5-bcce-4354-8f2b-9e7307c59d0d" source="017869a3-4a2f-452c-98fc-8a7491e9a46c" target="915976dc-d949-4839-844a-be56f4e8b88e" />
+  <edge id="d59c6eba-8c62-4178-9146-e59b55ee8288" source="18e6e329-9e39-4ef1-a105-b338873ae919" target="3cb15e92-f85e-4e54-8a8f-3e3115313f6f" />
+  <edge id="54c30a3f-4d9a-4f79-92ae-cde9bc44d85d" source="3cb15e92-f85e-4e54-8a8f-3e3115313f6f" target="915976dc-d949-4839-844a-be56f4e8b88e" />
+  <edge id="875bff7e-7e47-4387-b45c-60e211eb6007" source="915976dc-d949-4839-844a-be56f4e8b88e" target="End" />
+  <edge id="969467dc-1142-449d-bee1-1c0e7c816a6b" source="60f4117b-7021-4f44-9f50-7ea62754e590" target="3cb15e92-f85e-4e54-8a8f-3e3115313f6f" />
+</graph>

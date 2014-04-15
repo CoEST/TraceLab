@@ -1,0 +1,15 @@
+Use case name SEARCH 
+Research and cultural heritage for all. 
+Participating 
+Actor initialized by Guest User 
+Entry 
+conditions • Guest User logs on. 
+Flow of events User System 
+1. Activate the search functionality. 
+2 Displays the corresponding form. 
+3 Fill out the form and submit. 
+4 Gets the position dell'Utente Guest citing the case of use location and process research. 
+Exit conditions • The system displays a list of sites that meet the search criteria. 
+• Interruption of the connection to the server ETOUR. 
+Quality 
+requirements

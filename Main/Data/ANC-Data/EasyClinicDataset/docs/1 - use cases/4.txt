@@ -1,0 +1,48 @@
+Inserting anagrafica doctor 
+It allows the operator to input 
+                the anagrafica of a doctor who works 
+                at the outpatient 
+                The Operator is responsible to 
+                input of doctor anagrafica
+                in the S I O 
+The Operator has been recognized by ` 
+                System (See UcValOp) and has 
+                all the data that characterize 
+                the doctor anagrafica
+The data in the S I O 
+                not be modified 
+                Success: The doctor anagrafica is 
+                correctly inserted in the 
+                I S O 
+The operator activates the execution of 
+                input service of the 
+                doctor anagrafica
+1 View the mask 
+     for input of 
+     needed information 
+2 Inserts data of doctor anagrafica
+3 Confirm input
+4 Verify the data insert by operator
+5 Stores data 
+6 Notify that the operation 
+     is finished with 
+     success 
+Data entered invalid 
+   4 1 Display a message showing the 
+          data deemed invalid 
+   4 2 take back running from point 1 
+          underpinned the fields of the form with data 
+          insert by operator
+Operator cancels operation 
+3 1 ends the execution of use case with 
+          failure 
+   2 1 The age of a physician is `characterized by 
+          following data: name surname sex code 
+          Tax date of birth place of birth 
+          province of birth place of address 
+          home province of residence address ZIP code 
+          telephone specialization year 
+          certification and additional notes 
+          NB: In italics are highlighted data 
+          Optional whose inclusion does not affect 
+          on the correct completion of the operation

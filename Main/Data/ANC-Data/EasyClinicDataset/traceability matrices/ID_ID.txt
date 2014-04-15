@@ -1,0 +1,20 @@
+31.txt:32.txt 
+32.txt:31.txt 
+33.txt:34.txt 35.txt 40.txt 
+34.txt:35.txt 36.txt 40.txt 
+35.txt:34.txt 36.txt 40.txt 
+36.txt:37.txt 49.txt 
+37.txt:36.txt 50.txt 
+38.txt:39.txt 45.txt 46.txt 
+39.txt:38.txt 45.txt 46.txt 
+40.txt:33.txt 34.txt 35.txt 47.txt 
+41.txt:42.txt 43.txt 44.txt 48.txt 
+42.txt:41.txt 43.txt 44.txt 48.txt 
+43.txt:41.txt 42.txt 44.txt 48.txt 
+44.txt:41.txt 42.txt 43.txt 48.txt 
+45.txt:38.txt 39.txt 46.txt 
+46.txt:38.txt 39.txt 45.txt 
+47.txt:48.txt 49.txt 50.txt 
+48.txt:47.txt 49.txt 50.txt 
+49.txt:47.txt 48.txt 50.txt 
+50.txt:47.txt 48.txt 49.txt 

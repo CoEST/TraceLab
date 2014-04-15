@@ -1,0 +1,32 @@
+The average time of waiting 
+It allows the operator to get an estimate 
+                 the average time required to serve a 
+                 Booking 
+                 The Operator's interest to have a 
+                 estimating the average time to serve a 
+                 reservation request 
+The operator activates the execution of 
+                 service for calculating the estimated time 
+                 average 
+1 View a mask 
+     to see the 
+     result of the calculation 
+     estimation of time 
+     medium to serve a 
+     request 
+     Reservations 
+2 Start function 
+3 View results 
+     calculating 
+Operator decides to print 
+information 
+   3 1 Start printing information 
+          displayed 
+   3 2 generates the report and sends it to 
+          Printer 
+Operator cancels the operation 
+   2 1 ends the use case with failure 
+   1 1 The time of service delivered in days is `equal 
+          the time between the date of request 
+          reservation and when the appointment 
+          is assigned

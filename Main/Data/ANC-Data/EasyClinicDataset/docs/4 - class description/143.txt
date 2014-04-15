@@ -1,0 +1,34 @@
+Class PrintManager Date: 
+                                                    16/09/2003 
+                                                    Version: 
+                                                    0 01 000 
+Description Its task managing the operations of the press 
+                   contributed to the operator
+Attributes 
+       Name Access Description 
+                                
+Methods 
+       Signature stampaHospitalCard () Public Access 
+    Description Its task is to provide for the retrieval 
+                   information necessary for printing the 
+                   hospital card 
+       Signature stampaPianoSettimanale () Public Access 
+    Description Its task is to provide for the retrieval 
+                   information necessary for printing the plan 
+                   Reservations weekly in tabular form 
+       Signature stampaResocontoEsami () Public Access 
+    Description Its task is to provide for the retrieval 
+                   information necessary for printing 
+                   reports of the examinations that the Operator has 
+                   required 
+       Signature stampaResocontoPrenotazioni (Public Access 
+                   ) 
+    Description Its task is to provide for the retrieval 
+                   information necessary for printing 
+                   reports of reservations that the Operator has 
+                   required 
+       Signature stampaResocontoVisite () Public Access 
+    Description Its task is to provide for the retrieval 
+                   information necessary for printing 
+                   records of visits that the operator has 
+                   required

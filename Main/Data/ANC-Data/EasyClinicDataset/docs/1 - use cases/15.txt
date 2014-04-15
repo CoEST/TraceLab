@@ -1,0 +1,55 @@
+Changing reservation 
+It allows the operator to meet 
+                 request to change a reservation 
+                 a service by Outpatient 
+                 To change a patient means the 
+                 shift the date to a date 
+                 Next 
+                 The Operator has an interest in changing the 
+                 renting an outpatient service 
+                 previously requested by a patient 
+The Operator has been recognized by ` 
+                 System (See UcValOp) The patient is ` 
+                 been recognized by the system (See 
+                 UcValPaz) and the reservation of which 
+                 requires the amendment is `this 
+                 in the S I O 
+The data in the S I O 
+                 not be modified 
+                 Success: The reservation is 
+                 successfully slipped a date 
+                 Next 
+The operator activates the execution of 
+                 Service to changing a reservation 
+1 View the list of 
+     Reservations for the 
+     Patient 
+2 Select the reservation 
+                                to be change 
+3 Confirm  selection 
+4 View the mask 
+     for changing the 
+     Reservations 
+5 Includes (Select dates 
+     available) 
+6 confirm the change 
+7 Verification that the sequence 
+     Reservations is 
+     valid 
+     (See BrValSeq) 
+Remember the 8 
+     updates 
+Notify the operator 10 
+     that the operation was ` 
+     concluded successfully 
+Sequence reservations invalid 
+   7 1 System: Show an appropriate message 
+   7 2 System: Rejuvenating running from 4 step
+Operator cancels the operation 
+Review 
+  3 1 ends the use case with failure 
+   6 1 
+   7 1 The sequence of reservations must be ricontrollata 
+          because the patient may take the 
+          Editing a different reservation 
+          since last

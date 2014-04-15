@@ -1,0 +1,57 @@
+F1	Administrator can shutdown the system~
+F2	Users can make and receive calls; user is notified if user does not have the appropriate privileges~
+F3	Dial tone is given to user when the phone is taken offhook~
+F4	4 digit phone number, with the first digit as a prefix and the last 3 digits mapping to a specific phone~
+F5	System load is checked, incremented and decremented appropriately during the call process~
+F6	Phone number dialed is mapped to another user’s IP~
+F7	Call must completed within a specified time~
+F8	If callee’s phone is busy, caller will receive a busy tone~
+F9	Callee’s phone will ring after caller places a call to the callee~
+F10	Audio connection will connect to caller and callee~
+F11	Caller will receive a timeout signal if callee does not pick up the phone~
+F12	Connection is terminated when either party hangs up~
+F13	Important numbers are dialed by pressing one button~
+F14	Each phone number must be distinctly mapped to an IP~
+F15	Administrator has a higher priority in accessing the mapping than a caller~
+F16	Administrator must have access to all features of the system console~
+F17	Administrator must login to the system console using a correct combination of login and password~
+F18	Administrator login will timeout after a specified time or failures~
+F19	Only one administrator can login to the system at one time~
+F20	Only one administrator modify system data at one time~
+F21	System should check administrator’s data input to ensure data integrity~
+F22	Administrator can add, edit and remove an user account~
+F23	User records are retained indefinitely when an user account is remove~
+F24	Administrator can see hardware information through System Console~
+F25	Administrator can request a hardware test through the System Console~
+F26	System will issue automatic hardware test every 30 seconds~
+F27	Automatic hardware test results are logged into a file~
+F28	Administrator can enable and disable a specific phone in the system through the System Console~
+F29	Administrator can reset a specific phone’s call processing software through the System Console~
+F30	Administrator can specify the maximum system capacity in the System Console~
+F31	All calls will be recorded onto the system~
+F32	Bills are issued to all users with outstanding balance at the end of each billing period~
+F33	Administrator can see the phone bill through the System Console~
+F34	Bill payments are recorded by the system administrator through the System Console~
+F35	Administrator can specify billing plan for each user through the System Console~
+F36	System should check administrator’s input to ensure billing period is valid~
+F37	Caller can choose to block certain incoming calls~
+F38	System finds available IP and phone number and assigns to phone~
+F39	Administrator can change the phone number and the IP assigned to a phone device~
+F40	Administrator can disassociate and IP and a phone number from a phone~
+F41	Verify there exists a callee for the dialed phone number and mapped IP~
+F42	Phone Subsystem collects digits dialed by the phone~
+F43	Administrator can add a new phone number IP mapping~
+F44	Administrator can look up a phone number IP mapping via the System Console~
+F45	Administrator can update phone number IP mapping via the System Console~
+F46	System checks if an user is already existing before adding an user~
+F47	System checks if a phone is available before adding an user~
+F48	Administrator can modify a phone number or an IP of an user account~
+F49	Administrator can assign a phone number and an IP to an user account~
+F50	Administrator can assign a specific phone number to an user account~
+F51	Administrator can assign a random phone number to an user account~
+N1	Response time of establishing an audio connection should be reasonable~
+N2	System must be easy to use for the caller and callee, without any prior training; conform to the norm of a regular telephone~
+N3	A correct connection from caller to callee is made if the system load can handle it~
+N4	Contents of an established connection will not be overheard~
+N5	The failure of one phone will not cause the entire system to fail.~
+N6	System should be easily extendable to support multiple Administrators~

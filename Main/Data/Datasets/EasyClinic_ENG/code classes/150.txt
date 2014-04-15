@@ -1,0 +1,31 @@
+Class VisiteManager Date: 
+                                                    16/09/2003 
+                                                    Version: 
+                                                    0 01 000 
+Description has the task to manage operations 
+                   require access to data of visits 
+                   performed in outpatient 
+Attributes 
+       Name Access Description 
+                                
+Methods 
+       Signature delvis () Public Access 
+    Description has the task to manage the disposal of a 
+                   visit 
+       Signature editVisita () Public Access 
+    Description Its task is to manage the change data 
+                   a visit 
+       Signature getElencoVisite () Public Access 
+    Provides description of the retrieval of all 
+                   visits 
+       Signature getVisitaAt () Public Access 
+    Description Its task is to find all the information 
+                   on a visit 
+       Signature newVisita () Public Access 
+    Description Its task is to manage the inclusion of a 
+                   new visit 
+       Signature resocontoVisite () Public Access 
+    Description Its task is to find all the information 
+                   necessary for the composition of the statement of 
+                   visits made in a given gap 
+                   time

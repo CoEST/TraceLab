@@ -1,0 +1,637 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+
+  <HelpKINode Title="Absolute property" Url="html/4121c034-f207-c39c-82cd-aa56153fad7e.htm" />
+  <HelpKINode Title="Absolute property" Url="html/f20289c5-5228-df87-cac9-78c51f980ae2.htm" />
+  <HelpKINode Title="Add method" Url="html/4aed87d0-f898-c3da-1edf-5116c094ed46.htm" />
+  <HelpKINode Title="AddRange method" Url="html/8c6ab755-a28e-18d8-e1df-457a41e9f6c9.htm" />
+  <HelpKINode Title="Author property" Url="html/957dcfa7-85fa-36da-2ed7-b19699396020.htm" />
+  <HelpKINode Title="BaseComponent class" Url="html/09856f3d-7f87-2929-f7e0-dd6eb80e29f2.htm" />
+  <HelpKINode Title="BaseComponent class" Url="html/c0c950b2-c38d-bfc8-6002-a6943b536225.htm" />
+  <HelpKINode Title="BaseComponent class">
+    <HelpKINode Title="about BaseComponent class" Url="html/c0c950b2-c38d-bfc8-6002-a6943b536225.htm" />
+    <HelpKINode Title="all members" Url="html/09856f3d-7f87-2929-f7e0-dd6eb80e29f2.htm" />
+    <HelpKINode Title="constructor" Url="html/d3a7b54c-3a5b-630d-401b-92b807ba6f86.htm" />
+    <HelpKINode Title="methods" Url="html/12a94f76-f3c3-d057-0f72-af3fb5e81e9f.htm" />
+    <HelpKINode Title="properties" Url="html/b7e97eee-e16c-6424-ad4c-6c1d68699a91.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BaseComponent.BaseComponent constructor" Url="html/d3a7b54c-3a5b-630d-401b-92b807ba6f86.htm" />
+  <HelpKINode Title="BaseComponent.Compute method" Url="html/5bb63ef6-618d-957f-9bbf-0d6d03ca1c7d.htm" />
+  <HelpKINode Title="BaseComponent.Configuration property" Url="html/2240ff93-7ae5-fb8a-aa95-7ad28dad6e8a.htm" />
+  <HelpKINode Title="BaseComponent.InitializeLifetimeService method" Url="html/42f4592d-2292-3580-fecc-35eb8fb3901b.htm" />
+  <HelpKINode Title="BaseComponent.Logger property" Url="html/03ac8e1c-137a-86e8-5613-72113f2a74bb.htm" />
+  <HelpKINode Title="BaseComponent.MemberwiseClone method" Url="html/4e8ac39a-3bb7-6677-c019-8198f4dfe226.htm" />
+  <HelpKINode Title="BaseComponent.PostCompute method" Url="html/32cdd73c-4a6e-bd54-1955-9870bec474a0.htm" />
+  <HelpKINode Title="BaseComponent.PreCompute method" Url="html/e02157d7-58bc-e0de-09ae-65e4afe90b3c.htm" />
+  <HelpKINode Title="BaseComponent.Workspace property" Url="html/b5cb3877-7861-8287-63fb-01550e818497.htm" />
+  <HelpKINode Title="BasePath class" Url="html/612cf1aa-5adc-4942-76cc-8dc156c9dfa7.htm" />
+  <HelpKINode Title="BasePath class" Url="html/ef677d68-099c-8bcc-be29-c94136d425c6.htm" />
+  <HelpKINode Title="BasePath class">
+    <HelpKINode Title="about BasePath class" Url="html/ef677d68-099c-8bcc-be29-c94136d425c6.htm" />
+    <HelpKINode Title="all members" Url="html/612cf1aa-5adc-4942-76cc-8dc156c9dfa7.htm" />
+    <HelpKINode Title="constructor" Url="html/f4754e39-1e4c-3545-a903-cb4367be12a2.htm" />
+    <HelpKINode Title="events" Url="html/fe74ed74-ec7b-bed3-eb0d-ef4eb23bfc01.htm" />
+    <HelpKINode Title="methods" Url="html/ec38910b-abab-4263-6025-ef7aadf61113.htm" />
+    <HelpKINode Title="properties" Url="html/73894bd1-2f7d-dc52-f5a6-85118619df1a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BasePath.Absolute property" Url="html/f20289c5-5228-df87-cac9-78c51f980ae2.htm" />
+  <HelpKINode Title="BasePath.BasePath constructor" Url="html/f4754e39-1e4c-3545-a903-cb4367be12a2.htm" />
+  <HelpKINode Title="BasePath.DataRoot property" Url="html/0fe5b553-244d-bb0c-55e5-01186d30832e.htm" />
+  <HelpKINode Title="BasePath.GetSchema method" Url="html/0a7974e7-1644-1580-a4da-2ba8982ac131.htm" />
+  <HelpKINode Title="BasePath.Init method" Url="html/bdbe5737-3ea0-89b3-6294-47ce1692d4c2.htm" />
+  <HelpKINode Title="BasePath.NotifyPropertyChanged method" Url="html/7e43a8dd-c724-bbf9-b729-0c839ff195d8.htm" />
+  <HelpKINode Title="BasePath.PropertyChanged event" Url="html/12dc1b58-da43-6c40-9e7c-2dbb5226110c.htm" />
+  <HelpKINode Title="BasePath.ReadXml method" Url="html/f7ead17a-3954-d3f8-1ec0-d1f326488960.htm" />
+  <HelpKINode Title="BasePath.Relative property" Url="html/97e49d72-3d72-6999-c425-a75368b3909f.htm" />
+  <HelpKINode Title="BasePath.SetDataRoot method" Url="html/0e8f0ae2-351a-4310-c50d-9480ab033d2d.htm" />
+  <HelpKINode Title="BasePath.WriteXml method" Url="html/470f18a6-c581-0635-204c-956a6f9c1780.htm" />
+  <HelpKINode Title="Clear method" Url="html/bce2a7bd-2144-8585-70e2-ec437416b89e.htm" />
+  <HelpKINode Title="CollectionChanged event" Url="html/1923dd2d-ff5c-024d-0dc0-c1e7bc5c519e.htm" />
+  <HelpKINode Title="ComponentAttribute class" Url="html/5d54313e-db01-38b3-82dc-0828e8357c41.htm" />
+  <HelpKINode Title="ComponentAttribute class" Url="html/7094224b-341d-7b9a-bfe3-9513ec5686bc.htm" />
+  <HelpKINode Title="ComponentAttribute class">
+    <HelpKINode Title="about ComponentAttribute class" Url="html/7094224b-341d-7b9a-bfe3-9513ec5686bc.htm" />
+    <HelpKINode Title="all members" Url="html/5d54313e-db01-38b3-82dc-0828e8357c41.htm" />
+    <HelpKINode Title="constructor" Url="html/8b3def61-bc61-51ab-4385-5bcf7a97bc4a.htm" />
+    <HelpKINode Title="methods" Url="html/3cca7a32-2088-7da1-5365-1e096191db4a.htm" />
+    <HelpKINode Title="properties" Url="html/e5feb335-4f26-657f-3433-b82df3d0d8bd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ComponentAttribute.Author property" Url="html/957dcfa7-85fa-36da-2ed7-b19699396020.htm" />
+  <HelpKINode Title="ComponentAttribute.ComponentAttribute constructor" Url="html/8b3def61-bc61-51ab-4385-5bcf7a97bc4a.htm" />
+  <HelpKINode Title="ComponentAttribute.ConfigurationType property" Url="html/9b6eb0ff-8351-4b97-29d8-f5791eb6b6b5.htm" />
+  <HelpKINode Title="ComponentAttribute.DefaultLabel property" Url="html/0caf5046-c87e-b345-d73e-526da67d7ac9.htm" />
+  <HelpKINode Title="ComponentAttribute.Description property" Url="html/1cd9d2a0-def0-7804-50b1-fe778f0911c3.htm" />
+  <HelpKINode Title="ComponentAttribute.GuidID property" Url="html/a1fd1890-c3ea-33f7-9357-9a29305ed98f.htm" />
+  <HelpKINode Title="ComponentAttribute.GuidIDString property" Url="html/9304e28d-65fb-8b38-b7b8-2d70089cb856.htm" />
+  <HelpKINode Title="ComponentAttribute.IsJava property" Url="html/e9ea1186-da9d-a4fb-3e66-60cc494124e3.htm" />
+  <HelpKINode Title="ComponentAttribute.Name property" Url="html/2ac2d864-b78a-83ca-73c5-92351d876056.htm" />
+  <HelpKINode Title="ComponentAttribute.Version property" Url="html/72a2b1c5-fbe8-a575-e74a-f5650b4d49e9.htm" />
+  <HelpKINode Title="ComponentException class" Url="html/9377da0e-8189-fa84-1122-13ba03077406.htm" />
+  <HelpKINode Title="ComponentException class" Url="html/bd1601b3-3a72-6075-7ae2-070548689e70.htm" />
+  <HelpKINode Title="ComponentException class">
+    <HelpKINode Title="about ComponentException class" Url="html/9377da0e-8189-fa84-1122-13ba03077406.htm" />
+    <HelpKINode Title="all members" Url="html/bd1601b3-3a72-6075-7ae2-070548689e70.htm" />
+    <HelpKINode Title="constructor" Url="html/02f0f35b-f4fd-8796-c79c-c898e902172f.htm" />
+    <HelpKINode Title="methods" Url="html/565f015a-8869-b74c-bf87-3156f7987fd3.htm" />
+    <HelpKINode Title="properties" Url="html/0830eb28-435d-a413-4147-6c9d1592c762.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ComponentException.ComponentException constructor" Url="html/02f0f35b-f4fd-8796-c79c-c898e902172f.htm" />
+  <HelpKINode Title="ComponentLocations property" Url="html/1a345a48-4c41-a0ee-6847-b321282f2658.htm" />
+  <HelpKINode Title="ComponentLogger interface" Url="html/01ec396a-6a02-417e-cea8-5e054ccba988.htm" />
+  <HelpKINode Title="ComponentLogger interface" Url="html/4ff5a3f4-d1e8-7e05-0e2e-268377981a02.htm" />
+  <HelpKINode Title="ComponentLogger interface">
+    <HelpKINode Title="about ComponentLogger interface" Url="html/01ec396a-6a02-417e-cea8-5e054ccba988.htm" />
+    <HelpKINode Title="all members" Url="html/4ff5a3f4-d1e8-7e05-0e2e-268377981a02.htm" />
+    <HelpKINode Title="methods" Url="html/501acea7-de9e-b136-1769-4bf715e025f3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ComponentLogger.Debug method" Url="html/3798ece6-dccc-04b1-7449-7aa2b8bcbb39.htm" />
+  <HelpKINode Title="ComponentLogger.DebugException method" Url="html/527df6c1-5e10-36dc-4969-eebb694b77ee.htm" />
+  <HelpKINode Title="ComponentLogger.Error method" Url="html/7e9bdca7-f0eb-701a-dabe-efc826d0456f.htm" />
+  <HelpKINode Title="ComponentLogger.ErrorException method" Url="html/7767907f-3b88-d790-cdbe-aaf0fe6fc221.htm" />
+  <HelpKINode Title="ComponentLogger.Fatal method" Url="html/bc314506-752f-2396-6049-2b8d12ed202a.htm" />
+  <HelpKINode Title="ComponentLogger.FatalException method" Url="html/89bedad9-25c4-13ab-131e-d4d0beb18562.htm" />
+  <HelpKINode Title="ComponentLogger.Info method" Url="html/02856ec0-8f07-d6c9-40bd-50d5a1662c4e.htm" />
+  <HelpKINode Title="ComponentLogger.InfoException method" Url="html/383e4ae4-caa3-c83b-fac9-e66cfb5fd2dd.htm" />
+  <HelpKINode Title="ComponentLogger.InitializeLifetimeService method" Url="html/84541257-44b1-db60-65b7-54b3ef813cde.htm" />
+  <HelpKINode Title="ComponentLogger.Trace method" Url="html/1e9c1267-91db-ddb0-472d-a97fc9129f98.htm" />
+  <HelpKINode Title="ComponentLogger.TraceException method" Url="html/a66403c0-0234-65cb-7a0c-56706404bd33.htm" />
+  <HelpKINode Title="ComponentLogger.Warn method" Url="html/bd284f1c-a5ef-c65e-5725-0da89c497c50.htm" />
+  <HelpKINode Title="ComponentLogger.WarnException method" Url="html/7b066ffb-6df0-074e-fe7e-5ee895cf493d.htm" />
+  <HelpKINode Title="ComponentLoggerImplementation class" Url="html/598280d0-1c7a-f0e2-bf0b-7b6986f6171e.htm" />
+  <HelpKINode Title="ComponentLoggerImplementation class" Url="html/c1399d5c-e5e5-98a4-785c-e1ff5252ea76.htm" />
+  <HelpKINode Title="ComponentLoggerImplementation class">
+    <HelpKINode Title="about ComponentLoggerImplementation class" Url="html/c1399d5c-e5e5-98a4-785c-e1ff5252ea76.htm" />
+    <HelpKINode Title="all members" Url="html/598280d0-1c7a-f0e2-bf0b-7b6986f6171e.htm" />
+    <HelpKINode Title="constructor" Url="html/c0b6461a-5b4e-0074-07d6-70076bc9b25e.htm" />
+    <HelpKINode Title="methods" Url="html/8ac3ce7a-748e-112c-20ad-11ee2fd4b515.htm" />
+    <HelpKINode Title="properties" Url="html/0a5ad86c-e373-1770-e79f-376ebf08d63d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ComponentLoggerImplementation.ComponentLoggerImplementation constructor" Url="html/c0b6461a-5b4e-0074-07d6-70076bc9b25e.htm" />
+  <HelpKINode Title="ComponentLoggerImplementation.Debug method" Url="html/19c00869-8692-0ee1-4e38-27001c50809c.htm" />
+  <HelpKINode Title="ComponentLoggerImplementation.DebugException method" Url="html/480cddab-464f-7836-6dc5-4c0db7ae9b14.htm" />
+  <HelpKINode Title="ComponentLoggerImplementation.Error method" Url="html/0943d718-4263-1eaa-a2db-90f682feabd9.htm" />
+  <HelpKINode Title="ComponentLoggerImplementation.ErrorException method" Url="html/3318f719-7191-eda0-2b00-901acd51d709.htm" />
+  <HelpKINode Title="ComponentLoggerImplementation.Fatal method" Url="html/0a022a55-0d52-d964-d8a3-12d4d39df131.htm" />
+  <HelpKINode Title="ComponentLoggerImplementation.FatalException method" Url="html/3d6c9ce0-189f-00f7-b3fc-241fc56bcd0c.htm" />
+  <HelpKINode Title="ComponentLoggerImplementation.Info method" Url="html/b66084ac-63f0-ae17-2eaf-8f5f46103d9b.htm" />
+  <HelpKINode Title="ComponentLoggerImplementation.InfoException method" Url="html/38bd6a1d-4135-7200-b6a6-4ce9e337f2fa.htm" />
+  <HelpKINode Title="ComponentLoggerImplementation.InitializeLifetimeService method" Url="html/3a9e60ad-d660-9b7d-797b-91afb604ab75.htm" />
+  <HelpKINode Title="ComponentLoggerImplementation.MemberwiseClone method" Url="html/d2d5d420-8fa9-7800-149c-b984b4f5a5e9.htm" />
+  <HelpKINode Title="ComponentLoggerImplementation.Name property" Url="html/695a3540-3ca1-4391-e254-9931b59dc5fe.htm" />
+  <HelpKINode Title="ComponentLoggerImplementation.Trace method" Url="html/2999fb1e-abb3-bb1a-533b-f8e6619e66c5.htm" />
+  <HelpKINode Title="ComponentLoggerImplementation.TraceException method" Url="html/92b6bd5a-27e5-af42-0f0d-3133e87717da.htm" />
+  <HelpKINode Title="ComponentLoggerImplementation.Warn method" Url="html/d814e940-75dd-4f2b-455a-5a36e371d0cf.htm" />
+  <HelpKINode Title="ComponentLoggerImplementation.WarnException method" Url="html/d960fb77-140b-e26f-7a04-ad16a73c455e.htm" />
+  <HelpKINode Title="CompressedHash property" Url="html/453a387a-a583-69f7-5a04-70a291c20d8d.htm" />
+  <HelpKINode Title="CompressedSize property" Url="html/315fa868-9c22-15da-5448-dae53d93288d.htm" />
+  <HelpKINode Title="Compute method" Url="html/5bb63ef6-618d-957f-9bbf-0d6d03ca1c7d.htm" />
+  <HelpKINode Title="Compute method" Url="html/c8ca3d4b-fc6d-83df-bf45-703d48f99e4c.htm" />
+  <HelpKINode Title="Configuration property" Url="html/053d79aa-b175-7740-4d86-58bf9e6f1a0c.htm" />
+  <HelpKINode Title="Configuration property" Url="html/2240ff93-7ae5-fb8a-aa95-7ad28dad6e8a.htm" />
+  <HelpKINode Title="ConfigurationType property" Url="html/9b6eb0ff-8351-4b97-29d8-f5791eb6b6b5.htm" />
+  <HelpKINode Title="Contains method" Url="html/3bc1fd6c-c889-35af-d754-846a44127b8c.htm" />
+  <HelpKINode Title="ContainsKey method" Url="html/adac4f7e-6003-4f52-da16-887332c5bc5d.htm" />
+  <HelpKINode Title="ConvertOldTypeName method" Url="html/8333ede1-98e6-61f3-560e-c22ebb4e5bde.htm" />
+  <HelpKINode Title="Count property" Url="html/51866b90-d5d3-99df-b124-1f80c96ad5bc.htm" />
+  <HelpKINode Title="Current property" Url="html/5eed2667-5a2c-a251-6a2f-50e8ed68da78.htm" />
+  <HelpKINode Title="CurrentStatus property" Url="html/caec37b1-1ce4-aa84-cce5-3f663b7aada3.htm" />
+  <HelpKINode Title="CurrentStep property" Url="html/2099dd29-a126-104a-553c-c675cdf10093.htm" />
+  <HelpKINode Title="Data property" Url="html/c77210ac-5851-2265-2fd1-296eb28a7091.htm" />
+  <HelpKINode Title="Data property" Url="html/f6400830-790b-ba23-ccce-d34654475c0b.htm" />
+  <HelpKINode Title="DataRoot property" Url="html/0fe5b553-244d-bb0c-55e5-01186d30832e.htm" />
+  <HelpKINode Title="DataRoot property" Url="html/4d0df789-94c8-db16-36fd-a69191c2322f.htm" />
+  <HelpKINode Title="DataType property" Url="html/97469d09-23dc-d885-be1e-0fad0c0da1a3.htm" />
+  <HelpKINode Title="Debug method" Url="html/19c00869-8692-0ee1-4e38-27001c50809c.htm" />
+  <HelpKINode Title="Debug method" Url="html/3798ece6-dccc-04b1-7449-7aa2b8bcbb39.htm" />
+  <HelpKINode Title="DebugException method" Url="html/480cddab-464f-7836-6dc5-4c0db7ae9b14.htm" />
+  <HelpKINode Title="DebugException method" Url="html/527df6c1-5e10-36dc-4969-eebb694b77ee.htm" />
+  <HelpKINode Title="DefaultLabel property" Url="html/0caf5046-c87e-b345-d73e-526da67d7ac9.htm" />
+  <HelpKINode Title="Description property" Url="html/1cd9d2a0-def0-7804-50b1-fe778f0911c3.htm" />
+  <HelpKINode Title="Description property" Url="html/87d1ea6e-3ed9-d2fb-5154-c688ee2aaf4e.htm" />
+  <HelpKINode Title="DirectoryPath class" Url="html/350c5c03-bf0a-da51-01ef-6d69f050c5ba.htm" />
+  <HelpKINode Title="DirectoryPath class" Url="html/eab3e164-f82e-83fc-7b75-ea16bebd7ae9.htm" />
+  <HelpKINode Title="DirectoryPath class">
+    <HelpKINode Title="about DirectoryPath class" Url="html/eab3e164-f82e-83fc-7b75-ea16bebd7ae9.htm" />
+    <HelpKINode Title="all members" Url="html/350c5c03-bf0a-da51-01ef-6d69f050c5ba.htm" />
+    <HelpKINode Title="constructor" Url="html/2892557c-d7c2-e6c1-4443-4c200fa00547.htm" />
+    <HelpKINode Title="events" Url="html/1ce8d62a-6f02-3078-92fc-9fae20e84f22.htm" />
+    <HelpKINode Title="methods" Url="html/47495557-186b-07ec-924c-c74a79832343.htm" />
+    <HelpKINode Title="properties" Url="html/efc986b2-d3a0-cc33-63c3-3fda60ea7a20.htm" />
+    <HelpKINode Title="type conversions" Url="html/4ee2875e-15c2-aa69-7083-9f1e594b82a6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DirectoryPath to String conversion" Url="html/03df82b9-5355-869a-f60f-c12b950c5cba.htm" />
+  <HelpKINode Title="DirectoryPath.DirectoryPath constructor" Url="html/2892557c-d7c2-e6c1-4443-4c200fa00547.htm" />
+  <HelpKINode Title="DirectoryPath.Init method" Url="html/a2279328-08df-e032-e69c-c9f59973a6c4.htm" />
+  <HelpKINode Title="DirectoryPath.ReadXml method" Url="html/d315e266-554a-6921-0a1c-19027ab822bf.htm" />
+  <HelpKINode Title="DirectoryPath.WriteXml method" Url="html/9c36046b-4f4e-1eb5-d56b-4810778ff4c5.htm" />
+  <HelpKINode Title="Dispose method" Url="html/1be091cd-6935-490f-bb44-a3f05d93c15e.htm" />
+  <HelpKINode Title="Error method" Url="html/0943d718-4263-1eaa-a2db-90f682feabd9.htm" />
+  <HelpKINode Title="Error method" Url="html/7e9bdca7-f0eb-701a-dabe-efc826d0456f.htm" />
+  <HelpKINode Title="ErrorException method" Url="html/3318f719-7191-eda0-2b00-901acd51d709.htm" />
+  <HelpKINode Title="ErrorException method" Url="html/7767907f-3b88-d790-cdbe-aaf0fe6fc221.htm" />
+  <HelpKINode Title="Exists method" Url="html/dd83fa06-224a-77b3-0126-36ea6c367a1b.htm" />
+  <HelpKINode Title="Fatal method" Url="html/0a022a55-0d52-d964-d8a3-12d4d39df131.htm" />
+  <HelpKINode Title="Fatal method" Url="html/bc314506-752f-2396-6049-2b8d12ed202a.htm" />
+  <HelpKINode Title="FatalException method" Url="html/3d6c9ce0-189f-00f7-b3fc-241fc56bcd0c.htm" />
+  <HelpKINode Title="FatalException method" Url="html/89bedad9-25c4-13ab-131e-d4d0beb18562.htm" />
+  <HelpKINode Title="FilePath class" Url="html/72434ae7-f4bd-3335-54e9-18934ef1ed22.htm" />
+  <HelpKINode Title="FilePath class" Url="html/9057bbdf-355e-cb19-1659-3d5f1fbfa0a3.htm" />
+  <HelpKINode Title="FilePath class">
+    <HelpKINode Title="about FilePath class" Url="html/9057bbdf-355e-cb19-1659-3d5f1fbfa0a3.htm" />
+    <HelpKINode Title="all members" Url="html/72434ae7-f4bd-3335-54e9-18934ef1ed22.htm" />
+    <HelpKINode Title="constructor" Url="html/a5b651a2-0392-3a28-d965-6386240e96c1.htm" />
+    <HelpKINode Title="events" Url="html/72afcb60-b953-e178-3acf-070edb509283.htm" />
+    <HelpKINode Title="methods" Url="html/a6cfbe07-2a61-9656-7862-06b8b8ad0992.htm" />
+    <HelpKINode Title="properties" Url="html/b5d567e3-350a-5c3f-ba6e-ae82d01412bc.htm" />
+    <HelpKINode Title="type conversions" Url="html/de721597-18ea-d4c1-9243-ed3bb55cab07.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FilePath to String conversion" Url="html/4bc4c193-af18-a5d9-2005-b8cd85904981.htm" />
+  <HelpKINode Title="FilePath.Absolute property" Url="html/4121c034-f207-c39c-82cd-aa56153fad7e.htm" />
+  <HelpKINode Title="FilePath.DataRoot property" Url="html/4d0df789-94c8-db16-36fd-a69191c2322f.htm" />
+  <HelpKINode Title="FilePath.FilePath constructor" Url="html/a5b651a2-0392-3a28-d965-6386240e96c1.htm" />
+  <HelpKINode Title="FilePath.Init method" Url="html/e98a69c4-2fd9-f42e-950a-08143865b1ae.htm" />
+  <HelpKINode Title="FilePath.ReadXml method" Url="html/d552793f-87cf-37e5-b639-3055ae862e8e.htm" />
+  <HelpKINode Title="FilePath.Relative property" Url="html/915160b9-3f54-fb0c-e510-2eccdaa723a7.htm" />
+  <HelpKINode Title="FilePath.WriteXml method" Url="html/abe82875-ec0f-f51c-b869-17fcf596cf83.htm" />
+  <HelpKINode Title="Files property" Url="html/74d6858f-6e0c-f8d1-d65c-3ea7e73ef564.htm" />
+  <HelpKINode Title="GetAbsolutePath method" Url="html/1371e3d6-f99e-cd3b-2709-c4295ffc287a.htm" />
+  <HelpKINode Title="GetAbsolutePath method" Url="html/7e6ddf36-1f91-019f-7678-ac35c073a29c.htm" />
+  <HelpKINode Title="GetAbsolutePath method" Url="html/cbd422de-c1c6-2f26-e63d-c2f9f48a826a.htm" />
+  <HelpKINode Title="GetDateTimeStamp method" Url="html/fa53462b-206f-0c58-d480-7fc48bf3bedc.htm" />
+  <HelpKINode Title="GetDependantTypeLocations method" Url="html/e77c59f9-dc70-6dbc-0d62-38e46d831e61.htm" />
+  <HelpKINode Title="GetEnumerator method" Url="html/4022391b-99d5-ec9a-aa3a-08711c496793.htm" />
+  <HelpKINode Title="GetObjectData method" Url="html/9adf8b28-d3f1-8995-aba4-86a491702ea3.htm" />
+  <HelpKINode Title="GetObjectData method" Url="html/ce5830d8-e98d-46b5-fb66-e75c0316d988.htm" />
+  <HelpKINode Title="GetReferencedPackages method" Url="html/97477188-f8ab-f894-995a-543263e6b4e2.htm" />
+  <HelpKINode Title="GetSchema method" Url="html/0a7974e7-1644-1580-a4da-2ba8982ac131.htm" />
+  <HelpKINode Title="GetSchema method" Url="html/a6397d24-8e85-d26c-4494-d798e5955e81.htm" />
+  <HelpKINode Title="GetSchema method" Url="html/d90e5856-0313-334d-08e2-929507d56931.htm" />
+  <HelpKINode Title="GetSerializer method" Url="html/6a265114-622d-88e9-0168-7c847faaac91.htm" />
+  <HelpKINode Title="GetTraceLabQualifiedName method" Url="html/10594e2e-0fee-0157-ac92-c7f98e57752d.htm" />
+  <HelpKINode Title="GuidID property" Url="html/a1fd1890-c3ea-33f7-9357-9a29305ed98f.htm" />
+  <HelpKINode Title="GuidIDString property" Url="html/9304e28d-65fb-8b38-b7b8-2d70089cb856.htm" />
+  <HelpKINode Title="HasAllReferences method" Url="html/a0f29e13-2412-eb45-6979-aadec8047f52.htm" />
+  <HelpKINode Title="IComponent interface" Url="html/2b1e3dc3-77ae-009e-1b37-662bf544cd3c.htm" />
+  <HelpKINode Title="IComponent interface" Url="html/3bbd0120-0ab3-cee3-2390-c031e851d63e.htm" />
+  <HelpKINode Title="IComponent interface">
+    <HelpKINode Title="about IComponent interface" Url="html/2b1e3dc3-77ae-009e-1b37-662bf544cd3c.htm" />
+    <HelpKINode Title="all members" Url="html/3bbd0120-0ab3-cee3-2390-c031e851d63e.htm" />
+    <HelpKINode Title="methods" Url="html/c6253f52-2a9c-4e00-d997-cce831c95339.htm" />
+    <HelpKINode Title="properties" Url="html/f36fbbdb-78dd-c758-5776-4279e99204e0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IComponent.Compute method" Url="html/c8ca3d4b-fc6d-83df-bf45-703d48f99e4c.htm" />
+  <HelpKINode Title="IComponent.Configuration property" Url="html/053d79aa-b175-7740-4d86-58bf9e6f1a0c.htm" />
+  <HelpKINode Title="IComponent.PostCompute method" Url="html/501ecf80-d660-08e7-70bd-9dd9f1136b23.htm" />
+  <HelpKINode Title="IComponent.PreCompute method" Url="html/08c3a1e9-0d1b-0f2a-f9eb-a26b85de449a.htm" />
+  <HelpKINode Title="IComponent.Workspace property" Url="html/cfc46c1a-199a-0091-720a-ff93959ec5b6.htm" />
+  <HelpKINode Title="ID property" Url="html/06a3dc35-2bfe-e5b0-f530-cdbf5b0c1077.htm" />
+  <HelpKINode Title="ID property" Url="html/14df68a5-87b4-2e4c-b1d8-d4361cf6a57d.htm" />
+  <HelpKINode Title="ID property" Url="html/1ec2fa36-ebf3-1cec-b93b-edf1f00bf5c3.htm" />
+  <HelpKINode Title="Increment method" Url="html/31c6da92-0ed2-9955-fdfd-6c617e9cf279.htm" />
+  <HelpKINode Title="Info method" Url="html/02856ec0-8f07-d6c9-40bd-50d5a1662c4e.htm" />
+  <HelpKINode Title="Info method" Url="html/b66084ac-63f0-ae17-2eaf-8f5f46103d9b.htm" />
+  <HelpKINode Title="InfoException method" Url="html/383e4ae4-caa3-c83b-fac9-e66cfb5fd2dd.htm" />
+  <HelpKINode Title="InfoException method" Url="html/38bd6a1d-4135-7200-b6a6-4ce9e337f2fa.htm" />
+  <HelpKINode Title="Init method" Url="html/a2279328-08df-e032-e69c-c9f59973a6c4.htm" />
+  <HelpKINode Title="Init method" Url="html/bdbe5737-3ea0-89b3-6294-47ce1692d4c2.htm" />
+  <HelpKINode Title="Init method" Url="html/e98a69c4-2fd9-f42e-950a-08143865b1ae.htm" />
+  <HelpKINode Title="InitializeLifetimeService method" Url="html/3a9e60ad-d660-9b7d-797b-91afb604ab75.htm" />
+  <HelpKINode Title="InitializeLifetimeService method" Url="html/42f4592d-2292-3580-fecc-35eb8fb3901b.htm" />
+  <HelpKINode Title="InitializeLifetimeService method" Url="html/84541257-44b1-db60-65b7-54b3ef813cde.htm" />
+  <HelpKINode Title="Input enumeration member" Url="html/5f64a7e7-8fd5-2104-2d04-3eab0563eb8c.htm" />
+  <HelpKINode Title="IOSpecAttribute class" Url="html/292a8455-395e-71dd-b1d6-49c2a16d3d69.htm" />
+  <HelpKINode Title="IOSpecAttribute class" Url="html/2bf6546d-69b1-cd2c-abba-be15602c7fe6.htm" />
+  <HelpKINode Title="IOSpecAttribute class">
+    <HelpKINode Title="about IOSpecAttribute class" Url="html/2bf6546d-69b1-cd2c-abba-be15602c7fe6.htm" />
+    <HelpKINode Title="all members" Url="html/292a8455-395e-71dd-b1d6-49c2a16d3d69.htm" />
+    <HelpKINode Title="constructor" Url="html/f62ea1e5-05e0-2cdd-8026-6da47e38e395.htm" />
+    <HelpKINode Title="methods" Url="html/c4aa88e3-f651-6bb3-004a-1cd20941b953.htm" />
+    <HelpKINode Title="properties" Url="html/d0824b88-3c40-3a5b-3142-1088dbd8b32a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IOSpecAttribute.DataType property" Url="html/97469d09-23dc-d885-be1e-0fad0c0da1a3.htm" />
+  <HelpKINode Title="IOSpecAttribute.Description property" Url="html/87d1ea6e-3ed9-d2fb-5154-c688ee2aaf4e.htm" />
+  <HelpKINode Title="IOSpecAttribute.IOSpecAttribute constructor" Url="html/f62ea1e5-05e0-2cdd-8026-6da47e38e395.htm" />
+  <HelpKINode Title="IOSpecAttribute.IOType property" Url="html/4c36db85-054e-89f7-43c4-0813c898d3aa.htm" />
+  <HelpKINode Title="IOSpecAttribute.Name property" Url="html/63e6179a-21c6-f0df-b169-8e3f2385e5da.htm" />
+  <HelpKINode Title="IOSpecType enumeration" Url="html/5f64a7e7-8fd5-2104-2d04-3eab0563eb8c.htm" />
+  <HelpKINode Title="IOType property" Url="html/4c36db85-054e-89f7-43c4-0813c898d3aa.htm" />
+  <HelpKINode Title="IPackage interface" Url="html/2a8db23a-cf86-a76c-b454-5652370b06e6.htm" />
+  <HelpKINode Title="IPackage interface" Url="html/4ecf4280-6478-1d57-8cd0-5a7794d0ce89.htm" />
+  <HelpKINode Title="IPackage interface">
+    <HelpKINode Title="about IPackage interface" Url="html/4ecf4280-6478-1d57-8cd0-5a7794d0ce89.htm" />
+    <HelpKINode Title="all members" Url="html/2a8db23a-cf86-a76c-b454-5652370b06e6.htm" />
+    <HelpKINode Title="methods" Url="html/105f71a7-cfca-244b-a7f4-ac97d09737e8.htm" />
+    <HelpKINode Title="properties" Url="html/a745f081-80be-0f5c-e857-86096576a586.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IPackage.ComponentLocations property" Url="html/1a345a48-4c41-a0ee-6847-b321282f2658.htm" />
+  <HelpKINode Title="IPackage.Files property" Url="html/74d6858f-6e0c-f8d1-d65c-3ea7e73ef564.htm" />
+  <HelpKINode Title="IPackage.GetAbsolutePath method" Url="html/cbd422de-c1c6-2f26-e63d-c2f9f48a826a.htm" />
+  <HelpKINode Title="IPackage.ID property" Url="html/1ec2fa36-ebf3-1cec-b93b-edf1f00bf5c3.htm" />
+  <HelpKINode Title="IPackage.Item property" Url="html/5e7c539d-c7cb-defb-ce65-c33e3a84cf6c.htm" />
+  <HelpKINode Title="IPackage.Location property" Url="html/b0733616-4b2e-189e-229c-ab69c152470b.htm" />
+  <HelpKINode Title="IPackage.Name property" Url="html/9ad4d939-11f0-1025-7d39-d385fea2ecca.htm" />
+  <HelpKINode Title="IPackage.References property" Url="html/1c948875-8b70-0916-8223-f2e5a9bc4fbf.htm" />
+  <HelpKINode Title="IPackage.TypeLocations property" Url="html/bbcf9ec1-6767-2ad8-32be-9f7b0b1d37f0.htm" />
+  <HelpKINode Title="IPackageFile interface" Url="html/08b80955-57a2-2dd7-f417-69ce2e3b6684.htm" />
+  <HelpKINode Title="IPackageFile interface" Url="html/efa3429b-6c3c-31f5-93e3-92733d33391b.htm" />
+  <HelpKINode Title="IPackageFile interface">
+    <HelpKINode Title="about IPackageFile interface" Url="html/efa3429b-6c3c-31f5-93e3-92733d33391b.htm" />
+    <HelpKINode Title="all members" Url="html/08b80955-57a2-2dd7-f417-69ce2e3b6684.htm" />
+    <HelpKINode Title="methods" Url="html/e15638f7-f1c7-70bb-1c2d-43b5eb34a86d.htm" />
+    <HelpKINode Title="properties" Url="html/1bab8ed4-2453-2d00-96e8-242d2d5ccc9f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IPackageFile.CompressedHash property" Url="html/453a387a-a583-69f7-5a04-70a291c20d8d.htm" />
+  <HelpKINode Title="IPackageFile.CompressedSize property" Url="html/315fa868-9c22-15da-5448-dae53d93288d.htm" />
+  <HelpKINode Title="IPackageFile.Data property" Url="html/c77210ac-5851-2265-2fd1-296eb28a7091.htm" />
+  <HelpKINode Title="IPackageFile.GetAbsolutePath method" Url="html/1371e3d6-f99e-cd3b-2709-c4295ffc287a.htm" />
+  <HelpKINode Title="IPackageFile.ID property" Url="html/06a3dc35-2bfe-e5b0-f530-cdbf5b0c1077.htm" />
+  <HelpKINode Title="IPackageFile.IsCompressed property" Url="html/b293b81a-cb64-8ef2-a81b-6c1df91f2c32.htm" />
+  <HelpKINode Title="IPackageFile.Owner property" Url="html/ba640e2a-8547-d50d-ce34-3866ceeb5a68.htm" />
+  <HelpKINode Title="IPackageFile.Path property" Url="html/88f6ff62-85d2-3708-1015-4f520b200c6c.htm" />
+  <HelpKINode Title="IPackageFile.UncompressedHash property" Url="html/8ae5b96c-ea53-5b82-2d3f-85bf1bf96980.htm" />
+  <HelpKINode Title="IPackageFile.UncompressedSize property" Url="html/362176a8-3189-2ea0-43aa-f823006a845a.htm" />
+  <HelpKINode Title="IPackageManager interface" Url="html/43be458a-184c-e9f6-fa4c-81b075969681.htm" />
+  <HelpKINode Title="IPackageManager interface" Url="html/b8c8ed0a-7ece-c196-597f-e0bde28f706f.htm" />
+  <HelpKINode Title="IPackageManager interface">
+    <HelpKINode Title="about IPackageManager interface" Url="html/43be458a-184c-e9f6-fa4c-81b075969681.htm" />
+    <HelpKINode Title="all members" Url="html/b8c8ed0a-7ece-c196-597f-e0bde28f706f.htm" />
+    <HelpKINode Title="methods" Url="html/f94e1267-4c44-0b99-c46f-1bc38f04a245.htm" />
+    <HelpKINode Title="properties" Url="html/d66a508d-a81c-37af-e003-2df60e95da15.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IPackageManager.GetAbsolutePath method" Url="html/7e6ddf36-1f91-019f-7678-ac35c073a29c.htm" />
+  <HelpKINode Title="IPackageManager.GetDependantTypeLocations method" Url="html/e77c59f9-dc70-6dbc-0d62-38e46d831e61.htm" />
+  <HelpKINode Title="IPackageManager.GetReferencedPackages method" Url="html/97477188-f8ab-f894-995a-543263e6b4e2.htm" />
+  <HelpKINode Title="IPackageManager.HasAllReferences method" Url="html/a0f29e13-2412-eb45-6979-aadec8047f52.htm" />
+  <HelpKINode Title="IPackageManager.PackageLocations property" Url="html/38ec4717-efb5-9902-a95a-48bcdf64d651.htm" />
+  <HelpKINode Title="IPackageReference interface" Url="html/05fa91c3-d9f4-1487-bf2d-6fb653cdbbff.htm" />
+  <HelpKINode Title="IPackageReference interface" Url="html/3d85ced3-d5b8-4545-090a-5b2ab4be214d.htm" />
+  <HelpKINode Title="IPackageReference interface">
+    <HelpKINode Title="about IPackageReference interface" Url="html/05fa91c3-d9f4-1487-bf2d-6fb653cdbbff.htm" />
+    <HelpKINode Title="all members" Url="html/3d85ced3-d5b8-4545-090a-5b2ab4be214d.htm" />
+    <HelpKINode Title="properties" Url="html/e1766352-a374-b687-2af8-441da5445017.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IPackageReference.ID property" Url="html/14df68a5-87b4-2e4c-b1d8-d4361cf6a57d.htm" />
+  <HelpKINode Title="IPackageReference.Name property" Url="html/f2551b80-c797-c381-360e-2a8f12e4a487.htm" />
+  <HelpKINode Title="IProgress interface" Url="html/060c1206-f186-16d9-ecc8-7eac6f009df8.htm" />
+  <HelpKINode Title="IProgress interface" Url="html/fa59991a-7afc-02ff-5a2a-19bd5e5f6deb.htm" />
+  <HelpKINode Title="IProgress interface">
+    <HelpKINode Title="about IProgress interface" Url="html/060c1206-f186-16d9-ecc8-7eac6f009df8.htm" />
+    <HelpKINode Title="all members" Url="html/fa59991a-7afc-02ff-5a2a-19bd5e5f6deb.htm" />
+    <HelpKINode Title="methods" Url="html/539d3351-ee23-d61a-7a2a-998585972050.htm" />
+    <HelpKINode Title="properties" Url="html/d7e632e3-3c38-cbfe-b438-cf183303a53e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IProgress.CurrentStatus property" Url="html/caec37b1-1ce4-aa84-cce5-3f663b7aada3.htm" />
+  <HelpKINode Title="IProgress.CurrentStep property" Url="html/2099dd29-a126-104a-553c-c675cdf10093.htm" />
+  <HelpKINode Title="IProgress.Increment method" Url="html/31c6da92-0ed2-9955-fdfd-6c617e9cf279.htm" />
+  <HelpKINode Title="IProgress.IsIndeterminate property" Url="html/acbb9d74-72c3-72a8-04d4-e04db1ebae01.htm" />
+  <HelpKINode Title="IProgress.NumSteps property" Url="html/9faf19f9-6d98-8279-eb66-277cea283f4a.htm" />
+  <HelpKINode Title="IProgress.Reset method" Url="html/fd249647-41b8-d7bb-3efe-4f42672e1658.htm" />
+  <HelpKINode Title="IProgress.SetError method" Url="html/ea97b191-7e3b-758a-4e72-f7edb6cc2e5d.htm" />
+  <HelpKINode Title="IRawSerializable interface" Url="html/20ebea3f-ed1e-58ed-cecc-09aaee699067.htm" />
+  <HelpKINode Title="IRawSerializable interface" Url="html/7fc9bc44-0c8c-7c54-ed0c-f1f367fe6271.htm" />
+  <HelpKINode Title="IRawSerializable interface">
+    <HelpKINode Title="about IRawSerializable interface" Url="html/20ebea3f-ed1e-58ed-cecc-09aaee699067.htm" />
+    <HelpKINode Title="all members" Url="html/7fc9bc44-0c8c-7c54-ed0c-f1f367fe6271.htm" />
+    <HelpKINode Title="methods" Url="html/ad159f9f-91c3-d78c-15b9-1bf810797605.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IRawSerializable.ReadData method" Url="html/6daae71c-e6b4-c0e3-840b-3c9486091654.htm" />
+  <HelpKINode Title="IRawSerializable.WriteData method" Url="html/283fb412-ade5-e2cf-dca3-e31c1033ab27.htm" />
+  <HelpKINode Title="IsCompressed property" Url="html/b293b81a-cb64-8ef2-a81b-6c1df91f2c32.htm" />
+  <HelpKINode Title="IsIndeterminate property" Url="html/acbb9d74-72c3-72a8-04d4-e04db1ebae01.htm" />
+  <HelpKINode Title="IsJava property" Url="html/e9ea1186-da9d-a4fb-3e66-60cc494124e3.htm" />
+  <HelpKINode Title="Item property" Url="html/5e7c539d-c7cb-defb-ce65-c33e3a84cf6c.htm" />
+  <HelpKINode Title="Item property" Url="html/b72dc7d5-eb00-7a24-3199-8f31199ac155.htm" />
+  <HelpKINode Title="IWorkspace interface" Url="html/6406c48d-fd75-7212-e2a6-67786354cc27.htm" />
+  <HelpKINode Title="IWorkspace interface" Url="html/ab351fda-a716-5343-5db5-a90926c6fe92.htm" />
+  <HelpKINode Title="IWorkspace interface">
+    <HelpKINode Title="about IWorkspace interface" Url="html/ab351fda-a716-5343-5db5-a90926c6fe92.htm" />
+    <HelpKINode Title="all members" Url="html/6406c48d-fd75-7212-e2a6-67786354cc27.htm" />
+    <HelpKINode Title="methods" Url="html/73c1f09e-c227-75d8-1b41-a572e7eab5bc.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IWorkspace.Exists method" Url="html/dd83fa06-224a-77b3-0126-36ea6c367a1b.htm" />
+  <HelpKINode Title="IWorkspace.GetDateTimeStamp method" Url="html/fa53462b-206f-0c58-d480-7fc48bf3bedc.htm" />
+  <HelpKINode Title="IWorkspace.Load method" Url="html/f8a6b022-5dd0-bcd4-d2a1-6de1f79c6f85.htm" />
+  <HelpKINode Title="IWorkspace.Store method" Url="html/c5cb57d9-354f-8c30-0dac-725f4c64ad76.htm" />
+  <HelpKINode Title="IWorkspaceUnitEditor interface" Url="html/7cc0bd47-9929-44e6-828c-2d7746a03c65.htm" />
+  <HelpKINode Title="IWorkspaceUnitEditor interface" Url="html/f2c57e3d-bb86-7fd1-4c3b-ef77af7bd26f.htm" />
+  <HelpKINode Title="IWorkspaceUnitEditor interface">
+    <HelpKINode Title="about IWorkspaceUnitEditor interface" Url="html/f2c57e3d-bb86-7fd1-4c3b-ef77af7bd26f.htm" />
+    <HelpKINode Title="all members" Url="html/7cc0bd47-9929-44e6-828c-2d7746a03c65.htm" />
+    <HelpKINode Title="properties" Url="html/c80ae35f-860b-c121-a6b2-1e615c100abf.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IWorkspaceUnitEditor.Data property" Url="html/f6400830-790b-ba23-ccce-d34654475c0b.htm" />
+  <HelpKINode Title="Keys property" Url="html/a8adc984-e549-529d-c683-95a6feda3014.htm" />
+  <HelpKINode Title="Load method" Url="html/f8a6b022-5dd0-bcd4-d2a1-6de1f79c6f85.htm" />
+  <HelpKINode Title="Location property" Url="html/b0733616-4b2e-189e-229c-ab69c152470b.htm" />
+  <HelpKINode Title="Logger property" Url="html/03ac8e1c-137a-86e8-5613-72113f2a74bb.htm" />
+  <HelpKINode Title="MemberwiseClone method" Url="html/4e8ac39a-3bb7-6677-c019-8198f4dfe226.htm" />
+  <HelpKINode Title="MemberwiseClone method" Url="html/d2d5d420-8fa9-7800-149c-b984b4f5a5e9.htm" />
+  <HelpKINode Title="MoveNext method" Url="html/d25f4c17-5ca2-46b8-22b7-b033b9af96dd.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue) class" Url="html/3183f048-52cc-02d0-3ced-8949fb288619.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue) class" Url="html/97b02039-a169-329d-10f4-0928a1b96da5.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue) class">
+    <HelpKINode Title="about MultiDictionary(Of TKey, TValue) class" Url="html/3183f048-52cc-02d0-3ced-8949fb288619.htm" />
+    <HelpKINode Title="all members" Url="html/97b02039-a169-329d-10f4-0928a1b96da5.htm" />
+    <HelpKINode Title="constructor" Url="html/228ff276-dade-d4ac-b807-41279c5ddd9e.htm" />
+    <HelpKINode Title="events" Url="html/93e2c77f-fa01-8315-3e79-048dd2ba9e72.htm" />
+    <HelpKINode Title="methods" Url="html/11664284-47f3-a04a-ecdb-ca648a49069c.htm" />
+    <HelpKINode Title="properties" Url="html/2f8a6bec-713f-83fa-e2af-c04574402cc4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).Add method" Url="html/4aed87d0-f898-c3da-1edf-5116c094ed46.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).AddRange method" Url="html/8c6ab755-a28e-18d8-e1df-457a41e9f6c9.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).Clear method" Url="html/bce2a7bd-2144-8585-70e2-ec437416b89e.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).CollectionChanged event" Url="html/1923dd2d-ff5c-024d-0dc0-c1e7bc5c519e.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).Contains method" Url="html/3bc1fd6c-c889-35af-d754-846a44127b8c.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).ContainsKey method" Url="html/adac4f7e-6003-4f52-da16-887332c5bc5d.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).Count property" Url="html/51866b90-d5d3-99df-b124-1f80c96ad5bc.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).Enumerator structure" Url="html/37853e92-890a-03b8-edab-66d11bb1df36.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).Enumerator structure" Url="html/df789c51-f7af-f685-58ec-c954f72c1060.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).Enumerator structure">
+    <HelpKINode Title="about MultiDictionary(Of TKey, TValue).Enumerator structure" Url="html/df789c51-f7af-f685-58ec-c954f72c1060.htm" />
+    <HelpKINode Title="all members" Url="html/37853e92-890a-03b8-edab-66d11bb1df36.htm" />
+    <HelpKINode Title="methods" Url="html/da300e62-b7f2-f986-d1ae-c4b4ec59ca2f.htm" />
+    <HelpKINode Title="properties" Url="html/1fb1468d-77d9-d3d3-e6a8-b566a8017e6c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).Enumerator.Current property" Url="html/5eed2667-5a2c-a251-6a2f-50e8ed68da78.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).Enumerator.Dispose method" Url="html/1be091cd-6935-490f-bb44-a3f05d93c15e.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).Enumerator.MoveNext method" Url="html/d25f4c17-5ca2-46b8-22b7-b033b9af96dd.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).GetEnumerator method" Url="html/4022391b-99d5-ec9a-aa3a-08711c496793.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).GetObjectData method" Url="html/9adf8b28-d3f1-8995-aba4-86a491702ea3.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).GetSchema method" Url="html/a6397d24-8e85-d26c-4494-d798e5955e81.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).Item property" Url="html/b72dc7d5-eb00-7a24-3199-8f31199ac155.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).Keys property" Url="html/a8adc984-e549-529d-c683-95a6feda3014.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).MultiDictionary constructor" Url="html/228ff276-dade-d4ac-b807-41279c5ddd9e.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).OnDeserialization method" Url="html/935624ba-59f1-228c-1adb-eb81689b5e88.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).PropertyChanged event" Url="html/c0a51397-cef8-7883-0558-f36a7afe23cd.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).ReadXml method" Url="html/7f5f96bd-8805-56ba-08e1-714c58775329.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).Remove method" Url="html/876109be-6bf5-7d58-8e7a-ba9a9d952c25.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).TryGetValue method" Url="html/e07d2b23-bb40-ef49-6350-63a694bc0870.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).Values property" Url="html/fabdca97-0012-05ed-bba0-7247e7cbc4ca.htm" />
+  <HelpKINode Title="MultiDictionary(Of TKey, TValue).WriteXml method" Url="html/ad763f90-9b28-f637-ca46-1ea0c7097154.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt; class" Url="html/3183f048-52cc-02d0-3ced-8949fb288619.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt; class" Url="html/97b02039-a169-329d-10f4-0928a1b96da5.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt; class">
+    <HelpKINode Title="about MultiDictionary&lt;TKey, TValue&gt; class" Url="html/3183f048-52cc-02d0-3ced-8949fb288619.htm" />
+    <HelpKINode Title="all members" Url="html/97b02039-a169-329d-10f4-0928a1b96da5.htm" />
+    <HelpKINode Title="constructor" Url="html/228ff276-dade-d4ac-b807-41279c5ddd9e.htm" />
+    <HelpKINode Title="events" Url="html/93e2c77f-fa01-8315-3e79-048dd2ba9e72.htm" />
+    <HelpKINode Title="methods" Url="html/11664284-47f3-a04a-ecdb-ca648a49069c.htm" />
+    <HelpKINode Title="properties" Url="html/2f8a6bec-713f-83fa-e2af-c04574402cc4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.Add method" Url="html/4aed87d0-f898-c3da-1edf-5116c094ed46.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.AddRange method" Url="html/8c6ab755-a28e-18d8-e1df-457a41e9f6c9.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.Clear method" Url="html/bce2a7bd-2144-8585-70e2-ec437416b89e.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.CollectionChanged event" Url="html/1923dd2d-ff5c-024d-0dc0-c1e7bc5c519e.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.Contains method" Url="html/3bc1fd6c-c889-35af-d754-846a44127b8c.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.ContainsKey method" Url="html/adac4f7e-6003-4f52-da16-887332c5bc5d.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.Count property" Url="html/51866b90-d5d3-99df-b124-1f80c96ad5bc.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.Enumerator structure" Url="html/37853e92-890a-03b8-edab-66d11bb1df36.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.Enumerator structure" Url="html/df789c51-f7af-f685-58ec-c954f72c1060.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.Enumerator structure">
+    <HelpKINode Title="about MultiDictionary&lt;TKey, TValue&gt;.Enumerator structure" Url="html/df789c51-f7af-f685-58ec-c954f72c1060.htm" />
+    <HelpKINode Title="all members" Url="html/37853e92-890a-03b8-edab-66d11bb1df36.htm" />
+    <HelpKINode Title="methods" Url="html/da300e62-b7f2-f986-d1ae-c4b4ec59ca2f.htm" />
+    <HelpKINode Title="properties" Url="html/1fb1468d-77d9-d3d3-e6a8-b566a8017e6c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.Enumerator.Current property" Url="html/5eed2667-5a2c-a251-6a2f-50e8ed68da78.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.Enumerator.Dispose method" Url="html/1be091cd-6935-490f-bb44-a3f05d93c15e.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.Enumerator.MoveNext method" Url="html/d25f4c17-5ca2-46b8-22b7-b033b9af96dd.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.GetEnumerator method" Url="html/4022391b-99d5-ec9a-aa3a-08711c496793.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.GetObjectData method" Url="html/9adf8b28-d3f1-8995-aba4-86a491702ea3.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.GetSchema method" Url="html/a6397d24-8e85-d26c-4494-d798e5955e81.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.Item property" Url="html/b72dc7d5-eb00-7a24-3199-8f31199ac155.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.Keys property" Url="html/a8adc984-e549-529d-c683-95a6feda3014.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.MultiDictionary constructor" Url="html/228ff276-dade-d4ac-b807-41279c5ddd9e.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.OnDeserialization method" Url="html/935624ba-59f1-228c-1adb-eb81689b5e88.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.PropertyChanged event" Url="html/c0a51397-cef8-7883-0558-f36a7afe23cd.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.ReadXml method" Url="html/7f5f96bd-8805-56ba-08e1-714c58775329.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.Remove method" Url="html/876109be-6bf5-7d58-8e7a-ba9a9d952c25.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.TryGetValue method" Url="html/e07d2b23-bb40-ef49-6350-63a694bc0870.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.Values property" Url="html/fabdca97-0012-05ed-bba0-7247e7cbc4ca.htm" />
+  <HelpKINode Title="MultiDictionary&lt;TKey, TValue&gt;.WriteXml method" Url="html/ad763f90-9b28-f637-ca46-1ea0c7097154.htm" />
+  <HelpKINode Title="Name property" Url="html/2ac2d864-b78a-83ca-73c5-92351d876056.htm" />
+  <HelpKINode Title="Name property" Url="html/63e6179a-21c6-f0df-b169-8e3f2385e5da.htm" />
+  <HelpKINode Title="Name property" Url="html/695a3540-3ca1-4391-e254-9931b59dc5fe.htm" />
+  <HelpKINode Title="Name property" Url="html/9ad4d939-11f0-1025-7d39-d385fea2ecca.htm" />
+  <HelpKINode Title="Name property" Url="html/f2551b80-c797-c381-360e-2a8f12e4a487.htm" />
+  <HelpKINode Title="NotifyPropertyChanged method" Url="html/7e43a8dd-c724-bbf9-b729-0c839ff195d8.htm" />
+  <HelpKINode Title="NumSteps property" Url="html/9faf19f9-6d98-8279-eb66-277cea283f4a.htm" />
+  <HelpKINode Title="OnDeserialization method" Url="html/935624ba-59f1-228c-1adb-eb81689b5e88.htm" />
+  <HelpKINode Title="OnDeserialization method" Url="html/bad3cc61-04a4-4a3e-6b96-0498e643a8af.htm" />
+  <HelpKINode Title="Output enumeration member" Url="html/5f64a7e7-8fd5-2104-2d04-3eab0563eb8c.htm" />
+  <HelpKINode Title="Owner property" Url="html/ba640e2a-8547-d50d-ce34-3866ceeb5a68.htm" />
+  <HelpKINode Title="PackageLocations property" Url="html/38ec4717-efb5-9902-a95a-48bcdf64d651.htm" />
+  <HelpKINode Title="Path property" Url="html/88f6ff62-85d2-3708-1015-4f520b200c6c.htm" />
+  <HelpKINode Title="PostCompute method" Url="html/32cdd73c-4a6e-bd54-1955-9870bec474a0.htm" />
+  <HelpKINode Title="PostCompute method" Url="html/501ecf80-d660-08e7-70bd-9dd9f1136b23.htm" />
+  <HelpKINode Title="PreCompute method" Url="html/08c3a1e9-0d1b-0f2a-f9eb-a26b85de449a.htm" />
+  <HelpKINode Title="PreCompute method" Url="html/e02157d7-58bc-e0de-09ae-65e4afe90b3c.htm" />
+  <HelpKINode Title="PropertyChanged event" Url="html/12dc1b58-da43-6c40-9e7c-2dbb5226110c.htm" />
+  <HelpKINode Title="PropertyChanged event" Url="html/c0a51397-cef8-7883-0558-f36a7afe23cd.htm" />
+  <HelpKINode Title="ReadData method" Url="html/6daae71c-e6b4-c0e3-840b-3c9486091654.htm" />
+  <HelpKINode Title="ReadXml method" Url="html/7f5f96bd-8805-56ba-08e1-714c58775329.htm" />
+  <HelpKINode Title="ReadXml method" Url="html/d315e266-554a-6921-0a1c-19027ab822bf.htm" />
+  <HelpKINode Title="ReadXml method" Url="html/d552793f-87cf-37e5-b639-3055ae862e8e.htm" />
+  <HelpKINode Title="ReadXml method" Url="html/d6aa9c0a-1947-df47-c438-5ecfa4704cf5.htm" />
+  <HelpKINode Title="ReadXml method" Url="html/f7ead17a-3954-d3f8-1ec0-d1f326488960.htm" />
+  <HelpKINode Title="References property" Url="html/1c948875-8b70-0916-8223-f2e5a9bc4fbf.htm" />
+  <HelpKINode Title="Relative property" Url="html/915160b9-3f54-fb0c-e510-2eccdaa723a7.htm" />
+  <HelpKINode Title="Relative property" Url="html/97e49d72-3d72-6999-c425-a75368b3909f.htm" />
+  <HelpKINode Title="Remove method" Url="html/876109be-6bf5-7d58-8e7a-ba9a9d952c25.htm" />
+  <HelpKINode Title="Reset method" Url="html/fd249647-41b8-d7bb-3efe-4f42672e1658.htm" />
+  <HelpKINode Title="SerializableDictionary(Of TKey, TValue) class" Url="html/7c03c04e-8892-3f56-7ee1-b6a1e8c3d838.htm" />
+  <HelpKINode Title="SerializableDictionary(Of TKey, TValue) class" Url="html/9516c82c-4597-202b-d0f2-9f486af56c81.htm" />
+  <HelpKINode Title="SerializableDictionary(Of TKey, TValue) class">
+    <HelpKINode Title="about SerializableDictionary(Of TKey, TValue) class" Url="html/7c03c04e-8892-3f56-7ee1-b6a1e8c3d838.htm" />
+    <HelpKINode Title="all members" Url="html/9516c82c-4597-202b-d0f2-9f486af56c81.htm" />
+    <HelpKINode Title="constructor" Url="html/6b16da90-ca8d-841b-d074-97a4f778d90b.htm" />
+    <HelpKINode Title="methods" Url="html/844af546-351c-f856-c705-869791cbdb88.htm" />
+    <HelpKINode Title="properties" Url="html/8eb3e965-d50d-2594-ead5-9c9107a0a5f7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SerializableDictionary(Of TKey, TValue).GetObjectData method" Url="html/ce5830d8-e98d-46b5-fb66-e75c0316d988.htm" />
+  <HelpKINode Title="SerializableDictionary(Of TKey, TValue).GetSchema method" Url="html/d90e5856-0313-334d-08e2-929507d56931.htm" />
+  <HelpKINode Title="SerializableDictionary(Of TKey, TValue).OnDeserialization method" Url="html/bad3cc61-04a4-4a3e-6b96-0498e643a8af.htm" />
+  <HelpKINode Title="SerializableDictionary(Of TKey, TValue).ReadXml method" Url="html/d6aa9c0a-1947-df47-c438-5ecfa4704cf5.htm" />
+  <HelpKINode Title="SerializableDictionary(Of TKey, TValue).SerializableDictionary constructor" Url="html/6b16da90-ca8d-841b-d074-97a4f778d90b.htm" />
+  <HelpKINode Title="SerializableDictionary(Of TKey, TValue).WriteXml method" Url="html/50df163c-b196-7b21-651c-d468020eac28.htm" />
+  <HelpKINode Title="SerializableDictionary&lt;TKey, TValue&gt; class" Url="html/7c03c04e-8892-3f56-7ee1-b6a1e8c3d838.htm" />
+  <HelpKINode Title="SerializableDictionary&lt;TKey, TValue&gt; class" Url="html/9516c82c-4597-202b-d0f2-9f486af56c81.htm" />
+  <HelpKINode Title="SerializableDictionary&lt;TKey, TValue&gt; class">
+    <HelpKINode Title="about SerializableDictionary&lt;TKey, TValue&gt; class" Url="html/7c03c04e-8892-3f56-7ee1-b6a1e8c3d838.htm" />
+    <HelpKINode Title="all members" Url="html/9516c82c-4597-202b-d0f2-9f486af56c81.htm" />
+    <HelpKINode Title="constructor" Url="html/6b16da90-ca8d-841b-d074-97a4f778d90b.htm" />
+    <HelpKINode Title="methods" Url="html/844af546-351c-f856-c705-869791cbdb88.htm" />
+    <HelpKINode Title="properties" Url="html/8eb3e965-d50d-2594-ead5-9c9107a0a5f7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SerializableDictionary&lt;TKey, TValue&gt;.GetObjectData method" Url="html/ce5830d8-e98d-46b5-fb66-e75c0316d988.htm" />
+  <HelpKINode Title="SerializableDictionary&lt;TKey, TValue&gt;.GetSchema method" Url="html/d90e5856-0313-334d-08e2-929507d56931.htm" />
+  <HelpKINode Title="SerializableDictionary&lt;TKey, TValue&gt;.OnDeserialization method" Url="html/bad3cc61-04a4-4a3e-6b96-0498e643a8af.htm" />
+  <HelpKINode Title="SerializableDictionary&lt;TKey, TValue&gt;.ReadXml method" Url="html/d6aa9c0a-1947-df47-c438-5ecfa4704cf5.htm" />
+  <HelpKINode Title="SerializableDictionary&lt;TKey, TValue&gt;.SerializableDictionary constructor" Url="html/6b16da90-ca8d-841b-d074-97a4f778d90b.htm" />
+  <HelpKINode Title="SerializableDictionary&lt;TKey, TValue&gt;.WriteXml method" Url="html/50df163c-b196-7b21-651c-d468020eac28.htm" />
+  <HelpKINode Title="SetDataRoot method" Url="html/0e8f0ae2-351a-4310-c50d-9480ab033d2d.htm" />
+  <HelpKINode Title="SetError method" Url="html/ea97b191-7e3b-758a-4e72-f7edb6cc2e5d.htm" />
+  <HelpKINode Title="Store method" Url="html/c5cb57d9-354f-8c30-0dac-725f4c64ad76.htm" />
+  <HelpKINode Title="Tag property" Url="html/64a61e27-437f-4ac8-dc81-7fc9f1d5be01.htm" />
+  <HelpKINode Title="TagAttribute class" Url="html/47db7e20-9980-f4a8-17f6-a9cb9c71a32e.htm" />
+  <HelpKINode Title="TagAttribute class" Url="html/8668ebc9-f23c-4087-ead7-059647c29e84.htm" />
+  <HelpKINode Title="TagAttribute class">
+    <HelpKINode Title="about TagAttribute class" Url="html/47db7e20-9980-f4a8-17f6-a9cb9c71a32e.htm" />
+    <HelpKINode Title="all members" Url="html/8668ebc9-f23c-4087-ead7-059647c29e84.htm" />
+    <HelpKINode Title="constructor" Url="html/b2c89594-6d10-2fd7-517c-52dc96f0f7f5.htm" />
+    <HelpKINode Title="methods" Url="html/80be43b0-9aeb-f738-25d1-b57222a38fa6.htm" />
+    <HelpKINode Title="properties" Url="html/23d1c19d-4b63-041f-bd89-8c7418ce6455.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TagAttribute.Tag property" Url="html/64a61e27-437f-4ac8-dc81-7fc9f1d5be01.htm" />
+  <HelpKINode Title="TagAttribute.TagAttribute constructor" Url="html/b2c89594-6d10-2fd7-517c-52dc96f0f7f5.htm" />
+  <HelpKINode Title="Trace method" Url="html/1e9c1267-91db-ddb0-472d-a97fc9129f98.htm" />
+  <HelpKINode Title="Trace method" Url="html/2999fb1e-abb3-bb1a-533b-f8e6619e66c5.htm" />
+  <HelpKINode Title="TraceException method" Url="html/92b6bd5a-27e5-af42-0f0d-3133e87717da.htm" />
+  <HelpKINode Title="TraceException method" Url="html/a66403c0-0234-65cb-7a0c-56706404bd33.htm" />
+  <HelpKINode Title="TraceLab.Core.Serialization namespace" Url="html/14c6eac6-a9fd-e7ea-66e2-654a720779d7.htm" />
+  <HelpKINode Title="TraceLab.Core.Serialization.XmlSerializerFactory class" Url="html/b32e6877-4ca8-2d22-6171-05045880fb22.htm" />
+  <HelpKINode Title="TraceLab.Core.Serialization.XmlSerializerFactory class" Url="html/f6e43be8-284a-ba52-c7b2-04ed96398a84.htm" />
+  <HelpKINode Title="TraceLabSDK namespace" Url="html/23af86fa-6a55-b6e1-c801-36be425319a2.htm" />
+  <HelpKINode Title="TraceLabSDK.BaseComponent class" Url="html/09856f3d-7f87-2929-f7e0-dd6eb80e29f2.htm" />
+  <HelpKINode Title="TraceLabSDK.BaseComponent class" Url="html/c0c950b2-c38d-bfc8-6002-a6943b536225.htm" />
+  <HelpKINode Title="TraceLabSDK.Component.Config namespace" Url="html/59f40f62-dbb6-196f-ae13-b95821ad3261.htm" />
+  <HelpKINode Title="TraceLabSDK.Component.Config.BasePath class" Url="html/612cf1aa-5adc-4942-76cc-8dc156c9dfa7.htm" />
+  <HelpKINode Title="TraceLabSDK.Component.Config.BasePath class" Url="html/ef677d68-099c-8bcc-be29-c94136d425c6.htm" />
+  <HelpKINode Title="TraceLabSDK.Component.Config.DirectoryPath class" Url="html/350c5c03-bf0a-da51-01ef-6d69f050c5ba.htm" />
+  <HelpKINode Title="TraceLabSDK.Component.Config.DirectoryPath class" Url="html/eab3e164-f82e-83fc-7b75-ea16bebd7ae9.htm" />
+  <HelpKINode Title="TraceLabSDK.Component.Config.FilePath class" Url="html/72434ae7-f4bd-3335-54e9-18934ef1ed22.htm" />
+  <HelpKINode Title="TraceLabSDK.Component.Config.FilePath class" Url="html/9057bbdf-355e-cb19-1659-3d5f1fbfa0a3.htm" />
+  <HelpKINode Title="TraceLabSDK.ComponentAttribute class" Url="html/5d54313e-db01-38b3-82dc-0828e8357c41.htm" />
+  <HelpKINode Title="TraceLabSDK.ComponentAttribute class" Url="html/7094224b-341d-7b9a-bfe3-9513ec5686bc.htm" />
+  <HelpKINode Title="TraceLabSDK.ComponentException class" Url="html/9377da0e-8189-fa84-1122-13ba03077406.htm" />
+  <HelpKINode Title="TraceLabSDK.ComponentException class" Url="html/bd1601b3-3a72-6075-7ae2-070548689e70.htm" />
+  <HelpKINode Title="TraceLabSDK.ComponentLogger interface" Url="html/01ec396a-6a02-417e-cea8-5e054ccba988.htm" />
+  <HelpKINode Title="TraceLabSDK.ComponentLogger interface" Url="html/4ff5a3f4-d1e8-7e05-0e2e-268377981a02.htm" />
+  <HelpKINode Title="TraceLabSDK.ComponentLoggerImplementation class" Url="html/598280d0-1c7a-f0e2-bf0b-7b6986f6171e.htm" />
+  <HelpKINode Title="TraceLabSDK.ComponentLoggerImplementation class" Url="html/c1399d5c-e5e5-98a4-785c-e1ff5252ea76.htm" />
+  <HelpKINode Title="TraceLabSDK.IComponent interface" Url="html/2b1e3dc3-77ae-009e-1b37-662bf544cd3c.htm" />
+  <HelpKINode Title="TraceLabSDK.IComponent interface" Url="html/3bbd0120-0ab3-cee3-2390-c031e851d63e.htm" />
+  <HelpKINode Title="TraceLabSDK.IOSpecAttribute class" Url="html/292a8455-395e-71dd-b1d6-49c2a16d3d69.htm" />
+  <HelpKINode Title="TraceLabSDK.IOSpecAttribute class" Url="html/2bf6546d-69b1-cd2c-abba-be15602c7fe6.htm" />
+  <HelpKINode Title="TraceLabSDK.IOSpecType enumeration" Url="html/5f64a7e7-8fd5-2104-2d04-3eab0563eb8c.htm" />
+  <HelpKINode Title="TraceLabSDK.IProgress interface" Url="html/060c1206-f186-16d9-ecc8-7eac6f009df8.htm" />
+  <HelpKINode Title="TraceLabSDK.IProgress interface" Url="html/fa59991a-7afc-02ff-5a2a-19bd5e5f6deb.htm" />
+  <HelpKINode Title="TraceLabSDK.IRawSerializable interface" Url="html/20ebea3f-ed1e-58ed-cecc-09aaee699067.htm" />
+  <HelpKINode Title="TraceLabSDK.IRawSerializable interface" Url="html/7fc9bc44-0c8c-7c54-ed0c-f1f367fe6271.htm" />
+  <HelpKINode Title="TraceLabSDK.IWorkspace interface" Url="html/6406c48d-fd75-7212-e2a6-67786354cc27.htm" />
+  <HelpKINode Title="TraceLabSDK.IWorkspace interface" Url="html/ab351fda-a716-5343-5db5-a90926c6fe92.htm" />
+  <HelpKINode Title="TraceLabSDK.IWorkspaceUnitEditor interface" Url="html/7cc0bd47-9929-44e6-828c-2d7746a03c65.htm" />
+  <HelpKINode Title="TraceLabSDK.IWorkspaceUnitEditor interface" Url="html/f2c57e3d-bb86-7fd1-4c3b-ef77af7bd26f.htm" />
+  <HelpKINode Title="TraceLabSDK.MultiDictionary(Of TKey, TValue) class" Url="html/3183f048-52cc-02d0-3ced-8949fb288619.htm" />
+  <HelpKINode Title="TraceLabSDK.MultiDictionary(Of TKey, TValue) class" Url="html/97b02039-a169-329d-10f4-0928a1b96da5.htm" />
+  <HelpKINode Title="TraceLabSDK.MultiDictionary(Of TKey, TValue).Enumerator structure" Url="html/37853e92-890a-03b8-edab-66d11bb1df36.htm" />
+  <HelpKINode Title="TraceLabSDK.MultiDictionary(Of TKey, TValue).Enumerator structure" Url="html/df789c51-f7af-f685-58ec-c954f72c1060.htm" />
+  <HelpKINode Title="TraceLabSDK.MultiDictionary&lt;TKey, TValue&gt; class" Url="html/3183f048-52cc-02d0-3ced-8949fb288619.htm" />
+  <HelpKINode Title="TraceLabSDK.MultiDictionary&lt;TKey, TValue&gt; class" Url="html/97b02039-a169-329d-10f4-0928a1b96da5.htm" />
+  <HelpKINode Title="TraceLabSDK.MultiDictionary&lt;TKey, TValue&gt;.Enumerator structure" Url="html/37853e92-890a-03b8-edab-66d11bb1df36.htm" />
+  <HelpKINode Title="TraceLabSDK.MultiDictionary&lt;TKey, TValue&gt;.Enumerator structure" Url="html/df789c51-f7af-f685-58ec-c954f72c1060.htm" />
+  <HelpKINode Title="TraceLabSDK.PackageSystem namespace" Url="html/6ee58f1c-87ce-efa8-661e-5d05454fddd4.htm" />
+  <HelpKINode Title="TraceLabSDK.PackageSystem.IPackage interface" Url="html/2a8db23a-cf86-a76c-b454-5652370b06e6.htm" />
+  <HelpKINode Title="TraceLabSDK.PackageSystem.IPackage interface" Url="html/4ecf4280-6478-1d57-8cd0-5a7794d0ce89.htm" />
+  <HelpKINode Title="TraceLabSDK.PackageSystem.IPackageFile interface" Url="html/08b80955-57a2-2dd7-f417-69ce2e3b6684.htm" />
+  <HelpKINode Title="TraceLabSDK.PackageSystem.IPackageFile interface" Url="html/efa3429b-6c3c-31f5-93e3-92733d33391b.htm" />
+  <HelpKINode Title="TraceLabSDK.PackageSystem.IPackageManager interface" Url="html/43be458a-184c-e9f6-fa4c-81b075969681.htm" />
+  <HelpKINode Title="TraceLabSDK.PackageSystem.IPackageManager interface" Url="html/b8c8ed0a-7ece-c196-597f-e0bde28f706f.htm" />
+  <HelpKINode Title="TraceLabSDK.PackageSystem.IPackageReference interface" Url="html/05fa91c3-d9f4-1487-bf2d-6fb653cdbbff.htm" />
+  <HelpKINode Title="TraceLabSDK.PackageSystem.IPackageReference interface" Url="html/3d85ced3-d5b8-4545-090a-5b2ab4be214d.htm" />
+  <HelpKINode Title="TraceLabSDK.SerializableDictionary(Of TKey, TValue) class" Url="html/7c03c04e-8892-3f56-7ee1-b6a1e8c3d838.htm" />
+  <HelpKINode Title="TraceLabSDK.SerializableDictionary(Of TKey, TValue) class" Url="html/9516c82c-4597-202b-d0f2-9f486af56c81.htm" />
+  <HelpKINode Title="TraceLabSDK.SerializableDictionary&lt;TKey, TValue&gt; class" Url="html/7c03c04e-8892-3f56-7ee1-b6a1e8c3d838.htm" />
+  <HelpKINode Title="TraceLabSDK.SerializableDictionary&lt;TKey, TValue&gt; class" Url="html/9516c82c-4597-202b-d0f2-9f486af56c81.htm" />
+  <HelpKINode Title="TraceLabSDK.TagAttribute class" Url="html/47db7e20-9980-f4a8-17f6-a9cb9c71a32e.htm" />
+  <HelpKINode Title="TraceLabSDK.TagAttribute class" Url="html/8668ebc9-f23c-4087-ead7-059647c29e84.htm" />
+  <HelpKINode Title="TraceLabSDK.TypeHelper class" Url="html/57c8e665-f872-b58a-a086-7a4ec109241a.htm" />
+  <HelpKINode Title="TraceLabSDK.TypeHelper class" Url="html/842221f3-9322-7833-870a-9a6dcae48701.htm" />
+  <HelpKINode Title="TraceLabSDK.WorkspaceTypeAttribute class" Url="html/aa477272-e5b5-be47-ee36-be330f233773.htm" />
+  <HelpKINode Title="TraceLabSDK.WorkspaceTypeAttribute class" Url="html/eb6fd698-d348-aa30-c248-2a25176fc6f3.htm" />
+  <HelpKINode Title="TryGetValue method" Url="html/e07d2b23-bb40-ef49-6350-63a694bc0870.htm" />
+  <HelpKINode Title="TypeHelper class" Url="html/57c8e665-f872-b58a-a086-7a4ec109241a.htm" />
+  <HelpKINode Title="TypeHelper class" Url="html/842221f3-9322-7833-870a-9a6dcae48701.htm" />
+  <HelpKINode Title="TypeHelper class">
+    <HelpKINode Title="about TypeHelper class" Url="html/57c8e665-f872-b58a-a086-7a4ec109241a.htm" />
+    <HelpKINode Title="all members" Url="html/842221f3-9322-7833-870a-9a6dcae48701.htm" />
+    <HelpKINode Title="methods" Url="html/3e8c450d-c8f1-c502-5c8f-bb8842bf6814.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TypeHelper.ConvertOldTypeName method" Url="html/8333ede1-98e6-61f3-560e-c22ebb4e5bde.htm" />
+  <HelpKINode Title="TypeHelper.GetTraceLabQualifiedName method" Url="html/10594e2e-0fee-0157-ac92-c7f98e57752d.htm" />
+  <HelpKINode Title="TypeLocations property" Url="html/bbcf9ec1-6767-2ad8-32be-9f7b0b1d37f0.htm" />
+  <HelpKINode Title="UncompressedHash property" Url="html/8ae5b96c-ea53-5b82-2d3f-85bf1bf96980.htm" />
+  <HelpKINode Title="UncompressedSize property" Url="html/362176a8-3189-2ea0-43aa-f823006a845a.htm" />
+  <HelpKINode Title="Values property" Url="html/fabdca97-0012-05ed-bba0-7247e7cbc4ca.htm" />
+  <HelpKINode Title="Version property" Url="html/72a2b1c5-fbe8-a575-e74a-f5650b4d49e9.htm" />
+  <HelpKINode Title="Warn method" Url="html/bd284f1c-a5ef-c65e-5725-0da89c497c50.htm" />
+  <HelpKINode Title="Warn method" Url="html/d814e940-75dd-4f2b-455a-5a36e371d0cf.htm" />
+  <HelpKINode Title="WarnException method" Url="html/7b066ffb-6df0-074e-fe7e-5ee895cf493d.htm" />
+  <HelpKINode Title="WarnException method" Url="html/d960fb77-140b-e26f-7a04-ad16a73c455e.htm" />
+  <HelpKINode Title="Workspace property" Url="html/b5cb3877-7861-8287-63fb-01550e818497.htm" />
+  <HelpKINode Title="Workspace property" Url="html/cfc46c1a-199a-0091-720a-ff93959ec5b6.htm" />
+  <HelpKINode Title="WorkspaceTypeAttribute class" Url="html/aa477272-e5b5-be47-ee36-be330f233773.htm" />
+  <HelpKINode Title="WorkspaceTypeAttribute class" Url="html/eb6fd698-d348-aa30-c248-2a25176fc6f3.htm" />
+  <HelpKINode Title="WorkspaceTypeAttribute class">
+    <HelpKINode Title="about WorkspaceTypeAttribute class" Url="html/eb6fd698-d348-aa30-c248-2a25176fc6f3.htm" />
+    <HelpKINode Title="all members" Url="html/aa477272-e5b5-be47-ee36-be330f233773.htm" />
+    <HelpKINode Title="constructor" Url="html/bf435c7d-6cc2-d98d-3c40-d0450b0f2961.htm" />
+    <HelpKINode Title="methods" Url="html/9cdd6261-46e0-93bd-fcf2-d8caccc01a25.htm" />
+    <HelpKINode Title="properties" Url="html/a20c3ecb-49c6-71d1-bded-b8a6ed800b20.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WorkspaceTypeAttribute.WorkspaceTypeAttribute constructor" Url="html/bf435c7d-6cc2-d98d-3c40-d0450b0f2961.htm" />
+  <HelpKINode Title="WriteData method" Url="html/283fb412-ade5-e2cf-dca3-e31c1033ab27.htm" />
+  <HelpKINode Title="WriteXml method" Url="html/470f18a6-c581-0635-204c-956a6f9c1780.htm" />
+  <HelpKINode Title="WriteXml method" Url="html/50df163c-b196-7b21-651c-d468020eac28.htm" />
+  <HelpKINode Title="WriteXml method" Url="html/9c36046b-4f4e-1eb5-d56b-4810778ff4c5.htm" />
+  <HelpKINode Title="WriteXml method" Url="html/abe82875-ec0f-f51c-b869-17fcf596cf83.htm" />
+  <HelpKINode Title="WriteXml method" Url="html/ad763f90-9b28-f637-ca46-1ea0c7097154.htm" />
+  <HelpKINode Title="XmlSerializerFactory class" Url="html/b32e6877-4ca8-2d22-6171-05045880fb22.htm" />
+  <HelpKINode Title="XmlSerializerFactory class" Url="html/f6e43be8-284a-ba52-c7b2-04ed96398a84.htm" />
+  <HelpKINode Title="XmlSerializerFactory class">
+    <HelpKINode Title="about XmlSerializerFactory class" Url="html/b32e6877-4ca8-2d22-6171-05045880fb22.htm" />
+    <HelpKINode Title="all members" Url="html/f6e43be8-284a-ba52-c7b2-04ed96398a84.htm" />
+    <HelpKINode Title="methods" Url="html/a0416c71-4e84-518c-16aa-7a092f00717e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="XmlSerializerFactory.GetSerializer method" Url="html/6a265114-622d-88e9-0168-7c847faaac91.htm" />
+</HelpKI>

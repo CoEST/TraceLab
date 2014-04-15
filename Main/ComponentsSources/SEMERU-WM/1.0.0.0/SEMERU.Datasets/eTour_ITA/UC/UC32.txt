@@ -1,0 +1,12 @@
+Use case name	ERRORE MODIFICA PASSWORD
+E’ stato richiesto di inserire una password che però non è confermata in maniera corretta.
+Participating
+Actor	
+Entry
+conditions	•	E’stato premuto il pulsante di conferma per la modifica della password
+Flow of events 		User	System
+	4.			Notifica l’errore con un messaggio.
+	5.		Conferma la lettura della notifica.	
+	6.			Ritorna alla modifica della password.
+Exit conditions	•	Il sistema restituisce il controllo dell’interazione all’utente.
+Quality requirements	

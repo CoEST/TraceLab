@@ -1,0 +1,48 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf110
+{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;\f1\ftech\fcharset0 Wingdings-Regular;\f2\fnil\fcharset0 LucidaGrande;
+\f3\fnil\fcharset77 ZapfDingbatsITC;\f4\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f0\b\fs24 \cf0 Nome caso d\'92uso\
+
+\b0 ModificaPratica\
+
+\b Attori partecipanti\
+
+\b0 Iniziato da cittadino\
+
+\b Flusso di eventi\
+
+\b0 1. Il cittadino preme il pulsante di modifica pratica (Carta d'identit\'e0, Cambio Residenza) se la pratica non \'e8 stata inizializzata.\
+3.\
+2. Il sistema mostra un form per la modifica della pratica. Il cittadino inserisce i dati.\
+4.	Il sistema salva le modifiche apportate.\
+
+\b Condizione di entrata\
+
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Il cittadino si \'e8 autenticato nel sistema. 
+\f1 \uc0\u61656 
+\f2  
+\f0 Questo	caso	d\'92uso	estende 
+\b VisualizzaPratica 
+\b0 e si verifica quando il\
+cittadino vuole modificare la pratica.\
+
+\b Condizioni di uscita\
+
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Il sistema modifica la pratica, OR 
+\f3 \uc0\u10146 
+\f4  
+\f0 Nel caso in cui il servizio non \'e8 disponibile viene richiamato il caso\
+d'uso 
+\b ServizioNonDisponibile.\
+Requisiti di qualita
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Non Previsto.}

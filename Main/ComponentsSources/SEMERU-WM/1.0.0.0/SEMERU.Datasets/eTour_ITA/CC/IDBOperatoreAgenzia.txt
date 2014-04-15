@@ -1,0 +1,36 @@
+﻿package unisa.gps.etour.repository;
+
+import java.sql. S Q L Exception;
+
+import unisa.gps.etour.bean. Bean Operatore Agenzia;
+
+/**
+ *  Interfaccia per la gestione del  Operatore Agenzia nel database
+ * 
+ * @author  Martone  Giuseppe
+ * @version  .  �      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I �  University
+ *          of  Salerno
+ */
+public interface  I D B Operatore Agenzia
+{
+	/**
+	 *  Restituisce i dati dell' Operatore  Agenzia con  Identificativo uguale a quello dato in
+	 * input
+	 * 
+	 * @param p Username  Username dell' Operatore Agenzia da trovare
+	 * @return  Operatore Agenzia con id uguale a quello in input,  Null se non esiste
+	 * @throws  S Q L Exception
+	 */
+	public  Bean Operatore Agenzia ottieni Operatore Agenzia( String p Username) throws  S Q L Exception;
+	
+	/**
+	 *  Restituisce i dati dell' Operatore  Agenzia con  Identificativo uguale a quello dato in
+	 * input
+	 * 
+	 * @param p Username  Username dell' Operatore Agenzia da trovare
+	 * @return  Operatore Agenzia con id uguale a quello in input,  Null se non esiste
+	 * @throws  S Q L Exception
+	 */
+	public boolean modifica Password( Bean Operatore Agenzia p Oa) throws  S Q L Exception;
+
+}

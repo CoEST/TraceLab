@@ -1,0 +1,5 @@
+org.mozilla.javascript.NativeObject.init
+org.mozilla.javascript.ScriptRuntime.initStandardObjects
+org.mozilla.javascript.NativeObject.execIdCall
+org.mozilla.javascript.IdScriptableObject.exportAsJSClass
+org.mozilla.javascript.PrototypeValues.createPrecachedConstructor

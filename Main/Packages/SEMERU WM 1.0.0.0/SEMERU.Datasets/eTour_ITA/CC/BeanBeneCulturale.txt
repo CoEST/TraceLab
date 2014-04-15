@@ -1,0 +1,410 @@
+package unisa.gps.etour.bean;
+
+/**
+ *  Bean  Contenente i dati relativi a un  Bene  Culturale
+ * 
+ * @author  Miranda  Mauro
+ * @version  .  �      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I �  University
+ *          of  Salerno
+ */
+
+import java.io. Serializable;
+import java.util. Date;
+
+import unisa.gps.etour.util. Punto  D;
+
+public class  Bean Bene Culturale implements  Serializable
+{
+
+	private static final long serial Version U I D = -                   L;
+
+	private int id;
+	private int numero Voti;
+	private  String nome;
+	private  String citta;
+	private  String telefono;
+	private  String descrizione;
+	private  String localita;
+	private  String via;
+	private  String cap;
+	private  String provincia;
+	private  String giorno Chiusura;
+	private  Punto  D posizione;
+	private  Date orario Apertura;
+	private  Date orario Chiusura;
+	private double costo Biglietto;
+	private double media Voti;
+
+	/**
+	 *  Costruttore parametrizzato
+	 * 
+	 * @param p Id
+	 * @param p Numero Voti
+	 * @param p Nome
+	 * @param p Citta
+	 * @param p Telefono
+	 * @param p Descrizione
+	 * @param p Localita
+	 * @param p Via
+	 * @param p Cap
+	 * @param p Provincia
+	 * @param p Posizione
+	 * @param p Orario Apertura
+	 * @param p Orario Chiusura
+	 * @param p Giorno Chiusura
+	 * @param p Costo Biglietto
+	 * @param p Media Voti
+	 */
+	public  Bean Bene Culturale(int p Id, int p Numero Voti,  String p Nome,
+			 String p Citta,  String p Telefono,  String p Descrizione,
+			 String p Localita,  String p Via,  String p Cap,  String p Provincia,
+			 Punto  D p Posizione,  Date p Orario Apertura,  Date p Orario Chiusura,
+			 String p Giorno Chiusura, double p Costo Biglietto, double p Media Voti)
+	{
+		set Id(p Id);
+		set Numero Voti(p Numero Voti);
+		set Nome(p Nome);
+		set Citta(p Citta);
+		set Telefono(p Telefono);
+		set Descrizione(p Descrizione);
+		set Localita(p Localita);
+		set Via(p Via);
+		set Cap(p Cap);
+		set Provincia(p Provincia);
+		set Posizione(p Posizione);
+		set Orario Apertura(p Orario Apertura);
+		set Orario Chiusura(p Orario Chiusura);
+		set Giorno Chiusura(p Giorno Chiusura);
+		set Costo Biglietto(p Costo Biglietto);
+		set Media Voti(p Media Voti);
+	}
+
+	/**
+	 *  Costruttore  Vuoto
+	 */
+	public  Bean Bene Culturale()
+	{
+
+	}
+
+	/**
+	 *  Restituisce il valore di giorno Chiusura
+	 * 
+	 * @return  Valore di giorno Chiusura.
+	 */
+	public  String get Giorno Chiusura()
+	{
+		return giorno Chiusura;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di giorno Chiusura
+	 * 
+	 * @param p Giorno Chiusura  Nuovo valore di giorno Chiusura.
+	 */
+	public void set Giorno Chiusura( String p Giorno Chiusura)
+	{
+		giorno Chiusura = p Giorno Chiusura;
+	}
+
+	/**
+	 *  Restituisce il valore di cap
+	 * 
+	 * @return  Valore di cap.
+	 */
+	public  String get Cap()
+	{
+		return cap;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di cap
+	 * 
+	 * @param p Cap  Nuovo valore di cap.
+	 */
+	public void set Cap( String p Cap)
+	{
+		cap = p Cap;
+	}
+
+	/**
+	 *  Restituisce il valore di citta
+	 * 
+	 * @return  Valore di citta.
+	 */
+	public  String get Citta()
+	{
+		return citta;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di citta
+	 * 
+	 * @param p Citta  Nuovo valore di citta.
+	 */
+	public void set Citta( String p Citta)
+	{
+		citta = p Citta;
+	}
+
+	/**
+	 *  Restituisce il valore di costo Biglietto
+	 * 
+	 * @return  Valore di costo Biglietto.
+	 */
+	public double get Costo Biglietto()
+	{
+		return costo Biglietto;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di costo Biglietto
+	 * 
+	 * @param p Costo Biglietto  Nuovo valore di costo Biglietto.
+	 */
+	public void set Costo Biglietto(double p Costo Biglietto)
+	{
+		costo Biglietto = p Costo Biglietto;
+	}
+
+	/**
+	 *  Restituisce il valore di descrizione
+	 * 
+	 * @return  Valore di descrizione.
+	 */
+	public  String get Descrizione()
+	{
+		return descrizione;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di descrizione
+	 * 
+	 * @param p Descrizione  Nuovo valore di descrizione.
+	 */
+	public void set Descrizione( String p Descrizione)
+	{
+		descrizione = p Descrizione;
+	}
+
+	/**
+	 *  Restituisce il valore di localita
+	 * 
+	 * @return  Valore di localita.
+	 */
+	public  String get Localita()
+	{
+		return localita;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di localita
+	 * 
+	 * @param p Localita  Nuovo valore di localita.
+	 */
+	public void set Localita( String p Localita)
+	{
+		localita = p Localita;
+	}
+
+	/**
+	 *  Restituisce il valore di media Voti
+	 * 
+	 * @return  Valore di media Voti.
+	 */
+	public double get Media Voti()
+	{
+		return media Voti;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di media Voti
+	 * 
+	 * @param p Media Voti  Nuovo valore di media Voti.
+	 */
+	public void set Media Voti(double p Media Voti)
+	{
+		media Voti = p Media Voti;
+	}
+
+	/**
+	 *  Restituisce il valore di nome
+	 * 
+	 * @return  Valore di nome.
+	 */
+	public  String get Nome()
+	{
+		return nome;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di nome
+	 * 
+	 * @param p Nome  Nuovo valore di nome.
+	 */
+	public void set Nome( String p Nome)
+	{
+		nome = p Nome;
+	}
+
+	/**
+	 *  Restituisce il valore di numero Voti
+	 * 
+	 * @return  Valore di numero Voti.
+	 */
+	public int get Numero Voti()
+	{
+		return numero Voti;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di numero Voti
+	 * 
+	 * @param p Numero Voti  Nuovo valore di numero Voti.
+	 */
+	public void set Numero Voti(int p Numero Voti)
+	{
+		numero Voti = p Numero Voti;
+	}
+
+	/**
+	 *  Restituisce il valore di orario Apertura
+	 * 
+	 * @return  Valore di orario Apertura.
+	 */
+	public  Date get Orario Apertura()
+	{
+		return orario Apertura;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di orario Apertura
+	 * 
+	 * @param p String  Nuovo valore di orario Apertura.
+	 */
+	public void set Orario Apertura( Date p String)
+	{
+		orario Apertura = p String;
+	}
+
+	/**
+	 *  Restituisce il valore di orario Chiusura
+	 * 
+	 * @return  Valore di orario Chiusura.
+	 */
+	public  Date get Orario Chiusura()
+	{
+		return orario Chiusura;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di orario Chiusura
+	 * 
+	 * @param p Orario Chiusura  Nuovo valore di orario Chiusura.
+	 */
+	public void set Orario Chiusura( Date p Orario Chiusura)
+	{
+		orario Chiusura = p Orario Chiusura;
+	}
+
+	/**
+	 *  Restituisce il valore di posizione
+	 * 
+	 * @return  Valore di posizione.
+	 */
+	public  Punto  D get Posizione()
+	{
+		return posizione;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di posizione
+	 * 
+	 * @param p Posizione  Nuovo valore di posizione.
+	 */
+	public void set Posizione( Punto  D p Posizione)
+	{
+		posizione = p Posizione;
+	}
+
+	/**
+	 *  Restituisce il valore di provincia
+	 * 
+	 * @return  Valore di provincia.
+	 */
+	public  String get Provincia()
+	{
+		return provincia;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di provincia
+	 * 
+	 * @param p Provincia  Nuovo valore di provincia.
+	 */
+	public void set Provincia( String p Provincia)
+	{
+		provincia = p Provincia;
+	}
+
+	/**
+	 *  Restituisce il valore di telefono
+	 * 
+	 * @return  Valore di telefono.
+	 */
+	public  String get Telefono()
+	{
+		return telefono;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di telefono
+	 * 
+	 * @param p Telefono  Nuovo valore di telefono.
+	 */
+	public void set Telefono( String p Telefono)
+	{
+		telefono = p Telefono;
+	}
+
+	/**
+	 *  Restituisce il valore di via
+	 * 
+	 * @return  Valore di via.
+	 */
+	public  String get Via()
+	{
+		return via;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di via
+	 * 
+	 * @param p Via  Nuovo valore di via.
+	 */
+	public void set Via( String p Via)
+	{
+		via = p Via;
+	}
+
+	/**
+	 *  Restituisce il valore di id
+	 * 
+	 * @return  Valore di id.
+	 */
+	public int get Id()
+	{
+		return id;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di id
+	 * 
+	 * @param p Id  Nuovo valore di id.
+	 */
+	public void set Id(int p Id)
+	{
+		id = p Id;
+	}
+
+}

@@ -1,0 +1,482 @@
+7.1
+org.mozilla.javascript.TokenStream.isJSFormatChar	1003
+7.2
+org.mozilla.javascript.TokenStream.getToken	410
+7.3
+org.mozilla.javascript.TokenStream.getChar	897
+7.4
+org.mozilla.javascript.TokenStream.getToken	45
+7.5.1
+org.mozilla.javascript.CompilerEnvirons.isReservedKeywordAsIdentifier	0
+7.5.2
+org.mozilla.javascript.TokenStream.getToken	26
+7.5.3
+org.mozilla.javascript.TokenStream.getToken	1319
+7.6
+org.mozilla.javascript.CompilerEnvirons.isReservedKeywordAsIdentifier	454
+7.7
+org.mozilla.javascript.TokenStream.getToken	794
+7.8.1
+org.mozilla.javascript.TokenStream.stringToKeyword	2458
+7.8.2
+org.mozilla.javascript.TokenStream.stringToKeyword	2439
+7.8.3
+org.mozilla.javascript.DToA.stripTrailingZeroes	1566
+7.8.4
+org.mozilla.javascript.Node.toString	151
+7.8.5
+org.mozilla.javascript.Parser.primaryExpr	470
+7.9.1
+org.mozilla.javascript.Parser.statementHelper	115
+8.1
+org.mozilla.javascript.regexp.RegExpImpl.action	1792
+8.4
+org.mozilla.javascript.DToA.stripTrailingZeroes	1254
+8.6.1
+org.mozilla.javascript.BaseFunction.setImmunePrototypeProperty	85
+8.6.2
+org.mozilla.javascript.NativeBoolean.findPrototypeId	1961
+8.6.2.1
+org.mozilla.javascript.tools.shell.Environment.get	12
+8.6.2.2
+org.mozilla.javascript.ScriptRuntime.nameIncrDecr	2145
+8.6.2.6
+org.mozilla.javascript.BaseFunction.realFunction	1179
+9.2
+org.mozilla.javascript.FunctionObject.convertArg	530
+9.3
+org.mozilla.javascript.FunctionObject.convertArg	346
+9.3.1
+org.mozilla.javascript.FunctionObject.convertArg	1141
+9.4
+org.mozilla.javascript.ScriptRuntime.toNumber	34
+9.5
+org.mozilla.javascript.FunctionObject.convertArg	652
+9.6
+org.mozilla.javascript.ScriptRuntime.toNumber	115
+9.7
+org.mozilla.javascript.ScriptRuntime.toUint16	1427
+9.8.1
+org.mozilla.javascript.DToA.stripTrailingZeroes	1308
+9.9
+org.mozilla.javascript.FunctionObject.convertArg	565
+10.1.3
+org.mozilla.javascript.ScriptRuntime.setName	150
+10.1.4
+org.mozilla.javascript.tools.shell.Environment.get	75
+10.1.5
+org.mozilla.javascript.ScriptRuntime.initStandardObjects	1338
+10.1.6
+org.mozilla.javascript.ScriptRuntime.exitActivationFunction	334
+10.1.8
+org.mozilla.javascript.NativeWith.execIdCall	1394
+10.2.1
+org.mozilla.javascript.ScriptRuntime.setName	66
+10.2.2
+org.mozilla.javascript.ScriptRuntime.setName	158
+10.2.3
+org.mozilla.javascript.ScriptRuntime.setName	96
+11.1.1
+org.mozilla.javascript.Parser.primaryExpr	1675
+11.1.4
+org.mozilla.javascript.Parser.primaryExpr	758
+11.2.1
+org.mozilla.javascript.Decompiler.decompile	1220
+11.2.2
+org.mozilla.javascript.IdFunctionObject.markAsConstructor	2495
+11.2.3
+org.mozilla.javascript.Decompiler.decompile	1115
+11.3.1
+org.mozilla.javascript.Interpreter.dumpICode	1899
+11.3.2
+org.mozilla.javascript.Interpreter.dumpICode	1824
+11.4.1
+org.mozilla.javascript.NativeWith.delete	1738
+11.4.2
+org.mozilla.javascript.TokenStream.stringToKeyword	3108
+11.4.3
+org.mozilla.javascript.TokenStream.stringToKeyword	2867
+11.4.4
+org.mozilla.javascript.Interpreter.dumpICode	2131
+11.4.5
+org.mozilla.javascript.Interpreter.dumpICode	2078
+11.4.6
+org.mozilla.javascript.TokenStream.getToken	469
+11.4.8
+org.mozilla.javascript.TokenStream.getToken	401
+11.4.9
+org.mozilla.javascript.TokenStream.getToken	140
+11.5.1
+org.mozilla.javascript.TokenStream.getToken	272
+11.5.2
+org.mozilla.javascript.TokenStream.getToken	273
+11.5.3
+org.mozilla.javascript.TokenStream.getToken	75
+11.6.1
+org.mozilla.javascript.Interpreter.do_add	1005
+11.6.2
+org.mozilla.javascript.TokenStream.getToken	434
+11.6.3
+org.mozilla.javascript.IRFactory.createBinary	1
+11.8.1
+org.mozilla.javascript.TokenStream.getToken	160
+11.8.2
+org.mozilla.javascript.TokenStream.getToken	160
+11.8.3
+org.mozilla.javascript.TokenStream.getToken	180
+11.8.4
+org.mozilla.javascript.TokenStream.getToken	180
+11.8.6
+org.mozilla.javascript.Parser.relExpr	2417
+11.9.1
+org.mozilla.javascript.ScriptableObject.equivalentValues	189
+11.9.2
+org.mozilla.javascript.ScriptableObject.equivalentValues	7
+11.9.4
+org.mozilla.javascript.ScriptRuntime.shallowEq	1357
+11.12
+org.mozilla.javascript.Interpreter.resolveGoto	2258
+11.13
+org.mozilla.javascript.Parser.primaryExpr	649
+11.13.2
+org.mozilla.javascript.ScriptRuntime.setName	673
+11.14
+org.mozilla.javascript.TokenStream.getToken	532
+12.2
+org.mozilla.javascript.InterpreterData.getParamOrVarName	1718
+12.4
+org.mozilla.javascript.Parser.statementHelper	1889
+12.5
+org.mozilla.javascript.Interpreter.resolveGoto	2690
+12.6.1
+org.mozilla.javascript.Parser.statementHelper	950
+12.6.2
+org.mozilla.javascript.Parser.statementHelper	883
+12.6.3
+org.mozilla.javascript.Parser.statementHelper	743
+12.6.4
+org.mozilla.javascript.regexp.NativeRegExp.init	872
+12.7
+org.mozilla.javascript.IRFactory.createLoopNode	1227
+12.8
+org.mozilla.javascript.IRFactory.createLoopNode	1443
+12.9
+org.mozilla.javascript.Parser.statementHelper	1343
+12.10
+org.mozilla.javascript.NativeWith.execIdCall	690
+12.11
+org.mozilla.javascript.TokenStream.getLineno	2059
+12.12
+org.mozilla.javascript.IRFactory.createLoopNode	1116
+12.13
+org.mozilla.javascript.JavaScriptException.JavaScriptException	2356
+12.14
+org.mozilla.javascript.TokenStream.getLineno	2368
+15
+org.mozilla.javascript.NativeScript.getLength	2667
+15.1
+org.mozilla.javascript.ScriptRuntime.initStandardObjects	547
+15.1.1.1
+org.mozilla.javascript.NativeGlobal.init	740
+15.1.1.2
+org.mozilla.javascript.NativeGlobal.init	969
+15.1.2.1
+org.mozilla.javascript.NodeTransformer.transform	2872
+15.1.2.2
+org.mozilla.javascript.NativeGlobal.js_parseInt	18
+15.1.2.4
+org.mozilla.javascript.NativeGlobal.init	1498
+15.1.2.5
+org.mozilla.javascript.NativeGlobal.init	1396
+15.2.1.1
+org.mozilla.javascript.NativeObject.init	2074
+15.2.2.1
+org.mozilla.javascript.Context.newObject	154
+15.2.3
+org.mozilla.javascript.ScriptableObject.getFunctionPrototype	83
+15.2.3.1
+org.mozilla.javascript.ScriptableObject.getObjectPrototype	8
+15.2.4
+org.mozilla.javascript.NativeObject.getClassName	412
+15.2.4.1
+org.mozilla.javascript.NativeObject.findPrototypeId	787
+15.2.4.2
+org.mozilla.javascript.NativeObject.findPrototypeId	1130
+15.2.4.4
+org.mozilla.javascript.NativeObject.findPrototypeId	1154
+15.2.4.5
+org.mozilla.javascript.NativeObject.findPrototypeId	767
+15.3.1.1
+org.mozilla.javascript.ScriptOrFnNode.getFunctionCount	203
+15.3.2.1
+org.mozilla.javascript.NodeTransformer.transform	3005
+15.3.3
+org.mozilla.javascript.ScriptableObject.getFunctionPrototype	2
+15.3.3.1
+org.mozilla.javascript.BaseFunction.fillConstructorProperties	3
+15.3.4
+org.mozilla.javascript.BaseFunction.getClassName	457
+15.3.4.1
+org.mozilla.javascript.BaseFunction.jsConstructor	848
+15.3.4.3
+org.mozilla.javascript.BaseFunction.findPrototypeId	1616
+15.3.4.4
+org.mozilla.javascript.BaseFunction.findPrototypeId	2020
+15.3.5.1
+org.mozilla.javascript.NativeArray.js_concat	203
+15.4
+org.mozilla.javascript.ScriptRuntime.toNumber	1234
+15.4.2.1
+org.mozilla.javascript.NativeArray.js_concat	122
+15.4.2.2
+org.mozilla.javascript.ScriptRuntime.toUint32	1842
+15.4.3
+org.mozilla.javascript.ScriptableObject.getFunctionPrototype	79
+15.4.4
+org.mozilla.javascript.NativeArray.getElem	2011
+15.4.4.1
+org.mozilla.javascript.NativeArray.initPrototypeId	1365
+15.4.4.2
+org.mozilla.javascript.NativeArray.initPrototypeId	2365
+15.4.4.3
+org.mozilla.javascript.NativeArray.initPrototypeId	1531
+15.4.4.4
+org.mozilla.javascript.NativeArray.js_concat	149
+15.4.4.5
+org.mozilla.javascript.NativeArray.js_join	52
+15.4.4.7
+org.mozilla.javascript.NativeArray.js_push	134
+15.4.4.8
+org.mozilla.javascript.NativeArray.initPrototypeId	2249
+15.4.4.11
+org.mozilla.javascript.NativeArray.heapify_extended	2042
+15.4.5.1
+org.mozilla.javascript.regexp.RegExpImpl.match_glob	1013
+15.4.5.2
+org.mozilla.javascript.NativeArray.setLengthProperty	273
+15.5.3
+org.mozilla.javascript.ScriptableObject.getFunctionPrototype	108
+15.5.3.2
+org.mozilla.javascript.NativeString.execIdCall	465
+15.5.4
+org.mozilla.javascript.NativeString.getClassName	324
+15.5.4.1
+org.mozilla.javascript.NativeString.execIdCall	784
+15.5.4.2
+org.mozilla.javascript.NativeString.execIdCall	314
+15.5.4.3
+org.mozilla.javascript.NativeString.execIdCall	307
+15.5.4.4
+org.mozilla.javascript.NativeString.execIdCall	321
+15.5.4.5
+org.mozilla.javascript.NativeString.execIdCall	277
+15.5.4.7
+org.mozilla.javascript.NativeString.execIdCall	330
+15.5.4.8
+org.mozilla.javascript.NativeString.execIdCall	314
+15.5.4.10
+org.mozilla.javascript.regexp.RegExpImpl.action	545
+15.5.4.11
+org.mozilla.javascript.regexp.RegExpImpl.action	484
+15.5.4.14
+org.mozilla.javascript.regexp.RegExpImpl.find_split	24
+15.5.4.15
+org.mozilla.javascript.NativeString.execIdCall	454
+15.5.4.16
+org.mozilla.javascript.NativeString.execIdCall	317
+15.5.4.18
+org.mozilla.javascript.NativeString.execIdCall	209
+15.5.5.1
+org.mozilla.javascript.ScriptRuntime.wrapInt	-1
+15.6.3
+org.mozilla.javascript.ScriptableObject.getFunctionPrototype	2
+15.6.4
+org.mozilla.javascript.NativeBoolean.getClassName	1369
+15.6.4.1
+org.mozilla.javascript.NativeBoolean.findPrototypeId	1003
+15.6.4.2
+org.mozilla.javascript.NativeBoolean.findPrototypeId	1362
+15.6.4.3
+org.mozilla.javascript.NativeBoolean.findPrototypeId	1458
+15.7.3.2
+org.mozilla.javascript.NativeNumber.fillConstructorProperties	95
+15.7.3.3
+org.mozilla.javascript.NativeNumber.fillConstructorProperties	89
+15.7.3.4
+org.mozilla.javascript.NativeNumber.fillConstructorProperties	98
+15.7.3.5
+org.mozilla.javascript.NativeNumber.fillConstructorProperties	39
+15.7.3.6
+org.mozilla.javascript.NativeNumber.fillConstructorProperties	39
+15.7.4
+org.mozilla.javascript.DToA.stripTrailingZeroes	2209
+15.7.4.1
+org.mozilla.javascript.NativeNumber.execIdCall	149
+15.7.4.2
+org.mozilla.javascript.DToA.JS_dtobasestr	416
+15.7.4.4
+org.mozilla.javascript.NativeNumber.execIdCall	30
+15.7.4.5
+org.mozilla.javascript.NativeNumber.execIdCall	3
+15.7.4.6
+org.mozilla.javascript.NativeNumber.execIdCall	14
+15.7.4.7
+org.mozilla.javascript.NativeNumber.execIdCall	11
+15.8
+org.mozilla.javascript.NativeMath.NativeMath	1871
+15.8.1.1
+org.mozilla.javascript.NativeMath.findPrototypeId	2409
+15.8.1.2
+org.mozilla.javascript.NativeMath.findPrototypeId	2099
+15.8.1.3
+org.mozilla.javascript.NativeMath.findPrototypeId	2037
+15.8.1.4
+org.mozilla.javascript.NativeMath.findPrototypeId	1408
+15.8.1.5
+org.mozilla.javascript.NativeMath.findPrototypeId	2293
+15.8.1.6
+org.mozilla.javascript.NativeMath.findPrototypeId	2484
+15.8.1.7
+org.mozilla.javascript.NativeMath.findPrototypeId	1441
+15.8.1.8
+org.mozilla.javascript.NativeMath.findPrototypeId	1646
+15.8.2.1
+org.mozilla.javascript.NativeMath.findPrototypeId	1276
+15.8.2.2
+org.mozilla.javascript.NativeMath.findPrototypeId	946
+15.8.2.3
+org.mozilla.javascript.NativeMath.findPrototypeId	666
+15.8.2.4
+org.mozilla.javascript.NativeMath.findPrototypeId	896
+15.8.2.5
+org.mozilla.javascript.NativeMath.findPrototypeId	1487
+15.8.2.6
+org.mozilla.javascript.NativeMath.findPrototypeId	1112
+15.8.2.7
+org.mozilla.javascript.NativeMath.findPrototypeId	928
+15.8.2.8
+org.mozilla.javascript.NativeMath.findPrototypeId	951
+15.8.2.9
+org.mozilla.javascript.NativeMath.findPrototypeId	1150
+15.8.2.10
+org.mozilla.javascript.NativeMath.findPrototypeId	952
+15.8.2.11
+org.mozilla.javascript.NativeMath.findPrototypeId	2092
+15.8.2.12
+org.mozilla.javascript.NativeMath.findPrototypeId	2072
+15.8.2.13
+org.mozilla.javascript.NativeMath.findPrototypeId	977
+15.8.2.14
+org.mozilla.javascript.NativeMath.findPrototypeId	2282
+15.8.2.15
+org.mozilla.javascript.NativeMath.findPrototypeId	892
+15.8.2.16
+org.mozilla.javascript.NativeMath.findPrototypeId	1288
+15.8.2.17
+org.mozilla.javascript.NativeMath.findPrototypeId	1165
+15.8.2.18
+org.mozilla.javascript.NativeMath.findPrototypeId	1288
+15.9.1.13
+org.mozilla.javascript.NativeDate.MakeDate	34
+15.9.2.1
+org.mozilla.javascript.NativeDate.execIdCall	394
+15.9.3.1
+org.mozilla.javascript.NativeDate.MakeTime	391
+15.9.3.2
+org.mozilla.javascript.NativeDate.jsConstructor	45
+15.9.4.2
+org.mozilla.javascript.IdScriptableObject.addIdFunctionProperty	1294
+15.9.4.3
+org.mozilla.javascript.IdScriptableObject.addIdFunctionProperty	1504
+15.9.5
+org.mozilla.javascript.NativeDate.LocalTime	3016
+15.9.5.1
+org.mozilla.javascript.NativeDate.jsConstructor	243
+15.9.5.2
+org.mozilla.javascript.NativeDate.execIdCall	825
+15.9.5.3
+org.mozilla.javascript.NativeDate.execIdCall	618
+15.9.5.4
+org.mozilla.javascript.NativeDate.execIdCall	618
+15.9.5.5
+org.mozilla.javascript.NativeDate.execIdCall	792
+15.9.5.6
+org.mozilla.javascript.NativeDate.execIdCall	790
+15.9.5.7
+org.mozilla.javascript.NativeDate.execIdCall	790
+15.9.5.8
+org.mozilla.javascript.NativeDate.execIdCall	432
+15.9.5.9
+org.mozilla.javascript.NativeDate.execIdCall	730
+15.9.5.10
+org.mozilla.javascript.NativeDate.execIdCall	1
+15.9.5.11
+org.mozilla.javascript.NativeDate.execIdCall	1
+15.9.5.17
+org.mozilla.javascript.NativeDate.execIdCall	1
+15.9.5.19
+org.mozilla.javascript.NativeDate.execIdCall	2
+15.9.5.21
+org.mozilla.javascript.NativeDate.execIdCall	2
+15.9.5.23
+org.mozilla.javascript.NativeDate.execIdCall	2
+15.9.5.25
+org.mozilla.javascript.NativeDate.msFromTime	72
+15.9.5.27
+org.mozilla.javascript.NativeDate.execIdCall	583
+15.9.5.28
+org.mozilla.javascript.NativeDate.makeTime	1
+15.9.5.29
+org.mozilla.javascript.NativeDate.makeTime	1
+15.9.5.30
+org.mozilla.javascript.NativeDate.makeTime	0
+15.9.5.31
+org.mozilla.javascript.NativeDate.makeTime	1
+15.9.5.33
+org.mozilla.javascript.NativeDate.makeTime	0
+15.9.5.34
+org.mozilla.javascript.NativeDate.makeTime	1
+15.9.5.35
+org.mozilla.javascript.NativeDate.makeTime	0
+15.9.5.36
+org.mozilla.javascript.NativeDate.execIdCall	12
+15.9.5.37
+org.mozilla.javascript.NativeDate.execIdCall	7
+15.9.5.38
+org.mozilla.javascript.NativeDate.execIdCall	8
+15.9.5.39
+org.mozilla.javascript.NativeDate.execIdCall	8
+15.9.5.40
+org.mozilla.javascript.NativeDate.execIdCall	8
+15.9.5.41
+org.mozilla.javascript.NativeDate.execIdCall	10
+15.10
+org.mozilla.javascript.IRFactory.createRegExp	728
+15.10.2
+org.mozilla.javascript.regexp.NativeRegExp.getIndex	-1
+15.10.2.6
+org.mozilla.javascript.regexp.NativeRegExp.compile	801
+15.10.2.10
+org.mozilla.javascript.regexp.NativeRegExp.parseTerm	259
+15.10.2.11
+org.mozilla.javascript.regexp.NativeRegExp.backrefMatcher	624
+15.10.2.12
+org.mozilla.javascript.regexp.NativeRegExp.parseTerm	535
+15.10.3.1
+org.mozilla.javascript.regexp.NativeRegExp.call	860
+15.10.4
+org.mozilla.javascript.regexp.NativeRegExpCtor.NativeRegExpCtor	367
+15.10.4.1
+org.mozilla.javascript.regexp.NativeRegExp.getClassName	941
+15.10.6.2
+org.mozilla.javascript.regexp.RegExpImpl.action	608
+15.10.7
+org.mozilla.javascript.regexp.NativeRegExp.getMaxInstanceId	303
+15.11.1.1
+org.mozilla.javascript.NativeError.getClassName	459
+15.11.4.4
+org.mozilla.javascript.NativeError.findPrototypeId	692
+15.11.6.3
+org.mozilla.javascript.ScriptRuntime.nameIncrDecr	557
+15.11.7.6
+org.mozilla.javascript.NativeError.make	383

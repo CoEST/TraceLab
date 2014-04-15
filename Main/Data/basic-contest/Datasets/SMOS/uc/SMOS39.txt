@@ -1,0 +1,13 @@
+Nome: VisualizzaDettagliNota
+Attori: Amministratore
+Descrizione: Visualizza i dettagli di una nota
+Precondizioni:
+• • •
+L'utente deve essere loggato al sistema come Amministratore L'utente ha svolto il caso d'uso “VisualizzaElencoNote” Clicca sul pulsante “dettagli” associato ad una delle note
+Sequenza degli eventi
+Utente
+Sistema
+1. Mostra un form con i dettagli della nota: alunno, descrizione, docente, data.
+Postcondizioni:
+• • •
+Il sistema sta visualizzando i dettagli di una nota. L’amministratore interrompe l’operazione Connessione al server SMOS interrotta

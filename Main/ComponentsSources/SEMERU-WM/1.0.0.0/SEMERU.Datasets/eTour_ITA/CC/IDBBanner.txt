@@ -1,0 +1,66 @@
+package unisa.gps.etour.repository;
+
+import java.sql. S Q L Exception;
+import java.util. Array List;
+
+import unisa.gps.etour.bean. Bean Banner;
+
+/**
+ *  Interfaccia per la gestione dei banner sul database
+ * 
+ * @author  Miranda  Mauro
+ * @version  .  �      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I �  University
+ *          of  Salerno
+ */
+
+public interface  I D B Banner
+{
+	/**
+	 *  Aggiunge un banner nel database
+	 * 
+	 * @param p Banner bean contenente le informazioni del banner
+	 * @throws  S Q L Exception
+	 */
+	public boolean inserisci Banner( Bean Banner p Banner) throws  S Q L Exception;
+
+	/**
+	 *  Modifica il contenuto di un banner e restituisce il contenuto prima della
+	 * modifica
+	 * 
+	 * @param p Banner  Bean che contiene le nuove informazioni del banner
+	 * @return  True se c'e' stata una modifica false altrimenti
+	 * @throws  S Q L Exception
+	 */
+	public boolean modifica Banner( Bean Banner p Banner) throws  S Q L Exception;
+
+	/**
+	 *  Elimina un banner dal database e lo restituisce
+	 * 
+	 * @param p Id Banner  Identificativo  Bean Banner
+	 * @return  True se e' stato eliminato false altrimenti
+	 * @throws  S Q L Exception
+	 */
+	public boolean cancella Banner(int p Id Banner) throws  S Q L Exception;
+
+	/**
+	 *  Restituisce una lista dei banner di un punto di ristoro, se l'id del
+	 * punto di ristoro e' uguale a -  verra' restituita la lista completa dei
+	 * banner
+	 * 
+	 * @param p Id Punto Di Ristoro  Id del punto di ristoro da cui ottenere la lista
+	 *            dei banner
+	 * @return  Lista dei banner collegati al  Punto di ristoro
+	 * @throws  S Q L Exception
+	 */
+	public  Array List< Bean Banner> ottieni Banner(int p Id Punto Di Ristoro)
+			throws  S Q L Exception;
+
+	/**
+	 *  Metodo che restituisce un banner dato il suo id
+	 * 
+	 * @param p Id Banner  Identificativo del banner da restituire
+	 * @return  Banner trovato nel database, null se non c'e' corrispondenza
+	 * @throws  S Q L Exception 
+	 */
+	public  Bean Banner ottieni Banner Da I D(int p Id Banner) throws  S Q L Exception;
+}

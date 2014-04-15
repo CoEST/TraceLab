@@ -1,0 +1,1 @@
+Data Transfer to Queue	During initialization, the TMALI CSC installs an ISR hook routine, tmaliTransferToQueueISR(),  into the DCI Driver which is invoked when:* the DCI interface reaches the programmed frame limit in the Ping-Pong buffer, or* the DCI interface detects a data receipt timeout.

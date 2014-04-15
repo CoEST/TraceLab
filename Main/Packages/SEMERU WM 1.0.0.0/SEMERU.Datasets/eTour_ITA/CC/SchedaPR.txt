@@ -1,0 +1,1172 @@
+/*
+*  Scheda P R.java
+*
+*  . 
+*
+*   /  /    
+*
+* ©      e Tour  Project -  Copyright by  S E@ S A  Lab -  D M I –  University of  Salerno
+*/
+
+package unisa.gps.etour.gui.operatore agenzia ;
+
+import java.awt. Border Layout;
+
+import javax.swing. Border Factory;
+import javax.swing. Input Verifier;
+import javax.swing. J Component;
+import javax.swing. J Panel;
+import javax.swing. J Internal Frame;
+import javax.swing. Image Icon;
+import javax.swing. Window Constants;
+import java.awt. Dimension;
+import javax.swing. J Tabbed Pane;
+import java.awt. Grid Bag Layout;
+import javax.swing. J Label;
+import java.awt. Grid Bag Constraints;
+import javax.swing. J Text Field;
+import javax.swing. J Combo Box;
+import javax.swing. J Scroll Pane;
+import javax.swing. J Text Area;
+
+import java.awt. Color;
+import java.awt. Component;
+import java.awt. Insets;
+import java.awt. Rectangle;
+import javax.swing. J Tool Bar;
+import javax.swing. J Toggle Button;
+import javax.swing. J Button;
+import java.awt. Font;
+import java.awt. Cursor;
+import java.awt.event. Action Event;
+import java.awt.event. Action Listener;
+import java.awt.event. Focus Event;
+import java.awt.event. Focus Listener;
+import java.awt.event. Item Event;
+import java.awt.event. Item Listener;
+import java.awt.event. Key Event;
+import java.awt.event. Key Listener;
+import java.beans. Property Change Event;
+import java.beans. Property Change Listener;
+import java.util. String Tokenizer;
+
+import javax.swing. J Combo Box. Key Selection Manager;
+import javax.swing.border. Soft Bevel Border;
+import javax.swing.border. Titled Border;
+import javax.swing.text. Attribute Set;
+import javax.swing.text. Bad Location Exception;
+import javax.swing.text. Plain Document;
+import javax.swing. J Check Box;
+import javax.swing. J Table;
+import unisa.gps.etour.bean.*;
+import unisa.gps.etour.bean.util. Punto  D;
+/**
+ *  Classe che modella l'interfaccia per la visualizzazione della scheda, 
+ * la modifica dei dati e l'inserimento di un nuovo punto di ristoro.
+ * 
+ * @author  Lello
+ *
+ */
+public class  Scheda P R extends  J Internal Frame {
+
+	private  J Panel j Content Pane = null;
+	private  J Tool Bar toolbar Scheda B C = null;
+	private  J Toggle Button btn Modifica = null;
+	private  J Button btn Salva = null;
+	private  J Button btn Annulla = null;
+	private  J Button btn Modifica Commento = null;
+	private  J Tabbed Pane j Tabbed Pane = null;
+	private  J Panel statistiche = null;
+	private  J Panel feedback = null;
+	private  J Label txt Nome = null;
+	private  J Label txt Indirizzo = null;
+	private  J Label txt C A P = null;
+	private  J Label txt Citta = null;
+	private  J Label txt Località = null;
+	private  J Label txt Provincia = null;
+	private  J Label txt Pos = null;
+	private  J Label txt Tel = null;
+	private  J Label txt Ora Ap = null;
+	private  J Label txt Ora Ch = null;
+
+	private  J Label j Label = null;
+	private  J Text Field indirizzo P R = null;
+	private  J Combo Box indirizzo P R  = null;
+	private  J Text Field citta P R = null;
+	private  J Combo Box localita P R = null;
+	private  J Text Field cap P R = null;
+	private  J Scroll Pane j Scroll Pane = null;
+	private  J Text Area descrizione P R = null;
+	private  J Text Field telefono P R = null;
+	private  J Combo Box orario A P Ore P R = null;
+	private  J Label j Label  = null;
+	private  J Combo Box orario Ap Min P R = null;
+	private  Tag Panel pannello Tag;
+	private  J Text Field costo B C = null;
+	
+	private  J Label j Label  = null;
+	private  J Combo Box orario C H Min P R = null;
+	private  J Combo Box prov P R = null;
+	private  J Panel dati P R = null;
+	private  J Text Field nome P R = null;
+	private  J Panel j Panel = null;
+	private  J Scroll Pane j Scroll Pane  = null;
+	private  J Table feedback Table = null;
+	private  J Label txt Nome Bene = null;
+	private  J Label media Voto P R = null;
+	private  J Panel statistiche Mese Corrente = null;
+	private  J Panel statistiche Totali = null;
+	private  J Label j Label  = null;
+	private  J Label j Label   = null;
+	private  Action Listener campo Compilato;
+	private  Focus Listener validating;
+	private  J Tool Bar  Toolbar Scheda P R = null;
+	private  J Text Field pos Geo X = null;
+	private  J Text Field pos Geo Y = null;
+	private  J Text Field pos Geo Z = null;
+	private  J Label j Label  = null;
+	private  J Combo Box orario C H Ore P R = null;
+	/**
+	 *  Il costruttore di default modella l'interfaccia relativa all'inserimento di
+	 * un nuovo punto di ristoro.
+	 * 
+	 */
+	public  Scheda P R() 
+	{
+		super(" Nuovo  Punto di  Ristoro");
+		campo Compilato = new  Action Listener() {
+
+			public void action Performed( Action Event action Event) 
+			{
+				(( J Component)action Event.get Source()).transfer Focus();
+			}
+			
+		};
+		validating = new  Focus Listener() {
+
+		    private final  Color  E R R O R_ B A C K G R O U N D = new  Color(   ,    ,    );
+		    private final  Color  W A R N I N G_ B A C K G R O U N D = new  Color(   ,    ,    );
+			private  String text;
+			
+			public void focus Gained( Focus Event fe) {
+				if (fe.get Source() instanceof  J Text Field) {
+					 J Text Field textbox = ( J Text Field) fe.get Source();
+					text = textbox.get Text();
+				}
+				
+			}
+
+			public void focus Lost( Focus Event fe) {
+				if (fe.get Source() instanceof  J Text Field) {
+					 J Text Field textbox = ( J Text Field) fe.get Source();
+					if (!text.equals(textbox.get Text())) {
+						text = textbox.get Text();
+						if (text.equals("")) {
+							textbox.set Background( E R R O R_ B A C K G R O U N D);
+							 Rectangle bounds = textbox.get Bounds();
+							 J Label nuova = new  J Label();
+							nuova.set Icon(new  Image Icon(get Class().get Resource("/unisa/gps/etour/gui/images/error.png")));
+							nuova.set Bounds(bounds.x-  ,bounds.y,  ,  );
+							nuova.set Tool Tip Text(" Il campo " + textbox.get Name() + " non può essere vuoto!");
+							dati P R.add(nuova,null);
+							dati P R.repaint();
+						}
+					}
+				}
+				
+			}
+			
+		};
+		initialize();
+	}
+	/**
+	 *  Questo costruttore modella le interfacce relative alla modifica dei dati e alla
+	 * visualizzazione della scheda di un punto di ristoro.
+	 * @param unisa.gps.etour.bean. Bean Punto Di Ristoro  P R - il bean contenente i dati del 
+	 *  Punto Di Ristoro selezionato.
+	 * @param boolean modifica - indica se i campi devono essere editabili, e quindi se
+	 * si sta visualizzando una scheda o modificando i dati del bene culturale.
+	 * 
+	 */
+	public  Scheda P R( Bean Punto Di Ristoro pr, boolean modifica) 
+	{
+		this();
+
+		nome P R.set Text(pr.get Nome());
+		set Title(pr.get Nome());
+		cap P R.set Text(pr.get Cap());
+		citta P R.set Text(pr.get Citta());
+		
+		descrizione P R.set Text(pr.get Descrizione());
+		 String Tokenizer tokenizer = new  String Tokenizer(pr.get Via());
+		/*
+		 * 			indirizzo P R .add Item(" Via");
+			indirizzo P R .add Item(" P.zza");
+			indirizzo P R .add Item(" V.le");
+			indirizzo P R .add Item(" V.co");
+			indirizzo P R .add Item(" Largo");
+			indirizzo P R .add Item(" Corso");
+		 */
+		 String[] via = {" Via"," P.zza"," V.le"," V.co"," Largo"," Corso"};
+		 String stringa = tokenizer.next Token();
+		int i;
+		for (i =  ; i < via.length; i++)
+			if (stringa.equals Ignore Case(via[i]))
+				break;
+		this.indirizzo P R .set Selected Index(i);
+		while (tokenizer.has More Tokens())
+			this.indirizzo P R.set Text(indirizzo P R.get Text() + " " + tokenizer.next Token());
+		this.prov P R.set Selected Item(pr.get Provincia());
+		 Punto  D pos = pr.get Posizione();
+		this.pos Geo X.set Text(""+pos.get X());
+		this.pos Geo Y.set Text(""+pos.get Y());
+		this.pos Geo Z.set Text(""+pos.get Z());
+		this.telefono P R.set Text(pr.get Telefono());
+		int minuti = pr.get Orario Apertura().get Minutes();
+		if (minuti== )
+			this.orario Ap Min P R.set Selected Index( );
+		else
+			this.orario Ap Min P R.set Selected Item(minuti);
+		int ore = pr.get Orario Apertura().get Hours();
+		if (ore<  )
+			this.orario A P Ore P R.set Selected Item(" "+ore);
+		else
+			this.orario A P Ore P R.set Selected Item(ore);
+		this.orario C H Min P R.set Selected Item(pr.get Orario Chiusura().get Minutes());
+		this.orario A P Ore P R.set Selected Item(pr.get Orario Apertura().get Hours());
+		this.orario C H Ore P R.set Selected Item(pr.get Orario Chiusura().get Hours());	
+		if (modifica) {
+			btn Modifica.set Selected(true);
+		}
+		else {
+			make Editabled();
+		}
+
+	}
+	/**
+	 *  Metodo chiamato dal costruttore
+	 * 
+	 * @return void
+	 */
+	private void initialize() {
+		this.set Iconifiable(true);
+		this.set Bounds(new  Rectangle( ,  ,    ,    ));
+		this.set Default Close Operation( Window Constants. D O_ N O T H I N G_ O N_ C L O S E);
+		this.set Frame Icon(new  Image Icon(get Class().get Resource("/unisa/gps/etour/gui/operatore agenzia /images/scheda.png")));
+		this.set Closable(true);
+		this.set Content Pane(get J Content Pane());
+	}
+
+	private void make Editabled() 
+	{
+		 Component[] componenti = dati P R.get Components();
+		for(int i =  ; i < componenti.length; i++) {
+			 Component corrente = componenti[i];
+			if (corrente instanceof  J Text Field) 
+			{
+				 J Text Field textbox = ( J Text Field) corrente;
+				textbox.set Editable(textbox.is Editable() ? false : true);
+				textbox.set Background( Color.white);
+				
+			}
+			else if (corrente instanceof  J Combo Box) 
+			{
+				 J Combo Box combobox = ( J Combo Box) corrente;
+				combobox.set Enabled(combobox.is Enabled() ? false : true);
+				
+			}
+		}
+		descrizione P R.set Editable(descrizione P R.is Editable()? false: true);
+		pannello Tag.attiva Disattiva();
+	}
+	
+	
+	/**
+	 *  Metodo che inizializza un j Content Pane
+	 * 
+	 * @return javax.swing. J Panel
+	 */
+	private  J Panel get J Content Pane() {
+		if (j Content Pane == null) {
+			j Content Pane = new  J Panel();
+			j Content Pane.set Layout(new  Border Layout());
+			
+			j Content Pane.add(get J Tabbed Pane(),  Border Layout. C E N T E R);
+			j Content Pane.add(get Toolbar Scheda P R(),  Border Layout. S O U T H);
+		}
+		return j Content Pane;
+	}
+
+	/**
+	 * questo metodo inizializza il pulsante ( Toggle Button) di modifica
+	 * dei dati per un punto Di Ristoro
+	 * 	
+	 * @return javax.swing. J Toggle Button	
+	 */
+	private  J Toggle Button get Btn Modifica() {
+		if (btn Modifica == null) {
+			btn Modifica = new  J Toggle Button();
+			btn Modifica.set Text(" Modifica  Dati");
+			btn Modifica.set Icon(new  Image Icon(get Class().get Resource("/unisa/gps/etour/gui/operatore agenzia /images/modifica.png")));
+			btn Modifica.add Action Listener(new  Action Listener() {
+
+				public void action Performed( Action Event arg ) {
+					make Editabled();
+					btn Salva.set Visible((btn Modifica.is Selected() ? true : false));
+					btn Annulla.set Visible((btn Modifica.is Selected() ? true : false));
+									
+					
+				}
+				
+			});
+		}
+		return btn Modifica;
+	}
+
+	/**
+	 *  Metodo per inizializzare il pulsante salva (btn Salva)	
+	 * 	
+	 * @return javax.swing. J Button	
+	 */
+	private  J Button get Btn Salva() {
+		if (btn Salva == null) {
+			btn Salva = new  J Button();
+			btn Salva.set Text(" Salva");
+			btn Salva.set Icon(new  Image Icon(get Class().get Resource("/unisa/gps/etour/gui/operatore agenzia /images/salva.png")));
+			btn Salva.set Visible(false);
+		}
+		return btn Salva;
+	}
+
+	/**
+	 *  Metodo per inizializzare il pulsante  Annulla (btn Annulla)	
+	 * 	
+	 * @return javax.swing. J Button	
+	 */
+	private  J Button get Btn Annulla() {
+		if (btn Annulla == null) {
+			btn Annulla = new  J Button();
+			btn Annulla.set Text(" Annulla");
+			btn Annulla.set Icon(new  Image Icon(get Class().get Resource("/unisa/gps/etour/gui/operatore agenzia /images/annulla.png")));
+			btn Annulla.set Visible(false);
+		}
+		return btn Annulla;
+	}
+
+	/**
+	 *  Metodo per inizializzare il pulsante per la
+	 * modifica di un commento  (btn Modifica Commento)	
+	 * 	
+	 * @return javax.swing. J Button	
+	 */
+	private  J Button get Btn Modifica Commento() {
+		if (btn Modifica Commento == null) {
+			btn Modifica Commento = new  J Button();
+			btn Modifica Commento.set Text(" Modifica  Commento");
+			btn Modifica Commento.set Icon(new  Image Icon(get Class().get Resource("/unisa/gps/etour/gui/operatore agenzia /images/modifica Commento.png")));
+			btn Modifica Commento.set Visible(false);
+		}
+		return btn Modifica Commento;
+	}
+
+	/**
+	 *  Crea ed inizializza una j Tabbed Pane	
+	 * 	
+	 * @return javax.swing. J Tabbed Pane	
+	 */
+	private  J Tabbed Pane get J Tabbed Pane() {
+		if (j Tabbed Pane == null) {
+			j Tabbed Pane = new  J Tabbed Pane();
+			j Tabbed Pane.set Cursor(new  Cursor( Cursor. D E F A U L T_ C U R S O R));
+			j Tabbed Pane.add Tab(" Dati  Punto di  Ristoro", new  Image Icon(get Class().get Resource("/unisa/gps/etour/gui/operatore agenzia /images/dati.png")), get Dati P R(), null);
+			j Tabbed Pane.add Tab(" Menu Turistico", new  Image Icon(get Class().get Resource("/unisa/gps/etour/gui/operatore agenzia /images/stat  .png")), null, null);
+			j Tabbed Pane.add Tab(" Statistiche", new  Image Icon(get Class().get Resource("/unisa/gps/etour/gui/operatore agenzia /images/stat  .png")), get Statistiche(), null);
+			j Tabbed Pane.add Tab(" Feedback  Ricevuti", new  Image Icon(get Class().get Resource("/unisa/gps/etour/gui/operatore agenzia /images/feedback.png")), get Feedback(), null);
+			
+		}
+		return j Tabbed Pane;
+	}
+	/**
+	 *  Metodo per inizializzare un pannello (dati P R)	
+	 * 	
+	 * @return javax.swing. J Panel	
+	 */
+	private  J Panel get Dati P R() {
+		if (dati P R == null) {
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .fill =  Grid Bag Constraints. V E R T I C A L;
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .weightx =  . ;
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. W E S T;
+			grid Bag Constraints  .insets = new  Insets( ,  ,   ,  );
+			grid Bag Constraints  .ipadx =   ;
+			grid Bag Constraints  .gridx =  ;
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints  .gridy =  ;
+			j Label  = new  J Label();
+			j Label .set Text("z");
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .fill =  Grid Bag Constraints. V E R T I C A L;
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .weightx =  . ;
+			grid Bag Constraints  .ipadx =   ;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. W E S T;
+			grid Bag Constraints  .gridx =  ;
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .fill =  Grid Bag Constraints. V E R T I C A L;
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .weightx =  . ;
+			grid Bag Constraints  .ipadx =   ;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. W E S T;
+			grid Bag Constraints  .gridx =  ;
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .fill =  Grid Bag Constraints. V E R T I C A L;
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .weightx =  . ;
+			grid Bag Constraints  .ipadx =   ;
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. W E S T;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints  .gridx =  ;
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .ipadx =  ;
+			grid Bag Constraints  .ipady =  ;
+			grid Bag Constraints  .gridwidth =  ;
+			grid Bag Constraints  .gridx =  ;
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .ipadx =  ;
+			grid Bag Constraints  .ipady =  ;
+			grid Bag Constraints  .gridwidth =  ;
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. W E S T;
+			grid Bag Constraints  .gridx =  ;
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .insets = new  Insets(  ,   ,  ,  );
+			grid Bag Constraints  .gridx =   ;
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .ipadx =    ;
+			grid Bag Constraints  .ipady =    ;
+			grid Bag Constraints  .gridwidth =  ;
+			grid Bag Constraints  .gridheight =  ;
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .fill =  Grid Bag Constraints. V E R T I C A L;
+			grid Bag Constraints  .gridwidth =  ;
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .weightx =  . ;
+			grid Bag Constraints  .ipadx =    ;
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. W E S T;
+			grid Bag Constraints  .insets = new  Insets(  ,  ,  ,  );
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .fill =  Grid Bag Constraints. B O T H;
+			grid Bag Constraints  .gridwidth =   ;
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .gridy =   ;
+			grid Bag Constraints  .ipadx =    ;
+			grid Bag Constraints  .ipady =   ;
+			grid Bag Constraints  .weightx =  . ;
+			grid Bag Constraints  .weighty =  . ;
+			grid Bag Constraints  .gridheight =  ;
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. W E S T;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .fill =  Grid Bag Constraints. V E R T I C A L;
+			grid Bag Constraints  .gridwidth =  ;
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .weightx =  . ;
+			grid Bag Constraints  .ipadx =   ;
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. W E S T;
+			grid Bag Constraints  .insets = new  Insets( ,  ,   ,  );
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .insets = new  Insets( ,  ,   ,  );
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .gridx =  ;
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .fill =  Grid Bag Constraints. V E R T I C A L;
+			grid Bag Constraints  .gridwidth =  ;
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .weightx =  . ;
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. W E S T;
+			grid Bag Constraints  .ipadx =   ;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. W E S T;
+			grid Bag Constraints  .gridx =  ;
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .fill =  Grid Bag Constraints. V E R T I C A L;
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .weightx =  . ;
+			grid Bag Constraints  .ipadx =   ;
+			grid Bag Constraints  .gridwidth =  ;
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. W E S T;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .fill =  Grid Bag Constraints. V E R T I C A L;
+			grid Bag Constraints  .gridwidth =  ;
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .weightx =  . ;
+			grid Bag Constraints  .ipadx =    ;
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. W E S T;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,   );
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .fill =  Grid Bag Constraints. V E R T I C A L;
+			grid Bag Constraints  .gridwidth =  ;
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .ipadx =   ;
+			grid Bag Constraints  .ipady =  ;
+			grid Bag Constraints  .weightx =  . ;
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. W E S T;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .fill =  Grid Bag Constraints. V E R T I C A L;
+			grid Bag Constraints  .gridwidth =  ;
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .weightx =  . ;
+			grid Bag Constraints  .ipadx =   ;
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. W E S T;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .fill =  Grid Bag Constraints. V E R T I C A L;
+			grid Bag Constraints  .gridwidth =  ;
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .weightx =  . ;
+			grid Bag Constraints  .ipadx =   ;
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. W E S T;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,   );
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .fill =  Grid Bag Constraints. V E R T I C A L;
+			grid Bag Constraints  .gridwidth =  ;
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .weightx =  . ;
+			grid Bag Constraints  .ipadx =    ;
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. W E S T;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .fill =  Grid Bag Constraints. V E R T I C A L;
+			grid Bag Constraints  .gridwidth =  ;
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .weightx =  . ;
+			grid Bag Constraints  .ipadx =    ;
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. W E S T;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .fill =  Grid Bag Constraints. V E R T I C A L;
+			grid Bag Constraints  .gridwidth =  ;
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .weightx =  . ;
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. W E S T;
+			grid Bag Constraints  .ipadx =  ;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .insets = new  Insets( ,   ,  ,  );
+			grid Bag Constraints  .gridy =   ;
+			grid Bag Constraints  .gridwidth =  ;
+			grid Bag Constraints  .gridheight =  ;
+			grid Bag Constraints  .gridx =  ;
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .insets = new  Insets( ,   ,   ,  );
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .gridx =  ;
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .insets = new  Insets( ,   ,  ,  );
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .gridx =  ;
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .insets = new  Insets( ,   ,  ,  );
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .gridx =  ;
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .insets = new  Insets( ,   ,  ,  );
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .gridx =  ;
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .insets = new  Insets( ,   ,  ,  );
+			grid Bag Constraints  .gridy =  ;
+			grid Bag Constraints  .gridx =  ;
+			 Grid Bag Constraints grid Bag Constraints  = new  Grid Bag Constraints();
+			grid Bag Constraints .insets = new  Insets( ,   ,  ,  );
+			grid Bag Constraints .gridy =  ;
+			grid Bag Constraints .gridx =  ;
+			 Grid Bag Constraints grid Bag Constraints  = new  Grid Bag Constraints();
+			grid Bag Constraints .insets = new  Insets( ,   ,  ,  );
+			grid Bag Constraints .gridy =  ;
+			grid Bag Constraints .gridx =  ;
+			 Grid Bag Constraints grid Bag Constraints  = new  Grid Bag Constraints();
+			grid Bag Constraints .insets = new  Insets( ,   ,  ,  );
+			grid Bag Constraints .gridy =  ;
+			grid Bag Constraints .gridx =  ;
+			 Grid Bag Constraints grid Bag Constraints  = new  Grid Bag Constraints();
+			grid Bag Constraints .insets = new  Insets( ,   ,  ,  );
+			grid Bag Constraints .gridy =  ;
+			grid Bag Constraints .gridx =  ;
+			 Grid Bag Constraints grid Bag Constraints  = new  Grid Bag Constraints();
+			grid Bag Constraints .insets = new  Insets(  ,   ,  ,  );
+			grid Bag Constraints .gridy =  ;
+			grid Bag Constraints .gridwidth =  ;
+			grid Bag Constraints .gridx =  ;
+			j Label   = new  J Label();
+			j Label  .set Font(new  Font(" Dialog",  Font. B O L D,   ));
+			j Label  .set Text("y");
+			j Label  = new  J Label();
+			j Label .set Font(new  Font(" Dialog",  Font. B O L D,   ));
+			j Label .set Text("x");
+			j Label  = new  J Label();
+			j Label .set Font(new  Font(" Dialog",  Font. B O L D,   ));
+			j Label .set Text(":");
+
+			j Label  = new  J Label();
+			j Label .set Font(new  Font(" Dialog",  Font. B O L D,   ));
+			j Label .set Text(":");
+			j Label = new  J Label();
+			j Label.set Text(" Descrizione");
+			txt Ora Ch = new  J Label();
+			txt Ora Ch.set Text(" Orario di  Chiusura");
+			txt Ora Ap = new  J Label();
+			txt Ora Ap.set Text(" Orario di  Apertura");
+			txt Tel = new  J Label();
+			txt Tel.set Text(" Telefono");
+			txt Pos = new  J Label();
+			txt Pos.set Text(" Posizione  Geografica");
+			txt Provincia = new  J Label();
+			txt Provincia.set Text(" Provincia");
+			txt Località = new  J Label();
+			txt Località.set Text(" Località");
+			txt Citta = new  J Label();
+			txt Citta.set Text(" Città");
+			txt C A P = new  J Label();
+			txt C A P.set Text(" C A P");
+			txt Indirizzo = new  J Label();
+			txt Indirizzo.set Text(" Indirizzo");
+			txt Nome = new  J Label();
+			txt Nome.set Text(" Nome  Punto di  Ristoro");
+			dati P R = new  J Panel();
+			dati P R.set Layout(new  Grid Bag Layout());
+			dati P R.set Border(new  Soft Bevel Border( Soft Bevel Border. L O W E R E D));
+			dati P R.add(txt Nome, grid Bag Constraints );
+			dati P R.add(txt Indirizzo, grid Bag Constraints );
+			dati P R.add(txt Citta, grid Bag Constraints );
+			dati P R.add(txt Località, grid Bag Constraints );
+			dati P R.add(txt C A P, grid Bag Constraints );
+			dati P R.add(txt Provincia, grid Bag Constraints  );
+			dati P R.add(txt Pos, grid Bag Constraints  );
+			dati P R.add(txt Tel, grid Bag Constraints  );
+			dati P R.add(txt Ora Ap, grid Bag Constraints  );
+			dati P R.add(txt Ora Ch, grid Bag Constraints  );
+			dati P R.add(j Label, grid Bag Constraints  );
+			dati P R.add(get Indirizzo P R (), grid Bag Constraints  );
+			dati P R.add(get Indirizzo P R(), grid Bag Constraints  );
+			dati P R.add(get Citta P R(), grid Bag Constraints  );
+			dati P R.add(get Localita P R(), grid Bag Constraints  );
+			dati P R.add(get Cap P R(), grid Bag Constraints  );
+			dati P R.add(get Prov P R(), grid Bag Constraints  );
+			dati P R.add(get Telefono P R(), grid Bag Constraints  );
+			dati P R.add(get Orario A P Ore P R(), grid Bag Constraints  );
+			dati P R.add(j Label , grid Bag Constraints  );
+			dati P R.add(get Orario Ap Min P R(), grid Bag Constraints  );
+			dati P R.add(j Label , grid Bag Constraints  );
+			dati P R.add(get Orario C H Min P R(), grid Bag Constraints  );
+			dati P R.add(get J Scroll Pane(), grid Bag Constraints  );
+			dati P R.add(get Nome P R(), grid Bag Constraints  );
+			dati P R.add(get J Panel(), grid Bag Constraints  );
+			dati P R.add(j Label , grid Bag Constraints  );
+			dati P R.add(j Label  , grid Bag Constraints  );
+			dati P R.add(get Pos Geo X(), grid Bag Constraints  );
+			dati P R.add(get Pos Geo Y(), grid Bag Constraints  );
+			dati P R.add(get Pos Geo Z(), grid Bag Constraints  );
+			dati P R.add(j Label , grid Bag Constraints  );
+			dati P R.add(get Orario C H Ore P R(), grid Bag Constraints  );
+		}
+		return dati P R;
+	}
+
+	/**
+	 *  Metodo per iniziailizzare un pannello (statistiche)	
+	 * 	
+	 * @return javax.swing. J Panel	
+	 */
+	private  J Panel get Statistiche() {
+		if (statistiche == null) {
+			 Grid Bag Constraints grid Bag Constraints  = new  Grid Bag Constraints();
+			grid Bag Constraints .gridx =  ;
+			grid Bag Constraints .gridwidth =  ;
+			grid Bag Constraints .fill =  Grid Bag Constraints. H O R I Z O N T A L;
+			grid Bag Constraints .insets = new  Insets(  ,  ,  ,  );
+			grid Bag Constraints .gridy =  ;
+			 Grid Bag Constraints grid Bag Constraints  = new  Grid Bag Constraints();
+			grid Bag Constraints .gridx =  ;
+			grid Bag Constraints .gridwidth =  ;
+			grid Bag Constraints .fill =  Grid Bag Constraints. H O R I Z O N T A L;
+			grid Bag Constraints .insets = new  Insets( ,  ,   ,  );
+			grid Bag Constraints .gridy =  ;
+			 Grid Bag Constraints grid Bag Constraints  = new  Grid Bag Constraints();
+			grid Bag Constraints .gridx =  ;
+			grid Bag Constraints .insets = new  Insets( ,   ,   ,  );
+			grid Bag Constraints .anchor =  Grid Bag Constraints. W E S T;
+			grid Bag Constraints .gridy =  ;
+			media Voto P R = new  J Label();
+			media Voto P R.set Text(" J Label");
+			 Grid Bag Constraints grid Bag Constraints  = new  Grid Bag Constraints();
+			grid Bag Constraints .gridx =  ;
+			grid Bag Constraints .insets = new  Insets( ,  ,   ,  );
+			grid Bag Constraints .gridy =  ;
+			txt Nome Bene = new  J Label();
+			txt Nome Bene.set Text("<nome  Bene  Culturale>");
+			txt Nome Bene.set Font(new  Font(" Dialog",  Font. B O L D,   ));
+			statistiche = new  J Panel();
+			statistiche.set Layout(new  Grid Bag Layout());
+			statistiche.add(txt Nome Bene, grid Bag Constraints );
+			statistiche.add(media Voto P R, grid Bag Constraints );
+			statistiche.add(get Statistiche Mese Corrente(), grid Bag Constraints );
+			statistiche.add(get Statistiche Totali(), grid Bag Constraints );
+		}
+		return statistiche;
+	}
+
+	/**
+	 *  Metodo per inizializzare un pannello (feedback)	
+	 * 	
+	 * @return javax.swing. J Panel	
+	 */
+	private  J Panel get Feedback() {
+		if (feedback == null) {
+			 Grid Bag Constraints grid Bag Constraints = new  Grid Bag Constraints();
+			grid Bag Constraints.fill =  Grid Bag Constraints. B O T H;
+			grid Bag Constraints.gridy =  ;
+			grid Bag Constraints.weightx =  . ;
+			grid Bag Constraints.weighty =  . ;
+			grid Bag Constraints.gridx =  ;
+			feedback = new  J Panel();
+			feedback.set Layout(new  Grid Bag Layout());
+			feedback.add(get J Scroll Pane (), grid Bag Constraints);
+		}
+		return feedback;
+	}
+
+	/**
+	 *  Inizializziamo un  Jex Field (indirizzo P R)	
+	 * 	
+	 * @return javax.swing. J Text Field	
+	 */
+	private  J Text Field get Indirizzo P R() {
+		if (indirizzo P R == null) {
+			indirizzo P R = new  J Text Field();
+			indirizzo P R.set Columns(  );
+			indirizzo P R.add Action Listener(campo Compilato);
+		}
+		return indirizzo P R;
+	}
+
+	/**
+	 *  Metodo per inizializzare il campo tipo indirizzo (indirizzo P R)
+	 * ossia via, piazza....	
+	 * 	
+	 * @return javax.swing. J Combo Box	
+	 */
+	private  J Combo Box get Indirizzo P R () {
+		if (indirizzo P R  == null) {
+			indirizzo P R  = new  J Combo Box();
+			indirizzo P R .set Preferred Size(new  Dimension(  ,   ));
+			indirizzo P R .set Minimum Size(new  Dimension(  ,   ));
+			indirizzo P R .set Cursor(new  Cursor( Cursor. D E F A U L T_ C U R S O R));
+			indirizzo P R .add Item(" Via");
+			indirizzo P R .add Item(" P.zza");
+			indirizzo P R .add Item(" V.le");
+			indirizzo P R .add Item(" V.co");
+			indirizzo P R .add Item(" Largo");
+			indirizzo P R .add Item(" Corso");
+					
+		}
+		return indirizzo P R ;
+	}
+
+	/**
+	 *  Inizializzazione di un j Text Field per l'inserimento di
+	 * uan città  Citta P R	
+	 * 	
+	 * @return javax.swing. J Text Field	
+	 */
+	private  J Text Field get Citta P R() {
+		if (citta P R == null) {
+			citta P R = new  J Text Field();
+			citta P R.set Columns(  );
+			citta P R.add Action Listener(campo Compilato);
+		}
+		return citta P R;
+	}
+
+	/**
+	 *  This method initializes localita P R	
+	 * 	
+	 * @return javax.swing. J Combo Box	
+	 */
+	private  J Combo Box get Localita P R() {
+		if (localita P R == null) {
+			localita P R = new  J Combo Box();
+			localita P R.set Minimum Size(new  Dimension(  ,   ));
+			localita P R.set Preferred Size(new  Dimension(  ,   ));
+			localita P R.add Action Listener(campo Compilato);
+		}
+		return localita P R;
+	}
+
+	/**
+	 *  Cap del punto di ristoro.  Definizione del  J Text Field cap P R	
+	 * 	
+	 * @return javax.swing. J Text Field	
+	 */
+	private  J Text Field get Cap P R() {
+		if (cap P R == null) {
+			cap P R = new  J Text Field();
+			cap P R.set Columns( );
+			cap P R.add Action Listener(campo Compilato);
+		}
+		return cap P R;
+	}
+
+	/**
+	 * creazione j Scroll Pane	
+	 * 	
+	 * @return javax.swing. J Scroll Pane	
+	 */
+	private  J Scroll Pane get J Scroll Pane() {
+		if (j Scroll Pane == null) {
+			j Scroll Pane = new  J Scroll Pane();
+			j Scroll Pane.set Vertical Scroll Bar Policy( J Scroll Pane. V E R T I C A L_ S C R O L L B A R_ A L W A Y S);
+			j Scroll Pane.set Viewport View(get Descrizione P R());
+		}
+		return j Scroll Pane;
+	}
+
+	/**
+	 * metodo per la creazione dlela  J T Ext Area descrizione P R	
+	 * 	
+	 * @return javax.swing. J Text Area	
+	 */
+	private  J Text Area get Descrizione P R() {
+		if (descrizione P R == null) {
+			descrizione P R = new  J Text Area();
+			descrizione P R.set Columns(  );
+			descrizione P R.set Cursor(new  Cursor( Cursor. T E X T_ C U R S O R));
+			
+		}
+		return descrizione P R;
+	}
+
+	/**
+	 * metodo per la creazione del  J Text Field telefono P R	
+	 * 	
+	 * @return javax.swing. J Text Field	
+	 */
+	private  J Text Field get Telefono P R() {
+		if (telefono P R == null) {
+			telefono P R = new  J Text Field();
+			telefono P R.set Columns(  );
+			telefono P R.add Action Listener(campo Compilato);
+		}
+		return telefono P R;
+	}
+
+	/**
+	 *metodo per inizializzare una  J Combobox con le ore (orario A P Ore P R)
+	 * 	
+	 * @return javax.swing. J Combo Box	
+	 */
+	private  J Combo Box get Orario A P Ore P R() {
+		if (orario A P Ore P R == null) {
+			orario A P Ore P R = new  J Combo Box();
+			orario A P Ore P R.set Preferred Size(new  Dimension(  ,   ));
+			for (int i =  ; i<  ; i++) {
+				if (i<  )
+					orario A P Ore P R.add Item(" "+i);
+				else
+					orario A P Ore P R.add Item(i);
+			
+			}
+			orario A P Ore P R.add Action Listener(campo Compilato);
+		}
+		return orario A P Ore P R;
+	}
+
+	/**
+	 * metodo per inizializzare una  J Combobox con i minuti(orario Ap Min P R)	
+	 * 	
+	 * @return javax.swing. J Combo Box	
+	 */
+	private  J Combo Box get Orario Ap Min P R() {
+		if (orario Ap Min P R == null) {
+			orario Ap Min P R = new  J Combo Box();
+			orario Ap Min P R.set Light Weight Popup Enabled(true);
+			orario Ap Min P R.set Preferred Size(new  Dimension(  ,   ));
+			orario Ap Min P R.add Item("  ");
+			orario Ap Min P R.add Item("  ");
+			orario Ap Min P R.add Item("  ");
+			orario Ap Min P R.add Item("  ");
+			orario Ap Min P R.add Action Listener(campo Compilato);
+		}
+		return orario Ap Min P R;
+	}
+
+
+
+	/**
+	 * metodo per inizializzare una  J Combobox con i minuti (orario C H Min P R)
+	 * 	
+	 * @return javax.swing. J Combo Box	
+	 */
+	private  J Combo Box get Orario C H Min P R() {
+		if (orario C H Min P R == null) {
+			orario C H Min P R = new  J Combo Box();
+			orario C H Min P R.set Preferred Size(new  Dimension(  ,   ));
+			orario C H Min P R.add Item("  ");
+			orario C H Min P R.add Item("  ");
+			orario C H Min P R.add Item("  ");
+			orario C H Min P R.add Item("  ");
+			orario C H Min P R.add Action Listener(campo Compilato);
+		}
+		return orario C H Min P R;
+		
+	}
+
+	/**
+	 *  Crea e inizializza un j Combo  Box con tutte le province (prov P R)	
+	 * 	
+	 * @return javax.swing. J Text Field	
+	 */
+	private  J Combo Box get Prov P R() {
+		if (prov P R == null) {
+			final  String[] province = {" A G"," A L"," A N"," A O"," A Q"," A R"," A P"," A T"," A V"," B A"," B L"," B N"," B G"," B I"," B O"," B R"," B S"," B Z",
+				" C A"," C B"," C E"," C H"," C I"," C L"," C N"," C O"," C R"," C S"," K R"," E N"," F C"," F E"," F I"," F G"," F R"," G E"," G O"," G R"," I M"," I S"," L C",
+				" L E"," L I"," L O"," L T"," L U"," M C"," M E"," M F"," M N"," M O"," M S"," M T"," N A"," N O"," N U"," O G"," O R"," O T"," P A"," P C"," P D"," P E"," P G"," P O"," P R"," P U"," P V"," R A"," R C"," R E"," R G",
+			" R I"," R M"," R N"," R O"," S A"," S I"," S O"," S P"," S S"," S V"," T A"," T E"," T N"," T P"," T R"," T S"," T V"," U D"," V A"," V B"," V C"," V E"," V I",
+			" V R"," V S"," V T"," V V"};
+			prov P R = new  J Combo Box();
+			for (int i =  ; i < province.length; i++) {
+				prov P R.add Item(province[i]);
+			}
+			prov P R.add Action Listener(campo Compilato);
+		}
+		return prov P R;
+	}
+
+	class  Documento Numerico extends  Plain Document {
+	    
+	    
+	    private int limit;
+	    
+	    
+	    public  Documento Numerico(int limit){
+	    
+	        this.limit = limit;
+	        
+	    }
+	    
+	    /**
+		 * inizializzazione e gestione della posizione
+		 * 	
+		 * @param intero p Offset
+		 * @param  String p String
+		 * @param  Attributo p Attr
+		 * 	
+		 */
+	    public void insert String (int p Offset,  String  p Str,  Attribute Set p Attr) throws  Bad Location Exception {
+	        if (p Str == null) 
+	            return;
+	        
+	        if ((get Length() + p Str.length()) <= limit) {
+	           super.insert String(p Offset, p Str, p Attr);
+	            }
+	        }       
+	   }
+	   
+	
+	/**
+	 * inizializzazione di uno dei dati del punto i ristoro (nome P R)	
+	 * 	
+	 * @return javax.swing. J Text Field	
+	 */
+	private  J Text Field get Nome P R() {
+		if (nome P R == null) {
+			nome P R = new  J Text Field();
+			nome P R.set Columns(  );
+			nome P R.set Preferred Size(new  Dimension(   ,   ));
+			nome P R.add Action Listener(campo Compilato);
+			nome P R.add Focus Listener(validating);
+			nome P R.set Document(new  Documento Numerico(  ));
+		
+		}
+		return nome P R;
+	}
+
+	/**
+	 *  Inizializzazione e creazione di un pannello (j Panel)	
+	 * 	
+	 * @return javax.swing. J Panel	
+	 */
+	private  J Panel get J Panel() {
+		if (j Panel == null) {
+			j Panel = new  J Panel();
+			j Panel.set Layout(new  Border Layout());
+			j Panel.set Border( Border Factory.create Titled Border(
+					 Border Factory.create Empty Border(), 
+					" Tag di ricerca",  Titled Border. D E F A U L T_ J U S T I F I C A T I O N, 
+					 Titled Border. D E F A U L T_ P O S I T I O N, new  Font(" Dialog",  Font. B O L D,   ), 
+					 Color.black));
+			 Bean Tag[] prova = new  Bean Tag[ ];
+			prova[ ] = new  Bean Tag( ,"castello","veramente un castello");
+			prova[ ] = new  Bean Tag( ,"roccaforte","veramente un ostello");
+			prova[ ] = new  Bean Tag( ,"statua","veramente un cestello");
+			prova[ ] = new  Bean Tag( ,"colonna","veramente un cestello");
+			prova[ ] = new  Bean Tag( ,"interno","veramente un cestello");
+			prova[ ] = new  Bean Tag( ,"esterno","veramente un cestello");
+			prova[ ] = new  Bean Tag( ,"ottocento","veramente un cestello");
+			prova[ ] = new  Bean Tag( ,"novecento","veramente un cestello");
+			pannello Tag = new  Tag Panel(prova);
+			j Panel.add(pannello Tag,  Border Layout. C E N T E R);
+		}
+		return j Panel;
+	}
+
+	/**
+	 * Creazione di un  J Scroll Pane (j Scroll Pane )	
+	 * 	
+	 * @return javax.swing. J Scroll Pane	
+	 */
+	private  J Scroll Pane get J Scroll Pane () {
+		if (j Scroll Pane  == null) {
+			j Scroll Pane  = new  J Scroll Pane();
+			j Scroll Pane .set Vertical Scroll Bar Policy( J Scroll Pane. V E R T I C A L_ S C R O L L B A R_ A L W A Y S);
+			j Scroll Pane .set Viewport View(get Feedback Table());
+		}
+		return j Scroll Pane ;
+	}
+
+	/**
+	 *  Creazione di una  J Table (feedback Table)	
+	 * 	
+	 * @return javax.swing. J Table	
+	 */
+	private  J Table get Feedback Table() {
+		if (feedback Table == null) {
+			feedback Table = new  J Table();
+		}
+		return feedback Table;
+	}
+
+	/**
+	 *  Creazione di un pannello (statistiche Mese Corrente)	
+	 * 	
+	 * @return javax.swing. J Panel	
+	 */
+	private  J Panel get Statistiche Mese Corrente() {
+		if (statistiche Mese Corrente == null) {
+			statistiche Mese Corrente = new  J Panel();
+			statistiche Mese Corrente.set Layout(new  Grid Bag Layout());
+			statistiche Mese Corrente.set Preferred Size(new  Dimension(   ,    ));
+		}
+		return statistiche Mese Corrente;
+	}
+
+	/**
+	 *  Creazione di un pannello (statistiche Totali)	
+	 * 	
+	 * @return javax.swing. J Panel	
+	 */
+	private  J Panel get Statistiche Totali() {
+		if (statistiche Totali == null) {
+			statistiche Totali = new  J Panel();
+			statistiche Totali.set Layout(new  Grid Bag Layout());
+			statistiche Totali.set Preferred Size(new  Dimension(   ,    ));
+		}
+		return statistiche Totali;
+	}
+	/**
+	 *  Metodo per la creazione di una toolbar
+	 * ( Toolbar Scheda P R)	
+	 * 	
+	 * @return javax.swing. J Tool Bar	
+	 */
+	private  J Tool Bar get Toolbar Scheda P R() {
+		if ( Toolbar Scheda P R == null) {
+			
+			 Toolbar Scheda P R = new  J Tool Bar();
+			 Toolbar Scheda P R.set Floatable(false);
+			 Toolbar Scheda P R.add(get Btn Modifica());
+			 Toolbar Scheda P R.add Separator();
+			 Toolbar Scheda P R.add(get Btn Salva());
+			 Toolbar Scheda P R.add Separator();
+			 Toolbar Scheda P R.add(get Btn Annulla());
+			 Toolbar Scheda P R.add Separator();
+			 Toolbar Scheda P R.add(get Btn Modifica Commento());
+			 Toolbar Scheda P R.add Separator();
+		}
+		return  Toolbar Scheda P R;
+	}
+	/**
+	 *  metodo per inizializzare pos Geo X	
+	 * la posizione  X del  G P S	
+	 * 	
+	 * @return javax.swing. J Text Field	
+	 */
+	private  J Text Field get Pos Geo X() {
+		if (pos Geo X == null) {
+			pos Geo X = new  J Text Field();
+		}
+		return pos Geo X;
+	}
+	/**
+	 * metodo per inizializzare pos Geo Y	
+	 * la posizione  Y del  G P S
+	 * 	
+	 * @return javax.swing. J Text Field	
+	 */
+	private  J Text Field get Pos Geo Y() {
+		if (pos Geo Y == null) {
+			pos Geo Y = new  J Text Field();
+		}
+		return pos Geo Y;
+	}
+	/**
+	 *  metodo per inizializzare pos Geo Z	
+	 * la posizione  Z del  G P S
+	 * 	
+	 * @return javax.swing. J Text Field	
+	 */
+	private  J Text Field get Pos Geo Z() {
+		if (pos Geo Z == null) {
+			pos Geo Z = new  J Text Field();
+		}
+		return pos Geo Z;
+	}
+	/**
+	 * metodo per inizializzare una  J Combobox con le ore (orario C H Ore P R)	
+	 * 	
+	 * @return javax.swing. J Combo Box	
+	 */
+	private  J Combo Box get Orario C H Ore P R() {
+		if (orario C H Ore P R == null) {
+			orario C H Ore P R = new  J Combo Box();
+			orario C H Ore P R.set Preferred Size(new  Dimension(  ,   ));
+		}
+		return orario C H Ore P R;
+	}
+
+} 
+

@@ -1,0 +1,7 @@
+org.mozilla.javascript.DToA.JS_dtobasestr
+org.mozilla.javascript.NativeNumber.execIdCall
+org.mozilla.javascript.NativeNumber.initPrototypeId
+org.mozilla.javascript.DToA.JS_dtostr
+org.mozilla.javascript.ScriptRuntime.numberToString
+org.mozilla.javascript.DToA.BASEDIGIT
+org.mozilla.javascript.NativeNumber.findPrototypeId

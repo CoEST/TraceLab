@@ -1,0 +1,3 @@
+org.mozilla.javascript.NativeGlobal.js_parseInt
+org.mozilla.javascript.NativeGlobal.init
+org.mozilla.javascript.NativeGlobal.execIdCall

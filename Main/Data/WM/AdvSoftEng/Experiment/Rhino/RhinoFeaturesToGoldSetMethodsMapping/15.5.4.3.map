@@ -1,0 +1,5 @@
+org.mozilla.javascript.NativeString.execIdCall
+org.mozilla.javascript.NativeString.realThis
+org.mozilla.javascript.NativeString.findPrototypeId
+org.mozilla.javascript.IdScriptableObject.incompatibleCallError
+org.mozilla.javascript.NativeString.initPrototypeId

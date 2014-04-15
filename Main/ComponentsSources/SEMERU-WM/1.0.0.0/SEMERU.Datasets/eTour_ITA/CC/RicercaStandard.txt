@@ -1,0 +1,62 @@
+package unisa.gps.etour.control. Gestione Ricerche;
+
+import java.sql. S Q L Exception;
+import java.util. Array List;
+
+/**
+ *  Classe per la gestione della  Ricerca  Standard
+ * 
+ * @author  Penna  Giuseppe
+ * @version  .  &#   ;      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I -
+ *           University of  Salerno
+ */
+public class  Ricerca Standard extends  Ricerca
+{
+
+	/**  Costruttore della classe
+	 * 
+	 */
+	public  Ricerca Standard()
+	{
+
+	}
+
+	protected int ottieni Numero Elementi Ricerca Specializzato()
+			throws  S Q L Exception
+	{	
+		//  Controlla la tipologia di sito e ottiene il numero di risultati
+		switch (p Tipologia Sito)
+		{
+			case  B E N E_ C U L T U R A L E:
+				return  Bene Culturale.ottieni Numero Elementi Ricerca(
+						this.p Parole Chiave, this.p Tags, this.p Posizione Utente,
+						this.p Raggio Max);
+			case  P U N T O_ D I_ R I S T O R O:
+				return  Punto Di Ristoro.ottieni Numero Elementi Ricerca(
+						this.p Parole Chiave, this.p Tags, this.p Posizione Utente,
+						this.p Raggio Max);
+			default:
+				return - ;
+		}
+	}
+
+	protected  Array List<?> ricerca Specializzata Per Pagina(int p Numero Pagina)
+			throws  S Q L Exception
+	{
+		//  Controlla la tipologia di sito ed effettua la ricerca
+		switch (p Tipologia Sito)
+		{
+			case  B E N E_ C U L T U R A L E:
+				return  Bene Culturale.ricerca(p Parole Chiave, p Tags,
+						p Numero Pagina, numero Elementi Per Pagina,
+						p Posizione Utente, p Raggio Max);
+			case  P U N T O_ D I_ R I S T O R O:
+				return  Punto Di Ristoro.ricerca(p Parole Chiave, p Tags,
+						p Numero Pagina, numero Elementi Per Pagina,
+						p Posizione Utente, p Raggio Max);
+			default:
+				return null;
+
+		}
+	}
+}

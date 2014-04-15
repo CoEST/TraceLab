@@ -1,0 +1,73 @@
+package unisa.gps.etour.control. Gestione Beni Culturali;
+
+import java.rmi. Remote;
+import java.rmi. Remote Exception;
+import java.util. Array List;
+import java.util. Hash Map;
+import unisa.gps.etour.bean. Bean Bene Culturale;
+import unisa.gps.etour.bean. Bean Tag;
+import unisa.gps.etour.bean. Bean Visita B C;
+
+/**
+ *  Interfaccia per le operazioni comuni ad  Utenti e  Operatore  Agenzia sui
+ *  Beni Culturali
+ * 
+ * @author  De  Simone  Michelangelo
+ * @version  . 
+ * 
+ *  &#   ;      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I -  University of  Salerno
+ */
+public interface  I Gestione Beni Culturali Comune extends  Remote
+{
+	/**
+	 * 
+	 *  Metodo per la restituzione di un particolare  Bene  Culturale
+	 * 
+	 * @param p Bene Culturale I D  L'identificativo del bene culturale da restituire
+	 * @return  Bean Bene Culturale  Contiene i dati del  Bene  Culturale richiesto
+	 * @throws  Remote Exception  Eccezione nel flusso
+	 */
+	public  Bean Bene Culturale ottieni Bene Culturale(int p Bene Culturale I D) throws  Remote Exception;
+	
+	/** 
+	 *  Restituisce la lista dei tag di un bene culturale
+	 *
+	 * @param p Bene Culturale I D  Identificativo del  Bene  Culturale
+	 * @return  Array List< Bean Tag>  I tag del bene culturale specificato
+	 * @throws  Remote Exception  Eccezione nel flusso
+	 */
+	public  Array List< Bean Tag> ottieni Tag Bene Culturale(int p Bene Culturale I D)	throws  Remote Exception;
+	
+	/**
+	 * 
+	 *  Restituisce una lista di feedback per il bene culturale specificato
+	 *
+	 * @param p Bene Culturale I D  Identificativo del  Bene  Culturale
+	 * @return  Hash Map< Bean Visita B C,  String>  I feedback del  Bene  Culturale
+	 * @throws  Remote Exception  Eccezione nel flusso
+	 */
+	public  Hash Map< Bean Visita B C,  String> ottieni Feedback Bene Culturale(int p Bene Culturale I D) throws  Remote Exception;
+
+	/**
+	 * 
+	 *  Restituisce, per il bene culturale specificato, un array in cui ogni posizione contiene il numero di
+	 * feedback corrispondenti al valore dell'indice dell'array piu' uno.
+	 *  Il calcolo e' effettuato nel periodo tra    giorni ed oggi.
+	 *
+	 * @param p Bene Culturale I D  Identificativo del  Bene  Culturale
+	 * @return  Array List< Integer>  Le statistiche degli ultimi trenta giorni
+	 * @throws  Remote Exception  Eccezione nel flusso
+	 */
+	public  Array List< Integer> ottieni Statistiche Bene Culturale(int p Bene Culturale I D) throws  Remote Exception;
+
+	/**
+	 *  Metodo per l'aggiornamento (o modifica) di un feedback per un certo bene
+	 * culturale.  Il metodo ha l'onere di
+	 * 
+	 * @param p Bene Culturale I D  L'identificativo del bene culturale del quale modificare il feedback
+	 * @param p Bean Visita B C  Il nuovo feedback per il bene culturale indicato
+	 * @return boolean  L'esito dell'operazione; true se &egrave; andata a buon fine, false altrimenti
+	 * @throws  Remote Exception  Eccezione nel flusso
+	 */
+	public boolean modifica Feedback Bene Culturale(int p Bene Culturale I D,  Bean Visita B C p Bean Visita B C) throws  Remote Exception;
+}

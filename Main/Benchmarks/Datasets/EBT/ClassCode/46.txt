@@ -1,0 +1,459 @@
+           "private JPanel center  Panel = null  ;
+          
+           private JLabel des  Label = null  ;
+           private JLabel change  Label = null  ;
+           private JLabel from  Label = null  ;
+           private JLabel to  Label = null  ;
+           private JText  Area des  Text = null  ;
+           private JText  Field change  Text = null  ;
+           private JText  Field from  Text = null  ;
+           private JText  Field to  Text = null  ;
+          
+           private JLabel proj  Name  Label = null  ;
+           private JLabel module  Path  Label = null  ;
+           private JLabel requirement Number  Label = null  ;
+          
+           private JText  Field proj  Name  Text = null  ;
+           private JText  Field module  Path  Text = null  ;
+           private JText  Field requirement Number  Text = null  ;
+          
+           private Container container = null  ;
+          
+           private JTable table = null  ;
+          
+           private JButton add  Button = null  ;
+           private JButton delete  Button = null  ;
+           private JButton submit  Button = null  ;
+           private JButton exit  Button = null  ;
+          
+           private JButton fetch  Button = null  ;
+          
+           private JPanel temp = new JPanel  ();
+          
+           private JText  Area speculate  Text  Area = null  ;
+          
+           private String speculate = """";
+          
+           private int count = 0  ;
+          
+           private Connection conn = null  ;
+           private Statement stmt = null  ;
+           private Result  Set rset = null  ;
+          
+           private String temp  Str = """";
+           private String  Buffer sb = null  ;
+          
+           private Hash table hash = new Hash table  ();
+          
+           private long query  ID = 0  ;
+          
+           private String event  Server  IP = """";
+           private String doors server  IP = """";"
+           Speculate Gui
+           "public Speculate  Gui  ()
+           {
+          
+            super  (""  Speculate GUI  "");
+          
+            container = get  Content  Pane  ();
+          
+            set  Size  (  800   600  );
+          
+            this  . event  Server  IP =
+             JOption  Pane
+              . show  Input  Dialog  (""  Please Enter the IP Address of eventserver  "")
+              . trim  ();
+          
+            this  . doors server  IP =
+             JOption  Pane
+              . show  Input  Dialog  (""  Please Enter the IP Address of DOORs Server  "")
+              . trim  ();
+          
+            System  . out  . println  ( event  Server  IP  );
+          
+            java  . util  .  Date date = new Date  ();
+            this  . query  ID = date  . get  Time  ();
+          
+            center  Panel = new JPanel  ();
+          
+            center  Panel  . set  Background  (  Color  .  LIGHT  _  GRAY  );
+          
+            center  Panel  . set  Border  (
+             new Titled  Border  ( new Etched  Border  () ""  Speculative Changes  ""));
+          
+            center  Panel  . set  Layout  ( null  );
+          
+            Insets insets = center  Panel  . get  Insets  ();
+          
+            proj  Name  Label = new JLabel  (""  Project Name  :"");
+            proj  Name  Label  . set  Bounds  (  25 + insets  . left   10 + insets  . top   90   20  );
+          
+            proj  Name  Text = new JText  Field  (  20  );
+            proj  Name  Text  . set  Bounds  (  140 + insets  . left   10 + insets  . top   300   25  );
+          
+            module  Path  Label = new JLabel  (""  Module Path  :"");
+            module  Path  Label  . set  Bounds  (  25 + insets  . left   45 + insets  . top   210   20  );
+          
+            module  Path  Text = new JText  Field  (  20  );
+            module  Path  Text  . set  Bounds  (  140 + insets  . left   45 + insets  . top   300   25  );
+          
+            requirement Number  Label = new JLabel  (""  Requirement #  :"");
+            requirement Number  Label  . set  Bounds  (  25 + insets  . left   75 + insets  . top   90   20  );
+          
+            requirement Number  Text = new JText  Field  (  20  );
+            requirement Number  Text  . set  Bounds  (  140 + insets  . left   75 + insets  . top   300   25  );
+          
+            des  Label = new JLabel  (""  Description  :"");
+            des  Label  . set  Bounds  (  25 + insets  . left   105 + insets  . top   75   20  );
+          
+            des  Text = new JText  Area  ();
+            des  Text  . set  Line  Wrap  ( true  );
+            des  Text  . set  Wrap  Style  Word  ( true  );
+            des  Text  . set  Editable  ( false  );
+            des  Text  . set  Background  (  Color  .  LIGHT  _  GRAY  );
+          
+            JScroll  Pane des  Pane = new JScroll  Pane  ( des  Text  );
+            des  Pane  . set  Bounds  (  140 + insets  . left   105 + insets  . top   300   100  );
+          
+            change  Label = new JLabel  (""  Changed Attribute  :"");
+            change  Label  . set  Bounds  (  25 + insets  . left   225 + insets  . top   150   20  );
+          
+            change  Text = new JText  Field  (  20  );
+            change  Text  . set  Bounds  (  140 + insets  . left   225 + insets  . top   300   20  );
+            change  Text  . set  Editable  ( false  );
+          
+            from  Label = new JLabel  (""  From  :"");
+            from  Label  . set  Bounds  (  25 + insets  . left   255 + insets  . top   150   20  );
+          
+          
+            from  Text = new JText  Field  (  20  );
+            from  Text  . set  Bounds  (  140 + insets  . left   255 + insets  . top   300   20  );
+            from  Text  . set  Editable  ( false  );
+          
+            to  Label = new JLabel  (""  To  :"");
+            to  Label  . set  Bounds  (  25 + insets  . left   285 + insets  . top   150   20  );
+          
+            to  Text = new JText  Field  ();
+            to  Text  . set  Bounds  (  140 + insets  . left   285 + insets  . top   300   20  );
+          
+            submit  Button = new JButton  (""  Submit  "");
+            submit  Button  . set  Bounds  (  525 + insets  . left   50 + insets  . top   80   30  );
+            submit  Button  . set  Enabled  ( false  );
+          
+            add  Button = new JButton  (""  ADD  "");
+            add  Button  . set  Bounds  (  525 + insets  . left   100 + insets  . top   80   30  );
+            add  Button  . set  Enabled  ( false  );
+          
+            delete  Button = new JButton  (""  Remove  "");
+            delete  Button  . set  Bounds  (  525 + insets  . left   150 + insets  . top   80   30  );
+            delete  Button  . set  Enabled  ( false  );
+          
+            exit  Button = new JButton  (""  Exit  "");
+            exit  Button  . set"
+           Submit Listener
+           "public void action  Performed  (  Action  Event e  ) {
+          
+             if ( e  . get  Source  () == submit  Button  ) {
+          
+              send  Query  TO Server  ();
+          
+             }
+          
+             if ( e  . get  Source  () == fetch  Button  ) {
+          
+          
+              System  . out  . println  (""  Fetch Button Pressed  "");
+          
+          
+              pull  Value  From  DOORS  ();
+          
+              add  Button  . set  Enabled  ( true  );
+          
+             }
+          
+             if ( e  . get  Source  () == add  Button  ) {
+          
+              submit  Button  . set  Enabled  ( true  );
+          
+              delete  Button  . set  Enabled  ( true  );
+          
+              sb = new String  Buffer  ();
+          
+              String project  Name  String = proj  Name  Text  . get  Text  ();
+              String module  Path  String = module  Path  Text  . get  Text  ();
+              String requirement Number  String = requirement Number  Text  . get  Text  ();
+              String description  String = des  Text  . get  Text  ();
+              String change  String = change  Text  . get  Text  ();
+              String from  String = from  Text  . get  Text  ();
+              String to  String = to  Text  . get  Text  ();
+          
+              temp  Str =
+               ""|""
+                + project  Name  String
+                + """"
+                + module  Path  String
+                + """"
+                + requirement Number  String
+                + ""|""
+                + description  String
+                + ""|""
+                + change  String
+                + """"
+                + from  String
+                + """"
+                + to  String  ;
+          
+              String key =
+               proj  Name  Text  . get  Text  ()
+                + module  Path  Text  . get  Text  ()
+                + requirement Number  Text  . get  Text  ();
+          
+              hash  . put  ( key   temp  Str  );
+          
+              Enumeration enum = hash  . elements  ();
+              while ( enum  . has  More  Elements  ()) {
+               String s = (  String  ) enum  . next  Element  ();
+               sb  . append  ( s  );
+              }
+          
+              count = hash  . size  ();
+              speculate =
+               ""  Speculate  "" + ""|"" + query  ID + ""|"" + count + sb  . to  String  ();
+          
+              speculate  Text  Area  . set  Text  ( speculate  );
+          
+             }
+          
+             if ( e  . get  Source  () == delete  Button  ) {
+              System  . out  . println  (""  Remove button Pressed  "");
+          
+              sb = new String  Buffer  ();
+          
+              String key =
+               proj  Name  Text  . get  Text  ()
+                + module  Path  Text  . get  Text  ()
+                + requirement Number  Text  . get  Text  ();
+          
+              hash  . remove  ( key  );
+          
+              Enumeration enum = hash  . elements  ();
+              while ( enum  . has  More  Elements  ()) {
+               String s = (  String  ) enum  . next  Element  ();
+               sb  . append  ( s  );
+              }
+          
+              count = hash  . size  ();
+          
+              if ( hash  . size  () == 0  ) {
+               submit  Button  . set  Enabled  ( false  );
+               delete  Button  . set  Enabled  ( false  );
+          
+              }
+          
+              speculate =
+               ""  Speculate  "" + ""|"" + query  ID + ""|"" + count + sb  . to  String  ();
+          
+              speculate  Text  Area  . set  Text  ( speculate  );
+          
+             }
+          
+             if ( e  . get  Source  () == exit  Button  ) {
+          
+              System  . exit  (  0  );
+          
+             }
+          
+            }
+          
+           } // End Inner Class"
+           "void send  Query  TO Server  ()
+           {
+          
+            String ip = this  . event  Server  IP  ;
+            int Port  No = 1701  ;
+          
+            Socket socket  ;
+            try {
+          
+             socket = new Socket  ( ip   Port  No  );
+          
+             Output  Stream os = socket  . get  Output  Stream  ();
+             Output  Stream  Writer osw = new Output  Stream  Writer  ( os  );
+             Print  Writer pw = new Print  Writer  ( osw  );
+          
+             System  . out  . println  (""  Sending Information \ n  "" + speculate  );
+          
+             pw  . println  ( speculate  );
+             pw  . flush  ();
+          
+            }
+            catch (  Connect  Exception e  )
+            {
+             System  . out  . println  (""  Remote Server  : "" + ip + "" Does not exist  "");
+            }
+            catch (  Exception e  )
+            {
+             e  . print  Stack  Trace  ();
+            }
+          
+           }"
+           "public void pull  Value  From  DOORS  ()
+           {
+          
+            String server  IP = new String  ( doors server  IP  ); //""  140  .  192  .  37  .  150  "";
+          
+            String  [] attribute = { ""  Value  "" ""  Attribute  "" };
+          
+            String project  Name = this  . proj  Name  Text  . get  Text  (). trim  ();
+          
+            String temp  Module = this  . module  Path  Text  . get  Text  (). trim  ();
+          
+            String requirement  ID = this  . requirement Number  Text  . get  Text  (). trim  ();
+          
+            String  Tokenizer st = new String  Tokenizer  ( temp  Module   ""\\"");
+          
+            Vector module  Vector = new Vector  ();
+            String module  Path = """";
+            String module  Name = null  ;
+          
+            int loop = st  . count  Tokens  ();
+          
+            while ( loop > 0  ) {
+             /*
+              * This loop will separate the module path from the module name  because the DOORSAPI  . exe program is
+              * designed in a way that we have to join the module path with the project name and separate the module name  .
+              */
+          
+             if ( loop == 1  ) {
+              module  Name = st  . next  Token  ();
+             } else {
+              module  Vector  . add  ( st  . next  Token  ());
+             }
+          
+             loop  --  ;
+            }
+          
+            for ( int x = 0  ; x < module  Vector  . size  (); x  ++) {
+          
+             module  Path +  = (  String  ) module  Vector  . get  ( x  );
+          
+             if ( x !  = module  Vector  . size  () - 1  )
+              module  Path +  = ""\\\\"";
+          
+            }
+          
+            if ( module  Path  . length  () !  = 0  ) {
+             project  Name = project  Name + ""\\\\"" + module  Path  ;
+            }
+          
+          
+            for ( int y = 0  ; y < attribute  . length  ; y  ++)
+            {
+          
+             String Exec  String =
+              ""  DOORS  \\  Doors  API  . exe ""
+               + server  IP
+               + "" ""
+               + ""\"" pull doors for value  (""
+               + ""\\\""""
+               + project  Name
+               + ""\\\""\\\""""
+               + module  Name
+               + ""\\\""\\\""""
+               + requirement  ID
+               + ""\\\""\\\""""
+               + attribute  [ y  ]
+               + ""\\\"")\"""";
+          
+             System  . out  . println  (""  ES  : "" + Exec  String  );
+          
+             //  Runtime r = Runtime  . get  Runtime  ();
+             //  Process p = null  ;
+          
+          
+             try
+             {
+          
+              Socket server  ;
+              server = new Socket  ( server  IP    2347  );
+          
+              if ( server  . is  Connected  () )
+              {
+               Buffered  Reader from  Server = new Buffered  Reader  ( new Input  Stream  Reader  ( server  . get  Input  Stream  ()));
+               Print  Writer to  Server = new Print  Writer  ( server  . get  Output  Stream  () true  );
+          
+               to  Server  . println  (  Exec  String  );
+          
+               String line  1 = from  Server  . read  Line  ();
+               // Just tells the Port Number and Server IP Address  .
+               String line  2 = from  Server  . read  Line  ();
+               // Get the Attribute Value  's from the DOORS
+          
+               System  . out  . println  ( line  1  );
+          
+               if ( attribute  [ y  ]. equals  (""  Value  "")) {
+                System  . out  . println  ( line  2  );
+          
+                this  . from  Text  . set  Text  ( line  2  );
+          
+               }
+          
+               if ( attribute  [ y  ]. equals  (""  Attribute  "")) {
+                System  . out  . println  ( line  2  );
+          
+                this  . change  Text  . set  Text  ( line  2  );
+          
+               }
+          
+               from  Server  . close  ();
+               to  Server  . close  ();
+              }
+              server  . close  ();
+          
+          
+          
+             }
+             catch (  Connect  Exception e  )
+             {
+              System  . out  . println  (""  Remote Server Does not exist  "");
+             }
+             catch (  Exception e  ) {
+          
+              e  . print  Stack  Trace  ();
+             }
+            } // end For Loop for Pulling values from Doors .
+          
+            /*
+             *
+             * The following method will get the description of  requirement  ID from Doors
+             *
+             * */
+          
+            String Exec  String =
+             ""  DOORS  \\  Doors  API  . exe ""
+              + server  IP
+              + "" ""
+              + ""\"" pull doors for requirement (""
+              + ""\\\""""
+              + project  Name
+              + ""\\\""\\\""""
+              + module  Name
+              + ""\\\""\\\""""
+              + requirement  ID
+              + ""\\\"")\"""";
+          
+            System  . out  . println  (""  ES  : "" + Exec  String  );
+          
+            try
+            {
+          
+             Socket server  ;
+             server = new Socket  ( server  IP    2347  );
+          
+             if ( server  . is  Connected  () )
+             {
+              Buffered  Reader from  Server = new Buffered"
+           "public static void main  (  String  [] args  )
+           {
+            new Speculate  Gui  ();
+           }"

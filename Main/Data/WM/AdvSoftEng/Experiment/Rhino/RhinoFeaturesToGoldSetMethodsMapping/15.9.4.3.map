@@ -1,0 +1,6 @@
+org.mozilla.javascript.IdScriptableObject.addIdFunctionProperty
+org.mozilla.javascript.NativeDate.fillConstructorProperties
+org.mozilla.javascript.NativeDate.TimeClip
+org.mozilla.javascript.NativeDate.date_msecFromDate
+org.mozilla.javascript.IdScriptableObject.newIdFunction
+org.mozilla.javascript.NativeDate.jsStaticFunction_UTC

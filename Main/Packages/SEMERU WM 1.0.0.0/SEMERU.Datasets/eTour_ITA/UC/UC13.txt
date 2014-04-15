@@ -1,0 +1,14 @@
+Use case name	ATTIVA DISATTIVA ACCOUNT TURISTA
+Attiva o disattiva l’account di un Turista.
+Partecipating
+Actor	Inizializzato da Operatore Agenzia
+Entry
+conditions	•	L’Operatore Agenzia si trova nella scheda di un turista.
+Flow of events 		User	System
+	1.		Attiva la funzionalità per l’attivazione/disattivazione dell’account dalla scheda di un determinato turista. 	
+	2.			Chiede conferma dell’attivazione/disattivazione dell’account.
+	3.		Conferma l’operazione.	
+	4.			Attiva/disattiva l’account del turista selezionato.
+Exit conditions	•	Il sistema notifica l’esito dell’operazione.
+•	Interruzione della connessione al server di eTour.
+Quality requirements	

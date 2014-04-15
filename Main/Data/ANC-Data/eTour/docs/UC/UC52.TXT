@@ -1,0 +1,16 @@
+Use case name ELIMINASITODAIPREFERITI 
+Tourism delete a site from the list of bookmarks. 
+Partecipating 
+Actor initialized by Tourist 
+Entry 
+conditions • The tourist card is in a particular site. 
+Flow of events User System 
+1. Choose to remove your site from the list of bookmarks by specific features. 
+2 Prompt removal 
+3 Confirm the removal. 
+4 Removes the selected site from the list of bookmarks. 
+Exit conditions • The notification system has been removed from the site bookmarks. 
+• The Tourist cancel the operation 
+• Interruption of the connection to the server ETOUR. 
+Quality 
+requirements

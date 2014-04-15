@@ -1,0 +1,14 @@
+Nome: VisualizzaDatiScolasticiStudente
+Attori: Studente
+Descrizione: Visualizzazione delle informazioni scolastiche riguardanti l’ utente
+Precondizioni:
+•	L’utente è loggato al sistema come studente •	L’utente clicca il pulsante “Registro Digitale”
+Sequenza degli eventi
+Utente
+Sistema
+1.
+2.
+Cerca nell’ archivio i dati relativi al registro della classe a cui appartiene lo studente
+Visualizza i dati relativi allo studente ed in particolare: Data, Assenze, Note disciplinari, Ritardi e Giustifiche.
+Postcondizioni:
+•	Sono stati mostrati i dati del registro di classe relativi allo studente •	Connessione al server SMOS interrotta

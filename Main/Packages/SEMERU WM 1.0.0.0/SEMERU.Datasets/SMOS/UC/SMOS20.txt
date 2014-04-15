@@ -1,0 +1,13 @@
+Nome: EliminaIndirizzo
+Attori: Amministratore
+Descrizione: Elimina un indirizzo dall’archivio
+Precondizioni:
+• • • •
+L’utente è loggato al sistema come Amministratore L’utente ha eseguito il caso d’uso “VisualizzaDettagliIndirizzo” L’utente visualizza le informazione dettagliate di un indirizzo L’utente clicca sul pulsante “Elimina”
+Sequenza degli eventi
+Utente
+Sistema
+1. Verifica se l'indirizzo ha classi associate; in caso affermativo mostra un messaggio di errore “Impossibile eliminare l'indirizzo, cancellare le classi associate e riprovare”, altrimenti elimina l'indirizzo.
+2. Visualizza l’elenco degli indirizzi aggiornato
+Postcondizioni:
+•	L’utente ha eliminato un indirizzo •	Connessione al server SMOS interrotta

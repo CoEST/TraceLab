@@ -1,0 +1,97 @@
+           Config Dialog
+           "public Config  Dialog  (  Notification  _  Processing parent   boolean modal  ) {
+               
+                  super ( parent   modal  );
+               set  Title  (""  Config Dialog Box  "");
+                 get  Content  Pane (). set  Layout ( new Grid  Layout  (  5    2  ));
+          
+                  add  Window  Listener  ( new Window  Adapter  () {
+                      public void window  Closing  (  Window  Event evt  ) {
+                          close  Dialog  ( evt  );
+                      }
+                  }
+                  );
+          
+            parent  Frame = parent  ;
+            
+               User  Name  Label = new JLabel  (""  User Name  : "");
+               User  Name = new JText  Field  ();
+               DSNLabel = new JLabel  (""  Event database DSN  : "");
+               DSN = new JText  Field  ();
+            Event  Server  IP Label = new JLabel  (""  eventserver IP  : "");
+            Event  Server  IP = new JText  Field  ();
+            Event  Server  Port  Label = new JLabel  (""  eventserver Port  : "");
+               Event  Server  Port = new JText  Field  ();
+                 ok  Button = new JButton  (""  Ok  "");
+                 cancel  Button = new JButton  (""  Cancel  "");
+                 
+                 get  Content  Pane  (). add  (  User  Name  Label  );       
+                 get  Content  Pane  (). add  (  User  Name  );         
+                 get  Content  Pane  (). add  (  DSNLabel  );       
+                 get  Content  Pane  (). add  (  DSN  );           
+                 get  Content  Pane  (). add  (  Event  Server  IP Label  );       
+                 get  Content  Pane  (). add  (  Event  Server  IP  );           
+                 get  Content  Pane  (). add  (  Event  Server  Port  Label  );       
+                 get  Content  Pane  (). add  (  Event  Server  Port  );           
+                 get  Content  Pane  (). add  ( ok  Button  );       
+                 get  Content  Pane  (). add  ( cancel  Button  );  
+                 
+                 ok  Button  . add  Action  Listener ( new Action  Listener () {
+                   public void action  Performed (  Action  Event evt  ) {
+                      ok  Button  Action  Performed ( evt  );
+                   }
+                 }
+                 ); 
+                
+                  cancel  Button  . add  Action  Listener ( new Action  Listener () {
+                   public void action  Performed (  Action  Event evt  ) {
+                      cancel  Button  Action  Performed ( evt  );
+                   }
+                 }
+                 ); 
+                 
+                 set  Size  (  300    200  );
+                 set  Location  (  100    100  );
+              }"
+           "private void close  Dialog  (  Window  Event evt  ) {
+                  set  Visible ( false  );
+                  dispose ();
+              }"
+           "// event listener for ""  Ok  "" button   
+              private void ok  Button  Action  Performed (  Action  Event evt  ) {
+               
+               if  ( User  Name  . get  Text  (). equals  ("""") || DSN  . get  Text  (). equals  ("""") || Event  Server  IP  . get  Text  (). equals  ("""") || Event  Server  Port  . get  Text  (). equals  ("""")){
+                JOption  Pane  . show  Message  Dialog  ( this   ""  You need to fill in all the information to proceed  .""); 
+                return  ;
+               }
+               else {
+                parent  Frame  . m  _  User  Name = User  Name  . get  Text  ();
+             parent  Frame  . m  _  DSN = DSN  . get  Text  ();      
+             parent  Frame  . m  _  Event  Server  IP = Event  Server  IP  . get  Text  (); 
+             parent  Frame  . m  _  Event  Server  Port = Event  Server  Port  . get  Text  ();
+                   set  Visible ( false  );
+                   dispose ();      
+               }
+              
+              }"
+           "// event listener for ""  Cancel  "" button  
+              private void cancel  Button  Action  Performed (  Action  Event evt  ) {
+                  set  Visible ( false  );
+                  dispose ();     
+              }"
+           "// configuration entries
+              private JLabel User  Name  Label  ; 
+              private JText  Field User  Name  ;    
+              private JLabel DSN Label  ; 
+              private JText  Field DSN  ;
+              private JLabel Event  Server  IP Label  ; 
+              private JText  Field Event  Server  IP  ;
+              private JLabel Event  Server  Port  Label  ; 
+              private JText  Field Event  Server  Port  ;
+              
+              // buttons
+              private JButton ok  Button  ;
+              private JButton cancel  Button  ;
+              
+           // parent frame
+           private Notification  _  Processing parent  Frame  ;"

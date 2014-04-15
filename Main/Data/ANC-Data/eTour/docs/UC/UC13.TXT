@@ -1,0 +1,14 @@
+Use case name ACTIVE / DISATTIVAACCOUNTTURISTA 
+Enable or disable the account of a tourist. 
+Partecipating 
+Actor initialization Agency Operator 
+Entry 
+Operator conditions • The Agency is in the form of a tourist. 
+Flow of events User System 
+1. Activate the feature for the activation / deactivation by a given sheet tourist. 
+2 Asks for confirmation of activation / deactivation. 
+3 Confirm the operation. 
+4 Enable / disable the account of the visitor you selected. 
+Exit conditions • The notification of the outcome. 
+• Interruption of the connection to the server ETOUR. 
+Quality requirements

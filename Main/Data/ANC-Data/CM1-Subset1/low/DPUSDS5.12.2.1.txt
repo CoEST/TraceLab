@@ -1,0 +1,1 @@
+Public Functions	This routine is called by the MIL-STD-1553 Command ISR and the SSI Interface ISR any time a command arrives from the SCU or the ICU, to enqueue the command and to wakeup the CCM Command Dispatch Task so that the command can be executed.

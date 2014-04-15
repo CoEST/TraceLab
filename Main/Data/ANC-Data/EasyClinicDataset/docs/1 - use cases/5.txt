@@ -1,0 +1,54 @@
+Changing  doctor anagrafica
+It allows the operator to change 
+                the anagrafica of a doctor who works 
+                at the outpatient 
+                It deals with the modification of data 
+                about a doctor anagrafica 
+The Operator has been recognized by ` 
+                System (See UcValOp) and age 
+                `the doctor is present within the 
+                I S O 
+The anagrafica data of the doctor 
+                are not modified, remain in 
+                This was before 
+                Success: The personal doctor is 
+                correctly changed 
+The operator activates the execution of 
+                Chanching service of the doctor anagrafica
+1 View the list of 
+     doctors present 
+     in the S I O 
+2 Select the anagrafica doctor which
+                               change the anagrafica
+3 Confirm the selection 
+4 View the mask 
+     for changing of 
+     the doctor anagrafica
+5 Changing the anagrafica of 
+                               doctor 
+6 Confirm Changes 
+7 Verify the data insert by operator
+Remember the 8 
+     updates 
+Notify 9 that the operation 
+     it is `finished with 
+     success 
+Data entered invalid 
+   7 1 Display a message showing the 
+          data are invalid 
+   7 2 take back running from 4 
+          underpinned the fields of the form with data 
+          insert by user
+Operator cancels operation 
+  3 1 ends the execution of use case with 
+   6 1 failure 
+   5 1 The anagrafica of a doctor is `characterized by 
+          following data: name surname sex code 
+          Tax date of birth place of birth 
+          province of birth place of address 
+          home province of residence address ZIP code 
+          telephone specialization year 
+          certification and additional notes 
+          NB: In italics are highlighted data 
+          Optional whose inclusion does not affect 
+          on the correct completion of operation

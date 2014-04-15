@@ -1,0 +1,100 @@
+/* Report Table Model.java
+*
+*  . 
+*
+*   /  /    
+*
+* ©      e Tour  Project -  Copyright by  S E@ S A  Lab -  D M I –  University of  Salerno
+*/
+package unisa.gps.etour.gui.operatore agenzia ;
+
+import java.util. Vector;
+import javax.swing.table. Abstract Table Model;
+
+import unisa.gps.etour.bean. Bean Bene Culturale;
+import unisa.gps.etour.bean. Bean Punto Di Ristoro;
+import unisa.gps.etour.bean.util. Punto  D;
+
+public class  Report Table Model extends  Abstract Table Model {
+
+	/**
+	 * 
+	 */
+	private static final long serial Version U I D =   L;
+	private static final  String[] headers = 
+		{" Nome"," Descrizione"," Indirizzo"," Città"," Provincia"};
+	private static final  Class[] column Classes = 
+		{ String.class, String.class, String.class, String.class, String.class};
+	private  Vector< Object[]> data;
+	
+	public  Report Table Model( Bean Bene Culturale[] bc,  Bean Punto Di Ristoro[] pr) 
+	{
+		data = new  Vector< Object[]>();
+		for (int i =  ; i < pr.length; i++) 
+		{
+			 Object[] nuovo = new  Object[ ];
+			nuovo[ ] = pr[i].get Nome();
+			nuovo[ ] = pr[i].get Descrizione();
+			nuovo[ ] = pr[i].get Via();
+			nuovo[ ] = pr[i].get Citta();
+			nuovo[ ] = pr[i].get Provincia();
+			
+			set Value At(nuovo,i);
+		}
+		for (int i =  ; i < bc.length; i++) 
+		{
+			 Object[] nuovo = new  Object[ ];
+			nuovo[ ] = bc[i].get Nome();
+			nuovo[ ] = bc[i].get Descrizione();
+			nuovo[ ] = bc[i].get Via();
+			nuovo[ ] = bc[i].get Citta();
+			nuovo[ ] = bc[i].get Provincia();
+			set Value At(nuovo,pr.length+i);
+		}
+	}
+	
+	public int get Column Count() {
+		return headers.length;
+	}
+
+	public int get Row Count() {
+		return data.size();
+	}
+	public  String get Column Name(int col) {
+		return headers[col];
+	}
+
+	public  Object get Value At(int row, int col) {
+		return data.get(row)[col];
+	}
+	public  Class get Column Class(int col) {
+		return column Classes[col];
+	}
+	
+	public boolean is Cell Editable(int row, int col) {
+		return false;
+	}
+	public void set Value At( Object value, int row, int col) {
+		if (row >= get Row Count()) {
+			 Object[] nuovo = new  Object[headers.length];
+			nuovo[col] = value;
+			data.add(nuovo);
+		}
+		else {
+			data.get(row)[col] = value;
+		}
+	}
+	public void set Value At( Object[] value, int row) throws  Illegal Argument Exception {
+		if (value.length != headers.length){
+			 System.out.println(value.length);
+		 System.out.println(headers.length);
+			throw new  Illegal Argument Exception();}
+		if (row >= get Row Count()) {
+			data.add(value);
+		}
+		else {
+			data.remove(row);
+			data.add(row, value);
+		}
+	}
+}

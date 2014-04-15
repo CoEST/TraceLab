@@ -1,0 +1,26 @@
+           Obsolete Model
+           "public Obsolete  Model  (  EBT em  )
+              {
+            super  ( em  );
+           }"
+           "// Construct Visual model for Merge Event
+              public void Build  Event  ()
+              {
+               Clear  Vectors  ();
+            Add  Event  Rect  (  60    80    1  );
+            Add  Line  (  60    60    225    135  );
+            Add  Line  (  60    135    225    60  );
+            Current  Event = 5  ;
+              }"
+           "public String  Buffer Generate  Event  ()
+             {
+            String  Buffer this  Event = new String  Buffer  ();
+            this  Event  . append  (""  Obsolete  |  0  |"");
+            this  Event  . append  ( new Date  (). to  String  ()+""|"");
+            ebs = (  EBShape  )  Event  Shapes  . element  At  (  0  );
+                 this  Event  . append  ( ebs  .  Get  Reqno  ()+ '    ' + ebs  .  Get  Project  () + """");
+            this  Event  . append  ( ebs  .  Get  Module  () + """");
+            this  Event  . append  ( get  requirement Text  ( ebs  .  Get  Reqno  () ebs  .  Get  Project  () ebs  .  Get  Module  ())+ ""  Y  |"");
+          
+            return this  Event  ;
+              }"

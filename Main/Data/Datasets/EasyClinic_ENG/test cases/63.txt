@@ -1,0 +1,16 @@
+Validation test case Patient Data: 
+    C13 tax code by not 20/06/2003 
+            correct (fewer 
+            figures) 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcValPaz necessary to authenticate an 
+            Patient 
+High Priority 
+Set up not identified 
+Description test 
+Input Tax: ZCCRCC80D 
+Oracle Input Invalid 
+Classes cover valid: None 
+            Classes invalid: CE8

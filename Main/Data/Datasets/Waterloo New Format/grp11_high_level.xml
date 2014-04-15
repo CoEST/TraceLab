@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp11_high_level</id>
+    <name>Waterloo grp11_high_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp11_high_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>F1</id>
+      <content>Administrators must be able to log in. An Administrator must be authenticated before logging in.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F2</id>
+      <content>Administrators should be able to view the system load, the number of phones in the system and number of phones currently involved in a call</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F3</id>
+      <content>Administrators must be able to exit the system when they will be away.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F4</id>
+      <content>Administrators must be able to create new user profiles.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F5</id>
+      <content>Administrators must be able to view and edit user profiles they have created.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F6</id>
+      <content>Administrators must be able to create new accounts for users.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F7</id>
+      <content>Administrators must be able to view and edit user accounts they have created.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F8</id>
+      <content>Administrators have the option of suspending the service of a user if they have not paid their bill, and reinstating it after they have paid.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F9</id>
+      <content>Administrators have the option of cancelling the service of a user if they have not paid their bill.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F10</id>
+      <content>Administrators must have the option of creating new billing plans.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F11</id>
+      <content>Administrators must be able to view and edit a user�s bills.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F12</id>
+      <content>Administrators must record when a user has paid his bill.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F13</id>
+      <content>Administrators can test the functionality of a specified phone or all phones in the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F14</id>
+      <content>Administrators must be able to specify the maximum number of calls on the system, maximum load of the system .</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F15</id>
+      <content>Administrators may have to reset the call processing software for a particular phone.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F16</id>
+      <content>Administrators must be able to get summary information on the status of all phones.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F17</id>
+      <content>Administrator must be able to change status of a phone. e.g. disable, enable</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F18</id>
+      <content>System should maintain calling plan history for each user account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F19</id>
+      <content>System should monitor all phone process and periodically run some tests to verify that the phone is operating normally</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F20</id>
+      <content>System must be able to receive error messages. The System must alert the Administrator whenever there is an error</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F21</id>
+      <content>Users should be able to originate calls provided their accounts have been allocated this capability.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F22</id>
+      <content>Users should be able to receive calls provided their accounts have been allocated this capability.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F23</id>
+      <content>System should monitor each phone for events, such as, off-hook, numbers being dialled</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F24</id>
+      <content>The system must generate user bills and automatically send them through e-mail at the end of a billing period or when a user�s account is cancelled.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F25</id>
+      <content>System must keep a record of every established call for billing purposes</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F26</id>
+      <content>System is responsible for checking Administrators inputs to ensure the system does not become inconsistent.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F27</id>
+      <content>User records should be retained indefinitely</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F28</id>
+      <content>Phone numbers or extensions are 4 digits long</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F29</id>
+      <content>Sockets are the default form of inter-process communication</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F30</id>
+      <content>System needs to construct and maintain a mapping from dialled numbers to pairs</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F31</id>
+      <content>Always round up to the next minute when calculating the length of the call</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F32</id>
+      <content>Administrator must be able to view associated phone information for given IP address</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F33</id>
+      <content>System automatically adds new IPs when new phones are connected to the system and removes IPs when phones are disconnected from the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F34</id>
+      <content>Administrator must be able to modify the calling plan for a particular user account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F35</id>
+      <content>Administrator must be able to modify an existing calling plan</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F36</id>
+      <content>Administrator must be able to change the phone number or IP of a user�s phone account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F37</id>
+      <content>A phone process must acquire a resource before it is able to receive or send signals to a particular phone.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F38</id>
+      <content>Before making a call, the phone must acquire a line.  The line is released once the call ends.  It is the caller�s responsibility to acquire and release lines.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F39</id>
+      <content>Source code should be available for debugging if required.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F40</id>
+      <content>When a user is in the process of dialling a number, the system remembers the digits that have already been dialled.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F41</id>
+      <content>The Administrator must be able to resend a bill to a user at any time.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F42</id>
+      <content>When phones are added to the system, they must be properly enabled.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F43</id>
+      <content>An administrator must be able to specify an activation date for a user�s account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F44</id>
+      <content>When a user picks up their phone, they will not be able to make a call if they do not have the capability to originate calls or if they cannot acquire a line.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F45</id>
+      <content>After a caller picks up the phone, they may hang up at any time.  The system must be ready to release the resource if it has been acquired, or to send the necessary signal to the callee.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F46</id>
+      <content>After the callee picks up the phone, the callee may hang up at any time.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F47</id>
+      <content>Once a number has been dialled, it is checked to see if it is a valid number within the system.  If so, to make the connection the IP corresponding to it is retrieved.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F48</id>
+      <content>When the caller receives a line, they may only hold it for a limited amount of time before dialling a complete number.  Otherwise, the line will be freed and they must hang up before they can try again.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F49</id>
+      <content>The administrator can modify a user�s ability to originate or receive calls.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F50</id>
+      <content>If the caller dials a number of a phone which is busy or cannot receive calls, the phone will not ring and no connection can be made.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F51</id>
+      <content>If the caller dials the number of a phone that can receive calls and is not busy, the phone will ring.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F52</id>
+      <content>A callee is busy if their phone is off the hook or if their phone is ringing.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F53</id>
+      <content>A user may have multiple phone accounts.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F54</id>
+      <content>If a user does not pay the bill on time, on the following bill a warning notice will appear.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F55</id>
+      <content>Every call is billed by the rate in effect at the end of the call.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F56</id>
+      <content>Administrator can modify, view and remove calling plans</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F57</id>
+      <content>If a caller ends a call during a period covered by their calling plan, the rate per minute used is the default rate multiplied by the discount rate.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F58</id>
+      <content>Bills are e-mailed out on the user�s billing day.  The billing period end date is the day before the billing day.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F59</id>
+      <content>A user with a Billing Day of 29, 30, or 31 will get their bill sent to them on the last day of a month if the month does not contain these days (ie: February)</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F60</id>
+      <content>The Administrator may modify the frequency that automated tests are performed.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F61</id>
+      <content>The Administrator may remove an entire user (including all accounts)  instead of having to remove each account individually.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F62</id>
+      <content>The Administrator may suspend all of a user�s accounts by using the �Suspend User� button.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F63</id>
+      <content>If all the numbers in the system have been assigned, the Administrator may not create any more user accounts.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F64</id>
+      <content>When the system starts up, all phone processes are created and all system constants are initialized.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F65</id>
+      <content>All phone calls must be terminated rapidly and billing information is retained.  System constants must be saved so they can be restored after shutdown.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N1</id>
+      <content>Measurement of operating speed, such as system output over a period of time (throughput) or time it takes the system to respond to a request (response time).</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N2</id>
+      <content>How easy to use is the system.  Important attributes include adaptability, clarity, and intuitiveness.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N3</id>
+      <content>How effectively does a system use its available resources,</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N4</id>
+      <content>The storage of the server in a secure location such as a locked room.  This is to prevent unauthorised tampering with the hardware, software, and data.  It also prevents theft of equipment.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N5</id>
+      <content>System needs to restrict access to administrator functions.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N6</id>
+      <content>The system must be capable of functioning 24 hours a day, 7 days a week.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N7</id>
+      <content>The system software must be able to expand the maximum number of users/accounts in the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N8</id>
+      <content>The system software must be able to expand the maximum number of connections the system can handle at any one time.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N9</id>
+      <content>The system will be able to run on any server that has the same capabilities as commando.math server,</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N10</id>
+      <content>The system must be able to integrate new features with a reasonable amount of effort.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N11</id>
+      <content>System can display hardware information, request hardware tests at any time, receive error messages, reset the call processing software for a particular phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N12</id>
+      <content>Documents and code must be easy to understand.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N13</id>
+      <content>System matches requirements.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N14</id>
+      <content>The software should handle errors and unexpected cases.  It has a high fault tolerance and does not crash.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

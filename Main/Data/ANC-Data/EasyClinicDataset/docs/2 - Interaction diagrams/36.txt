@@ -1,0 +1,32 @@
+Record visit 
+
+     This feature is has been described by 
+collaboration diagrams of Fig 3 21 the main scenario: the 
+service is started following the explicit request 
+The actor part of the operator access to the mask 
+main (for instance GUIPrincipale) and there select the function 
+The management visits then passes control to the instance of 
+GUIPrincipaleHandler which delegates to the instance of 
+GUIVisitaHandler the task of providing the service The first step 
+is to obtain a list of all visits 
+in outpatient therefore control passes to the instance of 
+VisiteManager Through an iterative process are the goods 
+retrieval of all visits and every step is made in 
+as follows: the panel found through VisiteManager 
+The body of data on visits to a visit and 
+then passes control to the instance of that EsamiManager 
+provides through instances of Examination for finding all 
+examinations on the same visit This list is passed 
+GUIVisitaHandler to the instance of which shall display 
+the visits made on the mask on the 
+management visits (for instance GUIVisite) The Operator 
+select the function visiting placement insert data 
+Visit the new and confirms control passes to the application 
+GUIVisiteHandler of the delegation which is to enter the 
+new visit to the instance of VisiteManager latter through 
+Visit the panel and ensure the inclusion of rescue 
+data on a new tour and return control application 
+GUIVisitaHandler of which in turn is responsible to notify 
+success by viewing a 
+message in the form of management 
+visits (for instance GUIVisita)

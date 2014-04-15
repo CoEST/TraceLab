@@ -1,0 +1,2 @@
+org.mozilla.javascript.ScriptableObject.getObjectPrototype
+org.mozilla.javascript.Arguments.Arguments

@@ -1,0 +1,36 @@
+Changing anagrafica laboratory 
+     The service was launched following the express request 
+by the actor The Operator logs on to form 
+main (for instance GUIPrincipale) and there select the function 
+The laboratories certified management control then 
+GUIPrincipaleHandler to the instance of the delegation which application 
+GUIAnagraficaLaboratorioHandler to the task of providing the 
+The service first step is to obtain a list of all 
+Laboratories therefore control passes to the instance of 
+LaboratorioManager through which instances of Laboratory 
+retrieves the list and return it backward up the application 
+of GUIAnagraficaLaboratorioHandler Now that object 
+shall display the list of laboratories received 
+the mask on the management of database 
+laboratories (for instance GUIAnagraficaLaboratorio) The Operator 
+Select from the laboratory to change the active 
+Review the register function of the laboratory and 
+control passes to the instance of the GUIAnagraficaLaboratorioHandler 
+which delegates the task to collect data on the 
+laboratory selected to the instance of LaboratorioManager 
+The latter by the Laboratory of application shall 
+recovery of supplying such data to the instance of 
+GUIAnagraficaLaboratorioHandler which in turn is responsible for 
+Their view on the mask GUIAnagraficaLaboratorio 
+     At this point, the operator confirms the changes made and 
+control passes to the instance of GUIAnagraficaLaboratorioHandler 
+The delegation which is to store the data in the laboratory 
+considered the application of LaboratorioManager latter through 
+The body of laboratory provides data to the rescue 
+altered passes control to the instance of 
+GUIAnagraficaLaboratorioHandler which in turn deals with 
+notify success by viewing 
+a special message on the screen on the management 
+the register of laboratories (for instance 
+GUIAnagraficaLaboratorio) This feature has been described ` 
+through collaboration diagram of Fig 3 5

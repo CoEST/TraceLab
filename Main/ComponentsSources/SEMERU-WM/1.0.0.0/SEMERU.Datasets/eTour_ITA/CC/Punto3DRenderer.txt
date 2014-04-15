@@ -1,0 +1,67 @@
+package unisa.gps.etour.gui.operatore agenzia .tables;
+
+import java.awt. Component;
+import javax.swing. J Label;
+import javax.swing. J Table;
+import javax.swing. Swing Constants;
+import javax.swing.table. Table Cell Renderer;
+import unisa.gps.etour.util. Punto  D;
+
+/**
+ * <b> Punto  D Renderer</b>
+ * <p> Questa classe realizza un renderer personalizzato per gli
+ * oggetti di tipo  Punto  D.</p>
+ * 
+ * @see javax.swing.table. Table Cell Renderer
+ * @see unisa.gps.etour.util. Punto  D
+ * @version  . 
+ * @author  Mario  Gallo
+ * 
+ * 
+ */
+public class  Punto  D Renderer implements  Table Cell Renderer
+{
+	/**
+	 *  Metodo che restituisce il componente personalizzato per la
+	 * visualizzazione del dato contenuto nella cella di una table.
+	 * 
+	 * @param  J Table p Table - la tabella.
+	 * @param  Object p Value - il dato.
+	 * @param boolean p Selected -
+	 *            <ul>
+	 *            <li><i>true</i> se la cella &egrave; selezionata.
+	 *            <li> <i>false</i> altrimenti.
+	 *            </ul>
+	 * @param boolean p Has Focus -
+	 *            <ul>
+	 *            <li><i>true</i> se la cella ha il focus.
+	 *            <li><i> false</i> altrimenti.
+	 *            </ul>
+	 * @param int p Row - il numero di riga.
+	 * @param int p Column - il numero di colonna.
+	 * @return  Component - il componente che personalizza il render della cella.
+	 * @throws  Illegal Argument Exception - se il valore della cella non può
+	 *             essere renderizzato da questo renderer.
+	 */
+	public  Component get Table Cell Renderer Component( J Table p Table,
+			 Object p Value, boolean p Selected, boolean p Has Focus, int p Row,
+			int p Column)
+	{
+		if (!(p Value instanceof  Punto  D))
+		{
+			throw new  Illegal Argument Exception(" Valore  Cella inaspettato.");
+		}
+		 Punto  D a Point = ( Punto  D) p Value;
+		 String punto = a Point.get Latitudine() + "; "
+				+ a Point.get Longitudine() + "; " + a Point.get Altitudine();
+		 J Label a Label = new  J Label(punto,  Swing Constants. C E N T E R);
+		if (p Selected)
+		{
+			a Label.set Foreground(p Table.get Selection Foreground());
+			a Label.set Background(p Table.get Selection Background());
+		}
+		return a Label;
+
+	}
+
+}

@@ -1,0 +1,21 @@
+         Login Paziente  Scenario validazione eseguita
+    Il  servizio viene avviato a seguito dell'esplicita  richiesta
+da  parte  del  Paziente  L'attore Paziente  accede  allo  schermo
+relativo  alla  gestione  dell'accesso  al  sistema  (istanza   di
+GUI Sfondo)    Il   controllo   passa    quindi    all'istanza   di
+GUI Sfondo Handler   la quale delega all'istanza di  GUI Login Handler
+il  compito  di  gestire il servizio  Il primo passo  da  compiere
+consiste nel far inserire al Paziente Hospital Card e PIN   quindi
+viene  presentata al Paziente stesso la pagina per  l'acquisizione
+di  tali dati (istanza di GUI Login)  Il Paziente imposta i dati  e
+conferma  l'inserimento; il controllo passa nuovamente all'istanza
+di  GUI Login Handler  che  deroga  la  validazione  all'istanza  di
+Hospital Card Manager  Quest'ultima si occupa  di  validare  i  dati
+inseriti dal Paziente tramite l'istanza di Hospital Card   L'esito
+positivo   dell'operazione  viene  notificato   a   ritroso   fino
+all'istanza  di GUI Login Handler  la quale richiede all'istanza  di
+GUI Principale Handler   di   abilitare   l'accesso   al    Paziente
+richiedente  e  quindi  di provvedere alla  visualizzazione  della
+maschera  principale (istanza di GUI Principale)  Tale funzionalità
+è` stata descritta mediante il sequence diagram di Fig  3 7 
+

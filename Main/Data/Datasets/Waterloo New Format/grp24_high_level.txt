@@ -1,0 +1,51 @@
+F1	Each phone uses the same API.~
+F2	Server/phone subsystem communication must occur over sockets.~
+F3	Users are able to both send and receive calls.~
+F4	System must monitor each phone for events.~
+F5	The number of current calls must be recorded.~
+F6	Must construct and maintain a mapping from dialed numbers to IP addresses.~
+F7	Phone/IP mapping must be accessible to call processing and admin software~
+F8	Phone numbers are 4 digits long.~
+F9	System console has a GUI.~
+F10	Administrators log into system console using a login name and password.~
+F11	All phone calls must go through the server.~
+F12	All administrators have the same privileges.~ 
+F13	Only have to support one admin at a time at the system console~
+F14	Administrative functions need to be atomic incase se support more than one administrator in the future.~
+F15	Must check for errors in administrator console input.~
+F16	Administrator is able to make, edit, and delete use accounts.~
+F17	Administrator can search for free phone numbers and IPs.~
+F18	Canceling a user’s service involves dissociating the IP address, phone number, and user account.~
+F19	User records should be stored indefinitely.~
+F20	System console displays hardware status info such as our of service phones.~
+F21	Administrators may request hardware tests at any time.~
+F22	System console must be able to receive error messages.~
+F23	System console must alert administrator of errors.~
+F24	System will monitor all phone processes and run test to verify normal operation.~
+F25	The automatic hardware detection needs to detect that a phone has become unresponsive~
+F26	Unresponsive phones must be released to prevent resource leak.~
+F27	The administrator must have to ability to reset the call processing on any phone.~
+F28	When a user places a call, check if reached max number of calls.~
+F29	The system needs to be able to gracefully recover to some default state.~
+F30	Cost of a call depends on num. dialed, duration, when established, and call plan.~
+F31	Must keep a record of each call: caller, destination number, and duration.~
+F32	Each customer is sent a bill via email.~
+F33	System console can display each user’s bill on the screen.~
+F34	The user’s bill shows each call, each call’s time and cost, and the total cost.~
+F35	Bills are immediately issued if user’s service is cancelled.~
+F36	Bill payments are recorded by administrator using the system console.~
+F37	When a user misses a payment, a warning shows up on next bill.~
+F38	Administrator can change fees by adjusting existing billing plan or creating a new one.~
+F39	Administrator can change a user’s billing plan.~
+F40	Changes to a user’s billing plan take place immediately.~
+F41	Must be able to scale to a very large number of phones.~
+F42	Call has higher priority over administrative software.~
+F43	Show system load to the administrator in the console.~
+F44	Special error tone to let the caller know there are no resources available.~
+F45	The administrator should be able to suspend accounts if payment is overdue.~
+F46	The administrator can resume a user’s account that has been suspended~
+N1	Performance of the phones and server is very important.  Want them to be fast.~
+N2	Want the console to be easy for the administrator to use.~
+N3	Need to phones and server to be efficient in use of resources.~
+N4	Very important for the entire system to be reliable~
+N5	Would like the system to be easily testable for when it comes time to test.~

@@ -1,0 +1,2 @@
+org.mozilla.javascript.NativeError.getClassName
+org.mozilla.javascript.NativeError.execIdCall

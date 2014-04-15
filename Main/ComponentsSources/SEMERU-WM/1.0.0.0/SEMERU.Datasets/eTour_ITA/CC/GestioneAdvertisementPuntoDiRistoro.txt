@@ -1,0 +1,29 @@
+/**
+ *  Classe che implementa i servizi di gestione dell'advertisement
+ * per l'operatore punto di ristoro.
+ *
+ * @author  Palladino  Fabio
+ * @version  . 
+ * 
+ * �      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I �  University of  Salerno
+ */
+package unisa.gps.etour.control. Gestione Advertisement;
+
+import java.rmi. Remote Exception;
+
+public class  Gestione Advertisement Punto Di Ristoro extends  Gestione Advertisement
+		implements  I Gestione Advertisement Punto Di Ristoro
+{
+	
+	private static final long serial Version U I D =   L;
+
+	/**
+	 *  Costruttore, richiama il costruttore della superclasse.
+	 * @throws  Remote Exception
+	 */
+	public  Gestione Advertisement Punto Di Ristoro() throws  Remote Exception
+	{
+		super();
+	}
+
+}

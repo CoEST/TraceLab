@@ -1,0 +1,407 @@
+﻿package unisa.gps.etour.control. Gestione Ricerche;
+
+import java.rmi. Remote Exception;
+import java.rmi.server. Unicast Remote Object;
+import java.sql. S Q L Exception;
+import java.util. Array List;
+import java.util. Hashtable;
+
+import unisa.gps.etour.bean. Bean Bene Culturale;
+import unisa.gps.etour.bean. Bean Punto Di Ristoro;
+import unisa.gps.etour.bean. Bean Tag;
+import unisa.gps.etour.repository. D B Bene Culturale;
+import unisa.gps.etour.repository. D B Punto Di Ristoro;
+import unisa.gps.etour.repository. D B Tag;
+import unisa.gps.etour.repository. I D B Bene Culturale;
+import unisa.gps.etour.repository. I D B Punto Di Ristoro;
+import unisa.gps.etour.repository. I D B Tag;
+import unisa.gps.etour.util. Controllo Dati;
+import unisa.gps.etour.util. Messaggi Errore;
+import unisa.gps.etour.util. Punto  D;
+
+public class  Ricerca extends  Unicast Remote Object implements  I Ricerca
+{
+
+	private static final long serial Version U I D = -                    L;
+
+	public  Ricerca() throws  Remote Exception
+	{
+		super();
+	}
+
+	//  Parametri di ricerca
+	private int p Id Turista = - ;
+	private  String p Parole Chiave;
+	private double p Raggio Max;
+	private  Punto  D p Posizione Utente;
+	private int p Elementi Per Pagina = - ;
+	private byte p Tipologia Sito = - ;
+
+	//  Oggetti per la connessione al database
+	private  I D B Bene Culturale  Bene Culturale = new  D B Bene Culturale();
+	private  I D B Punto Di Ristoro  Punto Di Ristoro = new  D B Punto Di Ristoro();
+	private  I D B Tag  Tag = new  D B Tag();
+
+	//  Lista dei  Tag ottenuti
+	private  Array List< Bean Tag> p Tags;
+
+	//  Risultati di ricerca partizionati per pagine
+	private  Hashtable< Integer,  Array List< Bean Bene Culturale>> risultati Ricerca Beni Culturali = new  Hashtable< Integer,  Array List< Bean Bene Culturale>>();
+	private  Hashtable< Integer,  Array List< Bean Punto Di Ristoro>> risultati Ricerca Punti Di Ristoro = new  Hashtable< Integer,  Array List< Bean Punto Di Ristoro>>();
+
+	//  Quantità di  Elementi e di  Pagine risultati in fase di ricerca
+	private int numero Pagine Risultati = - ;
+	private int numero Elementi Ricerca = - ;
+
+	/* (non- Javadoc)
+	 * @see unisa.gps.etour.control. Gestione Ricerche. I Ricerca#ricerca(int, java.lang. String, int[], double, int, unisa.gps.etour.util. Punto  D, byte)
+	 */
+	public int ricerca(int p Id Turista,  String p Parole Chiave, int[] p Tags Id,
+			double p Raggio Max, int p Elementi Per Pagina,
+			 Punto  D p Posizione Utente, byte p Tipologia Sito)
+			throws  Remote Exception
+	{
+		//  Azzera i parametri della ricerca precedente
+		azzera Parametri();
+
+		//  Inizia il controllo di correttezza dei parametri di ricerca
+		try
+		{
+			this.p Id Turista = p Id Turista;
+			this.p Tags = array To Array List Tag(p Tags Id);
+			this.p Parole Chiave =  Controllo Dati.correggi Stringa(p Parole Chiave,
+					true, true, "",  Controllo Dati. L U N G H E Z Z A_ M A S S I M A);
+			this.p Raggio Max = p Raggio Max;
+			this.p Posizione Utente = p Posizione Utente;
+			this.p Tipologia Sito = p Tipologia Sito;
+
+			//  Se i parametri sono validi ottengo il numero di risultati
+			if (p Elementi Per Pagina >  
+					&& ((p Tipologia Sito ==  ) || (p Tipologia Sito ==  ))
+					&& p Raggio Max >  
+					&& p Posizione Utente != null
+					&& (this.numero Elementi Ricerca = ottieni Numero Elementi Ricerca Specializzato()) >=  )
+			{
+				this.p Elementi Per Pagina = p Elementi Per Pagina;
+				this.numero Pagine Risultati = calcola Numero Pagine Ricerca();
+
+				return this.numero Elementi Ricerca;
+			}
+
+			//  Altrimenti ritorno - 
+			else
+				return - ;
+		}
+		catch ( S Q L Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+		catch ( Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+		}
+
+	}
+
+	/* (non- Javadoc)
+	 * @see unisa.gps.etour.control. Gestione Ricerche. I Ricerca#ottieni Pagina Risultati Bene Culturale(int)
+	 */
+	public  Bean Bene Culturale[] ottieni Pagina Risultati Bene Culturale(int p Pagina)
+			throws  Remote Exception
+	{
+		//  Controlla che la tipologia di sito sia valida e che la pagina sia
+		// compresa nel range
+		if ((this.p Tipologia Sito ==  B E N E_ C U L T U R A L E) && controlla Pagina(p Pagina))
+		{
+			//  Trasforma la lista ottenuta in array
+			 Bean Bene Culturale[] risultati = new  Bean Bene Culturale[calcola Numero Elementi Pagina(p Pagina)];
+			// risultati = ricerca Beni Culturali Per Pagina(p Pagina).to Array(
+			// risultati);
+
+			risultati = ricerca Per Pagina(p Pagina).to Array(risultati);
+
+			return risultati;
+		}
+		else
+			return null;
+	}
+
+	/* (non- Javadoc)
+	 * @see unisa.gps.etour.control. Gestione Ricerche. I Ricerca#ottieni Pagina Risultati Punto Di Ristoro(int)
+	 */
+	public  Bean Punto Di Ristoro[] ottieni Pagina Risultati Punto Di Ristoro(int p Pagina)
+			throws  Remote Exception
+	{
+		//  Controlla che la tipologia di sito sia valida e che la pagina sia
+		// compresa nel range
+		if ((this.p Tipologia Sito ==  P U N T O_ D I_ R I S T O R O)
+				&& controlla Pagina(p Pagina))
+		{
+			//  Trasforma la lista ottenuta in array
+			 Bean Punto Di Ristoro[] risultati = new  Bean Punto Di Ristoro[calcola Numero Elementi Pagina(p Pagina)];
+			// risultati = ricerca Punti Di Ristoro Per Pagina(p Pagina).to Array(
+			// risultati);
+
+			risultati = ricerca Per Pagina(p Pagina).to Array(risultati);
+
+			return risultati;
+		}
+		else
+			return null;
+	}
+
+	/* (non- Javadoc)
+	 * @see unisa.gps.etour.control. Gestione Ricerche. I Ricerca#ottieni Numero Elementi Ricerca()
+	 */
+	public int ottieni Numero Elementi Ricerca() throws  Remote Exception
+	{
+		return numero Elementi Ricerca;
+	}
+
+	/* (non- Javadoc)
+	 * @see unisa.gps.etour.control. Gestione Ricerche. I Ricerca#ottieni Numero Pagine Ricerca()
+	 */
+	public int ottieni Numero Pagine Ricerca() throws  Remote Exception
+	{
+		return numero Pagine Risultati;
+	}
+
+	/**
+	 *  Metodo per la restituzione del numero di risultati emersi dalla ricerca
+	 * 
+	 * @return  Numero di risultati emersi dalla ricerca.  In caso di errore
+	 *         ritorna - 
+	 * @throws  S Q L Exception  Eccezione  Connessione al  Database
+	 */
+	private int ottieni Numero Elementi Ricerca Specializzato() throws  S Q L Exception
+	{
+		//  Controlla la tipologia di sito e ottiene il numero di risultati
+		if (controlla Id Turista())
+		{
+			switch (p Tipologia Sito)
+			{
+				case  B E N E_ C U L T U R A L E:
+					return p Id Turista >   ?  Bene Culturale
+							.ottieni Numero Elementi Ricerca Avanzata(
+									this.p Id Turista, this.p Parole Chiave,
+									this.p Tags, this.p Posizione Utente,
+									this.p Raggio Max) :  Bene Culturale
+							.ottieni Numero Elementi Ricerca(this.p Parole Chiave,
+									this.p Tags, this.p Posizione Utente,
+									this.p Raggio Max);
+				case  P U N T O_ D I_ R I S T O R O:
+					return p Id Turista >   ?  Punto Di Ristoro
+							.ottieni Numero Elementi Ricerca Avanzata(
+									this.p Id Turista, this.p Parole Chiave,
+									this.p Tags, this.p Posizione Utente,
+									this.p Raggio Max) :  Punto Di Ristoro
+							.ottieni Numero Elementi Ricerca(this.p Parole Chiave,
+									this.p Tags, this.p Posizione Utente,
+									this.p Raggio Max);
+			}
+		}
+		return - ;
+	}
+
+	/**
+	 *  Metodo per la restituzione della lista dei risultati
+	 * 
+	 * @param p Numero Pagina  Intervallo di risultati da restituire
+	 * @return  Contenitore dei siti emersi in fase di ricerca dato l'intervallo
+	 * @throws  Remote Exception  Eccezione  Remota
+	 */
+	private  Array List<?> ricerca Per Pagina(int p Numero Pagina)
+			throws  Remote Exception
+	{
+
+		//  Dichiara la lista dei siti relativi alla pagina in input
+		 Array List<?> risultati Pagina Corrente = null;
+		try
+		{
+			if (controlla Id Turista())
+			{
+				//  Controlla la tipologia di sito
+				switch (p Tipologia Sito)
+				{
+					case  B E N E_ C U L T U R A L E:
+						//  Se la lista non è gia stata ottenuta in precedenza la
+						// ricerca
+						if ((risultati Pagina Corrente = risultati Ricerca Beni Culturali
+								.get(p Numero Pagina)) == null)
+						{
+							risultati Pagina Corrente = ( Array List<?>) (p Id Turista >   ?  Bene Culturale
+									.ricerca Avanzata(p Id Turista, p Parole Chiave,
+											p Tags, p Numero Pagina,
+											p Elementi Per Pagina,
+											p Posizione Utente, p Raggio Max)
+									:  Bene Culturale.ricerca(p Parole Chiave,
+											p Tags, p Numero Pagina,
+											p Elementi Per Pagina,
+											p Posizione Utente, p Raggio Max));
+							risultati Ricerca Beni Culturali
+									.put(
+											p Numero Pagina,
+											( Array List< Bean Bene Culturale>) risultati Pagina Corrente);
+						}
+					break;
+
+					case  P U N T O_ D I_ R I S T O R O:
+						//  Se la lista non è gia stata ottenuta in precedenza la
+						// ricerca
+						if ((risultati Pagina Corrente = risultati Ricerca Punti Di Ristoro
+								.get(p Numero Pagina)) == null)
+						{
+							risultati Pagina Corrente = ( Array List<?>) (p Id Turista >   ?  Punto Di Ristoro
+									.ricerca Avanzata(p Id Turista, p Parole Chiave,
+											p Tags, p Numero Pagina,
+											p Elementi Per Pagina,
+											p Posizione Utente, p Raggio Max)
+									:  Punto Di Ristoro.ricerca(p Parole Chiave,
+											p Tags, p Numero Pagina,
+											p Elementi Per Pagina,
+											p Posizione Utente, p Raggio Max));
+							risultati Ricerca Punti Di Ristoro
+									.put(
+											p Numero Pagina,
+											( Array List< Bean Punto Di Ristoro>) risultati Pagina Corrente);
+						}
+					break;
+				}
+			}
+			//  Ritorna i risultati ottenuti
+			return risultati Pagina Corrente;
+		}
+
+		catch ( S Q L Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+		catch ( Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+		}
+
+	}
+
+	/**
+	 *  Metodo per il calcolo del numero delle pagine risultate in fase di
+	 * ricerca
+	 * 
+	 * @return  Numero di  Pagine risultate in fase di ricerca
+	 */
+	private int calcola Numero Pagine Ricerca()
+	{
+		//  Se il numero di pagine è maggiore o uguale a   ritorna il numero di
+		// pagine
+		if (numero Pagine Risultati >=  )
+			return numero Pagine Risultati;
+		//  Se il numero di elementi è multiplo del numero di elementi per pagina
+		// ritorna il loro rapporto
+		if ((numero Elementi Ricerca % p Elementi Per Pagina ==  ))
+			return (numero Elementi Ricerca / p Elementi Per Pagina);
+		//  Altrimenti ritorna il loro rapporto +  
+		return (numero Elementi Ricerca / p Elementi Per Pagina) +  ;
+	}
+
+	/**
+	 *  Metodo per il calcolo del numero di elementi contenuti nell'intevallo di
+	 * una determinata pagina
+	 * 
+	 * @param n Pagina  Intervallo di risultati
+	 * @return  Numero di elementi contenuti in una pagina
+	 */
+	private int calcola Numero Elementi Pagina(int n Pagina)
+	{
+		//  Se la il numero di pagina è l'ultima ritorna il loro modulo
+		if (n Pagina == (numero Pagine Risultati -  ))
+			return (numero Elementi Ricerca % p Elementi Per Pagina);
+		//  Altrimenti ritorna il numero di elementi per pagina
+		else
+			return (p Elementi Per Pagina);
+	}
+
+	/**
+	 *  Metodo per il controllo di validità di una pagina
+	 * 
+	 * @param p Pagina  Pagina da controllare
+	 * @return true se la pagina è valida
+	 */
+	private boolean controlla Pagina(int p Pagina)
+	{
+		//  Se il numero di pagina è compreso nel range ritorna vero
+		return (p Pagina >=   && p Pagina < numero Pagine Risultati);
+	}
+
+	/** 
+	 *  Metodo per il controllo di correttezza dell'identificativo del  Turista
+	 *
+	 * @return true se l'identificativo è valido, false altrimenti
+	 */
+	private boolean controlla Id Turista()
+	{
+		return ((p Id Turista >  ) || (p Id Turista == - ));
+	}
+
+	/**
+	 *  Metodo per il reset di tutte le variabili relative ad una ricerca
+	 * 
+	 * @return  Costante che indica il corretto azzeramento
+	 */
+	private int azzera Parametri()
+	{
+
+		//  Azzera tutti i parametri di ricerca
+		p Id Turista = - ;
+		p Tipologia Sito = - ;
+		p Elementi Per Pagina = - ;
+		numero Elementi Ricerca = - ;
+		numero Pagine Risultati = - ;
+
+		risultati Ricerca Beni Culturali.clear();
+		risultati Ricerca Punti Di Ristoro.clear();
+
+		return - ;
+	}
+
+	/**
+	 *  Metodo per la ricerca e conversione dei  Tag nella struttara dati  Lista
+	 * 
+	 * @param p Tags Id  Lista degli identificativi dei tag di ricerca
+	 * @return  Lista dei tag di ricerca
+	 * @throws  S Q L Exception
+	 */
+	private  Array List< Bean Tag> array To Array List Tag(int[] p Tags Id)
+			throws  S Q L Exception
+	{
+		//  Inizializza la lista di  Tag
+		 Array List< Bean Tag> p Tags = new  Array List< Bean Tag>();
+		//  Se la lista degli identificatori dei tag non è vuota ottengo i tag
+		if (p Tags Id != null)
+		{
+			 Bean Tag current Tag = null;
+			try
+			{
+
+				//  Ciclo per l'inserimento dei tag trovati nella lista
+				for (int i =  ; i < p Tags Id.length; i++)
+				{
+					//  Se l'identificativo è maggiore di  
+					if (p Tags Id[i] >  )
+					{
+						current Tag =  Tag.ottieni Tag(p Tags Id[i]);
+						//  Controllo di correttezza sui tag
+						if ( Controllo Dati.check Bean Tag(current Tag))
+							p Tags.add(current Tag);
+					}
+				}
+
+			}
+			catch ( S Q L Exception e)
+			{
+				throw new  S Q L Exception( Messaggi Errore. E R R O R E_ D B M S);
+			}
+		}
+		// ritorna la lista di tag
+		return p Tags;
+	}
+}

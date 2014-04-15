@@ -1,0 +1,40 @@
+Class PrenotazioniManager Date: 
+                                                    16/09/2003 
+                                                    Version: 
+                                                    0 01 000 
+Description has the task to manage operations 
+                   require access to data related to 
+                   Reservations 
+Attributes 
+       Name Access Description 
+                                   
+Methods 
+       Signature deletePrenotazione () Public Access 
+    Description has the task to manage the disposal of a 
+                   Reservations 
+       Signature editPrenotazione () Public Access 
+    Description Its task is to manage the change data 
+                   Hotel Reviews 
+       Signature getDataDisponibile () Public Access 
+    Description Given the nature of the visit calculates the first date 
+                   available when the visit can "keep 
+       Signature getPrenotazioneAt () Public Access 
+    Description Its task is to find all the information 
+                   on a reservation 
+       Signature getPrenotazioniPaziente () Public Access 
+    Description Its task is to find all reservations 
+                   a patient 
+       Signature newPrenotazione () Public Access 
+    Description Its task is to manage the inclusion of a 
+                   new reservation 
+       Signature savePrenotazione () Public Access 
+    Description Its task is to save a 
+                   Standing a reservation 
+       Signature pianoSettimanale () Public Access 
+    Description Its task is to find all the information 
+                   necessary for the settlement plan 
+                   Reservations weekly 
+       Signature tempiMediAttesa () Public Access 
+    Description Its task is to calculate the average time of 
+                   Pending that is `to serve occurred request 
+                   an outpatient service

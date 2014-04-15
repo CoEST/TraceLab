@@ -1,0 +1,9 @@
+org.mozilla.javascript.regexp.NativeRegExp.getClassName
+org.mozilla.javascript.regexp.NativeRegExp.execSub
+org.mozilla.javascript.regexp.NativeRegExp.compile
+org.mozilla.javascript.regexp.NativeRegExp.construct
+org.mozilla.javascript.regexp.NativeRegExp.compileRE
+org.mozilla.javascript.regexp.NativeRegExp.executeREBytecode
+org.mozilla.javascript.regexp.NativeRegExp.executeRegExp
+org.mozilla.javascript.regexp.NativeRegExp.matchRegExp
+org.mozilla.javascript.TokenStream.readRegExp

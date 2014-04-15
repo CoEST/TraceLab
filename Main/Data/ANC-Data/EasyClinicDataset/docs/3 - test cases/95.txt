@@ -1,0 +1,22 @@
+Testing houses delete a Day Date: 
+    C45 Hospital following a First 20/06/2003 
+            visit and that is 
+            The last booking 
+            made 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for delete of 
+UcAnnPre a booking service 
+            made by an ambulatory patient 
+High Priority 
+Set up the previous reservation is `: 
+                26/09/2003 hours 11 00 First visit 
+            There are no reservations after 
+            selected 
+Description test 
+Input Visit selected: 
+            30/09/2003 hours 08 00 Day Hospital 
+The oracle system deletes the reservation 
+            selected 
+Classes cover valid: CE2 CE7 CE10 
+            Classes are not valid: None

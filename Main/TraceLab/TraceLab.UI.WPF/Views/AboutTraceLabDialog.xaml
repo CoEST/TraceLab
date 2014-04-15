@@ -1,0 +1,69 @@
+﻿<!--
+TraceLab - Software Traceability Instrument to Facilitate and Empower Traceability Research
+Copyright (C) 2012-2013 CoEST - National Science Foundation MRI-R2 Grant # CNS: 0959924
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<Window x:Class="TraceLab.UI.WPF.Views.AboutTraceLabDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Title="About TraceLab"
+        Icon="/TraceLab.UI.WPF;component/Resources/Icon_TraceLab16.png"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        SizeToContent="WidthAndHeight">
+
+    <Grid Background="SlateGray">
+        <Grid Margin="5" Background="LightGray">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <DockPanel Grid.Row="0">
+                <Border DockPanel.Dock="Left" Margin="5" Background="White" BorderBrush="SlateGray" BorderThickness="1">
+                    <Image Height="48" Source="/TraceLab.UI.WPF;component/Resources/Icon_TraceLab48.png" />
+                </Border>
+
+                <Border DockPanel.Dock="Right" Margin="5" Background="White" BorderBrush="SlateGray" BorderThickness="1">
+                    <Image Height="48" Source="/TraceLab.UI.WPF;component/Resources/Image_NSFLogo.png" />
+                </Border>
+                
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                    <TextBlock HorizontalAlignment="Left" FontWeight="Bold" FontSize="24">TraceLab</TextBlock>
+                    <TextBlock HorizontalAlignment="Left" FontWeight="Bold" Text="{Binding VersionMSG}" />
+                </StackPanel>
+            </DockPanel>
+
+            <Label Grid.Row="1" HorizontalAlignment="Right" FontWeight="Bold" Content="{Binding RegistrationMSG}" />
+
+            <TextBox Grid.Row="2" Margin="5" MaxHeight="200" MaxWidth="400" IsReadOnly="True" TextWrapping="Wrap"
+                     ScrollViewer.VerticalScrollBarVisibility="Auto" Text="TraceLab - Software Traceability Instrument to Facilitate and Empower Traceability Research&#x0a;&#x0a;Copyright (C) 2012-2013 CoEST - National Science Foundation MRI-R2 Grant # CNS: 0959924&#x0a;&#x0a;This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.&#x0a;&#x0a;This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.&#x0a;&#x0a;You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/" />
+
+            <DockPanel Grid.Row="3" Margin="5">
+                <TextBlock DockPanel.Dock="Left" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Hyperlink RequestNavigate="OpenHyperlinkRequest" NavigateUri="http://www.coest.org/">http://www.coest.org/</Hyperlink>
+                </TextBlock>
+
+                <Button DockPanel.Dock="Right" Width="80" HorizontalAlignment="Right" Click="CloseButton_Click">Close</Button>
+            </DockPanel>
+        </Grid>
+    </Grid>
+</Window>

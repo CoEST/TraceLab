@@ -1,0 +1,15 @@
+Use case name RICERCAPUNTIDIRISTORO 
+Returns the list of points of rest in the system according to certain parameters. 
+Partecipating 
+Actor 
+Entry 
+conditions 
+Flow of events User System 
+1. Activate the search functionality of a point of rest. 
+2 Show the form for research. 
+3 Fill in the search form and submit. 
+4 Processing the request. 
+Exit conditions • The system returns a list of points of rest which meet your search criteria. 
+• Interruption of the connection to the server ETOUR. 
+
+Quality requirements • The system performs the operation in 15 seconds maximum

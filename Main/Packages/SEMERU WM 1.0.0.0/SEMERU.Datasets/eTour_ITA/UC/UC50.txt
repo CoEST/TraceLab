@@ -1,0 +1,13 @@
+Use case name	VISUALIZZA SITI VISITATI
+Visualizza la lista dei siti per i quali ha rilasciato un feedback.
+Participating
+Actor	Inizializzato da Turista
+Entry
+conditions	•	Turista si è autenticato con successo al sistema.
+Flow of events 		User	System
+	1.		Seleziona la funzionalità per la visualizzazione della lista dei siti visitati personali.	
+	2.			Carica la lista dei siti per i quali il Turista ha rilasciato un Feedback
+Exit conditions	•	Il sistema visualizza la lista dei siti visitati.
+•	Interruzione della connessione al server di eTour.
+Quality 
+requirements	

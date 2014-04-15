@@ -1,0 +1,19 @@
+Login failed validation patient Scenario 
+     The service was launched following the explicit request 
+by the Patient The actor Patient access to the screen 
+on the management of the system (for instance 
+GUISfondo) Control then goes to the instance of 
+GUISfondoHandler which delegates to the instance of GUILoginHandler 
+the task of managing the service The first step to take 
+is to enter the Hospital Patient Card and PIN and then 
+Patient is presented to the same page for the acquisition 
+such data (for instance GUILogin) The tax Patient data 
+and confirms the inclusion, control passes again 
+to the instance of GUILoginHandler derogating validation 
+HospitalCardManager to the instance of the latter deals 
+validate the data iserted by the patient through the panel 
+The hospital Card unsuccessful operation is notified 
+backward up to the instance of which shall GUILoginHandler 
+to display an error message on 
+form of access (for instance GUILogin) This feature is ` 
+been described by the sequence diagram of Fig 3 8

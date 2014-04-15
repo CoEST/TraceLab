@@ -1,0 +1,140 @@
+UC1	Name: Place Voice Call	ID: 1
+Event: Caller places a voice call
+System: VOIP Network
+Overview: Description of system's internal behaviour when user attempts to place a voice call by picking up their telephone receiver and dialing the extension of the destination party. Scenario includes initiating a voice call, participating in a voice call, and ending a voice call~
+UC2	Name: Receive Voice Call	ID: 2
+Event: Callee receives a voice call
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the user when user receives a voice call by picking up their telephone receiver while another party is requesting voice communication. Scenario includes receiving a voice call, participating in a voice call, and ending a voice call~
+UC3	Name: Leave Voice Message	ID: 3
+Event: Caller leaves voice message in callee's mailbox
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the caller when the a caller's call request is forwarded to the voice mail system~
+UC4	Name: Administer Voice Messages	ID: 4
+Event: User wishes to hear / delete voice messages
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the user when the user dials the voice mail extension with the purpose of checking their voice messages~
+UC5	Name: Change Voice Mail Greeting	ID: 5
+Event: User wishes to change the greeting played to callers who are forwarded to the user's voice mail
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the user when user logs in to the voice mail system and changes their greeting~
+UC6	Name: Change Voice Mail Password	ID: 6
+Event: User wishes to change their voice mail password
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the user when user logs in to the voice mail system and changes their password~
+UC7	Name: Forward while in call	ID: 7
+Event: User wishes to forward their end of the conversation to a different person on the network or to a different terminal
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the user when either the caller or the callee forwards their end of a voice conversation to another location~
+UC8	Name: Log In	ID: 8
+Event: Administrator logs in to perform administrative functions
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the administrator when the administrator logs in to perform administrative functions on the system~
+UC9	Name: Log Out	ID: 9
+Event: Administrator logs out when they are finished using administrative functions
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the administrator when the administrator logs out after performing administrative functions on the system~
+UC10	Name: Check Phone Number Availability	ID: 10
+Event: Administrator checks whether an extension is free
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the administrator when the administrator checks whether an extension is free in order to add a new user to the system~
+UC11	Name: Register New User	ID: 11
+Event: Administrator adds a new user account to the system
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the administrator when the administrator adds a new account to the system~
+UC12	Name: Delete User	ID: 12
+Event: Administrator removes user account from the system
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the administrator when the administrator removes a user account from the system~
+UC13	Name: Modify Account Attributes	ID: 13
+Event: Administrator modifies attributes associated with an account
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the administrator when the administrator modifies an account's attributes~
+UC14	Name: Initialize User Account	ID: 14
+Event: Administrator initializes a user account so that user can use services
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the administrator when the administrator initializes an account~
+UC15	Name: Print Bill	ID: 15
+Event: Administrator prints bill associated with an account
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the administrator when the administrator prints the bill for an account for a specified time period~
+UC16	Name: Record Bill Payment	ID: 16
+Event: Administrator records bill payment after receiving payment from a user
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the administrator when the administrator records payment of a bill by a user~
+UC17	Name: View Bill	ID: 17
+Event: Administrator views outstanding bill associated with account identifier
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the administrator when the administrator wishes to view the outstanding bill associated with an account identifier~
+UC18	Name: View User Account History	ID: 18
+Event: Administrator views account usage statistics for a given time period and account identifier
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the administrator when the administrator wishes to view account usage statistics for a given time period and account identifier~
+UC19	Name: Suspend User's Telephone Service	ID: 19
+Event: Administrator suspends user's telephone service due to an event such as an unpaid bill
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the administrator when the administrator suspends a user's telephone service~
+UC20	Name: Resume Telephone Service	ID: 20
+Event: Administrator resumes telephone service following an event such as user paying an overdue bill
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the administrator when the administrator resumes a suspended account~
+UC21	Name: Set Maximum Number of Calls in System	ID: 21
+Event: Administrator sets an upper limit on the number of active voice calls in the system
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the administrator when the administrator sets a limit on the number of active voice calls in the system~
+UC22	Name: Add new billing plan to system	ID: 22
+Event: Administrator adds a new billing plan to the system to which users may subscribe
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the administrator when the administrator adds a new billing plan to the system~
+UC23	Name: Remove billing plan from system	ID: 23
+Event: Administrator removes a billing plan from the system
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the administrator when the administrator removes a billing plan from the system~
+UC24	Name: Add phone to system	ID: 24
+Event: Administrator adds a new phone to the system
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the administrator when the administrator adds a new phone to the system~
+UC25	Name: Remove phone from system	ID: 25
+Event: Administrator removes a phone from the system
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the administrator when the administrator removes a phone from the system~
+UC26	Name: Request hardware test	ID: 26
+Event: Administrator or System Timer requests tests be run on hardware
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the administrator when the administrator requests hardware tests be run on a set of phones~
+UC27	Name: View Hardware Test Log	ID: 27
+Event: Administrator views results from a previously-run hardware test
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the administrator when the administrator wishes to view the results of a hardware test~
+UC28	Name: Reset call process	ID: 28
+Event: Administrator resets a call process
+System: VOIP Network
+Overview: Description of system's internal behaviour and interaction with the administrator when the administrator resets a call process by resetting a phone to its base state~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

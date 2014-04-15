@@ -1,0 +1,69 @@
+F1	Users can communicate to another user by making phone calls.~
+F2	Occurs when callee picks up the handset, callee’s phone stops ringing, caller’s phone stops playing the ring tone, and audio connection is established between the caller and the callee.~
+F3	Caller picks up the phone and must successfully acquire resource~
+F4	Phone numbers are 4-digits. 4-digits are collected by the caller process from a Caller through a series of four "digits" signal events within the time limit.~
+F5	Caller dials '*11', which toggles on/off that phone's DND setting.~
+F6	System automatically searches for the number in the database for the associated IP~
+F7	User did not finish entering the phone number within the time limits of the system~
+F8	Caller may hangs up before the first digit is pressed, in between any digit pressed, when the call cannot be connected, when the call is connected, or when a call is terminated.~
+F9	Resource Manager checks to see if there are available resource left in the system~
+F10	Resource Manager sends "res_denied" signal to Caller Process. Caller Process plays a fast busy tone to let the user know~
+F11	Resource Manager frees a resource when the caller and callee has disconnected from the system~
+F12	The caller process checks if callee's phone is online/connectable. If yes, connect to callee's phone; otherwise, send a fast busy tone to the caller.~
+F13	A connection is made if the callee's phone is not busy and not in DND mode. The caller dialed a valid extension; the server had resources available, and found the IP for the Callee's phone.  The callee picks up the phone before timeout.~
+F14	A valid phone number contains 4 digits, no *,or #; must start with 1-9. The Caller Process validates phone numbers. Caller process sends a "valid_number" signal to the Call Manager and the Call Manager creates a Callee Process if the number is valid~
+F15	Caller enters a number and the Caller Process determines the number does not exist in the Database~
+F16	Callee hears the ring tone of his phone and picks up the receiver. Caller's phone ceases ring tone, and callee's phone stops ringing. Audio connection is established.~
+F17	Caller receives a "busy" signal from the Callee process if callee's phone is off hook~
+F18	Happens when Callee does not pick up the phone within the VoiceMsg Timer, Caller is given the choice of leaving a voice message.~
+F19	Caller process sends a signal to the Callee process telling it the caller has hung up. The Callee Process stops the ring and disconnect~
+F20	Information such as the caller’s phone number, or dnd status is on are displayed on Callee's/Caller’s phone~
+F21	Callee Process sends "call_answered" signal to Caller Process. Caller and Callee begin communicating~
+F22	Caller dials his/her own phone number to listen to the voice message left by other people from the database~
+F23	Delete the current voice message.~
+F24	Save the current voice message.~
+F25	Skip listening to current voice message.~
+F26	The Caller and Callee processes disconnect the users when they hang up, or if there's a time out~
+F27	User does not hang up within 30secs of hearing the fast busy tone, the system will disconnect the user and release the resource if the user is a caller~
+F28	User does not hang up within 10 seconds of hearing the busy tone, the system will disconnect the user and release the resource if the user is a caller~
+F29	Bill Manager logs the details of the call for billing purposes~
+F30	Administrator logs in to the system~
+F31	System Administrator is able to add user account to the system.~
+F32	A unique employee is identified by his/her employee ID.~
+F33	The Phone IP Mapping has a list of all Phone IP pairs and a Boolean value indicating whether it's available. The System returns the next available Phone IP pair to the Administrator~
+F34	Administrator changes the Phone IP pair status to "Used"~
+F35	Status of the account is set to "Active"~
+F36	System Administrator is able to cancel a user's phone service.~
+F37	A phone number becomes available when the user’s phone service is canceled. The Phone IP pair status is set "Available"~
+F38	Administrator reactivate a deactivated account~
+F39	System Administrator is able to enter a user's phone bill payment.~
+F40	Send a bill to the user, based on their usage for the previous billing period~
+F41	Create a new billing plan~
+F42	System Administrator is able to modify an existing billing plan~
+F43	Administrator enter the day of the month a department wants to be billed~
+F44	Administrator changes the issue date for the department's bill~
+F45	The user is able to request hardware check on his/her phone.~
+F46	System Administrator is able to set and change the maximum number of phone calls on the system.  System will not allow new calls if the number of calls exceeds this value.~
+F47	Administrator can view a list of available Phone IP pairs~
+F48	Administrator is allowed to change the mailbox capacity~
+F49	Administrator is allowed to change the hardware test plans~
+F50	Administrator is allowed to reset the phone in case of errors on the phone~
+F51	Administrator is able to search by Employee ID~
+F52	Administrator is able to search by Department~
+F53	The maximum number of simultaneous calls, the expected response time for all hardware tests, the expected duration for all timeout events on a phone.~
+F54	Displays an error message when the administrator did not enter the proper input for an input field.~
+F55	Administrator enter new department name, issue bill date etc~
+F56	Administrator can delete departments~
+F57	Administrator can delete plans in a department~
+F58	Administrator can set different privileges for departments. E.g. Voice Message, Call Display, DND Mode~
+F59	Administrator can change how often the voice messages are deleted~
+F60	Administrator can delete a user’s voice message~
+F61	Administrator can change the DND status of a user’s phone~
+F62	Administrator can check an administrator’s activity with the system~
+N1	Minimal training required to use.~
+N2	Use efficient algorithms to minimize response time and increase capacity.~
+N3	Does not unexpectedly exit or malfunction.~
+N4	Handles errors properly without crashing.~
+N5	Support for new features, upgrades, or integration with other systems.~
+N6	Handles small and large loads (near 1000 users) while still fulfilling Requirement # N2.~
+N7	Application development stays on budget and on time.~

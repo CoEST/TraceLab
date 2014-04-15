@@ -1,0 +1,4 @@
+org.mozilla.javascript.NativeString.execIdCall
+org.mozilla.javascript.ScriptRuntime.wrapInt
+org.mozilla.javascript.NativeString.findPrototypeId
+org.mozilla.javascript.NativeString.initPrototypeId

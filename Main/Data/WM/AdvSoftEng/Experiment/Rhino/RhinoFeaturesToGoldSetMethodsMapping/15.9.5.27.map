@@ -1,0 +1,4 @@
+org.mozilla.javascript.NativeDate.execIdCall
+org.mozilla.javascript.NativeDate.TimeClip
+org.mozilla.javascript.NativeDate.initPrototypeId
+org.mozilla.javascript.NativeDate.findPrototypeId

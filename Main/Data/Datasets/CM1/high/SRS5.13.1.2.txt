@@ -1,0 +1,1 @@
+ The DPU-TMALI shall be capable of making data available from the DCI to DPU-DPA.  DPU-TMALI will populate a ring buffer with frames of data for application task retrieval.

@@ -1,0 +1,122 @@
+﻿<graph>
+  <ExperimentInfo>
+    <Version>1</Version>
+    <Id>ce0bce43-123f-45a0-94ab-a529290c7a67</Id>
+    <Name>Defining Benchmark Test</Name>
+    <LayoutName>EfficientSugiyama</LayoutName>
+  </ExperimentInfo>
+  <node id="Start">
+    <SerializedVertexData Version="1" X="200" Y="100">
+      <Metadata type="TraceLab.Core.Components.StartNodeMetadata, TraceLab.Core, Version=0.4.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Start" />
+    </SerializedVertexData>
+  </node>
+  <node id="End">
+    <SerializedVertexData Version="1" X="200" Y="368">
+      <Metadata type="TraceLab.Core.Components.EndNodeMetadata, TraceLab.Core, Version=0.4.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="End" />
+    </SerializedVertexData>
+  </node>
+  <node id="86458d50-c9be-4f20-a173-514b322e7a75">
+    <SerializedVertexData Version="1" X="200.378" Y="166">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.4.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Import Data" ComponentMetadataDefinitionID="d98bd1e6-1db5-11e0-bfa9-3ee4dfd72085">
+        <IOSpec Version="1">
+          <Input />
+          <Output />
+          <Import>
+            <ImportItem>
+              <ImportItemDefinition Name="listOfArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" />
+              <ImportAs>listOfArtifacts</ImportAs>
+            </ImportItem>
+          </Import>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>Path</Name>
+              <DisplayName>Path</DisplayName>
+              <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Version=0.4.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <FilePath>
+                  <Version>2</Version>
+                  <Relative>DefiningBenchmarkTestData.xml</Relative>
+                </FilePath>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="02101b5c-b8ad-4e5b-b47d-0d8d3e8baf50">
+    <SerializedVertexData Version="1" X="200" Y="230">
+      <Metadata type="TraceLab.Core.Components.DecisionMetadata, TraceLab.Core, Version=0.4.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Dummy Decision">
+        <DecisionCode>Select("Preprocessor");
+</DecisionCode>
+        <DecisionMetadataDefinition>
+          <ID>cc92f9bc-537e-4653-9d3b-e5e5c27f14c3</ID>
+          <Classname>DecisionModule_cc92f9bc_537e_4653_9d3b_e5e5c27f14c3</Classname>
+          <Assembly>c:\p4root\reLab\branches\aczauderna\Decisions\cc92f9bc-537e-4653-9d3b-e5e5c27f14c3.dll</Assembly>
+        </DecisionMetadataDefinition>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="7e093316-ff27-4dae-abaf-7bf93b0f4cf7">
+    <SerializedVertexData Version="1" X="201" Y="301">
+      <Metadata type="TraceLab.Core.Components.CompositeComponentMetadata, TraceLab.Core, Version=0.4.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Preprocessor" ComponentMetadataDefinitionID="16534c79-8e9c-4c8e-9d6f-f3b27681b2a3">
+        <IOSpec Version="1">
+          <Input />
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="listOfArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" />
+              <OutputAs>listOfArtifacts</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import>
+            <ImportItem>
+              <ImportItemDefinition Name="originalListOfArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" />
+              <ImportAs>listOfArtifacts</ImportAs>
+            </ImportItem>
+          </Import>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>33a2b2e1-eace-47ab-8e00-8394668ca3e9:Path</Name>
+              <DisplayName>Artifacts Path</DisplayName>
+              <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Version=0.4.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <FilePath>
+                  <Version>2</Version>
+                  <Relative>Data\challenge1_HIPPA\HIPPA\2CCHIT.xml</Relative>
+                </FilePath>
+              </Value>
+            </PropertyObject>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>1ef84c31-abc8-4f9e-aafb-a75a2bf87c50:Path</Name>
+              <DisplayName>StopwordsImporter Path</DisplayName>
+              <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Version=0.4.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151</ValueType>
+              <Visible>False</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <FilePath>
+                  <Version>2</Version>
+                  <Relative>HIPPA\stopwords.txt</Relative>
+                </FilePath>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <edge id="d2e8d20b-6848-42ed-8d63-15796d1037a6" source="Start" target="86458d50-c9be-4f20-a173-514b322e7a75" />
+  <edge id="7fb59011-5486-41f6-ad6f-476e90b39bfd" source="86458d50-c9be-4f20-a173-514b322e7a75" target="02101b5c-b8ad-4e5b-b47d-0d8d3e8baf50" />
+  <edge id="e1ae55a8-1b1b-43df-8fb9-792b948e5937" source="02101b5c-b8ad-4e5b-b47d-0d8d3e8baf50" target="7e093316-ff27-4dae-abaf-7bf93b0f4cf7" />
+  <edge id="0985fec8-b410-4c23-a750-5e087724eccf" source="7e093316-ff27-4dae-abaf-7bf93b0f4cf7" target="End" />
+</graph>

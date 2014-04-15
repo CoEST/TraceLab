@@ -1,0 +1,2 @@
+org.mozilla.javascript.TokenStream.isJSFormatChar
+org.mozilla.javascript.TokenStream.getChar

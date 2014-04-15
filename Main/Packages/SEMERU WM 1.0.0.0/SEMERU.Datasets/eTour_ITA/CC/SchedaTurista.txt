@@ -1,0 +1,664 @@
+﻿package unisa.gps.etour.gui.operatore agenzia ;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.util. Date;
+import java.util. Iterator;
+import java.util. String Tokenizer;
+import java.util. Vector;
+import javax.swing.*;
+import javax.swing.event.*;
+import javax.swing.border.*;
+import unisa.gps.etour.bean. Bean Turista;
+import unisa.gps.etour.util. Data;
+
+/**
+ *  Classe che modella l'interfaccia per la visualizzazione della scheda e 
+ * la modifica dei dati di un account turista.
+ *  
+ * @version  . 
+ * @author  Mario  Gallo
+ * 
+ * &#   ;      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I -
+ *          University of  Salerno
+ */
+public class  Scheda Turista extends  J Internal Frame implements  I Scheda
+{
+
+	private static final  String[] help = { "", "", "", "", "", "", "", "", "",
+			"", "", "", "", "" };
+	private  J Panel j Content Pane = null;
+	private  J Tool Bar toolbar Scheda Turista = null;
+	private  J Toggle Button btn Modifica = null;
+	private  J Button btn Salva = null;
+	private  J Button btn Reimposta = null;
+	private  J Tabbed Pane j Tabbed Pane = null;
+	private  J Text Field indirizzo  = null;
+	private  J Combo Box indirizzo  = null;
+	private  J Text Field citta = null;
+	private  J Text Field cap = null;
+	private  J Text Field telefono = null;
+	private  J Combo Box provincia = null;
+	private  J Panel dati Turista = null;
+	private  J Text Field nome = null;
+	private  Vector< J Label> suggerimenti;
+	private  Bean Turista turista;
+	private  J Text Field cognome;
+	private  J Combo Box giorno;
+	private  J Combo Box mese;
+	private  J Combo Box anno;
+	private  J Text Field luogo Nascita;
+	private  J Text Field email;
+	private  J Text Field username;
+	private  J Password Field password;
+	private  J Label data Registrazione;
+	private  Turisti parent;
+
+	/**
+	 * 
+	 *  L'unico costruttore modella la scheda di un turista o la modifica dei dati
+	 * a partire dal bean.
+	 * 
+	 * @param p Parent unisa.gps.etour.gui.operatore agenzia . Turisti - la finestra "padre".
+	 * @param p Turista unisa.gps.etour.bean. Bean Turista - il bean contenente i dati
+	 * del turista.
+	 * @param  p Modifica boolean<ul><li>true - se si procede alla modifica dei 
+	 * dati.<li>false - se si sta visualizzando la scheda.	    
+	 * 
+	 */
+	public  Scheda Turista( Turisti p Parent,  Bean Turista p Turista,
+			boolean p Modifica)
+	{
+		super();
+		this.parent = p Parent;
+		set Iconifiable(true);
+		set Size(   ,    );
+		suggerimenti = new  Vector< J Label>();
+		set Default Close Operation( Window Constants. D O_ N O T H I N G_ O N_ C L O S E);
+		set Closable(true);
+		turista = p Turista;
+		if (turista.is Attiva())
+		{
+			frame Icon = new  Image Icon(
+					get Class()
+							.get Resource(
+									"/unisa/gps/etour/gui/operatore agenzia /images/ Scheda Turista.png"));
+		}
+		else
+		{
+			frame Icon = new  Image Icon(
+					get Class()
+							.get Resource(
+									"/unisa/gps/etour/gui/operatore agenzia /images/ Disattiva Turista  .png"));
+		}
+		initialize();
+		if (p Modifica)
+		{
+			btn Modifica.set Selected(true);
+			btn Salva.set Visible(true);
+			btn Reimposta.set Visible(true);
+		}
+		else
+		{
+			mostra Nascondi Suggerimenti();
+			attiva Disattiva Edit();
+		}
+		add Internal Frame Listener(new  Internal Frame Adapter()
+		{
+			public void internal Frame Closing( Internal Frame Event p Event)
+			{
+				if (btn Modifica.is Selected())
+				{
+					 J Panel root = new  J Panel(new  Border Layout());
+					 J Label message = new  J Label(
+						" Sei sicuro di voler chiudere la scheda di questo turista?");
+					message.set Font(new  Font(" Dialog",  Font. B O L D,   ));
+					 J Label avviso = new  J Label(
+						" Attenzione!  I dati non salvati verranno persi.",  Swing Constants. C E N T E R);
+					avviso.set Icon(new  Image Icon(get Class().get Resource(
+						"/unisa/gps/etour/gui/operatore agenzia /images/warning  .png")));
+					root.add(message,  Border Layout. N O R T H);
+					root.add(avviso,  Border Layout. S O U T H);
+					 String[] options = { " Chiudi", " Annulla" };
+					int choice =  J Option Pane.show Internal Option Dialog(j Content Pane, root, 
+							" Conferma chiusura  Scheda  Turista " + turista.get Nome() + " " + turista.get Cognome(),
+							 J Option Pane. O K_ C A N C E L_ O P T I O N,  J Option Pane. Q U E S T I O N_ M E S S A G E, frame Icon, options, options[ ]);  
+					if (choice ==  J Option Pane. O K_ O P T I O N)
+					{
+						parent.close Scheda(( Scheda Turista)p Event.get Internal Frame());
+					}
+				}
+				else 
+				{
+					parent.close Scheda(( Scheda Turista)p Event.get Internal Frame());	
+				}
+			}
+		});
+	}
+
+	/**
+	 * 
+	 *  Questo metodo inizializza l'interfaccia della scheda di un turista.
+	 * 
+	 * @return void
+	 * 
+	 */
+	private void initialize()
+	{
+		j Content Pane = new  J Panel();
+		j Content Pane.set Layout(new  Border Layout());
+		j Content Pane.add(get Toolbar Scheda Turista(),  Border Layout. S O U T H);
+		j Tabbed Pane = new  J Tabbed Pane();
+		j Tabbed Pane.set Cursor(new  Cursor( Cursor. D E F A U L T_ C U R S O R));
+		j Tabbed Pane.add Tab(" Dati  Turista", frame Icon, get Dati Turista Form(),
+				null);
+		j Content Pane.add(j Tabbed Pane,  Border Layout. C E N T E R);
+		set Content Pane(j Content Pane);
+		carica Dati Form();
+	}
+
+	/**
+	 * 
+	 *  Questo metodo carica i dati del bean turista fornito nei campi
+	 * della form.
+	 * 
+	 * @return void
+	 *
+	 */
+	private void carica Dati Form()
+	{
+		set Title(" Profilo  Turista - " + turista.get Nome() + " "
+				+ turista.get Cognome());
+		nome.set Text(turista.get Nome());
+		cognome.set Text(turista.get Cognome());
+		 Date data Nascita = turista.get Data Nascita();
+		giorno.set Selected Index(data Nascita.get Date());
+		mese.set Selected Index(data Nascita.get Month());
+		anno.set Selected Index(data Nascita.get Year());
+		 String Tokenizer tokenizer = new  String Tokenizer(turista.get Via());
+		 String stringa = tokenizer.next Token();
+		indirizzo .set Selected Item(stringa);
+		indirizzo .set Text(turista.get Via().substring(stringa.length()));
+		luogo Nascita.set Text(turista.get Citta Nascita());
+		telefono.set Text(turista.get Telefono());
+		citta.set Text(turista.get Citta Residenza());
+		password.set Text(turista.get Password());
+		provincia.set Selected Item(turista.get Provincia());
+		username.set Text(turista.get Username());
+		cap.set Text(turista.get Cap());
+		email.set Text(turista.get Email());
+		data Registrazione
+				.set Text( Data.to Estesa(turista.get Data Registrazione()));
+	}
+
+	/**
+	 * 
+	 *  Questo metodo mostra o nasconde i suggerimenti relativi ai campi della form.
+	 * 
+	 * @return void
+	 *
+	 */
+	private void mostra Nascondi Suggerimenti()
+	{
+		 Iterator< J Label> s = suggerimenti.iterator();
+		while (s.has Next())
+		{
+			 J Label corrente = s.next();
+			corrente.set Visible(corrente.is Visible() ? false : true);
+		}
+	}
+
+	/**
+	 * 
+	 *  Questo metodo rende editabili o meno i campi della form.
+	 * 
+	 * @return void
+	 *
+	 */
+	private void attiva Disattiva Edit()
+	{
+		 Component[] componenti = dati Turista.get Components();
+		for (int i =  ; i < componenti.length; i++)
+		{
+			 Component corrente = componenti[i];
+			if (corrente instanceof  J Text Field)
+			{
+				 J Text Field textbox = ( J Text Field) corrente;
+				textbox.set Editable(textbox.is Editable() ? false : true);
+				textbox.set Background( Color.white);
+
+			}
+			else if (corrente instanceof  J Combo Box)
+			{
+				 J Combo Box combobox = ( J Combo Box) corrente;
+				combobox.set Enabled(combobox.is Enabled() ? false : true);
+
+			}
+		}
+	}
+
+	/**
+	 *  Questo metodo inizializza la toolbar per le funzionalit� della scheda
+	 * turista.	
+	 * 	
+	 * @return javax.swing. J Tool Bar
+	 * 
+	 */
+	private  J Tool Bar get Toolbar Scheda Turista()
+	{
+		if (toolbar Scheda Turista == null)
+		{
+			toolbar Scheda Turista = new  J Tool Bar();
+			toolbar Scheda Turista.set Floatable(false);
+			toolbar Scheda Turista.add(get Btn Modifica());
+			toolbar Scheda Turista.add Separator();
+			toolbar Scheda Turista.add(get Btn Salva());
+			toolbar Scheda Turista.add Separator();
+			toolbar Scheda Turista.add(get Btn Reimposta());
+			toolbar Scheda Turista.add Separator();
+		}
+		return toolbar Scheda Turista;
+	}
+
+	/**
+	 *  Questo metodo inizializza il pulsante per la modifica dei dati.	
+	 * 	
+	 * @return javax.swing. J Toggle Button
+	 *  
+	 */
+	private  J Toggle Button get Btn Modifica()
+	{
+		if (btn Modifica == null)
+		{
+			btn Modifica = new  J Toggle Button();
+			btn Modifica.set Text(" Modifica  Dati");
+			btn Modifica
+					.set Icon(new  Image Icon(
+							get Class()
+									.get Resource(
+											"/unisa/gps/etour/gui/operatore agenzia /images/ Modifica Turista  .png")));
+			btn Modifica
+					.set Tool Tip Text(" Attiva o disattiva la modifica dei dati del turista selezionato.");
+			btn Modifica.add Action Listener(new  Action Listener()
+			{
+
+				public void action Performed( Action Event arg )
+				{
+					mostra Nascondi Suggerimenti();
+					attiva Disattiva Edit();
+					btn Salva.set Visible((btn Modifica.is Selected() ? true
+							: false));
+					btn Reimposta.set Visible((btn Modifica.is Selected() ? true
+							: false));
+
+				}
+
+			});
+		}
+		return btn Modifica;
+	}
+
+	/**
+	 *  Questo metodo inizializza il pulsante per il salvataggio delle modifiche
+	 * apportate ai dati del turista.	
+	 * 	
+	 * @return javax.swing. J Button	
+	 */
+	private  J Button get Btn Salva()
+	{
+		if (btn Salva == null)
+		{
+			btn Salva = new  J Button();
+			btn Salva.set Text(" Salva");
+			btn Salva.set Icon(new  Image Icon(get Class().get Resource(
+					"/unisa/gps/etour/gui/operatore agenzia /images/salva.png")));
+			btn Salva
+					.set Tool Tip Text(" Salva le modifiche apportate al profilo turista selezionato.");
+			btn Salva.set Visible(false);
+			btn Salva.add Action Listener(new  Action Listener()
+			{
+				public void action Performed( Action Event p Event)
+				{
+					// Costruzione della dialog per la conferma della modifica
+					 J Panel root = new  J Panel(new  Border Layout());
+					 J Label message = new  J Label(
+							" Aggiornare il profilo  Turista di"
+									+ turista.get Nome() + " "
+									+ turista.get Cognome() + " con i"
+									+ " dati della form?");
+					message.set Font(new  Font(" Dialog",  Font. B O L D,   ));
+					 J Label avviso = new  J Label(
+							" I dati precedenti non potranno essere pi� recuperati.",
+							 Swing Constants. C E N T E R);
+					avviso
+							.set Icon(new  Image Icon(
+									get Class()
+											.get Resource(
+													"/unisa/gps/etour/gui/operatore agenzia /images/warning  .png")));
+					root.add(message,  Border Layout. N O R T H);
+					root.add(avviso,  Border Layout. S O U T H);
+					 String[] options = { " Modifica", " Annulla" };
+					// La dialog viene visualizzata a schermo
+					int scelta =  J Option Pane
+							.show Internal Option Dialog(
+									j Content Pane,
+									root,
+									" Conferma  Modifica  Dati  Turista",
+									 J Option Pane. Y E S_ N O_ O P T I O N,
+									 J Option Pane. Q U E S T I O N_ M E S S A G E,
+									new  Image Icon(
+											get Class()
+													.get Resource(
+															"/unisa/gps/etour/gui/operatore agenzia /images/ Modifica Turista  .png")),
+									options, options[ ]);
+					// Se si � scelto di confermare la modifica
+					if (scelta ==  J Option Pane. Y E S_ O P T I O N)
+					{
+						turista.set Nome(nome.get Text());
+						turista.set Cognome(cognome.get Text());
+						turista.set Cap(cap.get Text());
+						turista.set Citta Nascita(luogo Nascita.get Text());
+						turista.set Data Nascita(new  Date(
+								anno.get Selected Index(), mese
+										.get Selected Index(), giorno
+										.get Selected Index()));
+						turista.set Citta Residenza(citta.get Text());
+						turista.set Username(username.get Text());
+						turista.set Email(email.get Text());
+						turista.set Telefono(telefono.get Text());
+						turista.set Via(indirizzo .get Selected Item().to String()
+								+ " " + indirizzo .get Text());
+						turista.set Provincia(provincia.get Selected Item()
+								.to String());
+						 String pass = "";
+						char[] pass Word = password.get Password();
+						for (int i =  ; i < pass Word.length; i++)
+						{
+							pass += pass Word[i];
+						}
+						turista.set Password(pass);
+						carica Dati Form();
+						attiva Disattiva Edit();
+						btn Salva.set Visible(false);
+						btn Reimposta.set Visible(false);
+						btn Modifica.set Selected(false);
+						mostra Nascondi Suggerimenti();
+						parent.update Table Model(turista);
+						 J Option Pane
+								.show Internal Message Dialog(
+										j Content Pane,
+										" I dati del turista sono stati aggiornati correttamente.",
+										" Profilo  Turista  Modificato!",
+										 J Option Pane. O K_ O P T I O N,
+										new  Image Icon(
+												get Class()
+														.get Resource(
+																"/unisa/gps/etour/gui/operatore agenzia /images/ok  .png")));
+					}
+				}
+			});
+		}
+		return btn Salva;
+	}
+
+	/**
+	 *  Questo metodo inizializza il pulsante per reimpostare i dati del turista
+	 * nella form.	
+	 * 	
+	 * @return javax.swing. J Button	
+	 */
+	private  J Button get Btn Reimposta()
+	{
+		if (btn Reimposta == null)
+		{
+			btn Reimposta = new  J Button();
+			btn Reimposta.set Text(" Reimposta");
+			btn Reimposta
+					.set Icon(new  Image Icon(
+							get Class()
+									.get Resource(
+											"/unisa/gps/etour/gui/operatore agenzia /images/ Annulla  .png")));
+			btn Reimposta
+					.set Tool Tip Text(" Ricarica i dati del turista selezionato.");
+			btn Reimposta.set Visible(false);
+			btn Reimposta.add Action Listener(new  Action Listener()
+			{
+				public void action Performed( Action Event arg )
+				{
+					carica Dati Form();
+				}
+			});
+		}
+		return btn Reimposta;
+	}
+
+	/**
+	 *  Questo metodo inizializza la form contenente i dati del turista.	
+	 * 	
+	 * @return javax.swing. J Panel	
+	 * 
+	 */
+	private  J Panel get Dati Turista Form()
+	{
+		if (dati Turista == null)
+		{
+			dati Turista = new  J Panel(null);
+			dati Turista.set Border(new  Soft Bevel Border( Soft Bevel Border. L O W E R E D));
+			// Creazione  Suggerimenti
+			 String[] txts = { " Nome", " Cognome", " Data di  Nascita",
+					" Luogo di  Nascita", " Telefono", " Indirizzo", " Citt�",
+					" C A P", " Provincia", " E- Mail", " Username", " Password",
+					" Registrato il" };
+
+			for (int i =  ; i < help.length; i++)
+			{
+				 J Label nuova = new  J Label();
+				nuova.set Icon(new  Image Icon(get Class().get Resource(
+						"/unisa/gps/etour/gui/images/ Info  .png")));
+				nuova.set Bounds(   ,   +    * i,   ,   );
+				nuova.set Cursor( Cursor.get Predefined Cursor( Cursor. H A N D_ C U R S O R));
+				nuova.set Tool Tip Text(help[i]);
+				suggerimenti.add(nuova);
+				dati Turista.add(nuova);
+
+			}
+
+			for (int i =  ; i < txts.length; i++)
+			{
+				 J Label nuova = new  J Label(txts[i],  Swing Constants. R I G H T);
+				nuova.set Bounds(  ,    +    * i,    ,   );
+				nuova.repaint();
+				dati Turista.add(nuova, null);
+			}
+			// Nome
+			nome = new  J Text Field(  );
+			nome.set Bounds(   ,   ,    ,   );
+			nome.set Name(" Nome");
+			dati Turista.add(nome, null);
+
+			// Cognome
+			cognome = new  J Text Field(  );
+			cognome.set Bounds(   ,   ,    ,   );
+			cognome.set Name(" Cognome");
+			dati Turista.add(cognome, null);
+
+			// Data di nascita
+			giorno = new  J Combo Box();
+			giorno.set Bounds(   ,   ,   ,   );
+			for (int i =  ; i <=   ; i++)
+			{
+				giorno.add Item(i);
+			}
+			mese = new  J Combo Box();
+			mese.add Action Listener(new  Action Listener()
+			{
+
+				public void action Performed( Action Event p Event)
+				{
+					int numero = giorno.get Item Count();
+					switch (mese.get Selected Index())
+					{
+						case  :
+						case  :
+						case  :
+						case  :
+						case  :
+						case  :
+						case   :
+							for (int i = numero +  ; i <=   ; i++)
+							{
+								giorno.add Item(i);
+							}
+						break;
+
+						case  :
+							int year = ( Integer) anno.get Selected Item();
+							boolean bisestile = ((year %   ==   && year %     !=  ) || (year %     ==  ));
+							if (numero !=   )
+							{
+								for (int i = numero -  ; i >   ; i--)
+								{
+									giorno.remove Item At(i);
+								}
+							}
+							if (bisestile && numero !=   )
+							{
+								giorno.add Item("  ");
+							}
+						break;
+
+						case  :
+						case  :
+						case  :
+						case   :
+							if (numero ==   )
+							{
+								giorno.remove Item At(  );
+							}
+							else
+							{
+								for (int i = numero +  ; i <=   ; i++)
+								{
+									giorno.add Item(i);
+								}
+							}
+						break;
+					}
+				}
+
+			});
+			mese.set Bounds(   ,   ,   ,   );
+			for (int i =  ; i <=   ; i++)
+			{
+				mese.add Item(i);
+			}
+			anno = new  J Combo Box();
+			anno.add Action Listener(new  Action Listener()
+			{
+
+				public void action Performed( Action Event arg )
+				{
+					if (mese.get Selected Index() ==  )
+					{
+						int year = ( Integer) anno.get Selected Item();
+						boolean bisestile = ((year %   ==   && year %     !=  ) || (year %     ==  ));
+						int numero = giorno.get Item Count();
+						if (bisestile && numero !=   )
+						{
+							giorno.add Item("  ");
+						}
+						else if (!bisestile && numero ==   )
+						{
+							giorno.remove Item At(  );
+						}
+					}
+
+				}
+
+			});
+			anno.set Bounds(   ,   ,   ,   );
+			 Date odierna = new  Date();
+			for (int i =  ; i <= odierna.get Year() -   ; i++)
+			{
+				anno.add Item(     + i);
+			}
+			dati Turista.add(giorno, null);
+			dati Turista.add(mese, null);
+			dati Turista.add(anno, null);
+
+			// Luogo di  Nascita
+			luogo Nascita = new  J Text Field(  );
+			luogo Nascita.set Bounds(   ,    ,    ,   );
+			luogo Nascita.set Name(" Luogo  Nascita");
+			dati Turista.add(luogo Nascita, null);
+
+			// Telefono
+			telefono = new  J Text Field(  );
+			telefono.set Bounds(   ,    ,    ,   );
+			telefono.set Name(" Telefono");
+			dati Turista.add(telefono, null);
+
+			// Indirizzo
+			indirizzo  = new  J Text Field(  );
+			indirizzo .set Bounds(   ,    ,    ,   );
+			indirizzo  = new  J Combo Box( I N D I R I Z Z I);
+			indirizzo .set Selected Index(- );
+			indirizzo .set Bounds(   ,    ,   ,   );
+			dati Turista.add(indirizzo , null);
+			dati Turista.add(indirizzo , null);
+
+			// Citt�
+			citta = new  J Text Field(  );
+			citta.set Bounds(   ,    ,    ,   );
+			citta.set Name(" Citt�");
+			dati Turista.add(citta, null);
+
+			// C A P
+			cap = new  J Text Field( );
+			cap.set Bounds(   ,    ,   ,   );
+			dati Turista.add(cap, null);
+
+			// Provincia
+			provincia = new  J Combo Box( P R O V I N C E);
+			provincia.set Selected Index(- );
+			provincia.set Bounds(   ,    ,   ,   );
+			dati Turista.add(provincia, null);
+
+			// E- Mail
+			email = new  J Text Field();
+			email.set Bounds(   ,    ,    ,   );
+			email.set Name(" E- Mail");
+			dati Turista.add(email, null);
+
+			// Username
+			username = new  J Text Field();
+			username.set Bounds(   ,    ,    ,   );
+			username.set Name(" Username");
+			dati Turista.add(username, null);
+
+			// Password
+			password = new  J Password Field(  );
+			password.set Bounds(   ,    ,    ,   );
+			password.set Name(" Password");
+			dati Turista.add(password, null);
+
+			// Data  Registrazione
+			data Registrazione = new  J Label();
+			data Registrazione.set Bounds(   ,    ,    ,   );
+			dati Turista.add(data Registrazione, null);
+		}
+		return dati Turista;
+	}
+
+	/**
+	 *  Questo metodo ritorna l'id del turista che si sta visualizzando / 
+	 * modificando.
+	 * 
+	 * @return int - l'id del turista.
+	 * 
+	 */
+	public int get Id()
+	{
+		return turista.get Id();
+	}
+}

@@ -1,0 +1,4 @@
+1	a c c c c e e f
+2	a a a a b c c d e e e f f f
+3	a a a b b b c f f
+4	a a b e e

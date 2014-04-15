@@ -1,0 +1,15 @@
+﻿Algorithm 2 - UD-CSTI
+=====================
+while not (stopping criterion) do
+	Get the link (s, c_j) on top of List
+	The user classiﬁes (s, c_j)
+	if (s, c_j) is correct then
+		for all c_t ∈ C do
+			if (c_j , c_t) ∈ E then
+				Sim(s, c_t) ← Sim(s, c_t) + δ
+			end if
+		end for
+	end if
+	Reorder List
+	Hide links already classiﬁed
+end while

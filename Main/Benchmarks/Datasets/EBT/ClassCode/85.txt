@@ -1,0 +1,64 @@
+           Decompose Model
+           "public Decompose  Model  (  EBT em  )
+              {
+            super  ( em  );
+            Minimum  No  Rects = 3  ;
+           }"
+           "// Construct Visual model for Merge Event
+              public void Build  Event  ()
+              {
+               Clear  Vectors  ();
+            Add  Event  Rect  (  20    20    1  );
+            Add  Event  Rect  (  60    70    1  );
+            Add  Event  Rect  (  60    120    1  );
+            Add  Event  Rect  (  60    170    2  );
+            Add  Event  Rect  (  60    220    2  );
+          
+            Add  Line  (  40    56    40    85  );
+            Add  Arrow  (  40    85    59    85  );
+          
+            Add  Line  (  40    85    40    135  );
+            Add  Arrow  (  40    135    59    135  );
+          
+            Add  Line  (  40    135    40    185  );
+            Add  Arrow  (  40    185    59    185  );
+          
+            Add  Line  (  40    185    40    235  );
+            Add  Arrow  (  40    235    59    235  );
+            Current  Event = 1  ;
+          
+              }"
+           "public String  Buffer Generate  Event  ()
+              {
+            String  Buffer this  Event = new String  Buffer  ();
+            String  Buffer temp = new String  Buffer  ();
+            int Count = -1  ;
+            this  Event  . append  (""  Decompose  |"");
+          
+            for ( int i = 0  ; i < Event  Shapes  . size  (); i  ++)
+            {
+                   ebs = (  EBShape  )  Event  Shapes  . element  At  ( i  );
+             if (( ebs  .  Get  Reqno  ()). length  () > 0  )
+             {
+                temp  . append  ( ebs  .  Get  Reqno  ()+ '    ' + ebs  .  Get  Project  () + """");
+                temp  . append  ( ebs  .  Get  Module  () + """");
+                if ( i == 0 )
+                {
+               // Stuff requirement  ;
+               temp  . append  ( get  requirement Text  ( ebs  .  Get  Reqno  () ebs  .  Get  Project  () ebs  .  Get  Module  ())+ ""  Y  |"");
+                }
+                else
+                {
+               // Stuff blank
+               temp  . append  (""   N  |"");
+                }
+                Count  = Count + 1  ;
+             }
+            }
+            this  Event  . append  ( new Integer  (  Count  ). to  String  ()+ ""|"");
+            this  Event  . append  ( new Date  (). to  String  () + ""|"");
+          
+            this  Event  . append  ( temp  );
+          
+            return this  Event  ;
+              }"

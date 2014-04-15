@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<graph>
+  <WorkflowInfo>
+    <Version>1</Version>
+    <Id>7b1e58f8-c9d6-470b-9db2-6826c5efb63d</Id>
+    <Name>&lt;Experiment name&gt;</Name>
+    d="1c140b53-6b47-475e-89ec-5707928bbde5">
+          </Input>
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="listOfArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" />
+              <OutputAs>targetArtifacts</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import />
+        </IOSpec>
+ 561a" />
+  <edge id="b6845856-e64f-4741-8e61-12e9c47b9e60" source="69ec93fa-addb-4b42-95be-87e571ff561a" target="915976dc-d949-4839-844a-be56f4e8b88e" />
+  <edge id="b0a689a1-a35a-4231-b42a-d943f9cf82e8" source="915976dc-d949-4839-844a-be56f4e8b88e" target="End" />
+</graph>

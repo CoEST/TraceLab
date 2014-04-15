@@ -1,0 +1,1354 @@
+package unisa.gps.etour.gui.operatore agenzia ;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.rmi. Remote Exception;
+import java.rmi.registry. Locate Registry;
+import java.rmi.registry. Registry;
+import java.util. Array List;
+import java.util. Date;
+import java.util. Hash Map;
+import java.util. Iterator;
+import java.util. String Tokenizer;
+import java.util. Vector;
+import javax.swing.*;
+import javax.swing.event.*;
+import javax.swing.table. Table Column;
+import javax.swing.text. J Text Component;
+import javax.swing.border.*;
+import unisa.gps.etour.bean. Bean Bene Culturale;
+import unisa.gps.etour.bean. Bean Tag;
+import unisa.gps.etour.bean. Bean Visita B C;
+import unisa.gps.etour.control. Gestione Beni Culturali. I Gestione Beni Culturali Agenzia;
+import unisa.gps.etour.control. Gestione Tag. I Gestione Tag Comune;
+import unisa.gps.etour.gui.operatore agenzia .document. Limited Document;
+import unisa.gps.etour.gui.operatore agenzia .document. Numeric Document;
+import unisa.gps.etour.gui.operatore agenzia .document. Only Characters Document;
+import unisa.gps.etour.gui.operatore agenzia .tables. Feed Back Table Model;
+import unisa.gps.etour.gui.operatore agenzia .tables. Media Voti Renderer;
+import unisa.gps.etour.util. Punto  D;
+
+
+/**
+ *  Classe che modella l'interfaccia per la visualizzazione della scheda, 
+ * la modifica dei dati e l'inserimento di un nuovo bene culturale.
+ * 
+ * @version  . 
+ * @author  Mario  Gallo
+ * 
+ * &#   ;      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I -
+ *          University of  Salerno 
+ * 
+ */
+public class  Scheda B C extends  J Internal Frame implements  I Scheda
+{	
+
+	private static final  String[] txts = { " Nome", " Indirizzo", " Città", " Località", " C A P",
+			" Provincia", " Posizione  Geografica", " Telefono",
+			" Orario di  Apertura", " Orario di  Chiusura",
+			" Giorno di  Chiusura", " Costo biglietto", " Descrizione" }; 
+	private static final  String[] help = {
+			" Inserire il nome del bene culturale.",
+			" Inserire l'indirizzo dove è situato il bene culturale.",
+			" Inserire la citta' dove è situato il bene culturale.",
+			" Inserire la localita' di appartenenza del bene culturale.",
+			" Inserire il  Codice di  Avviamento  Postale per la zona in cui è situato il bene culturale.",
+			" Selezionare la provincia di appartenza per il bene culturale.",
+			" Inserire le coordinate tridimensionali relative alla posizione del " +
+			"bene culturale.",
+			" Inserire il recapito telefono per l'ufficio di gestione del bene culturale.",
+			" Selezionare l'orario di apertura al pubblico del bene culturale.",
+			" Selezionare l'orario di chiusura al pubblico del bene culturale.",
+			" Selezionare il giorno di chiusura settimanale.",
+			" Indicare il costo del biglietto di ingresso al bene culturale.",
+			"<html> Inserire una descrizione completa ed esaustiva per il bene culturale.<br> Attenzione!  Tale " +
+			"descrizione verrà utilizzata come sorgente delle parole chiave<br>nelle ricerche effettuate dai " +
+			"turisti</html>",
+			"<html> Seleziona i tag di ricerca per il bene culturale.<br> I tag di ricerca consentono ai turisti di ricercare" + 
+			" i siti con le caratteristiche di interesse.</html>"};
+	private  J Panel j Content Pane = null;
+	private  J Tool Bar toolbar Scheda B C = null;
+	private  J Toggle Button btn Modifica = null;
+	private  J Button btn Salva = null;
+	private  J Button btn Annulla = null;
+	private  J Button btn Modifica Commento = null;
+	private  J Tabbed Pane j Tabbed Pane = null;
+	private  J Panel statistiche = null;
+	private  J Panel feedback = null;
+	private  J Text Field indirizzo  = null;
+	private  J Combo Box indirizzo  = null;
+	private  J Text Field citta B C = null;
+	private  J Text Field localita B C = null;
+	private  J Text Field cap B C = null;
+	private  J Text Field pos Geo X = null;
+	private  J Scroll Pane j Scroll Pane = null;
+	private  J Text Area descrizione B C = null;
+	private  J Text Field telefono B C = null;
+	private  J Combo Box ore A P = null;
+	private  J Combo Box min A P = null;
+	private  Tag Panel pannello Tag;
+	private  J Text Field costo B C = null;
+	private  J Combo Box ore C H = null;
+	private  J Combo Box min C H = null;
+	private  J Combo Box prov B C = null;
+	private  J Panel dati B C = null;
+	private  J Text Field nome B C = null;
+	private  J Scroll Pane scroll Pane Feedback = null;
+	private  J Table table Feedback = null;
+	private  J Label txt Nome Bene = null;
+	private  J Label media Voto B C = null;
+	private  J Panel stat Mese Corrente = null;
+	private  J Panel stat Totali = null;
+	private  J Text Field pos Geo Y = null;
+	private  J Text Field pos Geo Z = null;
+	private  Vector< J Label> suggerimenti;
+	private  Bean Bene Culturale bc;
+	private  J Combo Box giorno Chiusura;
+	private  J Label[] stat Mese C;
+	private  J Label[] stat T;
+	private  Beni Culturali parent;
+	private  Feed Back Table Model feedback Model;
+	protected  I Gestione Tag Comune tag;
+	protected  I Gestione Beni Culturali Agenzia gestione B C;
+	private  Array List< Integer> id Tag = null;
+
+	/**
+	 *  Il costruttore di default modella l'interfaccia relativa all'inserimento di
+	 * un nuovo bene culturale.
+	 * 
+	 */
+	public  Scheda B C( Beni Culturali p Parent)
+	{
+		super(" Nuovo  Bene  Culturale");
+		frame Icon = new  Image Icon(get Class().get Resource(
+			 Home. U R L_ I M A G E S + "nuovo B C.png"));
+		closable = true;
+		resizable = false;
+		iconable = true;
+		set Size(   ,    );
+		set Default Close Operation( Window Constants. D O_ N O T H I N G_ O N_ C L O S E);
+		suggerimenti = new  Vector< J Label>();
+		parent = p Parent;
+		bc = null;
+		
+		// Inizializzazione del content pane
+		j Content Pane = new  J Panel();
+		j Content Pane.set Layout(new  Border Layout());
+		j Content Pane.add(get Toolbar Scheda B C(),  Border Layout. S O U T H);
+		j Tabbed Pane = new  J Tabbed Pane();
+		j Tabbed Pane.add Tab(	" Dati  Bene  Culturale",
+						new  Image Icon(get Class().get Resource(
+							 Home. U R L_ I M A G E S + "dati.png")),
+						get Dati B C Form(), null);
+		j Content Pane.add(j Tabbed Pane,  Border Layout. C E N T E R);
+		set Content Pane(j Content Pane);
+		
+		// Dialogo di chiusura per la chiusura della finestra di inserimento.
+		add Internal Frame Listener(new  Internal Frame Adapter()
+		{
+			/*
+			 *  All'inserimento del frame nel desktop pane recupera desktop pane
+			 * e desktop manager e inizializza gli oggetti remoti per la gestione
+			 * dei beni culturali.
+			 */ 
+			
+			public void internal Frame Opened( Internal Frame Event p Event)
+			{
+				 J Internal Frame frame = p Event.get Internal Frame();
+			
+				// Setting up degli oggetti remoti per la gestione dei beni culturali.
+				try
+				{
+					 Registry reg =  Locate Registry.get Registry( Home. H O S T);
+					tag = 
+						( I Gestione Tag Comune)reg.lookup(" Gestione Tag Comune");
+					gestione B C = 
+						( I Gestione Beni Culturali Agenzia) reg.lookup(" Gestione Beni Culturali Agenzia");
+					// Caricamento dei dati.
+					carica Tags();
+				}
+				/*
+				 *  Due eccezioni:  Remote Exception e  Not Bound Exception.  Il
+				 * risultato è lo stesso.  La gestione non è operabile e la
+				 * finestra dopo il messaggio di errore verrà chiusa.
+				 */
+				catch ( Exception ex)
+				{
+					 J Label errore = new  J Label(
+							"<html><h > Impossibile comunicare con il server di e Tour.</h >"
+									+ "<h ><u> La scheda per l'inserimento di un nuovo bene culturale verrà chiusa.</u></h >"
+									+ "<p><b> Possibili  Cause:</b>"
+									+ "<ul><li> Nessuna connessione alla rete.</li>"
+									+ "<li> Server inattivo.</li>"
+									+ "<li> Server intasato.</li></ul>"
+									+ "<p> Si prega di riprovare in un secondo momento.</p>"
+									+ "<p> Se l'errore dovesse persistere, si prega di contattare l'assistenza tecnica.</p>"
+									+ "<p> Ci scusiamo per il disagio.</html>");
+					 Image Icon err = new  Image Icon(get Class().get Resource(
+							 Home. U R L_ I M A G E S + "error  .png"));
+					 J Option Pane.show Message Dialog(frame, errore,
+							" Errore!",  J Option Pane. E R R O R_ M E S S A G E, err);
+					frame.dispose();
+				}
+			}
+			
+			public void internal Frame Closing( Internal Frame Event p Event)
+			{
+				 J Panel root = new  J Panel(new  Border Layout());
+				 J Label message = new  J Label(
+					" Sei sicuro di voler annullare la creazione di un nuovo bene culturale?");
+				message.set Font(new  Font(" Dialog",  Font. B O L D,   ));
+				 J Label avviso = new  J Label(
+						" Attenzione!  I dati non salvati verranno persi.",  Swing Constants. C E N T E R);
+				avviso.set Icon(new  Image Icon(get Class().get Resource(
+					 Home. U R L_ I M A G E S + "warning  .png")));
+				root.add(message,  Border Layout. N O R T H);
+				root.add(avviso,  Border Layout. S O U T H);
+				 String[] options = { " Chiudi", " Annulla" };
+				int choice =  J Option Pane.show Internal Option Dialog(j Content Pane, root, 
+						" Conferma chiusura",
+						 J Option Pane. O K_ C A N C E L_ O P T I O N,  J Option Pane. Q U E S T I O N_ M E S S A G E, frame Icon, options, options[ ]);  
+				if (choice ==  J Option Pane. O K_ O P T I O N)
+				{
+					parent.close Scheda(( Scheda B C)p Event.get Internal Frame());
+				}
+			}
+		});
+		
+		// Inizializzazione dei pulsanti
+		btn Modifica.set Visible(false);
+		btn Salva.set Visible(true);
+		btn Annulla.set Visible(true);
+		btn Annulla.set Text(" Azzera");
+		
+		
+	}
+
+	/**
+	 *  Questo costruttore modella le interfacce relative alla modifica dei dati e alla
+	 * visualizzazione della scheda di un bene culturale.
+	 * 
+	 * @param  Bean Bene Culturale p Bc - il bean contenente i dati del 
+	 * bene culturale selezionato.
+	 * @param boolean p Modifica<ul><li>true - i campi saranno editabili e quindi si sta 
+	 * procedendo alla modifica dei dati di un bene culturale.<li>false - i campi non saranno
+	 * editabili e quindi si sta visualizzando la scheda di un bene culturale.</ul>
+	 * 
+	 */
+	public  Scheda B C( Beni Culturali p Parent,  Bean Bene Culturale p Bc, boolean p Modifica)
+	{
+		super();
+		frame Icon = new  Image Icon(get Class().get Resource(
+				 Home. U R L_ I M A G E S + "scheda.png"));
+		closable = true;
+		resizable = false;
+		iconable = true;
+		set Size(   ,    );
+		set Default Close Operation( Window Constants. D O_ N O T H I N G_ O N_ C L O S E);
+			
+		// Inizializzazione variabili di istanza
+		bc = p Bc;
+		this.parent = p Parent;
+		suggerimenti = new  Vector< J Label>();
+		initialize Scheda B C();
+
+		if (p Modifica) //  Si sta modificando i dati del bene culturale.
+		{
+			btn Modifica.set Selected(true);
+			btn Salva.set Visible(true);
+			btn Annulla.set Visible(true);
+			btn Annulla.set Text(" Reimposta");
+		}
+		else //  Si sta visualizzando la scheda di un bene culturale.
+		{
+			mostra Nascondi Suggerimenti();
+			attiva Disattiva Edit();
+		}
+
+	}
+
+	/**
+	 *  Questo metodo ritorna l'id del bene culturale di cui si sta visualizzando la
+	 * scheda o modificando i dati.
+	 * 
+	 * @return int - l'id del bene culturale.
+	 * 
+	 */
+	public int get Id()
+	{
+		if (bc == null) 
+		{
+			return - ;
+		}
+		return bc.get Id();
+	}
+
+	/** 
+	 * 
+	 *  Questo metodo inizializza l'interfaccia per la visualizzazione della scheda di
+	 * un bene culturale.
+	 *
+	 * @return void
+	 */
+	private void initialize Scheda B C()
+	{
+		set Title(bc.get Nome());
+		
+		//  Dialogo di chiusura del frame
+		add Internal Frame Listener(new  Internal Frame Adapter()
+		{
+			/*
+			 *  All'inserimento del frame nel desktop pane recupera desktop pane
+			 * e desktop manager e inizializza gli oggetti remoti per la gestione
+			 * dei beni culturali.
+			 */ 
+			
+			public void internal Frame Opened( Internal Frame Event p Event)
+			{
+				 J Internal Frame frame = p Event.get Internal Frame();
+			
+				// Setting up degli oggetti remoti per la gestione dei beni culturali.
+				try
+				{
+					 Registry reg =  Locate Registry.get Registry( Home. H O S T);
+					tag = 
+						( I Gestione Tag Comune)reg.lookup(" Gestione Tag Comune");
+					gestione B C = 
+						( I Gestione Beni Culturali Agenzia) reg.lookup(" Gestione Beni Culturali Agenzia");
+					// Caricamento dei dati.
+					carica Tags();
+					carica Statistiche();
+				}
+				/*
+				 *  Due eccezioni:  Remote Exception e  Not Bound Exception.  Il
+				 * risultato è lo stesso.  La gestione non è operabile e la
+				 * finestra dopo il messaggio di errore verrà chiusa.
+				 */
+				catch ( Exception ex)
+				{
+					 J Label errore = new  J Label(
+							"<html><h > Impossibile comunicare con il server di e Tour.</h >"
+									+ "<h ><u> La scheda del bene culturale richiesta verrà chiusa.</u></h >"
+									+ "<p><b> Possibili  Cause:</b>"
+									+ "<ul><li> Nessuna connessione alla rete.</li>"
+									+ "<li> Server inattivo.</li>"
+									+ "<li> Server intasato.</li></ul>"
+									+ "<p> Si prega di riprovare in un secondo momento.</p>"
+									+ "<p> Se l'errore dovesse persistere, si prega di contattare l'assistenza tecnica.</p>"
+									+ "<p> Ci scusiamo per il disagio.</html>");
+					 Image Icon err = new  Image Icon(get Class().get Resource(
+							 Home. U R L_ I M A G E S + "error  .png"));
+					 J Option Pane.show Message Dialog(frame, errore,
+							" Errore!",  J Option Pane. E R R O R_ M E S S A G E, err);
+					frame.dispose();
+				}
+			}
+			
+			public void internal Frame Closing( Internal Frame Event p Event)
+			{
+				// Se si sta effettuando una modifica chiede conferma.
+				if (btn Modifica.is Selected())
+				{
+					 J Panel root = new  J Panel(new  Border Layout());
+					 J Label message = new  J Label(
+						" Sei sicuro di voler chiudere la scheda di questo bene culturale?");
+					message.set Font(new  Font(" Dialog",  Font. B O L D,   ));
+					 J Label avviso = new  J Label(
+						" Attenzione!  I dati non salvati verranno persi.",  Swing Constants. C E N T E R);
+					avviso.set Icon(new  Image Icon(get Class().get Resource(
+							 Home. U R L_ I M A G E S + "warning  .png")));
+					root.add(message,  Border Layout. N O R T H);
+					root.add(avviso,  Border Layout. S O U T H);
+					 String[] options = { " Chiudi", " Annulla" };
+					int choice =  J Option Pane.show Internal Option Dialog(j Content Pane, root, 
+							" Conferma chiusura  Scheda  Bene  Culturale " + bc.get Nome(),
+							 J Option Pane. O K_ C A N C E L_ O P T I O N,  J Option Pane. Q U E S T I O N_ M E S S A G E, frame Icon, options, options[ ]);  
+					if (choice ==  J Option Pane. O K_ O P T I O N)
+					{
+						parent.close Scheda(( Scheda B C)p Event.get Internal Frame());
+					}
+				}
+				//  Altrimenti chiude direttamente la finestra.
+				else 
+				{
+					parent.close Scheda(( Scheda B C)p Event.get Internal Frame());	
+				}
+			}
+		});
+		
+		// Inizializza il content pane.
+		j Content Pane = new  J Panel();
+		j Content Pane.set Layout(new  Border Layout());
+		j Content Pane.add(get Toolbar Scheda B C(),  Border Layout. S O U T H);
+		j Tabbed Pane = new  J Tabbed Pane();
+		j Tabbed Pane.add Tab(" Dati  Bene  Culturale",
+						new  Image Icon(get Class().get Resource(
+								 Home. U R L_ I M A G E S + "dati.png")),
+						get Dati B C Form(), null);
+		 J Scroll Pane nuovo = new  J Scroll Pane(get Statistiche());
+		nuovo.set Vertical Scroll Bar Policy( J Scroll Pane. V E R T I C A L_ S C R O L L B A R_ A L W A Y S);
+		j Tabbed Pane.add Tab(" Statistiche", 
+				new  Image Icon(get Class().get Resource(
+					 Home. U R L_ I M A G E S + "stat  .png")),nuovo, null);
+		j Tabbed Pane.add Tab(	" Feedback  Ricevuti",
+						new  Image Icon(get Class().get Resource(
+								 Home. U R L_ I M A G E S + "feedback.png")),
+						get Feedback(), null);
+		j Content Pane.add(j Tabbed Pane,  Border Layout. C E N T E R);
+		set Content Pane(j Content Pane);
+		j Tabbed Pane.add Change Listener(new  Change Listener()
+		{
+
+			public void state Changed( Change Event p Change)
+			{
+				//  Dati bene culturale
+				if (j Tabbed Pane.get Selected Index() ==  )
+				{
+					toolbar Scheda B C.set Visible(true);
+					btn Modifica.set Visible(true);
+					if (btn Modifica.is Selected())
+					{
+						btn Salva.set Visible(true);
+						btn Annulla.set Visible(true);
+					}
+					btn Modifica Commento.set Visible(false);
+				}
+				//  Statistiche
+				else if (j Tabbed Pane.get Selected Index() ==  )
+				{
+					toolbar Scheda B C.set Visible(false);
+				}
+				//  Feedback ricevuti
+				else
+				{
+					if (btn Modifica.is Selected())
+					{
+						btn Salva.set Visible(false);
+						btn Annulla.set Visible(false);
+					}
+					toolbar Scheda B C.set Visible(true);
+					btn Modifica Commento.set Visible(true);
+					btn Modifica.set Visible(false);
+
+				}
+
+			}
+
+		});
+		
+		// Carica i dati del bene culturale e le statistiche.
+		carica Dati Form();
+	}
+
+	/**
+	 * 
+	 *  Questo metodo carica i dati del bene culturale fornito al costruttore
+	 * nella form.
+	 * 
+	 */
+	private void carica Dati Form()
+	{
+		nome B C.set Text(bc.get Nome());
+		cap B C.set Text(bc.get Cap());
+		citta B C.set Text(bc.get Citta());
+		costo B C.set Text("" + bc.get Costo Biglietto());
+		descrizione B C.set Text(bc.get Descrizione());
+		 String Tokenizer tokenizer = new  String Tokenizer(bc.get Via());
+		 String stringa = tokenizer.next Token();
+		indirizzo .set Selected Item(stringa);
+		indirizzo .set Text(bc.get Via().substring(stringa.length()));
+		prov B C.set Selected Item(bc.get Provincia());
+		 Punto  D pos = bc.get Posizione();
+		pos Geo X.set Text("" + pos.get Latitudine());
+		pos Geo Y.set Text("" + pos.get Longitudine());
+		pos Geo Z.set Text("" + pos.get Altitudine());
+		telefono B C.set Text(bc.get Telefono());
+		int minuti = bc.get Orario Apertura().get Minutes();
+		if (minuti ==  )
+		{
+			min A P.set Selected Index( );
+		}
+		else
+		{
+			min A P.set Selected Item(minuti);
+		}
+		int ore = bc.get Orario Apertura().get Hours();
+		if (ore <   )
+		{
+			ore A P.set Selected Item(" " + ore);
+		}
+		else
+		{
+			ore A P.set Selected Item(ore);
+		}
+		minuti = bc.get Orario Chiusura().get Minutes();
+		if (minuti ==  )
+		{
+			min C H.set Selected Index( );
+		}
+		else
+		{
+			min C H.set Selected Item(minuti);
+		}
+		ore = bc.get Orario Chiusura().get Hours();
+		if (ore <   )
+		{
+			ore C H.set Selected Item(" " + ore);
+		}
+		else
+		{
+			ore C H.set Selected Item(ore);
+		}
+	}
+
+	/**
+	 * 
+	 *  Questo metodo carica le statistiche relative al bene culturale fornito
+	 * in input al costruttore della classe.
+	 * 
+	 */
+	private void carica Statistiche()
+	{
+		txt Nome Bene.set Text(bc.get Nome());
+		double voto = bc.get Media Voti();
+		if (voto >=  )
+		{
+			media Voto B C.set Icon(new  Image Icon(get Class().get Resource(
+					 Home. U R L_ I M A G E S + "stella .gif")));
+		}
+		else if (voto <   && voto >=  )
+		{
+			media Voto B C.set Icon(new  Image Icon(get Class().get Resource(
+					 Home. U R L_ I M A G E S + "stella .gif")));
+		}
+		else if (voto <   && voto >=  )
+		{	
+			media Voto B C.set Icon(new  Image Icon(get Class().get Resource(
+					 Home. U R L_ I M A G E S + "stella .gif")));
+		}
+		else if (voto <   && voto >=  )
+		{
+			media Voto B C.set Icon(new  Image Icon(get Class().get Resource(
+					 Home. U R L_ I M A G E S + "stella .gif")));
+		}
+		else
+		{
+			media Voto B C.set Icon(new  Image Icon(get Class().get Resource(
+					 Home. U R L_ I M A G E S + "stella .gif")));
+		}
+		
+		 Array List< Integer> stats = null;
+		try
+		{
+			 stats = 
+				gestione B C.ottieni Statistiche Bene Culturale(bc.get Id());
+			
+		}
+		catch ( Remote Exception e)
+		{
+		}
+		stat Mese C[ ].set Text("" + stats.get( ));
+		stat Mese C[ ].set Text("" + stats.get( ));
+		stat Mese C[ ].set Text("" + stats.get( ));
+		stat Mese C[ ].set Text("" + stats.get( ));
+		stat Mese C[ ].set Text("" + stats.get( ));
+		stat Mese C[ ].set Text("" + stats.get( ));
+		stat T[ ].set Text("   ");
+		stat T[ ].set Text("   ");
+		stat T[ ].set Text("   ");
+		stat T[ ].set Text("   ");
+		stat T[ ].set Text("   ");
+		stat T[ ].set Text("   ");
+		// F I N E  T E S T
+	}
+
+	/**
+	 * 
+	 *  Questo metodo mostra o nasconde i suggerimenti presenti accanto alle label
+	 * della form.
+	 * 
+	 */
+	private void mostra Nascondi Suggerimenti()
+	{
+		 Iterator< J Label> s = suggerimenti.iterator();
+		while (s.has Next())
+		{
+			 J Label corrente = s.next();
+			corrente.set Visible(corrente.is Visible() ? false : true);
+		}
+	}
+
+	/**
+	 * 
+	 *  Questo metodo rende editabile o meno la form.
+	 * 
+	 */
+	private void attiva Disattiva Edit()
+	{
+		 Component[] componenti = dati B C.get Components();
+		for (int i =  ; i < componenti.length; i++)
+		{
+			 Component corrente = componenti[i];
+			if (corrente instanceof  J Text Field)
+			{
+				 J Text Field textbox = ( J Text Field) corrente;
+				textbox.set Editable(textbox.is Editable() ? false : true);
+				textbox.set Background( Color.white);
+
+			}
+			else if (corrente instanceof  J Combo Box)
+			{
+				 J Combo Box combobox = ( J Combo Box) corrente;
+				combobox.set Enabled(combobox.is Enabled() ? false : true);
+
+			}
+		}
+		descrizione B C.set Editable(descrizione B C.is Editable() ? false : true);
+		pannello Tag.attiva Disattiva();
+	}
+
+	/**
+	 *  Questo metodo inizializza la toolbar della scheda di un bene culturale.
+	 * 	
+	 * @return javax.swing. J Tool Bar	- la toolbar.
+	 */
+	private  J Tool Bar get Toolbar Scheda B C()
+	{
+		if (toolbar Scheda B C == null)
+		{
+			toolbar Scheda B C = new  J Tool Bar();
+			toolbar Scheda B C.set Floatable(false);
+			toolbar Scheda B C.add(get Btn Modifica());
+			toolbar Scheda B C.add Separator();
+			toolbar Scheda B C.add(get Btn Salva());
+			toolbar Scheda B C.add Separator();
+			toolbar Scheda B C.add(get Btn Annulla());
+			toolbar Scheda B C.add Separator();
+			if (bc != null)
+			{
+				toolbar Scheda B C.add(get Btn Modifica Commento());
+				toolbar Scheda B C.add Separator();
+			}
+		}
+		return toolbar Scheda B C;
+	}
+
+	/**
+	 *  Questo metodo inizializza il pulsante per la modifica dei dati del bene
+	 * culturale.
+	 * 	
+	 * @return javax.swing. J Toggle Button - il pulsante per la modifica.
+	 * 	
+	 */
+	private  J Toggle Button get Btn Modifica()
+	{
+		if (btn Modifica == null)
+		{
+			btn Modifica = new  J Toggle Button();
+			btn Modifica.set Text(" Modifica  Dati");
+			btn Modifica
+					.set Icon(new  Image Icon(
+							get Class()
+									.get Resource(
+											 Home. U R L_ I M A G E S + " Modifica B C  .png")));
+			btn Modifica.set Cursor( Cursor.get Predefined Cursor( Cursor. H A N D_ C U R S O R));
+			btn Modifica.add Action Listener(new  Action Listener()
+			{
+
+				public void action Performed( Action Event arg )
+				{
+					mostra Nascondi Suggerimenti();
+					attiva Disattiva Edit();
+					btn Salva.set Visible((btn Modifica.is Selected() ? true
+							: false));
+					btn Annulla.set Visible((btn Modifica.is Selected() ? true
+							: false));
+
+				}
+
+			});
+		}
+		return btn Modifica;
+	}
+
+	/**
+	 *  This method initializes btn Salva	
+	 * 	
+	 * @return javax.swing. J Button	
+	 */
+	private  J Button get Btn Salva()
+	{
+		if (btn Salva == null)
+		{
+			btn Salva = new  J Button();
+			btn Salva.set Text(" Salva");
+			btn Salva.set Icon(new  Image Icon(get Class().get Resource(
+					 Home. U R L_ I M A G E S + "salva.png")));
+			btn Salva.set Visible(false);
+			btn Salva.set Cursor( Cursor.get Predefined Cursor( Cursor. H A N D_ C U R S O R));
+			btn Salva.add Action Listener(new  Action Listener()
+			{
+				public void action Performed( Action Event p Event)
+				{
+					if (bc == null)
+					{
+						bc = riversa Dati Nel Bean();
+						try 
+						{
+							gestione B C.inserisci Bene Culturale(bc);
+						}
+						catch ( Remote Exception ex)
+						{
+							ex.print Stack Trace();
+						}
+					}
+					else {
+					// Costruzione della dialog per la conferma della modifica
+					 J Panel root = new  J Panel(new  Border Layout());
+					 J Label message = new  J Label(
+							" Aggiornare il i dati del bene culturale "
+									+ bc.get Nome() + " con i"
+									+ " dati della form?");
+					message.set Font(new  Font(" Dialog",  Font. B O L D,   ));
+					 J Label avviso = new  J Label(
+							" I dati precedenti non potranno essere pi� recuperati.",
+							 Swing Constants. C E N T E R);
+					avviso
+							.set Icon(new  Image Icon(
+									get Class()
+											.get Resource(
+													 Home. U R L_ I M A G E S + "warning  .png")));
+					root.add(message,  Border Layout. N O R T H);
+					root.add(avviso,  Border Layout. S O U T H);
+					 String[] options = { " Modifica", " Annulla" };
+					// La dialog viene visualizzata a schermo
+					int scelta =  J Option Pane
+							.show Internal Option Dialog(
+									j Content Pane,
+									root,
+									" Conferma  Modifica  Dati  Bene  Culturale",
+									 J Option Pane. Y E S_ N O_ O P T I O N,
+									 J Option Pane. Q U E S T I O N_ M E S S A G E,
+									new  Image Icon(
+											get Class()
+													.get Resource(
+															 Home. U R L_ I M A G E S + " Modifica B C  .png")),
+									options, options[ ]);
+					// Se si � scelto di confermare la modifica
+					if (scelta ==  J Option Pane. Y E S_ O P T I O N)
+					{
+						bc = riversa Dati Nel Bean();
+						carica Dati Form();
+						attiva Disattiva Edit();
+						btn Salva.set Visible(false);
+						btn Annulla.set Visible(false);
+						btn Modifica.set Selected(false);
+						mostra Nascondi Suggerimenti();
+						parent.update Table Model(bc);
+						 J Option Pane
+								.show Internal Message Dialog(
+										j Content Pane,
+										" I dati del bene culturale sono stati aggiornati correttamente.",
+										" Dati bene culturale modificati!",
+										 J Option Pane. O K_ O P T I O N,
+										new  Image Icon(
+												get Class()
+														.get Resource(
+																 Home. U R L_ I M A G E S + "ok  .png")));
+					}
+				}
+				}
+			});
+		}
+		return btn Salva;
+	}
+
+	/**
+	 *  Questo metodo inizializza il pulsante per l'azzeramento della form (nuovo bene
+	 * culturale) o per ricaricare i dati del bene culturale (modifica dati).
+	 * 	
+	 * @return javax.swing. J Button	- il pulsante di cui sopra.
+	 * 
+	 */
+	private  J Button get Btn Annulla()
+	{
+		if (btn Annulla == null)
+		{
+			btn Annulla = new  J Button();
+			btn Annulla.set Text(" Annulla");
+			btn Annulla
+					.set Icon(new  Image Icon(
+							get Class()
+									.get Resource(
+											 Home. U R L_ I M A G E S + " Annulla  .png")));
+			btn Annulla.set Cursor( Cursor.get Predefined Cursor( Cursor. H A N D_ C U R S O R));
+			btn Annulla.set Visible(false);
+			btn Annulla.add Action Listener(new  Action Listener()
+			{
+
+				public void action Performed( Action Event arg )
+				{
+					if (bc == null)
+					{
+						 Component[] componenti = dati B C.get Components();
+						for (int i =  ; i < componenti.length; i++)
+						{
+							 Component corrente = componenti[i];
+							if (corrente instanceof  J Text Component)
+							{
+								(( J Text Component) corrente).set Text("");
+							}
+							else if (corrente instanceof  J Combo Box)
+							{
+								 J Combo Box combobox = ( J Combo Box) corrente;
+								combobox.set Selected Index(- );
+							}
+						}
+						pannello Tag.azzera();
+						descrizione B C.set Text("");
+					}
+					else
+					{
+						carica Dati Form();
+					}
+
+				}
+
+			});
+		}
+		return btn Annulla;
+	}
+
+	/**
+	 *  Questo metodo inizializza il pulsante per la modifica di un commento.
+	 * 	
+	 * @return javax.swing. J Button - il pulsante per la modifica di un commento.
+	 */
+	private  J Button get Btn Modifica Commento()
+	{
+		if (btn Modifica Commento == null)
+		{
+			btn Modifica Commento = new  J Button();
+			btn Modifica Commento.set Text(" Modifica  Commento");
+			btn Modifica Commento
+					.set Icon(new  Image Icon(
+							get Class()
+									.get Resource(
+											 Home. U R L_ I M A G E S + "modifica Commento.png")));
+			btn Modifica Commento.set Visible(false);
+			btn Modifica Commento.set Enabled(false);
+			btn Modifica Commento.add Action Listener(new  Action Listener()
+			{
+
+				public void action Performed( Action Event p Event)
+				{
+					int selected Row = table Feedback.get Selected Row();
+					 String nuovo Commento = ( String)  J Option Pane.show Internal Input Dialog(
+							j Content Pane," Modifica del commento selezionato:",
+									" Modifica  Commento", J Option Pane. Q U E S T I O N_ M E S S A G E, 
+							new  Image Icon(get Class().get Resource(
+									 Home. U R L_ I M A G E S + "modifica Commento.png")), 
+								null, feedback Model.get Value At(selected Row,  ));
+					if (nuovo Commento != null)
+					{
+						feedback Model.modifica Commento(nuovo Commento, selected Row);
+					}
+				}
+				
+			});
+		}
+		return btn Modifica Commento;
+	}
+
+	/**
+	 *  Questo metodo inizializza la form per i dati di un bene culturale.
+	 * 	
+	 * @return javax.swing. J Panel - la form per i dati.
+	 * 
+	 */
+	private  J Panel get Dati B C Form()
+	{
+		if (dati B C == null)
+		{
+			dati B C = new  J Panel(null);
+			dati B C.set Border(new  Soft Bevel Border( Soft Bevel Border. L O W E R E D));
+
+			// Creazione  Suggerimenti
+			for (int i =  ; i < help.length; i++)
+			{
+				 J Label nuova = new  J Label();
+				nuova.set Icon(new  Image Icon(get Class().get Resource(
+						 Home. U R L_ I M A G E S + " Info  .png")));
+				nuova.set Bounds(   ,   +    * i,   ,   );
+				nuova.set Cursor( Cursor.get Predefined Cursor( Cursor. H A N D_ C U R S O R));
+				nuova.set Tool Tip Text(help[i]);
+				suggerimenti.add(nuova);
+				dati B C.add(nuova);
+				if (i == help.length -  )
+				{
+					nuova.set Bounds(   ,    ,   ,   );
+				}
+
+			}
+
+			for (int i =  ; i < txts.length; i++)
+			{
+				 J Label nuova = new  J Label(txts[i],  Swing Constants. R I G H T);
+				nuova.set Bounds(  ,    +    * i,    ,   );
+				nuova.repaint();
+				dati B C.add(nuova, null);
+			}
+			// Nome  Bene  Culturale
+			nome B C = new  J Text Field();
+			nome B C.set Columns(  );
+			nome B C.set Document(new  Limited Document(  ));
+			nome B C.set Bounds(   ,   ,    ,   );
+			nome B C.set Name(" Nome  Bene  Culturale");
+			dati B C.add(nome B C, null);
+
+			// Indirizzo
+			indirizzo  = new  J Text Field();
+			indirizzo .set Bounds(   ,   ,    ,   );
+			indirizzo .set Document(new  Limited Document(  ));
+			indirizzo  = new  J Combo Box( I N D I R I Z Z I);
+			indirizzo .set Selected Index(- );
+			indirizzo .set Bounds(   ,   ,   ,   );
+			indirizzo .set Name(" Indirizzo");
+			dati B C.add(indirizzo , null);
+			dati B C.add(indirizzo , null);
+			
+			// Citt�
+			citta B C = new  J Text Field();
+			citta B C.set Columns(  );
+			citta B C.set Bounds(   ,   ,    ,   );
+			citta B C.set Name(" Citt�");
+			citta B C.set Document(new  Only Characters Document(  ));
+			dati B C.add(citta B C);
+
+			// Localita 
+			localita B C = new  J Text Field();
+			localita B C.set Bounds(   ,    ,    ,   );
+			localita B C.set Name(" Localit�");
+			localita B C.set Document(new  Only Characters Document(  ));
+			dati B C.add(localita B C, null);
+
+			// C A P
+			cap B C = new  J Text Field();
+			cap B C.set Columns( );
+			cap B C.set Bounds(   ,    ,   ,   );
+			cap B C.set Document(new  Numeric Document( ));
+			dati B C.add(cap B C, null);
+			
+
+			// Posizione  Geografica
+			 J Label txt X = new  J Label(" X");
+			 J Label txt Y = new  J Label(" Y");
+			 J Label txt Z = new  J Label(" Z");
+			 Font nuovo = new  Font(" Dialog",  Font. B O L D,   );
+			txt X.set Font(nuovo);
+			txt Y.set Font(nuovo);
+			txt Z.set Font(nuovo);
+			txt Z.set Bounds(   ,    ,   ,   );
+			txt Y.set Bounds(   ,    ,   ,   );
+			txt X.set Bounds(   ,    ,   ,   );
+			pos Geo X = new  J Text Field(  );
+			pos Geo X.set Bounds(   ,    ,   ,   );
+			pos Geo Y = new  J Text Field(  );
+			pos Geo Y.set Bounds(   ,    ,   ,   );
+			pos Geo Z = new  J Text Field(  );
+			pos Geo Z.set Bounds(   ,    ,   ,   );
+			pos Geo X.set Name(" Coordinata  X");
+			pos Geo Y.set Name(" Coordinata  Y");
+			pos Geo Z.set Name(" Coordinata  Z");
+			dati B C.add(txt X, null);
+			dati B C.add(txt Y, null);
+			dati B C.add(txt Z, null);
+			dati B C.add(pos Geo X, null);
+			dati B C.add(pos Geo Y, null);
+			dati B C.add(pos Geo Z, null);
+
+			// Provincia
+			prov B C = new  J Combo Box( P R O V I N C E);
+			prov B C.set Selected Index(- );
+			prov B C.set Bounds(   ,    ,   ,   );
+			dati B C.add(prov B C, null);
+
+			// Descrizione
+			descrizione B C = new  J Text Area();
+			descrizione B C.set Cursor(new  Cursor( Cursor. T E X T_ C U R S O R));
+			descrizione B C.set Wrap Style Word(true);
+			descrizione B C.set Line Wrap(true);
+			j Scroll Pane = new  J Scroll Pane(descrizione B C);
+			j Scroll Pane
+					.set Vertical Scroll Bar Policy( J Scroll Pane. V E R T I C A L_ S C R O L L B A R_ A L W A Y S);
+			j Scroll Pane.set Bounds(new  Rectangle(   ,    ,    ,   ));
+			descrizione B C.set Name(" Descrizione");
+			dati B C.add(j Scroll Pane, null);
+
+			// Telefono
+			telefono B C = new  J Text Field(  );
+			telefono B C.set Bounds(   ,    ,    ,   );
+			telefono B C.set Document(new  Numeric Document(  ));
+			telefono B C.set Name(" Telefono");
+			dati B C.add(telefono B C, null);
+
+			// Orari
+			ore A P = new  J Combo Box();
+			ore A P.set Bounds(   ,    ,   ,   );
+			ore C H = new  J Combo Box();
+			ore C H.set Bounds(   ,    ,   ,   );
+			for (int i =  ; i <   ; i++)
+			{
+				if (i <   )
+				{
+					ore C H.add Item(" " + i);
+					ore A P.add Item(" " + i);
+				}
+				else
+				{
+					ore A P.add Item(i);
+					ore C H.add Item(i);
+				}
+			}
+			min A P = new  J Combo Box();
+			min A P.set Bounds(   ,    ,   ,   );
+			min A P.add Item("  ");
+			min A P.add Item("  ");
+			min A P.add Item("  ");
+			min A P.add Item("  ");
+			min C H = new  J Combo Box();
+			min C H.set Bounds(   ,    ,   ,   );
+			min C H.add Item("  ");
+			min C H.add Item("  ");
+			min C H.add Item("  ");
+			min C H.add Item("  ");
+			min A P.set Selected Index( );
+			ore A P.set Selected Index(- );
+			min C H.set Selected Index( );
+			ore C H.set Selected Index(- );
+			nuovo = new  Font(" Dialog",  Font. B O L D,   );
+			 J Label punto  = new  J Label(":");
+			punto .set Bounds(   ,    ,   ,   );
+			punto .set Font(nuovo);
+			 J Label punto  = new  J Label(":");
+			punto .set Bounds(   ,    ,   ,   );
+			punto .set Font(nuovo);
+			dati B C.add(ore A P, null);
+			dati B C.add(min A P, null);
+			dati B C.add(min C H, null);
+			dati B C.add(ore C H, null);
+			dati B C.add(punto , null);
+			dati B C.add(punto , null);
+
+			// Giorno di chiusura
+			 String[] giorni = { " Lunedì", " Martedì", " Mercoledì", " Giovedì",
+					" Venerdì", " Sabato", " Domenica" };
+			giorno Chiusura = new  J Combo Box(giorni);
+			giorno Chiusura.set Bounds(   ,    ,   ,   );
+			giorno Chiusura.set Selected Index(- );
+			dati B C.add(giorno Chiusura, null);
+
+			// Costo
+			costo B C = new  J Text Field();
+			costo B C.set Columns( );
+			costo B C.set Bounds(   ,    ,   ,   );
+			 J Label euro = new  J Label(" Euro");
+			euro.set Bounds(   ,    ,   ,   );
+			dati B C.add(costo B C, null);
+			dati B C.add(euro, null);
+
+			// Pannello Tag
+			pannello Tag = new  Tag Panel();
+			pannello Tag.set Bounds(   ,    ,    ,    );
+			 J Label txt Tag = new  J Label(" Tag di ricerca");
+			txt Tag.set Bounds(   ,    ,   ,   );
+			dati B C.add(txt Tag,null);
+			dati B C.add(pannello Tag, null);
+
+		}
+		return dati B C;
+	}
+
+	/**
+	 *  Questo metodo inizializza il pannello contenitore delle statistiche di un 
+	 * bene culturale.
+	 * 	
+	 * @return javax.swing. J Panel - il pannello delle statistiche.
+	 * 	
+	 */
+	private  J Panel get Statistiche()
+	{
+		if (statistiche == null)
+		{
+			statistiche = new  J Panel(new  Grid Bag Layout());
+			 Grid Bag Constraints g = new  Grid Bag Constraints();
+			g.gridx =  ;
+			g.gridy =  ;
+			g.insets = new  Insets( ,  ,  ,  );
+			g.anchor =  Grid Bag Constraints. W E S T;
+			 J Label stat = new  J Label(" Statistiche");
+			 Font nuovo = new  Font(" Dialog",  Font. B O L D,   );
+			stat.set Font(nuovo);
+			statistiche.add(stat, g);
+			g.gridx =  ;
+			txt Nome Bene = new  J Label();
+			txt Nome Bene.set Font(nuovo);
+			statistiche.add(txt Nome Bene, g);
+			g.gridx =  ;
+			media Voto B C = new  J Label();
+			statistiche.add(media Voto B C, g);
+			g.gridwidth =  ;
+			g.gridx =  ;
+			g.anchor =  Grid Bag Constraints. C E N T E R;
+			g.gridy =  ;
+			statistiche.add(get Stat Mese Corrente(), g);
+			g.gridy =  ;
+			statistiche.add(get Stat Totali(), g);
+		}
+		return statistiche;
+	}
+
+	/**
+	 *  Questo metodo inizializza il pannello per la visualizzazione dei feedback 
+	 * ricevuti da un bene culturale.
+	 * 	
+	 * @return javax.swing. J Panel - il pannello dei feedback ricevuti.
+	 * 
+	 */
+	private  J Panel get Feedback()
+	{
+		if (feedback == null)
+		{
+			feedback = new  J Panel();
+			feedback.set Layout(new  Border Layout());
+			feedback Model = new  Feed Back Table Model();
+			table Feedback = new  J Table(feedback Model);
+			 Table Column a Column = table Feedback.get Column Model().get Column( );
+			// Voto
+			a Column.set Preferred Width(  );
+			a Column.set Cell Renderer(new  Media Voti Renderer());
+			// Commento
+			a Column = table Feedback.get Column Model().get Column( );
+			a Column.set Preferred Width(   );
+			// Data di rilascio
+			a Column = table Feedback.get Column Model().get Column( );
+			a Column.set Preferred Width(  );
+			// Username
+			a Column = table Feedback.get Column Model().get Column( );
+			a Column.set Preferred Width(  );
+			table Feedback.set Selection Mode( List Selection Model. S I N G L E_ S E L E C T I O N);
+			table Feedback.set Column Selection Allowed(false);
+			 List Selection Model selection Model = table Feedback.get Selection Model();
+			selection Model
+					.add List Selection Listener(new  List Selection Listener()
+					{
+						public void value Changed( List Selection Event event)
+						{
+							btn Modifica Commento.set Enabled(
+									(table Feedback.get Selected Row() != - ) 
+										? true : false);
+						}
+					});
+			scroll Pane Feedback = new  J Scroll Pane(table Feedback);
+			scroll Pane Feedback
+					.set Vertical Scroll Bar Policy( J Scroll Pane. V E R T I C A L_ S C R O L L B A R_ A L W A Y S);
+			feedback.add(scroll Pane Feedback,  Border Layout. C E N T E R);
+
+		}
+		return feedback;
+	}
+
+	/**
+	 *  Questo metodo inizializza il pannello delle statistiche per il mese corrente.
+	 * 	
+	 * @return javax.swing. J Panel - il pannello delle statistiche per il mese corrente.
+	 * 
+	 */
+	private  J Panel get Stat Mese Corrente()
+	{
+		if (stat Mese Corrente == null)
+		{
+			stat Mese Corrente = new  J Panel();
+			stat Mese Corrente.set Layout(new  Grid Bag Layout());
+			stat Mese Corrente.set Preferred Size(new  Dimension(   ,    ));
+			stat Mese Corrente.set Border( Border Factory.create Titled Border(
+					 Border Factory.create Line Border(new  Color(  ,    ,    ),  ),
+					" Statistiche  Mese  Corrente",
+					 Titled Border. D E F A U L T_ J U S T I F I C A T I O N,
+					 Titled Border. D E F A U L T_ P O S I T I O N, new  Font(" Dialog",
+							 Font. B O L D,   ), new  Color( ,    ,    )));
+			stat Mese Corrente.set Background( Color.white);
+			stat Mese C = new  J Label[ ];
+			 Grid Bag Constraints g = new  Grid Bag Constraints();
+			g.gridx =  ;
+			g.gridy =  ;
+			g.gridwidth =  ;
+			g.insets = new  Insets( ,  ,  ,  );
+			g.anchor =  Grid Bag Constraints. W E S T;
+			stat Mese Corrente.add(new  J Label(
+					" Dettaglio voti ricevuti nel mese corrente:"), g);
+			g.anchor =  Grid Bag Constraints. C E N T E R;
+			g.gridwidth =  ;
+			 Font nuovo = new  Font(" Dialog",  Font. B O L D,   );
+			for (int i =  ; i >=  ; i--)
+			{
+
+				int grid X = g.gridx;
+				g.gridy++;
+				 J Label a Label = new  J Label(new  Image Icon(get Class()
+						.get Resource(
+								 Home. U R L_ I M A G E S + "stella" + i
+										+ ".gif")),  J Label. C E N T E R);
+				stat Mese Corrente.add(a Label, g);
+				g.gridx++;
+				stat Mese Corrente.add(new  J Label("=="), g);
+				g.gridx++;
+				g.anchor =  Grid Bag Constraints. E A S T;
+				stat Mese C[i -  ] = new  J Label();
+				stat Mese C[i -  ].set Font(nuovo);
+				stat Mese Corrente.add(stat Mese C[i -  ], g);
+				g.gridx = grid X;
+				g.anchor =  Grid Bag Constraints. C E N T E R;
+			}
+			g.gridy =  ;
+			g.anchor =  Grid Bag Constraints. W E S T;
+			g.gridwidth =  ;
+			g.gridx =  ;
+			stat Mese Corrente.add(new  J Label(
+					" Numero di  Feedback rilasciati nel mese corrente:"), g);
+			stat Mese C[ ] = new  J Label();
+			stat Mese C[ ].set Font(new  Font(" Dialog",  Font. B O L D,   ));
+			g.gridx =  ;
+			g.gridwidth =  ;
+			stat Mese Corrente.add(stat Mese C[ ], g);
+
+		}
+		return stat Mese Corrente;
+	}
+
+	/**
+	 *  Questo metodo inizializza il pannello relativo alle statistiche totali
+	 * del bene culturale.	
+	 * 	
+	 * @return javax.swing. J Panel - il pannello delle statistiche totali.
+	 * 	
+	 */
+	private  J Panel get Stat Totali()
+	{
+		if (stat Totali == null)
+		{
+			stat Totali = new  J Panel();
+			stat Totali.set Layout(new  Grid Bag Layout());
+			stat Totali.set Preferred Size(new  Dimension(   ,    ));
+			stat Totali.set Border( Border Factory.create Titled Border( Border Factory
+					.create Line Border(new  Color(  ,    ,    ),  ),
+					" Statistiche  Totali",  Titled Border. D E F A U L T_ J U S T I F I C A T I O N,
+					 Titled Border. D E F A U L T_ P O S I T I O N, new  Font(" Dialog",
+							 Font. B O L D,   ), new  Color( ,    ,    )));
+			stat Totali.set Background( Color.white);
+			stat T = new  J Label[ ];
+			 Grid Bag Constraints g = new  Grid Bag Constraints();
+			g.gridx =  ;
+			g.gridy =  ;
+			g.gridwidth =  ;
+			g.insets = new  Insets( ,  ,  ,  );
+			g.anchor =  Grid Bag Constraints. W E S T;
+			stat Totali.add(new  J Label(
+					" Dettaglio voti ricevuti nel mese corrente:"), g);
+			g.anchor =  Grid Bag Constraints. C E N T E R;
+			g.gridwidth =  ;
+			 Font nuovo = new  Font(" Dialog",  Font. B O L D,   );
+			for (int i =  ; i >=  ; i--)
+			{
+				int grid X = g.gridx;
+				g.gridy++;
+				 J Label a Label = new  J Label(new  Image Icon(get Class()
+						.get Resource(
+								"/unisa/gps/etour/gui/images/stella" + i
+										+ ".gif")),  J Label. C E N T E R);
+				stat Totali.add(a Label, g);
+				g.gridx++;
+				stat Totali.add(new  J Label("=="), g);
+				g.gridx++;
+				g.anchor =  Grid Bag Constraints. E A S T;
+				stat T[i -  ] = new  J Label();
+				stat T[i -  ].set Font(nuovo);
+				stat Totali.add(stat T[i -  ], g);
+				g.gridx = grid X;
+				g.anchor =  Grid Bag Constraints. C E N T E R;
+			}
+			g.gridy =  ;
+			g.anchor =  Grid Bag Constraints. W E S T;
+			g.gridwidth =  ;
+			g.gridx =  ;
+			stat Totali.add(new  J Label(
+					" Numero di  Feedback rilasciati nel mese corrente:"), g);
+			stat T[ ] = new  J Label();
+			stat T[ ].set Font(new  Font(" Dialog",  Font. B O L D,   ));
+			g.gridx =  ;
+			g.gridwidth =  ;
+			stat Totali.add(stat T[ ], g);
+		}
+		return stat Totali;
+	}
+	
+	private  Bean Bene Culturale riversa Dati Nel Bean()
+	{
+		 Bean Bene Culturale nuovo = new  Bean Bene Culturale();
+		nuovo.set Nome(nome B C.get Text());
+		nuovo.set Descrizione(descrizione B C.get Text());
+		nuovo.set Cap(cap B C.get Text());
+		nuovo.set Costo Biglietto( Double.parse Double(costo B C.get Text()));
+		nuovo.set Giorno Chiusura(( String)giorno Chiusura.get Selected Item());
+		nuovo.set Telefono(telefono B C.get Text());
+		nuovo.set Citta(citta B C.get Text());
+		nuovo.set Localita(localita B C.get Text());
+		// Date(int year, int month, int date, int hrs, int min) 
+		 Date orario A P = new  Date( , , ,ore A P.get Selected Index(),
+		min A P.get Selected Index());
+		 Date orario C H = new  Date( , , ,ore C H.get Selected Index(),
+		min C H.get Selected Index());
+		nuovo.set Orario Apertura(orario A P);
+		nuovo.set Orario Chiusura(orario C H);
+		nuovo.set Provincia(( String)prov B C.get Selected Item());
+		nuovo.set Via((( String)indirizzo .get Selected Item()) + " "+ indirizzo .get Text());
+		 Punto  D posizione = new  Punto  D(
+				 Double.parse Double(pos Geo X.get Text()),
+				 Double.parse Double(pos Geo Y.get Text()),
+				 Double.parse Double(pos Geo Z.get Text()));
+		nuovo.set Posizione(posizione);
+		return nuovo;
+	}
+	
+	private void carica Tags()
+	{
+		 Array List< Bean Tag> bean Tags = null;
+		try
+		{
+			bean Tags = tag.ottieni Tags();
+			if (bc != null)
+			{
+				id Tag = new  Array List< Integer>();
+				 Array List< Bean Tag> tag Da Selezionare = 
+					gestione B C.ottieni Tag Bene Culturale(bc.get Id());
+				for ( Bean Tag b : tag Da Selezionare)
+				{
+					id Tag.add(b.get Id());
+				}				
+			}
+		}
+		//  In caso di errore il pannello tag rimane vuoto.
+		catch ( Remote Exception e)
+		{
+		}
+		finally 
+		{
+			for ( Bean Tag b: bean Tags)
+			{
+				pannello Tag.insert Tag(b);
+			}
+			pannello Tag.set Selected Tags(id Tag);
+			pannello Tag.repaint();	
+		}
+	}
+}

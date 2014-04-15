@@ -1,0 +1,4 @@
+org.mozilla.javascript.NativeDate.execIdCall
+org.mozilla.javascript.NativeDate.init
+org.mozilla.javascript.NativeDate.now
+org.mozilla.javascript.NativeDate.date_format

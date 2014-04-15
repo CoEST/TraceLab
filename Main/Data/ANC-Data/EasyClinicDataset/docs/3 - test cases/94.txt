@@ -1,0 +1,17 @@
+Testing houses delete a First Date: 
+    C44 visit 20/06/2003 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for delete of 
+UcAnnPre a reservation service 
+            made by an ambulatory patient 
+High Priority 
+Set up There are no previous reservations and 
+            Reservations subsequent 
+Description test 
+Input Visit selected: 
+                03/09/2003 hours 09 00 First visit 
+The oracle system eliminates the reservation and 
+            delete the patient from S I O 
+Classes cover valid: CE1 CE6 CE10 
+            Classes are not valid: None

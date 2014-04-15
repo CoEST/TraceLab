@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="iso-8859-1" ?> 												
+<artifacts>												
+  <project_id>1</project_id> 												
+  <artifact_type>Care2x Dataset Complete</artifact_type> 												
+  <artifact>	  
+	  <art_id>	x1	</art_id> 	  
+	  <art_title>	System will implement Access Control List mechanism to obtain information security. ACL system will be derived from the hierarchy in hospital / healthcare environments	</art_title> 	 
+	  <art_parent /> 	  
+	  <art_content>	 	</art_content> 	  
+	  <art_type /> 	  
+  </artifact>
+  <artifact>	  <art_id>	x2	</art_id> 	  <art_title>	System will authenticate user via login and password and check which hospital, department or ward user belongs to	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x3	</art_id> 	  <art_title>	System will support optional SSL encryption	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x4	</art_id> 	  <art_title>	For every action done with a patient system will have a record in the data the user viewed / modified / created	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x5	</art_id> 	  <art_title>	System will implement session time outs and use cookies to terminate an electronic session	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x6	</art_id> 	  <art_title>	System will allow for scheduling appointments	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x6.1	</art_id> 	  <art_title>	System will store appointment's date, department, physician or clinician and purpose	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x7	</art_id> 	  <art_title>	System will allow for creating bills	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x8	</art_id> 	  <art_title>	System will allow for patient admission	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x9	</art_id> 	  <art_title>	System will allow for storing patient images or photos	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x10	</art_id> 	  <art_title>	System will allow for storing encounter images or photos	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x11	</art_id> 	  <art_title>	System will allow for department administration	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x12	</art_id> 	  <art_title>	System will implement diagnoses, procedures DRG	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x13	</art_id> 	  <art_title>	System will implement Duty Plan Managements for Doctors	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x14	</art_id> 	  <art_title>	System will implement Duty Plan Managements for Nurses	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x15	</art_id> 	  <art_title>	System will allow for searchin for DICOM Images	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x16	</art_id> 	  <art_title>	System will allow for managing Insurance Company information	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x17	</art_id> 	  <art_title>	System will allow for ordering non-pharmaceutical products via Medical Depot	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x18	</art_id> 	  <art_title>	System will manage Nurses information	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x19	</art_id> 	  <art_title>	System will allow for searching for nurses	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x20	</art_id> 	  <art_title>	System will allow for viewing ward's occupancy list	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x21	</art_id> 	  <art_title>	System will allow for admitting a client to a ward	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x22	</art_id> 	  <art_title>	System will display reports and test results	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x23	</art_id> 	  <art_title>	System will allow for entering intra-ward notes about a client	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x24	</art_id> 	  <art_title>	System will allow for discharging a client	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x25	</art_id> 	  <art_title>	System will allow for transfering a client	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x26	</art_id> 	  <art_title>	System will allow to open a client's charts folder	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x26.1	</art_id> 	  <art_title>	Charts folder will store information on temperature and blood pressure values	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x26.2	</art_id> 	  <art_title>	Chart folder will store information on diet plan	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x26.3	</art_id> 	  <art_title>	Chart folder will store information on allergy	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x26.4	</art_id> 	  <art_title>	Chart folder will store information on diagnosis and therapy notes	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x26.5	</art_id> 	  <art_title>	Chart folder will store information on daily notes	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x26.6	</art_id> 	  <art_title>	Chart folder will store information on anticoagulant prescription	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x26.7	</art_id> 	  <art_title>	Chart folder will store information on anticoagulant dosage / administration notes	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x26.8	</art_id> 	  <art_title>	Chart folder will store information on medicine prescriptions	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x26.9	</art_id> 	  <art_title>	Chart folder will store information on daily medicine dosage and administration notes	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x26.10	</art_id> 	  <art_title>	Chart folder will store information on physical therapy, anti-thrombosis-gymnastics and related notes	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x27	</art_id> 	  <art_title>	System will allow for personnel managemet	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x28	</art_id> 	  <art_title>	System will allow for registering a new doctor	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x29	</art_id> 	  <art_title>	System will allow for assigning a doctor to a department	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x30	</art_id> 	  <art_title>	System will allow for registering a new nurse	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x31	</art_id> 	  <art_title>	System will allow for assigning a nurse to a department	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x32	</art_id> 	  <art_title>	System will allow for submitting a test request to a physician or clinician	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+  <artifact>	  <art_id>	x33	</art_id> 	  <art_title>	System will maintaing a telephone directory of people, departments, rooms and wards	</art_title> 	  <art_parent /> 	  <art_content>		</art_content> 	  <art_type /> 	  </artifact>
+</artifacts>												

@@ -1,0 +1,6 @@
+org.mozilla.javascript.TokenStream.stringToKeyword
+org.mozilla.javascript.Decompiler.decompile
+org.mozilla.javascript.ScriptRuntime.uneval
+org.mozilla.javascript.Interpreter.interpretLoop
+org.mozilla.javascript.Token.name
+org.mozilla.javascript.Interpreter.visitExpression

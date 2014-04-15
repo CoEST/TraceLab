@@ -1,0 +1,116 @@
+package unisa.gps.etour.control. Gestione Utenti Registrati;
+
+import java.rmi. Remote Exception;
+import java.rmi.server. Unicast Remote Object;
+import java.sql. S Q L Exception;
+
+import unisa.gps.etour.bean. Bean Turista;
+import unisa.gps.etour.repository. D B Turista;
+import unisa.gps.etour.repository. I D B Turista;
+import unisa.gps.etour.util. Messaggi Errore;
+
+/**
+ *  Classe che implementa le operazioni comuni per  Operatore  Agenzia e  Turista
+ * ossia modifica Turista e ottieni Turista
+ * 
+ * @author  Morelli  Giuseppe
+ * @version  .  �      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I �  University
+ *          of  Salerno
+ */
+public class  Gestione Turista Comune extends  Unicast Remote Object implements
+		 I Gestione Turista Comune
+{
+
+	protected  I D B Turista turista;
+
+	//  Costruttore che richama a sua volta il costruttore della classe
+	//  Unicast Remote Object per la connessione via  R M I
+	// e istanzia la connessione al database
+	public  Gestione Turista Comune() throws  Remote Exception
+	{
+		super();
+		//  Connessione al  Database
+		try
+		{
+			turista = new  D B Turista();
+		}
+		//  Eccezione nella connessione al  Database
+		catch ( Exception e)
+		{
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+		}
+	}
+
+	//  Metodo che permette di modificare i dati di un  Turista tramite i suoi
+	// dati
+	public boolean modifica Turista( Bean Turista p Profilo Turista)
+			throws  Remote Exception
+	{
+		//  Controllo la validità dei dati passati
+		if ((p Profilo Turista == null)
+				|| (!(p Profilo Turista instanceof  Bean Turista)))
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ F O R M A T O_ B E A N);
+		//  Esecuzione dell'operazione di modifica
+		try
+		{
+			// se le modifiche sono state effettuate si restituisce true
+			if (turista.modifica Turista(p Profilo Turista))
+				return true;
+		}
+		//  Eccezione nelle operazioni sul database
+		catch ( S Q L Exception e)
+		{
+			// se il data layer invia una eccezione si lancia l'eccezione remota
+			 System.out.println(" Errore nel metodo modifica Turista: "
+					+ e.to String());
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+		//  Eccezione imprevista causata da altri fattori
+		catch ( Exception ee)
+		{
+			 System.out.println(" Errore nel metodo modifica Turista: "
+					+ ee.to String());
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+		}
+		// se non sono state rilevate eccezioni ma le modifiche non sono
+		// state effettuate si restituisce false
+		return false;
+	}
+
+	//  Metodo che permette di ottenere il bean con i dati del  Turista
+	// identificato tramite
+	// il parametro passato
+	public  Bean Turista ottieni Turista(int p Id Turista) throws  Remote Exception
+	{
+		//  Controllo la validità dell'identificativo
+		if (p Id Turista <  )
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D A T I);
+		 Bean Turista to Return = null;// variabile di ritorno
+		//  Recupero i dati
+		try
+		{
+			// si richiede al data layer di restituire il bean del turista
+			// con id uguale a p Id Turista
+			to Return = turista.ottieni Turista(p Id Turista);
+			if (to Return == null)
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+		//  Eccezione nelle operazioni sul  Database
+		catch ( S Q L Exception e)
+		{
+			// se il data layer invia una eccezione si lancia l'eccezione remota
+			 System.out.println(" Errore nel metodo ottieni Turista: "
+					+ e.to String());
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+		//  Eccezioni impreviste causate da altri fattori
+		catch ( Exception ee)
+		{
+			 System.out.println(" Errore nel metodo ottieni Turista: "
+					+ ee.to String());
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+		}
+		// restituisce il risultato
+		return to Return;
+	}
+}

@@ -1,0 +1,7 @@
+org.mozilla.javascript.BaseFunction.getClassName
+org.mozilla.javascript.BaseFunction.getPrototypeProperty
+org.mozilla.javascript.ScriptableObject.getFunctionPrototype
+org.mozilla.javascript.IdFunctionObject.getPrototype
+org.mozilla.javascript.ScriptRuntime.initStandardObjects
+org.mozilla.javascript.BaseFunction.setupDefaultPrototype
+org.mozilla.javascript.BaseFunction.fillConstructorProperties

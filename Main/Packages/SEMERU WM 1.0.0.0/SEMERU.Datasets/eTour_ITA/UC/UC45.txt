@@ -1,0 +1,12 @@
+Use case name	VISUALIZZA STATISTICHE PERSONALI
+Visualizzazione delle statistiche relative al Punto Di Ristoro
+Partecipating
+Actor	Inizializzato da Operatore Punto Di Ristoro
+Entry
+conditions	•	L’Operatore Punto Di Ristoro si è autenticato con successo al sistema.
+Flow of events 		User	System
+	1.		Seleziona la funzionalità per la visualizzazione delle statistiche personali. 	
+	2.			Visualizza una form che mostra i dati relativi alle statistiche associate  Punto Di Ristoro.
+Exit conditions	•	Il sistema mostra i dati a video.
+•	Interruzione della connessione al server.
+Quality requirements	

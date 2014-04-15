@@ -1,0 +1,3 @@
+org.mozilla.javascript.Context.newObject
+org.mozilla.javascript.NativeObject.execIdCall
+org.mozilla.javascript.NativeObject.getClassName

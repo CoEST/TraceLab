@@ -1,0 +1,75 @@
+2009-06-12  Manuel Cerón  <ceronman@gmail.com>
+
+	* FigureTransferCommand.cs: Removed references to
+	DependentFigures
+
+2009-06-10  Manuel Cerón  <ceronman@gmail.com>
+
+	* UndoManager.cs: fixed StackChanged event
+
+2009-06-04  Manuel Cerón  <ceronman@gmail.com>
+
+	* UndoManager.cs: Added StackChanged Event
+
+2009-06-03  Manuel Cerón  <ceronman@gmail.com>
+
+	* ICommand.cs:
+	* IUndoable.cs:
+	* RedoCommand.cs:
+	* UndoCommand.cs:
+	* UndoManager.cs:
+	* PasteCommand.cs:
+	* IUndoActivity.cs:
+	* DeleteCommand.cs:
+	* UndoableAdapter.cs:
+	* UndoableCommand.cs:
+	* AbstractCommand.cs:
+	* SelectAllCommand.cs:
+	* DuplicateCommand.cs:
+	* NullUndoActivity.cs:
+	* SendToBackCommand.cs:
+	* BringToFrontCommand.cs:
+	* AbstractUndoActivity.cs:
+	* ChangeAttributeCommand.cs: IUndoable renamed to
+	IUndoActivity
+	UnodableAdapter renamed to AbstractUndoActivity
+
+2009-06-03  Manuel Cerón  <ceronman@gmail.com>
+
+	* UndoableCommand.cs: Cleaned up a little. Removed unnecesary
+	comentaries.
+
+2009-06-03  Manuel Cerón  <ceronman@gmail.com>
+
+	* ICommand.cs:
+	* AbstractCommand.cs: Fixed DrawingView Property
+
+2009-06-03  Manuel Cerón  <ceronman@gmail.com>
+
+	* IUndoable.cs:
+	* PasteCommand.cs:
+	* DeleteCommand.cs:
+	* UndoableAdapter.cs:
+	* SelectAllCommand.cs:
+	* FigureTransferCommand.cs:
+	* ChangeAttributeCommand.cs: Affected Figures is now
+	IEnumerable<IFigure>
+
+2009-06-03  Manuel Cerón  <ceronman@gmail.com>
+
+	* UndoableAdapter.cs: Updated some properties to Automatic
+	Properties of C# 3
+
+2009-06-03  Manuel Cerón  <ceronman@gmail.com>
+
+	* CutCommand.cs:
+	* CopyCommand.cs:
+	* DeleteCommand.cs:
+	* UndoableAdapter.cs:
+	* DuplicateCommand.cs:
+	* SelectAllCommand.cs:
+	* SendToBackCommand.cs:
+	* BringToFrontCommand.cs:
+	* ChangeAttributeCommand.cs: Changed references to
+	FromEnumerator
+

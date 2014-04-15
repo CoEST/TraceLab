@@ -1,0 +1,18 @@
+Use case name RICHIESTACONVENZIONE 
+Require to conclude a Convention between the points of rest and the agency involved. 
+Partecipating 
+Actor initialization Operator Point Of Restaurants 
+Entry 
+conditions • The Point Of Restaurant Operator has successfully authenticated to the system. 
+Flow of events User System 
+1. Enable the functionality to request the Convention to the Agency. 
+2 Displays a form for entering data of the Convention. 
+3 Inserts the data in the form of the agreement and submit. 
+4 Verify the data entered and asks for confirmation of the request. Where the data is invalid or insufficient, the system activates the use case Errored. 
+5 Confirm the operation. 
+6. Send the request to the Convention. 
+Exit conditions • The notification about the call for the Convention to the Agency. 
+• Restaurant Point Of Operator cancels the operation. 
+• Interruption of the connection to the server ETOUR. 
+Quality 
+requirements

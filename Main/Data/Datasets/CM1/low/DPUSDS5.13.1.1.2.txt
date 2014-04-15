@@ -1,0 +1,1 @@
+Normal Data Exchange Sequence	The DPA CSC calls tmaliWait() to determine how many EVENTs are waiting to be read.  When tmaliWait() returns with a number greater than zero, the DPA calls tmaliNextEvent() for each EVENT to be collected.

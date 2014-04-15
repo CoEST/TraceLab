@@ -1,0 +1,13 @@
+Nome: VisualizzaElencoClassiDocente
+Attori: Docente
+Descrizione: Il presente caso d'uso consente ad un docente di visualizzare l'elenco delle classi in cui insegna
+Precondizioni:
+•	L’utente è loggato al sistema come docente •	L’ utente clicca il pulsante “Registro Digitale”
+Sequenza degli eventi
+Utente
+Sistema
+2. Seleziona l'anno accademico di interesse.
+1. Visualizza l'elenco degli anni accademici in cui è presente almeno una classe in cui il docente insegna.
+3. Visualizza le classi associate all'anno scolastico selezionato.
+Postcondizioni:
+•	E’ stata mostrata la lista di tutte le classi in cui insegna il docente •	Connessione al server SMOS interrotta.

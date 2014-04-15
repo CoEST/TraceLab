@@ -1,0 +1,16 @@
+Use case name	ELIMINA PUNTO DI RISTORO
+Elimina un punto di ristoro dal sistema.
+Partecipating
+Actor	Inizializzato da Operatore Agenzia.
+Entry
+conditions	•	L’Operatore Agenzia ha effettuato il login.
+Flow of events 		User	System
+	1.		Visualizza una lista dei punti di ristoro come risultato del caso d’uso ricerca bene culturale,  ne seleziona uno e attiva la funzionalità di eliminazione.	
+	2.			Chiede conferma dell’operazione.
+	3.		Conferma l’operazione di eliminazione.	
+	4.			Elimina il punto di ristoro selezionato.
+Exit conditions	•	Il sistema notifica l’avvenuta eliminazione del punto di ristoro.
+•	Operatore Agenzia annulla l’operazione.
+•	Interruzione connessione al server eTour.
+Quality 
+requirements	

@@ -1,0 +1,42 @@
+Resoconto prenotazioni     
+Consente   all'Operatore   di   avere   un
+                resoconto sulle prenotazioni effettuate 
+                L'Operatore  ha  interesse  ad  avere   un
+                resoconto delle prenotazioni effettuate 
+L'Operatore   è`  stato  riconosciuto   dal
+                Sistema (Cfr  UcValOp) 
+L'Operatore   attiva   l'esecuzione    del
+                servizio di resoconto prenotazioni 
+1   Visualizza   la   maschera 
+    per   la  visualizzazione
+    del resoconto delle preno
+    tazioni
+2                              Seleziona      l'intervallo
+                               temporale 
+3                              Seleziona   il   tipo    di
+                               informazione di riepilogo 
+4                              Conferma la selezione 
+5   Accede   al   database   e 
+    reperisce      le      in
+    formazioni richieste 
+6   Visualizza              le 
+    informazioni ottenute 
+Operatore decide di stampare le
+informazioni
+  6 1    Avvia  la stampa  delle  informazioni
+         visualizzate 
+  6 2    Genera  il  report  e  lo  invia   alla
+         stampante 
+Operatore annulla l'operazione
+  4 1    Termina il caso d'uso con insuccesso 
+  3 1    L'operatore    pu"   accedere    alle    seguenti
+         informazioni di riepilogo:
+         õ    per  un  determinato  paziente  si  desidera
+            conoscere la sequenza di prenotazioni effettuate
+            in un dato periodo  oppure in tutto il periodo
+            in  cui è` stato in contatto con l'ambulatorio 
+            con indicazione delle date degli appuntamenti e
+            dei tipi di visita effettuata;
+         õ   per una determinata data  si desidera
+         conoscere l'elenco di tutte le prenotazioni
+         effettuate 

@@ -1,0 +1,167 @@
+           Text Model
+           "private int Current  Event  ;
+              private EBT ebt  ;
+              private JLabel lbl  requirement No   lbl  Project   lbl  Module  Path  ;
+              private JText  Field txt  requirement No   txt  Project   txt  Module  Path  ;
+              private boolean Hide  Msg  ;
+              private JButton submit  requirement  clear  requirement ;
+              private EB Shape Current  Rect  ;"
+           "public Text  Model  (  EBT e  )
+              {
+           // System  . out  . println  (""  Trying to create text box  "");
+            ebt = e  ;
+            Current  Event = -1  ;
+            // set  Foreground  ( new Color ( 255    255    255  ) );
+             lbl  requirement No = new JLabel  (""  requirement#  : "");
+            lbl  Project = new JLabel  (""  Project  : "");
+            lbl  Module  Path = new JLabel  (""  Module Path  : "");
+            txt  requirement No = new JText  Field  (  15  );
+            txt  Project = new JText  Field  (  20  );
+            txt  Module  Path = new JText  Field  (  20  );
+            lbl  requirement No  . set  Foreground  (  Color  . black  );
+            lbl  Project  . set  Foreground  (  Color  . black  );
+            lbl  Module  Path  . set  Foreground  (  Color  . black  );
+            txt  requirement No  . set  Background  (  Color  . light  Gray  );
+            txt  Project  . set  Background  (  Color  . light  Gray  );
+            txt  Module  Path  . set  Background  (  Color  . light  Gray  );
+            Hide  Msg = false  ;
+          
+            // Display labels
+               lbl  requirement No  . set  Bounds  (  10    0    80    25  );
+                 lbl  Project  . set  Bounds  (  10    25    80    25  );
+            lbl  Module  Path  . set  Bounds  (  10    50    80    25  );
+            lbl  Project  . set  Visible  ( false  );
+            lbl  requirement No  . set  Visible  ( false  );
+            lbl  Module  Path  . set  Visible  ( false  );
+            add  ( lbl  requirement No  );
+            add  ( lbl  Project  );
+            add  ( lbl  Module  Path  );
+          
+            // Display text fields
+            txt  requirement No  . set  Bounds  (  85    2    150    23  );
+            txt  Project  . set  Bounds  (  85    27    150    23  );
+            txt  Module  Path  . set  Bounds  (  85    52    300    23  );
+            txt  Project  . set  Visible  ( false  );
+            txt  requirement No  . set  Visible  ( false  );
+            txt  Module  Path  . set  Visible  ( false  );
+            add  ( txt  requirement No  );
+            add  ( txt  Project  );
+            add  ( txt  Module  Path  );
+          
+            submit  requirement= new JButton  (""  Update  "");
+            submit  requirement . set  Bounds  (  85    85    90    23  );
+            add  ( submit  requirement );
+            submit  requirement . set  Visible  ( false  );
+          
+            clear  requirement= new JButton  (""  Clear  "");
+            clear  requirement . set  Bounds  (  195    85    90    23  );
+            add  ( clear  requirement );
+            clear  requirement . set  Visible  ( false  );
+          
+            clear  requirement . add  Action  Listener  ( new Action  Listener  ()
+            {
+          
+             public void action  Performed  (  Action  Event e  )
+             {
+              txt  requirement No  . set  Text  ("" "");
+              Hide  Msg = false  ;
+              Hide  Text  ();
+              repaint  ();
+                  }
+            });
+          
+          
+          
+            submit  requirement . add  Action  Listener  ( new Action  Listener  ()
+            {
+             public void action  Performed  (  Action  Event e  )
+             {
+              System  . out  . println  (""  SUBMIT BUTTON WAS PRESSED - returning data  "");
+              Current  Rect  .  Update  requirement Info  ( txt  requirement No  . get  Text  () txt  Project  . get  Text  () txt  Module  Path  . get  Text  ());
+              ebt  .  Redraw  All  (  Current  Rect  );
+              txt  requirement No  . set  Text  ("" "");
+              // txt  Project  . set  Text  ("" "");
+              // txt  Module  Path  . set  Text  (""  "");
+              Hide  Msg = false  ;
+              Hide  Text  ();
+              repaint  ();
+           //   ebt  .  Update  requirement ( txt  requirement No  . get  Text  () txt  Project  . get  Text  () txt  Module  Path  . get  Text  ());
+             }
+            });
+           }"
+           "public void show  Text  (  EBShape sh  )
+              {
+                 // Hide message in bottom box  .
+                 Hide  Msg = true  ;
+                 repaint  ();
+            lbl  Project  . set  Visible  ( true  );
+            lbl  requirement No  . set  Visible  ( true  );
+            lbl  Module  Path  . set  Visible  ( true  );
+            txt  Project  . set  Visible  ( true  );
+            txt  requirement No  . set  Visible  ( true  );
+            txt  Module  Path  . set  Visible  ( true  );
+            submit  requirement . set  Visible  ( true  );
+            clear  requirement . set  Visible  ( true  );
+            Current  Rect = sh  ;
+              }"
+           "public void Hide  Text  ()
+              {
+            lbl  Project  . set  Visible  ( false  );
+            lbl  requirement No  . set  Visible  ( false  );
+            lbl  Module  Path  . set  Visible  ( false  );
+            txt  Project  . set  Visible  ( false  );
+            txt  requirement No  . set  Visible  ( false  );
+            txt  Module  Path  . set  Visible  ( false  );
+            submit  requirement . set  Visible  ( false  );
+            clear  requirement . set  Visible  ( false  );
+            Hide  Msg = false  ;
+            repaint  ();
+              }"
+           "public void Show  Info  ( int CE  )
+              {
+            Current  Event = CE  ;
+            Hide  Msg = false  ;
+            Hide  Text  ();
+                 repaint  ();
+              }"
+           "public void draw  Model  ()
+              {
+            repaint  ();
+              }"
+           "protected void paint  Component  (  Graphics g  )
+              {
+               super  . paint  Component  ( g  );
+          
+            if (  Hide  Msg == true  )
+            {
+             g  . draw  String  ("" ""  20    25  );
+             g  . draw  String  ("" ""  20    40  );
+             g  . draw  String  ("" ""  20    55  );
+             g  . draw  String  ("" ""  20    70  );
+            }
+            else
+            {
+          
+                  if (  Current  Event == 0 )
+                  {
+              g  . draw  String  (""  A ' new  ' event represents the creation of a  "" 20    25  );
+              g  . draw  String  ("" new requirement  ."" 20    40  );
+                   g  . draw  String  (""  Click on the rectangle to specify a requirement  .""  20    70  );
+             }
+             else if (  Current  Event == 1 )
+             {
+              g  . draw  String  (""  A decompose event is used to decompose a  "" 20    25  );
+              g  . draw  String  ("" higher level requirement into two or more  "" 20    40  );
+                   g  . draw  String  ("" lower level ones  .""  20    55  );
+                   g  . draw  String  (""  Click on the rectangle to specify a requirement  .""  20    70  );
+             }
+             else if (  Current  Event == 2  )
+             {
+              g  . draw  String  (""  A merge event is used to combine two or  "" 20    25  );
+              g  . draw  String  ("" more requirements into one requirement  ."" 20    40  );
+                   g  . draw  String  (""  Click on the rectangle to specify a requirement  .""  20    70  );
+             }
+             else if (  Current  Event == 3  )
+             {
+              g  . draw  String  (""  A refine event represents a textual change  ""  20    25  );
+              g  . draw  String  ("" to a requirement  ."" 20

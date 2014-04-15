@@ -1,0 +1,16 @@
+Nome: InserisciRitardiAdmin
+Attori: Amministratore
+Descrizione: Digitalizzazione del Registro, inserimento dati da parte dell’Amministratore
+Precondizioni:
+• • •
+L'utente deve essere loggato al sistema come Amministratore L'utente ha svolto il caso d’uso “VisualizzaDettagliSingoloRegistro” Seleziona la data in cui vuole inserire le informazioni.
+Sequenza degli eventi
+Utente
+Sistema
+2. Compila il form inserendo studenti con ritardo e clicca “Salva”
+1. Aggiorna la schermata visualizzata in base alla data
+3.	Invia	i	dati	al	server.
+4. Visualizza i dati del registro aggiornati.
+Postcondizioni:
+• I dati dei ritardi sono stati inseriti nel sistema, ed il sistema ha inviato le notifiche ai genitori. Il sistema rimane sulla schermata del registro.
+•	L’amministratore interrompe l’operazione. •	Connessione al server SMOS interrotta.

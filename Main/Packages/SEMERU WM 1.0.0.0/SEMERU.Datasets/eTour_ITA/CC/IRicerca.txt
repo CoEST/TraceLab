@@ -1,0 +1,84 @@
+package unisa.gps.etour.control. Gestione Ricerche;
+
+import java.rmi. Remote;
+import java.rmi. Remote Exception;
+
+import unisa.gps.etour.bean. Bean Bene Culturale;
+import unisa.gps.etour.bean. Bean Punto Di Ristoro;
+import unisa.gps.etour.util. Punto  D;
+
+/**
+ *  Interfaccia per la gestione delle ricerche
+ * 
+ * @author  Penna  Giuseppe
+ * @version  .  &#   ;      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I -
+ *           University of  Salerno
+ */
+public interface  I Ricerca extends  Remote
+{
+	
+	//  Costanti identificatrici delle tipologie di sito
+	public final static byte  B E N E_ C U L T U R A L E =  ;
+	public final static byte  P U N T O_ D I_ R I S T O R O =  ;
+	
+	/**
+	 *  Metodo di inizializzazione per la ricerca
+	 * 
+	 * @param p Id Turista  Identificativo del  Turista.  Passare -  in caso di  Utente  Guest
+	 * @param p Parole Chiave  Insieme delle parole chiave di ricerca
+	 * @param p Tags Id  Insieme dei tag di ricerca
+	 * @param p Raggio Max  Distanza massima tra l'utente e il sito
+	 * @param numero Elementi Per Pagina  Numero di elementi da ricercare in una
+	 *            sessione di ricerca
+	 * @param p Posizione Utente  Posizione dell'utente rilevata dal  G P S
+	 * @param p Tipologia Sito  Tipologia di sito da ricercare
+	 * @return  Numero di elementi emersi dalla ricerca.  In caso di errore
+	 *         ritorna - 
+	 * @throws  Remote Exception  Eccezione remota
+	 */
+	public int ricerca(int p Id Turista,  String p Parole Chiave, int[] p Tags Id, double p Raggio Max,
+			int p Elementi Per Pagina,  Punto  D p Posizione Utente,
+			byte p Tipologia Sito) throws  Remote Exception;
+
+	/**
+	 *  Metodo per la restituzione della lista di  Beni  Culturali emersi dalla
+	 * ricerca, relativi ad un determinato intervallo
+	 * 
+	 * @param p Pagina  Intervallo di elementi da includere nei risultati
+	 * @return  Insieme dei  Beni  Culturali relativi all'intervallo dei risultati
+	 *         di ricerca selezionato.  In caso di errore ritorna null
+	 * @throws  Remote Exception  Eccezione  Remota
+	 */
+	public  Bean Bene Culturale[] ottieni Pagina Risultati Bene Culturale(int p Pagina)
+			throws  Remote Exception;
+
+	/**
+	 *  Metodo per la restituzione della lista di  Punti  Di  Ristoro emersi dalla
+	 * ricerca, relativi ad un determinato intevallo
+	 * 
+	 * @param p Pagina  Intervallo di elementi da includere nei risultati
+	 * @return  Insieme dei  Punti di  Ristoro relativi all'intervallo dei
+	 *         risultati di ricerca selezionato.  In caso di errore ritorna null
+	 * @throws  Remote Exception  Eccezione  Remota
+	 */
+	public  Bean Punto Di Ristoro[] ottieni Pagina Risultati Punto Di Ristoro(int p Pagina)
+			throws  Remote Exception;
+
+	/**
+	 *  Metodo per la restituzione del numero degli elementi risultati dalla
+	 * ricerca
+	 * 
+	 * @return  Numero di elementi emersi in fase di ricerca.  Nel caso in cui non
+	 *         sia stata inizializzata la ricerca ritorna - 
+	 */
+	public int ottieni Numero Elementi Ricerca() throws  Remote Exception;
+
+	/**
+	 *  Metodo per la restituzione del numero di pagine risultate dalla ricerca
+	 * 
+	 * @return  Numero di pagine emerse in fase di ricerca.  Nel caso in cui non
+	 *         sia stata inizializzata la ricerca ritorna - 
+	 */
+	public int ottieni Numero Pagine Ricerca() throws  Remote Exception;
+
+}

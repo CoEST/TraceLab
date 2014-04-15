@@ -1,0 +1,11 @@
+Nome: VisualizzaDatiStudenti
+Attori: Genitore
+Descrizione: Il presente caso d'uso consente ad un genitore di visualizzare le informazioni relative ai propri figli
+Precondizioni:
+•	L’utente è loggato al sistema come genitore •	L’ utente clicca il pulsante “Registro” associato ad uno dei suoi figli
+Sequenza degli eventi
+Utente
+Sistema
+1. Visualizza	una	tabella riassuntiva con le informazioni relative	ai	figli	ed	in particolare:Data, Assenze, Note disciplinari,	Ritardi	e Giustifiche.
+Postcondizioni:
+•	Sono state mostrate le informazioni relative ad uno dei figli dell’ utente •	Connessione al server SMOS interrotta

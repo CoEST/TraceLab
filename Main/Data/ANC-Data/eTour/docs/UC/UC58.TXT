@@ -1,0 +1,13 @@
+Use case name VISUALIZZASCHEDASITO 
+View the details of a particular site. 
+Partecipating 
+Actor initialized by Tourist 
+Entry 
+conditions • The Tourist has successfully authenticated to the system and is located in one of the following areas: Research Results, List of Sites Visited Sites and List of Favorites 
+Flow of events User System 
+1. Select the function for displaying the card on a site chosen. 
+2 Upload data from the database. 
+Exit conditions • The system displays the details of the selected site. 
+• Interruption of the connection to the server ETOUR. 
+Quality 
+requirements

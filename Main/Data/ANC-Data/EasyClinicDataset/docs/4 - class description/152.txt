@@ -1,0 +1,13 @@
+Operator Class Date: 20/09/03 
+                                                    Version: 
+                                                    0 01 000 
+It contains descriptions for your employees 
+                   of the outpatient 
+Attributes 
+       Name Access Description 
+Private operator login Login 
+Private password associated with the login password 
+Methods 
+       Signature validaOperatore () Public Access 
+    It description of the procedure for validation 
+                   of Operator

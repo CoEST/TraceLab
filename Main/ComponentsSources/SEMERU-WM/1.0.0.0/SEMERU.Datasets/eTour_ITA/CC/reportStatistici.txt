@@ -1,0 +1,676 @@
+package unisa.gps.etour.gui.operatore agenzia ;
+
+
+import java.awt. Border Layout;
+import javax.swing. J Panel;
+import javax.swing. J Internal Frame;
+import java.awt. Dimension;
+import java.awt. Grid Bag Layout;
+import javax.swing. J Tool Bar;
+import javax.swing. J Combo Box;
+import javax.swing. J Label;
+import javax.swing. J Tabbed Pane;
+import javax.swing. J Scroll Pane;
+import javax.swing. J Table;
+import java.awt. Grid Bag Constraints;
+import javax.swing. Border Factory;
+import java.awt. Color;
+import javax.swing.border. Titled Border;
+import java.awt. Font;
+import javax.swing. J Text Pane;
+import javax.swing. J Check Box;
+import javax.swing. J Radio Button;
+import java.awt. Insets;
+import javax.swing. Image Icon;
+import javax.swing. J Button;
+
+
+import unisa.gps.etour.bean. Bean Bene Culturale;
+import unisa.gps.etour.bean. Bean Punto Di Ristoro;
+import unisa.gps.etour.bean.util. Punto  D;
+
+import java.awt. Point;
+import java.awt.event. Key Event;
+import java.util. Array List;
+import java.util. Date;
+import java.util. Hash Map;
+import java.util. Vector;
+
+public class report Statistici extends  J Internal Frame {
+	/**
+	 * 
+	 */
+	private static final long serial Version U I D =   L;
+	private  Vector< String> data;
+	private  J Panel j Content Pane = null;
+	private  J Tool Bar j Tool Bar = null;
+	private  J Combo Box j Combo Box = null;
+	private  J Panel central Panel = null;
+	private  J Scroll Pane j Scroll Pane = null;
+	private  J Table tabella Siti = null;
+	private  J Panel south Panel = null;
+	private  J Tabbed Pane j Tabbed Pane = null;
+	private  J Panel guida in linea = null;
+	private  J Text Pane j Text Pane = null;
+	private  J Panel gen Stat = null;
+	private  J Panel evd Stat = null;
+	private  J Panel stat = null;
+	private  J Panel j Panel = null;
+	private  J Button j Button = null;
+	private  J Button j Button  = null;
+	private  J Button j Button  = null;
+	private  J Label j Label  = null;
+	private  J Label j Label  = null;
+	private  J Label j Label  = null;
+	private  J Label j Label  = null;
+	private  J Label j Label  = null;
+	private  J Label j Label  = null;
+	private  J Label j Label  = null;
+	private  J Label j Label  = null;
+	private  J Label j Label  = null;
+	private  J Panel j Panel  = null;
+	private  J Label j Label   = null;
+	private  J Label j Label   = null;
+	private  J Label j Label   = null;
+	private  J Label j Label   = null;
+	private  J Label j Label   = null;
+	private  J Label j Label   = null;
+	private  J Label j Label   = null;
+	private  J Label j Label   = null;
+	private  J Label j Label   = null;
+	private  J Label j Label   = null;
+	private  J Label j Label   = null;
+	private  J Label j Label   = null;
+	private  J Label j Label   = null;
+	private  J Button btn Visualizza = null;
+	private  J Label j Label = null;
+	
+	/**
+	 *  This is the xxx default constructor
+	 */
+	public report Statistici() {
+		super();
+		initialize();
+	}
+
+	/**
+	 *  This method initializes this
+	 * 
+	 * @return void
+	 */
+	private void initialize() {
+		this.set Size(   ,    );
+		this.set Preferred Size(new  Dimension(   ,    ));
+		this.set Frame Icon(new  Image Icon(get Class().get Resource("/interfacce Agenzia/immagini/statistics-  x  .png")));
+		this.set Iconifiable(true);
+		this.set Maximizable(true);
+		this.set Closable(true);
+		this.set Title(" Report  Statistici ");
+		this.set Content Pane(get J Content Pane());
+		carica Combo(this.get J Combo Box());
+	}
+
+	/**
+	 *  This method initializes j Content Pane
+	 * 
+	 * @return javax.swing. J Panel
+	 */
+	private  J Panel get J Content Pane() {
+		if (j Content Pane == null) {
+			 Border Layout border Layout = new  Border Layout();
+			border Layout.set Hgap( );
+			border Layout.set Vgap( );
+			j Content Pane = new  J Panel();
+			j Content Pane.set Layout(border Layout);
+			j Content Pane.add(get J Tool Bar(),  Border Layout. N O R T H);
+			j Content Pane.add(get Central Panel(),  Border Layout. C E N T E R);
+			j Content Pane.add(get South Panel(),  Border Layout. S O U T H);
+		}
+		return j Content Pane;
+	}
+
+	/**
+	 *  This method initializes j Tool Bar	
+	 * 	
+	 * @return javax.swing. J Tool Bar	
+	 */
+	private  J Tool Bar get J Tool Bar() {
+		if (j Tool Bar == null) {
+			j Label = new  J Label();
+			j Label.set Text(" Seleziona  Località:");
+			j Label.set Location(new  Point(  ,  ));
+			j Tool Bar = new  J Tool Bar();
+			j Tool Bar.set Floatable(false);
+			j Tool Bar.set Layout(new  Grid Bag Layout());
+			j Tool Bar.set Preferred Size(new  Dimension( ,   ));
+			j Tool Bar.add(j Label);
+			j Tool Bar.add Separator();
+			j Tool Bar.add(get J Combo Box());
+		}
+		return j Tool Bar;
+	}
+
+	/**
+	 *  This method initializes j Combo Box	
+	 * 	
+	 * @return javax.swing. J Combo Box	
+	 */
+	private  J Combo Box get J Combo Box() {
+		
+		if (j Combo Box == null) {
+			j Combo Box = new  J Combo Box();
+			j Combo Box.set Location(new  Point(   ,  ));
+			j Combo Box.set Preferred Size(new  Dimension(   ,   ));
+			j Combo Box.set Size(new  Dimension(   ,   ));
+			//j Combo Box.add Item(" Salerno");
+			
+			this.set Title(" Report  Statistici -  Salerno");
+		
+		
+		}
+		return j Combo Box;
+	}
+	
+public void carica Combo( J Combo Box combo){
+	 Bean Punto Di Ristoro[]  Pr = new  Bean Punto Di Ristoro[ ];
+	for (int i =  ; i <  ; i++) {
+		 Pr[i] =  new  Bean Punto Di Ristoro( ,   ,  . ,
+				" D A  A R T U R O", " Vicno al mare, ottima vista, ambiente romantico e miao",
+				"         "," Sulle montagne", "amalfi", " Via principati   ","     ",
+				" N A", "             ", new  Punto  D(  ,   , ),
+				new  Date( ,  , ), new  Date( , , ), "lunedi");
+	}
+
+	 Bean Bene Culturale[]  Bc = new  Bean Bene Culturale[ ];
+	for (int i =  ; i <  ; i++) {
+		 Bc[i] = new  Bean Bene Culturale( ,   ," Castello  Arechi"," Salerno","         "," Il castello sorge su balbalblalbalbla,blablalblalba,balblalballab",
+			" Salerno"," Largo dei castelli   ","     "," S A",new  Punto  D(  ,  ,  ),new  Date( , , , , ),new  Date( , , ,  , ),"lunedi",
+			  . , . );}
+
+ Array List< String> elenco=null;
+for (int i =  ; i <  Pr.length; i++) 
+{ 
+	
+
+	if (sipuo(combo, Pr[i].get Localita())){
+	
+j Combo Box.add Item( Pr[i].get Localita());
+		}
+}
+for (int i =  ; i <  Bc.length; i++) 
+{
+	if (sipuo(combo, Bc[i].get Localita())){
+	j Combo Box.add Item( Bc[i].get Localita());
+}
+}	
+tabella Siti.set Model(new  Report Table Model( Bc, Pr));
+}
+		private boolean sipuo( J Combo Box combo,  String loc){
+			for(int i= ;i<combo.get Item Count();i++)
+				if(combo.get Item At(i)==loc)
+					return false;
+			return true;
+		}
+		
+
+	/**
+	 *  This method initializes central Panel	
+	 * 	
+	 * @return javax.swing. J Panel	
+	 */
+	private  J Panel get Central Panel() {
+		if (central Panel == null) {
+			central Panel = new  J Panel();
+			central Panel.set Layout(new  Border Layout());
+			central Panel.add(get J Scroll Pane(),  Border Layout. C E N T E R);
+			central Panel.add(get J Panel(),  Border Layout. E A S T);
+		}
+		return central Panel;
+	}
+
+	/**
+	 *  This method initializes j Scroll Pane	
+	 * 	
+	 * @return javax.swing. J Scroll Pane	
+	 */
+	private  J Scroll Pane get J Scroll Pane() {
+		if (j Scroll Pane == null) {
+			j Scroll Pane = new  J Scroll Pane();
+			j Scroll Pane.set Viewport View(get Tabella Siti());
+		}
+		return j Scroll Pane;
+	}
+
+	/**
+	 *  This method initializes tabella Siti	
+	 * 	
+	 * @return javax.swing. J Table	
+	 */
+	private  J Table get Tabella Siti() {
+	
+
+		if (tabella Siti == null) {
+			tabella Siti = new  J Table();
+			
+			
+		
+		}
+		return tabella Siti;
+	}
+
+	/**
+	 *  This method initializes south Panel	
+	 * 	
+	 * @return javax.swing. J Panel	
+	 */
+	private  J Panel get South Panel()
+	{
+		if (south Panel == null)
+		{
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. S O U T H;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			 Grid Bag Constraints grid Bag Constraints = new  Grid Bag Constraints();
+			grid Bag Constraints.fill =  Grid Bag Constraints. B O T H;
+			grid Bag Constraints.weighty =  . ;
+			grid Bag Constraints.insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints.gridx =  ;
+			grid Bag Constraints.gridy =  ;
+			grid Bag Constraints.weightx =  . ;
+			south Panel = new  J Panel();
+			south Panel.set Layout(new  Grid Bag Layout());
+			south Panel.add(get J Tabbed Pane(), grid Bag Constraints);
+			south Panel.add(get Guidainlinea(), grid Bag Constraints  );
+		}
+		return south Panel;
+	}
+
+	/**
+	 *  This method initializes j Tabbed Pane	
+	 * 	
+	 * @return javax.swing. J Tabbed Pane	
+	 */
+	private  J Tabbed Pane get J Tabbed Pane()
+	{
+		if (j Tabbed Pane == null)
+		{
+			j Tabbed Pane = new  J Tabbed Pane();
+			j Tabbed Pane.set Preferred Size(new  Dimension(   ,    ));
+			j Tabbed Pane.set Name("");
+			j Tabbed Pane.set Tab Placement( J Tabbed Pane. T O P);
+			j Tabbed Pane.add Tab(" Statistiche  Generali", null, get Gen Stat(), null);
+			j Tabbed Pane.add Tab(" Statistiche del  Sito", null, get Evd Stat(), null);
+			j Tabbed Pane.add Tab(" Ulteriori  Statistiche", null, get Stat(), null);
+		}
+		return j Tabbed Pane;
+	}
+
+	/**
+	 *  This method initializes guida in linea	
+	 * 	
+	 * @return javax.swing. J Panel	
+	 */
+	private  J Panel get Guidainlinea()
+	{
+		if (guida in linea == null)
+		{
+			 Grid Bag Constraints grid Bag Constraints  = new  Grid Bag Constraints();
+			grid Bag Constraints .fill =  Grid Bag Constraints. B O T H;
+			grid Bag Constraints .weighty =  . ;
+			grid Bag Constraints .weightx =  . ;
+			guida in linea = new  J Panel();
+			guida in linea.set Layout(new  Grid Bag Layout());
+			guida in linea.set Border( Border Factory.create Titled Border( Border Factory.create Line Border(new  Color(  ,    ,    ),  ), " Guida in linea",  Titled Border. D E F A U L T_ J U S T I F I C A T I O N,  Titled Border. D E F A U L T_ P O S I T I O N, new  Font(" Dialog",  Font. B O L D,   ), new  Color(  ,    ,    )));
+			guida in linea.set Preferred Size(new  Dimension(   ,    ));
+			guida in linea.add(get J Text Pane(), grid Bag Constraints );
+		}
+		return guida in linea;
+	}
+
+	/**
+	 *  This method initializes j Text Pane	
+	 * 	
+	 * @return javax.swing. J Text Pane	
+	 */
+	private  J Text Pane get J Text Pane()
+	{
+		if (j Text Pane == null)
+		{
+			j Text Pane = new  J Text Pane();
+			j Text Pane.set Preferred Size(new  Dimension(   ,    ));
+		}
+		return j Text Pane;
+	}
+
+	/**
+	 *  This method initializes gen Stat	
+	 * 	
+	 * @return javax.swing. J Panel	
+	 */
+	private  J Panel get Gen Stat()
+	{
+		if (gen Stat == null)
+		{
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints  .gridy =  ;
+			j Label  = new  J Label();
+			j Label .set Text(" Stelline");
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints  .gridy =  ;
+			j Label  = new  J Label();
+			j Label .set Text(" , ");
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints  .gridy =  ;
+			j Label  = new  J Label();
+			j Label .set Text(" Media  Voti:");
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints  .gridy =  ;
+			j Label  = new  J Label();
+			j Label .set Text("  ");
+			 Grid Bag Constraints grid Bag Constraints  = new  Grid Bag Constraints();
+			grid Bag Constraints .gridx =  ;
+			grid Bag Constraints .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints .gridy =  ;
+			j Label  = new  J Label();
+			j Label .set Text(" Numero  Voti non  Sufficienti:");
+			 Grid Bag Constraints grid Bag Constraints  = new  Grid Bag Constraints();
+			grid Bag Constraints .gridx =  ;
+			grid Bag Constraints .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints .gridy =  ;
+			j Label  = new  J Label();
+			j Label .set Text("  ");
+			 Grid Bag Constraints grid Bag Constraints  = new  Grid Bag Constraints();
+			grid Bag Constraints .gridx =  ;
+			grid Bag Constraints .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints .gridy =  ;
+			j Label  = new  J Label();
+			j Label .set Text(" Numero  Voti  Sufficienti:");
+			 Grid Bag Constraints grid Bag Constraints  = new  Grid Bag Constraints();
+			grid Bag Constraints .gridx =  ;
+			grid Bag Constraints .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints .gridy =  ;
+			j Label  = new  J Label();
+			j Label .set Text("   ");
+			 Grid Bag Constraints grid Bag Constraints  = new  Grid Bag Constraints();
+			grid Bag Constraints .gridx =  ;
+			grid Bag Constraints .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints .anchor =  Grid Bag Constraints. C E N T E R;
+			grid Bag Constraints .gridy =  ;
+			j Label  = new  J Label();
+			j Label .set Text(" Numero  Voti rilasciati:");
+			gen Stat = new  J Panel();
+			gen Stat.set Layout(new  Grid Bag Layout());
+			gen Stat.add(j Label , grid Bag Constraints );
+			gen Stat.add(j Label , grid Bag Constraints );
+			gen Stat.add(j Label , grid Bag Constraints );
+			gen Stat.add(j Label , grid Bag Constraints );
+			gen Stat.add(j Label , grid Bag Constraints );
+			gen Stat.add(j Label , grid Bag Constraints  );
+			gen Stat.add(j Label , grid Bag Constraints  );
+			gen Stat.add(j Label , grid Bag Constraints  );
+			gen Stat.add(j Label , grid Bag Constraints  );
+		}
+		return gen Stat;
+	}
+
+	/**
+	 *  This method initializes evd Stat	
+	 * 	
+	 * @return javax.swing. J Panel	
+	 */
+	private  J Panel get Evd Stat()
+	{
+		if (evd Stat == null)
+		{
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .insets = new  Insets( ,   ,  ,  );
+			grid Bag Constraints  .ipadx =  ;
+			grid Bag Constraints  .gridy =  ;
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. W E S T;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints  .gridy =  ;
+			j Label   = new  J Label();
+			j Label  .set Text(" ");
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. W E S T;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints  .gridy =  ;
+			j Label   = new  J Label();
+			j Label  .set Text("  ");
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. W E S T;
+			grid Bag Constraints  .gridwidth =  ;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints  .gridy =  ;
+			j Label   = new  J Label();
+			j Label  .set Text("  ");
+			j Label   = new  J Label();
+			j Label  .set Text(" Feedback sotto la sufficienza:");
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. E A S T;
+			grid Bag Constraints  .gridy =  ;
+			j Label   = new  J Label();
+			j Label  .set Text(" Feedback sufficienti:");
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .gridwidth =  ;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints  .gridy =  ;
+			j Label   = new  J Label();
+			j Label  .set Text(" Feedback totali ricevuti:");
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .gridwidth =  ;
+			grid Bag Constraints  .gridy =  ;
+			evd Stat = new  J Panel();
+			evd Stat.set Layout(new  Grid Bag Layout());
+			evd Stat.set Enabled(false);
+			evd Stat.add(get J Panel (), grid Bag Constraints  );
+			evd Stat.add(j Label  , grid Bag Constraints  );
+			evd Stat.add(j Label  , grid Bag Constraints  );
+			evd Stat.add(j Label  , grid Bag Constraints  );
+			evd Stat.add(j Label  , grid Bag Constraints  );
+			evd Stat.add(j Label  , grid Bag Constraints  );
+			evd Stat.add(j Label  , grid Bag Constraints  );
+		}
+		return evd Stat;
+	}
+
+	/**
+	 *  This method initializes stat	
+	 * 	
+	 * @return javax.swing. J Panel	
+	 */
+	private  J Panel get Stat()
+	{
+		if (stat == null)
+		{
+			stat = new  J Panel();
+			stat.set Layout(new  Grid Bag Layout());
+			stat.set Enabled(false);
+		}
+		return stat;
+	}
+
+	/**
+	 *  This method initializes j Panel	
+	 * 	
+	 * @return javax.swing. J Panel	
+	 */
+	private  J Panel get J Panel()
+	{
+		if (j Panel == null)
+		{
+			 Grid Bag Constraints grid Bag Constraints  = new  Grid Bag Constraints();
+			grid Bag Constraints .insets = new  Insets( ,  ,  ,  );
+			 Grid Bag Constraints grid Bag Constraints  = new  Grid Bag Constraints();
+			grid Bag Constraints .gridx =  ;
+			grid Bag Constraints .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints .gridy =  ;
+			 Grid Bag Constraints grid Bag Constraints  = new  Grid Bag Constraints();
+			grid Bag Constraints .gridx =  ;
+			grid Bag Constraints .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints .gridy =  ;
+			j Panel = new  J Panel();
+			j Panel.set Layout(new  Grid Bag Layout());
+			j Panel.set Border( Border Factory.create Titled Border( Border Factory.create Line Border(new  Color( ,   ,    ),  ), " Visualizza per:",  Titled Border. D E F A U L T_ J U S T I F I C A T I O N,  Titled Border. D E F A U L T_ P O S I T I O N, new  Font(" Dialog",  Font. B O L D,   ), new  Color( ,   ,    )));
+			j Panel.add(get J Button(), grid Bag Constraints );
+			j Panel.add(get J Button (), grid Bag Constraints );
+			j Panel.add(get J Button (), grid Bag Constraints );
+		}
+		return j Panel;
+	}
+
+	/**
+	 *  This method initializes j Button	
+	 * 	
+	 * @return javax.swing. J Button	
+	 */
+	private  J Button get J Button()
+	{
+		if (j Button == null)
+		{
+			j Button = new  J Button();
+			j Button.set Text("<html> Bene<br> Culturale</html>");
+			j Button.set Icon(new  Image Icon(get Class().get Resource("/interfacce Agenzia/immagini/ Sphinx-icon.gif")));
+		}
+		return j Button;
+	}
+
+	/**
+	 *  This method initializes j Button 	
+	 * 	
+	 * @return javax.swing. J Button	
+	 */
+	private  J Button get J Button ()
+	{
+		if (j Button  == null)
+		{
+			j Button  = new  J Button();
+			j Button .set Text("<html> Punto di<br>  Ristoro</html>");
+			j Button .set Preferred Size(new  Dimension(   ,   ));
+			j Button .set Icon(new  Image Icon(get Class().get Resource("/interfacce Agenzia/immagini/ Java.png")));
+		}
+		return j Button ;
+	}
+
+	/**
+	 *  This method initializes j Button 	
+	 * 	
+	 * @return javax.swing. J Button	
+	 */
+	private  J Button get J Button ()
+	{
+		if (j Button  == null)
+		{
+			j Button  = new  J Button();
+			j Button .set Text(" Tutti");
+			j Button .set Preferred Size(new  Dimension(   ,   ));
+			j Button .set Icon(new  Image Icon(get Class().get Resource("/interfacce Agenzia/immagini/ Globe_  x  .png")));
+		}
+		return j Button ;
+	}
+
+	/**
+	 *  This method initializes j Panel 	
+	 * 	
+	 * @return javax.swing. J Panel	
+	 */
+	private  J Panel get J Panel ()
+	{
+		if (j Panel  == null)
+		{
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .gridy =  ;
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints  .gridy =  ;
+			j Label   = new  J Label();
+			j Label  .set Text(" Commento di feedback cancellato dal moderatore");
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints  .gridy =  ;
+			j Label   = new  J Label();
+			j Label  .set Text(" Stelline");
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. W E S T;
+			grid Bag Constraints  .gridy =  ;
+			j Label   = new  J Label();
+			j Label  .set Text(" Si mangia bene, birre scadente");
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .gridy =  ;
+			j Label   = new  J Label();
+			j Label  .set Text("");
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints  .gridy =  ;
+			j Label   = new  J Label();
+			j Label  .set Text(" Stelline");
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints  .anchor =  Grid Bag Constraints. W E S T;
+			grid Bag Constraints  .gridy =  ;
+			j Label   = new  J Label();
+			j Label  .set Text(" Davvero un bel posto, ci tornerò!");
+			 Grid Bag Constraints grid Bag Constraints   = new  Grid Bag Constraints();
+			grid Bag Constraints  .gridx =  ;
+			grid Bag Constraints  .insets = new  Insets( ,  ,  ,  );
+			grid Bag Constraints  .gridy =  ;
+			j Label   = new  J Label();
+			j Label  .set Text(" Stelline");
+			j Panel  = new  J Panel();
+			j Panel .set Layout(new  Grid Bag Layout());
+			j Panel .set Border( Border Factory.create Titled Border( Border Factory.create Line Border(new  Color( ,   ,    ),  ), " Ultimi feedback rilasciati:",  Titled Border. D E F A U L T_ J U S T I F I C A T I O N,  Titled Border. D E F A U L T_ P O S I T I O N, new  Font(" Dialog",  Font. B O L D,   ), new  Color( ,    ,    )));
+			j Panel .add(j Label  , grid Bag Constraints  );
+			j Panel .add(j Label  , grid Bag Constraints  );
+			j Panel .add(j Label  , grid Bag Constraints  );
+			j Panel .add(j Label  , grid Bag Constraints  );
+			j Panel .add(j Label  , grid Bag Constraints  );
+			j Panel .add(j Label  , grid Bag Constraints  );
+			j Panel .add(j Label  , grid Bag Constraints  );
+			j Panel .add(get Btn Visualizza(), grid Bag Constraints  );
+		}
+		return j Panel ;
+	}
+
+	/**
+	 *  This method initializes btn Visualizza	
+	 * 	
+	 * @return javax.swing. J Button	
+	 */
+	private  J Button get Btn Visualizza()
+	{
+		if (btn Visualizza == null)
+		{
+			btn Visualizza = new  J Button();
+			btn Visualizza.set Text(" Visualizza tutti");
+			btn Visualizza.set Mnemonic( Key Event. V K_ U N D E F I N E D);
+			btn Visualizza.set Icon(new  Image Icon(get Class().get Resource("/interfacce Agenzia/immagini/ Forward    .png")));
+		}
+		return btn Visualizza;
+	}
+
+}  //  @jve:decl-index= :visual-constraint="- ,-  "

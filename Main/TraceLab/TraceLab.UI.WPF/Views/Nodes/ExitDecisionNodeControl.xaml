@@ -1,0 +1,125 @@
+﻿<!--
+TraceLab - Software Traceability Instrument to Facilitate and Empower Traceability Research
+Copyright (C) 2012-2013 CoEST - National Science Foundation MRI-R2 Grant # CNS: 0959924
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see<http://www.gnu.org/licenses/>.
+-->
+    
+<ResourceDictionary
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Resources="clr-namespace:TraceLab.UI.WPF.Resources" 
+             xmlns:GraphSharp_Controls="clr-namespace:GraphSharp.Controls;assembly=GraphSharp.Controls" 
+             xmlns:commands="clr-namespace:TraceLab.UI.WPF.Commands" 
+             xmlns:NodeControls="clr-namespace:TraceLab.UI.WPF.Views.Nodes"
+             xmlns:Controls="clr-namespace:TraceLab.UI.WPF.Controls"
+             xmlns:Views="clr-namespace:TraceLab.UI.WPF.Views"
+             xmlns:Converters="clr-namespace:TraceLab.UI.WPF.Converters"
+             xmlns:ac="clr-namespace:TraceLab.UI.WPF.Controls.AdornedControl"
+             mc:Ignorable="d" >
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Views/Nodes/NodeResources.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="NodeControls:ExitDecisionNodeControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="NodeControls:ExitDecisionNodeControl">
+                    <AdornerDecorator>
+                        <ac:AdornedControl HorizontalAdornerPlacement="Outside" VerticalAdornerPlacement="Outside" IsAdornerVisible="True">
+
+                            <!-- component node control buttons - this is the adorner -->
+                            <ac:AdornedControl.AdornerContent>
+                                <Grid x:Name="PART_VertexControlButtonsGrid" HorizontalAlignment="Right">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="16" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="16" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Create Connection Button -->
+                                    <WrapPanel Grid.Row="0" Grid.Column="0" 
+                                               Visibility="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type NodeControls:ExitDecisionNodeControl}}, 
+                                                                    Path=DisplayLinkCreationButton, Mode=OneTime, Converter={Converters:BoolToVisibilityConverter}}">
+                                        <Button x:Name="PART_CreateConnectionButton" Style="{DynamicResource IconButton}" Opacity="0">
+                                            <Button.InputBindings>
+                                                <MouseBinding MouseAction="LeftClick" 
+                                                                  Command="{x:Static commands:RoutedCommands.CreateConnectionCommand}"
+                                                                  CommandParameter="{Binding Path=.}" />
+                                            </Button.InputBindings>
+                                            <Image Height="16" Width="16" Source="/TraceLab.UI.WPF;component/Resources/arrow.png" Style="{DynamicResource IconButtonImage}"/>
+                                        </Button>
+                                    </WrapPanel>
+
+                                </Grid>
+                            </ac:AdornedControl.AdornerContent>
+
+                            <!-- This the actual control that is being adorned -->
+                            <Control x:Name="PART_NodeControl">
+                                <Control.Template>
+                                    <ControlTemplate>
+                                        <Grid x:Name="OuterPanel">
+                                            <Ellipse
+                                                Fill="DarkGray"
+                                                Height="16"
+                                                Width="16"
+                                                StrokeThickness="1"
+                                                Stroke="Black"/>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </Control.Template>
+                            </Control>
+                        </ac:AdornedControl>
+                    </AdornerDecorator>
+
+                    <!-- Visibility triggers for all adorners buttons -->
+                    <ControlTemplate.Triggers>
+                        
+                        <!-- Trigger when mouse over the control to show adorner buttons and anyallbutton -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" SourceName="PART_NodeControl" Value="False"/>
+                                <Condition Property="Grid.IsMouseOver" SourceName="PART_VertexControlButtonsGrid" Value="False"/>
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <!-- Hide adorner buttons -->
+                                        <DoubleAnimation Storyboard.TargetName="PART_CreateConnectionButton"
+                                                     Storyboard.TargetProperty="(FrameworkElement.Opacity)"
+                                                     To="0" Duration="0:0:0.1"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </MultiTrigger.EnterActions>
+                            <MultiTrigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <!-- Show adorner buttons -->
+                                        <DoubleAnimation Storyboard.TargetName="PART_CreateConnectionButton"
+                                                     Storyboard.TargetProperty="(FrameworkElement.Opacity)"
+                                                     To="1" Duration="0:0:0.1"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </MultiTrigger.ExitActions>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

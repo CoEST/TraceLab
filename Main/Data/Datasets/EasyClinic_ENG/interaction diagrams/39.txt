@@ -1,0 +1,17 @@
+Access section patient failed (by code 
+     Hospital Card) 
+     The service was launched following the explicit request 
+by the actor The Operator logs on to form 
+on the management section of the patient (body 
+of GUILoginPaziente) insert the code from the Hospital Card 
+Patient who has made a request and select the function 
+validation control then the application of 
+GUILoginPazienteHandler which delegates to the instance of 
+HospitalCardManager the task of managing the service 
+The latter is responsible for validating the data entered by 
+through the application of the Hospital Card fails 
+the transaction is notified backward up to the instance of 
+GUILoginPazienteHandler which shall display 
+an error message on screen access (application 
+of GUILoginPaziente) This feature has been described by ` 
+The sequence diagram of Fig 3 14

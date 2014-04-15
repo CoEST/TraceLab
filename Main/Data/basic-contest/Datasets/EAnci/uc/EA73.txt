@@ -1,0 +1,46 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf110
+{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;\f1\fswiss\fcharset0 Helvetica;\f2\ftech\fcharset0 Wingdings-Regular;
+\f3\fnil\fcharset0 LucidaGrande;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f0\b\fs24 \cf0 Nome caso d\'92uso\
+
+\b0 InformazioniBiblioteche\
+
+\b Attori partecipanti\
+
+\b0 Iniziato da Cittadino\
+
+\b Flusso di eventi\
+
+\b0 1. Il Cittadino richiede la visualizzazione dell'elenco delle biblioteche.\
+3.\
+2. Il sistema permette di visualizzare l'elenco delle biblioteche.\
+Il cittadino sceglie la biblioteca. 4. Il sistema restituisce le informazioni\
+riguardanti	la	biblioteca	prescelta visualizzandone dati come:\
+
+\f1 \'95 \'95 \'95\
+
+\f0 la localizzazione; le date e gli orari d'apertura; il link al sito della biblioteca.\
+
+\b Condizione di entrata\
+
+\f2\b0 \uc0\u61656 
+\f3  
+\f0 Il	cittadino	ha	effettuato	l'accesso	al sistema.\
+
+\b Condizioni di uscita\
+
+\f2\b0 \uc0\u61656 
+\f3  
+\f0 Il cittadino ha visionato le informazioni della biblioteca, OR\
+
+\f2 \uc0\u61656 
+\f0 Nel caso in cui il cittadino voglia visionare un libro verr\'e0 rimandato al sito della biblioteca.\
+
+\b Requisiti di qualita
+\f2\b0 \uc0\u61656 
+\f3  
+\f0 Non previsti.}

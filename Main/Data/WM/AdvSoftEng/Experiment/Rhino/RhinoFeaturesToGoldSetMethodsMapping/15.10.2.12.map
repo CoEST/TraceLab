@@ -1,0 +1,5 @@
+org.mozilla.javascript.regexp.NativeRegExp.parseTerm
+org.mozilla.javascript.regexp.NativeRegExp.isREWhiteSpace
+org.mozilla.javascript.regexp.NativeRegExp.isWord
+org.mozilla.javascript.regexp.NativeRegExp.executeREBytecode
+org.mozilla.javascript.Kit.xDigitToInt

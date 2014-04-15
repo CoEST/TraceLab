@@ -1,0 +1,15 @@
+Nome: ModificaRitardo
+Attori: Amministratore
+Descrizione: modifica di un ritardo da parte dell'Amministratore
+Precondizioni:
+• • •
+L'utente deve essere loggato al sistema come Amministratore L'utente ha svolto il caso d’uso “VisualizzaDettagliSingoloRegistro” Seleziona la data in cui desidera modificare il ritardo
+Sequenza degli eventi
+Utente
+Sistema
+2. L'utente modifica il ritardo e clicca su “Salva”
+1. Aggiorna la schermata in base alla data selezionata
+3. Il sistema invia i dati modificati al server	.
+Postcondizioni:
+• Il sistema ha modificato i ritardi alla data inserita. Il sistema rimane sulla schermata del registro.
+•	L’amministratore interrompe l’operazione •	Connessione al server SMOS interrotta

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<w:Wix xmlns:w="http://schemas.microsoft.com/wix/2006/wi" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+  <?include Variables.wxi ?>
+  <Fragment xmlns="http://schemas.microsoft.com/wix/2006/wi" Id="UpgradeCustomActions">
+    <CustomAction Id='UpgradeLayoutFile' BinaryKey='InstallerActions' DllEntry='UpgradeLayoutFile' Execute='immediate' Return='check'/>
+    <CustomAction Id="RemoveOldShortcuts" BinaryKey="InstallerActions" DllEntry="RemoveShortcuts" Execute="immediate" Return="check" />
+    <Binary Id='InstallerActions' SourceFile='InstallerActions.CA.dll'/>
+  </Fragment>
+ </w:Wix>

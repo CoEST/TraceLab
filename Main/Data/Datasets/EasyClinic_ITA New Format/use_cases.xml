@@ -1,0 +1,1508 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>UC</id>
+    <name>UC</name>
+    <version>1.1</version>
+    <description>Use Cases</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>1</id>
+      <content>Inserimento anagrafica laboratorio           
+Consente    all'Operatore   di    inserire
+                l'anagrafica   di   un   laborato-rio   di
+                analisi,  ovvero  tutti  i  dati  che   lo
+                caratterizzano.
+                Ha  interesse di inserire l'anagrafica del
+                laboratorio all'interno del S.I.O.
+L'Operatore   Š  stato  riconosciuto   dal
+                Sistema  (Cfr.  Uc_Val_Op)  e  dispone  di
+                tutti    i    dati    che   caratterizzano
+                l'anagrafica del laboratorio.
+I dati all'interno del  S.I.O.
+                non vengono modifi-cati.
+                Successo:   L'anagrafica  del  laboratorio
+                viene  correttamente inserita  all'interno
+                del S.I.O.
+L'Operatore   attiva   l'esecuzione    del
+                servizio  di  inserimento  dell'anagrafica
+                del laboratorio.
+1.  Visualizza   la   maschera 
+    per  l'inseri-mento  delle
+    informazioni necessarie.
+2.                             Inserisce  i dati  relativi
+                               all'anagrafica          del
+                               laboratorio.
+3.                             Conferma l'inserimento.
+4.  Verifica  i dati  inseriti 
+    dall'Operato-re.
+5.  Memorizza i dati.          
+6.  Comunica  che l'operazione 
+    si    Š    conclusa    con
+    successo.
+Dati inseriti non validi  
+4.1    Visualizza un messaggio con indicati  i
+         dati ritenuti non validi.
+  4.2    Riprende  l'esecuzione  dal   punto   1
+         avvalorando  i campi della maschera  con  i  dati
+         inseriti dall'utente.
+Operatore annulla operazione
+  3.1    Termina l'esecuzione del caso d'uso  con
+         insuccesso
+  2.1    L'anagrafica  di un laboratorio Š  caratterizzata
+         dai  seguenti dati: ragione sociale, partita IVA,
+         indirizzo,   citt…,  provincia,   CAP,   recapiti
+         telefonici e note aggiuntive.
+         NB   :   In  corsivo  sono  evidenziati  i   dati
+         facoltativi,  il  cui inserimento  non  influisce
+         sul corretto completamento dell'operazione.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>10</id>
+      <content>Elimina visita         
+Consente  all'Operatore di  eliminare  una
+                visita precedente-mente registrata.
+                L'Operatore ha interesse ad eliminare  una
+                visita precedente-mente registrata.
+L'Operatore   Š  stato  riconosciuto   dal
+                Sistema  (Cfr.  Uc_Val_Op)  e  la   visita
+                risulta registrata all'interno del S.I.O.
+I dati all'interno del  S.I.O.
+                non vengono modifi-cati.
+                Successo: La Cartella Clinica del Paziente
+                che   si   era   sottoposto  alla   visita
+                eliminata viene aggiornata.
+L'Operatore   attiva   l'esecuzione    del
+                servizio di eliminazione di una visita.
+1.  Visualizza l'elenco  delle 
+    visite   effet-tuate    in
+    ordine cronologico.
+2.                             Seleziona   la  visita   da
+                               eliminare.
+3.                             Conferma la selezione.
+4.  Visualizza   la   maschera 
+    per   la  visua-lizzazione
+    della visita.
+5.                             Conferma l'eliminazione.
+6.  Elimina  la visita  e  gli 
+    esami legati ad essa.
+7.  Comunica     all'Operatore 
+    che  l'opera-zione  si   Š
+    conclusa con successo.
+Operatore annulla l'operazione di
+modifica
+ 3.1 -   Termina il caso d'uso con insuccesso.
+  5.1
+  4.1    La  maschera conterr… i dati relativi alla visita
+         selezionata,  in modo da permettere all'Operatore
+         di  visionarli  in dettaglio prima  di  procedere
+         all'eliminazione.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>11</id>
+      <content>Inserimento Esame        
+Consente  all'Operatore  di  registrare  i
+                risultati  di  un  esame sostenuto  da  un
+                paziente,   prescritto   in   una   visita
+                tenutasi nell'ambulatorio.
+                L'Operatore  ha interesse  ad  inserire  i
+                dati relativi ad un esame sostenuto da  un
+                Paziente.
+L'Operatore   Š  stato  riconosciuto   dal
+                Sistema (Cfr. Uc_Val_Op) e la visita a cui
+                fa  riferimento  l'esame deve  essere  gi…
+                registrata all'interno del S.I.O.
+I dati all'interno del  S.I.O.
+                non vengono modifi-cati.
+                Successo: La Cartella Clinica del Paziente
+                che ha sostenuto l'esame viene aggiornata.
+L'Operatore   attiva   l'esecuzione    del
+                servizio  di inserimento dei  dati  di  un
+                esame.
+1.  Visualizza   la   maschera 
+    per    la   regi-strazione
+    dell'esame.
+2.                             Inserisce  i dati necessari
+                               alla         registra-zione
+                               dell'esame.
+3.                             Conferma l'inserimento.
+4.  Verifica  i dati  inseriti 
+    dall'Operato-re.
+5.  Memorizza i dati.          Conferma l'eliminazione.
+6.  Comunica     all'Operatore 
+    che  l'opera-zione  si   Š
+    conclusa con successo.
+Dati impostati non validi
+  4.1    Visualizza un opportuno messaggio
+  4.2    Riprende  l'esecuzione  dal   punto   1
+         avvalorando  i campi della maschera  con  i  dati
+         inseriti dall'utente.
+Operatore annulla l'operazione di
+registrazione
+  3.1    Termina il caso d'uso con insuccesso.
+  4.1    I  dati  necessari  per la  registrazione  di  un
+         esame   sono:   la   tipologia   di   esame,   le
+         informazioni relative al laboratorio  che  lo  ha
+         effettuato,   i   valori  dei  risultati   e   la
+         valutazione diagnostica fatta dal medico.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>12</id>
+      <content>Modifica esame         
+Consente  all'Operatore di  modificare  un
+                esame precedentemente registrato.
+                L'Operatore  ha interesse a modificare  un
+                esame precedentemente registrato.
+L'Operatore   Š  stato  riconosciuto   dal
+                Sistema  (Cfr. Uc_Val_Op), l'esame risulta
+                registrato   all'interno  del   S.I.O.   e
+                l'Operatore ha ricevuto i dati  dell'esame
+                da modificare.
+La  Cartella   Clinica   del
+                Paziente  che  si Š sottopo-sto  all'esame
+                non viene modificata.
+                Successo:    Le   informazioni    relative
+                all'esame  vengono aggiornate  all'interno
+                della Cartella Clinica del Paziente.
+L'Operatore   attiva   l'esecuzione    del
+                servizio di modifica di un esame.
+1.  Visualizza l'elenco  degli 
+    esami    effet-tuati    in
+    ordine cronologico.
+2.                             Seleziona    l'esame     da
+                               modificare.
+3.                             Conferma la selezione.
+4.  Visualizza   la   maschera 
+    per  la  modi-fica  di  un
+    esame.
+5.                             Modifica i dati dell'esame.
+6.                             Conferma le modifiche.
+7.  Verifica  i dati  inseriti 
+    dall'Operato-re.
+8.  Memorizza              gli 
+    aggiornamenti.
+9.  Comunica     all'Operatore 
+    che  l'opera-zione  si   Š
+    conclusa con successo.
+Dati impostati non validi
+  7.1    Visualizza un opportuno messaggio
+  7.2    Riprende  l'esecuzione  dal   punto   4
+         avvalorando  i campi della maschera  con  i  dati
+         inseriti dall'Operatore.
+Operatore annulla l'operazione di
+modifica
+ 3.1 -   Termina il caso d'uso con insuccesso.
+  6.1
+  4.1    I  dati  necessari  per la  registrazione  di  un
+         esame   sono:   la   tipologia   di   esame,   le
+         informazioni relative al laboratorio  che  lo  ha
+         effettuato,   i   valori  dei  risultati   e   la
+         valutazione diagnostica fatta dal medico.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>13</id>
+      <content>Elimina esame          
+Consente  all'Operatore di  eliminare  una
+                visita precedente-mente registrata.
+                L'Operatore  ha interesse ad eliminare  un
+                esame precedente-mente registrato.
+L'Operatore   Š  stato  riconosciuto   dal
+                Sistema (Cfr. Uc_Val_Op) e l'esame risulta
+                registrato all'interno del S.I.O.
+I dati all'interno del  S.I.O.
+                non vengono modifi-cati.
+                Successo: La Cartella Clinica del Paziente
+                che  si era sottoposto all'esame eliminato
+                viene aggiornata.
+L'Operatore   attiva   l'esecuzione    del
+                servizio di eliminazione di un esame.
+1.  Visualizza l'elenco  degli 
+    esami    effet-tuate    in
+    ordine cronologico.
+2.                             Seleziona    l'esame     da
+                               modificare.
+3.                             Conferma la selezione.
+4.  Visualizza   la   maschera 
+    per   la  visua-lizzazione
+    dell'esame.
+5.                             Conferma l'eliminazione.
+6.  Elimina l'esame.           
+7.  Comunica     all'Operatore 
+    che  l'opera-zione  si   Š
+    conclusa con successo.
+Operatore annulla l'operazione di
+modifica.
+ 3.1 -   Termina il caso d'uso con insuccesso.
+  5.1
+  4.1    La  maschera  conterr… i dati relativi  all'esame
+         selezionato,  in modo da permettere all'Operatore
+         di  visionarli  in dettaglio prima  di  procedere
+         all'eliminazione.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>14</id>
+      <content>Prenota visita         
+Consente  all'Operatore di  soddisfare  la
+                richiesta di prenota-zione di un  servizio
+                ambulatoriale presentata da un Paziente.
+                L'Operatore  ha interesse a registrare  la
+                prenotazione  di un servizio ambulatoriale
+                richiesto da un Paziente.
+L'Operatore   Š  stato  riconosciuto   dal
+                Sistema  (Cfr. Uc_Val_Op). Il  Paziente  Š
+                stato   riconosciuto  dal  Sistema   (Cfr.
+                Uc_Val_Paz) ed ha rilasciato all'Operatore
+                il modulo R.S.A. correttamente compilato.
+I dati all'interno del  S.I.O.
+                non vengono modifi-cati.
+                Successo:    Il   servizio   ambulatoriale
+                richiesto viene corretta-mente prenotato.
+L'Operatore   attiva   l'esecuzione    del
+                servizio  di  prenotazione di un  servizio
+                ambulatoriale.
+1.  
+      Prima visita
+    
+       L'Operatore          ha
+       ricevuto  una richiesta
+       di   prima  visita   da
+       parte di un paziente.
+    
+       Inserimento  anagrafica
+    paziente
+2.  Visualizza   la   maschera 
+    per  la  preno-tazione  di
+    un                servizio
+    ambulatoriale.
+3.                             Seleziona il tipo di visita
+                               che   il   Paziente   vuole
+                               effettuare.
+4.                             Inserisce   la  motivazione
+                               della richiesta.
+5.                             Conferma i dati inseriti.
+6.  Verifica  che la  sequenza 
+    di    prenota-zioni    sia
+    valida.
+    (Cfr. Br_Val_Seq)
+7.  Include(Seleziona     date 
+    disponibili)
+8.                             Conferma la prenotazione.
+9.  Memorizza i dati.          
+10. Comunica     all'Operatore 
+    che  l'opera-zione  si   Š
+    conclusa con successo.
+Sequenza prenotazioni non valida
+  6.1    Visualizza un opportuno messaggio
+  6.2    Riprende l'esecuzione dal punto 2.
+Operatore annulla l'operazione di
+prenotazione
+ 5.1 -   Termina il caso d'uso con insuccesso.
+  8.1
+  9.1    Nel  caso  di una Prima visita Š in questo  punto
+         che  verranno memorizzati anche i dati anagrafici
+         del  paziente.  Inoltre sempre nel  caso  di  una
+         Prima    visita    il   sistema   provveder…    a
+         visualizzare  e  a stampare l'hospital  card  del
+         paziente.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>15</id>
+      <content>Modifica prenotazione      
+Consente  all'Operatore di  soddisfare  la
+                richiesta  di modifica di una prenotazione
+                di un servizio ambulatoriale presentata da
+                un  Paziente. Per modifica si  intende  lo
+                slittamento   della  data  ad   una   data
+                successiva.
+                L'Operatore  ha interesse a modificare  la
+                prenotazione  di un servizio ambulatoriale
+                precedentemente richiesto da un Pa-ziente.
+L'Operatore   Š  stato  riconosciuto   dal
+                Sistema  (Cfr. Uc_Val_Op). Il  Paziente  Š
+                stato   riconosciuto  dal  Sistema   (Cfr.
+                Uc_Val_Paz)  e  la  prenotazione  di   cui
+                richiede    la   modifica    Š    presente
+                all'interno del S.I.O.
+I dati all'interno del  S.I.O.
+                non vengono modifi-cati.
+                Successo:     La    prenotazione     viene
+                correttamente   slittata   ad   una   data
+                successiva.
+L'Operatore   attiva   l'esecuzione    del
+                servizio di modifica di una prenotazione.
+1.  Visualizza l'elenco  delle 
+    prenotazio-ni relative  al
+    Paziente.
+2.                             Seleziona  la  prenotazione
+                               da modifica-re.
+3.                             Conferma la selezione.
+4.  Visualizza   la   maschera 
+    per   la  modi-fica  della
+    prenotazione.
+5.  Include(Seleziona     date 
+    disponibili)
+6.                             Conferma la modifica.
+7.  Verifica  che la  sequenza 
+    di    prenota-zioni    sia
+    valida.
+    (Cfr. Br_Val_Seq)
+8.  Memorizza              gli 
+    aggiornamenti.
+10. Comunica     all'Operatore 
+    che  l'opera-zione  si   Š
+    conclusa con successo.
+Sequenza prenotazioni non valida
+  7.1    Sistema: Visualizza un opportuno messaggio
+  7.2    Sistema: Riprende l'esecuzione dal punto 4.
+Operatore annulla l'operazione di
+modifica
+ 3.1 -   Termina il caso d'uso con insuccesso.
+  6.1
+  7.1    La  sequenza  delle prenotazioni va ricontrollata
+         in  quanto  il  Paziente potrebbe  richiedere  la
+         modifica    di    una    prenotazione     diversa
+         dall'ultima.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>16</id>
+      <content>Annulla prenotazione      
+Consente  all'Operatore di  soddisfare  la
+                richiesta   di   annulla-mento   di    una
+                prenotazione  di un servizio ambulatoriale
+                pre-sentata da un Paziente.
+                L'Operatore  ha interesse ad annullare  la
+                prenotazione  di un servizio ambulatoriale
+                precedentemente richiesto da un Pa-ziente.
+L'Operatore   Š  stato  riconosciuto   dal
+                Sistema  (Cfr. Uc_Val_Op). Il  Paziente  Š
+                stato   riconosciuto  dal  Sistema   (Cfr.
+                Uc_Val_Paz)  e  la  prenotazione  di   cui
+                richiede    l'annullamento   Š    presente
+                all'interno del S.I.O.
+I dati all'interno del  S.I.O.
+                non vengono modifi-cati.
+                Successo:     La    prenotazione     viene
+                definitivamente annullata.
+L'Operatore   attiva   l'esecuzione    del
+                servizio    di   annullamento    di    una
+                prenotazione.
+1.  Visualizza l'elenco  delle 
+    prenotazio-ni relative  al
+    Paziente.
+2.                             Seleziona  la  prenotazione
+                               da modifica-re.
+3.                             Conferma l'annullamento.
+4.  Verifica  che la  sequenza 
+    di    prenota-zioni    sia
+    valida.
+    (Cfr. Br_Val_Seq)
+5.  Annulla la prenotazione.   
+6.  Comunica     all'Operatore 
+    che  l'opera-zione  si   Š
+    conclusa con successo.
+Sequenza prenotazioni non valida
+  4.1    Visualizza un opportuno messaggio
+  4.2    Riprende l'esecuzione dal punto 1.
+Operatore annulla l'operazione di
+modifica
+  3.1    Termina il caso d'uso con insuccesso.
+  4.1    La  sequenza  delle prenotazioni va ricontrollata
+         in   quanto   il  Paziente  potrebbe   richiedere
+         l'annullamento di una prenotazione  diversa  dal-
+         l'ultima.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>17</id>
+      <content>Modifica anagrafica paziente   
+Consente    all'Operatore   di   modificare
+               l'anagrafica di un Pa-ziente che  afferisce
+               all'ambulatorio.
+               Si  occupa della modifica dei dati relativi
+               all'anagrafica di un Paziente.
+L'Operatore   Š   stato  riconosciuto   dal
+               Sistema  (Cfr.  Uc_Val_Op). Il  Paziente  Š
+               stato   riconosciuto  dal   sistema   (Cfr.
+               Uc_Val_Paz) e l'anagrafica del  paziente  Š
+               presente all'inter-no del S.I.O.
+I dati anagrafici del  Paziente
+               non  vengono mo-dificati: permangono  nello
+               stato presente prima dell'esecuzio-ne.
+               Successo:  L'anagrafica del Paziente  viene
+               correttamente mo-dificata.
+L'Operatore    attiva   l'esecuzione    del
+               servizio  di  modifica dell'anagrafica  del
+               Paziente.
+1.  Visualizza  la   maschera 
+    per      la     modi-fica
+    dell'anagrafica       del
+    Paziente.
+2.                            Modifica  l'anagrafica   del
+                              Paziente.
+3.                            Conferma le modifiche.
+4.  Verifica  i dati inseriti 
+    dall'Operato-re.
+5.  Memorizza             gli 
+    aggiornamenti.
+6.  Comunica che l'operazione 
+    si    Š   con-clusa   con
+    successo.
+Dati impostati non validi
+  4.1    Visualizza un messaggio con indicati  i
+         dati ritenuti non validi.
+  4.2    Riprende  l'esecuzione  dal   punto   1
+         avvalorando  i campi della maschera  con  i  dati
+         inseriti dall'utente.
+Operatore annulla la funzione di
+modifica
+  3.1    Termina l'esecuzione del caso d'uso  con
+         insuccesso
+  2.1    L'anagrafica di un paziente Š caratterizzata  dai
+         seguenti  dati:  nome,  cognome,  sesso,   codice
+         fiscale,  data  di  nascita,  luogo  di  nascita,
+         provincia   di  nascita,  indirizzo,   luogo   di
+         residenza, provincia di residenza, CAP,  recapiti
+         telefonici e note aggiuntive.
+         NB   :   In  corsivo  sono  evidenziati  i   dati
+         facoltativi,  il  cui inserimento  non  influisce
+         sul corretto completamento dell'operazione.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>18</id>
+      <content>Inserimento anagrafica paziente 
+Consente    all'Operatore   di    inserire
+                l'anagrafica  di un Paziente che  contatta
+                per la prima volta l'ambulatorio.
+                L'Operatore  ha  interesse  a   registrare
+                l'anagrafica  di  un  nuovo  Paziente   in
+                quanto quest'ultimo contatta per la  prima
+                volta   l'ambulatorio   e   richiede   una
+                prenotazione per una  Prima Visita.
+L'Operatore   Š  stato  riconosciuto   dal
+                Sistema   (Cfr.  Uc_Val_Op).  Il  Paziente
+                rilascia  all'Operatore il  modulo  R.S.A.
+                con  la  sezione  relativa  all'anagrafica
+                correttamente compilata.
+I dati all'interno del  S.I.O.
+                non vengono modifi-cati.
+                Successo: L'anagrafica del Paziente  viene
+                correttamente  mantenuta  in   memoria   e
+                memorizzata all'interno del S.I.O. solo al
+                termine  della  prenotazione  della  Prima
+                Visita.
+L'Operatore   attiva   l'esecuzione    del
+                servizio  di  prenotazione  di  una  Prima
+                Visita.
+1.  Visualizza   la   maschera 
+    per  l'inseri-mento  delle
+    informazioni necessarie.
+2.                             Inserisce  i dati  relativi
+                               all'anagrafica          del
+                               Paziente.
+3.                             Conferma l'inserimento.
+4.  Verifica  i dati  inseriti 
+    dall'Operato-re.
+5.  Crea    ed   assegna    la 
+    Hospital Card.
+    (Cfr. Br_Cre_Car)
+10.   Prima visita
+Dati impostati non validi
+  4.1    Visualizza un messaggio con indicati  i
+         dati ritenuti non validi.
+  4.2    Riprende  l'esecuzione  dal   punto   1
+         avvalorando  i campi della maschera  con  i  dati
+         inseriti dall'utente.
+Operatore annulla la funzione di
+inserimento
+  3.1    Termina l'esecuzione del caso d'uso  con
+         insuccesso
+  2.1    L'anagrafica di un paziente Š caratterizzata  dai
+         seguenti  dati:  nome,  cognome,  sesso,   codice
+         fiscale,  data  di  nascita,  luogo  di  nascita,
+         provincia   di  nascita,  indirizzo,   luogo   di
+         residenza, provincia di residenza, CAP,  recapiti
+         telefonici e note aggiuntive.
+         NB   :   In  corsivo  sono  evidenziati  i   dati
+         facoltativi,  il  cui inserimento  non  influisce
+         sul corretto completamento dell'operazione.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>19</id>
+      <content>Accesso sezione paziente    
+Consente  l'accesso alla sezione  paziente
+                da parte dell'Operatore, consentendogli di
+                soddisfare  una  o pi— richieste  ricevute
+                dal Paziente.
+                L'Operatore ha interesse ad accedere  alla
+                sezione   paziente  al   fine   di   poter
+                asservire  alle  richieste  ricevute   dal
+                Paziente.
+L'Operatore   Š  stato  riconosciuto   dal
+                Sistema (Cfr. Uc_Val_Op).
+Il sistema nega l'accesso alla
+                sezione paziente.
+                Successo:  L'Operatore  ottiene  l'accesso
+                alla  sezione  paziente  ed  abilitato   a
+                soddisfare   le  richieste  ricevute   dal
+                Paziente.
+L'Operatore   attiva   l'esecuzione    del
+                servizio di accesso alla sezione paziente.
+1.  Include(Valida paziente)   
+2.  Visualizza maschera  della 
+    sezione paziente.
+Operatore annulla l'operazione di
+accesso alla sessione paziente
+ 3.1 -   Termina il caso d'uso con insuccesso.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>2</id>
+      <content>Modifica anagrafica laboratorio 
+Consente    all'Operatore   di   modificare
+               l'anagrafica di un laboratorio di analisi.
+               Si  occupa della modifica dei dati relativi
+               all'anagrafica   di   un   laboratorio   di
+               analisi.
+L'Operatore   Š   stato  riconosciuto   dal
+               Sistema  (Cfr.  Uc_Val_Op)  e  l'anagrafica
+               del  laboratorio Š presente all'interno del
+               S.I.O.
+I   dati   anagrafici    del
+               laboratorio    non   vengono    modificati:
+               permangono   nello  stato  presente   prima
+               dell'esecuzio-ne.
+               Successo:   L'anagrafica  del   laboratorio
+               viene correttamente modificata.
+L'Operatore    attiva   l'esecuzione    del
+               servizio  di  modifica dell'anagrafica  del
+               laboratorio.
+1.  Visualizza  l'elenco  dei 
+    laboratori       presenti
+    all'interno del S.I.O.
+2.                            Seleziona il laboratorio  di
+                              cui               modificare
+                              l'anagrafica.
+3.                            Conferma la selezione.
+4.  Visualizza  la   maschera 
+    per      la     modi-fica
+    dell'anagrafica       del
+    laboratorio.
+5.                            Modifica  l'anagrafica   del
+                              laboratorio.
+6.                            Conferma le modifiche.
+7.  Verifica  i dati inseriti 
+    dall'Operato-re.
+8.  Memorizza             gli 
+    aggiornamenti.
+9.  Comunica che l'operazione 
+    si    Š   con-clusa   con
+    successo.
+Dati inseriti non validi  
+  7.1    Visualizza un messaggio con indicati  i
+         dati ritenuti non validi.
+  7.2    Riprende  l'esecuzione  dal   punto   4
+         avvalorando  i campi della maschera  con  i  dati
+         inseriti dall'utente.
+Operatore annulla operazione
+ 3.1 -   Termina l'esecuzione del caso d'uso  con
+  6.1    insuccesso
+  5.1    L'anagrafica  di un laboratorio Š  caratterizzata
+         dai  seguenti dati: ragione sociale, partita IVA,
+         indirizzo,   citt…,  provincia,   CAP,   recapiti
+         telefonici e note aggiuntive.
+         NB   :   In  corsivo  sono  evidenziati  i   dati
+         facoltativi,  il  cui inserimento  non  influisce
+         sul corretto completamento dell'operazione.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>20</id>
+      <content>Valida paziente         
+Si   occupa   di   eseguire   le   funzioni
+               necessarie  per  l'autenticazio-ne  di   un
+               Paziente.
+               Ha  interesse  a validare il  Paziente  per
+               accedere  alla  sezione relative  alle  sue
+               informazioni.
+L'Operatore   Š   stato  riconosciuto   dal
+               Sistema (Cfr. Uc_Val_Op). Il Paziente  deve
+               fornire  all'Operatore la Hospital  Card  o
+               il suo codice fiscale.
+Il Paziente non Š riconosciuto
+               dal sistema.
+               Successo:  Il  Paziente Š riconosciuto  dal
+               sistema  e  l'Operatore  accede  alla   sua
+               sezione.
+L'Operatore  attiva  l'esecuzione  di   una
+               funzione    relativa   ad   uno   specifico
+               paziente.
+1.  Visualizza  la   maschera 
+    per  la  validazione  del
+    Paziente.
+2.                            Inserisce  il  codice  della
+                              Hospital Card.
+3.                            Conferma la validazione.
+4.  Verifica  che  il  codice 
+    della    Hospital    Card
+    individua   un   Paziente
+    all'inter-no S.I.O.
+5.  Reperisce le informazioni 
+    del pa-ziente.
+6.  Trasferisce in memoria  i 
+    dati del pa-ziente.
+Validazione mediante codice fiscale
+  2.1    Inserisce  il  codice  fiscale   del
+         Paziente.
+  2.2    Riprende l'esecuzione dal punto 3.
+Operatore annulla la funzione di
+validazione
+  3.1    Termina l'esecuzione del caso d'uso  con
+         insuccesso
+Login fallito
+  4.1    Visualizza opportuno messaggio
+  4.2    Riprende l'esecuzione dal punto 2.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>21</id>
+      <content>Visualizza cartella clinica   
+Consente ad un Paziente di visualizzare  la
+               propria  Cartella  Clinica  sfruttando   le
+               apposite  postazioni dislocate  all'interno
+               dell'ambulatorio.
+               Ha   interesse  ad  accedere  alla  propria
+               Cartella Clinica.
+Il   Paziente  Š  stato  riconosciuto   dal
+               sistema.
+               (Cfr. Uc_Acc_TB)
+Il   Paziente    ottiene    la
+               visualizzazione     delle      informazioni
+               contenute nella propria Cartella Clinica.
+Il   Paziente   attiva   l'esecuzione   del
+               servizio  di visualizzazione della Cartella
+               Clinica.
+1.  Accede   al  database   e 
+    reperisce le informazioni
+    relative   alla  cartella
+    clinica del Paziente.
+2.  Visualizza  le generalit… 
+    del  paziente e  l'elenco
+    delle  visite  effettuate
+    in  ordine cronologico  e
+    di patologia.
+Paziente visualizza dettagli visita
+  2.1    Seleziona  una  visita  dall'elenco  e
+         richiede la visualizzazione dei dettagli.
+  2.2    Accede  al  database  e  reperisce   i
+         dettagli della visita seleziona-ta.
+  2.3    Visualizza  la  maschera  contenente  i
+         dettagli della visita.
+Paziente decide di stampare la
+propria Cartella Clinica
+  2.1    Avvia   la  stampa   della   cartella
+         clinica.
+  2.2    Genera  il  report  e  lo  invia   alla
+         stampante.
+Paziente decide di stampare i
+dettagli di una visita
+ 2.3.1   Avvia  la  stampa dei  dettagli  della
+         visita.
+ 2.3.2   Genera  il  report  e  lo  invia   alla
+         stampante.
+  2.1    Per  ogni  visita, viene riportata  la  data,  il
+         nome del medico che ha effettuato la visita e  il
+         motivo della visita.
+  2.3    Per  ciascuna visita viene riportata la data,  il
+         nome del medico che ha ef-fettuato la visita,  il
+         motivo  della visita ed i malesseri accusati  dal
+         pa-ziente,   l'anamnesi  fatta  dal  medico,   la
+         diagnosi,   gli  esami  prescritti,  la   terapia
+         (indicando  medicinali  e  tempi  di  assunzione)
+         prescritta.  Sono  altres�  riportati  i   valori
+         delle  eventuali  rilevazioni  strumentali  fatte
+         durante  la  visita  (ad  es.  battito  cardiaco,
+         valori   della  pressione  sanguigna,   n.ro   di
+         diottrie   riscontrate,  etc.).  Per  gli   esami
+         biologici  e/o strumentali, una volta che  questi
+         sono   stati   effettuati,  sono   riportate   le
+         informazioni relative al laboratorio  che  le  ha
+         effettuate ed ai valori dei risultati di  ciascun
+         esame  e  la  valutazione diagnostica  fatta  dal
+         medico.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>22</id>
+      <content>Visualizza prenotazioni     
+Consente  ad  un  Paziente di  visualizzare
+               l'elenco    delle    prenota-zioni    utili
+               sfruttando     le    apposite    postazioni
+               dislocate all'inter-no dell'ambulatorio.
+               Ha  interesse ad accedere all'elenco  delle
+               proprie prenotazioni utili.
+Il   Paziente  Š  stato  riconosciuto   dal
+               sistema.
+               (Cfr. Uc_Acc_TB)
+Il   Paziente    ottiene    la
+               visualizzazione dell'elenco  delle  proprie
+               prenotazioni.
+Il   Paziente   attiva   l'esecuzione   del
+               servizio   di  visualizzazione  dell'elenco
+               delle proprie prenotazioni.
+1.  Accede   al  database   e 
+    reperisce le informazioni
+    relative   alle  prenota-
+    zioni utili del Paziente.
+2.  Visualizza l'elenco delle 
+    prenotazio-ni  effettuate
+    dal  paziente  in  ordine
+    cronologico.
+Paziente decide di stampare l'elenco
+delle prenotazioni
+  2.1    Avvia  la  stampa  dell'elenco   delle
+         prenotazioni.
+  2.2    Genera  il  report  e  lo  invia   alla
+         stampante.
+  2.1    Per  ogni prenotazione, viene riportata la  data,
+         l'ora,  la tipologia di visita e il motivo  della
+         visita.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>23</id>
+      <content>Visualizza anagrafica      
+Consente  ad un Paziente di visualizzare  i
+               propri   dati   anagrafici  sfruttando   le
+               apposite  postazioni dislocate  all'interno
+               dell'am-bulatorio.
+               Ha   interesse  ad  accedere  alle  proprie
+               informazioni anagrafi-che.
+Il   Paziente  Š  stato  riconosciuto   dal
+               sistema.
+               (Cfr. Uc_Acc_TB)
+Il   Paziente    ottiene    la
+               visualizzazione     dei     propri     dati
+               anagrafici.
+Il   Paziente   attiva   l'esecuzione   del
+               servizio  di  visualizzazione  dei   propri
+               dati anagrafici.
+1.  Accede   al  database   e 
+    reperisce le informazioni
+    relative   all'anagrafica
+    del Paziente.
+2.  Visualizza             le 
+    informazioni anagrafi-che
+    del Paziente.
+Paziente decide di stampare le
+informazioni visualizzate
+  2.1    Avvia  la  stampa  dell'elenco   delle
+         prenotazioni.
+  2.2    Genera  il  report  e  lo  invia   alla
+         stampante.
+  2.1    L'anagrafica di un paziente Š caratterizzata  dai
+         seguenti  dati:  nome,  cognome,  sesso,   codice
+         fiscale,  data  di  nascita,  luogo  di  nascita,
+         provincia   di  nascita,  indirizzo,   luogo   di
+         residenza, provincia di residenza, CAP,  recapiti
+         telefonici e note aggiuntive.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>24</id>
+      <content>Accesso Box Tower        
+Consente  al  Paziente di accedere  ad  una
+               delle   postazioni  dislocate   all'interno
+               dell'ambulatorio.
+               Ha  interesse  ad accedere al  sistema  per
+               visualizzare le proprie informazioni.
+Il  Paziente deve essere in possesso  della
+               Hospital Card.
+Il Paziente non Š riconosciuto
+               dal sistema.
+               Successo:  Il  Paziente Š riconosciuto  dal
+               sistema e viene abilitato ad accedere  alla
+               sua sezione.
+Il  Paziente accede ad una delle postazioni
+               dislocate all'interno dell'ambulatorio.
+1.  Include(Valida paziente)  
+2.  Reperisce              le 
+    informazioni   del    Pa-
+    ziente.
+3.  Trasferisce in memoria  i 
+    dati del Paziente.
+4.  Visualizza  la   maschera 
+    principale  di   un   Box
+    Tower.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>25</id>
+      <content>Valida paziente         
+Si   occupa   di   eseguire   le   funzioni
+               necessarie  per  l'autenticazio-ne  di   un
+               paziente.
+               Ha  interesse  ad accedere al  sistema  per
+               visualizzare le proprie informazioni.
+Il  Paziente deve essere in possesso  della
+               Hospital Card.
+Il Paziente non Š riconosciuto
+               dal sistema.
+               Successo:  Il  Paziente Š riconosciuto  dal
+               sistema e accede alla sua sezione.
+Il Paziente accede al Box Tower.
+1.  Visualizza  la   maschera 
+    per   l'opera-zione    di
+    login.
+2.                            Inserisce  il  codice  della
+                              Hospital  Card ed il  codice
+                              PIN.
+3.                            Conferma la validazione.
+4.  Verifica  che  la  coppia 
+    (Hospital   Card,    PIN)
+    identifica  un   paziente
+    all'interno S.I.O.
+Paziente annulla la funzione di
+validazione
+  3.1    Termina l'esecuzione del caso d'uso  con
+         insuccesso
+Validazione fallita
+  4.1    Visualizza opportuno messaggio
+  4.2    Riprende l'esecuzione dal punto 1.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>26</id>
+      <content>Resoconto prenotazioni     
+Consente   all'Operatore   di   avere   un
+                resoconto sulle prenota-zioni effettuate.
+                L'Operatore  ha  interesse  ad  avere   un
+                resoconto delle prenota-zioni effettuate.
+L'Operatore   Š  stato  riconosciuto   dal
+                Sistema (Cfr. Uc_Val_Op).
+L'Operatore   attiva   l'esecuzione    del
+                servizio di resoconto pre-notazioni.
+1.  Visualizza   la   maschera 
+    per   la  visua-lizzazione
+    del resoconto delle preno-
+    tazioni
+2.                             Seleziona      l'intervallo
+                               temporale.
+3.                             Seleziona   il   tipo    di
+                               informazione di rie-pilogo.
+4.                             Conferma la selezione.
+5.  Accede   al   database   e 
+    reperisce      le      in-
+    formazioni richieste.
+6.  Visualizza              le 
+    informazioni ottenute.
+Operatore decide di stampare le
+informazioni
+  6.1    Avvia  la stampa  delle  informazioni
+         visualizzate.
+  6.2    Genera  il  report  e  lo  invia   alla
+         stampante.
+Operatore annulla l'operazione
+  4.1    Termina il caso d'uso con insuccesso.
+  3.1    L'operatore    pu•   accedere    alle    seguenti
+         informazioni di riepilogo:
+         õ    per  un  determinato  paziente  si  desidera
+            conoscere la sequenza di prenotazioni effettuate
+            in un dato periodo, oppure in tutto il periodo
+            in  cui Š stato in contatto con l'ambulatorio,
+            con indicazione delle date degli appuntamenti e
+            dei tipi di visita effettuata;
+         õ   per una determinata data, si desidera
+         conoscere l'elenco di tutte le prenotazioni
+         effettuate.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>27</id>
+      <content>Resoconto visite        
+Consente   all'Operatore   di   avere   un
+                resoconto    sulle    visite    effettuate
+                all'interno dell'ambulatorio, in  modo  da
+                avere una visione complessiva delle visite
+                effettuate  da un paziente,  delle  visite
+                sostenute da un determinato medico, etc.
+                L'Operatore  ha  interesse  ad  avere   un
+                resoconto    delle    visite    effettuate
+                all'interno dell'ambulatorio.
+L'Operatore   Š  stato  riconosciuto   dal
+                Sistema (Cfr. Uc_Val_Op).
+L'Operatore   attiva   l'esecuzione    del
+                servizio di resoconto visi-te.
+1.  Visualizza   la   maschera 
+    per   la  visua-lizzazione
+    del     resoconto    delle
+    visite.
+2.                             Seleziona      l'intervallo
+                               temporale.
+3.                             Seleziona   il   tipo    di
+                               informazione di rie-pilogo.
+4.                             Conferma la selezione.
+5.  Accede   al   database   e 
+    reperisce      le      in-
+    formazioni richieste.
+6.  Visualizza              le 
+    informazioni ottenute.
+Operatore decide di stampare le
+informazioni
+  6.1    Avvia  la stampa  delle  informazioni
+         visualizzate.
+  6.2    Genera  il  report  e  lo  invia   alla
+         stampante.
+Operatore annulla l'operazione
+  4.1    Termina il caso d'uso con insuccesso.
+  3.1    L'Operatore    pu•   accedere    alle    seguenti
+         informazioni di riepilogo:
+         õ    tutte  le  visite effettuate con indicazione
+            della data, paziente sottoposto a visita, medico
+            che ha condotto la visita;
+         õ   tutte le visite effettuate da uno stesso
+         medico con indicazione della data, dei pazienti
+         visitati, degli esami prescritti;
+         õ   tutte le visite effettuate da un paziente
+         con indicazione della data, del medico, della
+         patologia accusata, della diagnosi, degli esami
+         e medicinali prescritti.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>28</id>
+      <content>Resoconto esami         
+Consente   all'Operatore   di   avere   un
+                resoconto   sugli  esami   effettuati   in
+                riferimento   alle   visite    fatte    in
+                ambulatorio.
+                L'Operatore  ha  interesse  ad  avere   un
+                resoconto degli esami effettuati.
+L'Operatore   Š  stato  riconosciuto   dal
+                Sistema (Cfr. Uc_Val_Op).
+L'Operatore   attiva   l'esecuzione    del
+                servizio di resoconto esami.
+1.  Visualizza   la   maschera 
+    per   la  visua-lizzazione
+    del     resoconto    degli
+    esami.
+2.                             Seleziona      l'intervallo
+                               temporale.
+3.                             Conferma la selezione.
+4.  Accede   al   database   e 
+    reperisce      le      in-
+    formazioni richieste.
+5.  Visualizza              le 
+    informazioni ottenute.
+Operatore decide di stampare le
+informazioni
+  5.1    Avvia  la stampa  delle  informazioni
+         visualizzate.
+  5.2    Genera  il  report  e  lo  invia   alla
+         stampante.
+Operatore annulla l'operazione
+  3.1    Termina il caso d'uso con insuccesso.
+  2.1    Il   Sistema  visualizza  l'elenco  degli   esami
+         prescritti  indicando  data  della  prescrizione,
+         data    dell'effettuazione,   paziente,    medico
+         prescrivente, diagnosi e laboratorio  presso  cui
+         l'esame Š stato effettuato.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>29</id>
+      <content>Tempi medi di attesa      
+Consente all'Operatore di avere una  stima
+                del  tempo medio per servire una richiesta
+                di prenotazione.
+                L'Operatore  ha  interesse  ad  avere  una
+                stima  del  tempo  medio per  servire  una
+                richiesta di prenotazione.
+L'Operatore   attiva   l'esecuzione    del
+                servizio di calcolo della stima del  tempo
+                medio.
+1.  Visualizza  una   maschera 
+    per    visualizzare     il
+    risultato   del    calcolo
+    della   stima  del   tempo
+    medio   per  servire   una
+    richiesta               di
+    prenotazione.
+2.                             Avvia la funzione.
+3.  Visualizza  il   risultato 
+    del calcolo.
+Operatore decide di stampare le
+informazioni
+  3.1    Avvia  la stampa  delle  informazioni
+         visualizzate.
+  3.2    Genera  il  report  e  lo  invia   alla
+         stampante.
+Operatore annulla l'operazione
+  2.1    Termina il caso d'uso con insuccesso.
+  1.1    Il  tempo di servizio espresso in giorni  Š  pari
+         al  tempo  intercorrente fra la data di richiesta
+         prenotazione   e  quella  in  cui  l'appuntamento
+         viene assegnato.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>3</id>
+      <content>Elimina anagrafica laboratorio
+Consente    all'Operatore   di    eliminare
+               l'anagrafica   di   un   labora-torio    di
+               analisi.
+               Si   occupa  dell'eliminazione   dei   dati
+               relativi  all'anagrafica di un  laboratorio
+               di analisi.
+L'Operatore   Š   stato  riconosciuto   dal
+               Sistema  (Cfr.  Uc_Val_Op)  e  l'anagrafica
+               del  laboratorio Š presente all'interno del
+               S.I.O.
+I   dati   anagrafici    del
+               laboratorio    non   vengono   mo-dificati:
+               permangono   nello  stato  presente   prima
+               dell'esecu-zione.
+               Successo:   L'anagrafica  del   laboratorio
+               viene correttamente eliminata.
+L'Operatore    attiva   l'esecuzione    del
+               servizio  di  eliminazione  dell'anagrafica
+               del laboratorio.
+1.  Visualizza  l'elenco  dei 
+    laboratori       presenti
+    all'interno del S.I.O.
+2.                            Seleziona il laboratorio  di
+                              cui              modifi-care
+                              l'anagrafica.
+3.                            Conferma la selezione.
+4.  Visualizza  la   maschera 
+    per       l'elimi-nazione
+    dell'anagrafica       del
+    laborato-rio.
+6.                            Conferma l'eliminazione  del
+                              laborato-rio.
+7.  Elimina  i dati  relativi 
+    all'anagrafica        del
+    laboratorio.
+8.  Comunica che l'operazione 
+    si    Š   con-clusa   con
+    successo.
+Operatore annulla operazione
+ 3.1 -   Termina l'esecuzione del caso d'uso  con
+  6.1    insuccesso
+  4.1    La   maschera   conterr…  i  dati   relativi   al
+         laboratorio  selezionato, in modo  da  permettere
+         all'Operatore  di visionarli in  dettaglio  prima
+         di procedere all'eliminazione.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>30</id>
+      <content>Piani prenotazioni       
+Consente all'Operatore di visualizzare e/o
+                stampare in forma tabellare i piani  delle
+                prenotazioni  effettuate per ciascun  tipo
+                di visita.
+                L'Operatore  ha interesse di  visualizzare
+                e/o  stampare  i piani delle  prenotazioni
+                effettuate.
+L'Operatore   Š  stato  riconosciuto   dal
+                Sistema (Cfr. Uc_Val_Op).
+L'Operatore   attiva   l'esecuzione    del
+                servizio  per visualizzare e/o stampare  i
+                piani delle prenotazioni.
+1.  Visualizza  una   maschera 
+    per     visualizzare     e
+    stampare   i   piani    di
+    prenotazioni.
+2.                             Seleziona   il   tipo    di
+                               visita.
+3.                             Attiva la funzione.
+4.  Accede   al   database   e 
+    reperisce      le      in-
+    formazioni richieste.
+5.  Visualizza              le 
+    informazioni ottenute.
+Operatore decide di stampare le
+informazioni
+  5.1    Avvia  la stampa  delle  informazioni
+         visualizzate.
+  5.2    Genera  il  report  e  lo  invia   alla
+         stampante.
+Operatore annulla l'operazione
+  3.1    Termina il caso d'uso con insuccesso.
+  2.1    I  tipi di visita che l'operatore pu• selezionare
+         sono:  Prima  Visita, Day Hospital  e  Visita  di
+         Controllo.
+  5.1    Per  ciascuna prenotazione presente nel piano  di
+         prenotazioni  viene  riportato  il  nome  ed   il
+         cognome del paziente.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>4</id>
+      <content>Inserimento anagrafica medico
+Consente    all'Operatore    di    inserire
+               l'anagrafica  di  un  medico   che   lavora
+               presso l'ambulatorio.
+               L'Operatore   ha   la   responsabilit…   di
+               inserire     l'anagrafica    del     medico
+               all'interno del S.I.O.
+L'Operatore   Š   stato  riconosciuto   dal
+               Sistema  (Cfr.  Uc_Val_Op)  e  dispone   di
+               tutti    i    dati    che    caratterizzano
+               l'anagrafica del medico.
+I dati all'interno  del  S.I.O.
+               non vengono modifi-cati.
+               Successo:  L'anagrafica  del  medico  viene
+               correttamente  inseri-ta  all'interno   del
+               S.I.O.
+L'Operatore    attiva   l'esecuzione    del
+               servizio   di  inserimento  dell'anagrafica
+               del medico.
+1.  Visualizza  la   maschera 
+    per  l'inseri-mento delle
+    informazioni necessarie.
+2.                            Inserisce  i  dati  relativi
+                              all'anagrafica del medico.
+3.                            Conferma l'inserimento.
+4.  Verifica  i dati inseriti 
+    dall'Operato-re.
+5.  Memorizza i dati.         
+6.  Comunica che l'operazione 
+    si    Š   con-clusa   con
+    successo.
+Dati inseriti non validi  
+  4.1    Visualizza un messaggio con indicati  i
+         dati ritenuti non validi.
+  4.2    Riprende  l'esecuzione  dal   punto   1
+         avvalorando  i campi della maschera  con  i  dati
+         inseriti dall'utente.
+Operatore annulla operazione 
+3.1    Termina l'esecuzione del caso d'uso  con
+         insuccesso
+  2.1    L'anagrafica  di  un medico Š caratterizzata  dai
+         seguenti  dati:  nome,  cognome,  sesso,   codice
+         fiscale,  data  di  nascita,  luogo  di  nascita,
+         provincia   di  nascita,  indirizzo,   luogo   di
+         residenza, provincia di residenza, CAP,  recapiti
+         telefonici,     specializzazione,     anno     di
+         abilitazione e note aggiuntive.
+         NB   :   In  corsivo  sono  evidenziati  i   dati
+         facoltativi,  il  cui inserimento  non  influisce
+         sul corretto completamento dell'operazione.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>5</id>
+      <content>Modifica anagrafica medico
+Consente    all'Operatore   di   modificare
+               l'anagrafica  di  un  medi-co  che   lavora
+               presso l'ambulatorio.
+               Si  occupa della modifica dei dati relativi
+               all'anagrafica di un medico.
+L'Operatore   Š   stato  riconosciuto   dal
+               Sistema  (Cfr.  Uc_Val_Op)  e  l'anagrafica
+               del   medico  Š  presente  all'interno  del
+               S.I.O.
+I dati anagrafici  del  medico
+               non  vengono modifi-cati: permangono  nello
+               stato presente prima dell'esecuzione.
+               Successo:  L'anagrafica  del  medico  viene
+               correttamente modi-ficata.
+L'Operatore    attiva   l'esecuzione    del
+               servizio  di  modifica dell'anagrafica  del
+               medico.
+1.  Visualizza  l'elenco  dei 
+    medici          pre-senti
+    all'interno del S.I.O.
+2.                            Seleziona il medico  di  cui
+                              modificare l'anagrafica.
+3.                            Conferma la selezione.
+4.  Visualizza  la   maschera 
+    per      la     modi-fica
+    dell'anagrafica       del
+    medico.
+5.                            Modifica  l'anagrafica   del
+                              medico.
+6.                            Conferma le modifiche.
+7.  Verifica  i dati inseriti 
+    dall'Operato-re.
+8.  Memorizza             gli 
+    aggiornamenti.
+9.  Comunica che l'operazione 
+    si    Š   con-clusa   con
+    successo.
+Dati inseriti non validi
+  7.1    Visualizza un messaggio con indicati  i
+         dati ritenuti non validi.
+  7.2    Riprende  l'esecuzione  dal   punto   4
+         avvalorando  i campi della maschera  con  i  dati
+         inseriti dall'utente.
+Operatore annulla operazione
+ 3.1 -   Termina l'esecuzione del caso d'uso  con
+  6.1    insuccesso
+  5.1    L'anagrafica  di  un medico Š caratterizzata  dai
+         seguenti  dati:  nome,  cognome,  sesso,   codice
+         fiscale,  data  di  nascita,  luogo  di  nascita,
+         provincia   di  nascita,  indirizzo,   luogo   di
+         residenza, provincia di residenza, CAP,  recapiti
+         telefonici,     specializzazione,     anno     di
+         abilitazione e note aggiuntive.
+         NB   :   In  corsivo  sono  evidenziati  i   dati
+         facoltativi,  il  cui inserimento  non  influisce
+         sul corretto completamento dell'operazione.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>6</id>
+      <content>Elimina anagrafica medico
+Consente    all'Operatore   di    eliminare
+               l'anagrafica  di  un  medico   che   lavora
+               presso l'ambulatorio.
+               Si   occupa  dell'eliminazione   dei   dati
+               relativi all'anagrafica di un medico.
+L'Operatore   Š   stato  riconosciuto   dal
+               Sistema  (Cfr.  Uc_Val_Op)  e  l'anagrafica
+               del   medico  Š  presente  all'interno  del
+               S.I.O.
+I dati anagrafici  del  medico
+               non  vengono mo-dificati: permangono  nello
+               stato presente prima dell'esecuzio-ne.
+               Successo:  L'anagrafica  del  medico  viene
+               correttamente elimi-nata.
+L'Operatore    attiva   l'esecuzione    del
+               servizio  di  eliminazione  dell'anagrafica
+               del laboratorio.
+1.  Visualizza  l'elenco  dei 
+    laboratori       presenti
+    all'interno del S.I.O.
+2.                            Seleziona il medico  di  cui
+                              modificare l'anagrafica.
+3.                            Conferma la selezione.
+4.  Visualizza  la   maschera 
+    per       l'elimi-nazione
+    dell'anagrafica       del
+    medico.
+6.                            Conferma l'eliminazione  del
+                              medico.
+7.  Elimina  i dati  relativi 
+    all'anagrafica        del
+    medico.
+8.  Comunica che l'operazione 
+    si    Š   con-clusa   con
+    successo.
+Operatore annulla operazione
+ 3.1 -   Termina l'esecuzione del caso d'uso  con
+  6.1    insuccesso
+  4.1    La  maschera conterr… i dati relativi  al  medico
+         selezionato,  in modo da permettere all'Operatore
+         di  visionarli  in dettaglio prima  di  procedere
+         all'eliminazione.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>7</id>
+      <content>Valida operatore
+Si   occupa   di   eseguire   le   funzioni
+               necessarie  per  l'autenticazio-ne  di   un
+               Operatore.
+               Ha   interesse  ad  effettuare  la  propria
+               validazione al fine di poter utilizzare  le
+               tutte  le funzionalit… messe a disposizione
+               dal Sistema.
+L'Operatore non Š riconosciuto
+               dal sistema.
+               Successo:  L'Operatore Š  riconosciuto  dal
+               sistema ed abilitato all'utilizzo di esso.
+L'Operatore tenta di accedere al sistema.
+1.  Visualizza  la   maschera 
+    per     la    validazione
+    dell'Operatore.
+2.                            Inserisce login e password.
+3.                            Conferma i dati.
+4.  Verifica  che   login   e 
+    password  individuano  un
+    Operatore     all'interno
+    del S.I.O.
+5.  Consente l'accesso.       
+6.  Visualizza  la   maschera 
+    principale.
+Operatore annulla l'operazione di
+validazione
+  3.1    Sistema: Termina l'esecuzione del caso d'uso  con
+         insuccesso
+Validazione fallita
+  4.1    Sistema: Visualizza opportuno messaggio
+  4.2    Sistema:  Riprende  l'esecuzione  dal   punto   1
+         avvalorando  i campi della maschera  con  i  dati
+         inseriti dall'utente.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>8</id>
+      <content>Registra visita
+Consente  all'Operatore di registrare  una
+                visita tenutasi nel-l'ambulatorio.
+                L'Operatore ha interesse a registrare  una
+                visita tenutasi nel-l'ambulatorio.
+L'Operatore   Š  stato  riconosciuto   dal
+                Sistema (Cfr. Uc_Val_Op) e l'Operatore  ha
+                ricevuto i dati della visita effettuata.
+La  Cartella   Clinica   del
+                Paziente che si Š sottopo-sto alla  visita
+                non viene modificata.
+                Successo:  Tutte  le informazioni  vengono
+                memorizzate  all'in-terno  della  Cartella
+                Clinica del Paziente.
+L'Operatore   attiva   l'esecuzione    del
+                servizio di registrazione di una visita.
+1.  Visualizza   la   maschera 
+    per    la   regi-strazione
+    della visita.
+2.                             Inserisce  i dati necessari
+                               alla  registra-zione  della
+                               visita.
+3.                             Conferma l'inserimento.
+4.  Verifica  i dati  inseriti 
+    dall'Operato-re.
+5.  Memorizza i dati.          
+6.  Comunica     all'Operatore 
+    che  l'opera-zione  si   Š
+    conclusa con successo.
+Inserimento dati relativi ad un
+nuovo esame
+  6.1    Inserimento nuovo esame
+             L'Operatore ha interesse ad inserire  i  dati
+             di un esame relativo alla visita in esame.
+             Inserimento esame
+  6.2    Ritorna al punto 6.
+Dati impostati non validi
+  4.1    Visualizza un opportuno messaggio
+  4.2    Riprende  l'esecuzione  dal   punto   1
+         avvalorando  i campi della maschera  con  i  dati
+         inseriti dall'utente.
+Operatore annulla l'operazione di
+registrazione
+  3.1    Termina il caso d'uso con insuccesso.
+  4.1    I  dati  necessari  per  la  registrazione  della
+         visita  sono: la data, il nome del medico che  ha
+         effettuato la visita, il motivo della  visita,  i
+         malesseri   accusati  dal  paziente,   l'anamnesi
+         fatta   dal   medico,  la  diagnosi,  gli   esami
+         prescritti,  la  terapia  prescritta   (indicando
+         medicinali  e tempi di assunzione). E' necessario
+         inoltre  l'inserimento dei  valori  di  eventuali
+         rilevazioni strumentali fatte durante  la  visita
+         (ad  es. battito cardiaco, valori della pressione
+         sanguigna, n.ro di diottrie riscontrate, etc.).
+         Per   gli  esami  biologici  e/o  strumentali   Š
+         necessario  inserire  informazio-ni  relative  al
+         laboratorio  che li ha effettuati, i  valori  dei
+         risultati  di  cia-scun esame  e  la  valutazione
+         diagnostica fatta dal medico.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>9</id>
+      <content>Modifica visita         
+Consente  all'Operatore di modificare  una
+                visita precedentemente registrata.
+                L'Operatore ha interesse a modificare  una
+                visita precedentemente registrata.
+L'Operatore   Š  stato  riconosciuto   dal
+                Sistema   (Cfr.  Uc_Val_Op),   la   visita
+                risulta registrata all'interno del  S.I.O.
+                e  l'Operatore ha ricevuto  i  dati  della
+                visita da modificare.
+La  Cartella   Clinica   del
+                Paziente che si Š sottopo-sto alla  visita
+                non viene modificata.
+                Successo:  Le  informazioni relative  alla
+                visita   in   esame   vengono   aggiornate
+                all'interno  della  Cartella  Clinica  del
+                Paziente.
+L'Operatore   attiva   l'esecuzione    del
+                servizio di modifica di una visita.
+1.  Visualizza l'elenco  delle 
+    visite   effet-tuate    in
+    ordine cronologico.
+2.                             Seleziona   la  visita   da
+                               modificare.
+3.                             Conferma la selezione.
+4.  Visualizza   la   maschera 
+    per  la  modi-fica di  una
+    visita.
+5.                             Modifica   i   dati   della
+                               visita.
+6.                             Conferma le modifiche.
+7.  Verifica  i dati  inseriti 
+    dall'Operato-re.
+8.  Memorizza              gli 
+    aggiornamenti.
+9.  Comunica     all'Operatore 
+    che  l'opera-zione  si   Š
+    conclusa con successo.
+Inserimento dati relativi ad un
+nuovo esame
+  5.1    Inserimento nuovo esame
+             L'Operatore ha interesse ad inserire  i  dati
+             di un esame relativo alla visita in esame.
+             Inserimento esame
+  5.2    Ritorna al punto 5
+Modifica dati relativi ad un esame
+  5.1    
+           Modifica dati esame
+         
+             L'Operatore ha interesse a modificare i  dati
+             di un esame relativo alla visita in esame.
+         
+             Modifica esame
+  5.2    Ritorna al punto 5
+Eliminazione dati relativi ad un
+esame
+  5.1    
+           Eliminazione dati esame
+         
+             L'Operatore ha interesse ad eliminare i  dati
+             di un esame relativo alla visita in esame.
+         
+             Elimina  esame
+  5.2    Ritorna al punto 5
+Dati impostati non validi
+  7.1    Visualizza un opportuno messaggio
+  7.2    Riprende  l'esecuzione  dal   punto   4
+         avvalorando  i campi della maschera  con  i  dati
+         inseriti dall'Operatore.
+Operatore annulla l'operazione di
+modifica
+ 3.1 -   Termina il caso d'uso con insuccesso.
+  6.1
+  4.1    I  dati  necessari  per  la  registrazione  della
+         visita  sono: la data, il nome del medico che  ha
+         effettuato la visita, il motivo della  visita,  i
+         malesseri   accusati  dal  paziente,   l'anamnesi
+         fatta   dal   medico,  la  diagnosi,  gli   esami
+         prescritti,  la  terapia  prescritta   (indicando
+         medicinali  e tempi di assunzione). E' necessario
+         inoltre  l'inserimento dei  valori  di  eventuali
+         rilevazioni strumentali fatte durante  la  visita
+         (ad  es. battito cardiaco, valori della pressione
+         sanguigna, n.ro di diottrie riscontrate, etc.).
+         Per   gli  esami  biologici  e/o  strumentali   Š
+         necessario  inserire  informazio-ni  relative  al
+         laboratorio  che li ha effettuati, i  valori  dei
+         risultati  di  cia-scun esame  e  la  valutazione
+         diagnostica fatta dal medico.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

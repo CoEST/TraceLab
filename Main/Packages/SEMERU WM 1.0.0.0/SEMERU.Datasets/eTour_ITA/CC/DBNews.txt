@@ -1,0 +1,84 @@
+/**
+ *  Stub utilizzato per il testing della classe  Gestione Advertisement Agenzia 
+ *
+ * @author  Palladino  Fabio
+ * @version  . 
+ * 
+ * &#   ;      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I -  University of  Salerno
+ */
+package unisa.gps.etour.control. Gestione Advertisement.test.stubs;
+
+import java.sql. S Q L Exception;
+import java.util. Array List;
+
+import unisa.gps.etour.bean. Bean News;
+import unisa.gps.etour.repository. I D B News;
+import unisa.gps.etour.util. Costanti Globali;
+
+public class  D B News implements  I D B News
+{
+	/** campo statico che memorizza il numero del test */
+	private static int  N U M_ T E S T =  ;
+
+	/* (non- Javadoc)
+	 * @see unisa.gps.etour.repository. I D B News#cancella News(int)
+	 */
+	public boolean cancella News(int p Id News) throws  S Q L Exception
+	{
+		if ( N U M_ T E S T ==  ){
+			return true;
+		}else if ( N U M_ T E S T ==  ){
+			throw new  S Q L Exception();
+		}
+		return true;
+	}
+
+	/* (non- Javadoc)
+	 * @see unisa.gps.etour.repository. I D B News#inserisci News(unisa.gps.etour.bean. Bean News)
+	 */
+	public boolean inserisci News( Bean News p News) throws  S Q L Exception
+	{
+		if ( N U M_ T E S T ==  ){
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+	/* (non- Javadoc)
+	 * @see unisa.gps.etour.repository. I D B News#modifica News(unisa.gps.etour.bean. Bean News)
+	 */
+	public boolean modifica News( Bean News p News) throws  S Q L Exception
+	{
+		return true;
+	}
+
+	/* (non- Javadoc)
+	 * @see unisa.gps.etour.repository. I D B News#ottieni News()
+	 */
+	public  Array List< Bean News> ottieni News() throws  S Q L Exception
+	{
+		 Array List< Bean News>	to Return = new  Array List< Bean News>();
+		
+		if ( N U M_ T E S T ==  ){
+			for (int i =  ; i <=  Costanti Globali. M A X_ N E W S_ A T T I V E; i++){
+				to Return.add(new  Bean News());
+			}
+			return to Return;
+		}else{
+			to Return.add(new  Bean News());
+			return to Return;
+		}		
+	}
+	
+	/**
+	 *  Setta il numero del test in corso
+	 *
+	 * @param num_test
+	 */
+	public static void set N U M_ T E S T(int num_test)
+	{
+		 N U M_ T E S T = num_test;
+	}
+
+}

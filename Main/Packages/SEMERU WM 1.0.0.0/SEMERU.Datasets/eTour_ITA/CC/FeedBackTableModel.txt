@@ -1,0 +1,308 @@
+/*
+ *  Feedback Table Model.java
+ *
+ *  . 
+ *
+ *   /  /    
+ *
+ * �      e Tour  Project -  Copyright by  S E@ S A  Lab -  D M I �  University of  Salerno
+ */
+package unisa.gps.etour.gui.operatore agenzia .tables;
+
+import java.util. Array List;
+import java.util. Date;
+import java.util. Hash Map;
+import java.util. Iterator;
+
+import javax.swing.table.*;
+
+import unisa.gps.etour.bean. Bean Visita B C;
+import unisa.gps.etour.bean. Bean Visita P R;
+
+
+
+/**
+ * <b> Feedback Table Model</b>
+ * <p> E' il modello contenitore dei dati relativi ai feedback ricevuti
+ * da un bene culturale o da un punto di ristoro.</p>
+ * 
+ * @see javax.swing.table. Abstract Table Model
+ * @see unisa.gps.etour.bean. Bean Visita B C
+ * @see unisa.gps.etour.bean. Bean Visita P R
+ * @version  . 
+ * @author  Mario  Gallo
+ * 
+ */
+public class  Feed Back Table Model extends  Abstract Table Model
+{
+	
+	private static final long serial Version U I D =   L;
+	private static final  String[] headers = { " Voto", " Commento",
+			" Data di  Rilascio", " Rilasciato da" };
+	private static final  Class[] column Classes = {  Integer.class,  String.class,
+			 Date.class,  String.class };
+	private  Array List< Object[]> data;
+	
+
+	/**
+	 *  Costruttore di default.  Si limita a creare il modello ma non
+	 * carica nessun dato al suo interno.
+	 * 
+	 */
+	public  Feed Back Table Model()
+	{
+		data = new  Array List< Object[]>();
+	}
+
+	/**
+	 *  Costruttore che prende in input un arraylist di  Bean Visita B C o 
+	 * di  Bean Visita P R e ne copia i dati all'interno del modello 
+	 * predisponendoli per la visualizzazione.
+	 * 
+	 * @param p Visite java.util. Array List - l'arraylist di bean.
+	 */
+	public  Feed Back Table Model( Hash Map <?, String> p Dati Feedback)
+	{
+		this();
+		if (p Dati Feedback == null || p Dati Feedback.size() ==  )
+		{
+			return;
+		}
+		 Iterator<?> itera = p Dati Feedback.key Set().iterator();
+		while (itera.has Next())
+		{
+			 Object corrente = itera.next();
+			if (corrente instanceof  Bean Visita B C)
+			{
+				insert Visita B C(( Bean Visita B C)corrente, p Dati Feedback.get(corrente));
+			}
+			else if (corrente instanceof  Bean Visita P R)
+			{
+				insert Visita P R(( Bean Visita P R)corrente, p Dati Feedback.get(corrente));
+			}
+		}
+	}
+
+	/**
+	 *  Restituisce il numero di colonne previste dal modello.
+	 * 
+	 * @return int - il numero di colonne.
+	 * 
+	 */
+	public int get Column Count()
+	{
+		return headers.length;
+	}
+
+	/**
+	 *  Restituisce il numero di righe attualmente presenti nel modello.
+	 * 
+	 * @return int - il numero di righe.
+	 * 
+	 */
+	public int get Row Count()
+	{
+		return data.size();
+	}
+
+	
+	/**
+	 *  Restituisce il nome della colonna dall'indice fornito.
+	 * 
+	 * @return  String - il nome della colonna.
+	 * @exception  Illegal Argument Exception - se l'indice di colonna fornito non �
+	 * presente nel modello.
+	 *  
+	 */
+	public  String get Column Name(int p Column) throws  Illegal Argument Exception
+	{
+		if (p Column >= get Column Count() || p Column <  )
+		{
+			throw new  Illegal Argument Exception(
+					" L'indice di colonna fornito non � presente nel modello.");
+		}
+		return headers[p Column];
+	}
+
+	/**
+	 *  Restituisce l'oggetto presente nel modello alla riga e alla colonna fornita.
+	 * 
+	 * @param p Row - il numero di riga.
+	 * @param p Column - il numero di colonna.
+	 * @return  Object - l'oggetto contenuto nella cella selezionata.
+	 * @exception  Illegal Argument Exception - se l'indice o di riga o di colonna forniti non
+	 * sono presenti nel modello.
+	 * 
+	 */
+	public  Object get Value At(int p Row, int p Column) throws  Illegal Argument Exception
+	{
+		if (p Row >= get Row Count() || p Row <  ) 
+		{
+			throw new  Illegal Argument Exception(" L'indice di riga fornito non � presente nel modello.");
+		}
+		if (p Column >= get Column Count() || p Column <  ) 
+		{
+			throw new  Illegal Argument Exception(" L'indice di colonna fornito non � presente nel modello.");
+		}
+		return data.get(p Row)[p Column];
+	}
+
+	/**
+	 *  Restituisce la classe degli oggetti contenuti nella colonna della quale viene fornito l'indice.
+	 * 
+	 * @param p Column - il numero di colonna.
+	 * @return  Class - la classe degli oggetti della colonna selezionata.
+	 * @exception  Illegal Argument Exception - se l'indice di colonna fornito non � presente
+	 * nel modello.
+	 * 
+	 */
+	public  Class get Column Class(int p Column) throws  Illegal Argument Exception
+	{
+		if (p Column >= get Column Count() || p Column <  ) 
+		{
+			throw new  Illegal Argument Exception(" L'indice di colonna fornito non � presente nel modello.");
+		}
+		return column Classes[p Column];
+	}
+
+	/**
+	 *  Restituisce se la cella selezionata � editabile.
+	 * 
+	 * @return boolean - true se la cella � editabile
+	 * 					 false altrimenti
+	 * @param p Row - il numero di riga.
+	 * @param p Column - il numero di colonna.
+	 * @exception  Illegal Argument Exception - se l'indice o di riga o di colonna forniti non sono
+	 * presenti nel modello.
+	 * 
+	 */
+	public boolean is Cell Editable(int p Row, int p Column) throws  Illegal Argument Exception
+	{
+		return false;
+	}
+	
+	/**
+	 *  Il metodo set Value At ereditato dall'interfaccia  Table Model non � necessario alla  Sito Table Model
+	 * in quanto non � prevista la possibilit� di modificare una singola cella. 
+	 * @deprecated
+	 * 
+	*/
+	public void set Value At( Object value, int row, int col) 
+	{
+		
+	}
+	
+	/**
+	 * 
+	 *  Inserisce i dati relativi al feedback ricevuto da un bene culturale 
+	 * nel modello a partire dal  Bean.
+	 *
+	 * @param p B C  Bean Visita B C - il bean contenente il feedback ricevuto dal
+	 * bene culturale.
+	 * @throws  Illegal Argument Exception - se i parametri forniti in input non
+	 * sono validi.
+	 * 
+	 */
+	public void insert Visita B C ( Bean Visita B C p Visita B C,  String p Username) throws  Illegal Argument Exception
+	{
+		if (p Visita B C == null || p Username == null || p Username.equals(""))
+		{
+			throw new  Illegal Argument Exception(" Parametri forniti in input non validi.");
+		}
+		 Object[] a Row = new  Object[ ];
+		a Row[ ] = p Visita B C.get Voto();
+		a Row[ ] = p Visita B C.get Commento();
+		a Row[ ] = p Visita B C.get Data Visita();
+		a Row[ ] = p Username;
+		a Row[ ] = p Visita B C.get Id Bene Culturale();
+		a Row[ ] = p Visita B C.get Id Turista();
+		data.add(a Row);
+	}
+	
+	/**
+	 * 
+	 *  Inserisce i dati relativi al feedback ricevuto da un punto di ristoro 
+	 * nel modello a partire dal  Bean.
+	 *
+	 * @param p B C  Bean Visita P R - il bean contenente il feedback ricevuto dal
+	 * punto di ristoro.
+	 * @throws  Illegal Argument Exception - se i parametri forniti in input non
+	 * sono validi.
+	 * 
+	 */
+	public void insert Visita P R ( Bean Visita P R p Visita P R,  String p Username) throws  Illegal Argument Exception
+	{
+		if (p Visita P R == null || p Username == null || p Username.equals(""))
+		{
+			throw new  Illegal Argument Exception(" Parametri forniti in input non validi.");
+		}
+		 Object[] a Row = new  Object[ ];
+		a Row[ ] = p Visita P R.get Voto();
+		a Row[ ] = p Visita P R.get Commento();
+		a Row[ ] = p Visita P R.get Data Visita();
+		a Row[ ] = p Username;
+		a Row[ ] = p Visita P R.get Id Punto Di Ristoro();
+		a Row[ ] = p Visita P R.get Id Turista();
+		data.add(a Row);
+	}
+	/**
+	 * 
+	 *  Aggiorna il commento di un feedback contenuto nella table alla riga selezionata.
+	 *
+	 * @param p Nuovo Commento  String - il nuovo commento.
+	 * @param p Row - la riga da aggiornare.
+	 * @throws  Illegal Argument Exception - se <ul><li>l'indice di riga non è presente nel modello.
+	 * <li>il nuovo commento fornito in input è nullo.</ul>
+	 */
+	public void modifica Commento( String p Nuovo Commento, int p Row) throws  Illegal Argument Exception
+	{
+		if (p Row >= get Row Count() || p Row <  ) 
+		{
+			throw new  Illegal Argument Exception(" L'indice di riga fornito non � presente nel modello.");
+		}
+		if (p Nuovo Commento == null)
+		{
+			throw new  Illegal Argument Exception(" Il nuovo commento non può essere nullo.");
+		}
+		data.get(p Row)[ ] = p Nuovo Commento;
+		fire Table Data Changed();
+	}
+	
+	/**
+	 * 
+	 *  Restituisce l'id del feedback ricevuto visualizzato alla riga fornita in input.
+	 *
+	 * @param p Row int - il numero di riga.
+	 * @return int[]  - gli id del feedback.
+	 * @throws  Illegal Argument Exception - se l'indice di riga fornito non � presente
+	 * nel modello.
+	 */
+	public int[] get I D Feedback(int p Row) throws  Illegal Argument Exception
+	{
+		if (p Row >= get Row Count() || p Row <  ) 
+		{
+			throw new  Illegal Argument Exception(" L'indice di riga fornito non � presente nel modello.");
+		}
+		int[] ids = new int[ ];
+		ids[ ] = ( Integer) data.get(p Row)[ ];
+		ids[ ] = ( Integer) data.get(p Row)[ ];
+		return ids;
+	}
+	
+	/**
+	 * 
+	 *  Restituisce l'id del feedback al numero di riga fornito in input e lo rimuove dal modello.
+	 *
+	 * @param p Row int - il numero di riga.
+	 * @return int[] - gli id del feedback.
+	 * @exception  Illegal Argument Exception - se l'indice di riga fornito non � presente
+	 * nel modello.
+	 * 
+	 */
+	public int[] remove Feedback(int p Row) throws  Illegal Argument Exception
+	{
+		int[] ids = get I D Feedback(p Row);
+		data.remove(p Row);
+		return ids;
+	}
+}

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<artifacts_collection>
+<collection_info>
+	<id>CC</id>
+	<name>CC</name>
+	<version>1.1</version>
+	<description>Class code</description>
+	<content_location>external</content_location>
+</collection_info>
+<artifacts>
+	<artifact><id>EA140</id><content>CC/EA140.txt</content><parent_id/></artifact>
+	<artifact><id>EA141</id><content>CC/EA141.txt</content><parent_id/></artifact>
+	<artifact><id>EA142</id><content>CC/EA142.txt</content><parent_id/></artifact>
+	<artifact><id>EA143</id><content>CC/EA143.txt</content><parent_id/></artifact>
+	<artifact><id>EA144</id><content>CC/EA144.txt</content><parent_id/></artifact>
+	<artifact><id>EA145</id><content>CC/EA145.txt</content><parent_id/></artifact>
+	<artifact><id>EA146</id><content>CC/EA146.txt</content><parent_id/></artifact>
+	<artifact><id>EA147</id><content>CC/EA147.txt</content><parent_id/></artifact>
+	<artifact><id>EA148</id><content>CC/EA148.txt</content><parent_id/></artifact>
+	<artifact><id>EA149</id><content>CC/EA149.txt</content><parent_id/></artifact>
+	<artifact><id>EA150</id><content>CC/EA150.txt</content><parent_id/></artifact>
+	<artifact><id>EA151</id><content>CC/EA151.txt</content><parent_id/></artifact>
+	<artifact><id>EA152</id><content>CC/EA152.txt</content><parent_id/></artifact>
+	<artifact><id>EA153</id><content>CC/EA153.txt</content><parent_id/></artifact>
+	<artifact><id>EA154</id><content>CC/EA154.txt</content><parent_id/></artifact>
+	<artifact><id>EA155</id><content>CC/EA155.txt</content><parent_id/></artifact>
+	<artifact><id>EA156</id><content>CC/EA156.txt</content><parent_id/></artifact>
+	<artifact><id>EA157</id><content>CC/EA157.txt</content><parent_id/></artifact>
+	<artifact><id>EA158</id><content>CC/EA158.txt</content><parent_id/></artifact>
+	<artifact><id>EA159</id><content>CC/EA159.txt</content><parent_id/></artifact>
+	<artifact><id>EA160</id><content>CC/EA160.txt</content><parent_id/></artifact>
+	<artifact><id>EA161</id><content>CC/EA161.txt</content><parent_id/></artifact>
+	<artifact><id>EA162</id><content>CC/EA162.txt</content><parent_id/></artifact>
+	<artifact><id>EA163</id><content>CC/EA163.txt</content><parent_id/></artifact>
+	<artifact><id>EA164</id><content>CC/EA164.txt</content><parent_id/></artifact>
+	<artifact><id>EA165</id><content>CC/EA165.txt</content><parent_id/></artifact>
+	<artifact><id>EA166</id><content>CC/EA166.txt</content><parent_id/></artifact>
+	<artifact><id>EA167</id><content>CC/EA167.txt</content><parent_id/></artifact>
+	<artifact><id>EA168</id><content>CC/EA168.txt</content><parent_id/></artifact>
+	<artifact><id>EA169</id><content>CC/EA169.txt</content><parent_id/></artifact>
+	<artifact><id>EA170</id><content>CC/EA170.txt</content><parent_id/></artifact>
+	<artifact><id>EA171</id><content>CC/EA171.txt</content><parent_id/></artifact>
+	<artifact><id>EA172</id><content>CC/EA172.txt</content><parent_id/></artifact>
+	<artifact><id>EA173</id><content>CC/EA173.txt</content><parent_id/></artifact>
+	<artifact><id>EA174</id><content>CC/EA174.txt</content><parent_id/></artifact>
+	<artifact><id>EA175</id><content>CC/EA175.txt</content><parent_id/></artifact>
+	<artifact><id>EA176</id><content>CC/EA176.txt</content><parent_id/></artifact>
+	<artifact><id>EA177</id><content>CC/EA177.txt</content><parent_id/></artifact>
+	<artifact><id>EA178</id><content>CC/EA178.txt</content><parent_id/></artifact>
+	<artifact><id>EA179</id><content>CC/EA179.txt</content><parent_id/></artifact>
+	<artifact><id>EA180</id><content>CC/EA180.txt</content><parent_id/></artifact>
+	<artifact><id>EA181</id><content>CC/EA181.txt</content><parent_id/></artifact>
+	<artifact><id>EA182</id><content>CC/EA182.txt</content><parent_id/></artifact>
+	<artifact><id>EA183</id><content>CC/EA183.txt</content><parent_id/></artifact>
+	<artifact><id>EA184</id><content>CC/EA184.txt</content><parent_id/></artifact>
+	<artifact><id>EA185</id><content>CC/EA185.txt</content><parent_id/></artifact>
+	<artifact><id>EA186</id><content>CC/EA186.txt</content><parent_id/></artifact>
+	<artifact><id>EA187</id><content>CC/EA187.txt</content><parent_id/></artifact>
+	<artifact><id>EA188</id><content>CC/EA188.txt</content><parent_id/></artifact>
+	<artifact><id>EA189</id><content>CC/EA189.txt</content><parent_id/></artifact>
+	<artifact><id>EA190</id><content>CC/EA190.txt</content><parent_id/></artifact>
+	<artifact><id>EA191</id><content>CC/EA191.txt</content><parent_id/></artifact>
+	<artifact><id>EA192</id><content>CC/EA192.txt</content><parent_id/></artifact>
+	<artifact><id>EA193</id><content>CC/EA193.txt</content><parent_id/></artifact>
+	<artifact><id>EA194</id><content>CC/EA194.txt</content><parent_id/></artifact>
+</artifacts>
+</artifacts_collection>

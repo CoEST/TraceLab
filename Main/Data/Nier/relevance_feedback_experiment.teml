@@ -1,0 +1,562 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<graph>
+  <ExperimentInfo>
+    <Version>1</Version>
+    <Id>12f7dcf3-79b4-4161-b29b-8c73a2775831</Id>
+    <Name>Benchmark</Name>
+    <LayoutName>EfficientSugiyama</LayoutName>
+  </ExperimentInfo>
+  <node id="Start">
+    <SerializedVertexData Version="1" X="125" Y="51">
+      <Metadata type="TraceLab.Core.Components.StartNodeMetadata, TraceLab.Core, Version=0.3.2.0, Culture=neutral, PublicKeyToken=null" Label="Start" />
+    </SerializedVertexData>
+  </node>
+  <node id="End">
+    <SerializedVertexData Version="1" X="683" Y="503">
+      <Metadata type="TraceLab.Core.Components.EndNodeMetadata, TraceLab.Core, Version=0.3.2.0, Culture=neutral, PublicKeyToken=null" Label="End" />
+    </SerializedVertexData>
+  </node>
+  <node id="5adf44cd-d3d7-45fc-ae90-a72cfe211fd3">
+    <SerializedVertexData Version="1" X="127" Y="329">
+      <Metadata type="TraceLab.Core.Components.CompositeComponentMetadata, TraceLab.Core, Version=0.3.2.0, Culture=neutral, PublicKeyToken=null" Label="Rocchio Default Solution" ComponentMetadataDefinitionID="b08726a0-6431-4036-b296-0d1dd6a2027e">
+        <IOSpec Version="1">
+          <Input />
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="decisionsPerQuery" Type="RocchioTypes.TLDecisionsPerQuery" />
+              <OutputAs>decisionsPerQuery</OutputAs>
+            </OutputItem>
+            <OutputItem>
+              <OutputItemDefinition Name="feedbackResultsMatricesPerIteration" Type="RocchioTypes.TLFeedbackResultMatricesPerIteration" />
+              <OutputAs>feedbackResultsMatricesPerIteration</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import>
+            <ImportItem>
+              <ImportItemDefinition Name="OriginalSourceArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" />
+              <ImportAs>sourceArtifacts</ImportAs>
+            </ImportItem>
+            <ImportItem>
+              <ImportItemDefinition Name="OriginalTargetArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" />
+              <ImportAs>targetArtifacts</ImportAs>
+            </ImportItem>
+            <ImportItem>
+              <ImportItemDefinition Name="answerSet" Type="TraceLabSDK.Types.TLSimilarityMatrix" />
+              <ImportAs>answerSet</ImportAs>
+            </ImportItem>
+          </Import>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>22f6c6c8-1a3e-4568-9516-315cc26ef2f7:SourceArtifactsFilePath</Name>
+              <DisplayName>Single Coest Dataset Importer Source Artifacts File Path</DisplayName>
+              <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null</ValueType>
+              <Visible>False</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <FilePath>
+                  <Version>1</Version>
+                  <Relative>Data\Nier\for_testing_easy_clinic_use_cases.xml</Relative>
+                </FilePath>
+              </Value>
+            </PropertyObject>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>22f6c6c8-1a3e-4568-9516-315cc26ef2f7:TargetArtifactsFilePath</Name>
+              <DisplayName>Single Coest Dataset Importer Target Artifacts File Path</DisplayName>
+              <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null</ValueType>
+              <Visible>False</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <FilePath>
+                  <Version>1</Version>
+                  <Relative>Benchmarks\Datasets\EasyClinic_ENG\code_classes.xml</Relative>
+                </FilePath>
+              </Value>
+            </PropertyObject>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>22f6c6c8-1a3e-4568-9516-315cc26ef2f7:AnswerSetFilePath</Name>
+              <DisplayName>Single Coest Dataset Importer Answer Set File Path</DisplayName>
+              <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null</ValueType>
+              <Visible>False</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <FilePath>
+                  <Version>1</Version>
+                  <Relative>Benchmarks\Datasets\EasyClinic_ENG\trace matrices\UC_CC.xml</Relative>
+                </FilePath>
+              </Value>
+            </PropertyObject>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>89ae1af4-4a74-4ad9-9a6a-c69a3ecb72f7:33a2b2e1-eace-47ab-8e00-8394668ca3e9:Path</Name>
+              <DisplayName>Preprocess Source Artifacts Artifacts Path</DisplayName>
+              <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null</ValueType>
+              <Visible>False</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <FilePath>
+                  <Version>1</Version>
+                  <Relative>Data\challenge1_HIPPA\HIPPA\2CCHIT.xml</Relative>
+                </FilePath>
+              </Value>
+            </PropertyObject>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>89ae1af4-4a74-4ad9-9a6a-c69a3ecb72f7:1ef84c31-abc8-4f9e-aafb-a75a2bf87c50:Path</Name>
+              <DisplayName>Preprocess Source Artifacts StopwordsImporter Path</DisplayName>
+              <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null</ValueType>
+              <Visible>False</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <FilePath>
+                  <Version>1</Version>
+                  <Relative>Data\challenge1_HIPPA\HIPPA\stopwords.txt</Relative>
+                </FilePath>
+              </Value>
+            </PropertyObject>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>06da1e4b-ffb4-4227-bc44-79d2ef0fb73a:33a2b2e1-eace-47ab-8e00-8394668ca3e9:Path</Name>
+              <DisplayName>Preprocess Target Artifacts Artifacts Path</DisplayName>
+              <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null</ValueType>
+              <Visible>False</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <FilePath>
+                  <Version>1</Version>
+                  <Relative>Data\challenge1_HIPPA\HIPPA\2CCHIT.xml</Relative>
+                </FilePath>
+              </Value>
+            </PropertyObject>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>06da1e4b-ffb4-4227-bc44-79d2ef0fb73a:1ef84c31-abc8-4f9e-aafb-a75a2bf87c50:Path</Name>
+              <DisplayName>Preprocess Target Artifacts StopwordsImporter Path</DisplayName>
+              <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null</ValueType>
+              <Visible>False</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <FilePath>
+                  <Version>1</Version>
+                  <Relative>Data\challenge1_HIPPA\HIPPA\stopwords.txt</Relative>
+                </FilePath>
+              </Value>
+            </PropertyObject>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>2345dd43-8863-497d-9030-fc160f3ebbca:MaxNumberOfIterations</Name>
+              <DisplayName>Rocchio Setup C# MaxNumberOfIterations</DisplayName>
+              <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>False</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <int>2</int>
+              </Value>
+            </PropertyObject>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>2345dd43-8863-497d-9030-fc160f3ebbca:IsFixedIteration</Name>
+              <DisplayName>Rocchio Setup C# IsFixedIteration</DisplayName>
+              <ValueType>System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>False</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <boolean>true</boolean>
+              </Value>
+            </PropertyObject>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>33365fea-9426-4815-ad68-58e297f68af5:NumberOfLinksToSubmitForFeedback</Name>
+              <DisplayName>Rocchio Feedback Manager C# NumberOfLinksToSubmitForFeedback</DisplayName>
+              <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>False</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <int>10</int>
+              </Value>
+            </PropertyObject>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>fb551da9-0407-4399-a0cc-8727f69203d2:Alpha</Name>
+              <DisplayName>RocchioFeedbackIncorporator Alpha</DisplayName>
+              <ValueType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>False</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <string>0.8</string>
+              </Value>
+            </PropertyObject>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>fb551da9-0407-4399-a0cc-8727f69203d2:Beta</Name>
+              <DisplayName>RocchioFeedbackIncorporator Beta</DisplayName>
+              <ValueType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>False</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <string>0.2</string>
+              </Value>
+            </PropertyObject>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>fb551da9-0407-4399-a0cc-8727f69203d2:Gamma</Name>
+              <DisplayName>RocchioFeedbackIncorporator Gamma</DisplayName>
+              <ValueType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>False</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <string>0</string>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="1b1d2477-597d-4e4f-ab79-b574b1b70787">
+    <SerializedVertexData Version="1" X="126" Y="200">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.3.2.0, Culture=neutral, PublicKeyToken=null" Label="Start dataset index=0" ComponentMetadataDefinitionID="f09ee85f-b499-4c7b-b071-6b21aaa9ec0f">
+        <IOSpec Version="1">
+          <Input />
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="integer" Type="System.Int32" />
+              <OutputAs>datasetIndex</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import />
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>OutputInteger</Name>
+              <DisplayName>Output integer</DisplayName>
+              <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <int>0</int>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="cfab729c-6e2b-4d1f-ab0f-b9a6717fbced">
+    <SerializedVertexData Version="1" X="419" Y="265">
+      <Metadata type="TraceLab.Core.Components.DecisionMetadata, TraceLab.Core, Version=0.3.2.0, Culture=neutral, PublicKeyToken=null" Label="Has more datasets?">
+        <DecisionCode>if(Load("datasetIndex")&lt; Load("numberOfDatasets")) {
+Select("Get next dataset");
+}
+else 
+{
+Select("Relevance Feedback Evaluation Results Gui");
+}
+</DecisionCode>
+        <DecisionMetadataDefinition>
+          <ID>3b16a2e4-09b6-4712-a748-e020f2e2eafc</ID>
+          <Classname>DecisionModule_3b16a2e4_09b6_4712_a748_e020f2e2eafc</Classname>
+          <Assembly>c:\p4root\RELab\dev\Decisions\3b16a2e4-09b6-4712-a748-e020f2e2eafc.dll</Assembly>
+        </DecisionMetadataDefinition>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="5886ff05-7c97-4c30-9057-6a0a17858374">
+    <SerializedVertexData Version="1" X="419" Y="397">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.3.2.0, Culture=neutral, PublicKeyToken=null" Label="Increment dataset index++" ComponentMetadataDefinitionID="e83abfc7-a495-4458-99e0-1d756cf8d626">
+        <IOSpec Version="1">
+          <Input>
+            <InputItem>
+              <InputItemDefinition Name="integer" Type="System.Int32" />
+              <MappedTo>datasetIndex</MappedTo>
+            </InputItem>
+          </Input>
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="integer" Type="System.Int32" />
+              <OutputAs>datasetIndex</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import />
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>IncrementBy</Name>
+              <DisplayName>Increment by value</DisplayName>
+              <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <int>1</int>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="b3a245c8-533e-4594-b09b-2a29436e9817">
+    <SerializedVertexData Version="1" X="127" Y="135">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.3.2.0, Culture=neutral, PublicKeyToken=null" Label="Multiple Coest Datasets Importer" ComponentMetadataDefinitionID="55ae54a0-6e3a-468d-97b1-2d2172daf117">
+        <IOSpec Version="1">
+          <Input />
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="numberOfDatasets" Type="System.Int32" />
+              <OutputAs>numberOfDatasets</OutputAs>
+            </OutputItem>
+            <OutputItem>
+              <OutputItemDefinition Name="listOfDatasets" Type="BenchmarkHelperTypes.TLDatasetsList" />
+              <OutputAs>listOfDatasets</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import />
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>ConfigurationFile</Name>
+              <DisplayName>Configuration file</DisplayName>
+              <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <FilePath>
+                  <Version>1</Version>
+                  <Relative>Benchmarks\Datasets\load-configuration.xml</Relative>
+                </FilePath>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="c74fa322-854e-4adb-abf9-6c6f605255fb">
+    <SerializedVertexData Version="1" X="683" Y="397">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.3.2.0, Culture=neutral, PublicKeyToken=null" Label="Relevance Feedback Results CSV Exporter" ComponentMetadataDefinitionID="e61e56b3-55ab-4881-9b1c-672ff591fe21">
+        <IOSpec Version="1">
+          <Input>
+            <InputItem>
+              <InputItemDefinition Name="currentTechniqueRelevanceFeedbackData" Type="RelevanceFeedbackBenchmarkingTypes.TLRelevanceFeedbackDataContainer" />
+              <MappedTo>relevanceFeedbackDataContainer</MappedTo>
+            </InputItem>
+          </Input>
+          <Output />
+          <Import />
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>FilePrefix</Name>
+              <DisplayName>FilePrefix</DisplayName>
+              <ValueType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <string>RocchioTechnique</string>
+              </Value>
+            </PropertyObject>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>TechniqueName</Name>
+              <DisplayName>Technique Name</DisplayName>
+              <ValueType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <string>Rocchio</string>
+              </Value>
+            </PropertyObject>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>DirectoryPath</Name>
+              <DisplayName>DirectoryPath</DisplayName>
+              <ValueType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <string>c:\p4root\RELab\dev\Benchmarks\RelevanceFeedbackPreviousResults\</string>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="a21f128e-6198-423b-87fd-7271b0c97851">
+    <SerializedVertexData Version="1" X="604" Y="132">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.3.2.0, Culture=neutral, PublicKeyToken=null" Label="Relevance Feedback Previous Results Loader" ComponentMetadataDefinitionID="1e5e80fb-f280-4cfa-a847-8c96a71bf09c">
+        <IOSpec Version="1">
+          <Input />
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="previousTechniques" Type="System.Collections.Generic.List`1[[System.Collections.Generic.KeyValuePair`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[RelevanceFeedbackBenchmarkingTypes.TLRelevanceFeedbackDataContainer, RelevanceFeedbackBenchmarkingTypes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" />
+              <OutputAs>previousTechniques</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import />
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>TechniqueNameDelimiter</Name>
+              <DisplayName>TechniqueNameDelimiter</DisplayName>
+              <ValueType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <string>--</string>
+              </Value>
+            </PropertyObject>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>DirectoryPath</Name>
+              <DisplayName>DirectoryPath</DisplayName>
+              <ValueType>System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <string>c:\p4root\RELab\dev\Benchmarks\RelevanceFeedbackPreviousResults\</string>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="3fed0c5c-5168-4560-a641-81823871da38">
+    <SerializedVertexData Version="1" X="126" Y="264">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.3.2.0, Culture=neutral, PublicKeyToken=null" Label="Get next dataset" ComponentMetadataDefinitionID="88c78e57-5584-4b7f-a751-33209083bf5a">
+        <IOSpec Version="1">
+          <Input>
+            <InputItem>
+              <InputItemDefinition Name="indexOfDataset" Type="System.Int32" />
+              <MappedTo>datasetIndex</MappedTo>
+            </InputItem>
+            <InputItem>
+              <InputItemDefinition Name="listOfDatasets" Type="BenchmarkHelperTypes.TLDatasetsList" />
+              <MappedTo>listOfDatasets</MappedTo>
+            </InputItem>
+          </Input>
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="targetArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" />
+              <OutputAs>targetArtifacts</OutputAs>
+            </OutputItem>
+            <OutputItem>
+              <OutputItemDefinition Name="sourceArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" />
+              <OutputAs>sourceArtifacts</OutputAs>
+            </OutputItem>
+            <OutputItem>
+              <OutputItemDefinition Name="datasetName" Type="System.String" />
+              <OutputAs>datasetName</OutputAs>
+            </OutputItem>
+            <OutputItem>
+              <OutputItemDefinition Name="answerSet" Type="TraceLabSDK.Types.TLSimilarityMatrix" />
+              <OutputAs>answerSet</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import />
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues />
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="89cd5f2c-af2a-4b29-b02a-40ea208d8752">
+    <SerializedVertexData Version="1" X="683" Y="271">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.3.2.0, Culture=neutral, PublicKeyToken=null" Label="Relevance Feedback Evaluation Results Gui" ComponentMetadataDefinitionID="7a939ee2-56de-42ee-9e9e-51d2e9b00ce2">
+        <IOSpec Version="1">
+          <Input>
+            <InputItem>
+              <InputItemDefinition Name="listOfDatasets" Type="BenchmarkHelperTypes.TLDatasetsList" />
+              <MappedTo>listOfDatasets</MappedTo>
+            </InputItem>
+            <InputItem>
+              <InputItemDefinition Name="currentTechniqueRelevanceFeedbackData" Type="RelevanceFeedbackBenchmarkingTypes.TLRelevanceFeedbackDataContainer" />
+              <MappedTo>relevanceFeedbackDataContainer</MappedTo>
+            </InputItem>
+          </Input>
+          <Output />
+          <Import>
+            <ImportItem>
+              <ImportItemDefinition Name="previousTechniques" Type="System.Collections.Generic.List`1[[System.Collections.Generic.KeyValuePair`2[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[RelevanceFeedbackBenchmarkingTypes.TLRelevanceFeedbackDataContainer, RelevanceFeedbackBenchmarkingTypes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]" />
+              <ImportAs>previousTechniques</ImportAs>
+            </ImportItem>
+          </Import>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>Threshold</Name>
+              <DisplayName>Threshold</DisplayName>
+              <ValueType>System.Double, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <double>0</double>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="08000ed2-178c-4ea8-85d0-ab0c00d712d5">
+    <SerializedVertexData Version="1" X="128" Y="399">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.3.2.0, Culture=neutral, PublicKeyToken=null" Label="Relevance Feedback Data Collector" ComponentMetadataDefinitionID="28fc726e-b273-4ff5-a804-d0bd7123cc06">
+        <IOSpec Version="1">
+          <Input>
+            <InputItem>
+              <InputItemDefinition Name="feedbackResultsMatricesPerIteration" Type="RocchioTypes.TLFeedbackResultMatricesPerIteration" />
+              <MappedTo>feedbackResultsMatricesPerIteration</MappedTo>
+            </InputItem>
+            <InputItem>
+              <InputItemDefinition Name="decisionsPerQuery" Type="RocchioTypes.TLDecisionsPerQuery" />
+              <MappedTo>decisionsPerQuery</MappedTo>
+            </InputItem>
+            <InputItem>
+              <InputItemDefinition Name="datasetName" Type="System.String" />
+              <MappedTo>datasetName</MappedTo>
+            </InputItem>
+          </Input>
+          <Output />
+          <Import>
+            <ImportItem>
+              <ImportItemDefinition Name="relevanceFeedbackDataContainer" Type="RelevanceFeedbackBenchmarkingTypes.TLRelevanceFeedbackDataContainer" />
+              <ImportAs>relevanceFeedbackDataContainer</ImportAs>
+            </ImportItem>
+          </Import>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues />
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <edge id="ed9bbba5-5c72-4434-ac4c-5c60e099fa55" source="Start" target="b3a245c8-533e-4594-b09b-2a29436e9817" />
+  <edge id="fd1b76d0-99ab-4543-b443-518941b7a214" source="5adf44cd-d3d7-45fc-ae90-a72cfe211fd3" target="08000ed2-178c-4ea8-85d0-ab0c00d712d5" />
+  <edge id="c5f2945a-6deb-490c-acd8-d1fba8e84460" source="1b1d2477-597d-4e4f-ab79-b574b1b70787" target="3fed0c5c-5168-4560-a641-81823871da38" />
+  <edge id="8d04f288-6bda-4024-869c-fec2bb31ed08" source="cfab729c-6e2b-4d1f-ab0f-b9a6717fbced" target="3fed0c5c-5168-4560-a641-81823871da38" />
+  <edge id="41e1d62a-1904-4b80-b229-2420724a845f" source="cfab729c-6e2b-4d1f-ab0f-b9a6717fbced" target="89cd5f2c-af2a-4b29-b02a-40ea208d8752" />
+  <edge id="439a5a4e-67a9-42ac-ab4a-cdfd336f60f2" source="5886ff05-7c97-4c30-9057-6a0a17858374" target="cfab729c-6e2b-4d1f-ab0f-b9a6717fbced" />
+  <edge id="00aafe4a-9acd-4a6f-ad8e-14c4cf84a157" source="b3a245c8-533e-4594-b09b-2a29436e9817" target="1b1d2477-597d-4e4f-ab79-b574b1b70787" />
+  <edge id="ac76c42f-b5ba-463d-b6af-4d945e165596" source="c74fa322-854e-4adb-abf9-6c6f605255fb" target="End" />
+  <edge id="2649aeb5-01e2-4c16-8b2c-cf1be05c3d70" source="3fed0c5c-5168-4560-a641-81823871da38" target="5adf44cd-d3d7-45fc-ae90-a72cfe211fd3" />
+  <edge id="69a6cdd2-d51d-45ae-b371-e31add906a71" source="89cd5f2c-af2a-4b29-b02a-40ea208d8752" target="c74fa322-854e-4adb-abf9-6c6f605255fb" />
+  <edge id="45882376-38f3-4f17-8671-4215250f8633" source="08000ed2-178c-4ea8-85d0-ab0c00d712d5" target="5886ff05-7c97-4c30-9057-6a0a17858374" />
+</graph>

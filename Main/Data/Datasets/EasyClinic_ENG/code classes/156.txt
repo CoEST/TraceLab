@@ -1,0 +1,27 @@
+Class Examination Date: 14/09/2003 
+                                                  Version: 
+                                                  0 01 000 
+Description contains data of a survey that is was 
+                   prescribed in a visit held in 
+                   outpatient 
+Attributes 
+       Name Access Description 
+Private Data on where the patient has 
+                               carried out the examination 
+Private diagnosis made by medical diagnosis 
+Individual results results 
+Methods 
+       Signature create () Public Access 
+    Description Its task is to create a new object of type 
+                   Discussed 
+       Signature delete () Public Access 
+    Description Provides the elimination of an examination 
+       Signature save () Public Access 
+    Description Provides storage of data from an 
+                   examination within the S I O 
+Methods 
+       Signature GetAttributes () Public Access 
+    It description to find all the information 
+                   on examination 
+       Signature setAttributes () Public Access 
+    It description of the attributes set by examination

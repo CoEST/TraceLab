@@ -1,0 +1,7 @@
+Command and Control CSC	The Command and Control (CCM) CSC is a Level 2 reuse component from the INSTRUMENT Y project.  The Command and Control CSC includes the following components:
+* A Control Task, ccmCtrlTask(), which initializes the DPU FSW and spawns other tasks at bootup, schedules the production of DPU housekeeping data packets, monitors the execution of other tasks, and schedules the execution of other periodic tasks such as the heartbeat message and the watchdog strobe; and
+* A Command Dispatch Task, ccmCmdTask(), which receives and dispatches real-time commands received from the SCU or the ICU.
+Major data structures include:
+* A Static Data table that keeps track of the operational state.  Data included in this table includes housekeeping production rates, CCM specific flags, and the number of commands executed.
+* A Command Queue into which commands are placed when they arrive, via interrupt, from the ICU or the SCU.
+* An Error/Event Queue which accumulates error and event codes which are reported by the DPU FSW.  These error and event codes are removed from the queue and placed into a telemetry packet at a given interval and included in DPU housekeeping data.

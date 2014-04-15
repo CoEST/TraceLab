@@ -1,0 +1,14 @@
+Nome: ModificaPassword
+Attori: Utente registrato
+Descrizione: Permette ad un utente di modificare la propria password
+Precondizioni:
+•	L’utente è loggato al sistema •	Clicca sul pulsante “Modifica Password”
+Sequenza degli eventi
+Utente
+2. Compila il form e sottomette;
+Sistema
+1.	Visualizza il form con i campi: vecchia password, nuova password, conferma nuova password.
+3.	Conferma l’avvenuta modifica della password
+Postcondizioni:
+• • •
+La password dell’utente è stata modificata L’utente annulla l’operazione Interruzione della connessione al server SMOS

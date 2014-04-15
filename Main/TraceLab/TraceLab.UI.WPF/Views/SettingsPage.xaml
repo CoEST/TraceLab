@@ -1,0 +1,168 @@
+﻿<!--
+TraceLab - Software Traceability Instrument to Facilitate and Empower Traceability Research
+Copyright (C) 2012-2013 CoEST - National Science Foundation MRI-R2 Grant # CNS: 0959924
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see<http://www.gnu.org/licenses/>.
+-->
+
+<UserControl x:Class="TraceLab.UI.WPF.Views.SettingsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:settings="clr-namespace:TraceLab.UI.WPF.ViewModels"
+             xmlns:local="clr-namespace:TraceLab.UI.WPF.Views"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             xmlns:Converters="clr-namespace:TraceLab.UI.WPF.Converters"
+             xmlns:Utilities="clr-namespace:TraceLab.UI.WPF.Utilities"
+             Background="SlateGray">
+
+    <UserControl.Resources>
+        <ControlTemplate x:Key="EditingPath" TargetType="ContentControl">
+            <DockPanel LostFocus="TextBox_LostFocus" HorizontalAlignment="Stretch">
+                <Button DockPanel.Dock="Right" x:Name="TEMPLATE_PART_Button" Content="..." Width="25" Click="TEMPLATE_PART_Button_Click" IsTabStop="False" Focusable="False"/>
+                <TextBox x:Name="TEMPLATE_PART_Text" DockPanel.Dock="Left" Text="{Binding Path=Path}" Loaded="TEMPLATE_PART_Text_Loaded"
+                         Height="22" Margin="0" Padding="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" KeyDown="TEMPLATE_PART_Text_KeyDown"/>
+            </DockPanel>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="ReadOnlyPath" TargetType="ContentControl">
+            <TextBlock Text="{Binding Path=Path}" Height="18" VerticalAlignment="Center" Margin="4, 2, 2, 2" Padding="0" />
+        </ControlTemplate>
+
+        <DataTemplate DataType="{x:Type settings:SettingsPathViewModel}">
+            <Border x:Name="PART_Border" Background="CadetBlue">
+                <ContentControl x:Name="PART_Content" Content="{Binding Path=.}" MouseDoubleClick="PART_Content_MouseDoubleClick" />
+            </Border>
+
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding IsEditing}" Value="True">
+                    <Setter Property="Template" Value="{DynamicResource EditingPath}" TargetName="PART_Content"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsEditing}" Value="False">
+                    <Setter Property="Template" Value="{DynamicResource ReadOnlyPath}" TargetName="PART_Content"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsTemporary}" Value="False">
+                    <Setter Property="Background" TargetName="PART_Border" Value="Transparent"/>
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+
+        <ControlTemplate x:Key="TextBoxErrorTemplate">
+            <DockPanel LastChildFill="False">
+                <Border BorderBrush="Red" BorderThickness="1" Padding="0,0,0,0">
+                    <AdornedElementPlaceholder x:Name="Holder" />
+                </Border>
+                <TextBlock DockPanel.Dock="Right" Foreground="Red" FontSize="12pt" Text="!" />
+            </DockPanel>
+        </ControlTemplate>
+
+        <System:String x:Key="urlValidationRegex">^(http|https)\://(localhost)?[a-zA-Z0-9\-\.]*\.?[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~])*[^\.\,\)\(\s]$</System:String>
+
+        <Style x:Key="GroupBoxStyle" TargetType="{x:Type GroupBox}">
+            <Setter Property="Margin" Value="0 0 0 5" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="SlateGray" />
+        </Style>
+
+        <Style x:Key="ListBoxItemStyle" TargetType="{x:Type ListBoxItem}">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="Padding" Value="0" />
+        </Style>
+    </UserControl.Resources>
+
+    <StackPanel Orientation="Vertical" Margin="5">
+        <TabControl Grid.Row="0" Background="LightGray">
+            <TabItem Header="General" Background="LightGray">
+                <StackPanel Orientation="Vertical">
+                    <GroupBox Style="{StaticResource GroupBoxStyle}" Header="Default Experiment" ToolTip="The experiment, if any, to open when TraceLab starts.">
+                        <DockPanel>
+                            <Button DockPanel.Dock="Right" Width="25" Click="DefaultExperiment_Click" Content="..." />
+                            <TextBox Text="{Binding DefaultExperiment}" />
+                        </DockPanel>
+                    </GroupBox>
+
+                    <GroupBox Style="{StaticResource GroupBoxStyle}" Header="Components Directories" ToolTip="Where components are loaded from, in priority order.">
+                        <DockPanel>
+                            <StackPanel DockPanel.Dock="Right" Width="80">
+                                <Button Content="Move Up" ToolTip="Move the currently selected path up"
+                                        Command="{Binding MoveUp, RelativeSource={RelativeSource AncestorType={x:Type local:SettingsPage}}}" CommandParameter="{x:Static settings:SettingsPathType.Components}"/>
+                                <Button Content="Move Down" ToolTip="Move the currently selected path down"
+                                        Command="{Binding MoveDown, RelativeSource={RelativeSource AncestorType={x:Type local:SettingsPage}}}" CommandParameter="{x:Static settings:SettingsPathType.Components}"/>
+                                <Button Content="Add" ToolTip="Add a new path" 
+                                        Command="{Binding AddNew, RelativeSource={RelativeSource AncestorType={x:Type local:SettingsPage}}}" CommandParameter="{x:Static settings:SettingsPathType.Components}"/>
+                                <Button Content="Edit" ToolTip="Edit an existing path" 
+                                        Command="{Binding EditExisting, RelativeSource={RelativeSource AncestorType={x:Type local:SettingsPage}}}" CommandParameter="{x:Static settings:SettingsPathType.Components}"/>
+                                <Button Content="Delete" ToolTip="Delete an existing path" 
+                                        Command="{Binding Delete, RelativeSource={RelativeSource AncestorType={x:Type local:SettingsPage}}}" CommandParameter="{x:Static settings:SettingsPathType.Components}"/>
+                            </StackPanel>
+
+                            <ListBox x:Name="ComponentList" Width="500" ItemsSource="{Binding ComponentPaths}" SelectionMode="Single" KeyDown="ComponentList_KeyDown"
+                                     ItemContainerStyle="{StaticResource ListBoxItemStyle}">
+                            </ListBox>
+                        </DockPanel>
+                    </GroupBox>
+
+                    <GroupBox Style="{StaticResource GroupBoxStyle}" Header="Types Directories" ToolTip="Where custom types are loaded from, in priority order.">
+                        <DockPanel>
+                            <StackPanel DockPanel.Dock="Right" Width="80">
+                                <Button Content="Move Up" ToolTip="Move the currently selected path up" 
+                                        Command="{Binding MoveUp, RelativeSource={RelativeSource AncestorType={x:Type local:SettingsPage}}}" CommandParameter="{x:Static settings:SettingsPathType.Type}"/>
+                                <Button Content="Move Down" ToolTip="Move the currently selected path down" 
+                                        Command="{Binding MoveDown, RelativeSource={RelativeSource AncestorType={x:Type local:SettingsPage}}}" CommandParameter="{x:Static settings:SettingsPathType.Type}"/>
+                                <Button Content="Add" ToolTip="Add a new path" 
+                                        Command="{Binding AddNew, RelativeSource={RelativeSource AncestorType={x:Type local:SettingsPage}}}" CommandParameter="{x:Static settings:SettingsPathType.Type}"/>
+                                <Button Content="Edit" ToolTip="Edit an existing path" 
+                                        Command="{Binding EditExisting, RelativeSource={RelativeSource AncestorType={x:Type local:SettingsPage}}}" CommandParameter="{x:Static settings:SettingsPathType.Type}"/>
+                                <Button Content="Delete" ToolTip="Delete an existing path" 
+                                        Command="{Binding Delete, RelativeSource={RelativeSource AncestorType={x:Type local:SettingsPage}}}" CommandParameter="{x:Static settings:SettingsPathType.Type}"/>
+                            </StackPanel>
+
+                            <ListBox x:Name="TypeList" Width="500" SelectionMode="Single" ItemsSource="{Binding TypePaths}" 
+                                     ItemContainerStyle="{StaticResource ListBoxItemStyle}" />
+                        </DockPanel>
+                    </GroupBox>
+
+                    <GroupBox Style="{StaticResource GroupBoxStyle}" Header="Experiments Directory" 
+                              ToolTip="Default folder for storing experiments.">
+                        <DockPanel>
+                            <Button DockPanel.Dock="Right" Width="25" Click="DefaultExperimentsDirectory_Click" Content="..." />
+                            <TextBox Text="{Binding DefaultExperimentsDirectory}" />
+                        </DockPanel>
+                    </GroupBox>
+
+                    <!--<GroupBox Style="{StaticResource GroupBoxStyle}" Header="The webservice address (to participate and publish contests)" 
+                            ToolTip="The url address to webservice..." BorderThickness="1">
+                        <DockPanel>
+                            <TextBox x:Name="webserviceAddressBox" Validation.ErrorTemplate="{StaticResource TextBoxErrorTemplate}">
+                                <TextBox.Text>
+                                    <Binding Path="WebserviceAddress" UpdateSourceTrigger="PropertyChanged">
+                                        <Binding.ValidationRules>
+                                            <Utilities:RegexValidationRule Pattern="{StaticResource urlValidationRegex}" />
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox.Text>
+                            </TextBox>
+                        </DockPanel>
+                    </GroupBox>-->
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+
+        <Button Margin="0 5 0 0" Width="80" Click="UpdateButton_Click">Update</Button>
+    </StackPanel>
+</UserControl>

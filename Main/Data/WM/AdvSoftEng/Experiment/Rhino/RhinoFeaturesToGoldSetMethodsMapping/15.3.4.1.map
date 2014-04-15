@@ -1,0 +1,14 @@
+org.mozilla.javascript.BaseFunction.jsConstructor
+org.mozilla.javascript.TokenStream.peekChar
+org.mozilla.javascript.BaseFunction.findPrototypeId
+org.mozilla.javascript.ScriptRuntime.toUint32
+org.mozilla.javascript.BaseFunction.execIdCall
+org.mozilla.javascript.BaseFunction.initPrototypeId
+org.mozilla.javascript.TokenStream.eof
+org.mozilla.javascript.TokenStream.ungetChar
+org.mozilla.javascript.PrototypeValues.createPrecachedConstructor
+org.mozilla.javascript.IdScriptableObject.initPrototypeConstructor
+org.mozilla.javascript.TokenStream.getOffset
+org.mozilla.javascript.IdFunctionObject.getPrototype
+org.mozilla.javascript.ScriptableObject.getFunctionPrototype
+org.mozilla.javascript.TokenStream.matchChar

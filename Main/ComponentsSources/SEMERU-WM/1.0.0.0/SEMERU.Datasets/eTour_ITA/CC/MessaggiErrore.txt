@@ -1,0 +1,33 @@
+package unisa.gps.etour.util;
+
+/**
+ *  Messaggi di  Errore standard autodescrittivi
+ *
+ * @author  De  Simone  Michelangelo
+ * @version  . 
+ * 
+ *  &#   ;      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I –  University of  Salerno
+ */
+public class  Messaggi Errore
+{
+	//  Si verifica quando durante la connessione al  D B M S
+	public static final  String  E R R O R E_ C O N N E S S I O N E_ D B M S = " Connessione al  D B M S fallita";
+	
+	//  Si verifica quando non è possibile effettuare un'operazione sul  D B M S
+	public static final  String  E R R O R E_ D B M S = " Errore  D B M S";
+	
+	//  Si verifica in condizioni non specificate
+	public static final  String  E R R O R E_ S C O N O S C I U T O = " Errore sconosciuto";
+	
+	//  Si verifica quando ci sono errori di formato in un bean
+	public static final  String  E R R O R E_ F O R M A T O_ B E A N = " Errore dati nel bean";
+	
+	//  Si verifica quando c'è un errore dati
+	public static final  String  E R R O R E_ D A T I = " Errore dati";
+	
+	//  Si verifica quando c'è un errore su lettura/scrittura di file
+	public static final  String  E R R O R E_ F I L E = " Errore lettura/scrittura file";
+	
+	//  Si verifica quando è stato raggiunto il numero massimo di banner visualizzabili
+	public static final  String  E R R O R E_ N U M_ B A N N E R = " Superato il numero banner inseribili";
+}

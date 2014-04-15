@@ -1,0 +1,171 @@
+package unisa.gps.etour.gui.operatore agenzia ;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.image. Buffered Image;
+import java.io. File;
+import java.io. I O Exception;
+
+import javax.imageio. Image I O;
+import javax.swing.*;
+import javax.swing.filechooser. File Filter;
+import javax.swing.border.*;
+
+import unisa.gps.etour.gui.operatore agenzia . Home;
+
+/**
+ *  Questa classe realizza il pannello per la dialog per l'inserimento di un
+ * nuovo banner o per la sostituzione di un banner selezionato.
+ * 
+ * @version  . 
+ * @author  Mario  Gallo 
+ * 
+ * &#   ;      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I -
+ *          University of  Salerno
+ */
+public class  Banner Dialog extends  J Panel
+{
+	private final static  Dimension banner Size = new  Dimension(   ,   );
+	private  J Label anteprima = null;
+	private  J Button btn Carica = null;
+	private  J Panel questo;
+
+	/**
+	 *  Questo è il costruttore di default.
+	 */
+	public  Banner Dialog()
+	{
+		super(null);
+		questo = this;
+		set Preferred Size(new  Dimension(   ,    ));
+		anteprima = new  J Label();
+		anteprima.set Bounds(new  Rectangle(  ,   ,    ,   ));
+		anteprima.set Border( Border Factory.create Titled Border( Border Factory
+				.create Line Border(new  Color(  ,    ,    ),  ),
+				" Anteprima  Banner",  Titled Border. D E F A U L T_ J U S T I F I C A T I O N,
+				 Titled Border. D E F A U L T_ P O S I T I O N,
+				new  Font(" Dialog",  Font. B O L D,   ), new  Color( ,    ,    )));
+		btn Carica = new  J Button();
+		btn Carica.set Bounds(new  Rectangle(   ,   ,   ,   ));
+		btn Carica.set Icon(new  Image Icon(get Class().get Resource(
+				 Home. U R L_ I M A G E S + " Apri File.png")));
+		btn Carica.add Action Listener(new  Action Listener()
+		{
+
+			public void action Performed( Action Event arg )
+			{
+				 File f = apri File Dialog();
+
+				if (f == null)
+				{
+					return;
+				}
+
+				 Buffered Image img = null;
+				try
+				{
+					img =  Image I O.read(f);
+					if (img.get Width() > banner Size.width
+							|| img.get Height() > banner Size.height)
+					{
+						img = img.get Subimage( ,  , banner Size.width,
+								banner Size.height);
+					}
+				}
+				catch ( I O Exception e)
+				{
+					e.print Stack Trace();
+				}
+				 Image Icon n = new  Image Icon(img);
+				anteprima.set Icon(n);
+				anteprima.repaint();
+			}
+		});
+
+		 J Label txt Attenzione = new  J Label(" Attenzione!");
+		txt Attenzione.set Icon(new  Image Icon(get Class().get Resource(
+				 Home. U R L_ I M A G E S + "warning  .png")));
+		txt Attenzione.set Bounds(  ,   ,    ,   );
+		 J Label txt Testo = new  J Label(
+				"<html><ul><li> L'immagine per il banner non può superare i<b><font color=\"red\">"
+						+ banner Size.width
+						+ "x"
+						+ banner Size.height
+						+ "</font></b> pixels."
+						+ "<li> Le immagini di grandezza maggiore verranno ridimensionate.</ul></html>");
+		txt Testo.set Bounds( ,   ,    ,   );
+		add(txt Testo, null);
+		add(txt Attenzione, null);
+		add(anteprima, null);
+		add(btn Carica, null);
+
+	}
+
+	/**
+	 *  Questo metodo inizializza l'immagine contenuta nell'anteprima.
+	 * 
+	 * @param p Banner  Image Icon - un'immagine di un banner.
+	 */
+	public void set Selected Banner( Image Icon p Banner)
+	{
+		anteprima.set Icon(p Banner);
+	}
+
+	/**
+	 *  Questo metodo restituisce l'immagine contenuta nell'anteprima.
+	 * 
+	 * @return  Image Icon - l'immagine del banner.
+	 */
+	public  Image Icon get Selected Banner()
+	{
+		return ( Image Icon) anteprima.get Icon();
+	}
+
+	/**
+	 *  Questo metodo apre la dialog per la scelta di un file dal disco.
+	 * 
+	 * @return
+	 * <ul>
+	 * <li> File - il file selezionato.
+	 * <li>null - se non è stato selezionato nessun file.
+	 * </ul>
+	 */
+	private  File apri File Dialog()
+	{
+		 J File Chooser apri File = new  J File Chooser();
+		apri File.set Dialog Title(" Seleziona una nuova immagine");
+		apri File.set Accept All File Filter Used(false);
+		apri File.set Multi Selection Enabled(false);
+
+		//  File  Filter per la finestra di apertura del file.
+		apri File.set File Filter(new  File Filter()
+		{
+			public boolean accept( File arg )
+			{
+				if (arg .is Directory())
+					return true;
+				 String nome = arg .get Name().to Lower Case();
+				if (nome.ends With("jpg") || nome.ends With("gif")
+						|| nome.ends With("png"))
+					return true;
+				else
+					return false;
+			}
+
+			public  String get Description()
+			{
+				return " Immagini (*. P N G, *. G I F, *. J P G)";
+			}
+
+		});
+		int return Val = apri File.show Open Dialog(questo);
+		if (return Val ==  J File Chooser. A P P R O V E_ O P T I O N)
+		{
+			return apri File.get Selected File();
+		}
+		else
+			return null;
+
+	}
+
+}

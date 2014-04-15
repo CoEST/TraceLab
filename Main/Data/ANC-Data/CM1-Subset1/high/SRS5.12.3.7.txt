@@ -1,0 +1,1 @@
+  The DPU-CCM shall maintain counts of both the number of commands successfully received and rejected and report the parameters in DPU_HK.

@@ -1,0 +1,323 @@
+/*
+ *  Turisti Table Model.java
+ *
+ *  . 
+ *
+ *   /  /    
+ *
+ * �      e Tour  Project -  Copyright by  S E@ S A  Lab -  D M I �  University of  Salerno
+ */
+package unisa.gps.etour.gui.operatore agenzia .tables;
+
+import java.util. Array List;
+import java.util. Date;
+import java.util. Vector;
+import javax.swing.table. Abstract Table Model;
+
+import unisa.gps.etour.bean. Bean Turista;
+
+
+/**
+ * <b> Turisti Table Model</b>
+ * <p> Funge da contenitore ai dati del turista che devono 
+ * essere visualizzati in una  J Table.</p>
+ * @see javax.swing.table. Abstract Table Model
+ * @see javax.swing. J Table
+ * @see unisa.gps.etour.bean. Bean Turista
+ * @version  . 
+ * @author  Mario  Gallo
+ */
+public class  Turisti Table Model extends  Abstract Table Model
+{
+	private static final  String[] headers = { " Status"," Nome", " Cognome", " E- Mail"," Telefono",
+		" Data di  Nascita", " Città di  Nascita",
+			" Indirizzo"," Città", " C A P", " Prov", " Registrato il" };
+	private static final  Class[] column Classes = {  Boolean.class, String.class,  String.class,
+			 String.class,  String.class,  Date.class,  String.class,  String.class, String.class, String.class, String.class,
+			 Date.class };
+	private  Vector< Object[]> data;
+
+	/**
+	 *  Costruttore di default.  Si limita a creare il modello senza caricare
+	 * nessun dato al suo interno.
+	 *
+	 */
+	public  Turisti Table Model()
+	{
+		data = new  Vector< Object[]>();
+	}
+
+	/**
+	 *  Crea il modello della table e carica i dati forniti attraverso un array  di  Bean Bene Culturale.
+	 * 
+	 * @param p Turisti java.util. Array List< Bean Turista> - un  Array List di  Bean Turista.
+	 * 
+	 */
+	public  Turisti Table Model( Array List< Bean Turista> p Turisti)
+	{
+		this();
+		if (p Turisti == null)
+		{
+			return;
+		}
+		for (int i =  ; i < p Turisti.size(); i++)
+		{
+			insert Turista(p Turisti.get(i));
+		}
+	}
+
+	/**
+	 *  Restituisce il numero di colonne previste dal modello.
+	 * 
+	 * @return int - il numero di colonne.
+	 * 
+	 */
+	public int get Column Count()
+	{
+		return headers.length;
+	}
+
+	/**
+	 *  Restituisce il numero di righe attualmente presenti nel modello.
+	 * 
+	 * @return int - il numero di righe.
+	 * 
+	 */
+	public int get Row Count()
+	{
+		return data.size();
+	}
+
+	/**
+	 *  Restituisce il nome della colonna dall'indice fornito.
+	 * 
+	 * @return  String - il nome della colonna.
+	 * @exception  Illegal Argument Exception - se l'indice di colonna fornito non �
+	 * presente nel modello.
+	 *  
+	 */
+	public  String get Column Name(int p Column) throws  Illegal Argument Exception
+	{
+		if (p Column >= get Column Count() || p Column <   )
+		{
+			throw new  Illegal Argument Exception(
+					" L'indice di colonna fornito non � presente nel modello.");
+		}
+		return headers[p Column];
+	}
+
+	/**
+	 *  Restituisce l'oggetto presente nel modello alla riga e alla colonna fornita.
+	 * 
+	 * @param p Row - il numero di riga.
+	 * @param p Column - il numero di colonna.
+	 * @return  Object - l'oggetto contenuto nella cella selezionata.
+	 * @exception  Illegal Argument Exception - se l'indice o di riga o di colonna forniti non
+	 * sono presenti nel modello.
+	 * 
+	 */
+	public  Object get Value At(int p Row, int p Column)
+			throws  Illegal Argument Exception
+	{
+		if (p Row >= get Row Count() || p Row <   )
+		{
+			throw new  Illegal Argument Exception(
+					" L'indice di riga fornito non � presente nel modello.");
+		}
+		if (p Column >= get Column Count()|| p Column <   )
+		{
+			throw new  Illegal Argument Exception(
+					" L'indice di colonna fornito non � presente nel modello.");
+		}
+		return data.get(p Row)[p Column];
+	}
+
+	/**
+	 *  Restituisce la classe degli oggetti contenuti nella colonna della quale viene fornito l'indice.
+	 * 
+	 * @param p Column - il numero di colonna.
+	 * @return  Class - la classe degli oggetti della colonna selezionata.
+	 * @exception  Illegal Argument Exception - se l'indice di colonna fornito non � presente
+	 * nel modello.
+	 * 
+	 */
+	public  Class get Column Class(int p Column) throws  Illegal Argument Exception
+	{
+		if (p Column >= get Column Count() || p Column <   )
+		{
+			throw new  Illegal Argument Exception(
+					" L'indice di colonna fornito non � presente nel modello.");
+		}
+		return column Classes[p Column];
+	}
+
+	/**
+	 *  Restituisce se la cella selezionata � editabile.
+	 * 
+	 * @return boolean - true se la cella � editabile
+	 * 					 false altrimenti
+	 * @param p Row - il numero di riga.
+	 * @param p Column - il numero di colonna.
+	 * @exception  Illegal Argument Exception - se l'indice o di riga o di colonna forniti non sono
+	 * presenti nel modello.
+	 * 
+	 */
+	public boolean is Cell Editable(int p Row, int p Column)
+			throws  Illegal Argument Exception
+	{
+		return false;
+	}
+
+	/**
+	 *  Il metodo set Value At ereditato dall'interfaccia  Table Model non �
+	 * necessario in quanto non � prevista la possibilit� di modificare una
+	 * singola cella.
+	 * 
+	 * @deprecated
+	 */
+	public void set Value At( Object value, int row, int col)
+	{
+
+	}
+
+	/**
+	 *  Attiva o disattiva il turista alla riga selezionata.
+	 * 
+	 * @param p Row int - la riga selezionata.
+	 * @return int - l'id del turista attivato/disattivato.
+	 * 
+	 */
+	public int attiva Turista(int p Row) throws  Illegal Argument Exception
+	{
+		data.get(p Row)[ ] = (is Attivato(p Row)) ? false : true;
+		fire Table Data Changed();
+		return get I D(p Row);
+	}
+	
+	/**
+	 *  Determina se un turista alla riga selezionata è attivato o disattivato.
+	 * 
+	 * @param p Row int - la riga selezionata.
+	 * @return <ul><li><i>true</i> - attivato</li>
+	 * <li><i>false</i> - disattivato</li></ul>
+	 */
+	public boolean is Attivato(int p Row) throws  Illegal Argument Exception
+	{
+		return ( Boolean) get Value At(p Row, );
+	}
+	
+	/**
+	 * 
+	 *  Inserisce i dati relativi a un turista nel modello a partire dal suo  Bean.
+	 *
+	 * @param p Turista  Bean Turisa - il bean contenente i dati del turista.
+	 * 
+	 */
+	public void insert Turista( Bean Turista p Turista) throws  Illegal Argument Exception
+	{
+		if (p Turista == null)
+		{
+			throw new  Illegal Argument Exception(
+					" Il bean fornito non può essere null.");
+		}
+		 Object[] a Row = new  Object[  ];
+		a Row[ ] = p Turista.is Attiva();
+		a Row[ ] = p Turista.get Nome();
+		a Row[ ] = p Turista.get Cognome();
+		a Row[ ] = p Turista.get Email();
+		a Row[ ] = p Turista.get Telefono();
+		a Row[ ] = p Turista.get Data Nascita();
+		a Row[ ] = p Turista.get Citta Nascita();
+		a Row[ ] = p Turista.get Via();
+		a Row[ ] = p Turista.get Citta Residenza();
+		a Row[ ] = p Turista.get Cap();
+		a Row[  ] = p Turista.get Provincia();
+		a Row[  ] = p Turista.get Data Registrazione();
+		a Row[  ] = p Turista.get Id();
+		data.add(a Row);
+	}
+
+	/**
+	 * 
+	 *  Aggiorna le informazioni del turista nel modello (se presente)
+	 * con il bean fornito in input.
+	 *
+	 * @param p Turista  Bean Turista - il bean contenente i dati del turista.
+	 * 
+	 */
+	public void update Turista( Bean Turista p Turista) throws  Illegal Argument Exception
+	{
+		if (p Turista == null)
+		{
+			throw new  Illegal Argument Exception(
+					" Il bean fornito non può essere null.");
+		}
+		int i;
+		for (i =  ; i < data.size(); i++)
+		{
+			int id = ( Integer) data.get(i)[  ];
+			if (id == p Turista.get Id())
+			{
+				break;     
+			}
+		}
+		if (i != data.size()) // Trovato
+		{
+			 Object[] a Row = new  Object[  ];
+			a Row[ ] = p Turista.is Attiva();
+			a Row[ ] = p Turista.get Nome();
+			a Row[ ] = p Turista.get Cognome();
+			a Row[ ] = p Turista.get Email();
+			a Row[ ] = p Turista.get Telefono();
+			a Row[ ] = p Turista.get Data Nascita();
+			a Row[ ] = p Turista.get Citta Nascita();
+			a Row[ ] = p Turista.get Via();
+			a Row[ ] = p Turista.get Citta Residenza();
+			a Row[ ] = p Turista.get Cap();
+			a Row[  ] = p Turista.get Provincia();
+			a Row[  ] = p Turista.get Data Registrazione();
+			a Row[  ] = p Turista.get Id();
+			data.set(i,a Row);
+			fire Table Data Changed();
+		}
+		
+	}
+
+	/**
+	 * 
+	 *  Restituisce l'id del turista i cui dati sono visualizzati alla riga
+	 * fornita in input.
+	 *
+	 * @param p Row - il numero di riga.
+	 * @return - l'id del turista.
+	 * @exception  Illegal Argument Exception - se l'indice di riga fornito non � presente
+	 * nel modello.
+	 */
+	public int get I D(int p Row) throws  Illegal Argument Exception
+	{
+		if (p Row >= get Row Count() || p Row <   )
+		{
+			throw new  Illegal Argument Exception(
+					" L'indice di riga fornito non � presente nel modello.");
+		}
+		return ( Integer) data.get(p Row)[  ];
+	}
+
+	/**
+	 * 
+	 *  Restituisce l'id del  Turista al numero di riga fornito in input e lo rimuove dal modello.
+	 *
+	 * @param p Row - il numero di riga.
+	 * @return - l'id del turista.
+	 * @exception  Illegal Argument Exception - se l'indice di riga fornito non � presente
+	 * nel modello.
+	 * 
+	 */
+	public int remove Turista(int p Row) throws  Illegal Argument Exception
+	{
+		int id = get I D(p Row);
+		data.remove(p Row);
+		return id;
+	}
+
+}

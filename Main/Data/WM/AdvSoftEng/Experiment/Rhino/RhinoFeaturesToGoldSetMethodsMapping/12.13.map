@@ -1,0 +1,13 @@
+org.mozilla.javascript.JavaScriptException.JavaScriptException
+org.mozilla.javascript.Interpreter.getLocalBlockRef
+org.mozilla.javascript.JavaScriptException.details
+org.mozilla.javascript.TokenStream.stringToKeyword
+org.mozilla.javascript.Decompiler.decompile
+org.mozilla.javascript.Interpreter.interpretLoop
+org.mozilla.javascript.JavaScriptException.getValue
+org.mozilla.javascript.Parser.statementHelper
+org.mozilla.javascript.IRFactory.createThrow
+org.mozilla.javascript.Interpreter.visitStatement
+org.mozilla.javascript.JavaScriptException.getSourceName
+org.mozilla.javascript.Token.name
+org.mozilla.javascript.JavaScriptException.getLineNumber

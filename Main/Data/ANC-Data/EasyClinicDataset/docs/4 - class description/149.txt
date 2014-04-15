@@ -1,0 +1,19 @@
+  Class CartellaClinicaManager Date: 
+                                                    16/09/2003 
+                                                    Version: 
+                                                    0 01 000 
+Description Its task is to manage the data that make up 
+                   the medical records of a patient 
+Attributes 
+       Name Access Description 
+                                
+Methods 
+       Signature getCartellaClinica () Public Access 
+    It description to find all the information on the 
+                   clinic filder of a patient 
+       Signature getDettagli () Public Access 
+    Description Provides a load all the details of a 
+                   visit 
+       Signature getDatiPaziente () Public Access 
+    Description has the task of finding the anagrafica data of 
+                   Patient 

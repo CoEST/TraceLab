@@ -1,0 +1,402 @@
+﻿<!--
+TraceLab - Software Traceability Instrument to Facilitate and Empower Traceability Research
+Copyright (C) 2012-2013 CoEST - National Science Foundation MRI-R2 Grant # CNS: 0959924
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see<http://www.gnu.org/licenses/>.
+-->
+
+<ad:DockableContent x:Class="TraceLab.UI.WPF.Views.ComponentsLibraryWindow"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock"
+            xmlns:Converters="clr-namespace:TraceLab.UI.WPF.Converters"
+            xmlns:Controls="clr-namespace:TraceLab.UI.WPF.Controls"
+            xmlns:ViewModels="clr-namespace:TraceLab.UI.WPF.ViewModels"
+            xmlns:Resources="clr-namespace:TraceLab.UI.WPF.Resources" 
+            xmlns:Views="clr-namespace:TraceLab.UI.WPF.Views"
+            xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <Grid x:Name="ComponentLibraryRoot">
+        <Grid.Resources>
+            <ResourceDictionary>
+
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Controls/TreeListView/Themes/Generic.xaml"/>
+                    <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Resources/Import_icon.xaml"/>
+                    <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Resources/Sequence_icon.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+
+                <Style x:Key="grayscaleEffectDisableButton" TargetType="Button">
+                    <Style.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Effect">
+                                <Setter.Value>
+                                    <Resources:GrayscaleEffect x:Name="grayscaleEffect" Factor="0" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+
+                <!-- Tooltip -->
+                <ToolTip x:Key="GridToolTip" DataContext="{Binding Path=PlacementTarget.DataContext, RelativeSource={RelativeSource Self}}" MaxWidth="480" StaysOpen="True">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Border HorizontalAlignment="Stretch" BorderThickness="0,0,0,1" BorderBrush="Black" Margin="5"  Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
+                            <TextBlock FontSize="14">Node info:</TextBlock>
+                        </Border>
+
+                        <TextBlock Grid.Column="0" Grid.Row="1" FontWeight="Bold" Margin="10,1,5,1">Component:</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Path=Component.Label}" />
+                        <TextBlock Grid.Column="0" Grid.Row="2" FontWeight="Bold" Margin="10,1,5,1">Version:</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Path=Component.Version}"/>
+                        <TextBlock Grid.Column="0" Grid.Row="3" FontWeight="Bold" Margin="10,1,5,1">Author:</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding Path=Component.Author}" />
+                        <TextBlock Grid.Column="0" Grid.Row="4" FontWeight="Bold" Margin="10,1,5,5">Description:</TextBlock>
+                        <TextBlock Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" Text="{Binding Path=Component.Description}"/>
+
+                        <TextBlock Grid.Column="0" Grid.Row="5" FontWeight="Bold" Margin="10,1,5,5">Links:</TextBlock>
+                        <ItemsControl Grid.Column="1" Grid.Row="5"
+                                      ItemsSource="{Binding Path=Component.DocumentationLinks}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock>
+                                            <Hyperlink NavigateUri="{Binding Path=Url}" RequestNavigate="Hyperlink_RequestNavigate">
+                                                <TextBlock Text="{Binding Path=Title}"/>
+                                            </Hyperlink>                
+                                        </TextBlock>
+                                        <TextBlock Margin="10, 0, 0, 0" Text="{Binding Path=Description}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+
+                        <Grid Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <ListView Grid.Column="0" Grid.Row="0" Margin="10,2,10,2" ItemsSource="{Binding Path=Component.IOSpecDefinition.Input.Values}"
+                                      Visibility="{Binding Path=Component.IOSpecDefinition.Input.Count, Converter={Converters:CountEmptyToVisConverter}}">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Width="220" Header="Inputs">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding Name}" Foreground="Firebrick" />
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <GridViewColumn Width="220" Header="Type">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding FriendlyType}" Foreground="Firebrick" />
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+
+                            <ListView Grid.Column="0" Grid.Row="1" Margin="10,2,10,2" ItemsSource="{Binding Path=Component.IOSpecDefinition.Output.Values}"
+                                      Visibility="{Binding Path=Component.IOSpecDefinition.Output.Count, Converter={Converters:CountEmptyToVisConverter}}">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Width="220" Header="Outputs">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding Name}" />
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <GridViewColumn Width="220" Header="Type">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Text="{Binding FriendlyType}" />
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </Grid>
+                    </Grid>
+                </ToolTip>
+
+                <HierarchicalDataTemplate DataType="{x:Type ViewModels:CLVReferenceContainerNode}" ItemsSource="{Binding Path=Children}">
+                    <Border Background="Transparent" BorderBrush="Transparent" BorderThickness="1" x:Name="PART_ErrorBorder">
+                        <DockPanel LastChildFill="True" x:Name="PART_ContainerPanel">
+                            <Controls:TreeListViewExpander />
+                            <Grid Height="16" Width="16" VerticalAlignment="Center" Margin="-1,0,5,0">
+                                <Image Source="pack://application:,,,/TraceLab.UI.WPF;component/Resources/VSFolder_closed_virtual.png"/>
+                                <Image Source="pack://application:,,,/TraceLab.UI.WPF;component/Resources/VSObject_Assembly.png" Height="10" Width="10" Margin="-1,1,0,0"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <TextBlock Text="{Binding Label}" VerticalAlignment="Center"/>
+                        </DockPanel>
+                    </Border>
+                    <HierarchicalDataTemplate.Triggers>
+                        <!--<Trigger Property="IsMouseOver" Value="False" SourceName="PART_ContainerPanel">
+                            <Setter TargetName="PART_OpenImportManagerButton" Property="Opacity" Value="0.2"/>
+                        </Trigger>-->
+                        <DataTrigger Binding="{Binding HasError}" Value="True">
+                            <Setter TargetName="PART_ErrorBorder" Property="BorderBrush" Value="Red"/>
+                            <Setter TargetName="PART_ContainerPanel" Property="ToolTip" Value="One or more packages have an error"/>
+                        </DataTrigger>
+                    </HierarchicalDataTemplate.Triggers>
+                </HierarchicalDataTemplate>
+
+                <DataTemplate DataType="{x:Type ViewModels:CLVReferenceNode}">
+                    <Border x:Name="PART_ErrorBorder" BorderBrush="Transparent" Background="Transparent" BorderThickness="1">
+                        <DockPanel x:Name="PART_ContainerPanel">
+                            <Controls:TreeListViewExpander Visibility="Hidden" />
+                            <Image Source="pack://application:,,,/TraceLab.UI.WPF;component/Resources/VSObject_Assembly.png" Height="16" Width="16"  Margin="-1,0,5,0"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <Button x:Name="PART_RemoveImportButton" DockPanel.Dock="Right" Height="16" Width="16" Margin="0" Padding="0" VerticalAlignment="Center" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Click="PART_RemoveImportButton_Click"
+                                    ToolTip="Remove this import">
+                                <Button.Content>
+                                    <Image Source="pack://application:,,,/TraceLab.UI.WPF;component/Resources/trashBin.png" Stretch="Uniform" Margin="0" />
+                                </Button.Content>
+                            </Button>
+                            <TextBlock Text="{Binding Label}" VerticalAlignment="Center"/>
+                        </DockPanel>
+                    </Border>
+                    <DataTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="False" SourceName="PART_ContainerPanel">
+                            <Setter TargetName="PART_RemoveImportButton" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <DataTrigger Binding="{Binding Exists}" Value="False">
+                            <Setter TargetName="PART_ErrorBorder" Property="BorderBrush" Value="Red"/>
+                            <Setter TargetName="PART_ContainerPanel" Property="ToolTip" Value="Package does not exist"/>
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type ViewModels:CLVComponentNode}">
+                    <DataTemplate.Resources>
+                        <Converters:BoolConverter x:Key="ShowPartialIdConverter" True="{x:Static Visibility.Visible}" False="{x:Static Visibility.Collapsed}" />
+                    </DataTemplate.Resources>
+                    <DockPanel LastChildFill="True">
+                        <Controls:TreeListViewExpander Visibility="Hidden" />
+                        <TextBlock Text="{Binding Label}" ToolTipService.ShowDuration="120000" ToolTip="{StaticResource GridToolTip}"/>
+                        <TextBlock Margin="10, 0, 5, 0" ToolTipService.ShowDuration="120000"
+                                   Text="{Binding PartialId}" 
+                                   ToolTip="{StaticResource GridToolTip}" 
+                                   Opacity="0.5"
+                                   Visibility="{Binding IsDuplicateLabel, Converter={StaticResource ShowPartialIdConverter}}"
+                                   />
+                    </DockPanel>
+                </DataTemplate>
+
+                <HierarchicalDataTemplate DataType="{x:Type ViewModels:CLVTagNode}" ItemsSource="{Binding Path=Children}">
+                    <StackPanel Orientation="Horizontal" Margin="0">
+                        <Controls:TreeListViewExpander />
+                        <Image Source="/TraceLab.UI.WPF;component/Resources/tagorganizertag.png" Margin="-1,0,5,0"/>
+                        <TextBlock Text="{Binding Label}"/>
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+
+                <sys:Double x:Key="IconSize">16</sys:Double>
+            </ResourceDictionary>
+
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <!-- Toolbar Tray -->
+            <RowDefinition Height="Auto"></RowDefinition>
+            <!-- IO Spec Filters -->
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ToolBarTray Grid.Row="0" IsLocked="True" Background="White">
+            <ToolBar Name="IconsToolBar" Band="1" BandIndex="1">
+                <Button Command="{Binding Rescan}" ToolTip="Re-scan Components Library">
+                    <Image Height="{StaticResource IconSize}" Source="/TraceLab.UI.WPF;component/Resources/Icon_Refresh16.png" />
+                </Button>
+
+                <Button Click="OpenImportManager_Click" Style="{StaticResource ResourceKey=grayscaleEffectDisableButton}"
+                        IsEnabled="{Binding Path=Experiment, Converter={Converters:NullToBoolConverter}}"
+                        ToolTip="Manage package references">
+                    <Image Height="{StaticResource IconSize}" Source="/TraceLab.UI.WPF;component/Resources/Icon_PkgReference16.png" />
+                </Button>
+
+                <Button Command="{Binding OpenOrganizer}" ToolTip="Open Component Tags Organizer">
+                    <Image Height="{StaticResource IconSize}" Source="/TraceLab.UI.WPF;component/Resources/Icon_Organizer16.png" />
+                </Button>
+
+                <Separator />
+
+                <Controls:SearchTextBox x:Name="FilterBox" SearchMode="Instant" Search="SearchTextBox_Search" LabelText="Filter" MinWidth="100" MaxWidth="150" SearchEventTimeDelay="0:0:0.2" >
+                    <Controls:SearchTextBox.Text>
+                        <Binding x:Name="FilterBinding" Path="ComponentsCollectionViewFilter" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"/>
+                    </Controls:SearchTextBox.Text>
+                </Controls:SearchTextBox>
+                <Button Command="{Binding Path=AddIoSpecFilter}" ToolTip="Add IO filter">
+                    <Image Height="{StaticResource IconSize}" Source="/TraceLab.UI.WPF;component/Resources/Icon_AddFilter16.png" OpacityMask="{x:Null}" />
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+
+        <!-- IO Spec Filters -->
+        <StackPanel Grid.Row="1" Visibility="{Binding Path=IoSpecFilters.Count, Converter={Converters:CountEmptyToVisConverter}}">
+            <DockPanel>
+                <StackPanel Margin="0,0,26,0" Orientation="Horizontal" DockPanel.Dock="Right">
+                    <Label>Input</Label>
+                    <Label>Output</Label>
+                </StackPanel>
+                <Label DockPanel.Dock="Left">Component has</Label>
+            </DockPanel>
+
+            <ItemsControl ItemsSource="{Binding Path=IoSpecFilters}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <DockPanel Margin="5,0,0,1">
+                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
+                                <CheckBox Margin="15,4,5,0" Width="15" IsChecked="{Binding Path=RequiresInput}"></CheckBox>
+                                <CheckBox Margin="25,4,5,0" Width="15" IsChecked="{Binding Path=RequiresOutput}"></CheckBox>
+                                <Button Width="25" Margin="5,0,5,0" 
+                                        Command="{Binding Path=DataContext.RemoveIoSpecFilter, Source={x:Reference ComponentLibraryRoot}}" 
+                                        CommandParameter="{Binding Path=.}">
+                                    <Button.Template>
+                                        <ControlTemplate>
+                                            <Border HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                                <Image Width="16" Height="16">
+                                                    <Image.Style>
+                                                        <Style TargetType="{x:Type Image}">
+                                                            <Setter Property="Source" Value="pack://application:,,,/TraceLab.UI.WPF;component/Resources/remove_filter_icon.png"/>
+                                                            <Style.Triggers>
+                                                                <Trigger Property="IsMouseOver" Value="True">
+                                                                    <Setter Property="Source" Value="pack://application:,,,/TraceLab.UI.WPF;component/Resources/remove_filter_icon_mouseover.png"/>
+                                                                </Trigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Image.Style>
+                                                </Image>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                    <Button.ToolTip>Remove filter</Button.ToolTip>
+                                </Button>
+                            </StackPanel>
+                            <ComboBox DockPanel.Dock="Left" 
+                                      ItemsSource="{Binding Path=AvailableFilteringTypes}" 
+                                      SelectedItem="{Binding Path=FilterByDataType}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Key}" />
+                                        <!-- Show only friendly type name, although the filtering is done by full type name -->
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                        </DockPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+
+        <Grid Grid.Row="2">
+            <Grid Visibility="Hidden">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Name="PlaceHolderWidth" />
+            </Grid>
+            <Controls:TreeListView x:Name="ComponentLibrary" ItemsSource="{Binding ComponentsCollectionView}" 
+                                   HeaderVisible="False"
+                  PreviewMouseMove="ListView_MouseMove" 
+                  PreviewMouseLeftButtonDown="ListView_MouseLeftButtonDown" 
+                  PreviewMouseLeftButtonUp="ListView_MouseLeftButtonUp">
+                <Controls:TreeListView.Columns>
+                    <GridViewColumnCollection>
+                        <GridViewColumn Header="Label" Width="{Binding Path=ActualWidth, ElementName=PlaceHolderWidth}" />
+                    </GridViewColumnCollection>
+                </Controls:TreeListView.Columns>
+                <Controls:TreeListView.ItemContainerStyle>
+                    <Style x:Name="overrideStyle" TargetType="{x:Type Controls:TreeListViewItem}" BasedOn="{StaticResource {x:Type Controls:TreeListViewItem}}">
+                        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}"/>
+                    </Style>
+                </Controls:TreeListView.ItemContainerStyle>
+            </Controls:TreeListView>
+        </Grid>
+
+        <Grid Grid.Row="0" Grid.RowSpan="3" x:Name="rescanCanvas" Opacity="0.3" Background="DimGray">
+            <Grid.Visibility>
+                <Binding x:Name="isRescanBinding" 
+                         Path="IsRescanning" Mode="OneWay" UpdateSourceTrigger="PropertyChanged" Converter="{Converters:BoolConverter True=Visible, False=Collapsed}" ConverterParameter="IsRescanning"/>
+            </Grid.Visibility>
+            <Image Height="66" Width="66" x:Name="rescanImage" Source="/TraceLab.UI.WPF;component/Resources/busy_indicator_big.png" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Image.RenderTransform>
+                    <RotateTransform Angle="0" CenterX="33" CenterY="33"/>
+                </Image.RenderTransform>
+                <Image.Style>
+                    <Style TargetType="Image">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsRescanning}" Value="True">
+                                <DataTrigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                                                Storyboard.TargetProperty="(Image.RenderTransform).(RotateTransform.Angle)"
+                                                From="0"
+                                                To="360"
+                                                Duration="0:0:1"
+                                                RepeatBehavior="Forever" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </DataTrigger.EnterActions>
+                                <DataTrigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                                                Storyboard.TargetProperty="(Image.RenderTransform).(RotateTransform.Angle)"
+                                                From="0"
+                                                To="360"
+                                                Duration="0:0:0.1"
+                                                RepeatBehavior="1" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </DataTrigger.ExitActions>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+        </Grid>
+    </Grid>
+</ad:DockableContent>

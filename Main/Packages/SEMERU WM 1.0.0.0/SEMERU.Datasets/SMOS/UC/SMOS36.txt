@@ -1,0 +1,15 @@
+Nome: InserisciGiustifica
+Attori: Amministratore
+Descrizione: Inserimento Giustifica
+Precondizioni:
+• • • •
+L'utente deve essere loggato al sistema come Amministratore L'utente ha svolto il caso d'uso “VisualizzaDettagliSingoloRegistro” L'utente ha svolto il caso d'uso “VisualizzaElencoGiustifiche” L'utente clicca su una delle assenze in rosso
+Sequenza degli eventi
+Utente
+Sistema
+2. Compila il form 3. Clicca su “Salva”
+1. Mostra un form in cui inserire i campi della giustifica (data giustifica).
+4. Salva la giustifica.
+Postcondizioni:
+• I dati della giustifica sono stati inseriti nel sistema. Il sistema ritorna alla schermata del registro.
+•	L’amministratore interrompe l’operazione •	Connessione al server SMOS interrotta

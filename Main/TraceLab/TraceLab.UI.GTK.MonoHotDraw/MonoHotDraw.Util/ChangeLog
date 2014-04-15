@@ -1,0 +1,6 @@
+2009-07-07  Manuel Cerón  <ceronman@gmail.com>
+
+	* GdkCairoHelper.cs: Added OffsetDot5 Method
+
+	* RectangleD.cs: Fixed OffsetDot5 Method
+

@@ -1,0 +1,28 @@
+Edit test case of a Day Hospital Date: 
+    C56 between two visits 20/06/2003 
+            control in a position 
+            between two visits 
+            check 
+                                          Version: 
+                                          0 02 000 
+Use Case Meets the request for modification of a 
+UcModVis service by Outpatient a 
+            patient 
+Media Priorities 
+Set up the previous reservation is `: 
+             07/10/2003 hours 09 30 Visit control 
+            The reservation is `Next: 
+             09/10/2003 hours 10 00 Visit control 
+            New reservation was 
+             09/10/2003 hours 9 00 Visit control 
+            New reservation later: 
+             13/10/2003 hours 9 00 Visit control 
+Description test 
+Input: Visit selected: 
+                08/10/2003 hours 08 00 Day Hospital 
+            Review: 
+                        08/10/2003 hours 8 00 
+Oracle: The system allows the change of 
+            Reservations 
+Classes cover valid: CE4 CE9 CE14 CE19 CE22 
+: Classes are not valid: None

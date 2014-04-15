@@ -1,0 +1,18 @@
+Use case name	RICHIESTA CONVENZIONE
+Richiede di stipulare una convezione tra il punto di ristoro associato e l’agenzia.
+Partecipating
+Actor	Inizializzato da Operatore Punto Di Ristoro
+Entry
+conditions	•	L’Operatore Punto Di Ristoro si è autenticato con successo al sistema.
+Flow of events 		User	System
+	1.		Attiva la funzionalità per richiedere la convenzione all’agenzia.	
+	2.			Visualizza una form per l’inserimento dei dati della convenzione.
+	3.		Inserisce i dati della convenzione nella form e la sottomette.	
+	4.			Verifica i dati inseriti e chiede conferma dell’invio della richiesta. Nel caso in cui i dati inseriti siano invalidi o insufficienti, il sistema attiva il caso d’uso errore dati.
+	5.		Conferma l’operazione.	
+	6.			Invia la richiesta di convenzione.
+Exit conditions	•	Il sistema notifica l’avvenuto invio della richiesta di convenzione all’agenzia.
+•	Operatore Punto Di Ristoro annulla l’operazione.
+•	Interruzione della connessione al server di eTour.
+Quality 
+requirements	

@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D22496F8-7E72-4B36-9FCA-630CD1679943}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TraceLab.Core</RootNamespace>
+    <AssemblyName>TraceLab.Core</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>TraceLab.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Deploy|AnyCPU'">
+    <OutputPath>..\Deploy\bin\</OutputPath>
+    <DefineConstants>CODE_ANALYSIS;TRACE</DefineConstants>
+    <Optimize>True</Optimize>
+    <DebugType>none</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisLogFile>..\bin\Release\TraceLab.Core.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>SecurityRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug Mono|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\DebugMono</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>True</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG;MONO</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug MONO_DEV|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\DebugMono</OutputPath>
+    <DefineConstants>TRACE;DEBUG;MONO;MONO_DEV</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release Mono|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\ReleaseMono</OutputPath>
+    <DefineConstants>TRACE;MONO</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c">
+      <HintPath>..\..\external\NLog\.NET Framework 4.0\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickGraph">
+      <HintPath>..\..\external\lib\QuickGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Benchmarks\Benchmark.cs" />
+    <Compile Include="Benchmarks\BenchmarkDownloadCallback.cs" />
+    <Compile Include="Benchmarks\BenchmarkExperimentFactory.cs" />
+    <Compile Include="Benchmarks\BenchmarkInfo.cs" />
+    <Compile Include="Benchmarks\BenchmarkLoader.cs" />
+    <Compile Include="Benchmarks\BenchmarkResultsHelper.cs" />
+    <Compile Include="Benchmarks\BenchmarkSerializer.cs" />
+    <Compile Include="Benchmarks\BenchmarkSetting.cs" />
+    <Compile Include="Benchmarks\BenchmarkWizard.cs" />
+    <Compile Include="Benchmarks\DefiningBenchmark.cs" />
+    <Compile Include="Components\AssemblyFileDescriptor.cs" />
+    <Compile Include="Components\ComponentScannerHelper.cs" />
+    <Compile Include="Components\ComponentScanResults.cs" />
+    <Compile Include="Components\ComponentsLibraryCache.cs" />
+    <Compile Include="Components\ComponentsLibraryCacheHelper.cs" />
+    <Compile Include="Components\ComponentTemplateMetadata.cs" />
+    <Compile Include="Components\CompilationStatus.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\CompositeComponentBaseMetadata.cs" />
+    <Compile Include="Components\CompositeComponentFileDescriptor.cs" />
+    <Compile Include="Components\ConfigPropertyConverter.cs" />
+    <Compile Include="Components\DocumentationLink.cs" />
+    <Compile Include="Components\TraceLabDirectoryPath.cs" />
+    <Compile Include="Decisions\DecisionCodeBuilder.cs" />
+    <Compile Include="Decisions\DecisionCodeParser.cs" />
+    <Compile Include="Decisions\DecisionCompilationRunner.cs" />
+    <Compile Include="Components\EnumValue.cs" />
+    <Compile Include="Components\EnumValueCollection.cs" />
+    <Compile Include="Components\EnumValueDescriptionProvider.cs" />
+    <Compile Include="Components\EnumValueDescriptor.cs" />
+    <Compile Include="Components\EnumValueTypeConverter.cs" />
+    <Compile Include="Components\ExitDecisionMetadata.cs" />
+    <Compile Include="Components\FileDescriptor.cs" />
+    <Compile Include="Components\IComponentsLibrary.cs" />
+    <Compile Include="Decisions\DecisionModuleFactory.cs" />
+    <Compile Include="Decisions\IDecision.cs" />
+    <Compile Include="Components\ILoggable.cs" />
+    <Compile Include="Components\IMetadataWithIOSpecDefinition.cs" />
+    <Compile Include="Components\IOItem.cs" />
+    <Compile Include="Components\IOItemDefinition.cs" />
+    <Compile Include="Components\LoggerFactory.cs" />
+    <Compile Include="Components\LoggerNameRoot.cs" />
+    <Compile Include="Components\LoopMetadataDefinition.cs" />
+    <Compile Include="Components\LoopScopeMetadata.cs" />
+    <Compile Include="Components\ObservableComponentDefinitionCollection.cs" />
+    <Compile Include="Components\PackageAwareComponentLibrary.cs" />
+    <Compile Include="Components\ScopeMetadata.cs" />
+    <Compile Include="Components\ScopeBaseMetadata.cs" />
+    <Compile Include="Components\TraceLabFilePath.cs" />
+    <Compile Include="Decisions\DecisionCodeParserException.cs" />
+    <Compile Include="Decisions\ILoopDecisionModule.cs" />
+    <Compile Include="Decisions\Tokenizer.cs" />
+    <Compile Include="Exceptions\BenchmarkException.cs" />
+    <Compile Include="Components\Tag.cs" />
+    <Compile Include="Exceptions\ExperimentLoadException.cs" />
+    <Compile Include="Exceptions\FilesCopyFailuresException.cs" />
+    <Compile Include="ExperimentExecution\RunnableLoopNode.cs" />
+    <Compile Include="ExperimentExecution\RunnablePrimitiveNode.cs" />
+    <Compile Include="ExperimentExecution\ExperimentRunner.cs" />
+    <Compile Include="ExperimentExecution\ExperimentRunnerFactory.cs" />
+    <Compile Include="ExperimentExecution\ExperimentValidator.cs" />
+    <Compile Include="ExperimentExecution\IExperimentRunner.cs" />
+    <Compile Include="ExperimentExecution\IRunnableNode.cs" />
+    <Compile Include="ExperimentExecution\IRunnableNodeFactory.cs" />
+    <Compile Include="ExperimentExecution\RunnableComponentNode.cs" />
+    <Compile Include="ExperimentExecution\RunnableCompositeComponentNode.cs" />
+    <Compile Include="ExperimentExecution\RunnableDecisionNode.cs" />
+    <Compile Include="ExperimentExecution\RunnableEndNode.cs" />
+    <Compile Include="ExperimentExecution\RunnableExperiment.cs" />
+    <Compile Include="ExperimentExecution\RunnableExperimentBase.cs" />
+    <Compile Include="ExperimentExecution\RunnableNode.cs" />
+    <Compile Include="ExperimentExecution\RunnableNodeCollection.cs" />
+    <Compile Include="ExperimentExecution\RunnableNodeFactory.cs" />
+    <Compile Include="ExperimentExecution\RunnableNodeThreadArgs.cs" />
+    <Compile Include="ExperimentExecution\RunnableStartNode.cs" />
+    <Compile Include="Experiments\BaseExperiment.cs" />
+    <Compile Include="Experiments\ComponentFactory.cs" />
+    <Compile Include="Experiments\CompositeComponentEditableGraph.cs" />
+    <Compile Include="Experiments\CompositeComponentGraph.cs" />
+    <Compile Include="Experiments\ConfigItemSetting.cs" />
+    <Compile Include="Experiments\ExperimentFactoryWriter.cs" />
+    <Compile Include="Experiments\ExperimentPackagingHelper.cs" />
+    <Compile Include="Experiments\LoopScopeNode.cs" />
+    <Compile Include="Experiments\RoutePoint.cs" />
+    <Compile Include="Experiments\RoutePointsCollection.cs" />
+    <Compile Include="Experiments\ScopeNodeBase.cs" />
+    <Compile Include="Experiments\SerializedVertexDataWithSize.cs" />
+    <Compile Include="Experiments\ExitDecisionNode.cs" />
+    <Compile Include="Experiments\Experiment.cs" />
+    <Compile Include="Experiments\ExperimentDecisionNode.cs" />
+    <Compile Include="Experiments\ExperimentEndNode.cs" />
+    <Compile Include="Experiments\ExperimentFactoryReader.cs" />
+    <Compile Include="Experiments\ExperimentManager.cs" />
+    <Compile Include="Experiments\ExperimentNode.cs" />
+    <Compile Include="Experiments\ExperimentNodeConnection.cs" />
+    <Compile Include="Experiments\ExperimentNodeError.cs" />
+    <Compile Include="Experiments\ExperimentNodeErrorEventArgs.cs" />
+    <Compile Include="Experiments\ExperimentNodeErrorType.cs" />
+    <Compile Include="Experiments\ExperimentNodeEventArgs.cs" />
+    <Compile Include="Experiments\ExperimentReloadedEventArgs.cs" />
+    <Compile Include="Experiments\ExperimentSerializer.cs" />
+    <Compile Include="Experiments\ExperimentStartNode.cs" />
+    <Compile Include="Experiments\DefiningCompositeComponentSetup.cs" />
+    <Compile Include="Experiments\IEditableExperiment.cs" />
+    <Compile Include="Experiments\IExperiment.cs" />
+    <Compile Include="Experiments\ItemSetting.cs" />
+    <Compile Include="Experiments\ItemSettingCollection.cs" />
+    <Compile Include="Experiments\OldExperimentInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Experiments\ExperimentInfo.cs" />
+    <Compile Include="Experiments\RecentExperimentReference.cs" />
+    <Compile Include="Experiments\RecentExperimentsHelper.cs" />
+    <Compile Include="Experiments\ReferencedFiles.cs" />
+    <Compile Include="Components\RescanLibraryGuard.cs" />
+    <Compile Include="Experiments\ScopeNode.cs" />
+    <Compile Include="Messages.cs" />
+    <Compile Include="PackageSystem\Package.cs" />
+    <Compile Include="PackageSystem\PackageAlreadyExistsException.cs" />
+    <Compile Include="PackageSystem\PackageException.cs" />
+    <Compile Include="PackageSystem\PackageFile.cs" />
+    <Compile Include="PackageSystem\PackageManager.cs" />
+    <Compile Include="PackageSystem\PackageReference.cs" />
+    <Compile Include="Settings\ApplicationSettings.cs" />
+    <Compile Include="Settings\ExperimentSettings.cs" />
+    <Compile Include="Settings\GlobalLogLevelSettingEventArgs.cs" />
+    <Compile Include="Settings\MainWindowData.cs" />
+    <Compile Include="Settings\Settings.cs" />
+    <Compile Include="Settings\SettingsPath.cs" />
+    <Compile Include="Utilities\AppDomainUtils.cs" />
+    <Compile Include="Exceptions\WorkspaceException.cs" />
+    <Compile Include="Components\ComponentLoader.cs" />
+    <Compile Include="Components\ComponentMetadata.cs" />
+    <Compile Include="Components\ComponentMetadataDefinition.cs" />
+    <Compile Include="Components\ComponentScanner.cs" />
+    <Compile Include="Components\ComponentsLibrary.cs" />
+    <Compile Include="Components\ConfigPropertyDescriptor.cs" />
+    <Compile Include="Components\ConfigPropertyObject.cs" />
+    <Compile Include="Components\ConfigWrapper.cs" />
+    <Compile Include="Components\ConfigWrapperDefinition.cs" />
+    <Compile Include="Decisions\DecisionLoader.cs" />
+    <Compile Include="Exceptions\ComponentsLibraryException.cs" />
+    <Compile Include="Exceptions\ConfigLoaderException.cs" />
+    <Compile Include="Components\IOSpec.cs" />
+    <Compile Include="Components\IOSpecDefinition.cs" />
+    <Compile Include="Components\LibraryHelper.cs" />
+    <Compile Include="Components\MetadataDefinition.cs" />
+    <Compile Include="Utilities\CollectionsHelper.cs" />
+    <Compile Include="Utilities\ComponentDefinitionsExporter.cs" />
+    <Compile Include="Utilities\ExperimentHelper.cs" />
+    <Compile Include="Utilities\GuidUtility.cs" />
+    <Compile Include="Utilities\IModifiable.cs" />
+    <Compile Include="Utilities\InputMappings.cs" />
+    <Compile Include="Utilities\ObjectCopier.cs" />
+    <Compile Include="Utilities\ObservableDictionary.cs" />
+    <Compile Include="Components\CompositeComponentMetadata.cs" />
+    <Compile Include="Components\CompositeComponentMetadataDefinition.cs" />
+    <Compile Include="Components\DecisionMetadata.cs" />
+    <Compile Include="Components\DecisionMetadataDefinition.cs" />
+    <Compile Include="Decisions\DecisionModuleCompilator.cs" />
+    <Compile Include="Components\EndNodeMetadata.cs" />
+    <Compile Include="Settings\GlobalLogLevelSetting.cs" />
+    <Compile Include="ExperimentExecution\GraphAdapter.cs" />
+    <Compile Include="ExperimentExecution\GraphValidator.cs" />
+    <Compile Include="ExperimentExecution\InputMappingValidator.cs" />
+    <Compile Include="Components\IConfigurableAndIOSpecifiable.cs" />
+    <Compile Include="Settings\LogLevel.cs" />
+    <Compile Include="Components\MetadataDefinitionFactory.cs" />
+    <Compile Include="Components\StartNodeMetadata.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\ObservableKeyedCollection.cs" />
+    <Compile Include="Utilities\ThreadFactory.cs" />
+    <Compile Include="Utilities\TypesHelper.cs" />
+    <Compile Include="Utilities\UrlValidation.cs" />
+    <Compile Include="Workspaces\WorkspaceUIAssemblyExtensions.cs" />
+    <Compile Include="ViewModels\WebsiteLink.cs" />
+    <Compile Include="ViewModels\WorkspaceViewModel.cs" />
+    <Compile Include="WebserviceAccess\AuthenticationResponse.cs" />
+    <Compile Include="WebserviceAccess\Callback.cs" />
+    <Compile Include="WebserviceAccess\CallCompletedEventArgs.cs" />
+    <Compile Include="WebserviceAccess\CallCompletedEventHandler.cs" />
+    <Compile Include="WebserviceAccess\Contest.cs" />
+    <Compile Include="WebserviceAccess\ContestPackageResponse.cs" />
+    <Compile Include="WebserviceAccess\ContestPublishedResponse.cs" />
+    <Compile Include="WebserviceAccess\ContestResultsPublishedResponse.cs" />
+    <Compile Include="WebserviceAccess\Credentials.cs" />
+    <Compile Include="WebserviceAccess\IResponseWithContestLink.cs" />
+    <Compile Include="WebserviceAccess\Metrics\BoxPlotPointDTO.cs" />
+    <Compile Include="WebserviceAccess\Metrics\BoxSummaryDataDTO.cs" />
+    <Compile Include="WebserviceAccess\Metrics\DatasetResultsDTO.cs" />
+    <Compile Include="WebserviceAccess\Envelope.cs" />
+    <Compile Include="WebserviceAccess\JoomlaLinks.cs" />
+    <Compile Include="WebserviceAccess\JSONSerializer.cs" />
+    <Compile Include="WebserviceAccess\ListOfContestsResponse.cs" />
+    <Compile Include="WebserviceAccess\Metrics\MetricDefinition.cs" />
+    <Compile Include="WebserviceAccess\ContestResults.cs" />
+    <Compile Include="WebserviceAccess\Metrics\IMetricResult.cs" />
+    <Compile Include="WebserviceAccess\Metrics\MetricTypesManager.cs" />
+    <Compile Include="WebserviceAccess\Metrics\PointDTO.cs" />
+    <Compile Include="WebserviceAccess\Metrics\SeriesOfPoints.cs" />
+    <Compile Include="WebserviceAccess\Response.cs" />
+    <Compile Include="WebserviceAccess\ResponseStatus.cs" />
+    <Compile Include="WebserviceAccess\Metrics\LineSeriesDTO.cs" />
+    <Compile Include="WebserviceAccess\TraceLabServiceCommands.cs" />
+    <Compile Include="WebserviceAccess\WebserviceAccessor.cs" />
+    <Compile Include="Workspaces\ExperimentWorkspaceWrapper.cs" />
+    <Compile Include="Workspaces\IWorkspaceInternal.cs" />
+    <Compile Include="Workspaces\NestedWorkspaceWrapper.cs" />
+    <Compile Include="Workspaces\ScopeNestedWorkspaceWrapper.cs" />
+    <Compile Include="Workspaces\Serialization\CachingSerializer.cs" />
+    <Compile Include="Workspaces\Serialization\FileWrapper.cs" />
+    <Compile Include="Workspaces\Serialization\StreamManager.cs" />
+    <Compile Include="Exceptions\InconsistentTemplateException.cs" />
+    <Compile Include="Exceptions\IncorrectSubTemplateException.cs" />
+    <Compile Include="ExperimentExecution\NodesFactoryOfSubGraph.cs" />
+    <Compile Include="Utilities\FilePathComparerFactory.cs" />
+    <Compile Include="ViewModels\ApplicationViewModel.cs" />
+    <Compile Include="ViewModels\ComponentLibraryViewModel.cs" />
+    <Compile Include="Experiments\ExperimentEventArgs.cs" />
+    <Compile Include="Experiments\SerializedVertexData.cs" />
+    <Compile Include="ViewModels\LogViewModel.cs" />
+    <Compile Include="Experiments\ComponentNode.cs" />
+    <Compile Include="Experiments\CompositeComponentNode.cs" />
+    <Compile Include="Decisions\IDecisionModule.cs" />
+    <Compile Include="Settings\LogLevelItem.cs" />
+    <Compile Include="Experiments\SubworkflowChangedEventArgs.cs" />
+    <Compile Include="Workspaces\Workspace.cs" />
+    <Compile Include="Workspaces\WorkspaceManager.cs" />
+    <Compile Include="Workspaces\WorkspaceTypeScanner.cs" />
+    <Compile Include="Workspaces\WorkspaceUnit.cs" />
+    <Compile Include="Workspaces\WorkspaceUnitData.cs" />
+    <Compile Include="Workspaces\WorkspaceWrapper.cs" />
+    <Compile Include="Workspaces\WorkspaceWrapperFactory.cs" />
+    <Compile Include="Components\Metadata.cs" />
+    <Compile Include="Workspaces\WorkspaceViewerLoader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TraceLabSDK\TraceLabSDK.csproj">
+      <Project>{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}</Project>
+      <Name>TraceLabSDK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TraceLabSDK.Types\TraceLabSDK.Types.csproj">
+      <Project>{94A3E4E6-2EB7-4715-8A11-D8CF119D7458}</Project>
+      <Name>TraceLabSDK.Types</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="mscoree">
+      <Guid>{5477469E-83B1-11D2-8B49-00A0C9B7C9C4}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TraceLab.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\OnlineContent.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

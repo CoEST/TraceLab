@@ -1,0 +1,1 @@
+  The DPU-CCM shall process real-time non-deferred commands within B ms of receipt from the ICU or the SCU.

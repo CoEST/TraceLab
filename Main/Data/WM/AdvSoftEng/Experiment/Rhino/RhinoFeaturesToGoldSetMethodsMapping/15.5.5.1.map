@@ -1,0 +1,4 @@
+org.mozilla.javascript.ScriptRuntime.wrapInt
+org.mozilla.javascript.NativeString.getInstanceIdName
+org.mozilla.javascript.NativeString.findInstanceIdInfo
+org.mozilla.javascript.NativeString.getInstanceIdValue

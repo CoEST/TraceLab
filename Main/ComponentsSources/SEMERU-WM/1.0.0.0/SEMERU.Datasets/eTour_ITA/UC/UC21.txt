@@ -1,0 +1,18 @@
+Use case name	INSERISCI NEWS
+Inserisce una nuova news nel sistema.
+Participating
+Actor	Inizializzato da Operatore Agenzia
+Entry
+conditions	•	L’Operatore Agenzia ha effettuato il login.
+Flow of events 		User	System
+	1.		Attiva la funzionalità di inserimento di una news. 	
+	2.			Visualizza la form corrispondente.
+	3.		Compila la form e la sottomette.	
+	4.			Verifica i dati inseriti e chiede conferma dell’operazione. Nel caso in cui i dati inseriti siano invalidi o insufficienti, il sistema attiva il caso d’uso errore dati.
+	5.		Conferma l’operazione di inserimento.	
+	6.			Memorizza i dati della nuova news.
+Exit conditions	•	Il sistema notifica il corretto inserimento della news.
+•	L’Operatore Agenzia annulla l’operazione.
+•	Interruzione della connessione al server di eTour.
+Quality 
+requirements	

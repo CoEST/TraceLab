@@ -1,0 +1,422 @@
+           Constraint Inner Panel
+           "private String server  IP = "" local host  "";
+           private JLabel performance  Model  Label = null  ;
+           private JLabel project  Name  Label = null  ;
+           private JLabel module  Path  Label = null  ;
+           private JLabel requirement  Id  Label = null  ;
+           private JLabel des  Label = null  ;
+          
+           private JLabel goal  Label = null  ;
+           private JLabel impacted  Label = null  ;
+          
+           private JLabel empty  Label  1 = null  ;
+           private JLabel empty  Label  2 = null  ;
+          
+           private JLabel empty  Label  3 = null  ;
+           private JLabel empty  Label  4 = null  ;
+          
+           private JLabel performance  Model  Name  Label = null  ;
+          
+           // private JText  Field performance  Model  Name  Label = null  ;
+          
+           private JText  Field project  Name  Field = null  ;
+           private JText  Field module  Path  Field = null  ;
+           private JText  Field requirement  Id  Field = null  ;
+           private JText  Area des  Text = null  ;
+           private JPanel panel = null  ;
+           private String query  ID = null  ;
+           private Hash table table = new Hash table  ();
+           private Constraints  Description constraint = null  ;
+           private Vector constraint  Object  Info = null  ;"
+           "public Constraint  Inner  Panel  (
+            String performance  Model  Name  
+            String project  Name  
+            String module  Path  
+            String requirement  Id  
+            String description  
+            String logic  
+            String units  
+            String value  
+            String impacted  Value  
+            String attribute  )
+           {
+          
+            panel = new JPanel  ();
+          
+            panel  . set  Background  (  Color  .  LIGHT  _  GRAY  );
+          
+            Grid  Bag  Layout gb = new Grid  Bag  Layout  ();
+          
+            panel  . set  Layout  ( gb  );
+          
+            performance  Model  Label = new JLabel  (""  Performance Model  : "" JLabel  .  LEFT  );
+          
+            performance  Model  Name  Label =
+             new JLabel  (
+              performance  Model  Name
+               + ""                                                ""
+              JLabel  .  LEFT  );
+          
+            performance  Model  Name  Label  . set  Font  ( new Font  (""  Arial  "" Font  .  BOLD   12  ));
+          
+            //      performance  Model  Name  Label = new JText  Field  (  25  );
+            //   performance  Model  Name  Label  . set  Text  ( performance  Model  Name  );
+            //
+          
+            project  Name  Label = new JLabel  (""  Project Name : "");
+          
+            project  Name  Field = new JText  Field  (  25  );
+            project  Name  Field  . set  Text  ( project  Name  );
+            project  Name  Field  . set  Editable  ( false  );
+          
+            module  Path  Label = new JLabel  (""  Module Path : "");
+          
+            module  Path  Field = new JText  Field  (  25  );
+            module  Path  Field  . set  Text  ( module  Path  );
+            module  Path  Field  . set  Editable  ( false  );
+          
+            requirement  Id  Label = new JLabel  (""  Requirement ID : "");
+            requirement  Id  Field = new JText  Field  (  25  );
+            requirement  Id  Field  . set  Text  ( requirement  Id  );
+            requirement  Id  Field  . set  Editable  ( false  );
+          
+            des  Label = new JLabel  (""  Description : "");
+          
+            des  Text = new JText  Area  (  5   25  );
+            des  Text  . set  Background  (  Color  .  LIGHT  _  GRAY  );
+            des  Text  . set  Line  Wrap  ( true  );
+            des  Text  . set  Wrap  Style  Word  ( true  );
+            des  Text  . set  Text  ( description  );
+            des  Text  . set  Editable  ( false  );
+          
+            JScroll  Pane des  Pane = new JScroll  Pane  ( des  Text  );
+          
+            goal  Label = new JLabel  (""  Goal  :  "");
+            set goal  Label  Values  ( attribute   logic   value   units  );
+          
+            impacted  Label = new JLabel  (""  Impacted Value  : "");
+            set impacted  Label  Value  ( attribute   value   impacted  Value   units   logic  );
+          
+            empty  Label  1 = new JLabel  (""            "");
+            empty  Label  2 = new JLabel  (""            "");
+          
+            empty  Label  3 = new JLabel  (""            "");
+            empty  Label  4 = new JLabel  (""            "");
+          
+            Grid  Bag  Constraints gbc = new Grid  Bag  Constraints  ();
+          
+            int top = 10  ;
+            int left = 10  ;
+            int bottom = 10  ;
+            int right = 10  ;
+          
+            gbc  . insets = new Insets  ( top   left   bottom   right  );
+          
+            gbc  . gridx = 0  ;
+            gbc  . gridy = 0  ;
+          
+            gb  . set  Constraints  ( performance  Model  Label   gbc  );
+          
+            gbc  . gridx = 1  ;
+            gbc  . gridy = 0  ;
+            gb  . set  Constraints  ( performance  Model  Name  Label   gbc  );
+          
+            gbc  . gridx = 0  ;
+            gbc  . gridy = 1  ;
+            gb  . set  Constraints  ( project  Name  Label   gbc  );
+          
+            gbc  . gridx = 1  ;
+            gbc  . gridy = 1  ;
+            gb  . set  Constraints  ( project  Name  Field   gbc  );
+          
+            gbc  . gridx = 0  ;
+            gbc  . gridy = 2  ;
+            gb  . set  Constraints  ( module  Path  Label   gbc  );
+          
+            gbc  . gridx = 1  ;
+            gbc  . gridy = 2  ;
+            gb  . set  Constraints  ( module  Path  Field   gbc  );
+          
+            gbc  . gridx = 0  ;
+            gbc  . gridy = 3  ;
+            gb  . set  Constraints  ( requirement  Id  Label   gbc  );
+          
+            gbc  . gridx = 1  ;
+            gbc  . gridy = 3  ;
+            gb  . set  Constraints  ( requirement  Id  Field   gbc  );
+          
+            gbc  . gridx = 0  ;
+            gbc  . gridy = 4  ;
+            gb  . set  Constraints  ( des  Label   gbc  );
+          
+            gbc  . gridx = 0  ;
+            gbc  . gridy = 5  ;
+            gb  . set  Constraints  ( empty  Label  1   gbc  );
+          
+            gbc  . gridx = 0  ;
+            gbc  . gridy = 6  ;
+            gb  . set  Constraints  ( empty"
+           "private void set goal  Label  Values  (
+            String attribute  
+            String logic  
+            String value  
+            String units  )
+           {
+            goal  Label  . set  Text  (
+             ""  Goal : "" + attribute + ""  "" + logic + ""  "" + value + "" "" + units  );
+          
+           }"
+           "public Vector get  Values  From  Data  Base  ()
+           {
+          
+            Vector v = new Vector  ();
+          
+            Socket server  ;
+            String line = new String  ();
+          
+          
+            try
+            {
+             server = new Socket  ( server  IP    1701  );
+          
+             if ( server  . is  Connected  () )
+             {
+              Buffered  Reader from  Server = new Buffered  Reader  ( new Input  Stream  Reader  ( server  . get  Input  Stream  ()));
+              Print  Writer to  Server = new Print  Writer  ( server  . get  Output  Stream  () true  );
+          
+              to  Server  . println  (""  GETDATA  | get  Constraint  |"" + query  ID  );
+          
+              line = from  Server  . read  Line  ();
+              // Just tells the Port Number and Server IP Address  .
+          
+              System  . out  . println  (""  Constraint  : "" + line  );
+          
+              from  Server  . close  ();
+              to  Server  . close  ();
+             }
+             server  . close  ();
+          
+            }
+            catch (  Connect  Exception e  )
+            {
+             System  . out  . println  (""  Remote Server Does not exist  "");
+            }
+            catch (  Exception e  )
+            {
+             e  . print  Stack  Trace  ();
+            }
+          
+            int count  ;
+          
+            String  Tokenizer tokens = new String  Tokenizer  ( line   ""|"");
+            // Get Project Type   Number   and Date  .
+          
+            count = new Integer  ( tokens  . next  Token  ()). int  Value  ();
+          
+            for ( int i  =0  ; i  < count  ; i  ++)
+            {
+          
+             String m  Queries = tokens  . next  Token  ();
+          
+             String  Tokenizer tk  Query = new String  Tokenizer  ( m  Queries   "":"");
+          
+             String performance  Model  Name = tk  Query  . next  Token  ();
+          
+             String project  Name = tk  Query  . next  Token  ();
+          
+             String module  Path = tk  Query  . next  Token  ();
+          
+             String requirement  ID = tk  Query  . next  Token  ();
+          
+             String description = tk  Query  . next  Token  ();
+          
+             String impacted  Value = tk  Query  . next  Token  ();
+          
+             String logic = tk  Query  . next  Token  ();
+             String units = tk  Query  . next  Token  ();
+          
+             String attribute = tk  Query  . next  Token  ();
+          
+             String value = tk  Query  . next  Token  ();
+          
+             constraint = new Constraints  Description  ( project  Name   module  Path   requirement  ID  );
+          
+             constraint  . set  Performance  Model  Name  ( performance  Model  Name  );
+             constraint  . set  Description  ( description  );
+             constraint  . set  Value  ( value  );
+             constraint  . set  Impacted  Constraint  ( impacted  Value  );
+             constraint  . set  Logic  ( logic  );
+             constraint  . set  Units  ( units  );
+             constraint  . set  Attribute  ( attribute  );
+          
+             v  . add  ( constraint  );
+          
+            }
+          
+            return v  ;
+          
+           }"
+           "private void set impacted  Label  Value  (
+            String attribute  
+            String value  
+            String impacted  Value  
+            String units  
+            String logic  )
+           {
+          
+            if ( impacted  Value !  = null  )
+            {
+          
+             double value  1 = Double  . parse  Double  ( value  );
+             double impacted  Value  1 = Double  . parse  Double  ( impacted  Value  );
+          
+             if ( logic  . equals  ("">  =  ""))
+             {
+              if ( impacted  Value  1 >  = value  1  )
+              {
+               impacted  Label  . set  Text  (
+                ""  Impacted Value : ""
+                 + attribute
+                 + "" : ""
+                 + impacted  Value  1
+                 + "" ""
+                 + units  );
+          
+               impacted  Label  . set  Icon  ( new Image  Icon  ("" pass  . gif  ""));
+          
+               impacted  Label  . set  Icon  Text  Gap  (  8  );
+          
+               impacted  Label  . set  Horizontal  Text  Position  (  JLabel  .  LEFT  );
+          
+              }
+              else
+              {
+          
+               impacted  Label  . set  Opaque  ( true  );
+               impacted  Label  . set  Background  (  Color  .  WHITE  );
+               impacted  Label  . set  Text  (
+                ""  Impacted Value : ""
+                 + attribute
+                 + "" : ""
+                 + impacted  Value
+                 + "" ""
+                 + units  );
+          
+               impacted  Label  . set  Icon  ( new Image  Icon  ("" fail  . gif  ""));
+          
+               impacted  Label  . set  Icon  Text  Gap  (  8  );
+          
+               impacted  Label  . set  Horizontal  Text  Position  (  JLabel  .  LEFT  );
+          
+              }
+             }
+          
+             if ( logic  . equals  ("">""))
+             {
+              if ( impacted  Value  1 > value  1  )
+              {
+               impacted  Label  . set  Text  (
+                ""  Impacted Value : ""
+                 + attribute
+                 + "" : ""
+                 + impacted  Value  1
+                 + "" ""
+                 + units  );
+          
+               impacted  Label  . set  Icon  ( new Image  Icon  ("" pass  . gif  ""));
+          
+               impacted  Label  . set  Icon  Text  Gap  (  8  );
+          
+               impacted  Label  . set  Horizontal  Text  Position  (  JLabel  .  LEFT  );
+          
+              }
+              else
+              {
+          
+               impacted  Label  . set  Opaque  ( true  );
+               impacted  Label  . set  Background  (  Color  .  WHITE  );
+               impacted  Label  . set  Text  (
+                ""  Impacted Value : ""
+                 + attribute
+                 + "" : ""
+                 + impacted  Value
+                 + "" ""
+                 + units  );
+          
+               impacted  Label  . set  Icon  ( new Image  Icon  ("" fail  . gif  ""));
+          
+               impacted  Label  . set  Icon  Text  Gap  (  8  );
+          
+               impacted  Label  . set  Horizontal  Text  Position  (  JLabel  .  LEFT  );
+          
+              }
+             }
+          
+             if ( logic  . equals  (""  =  ""))
+             {
+              if ( value  1 == impacted  Value  1  )
+              {
+               impacted  Label  . set  Text  (
+                ""  Impacted Value : ""
+                 + attribute
+                 + "" : ""
+                 + impacted  Value  1
+                 + "" ""
+                 + units  );
+          
+               impacted  Label  . set  Icon  ( new Image  Icon  ("" pass  . gif  ""));
+          
+               impacted  Label  . set  Icon  Text  Gap  (  8  );
+          
+               impacted  Label  . set  Horizontal  Text  Position  (  JLabel  .  LEFT  );
+          
+              }
+              else
+              {
+          
+               impacted  Label  . set  Opaque  ( true  );
+               impacted  Label  . set  Background  (  Color  .  WHITE  );
+               impacted  Label  . set  Text  (
+                ""  Impacted Value : ""
+                 + attribute
+                 + "" : ""
+                 + impacted  Value
+                 + "" ""
+                 + units  );
+          
+               impacted  Label  . set  Icon  ( new Image  Icon  ("" fail  . gif  ""));
+          
+               impacted  Label  . set  Icon  Text  Gap  (  8  );
+          
+               impacted  Label  . set  Horizontal  Text  Position  (  JLabel  .  LEFT  );
+          
+              }
+             }
+          
+             if ( logic  . equals  (""<  =  ""))
+             {
+              if ( impacted  Value  1 <  = value  1  )
+              {
+               impacted  Label  . set  Text  (
+                ""  Impacted Value : ""
+                 + attribute
+                 + "" : ""
+                 + impacted  Value  1
+                 + "" ""
+                 + units  );
+          
+               impacted  Label  . set  Icon  ( new Image  Icon  ("" pass  . gif  ""));
+          
+               impacted  Label  . set  Icon  Text  Gap  (  8  );
+          
+               impacted  Label  . set  Horizontal  Text  Position  (  JLabel  .  LEFT  );
+          
+              }
+              else
+              {
+               impacted  Label  . set  Opaque  ( true  );
+               impacted  Label  . set  Background"
+           "public JPanel get  Panel  ()
+           {
+            return panel  ;
+           }"

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CompositeComponentMetadataDefinition xmlVersion="1">
+  <Info>
+    <ID>0852f241-3063-44b3-8e96-450ae6917781</ID>
+    <Version />
+    <Label>Unresolved Composite Component</Label>
+    <Name>Unresolved Composite Component</Name>
+    <Author />
+    <Description />
+  </Info>
+  <Input />
+  <Output>
+    <OutputItemDefinition Name="listOfArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" />
+  </Output>
+  <Import>
+    <ImportItemDefinition Name="originalListOfArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" />
+  </Import>
+  <ConfigDefinition>
+    <IsJava>False</IsJava>
+    <ConfigProperties>
+      <PropertyObject>
+        <Version>2</Version>
+        <Name>e726a2a6-0983-45eb-b0cc-139fa99b9e16:33a2b2e1-eace-47ab-8e00-8394668ca3e9:Path</Name>
+        <DisplayName>Preprocessor Artifacts Path</DisplayName>
+        <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151</ValueType>
+        <Visible>True</Visible>
+        <IsEnum>False</IsEnum>
+        <Value IsNull="False">
+          <FilePath>
+            <Version>1</Version>
+            <Relative>Data\challenge1_HIPPA\HIPPA\2CCHIT.xml</Relative>
+          </FilePath>
+        </Value>
+      </PropertyObject>
+      <PropertyObject>
+        <Version>2</Version>
+        <Name>e726a2a6-0983-45eb-b0cc-139fa99b9e16:1ef84c31-abc8-4f9e-aafb-a75a2bf87c50:Path</Name>
+        <DisplayName>Preprocessor StopwordsImporter Path</DisplayName>
+        <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151</ValueType>
+        <Visible>False</Visible>
+        <IsEnum>False</IsEnum>
+        <Value IsNull="False">
+          <FilePath>
+            <Version>1</Version>
+            <Relative>Data\challenge1_HIPPA\HIPPA\stopwords.txt</Relative>
+          </FilePath>
+        </Value>
+      </PropertyObject>
+    </ConfigProperties>
+  </ConfigDefinition>
+  <ComponentGraph>
+    <graph>
+      <ExperimentInfo>
+        <Version>1</Version>
+        <Id>31f2640e-c705-4cf0-8f8f-d0c8033b9c49</Id>
+        <LayoutName>EfficientSugiyama</LayoutName>
+      </ExperimentInfo>
+      <node id="Start">
+        <SerializedVertexData Version="1" X="200" Y="100">
+          <Metadata type="TraceLab.Core.Components.StartNodeMetadata, TraceLab.Core, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Start" />
+        </SerializedVertexData>
+      </node>
+      <node id="End">
+        <SerializedVertexData Version="1" X="200" Y="206">
+          <Metadata type="TraceLab.Core.Components.EndNodeMetadata, TraceLab.Core, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="End" />
+        </SerializedVertexData>
+      </node>
+      <node id="e726a2a6-0983-45eb-b0cc-139fa99b9e16">
+        <SerializedVertexData Version="1" X="200" Y="155">
+          <Metadata type="TraceLab.Core.Components.CompositeComponentMetadata, TraceLab.Core, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Preprocessor" ComponentMetadataDefinitionID="16534c79-8e9c-4c8e-9d6f-f3b27681b2a3">
+            <IOSpec Version="1">
+              <Input />
+              <Output>
+                <OutputItem>
+                  <OutputItemDefinition Name="listOfArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" />
+                  <OutputAs>listOfArtifacts</OutputAs>
+                </OutputItem>
+              </Output>
+              <Import>
+                <ImportItem>
+                  <ImportItemDefinition Name="originalListOfArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" />
+                  <ImportAs>originalListOfArtifacts</ImportAs>
+                </ImportItem>
+              </Import>
+            </IOSpec>
+            <ConfigWrapper Version="1" IsJava="False">
+              <ConfigValues>
+                <PropertyObject>
+                  <Version>2</Version>
+                  <Name>33a2b2e1-eace-47ab-8e00-8394668ca3e9:Path</Name>
+                  <DisplayName>Artifacts Path</DisplayName>
+                  <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151</ValueType>
+                  <Visible>True</Visible>
+                  <IsEnum>False</IsEnum>
+                  <Value IsNull="False">
+                    <FilePath>
+                      <Version>1</Version>
+                      <Relative>Data\challenge1_HIPPA\HIPPA\2CCHIT.xml</Relative>
+                    </FilePath>
+                  </Value>
+                </PropertyObject>
+                <PropertyObject>
+                  <Version>2</Version>
+                  <Name>1ef84c31-abc8-4f9e-aafb-a75a2bf87c50:Path</Name>
+                  <DisplayName>StopwordsImporter Path</DisplayName>
+                  <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151</ValueType>
+                  <Visible>False</Visible>
+                  <IsEnum>False</IsEnum>
+                  <Value IsNull="False">
+                    <FilePath>
+                      <Version>1</Version>
+                      <Relative>Data\challenge1_HIPPA\HIPPA\stopwords.txt</Relative>
+                    </FilePath>
+                  </Value>
+                </PropertyObject>
+              </ConfigValues>
+            </ConfigWrapper>
+          </Metadata>
+        </SerializedVertexData>
+      </node>
+      <edge id="9262c41c-f9f0-42e1-a14a-8f3a92b7ab6b" source="Start" target="e726a2a6-0983-45eb-b0cc-139fa99b9e16" />
+      <edge id="d8c67ce1-4769-43f4-b444-2d2669adf08f" source="e726a2a6-0983-45eb-b0cc-139fa99b9e16" target="End" />
+    </graph>
+  </ComponentGraph>
+</CompositeComponentMetadataDefinition>

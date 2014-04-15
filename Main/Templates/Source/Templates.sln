@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLabComponentWizard", "TraceLabComponentWizard\TraceLabComponentWizard.csproj", "{1C24C637-7B54-4D46-B039-290C7655ED33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLabComponentTemplate", "TraceLabComponentTemplate\TraceLabComponentTemplate.csproj", "{8FE9F672-470E-4E45-996B-BE9F8E76403D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLabComponentProjectWizard", "TraceLabComponentProjectWizard\TraceLabComponentProjectWizard.csproj", "{F7D6142A-D316-46C0-A341-40C897AA12AA}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 4
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = TraceLabComponentProjectWizard\\TraceLabComponentProjectWizard.csproj
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = TraceLabComponentProjectWizard\\
+		SccProjectUniqueName2 = TraceLabComponentTemplate\\TraceLabComponentTemplate.csproj
+		SccLocalPath2 = .
+		SccProjectFilePathRelativizedFromConnection2 = TraceLabComponentTemplate\\
+		SccProjectUniqueName3 = TraceLabComponentWizard\\TraceLabComponentWizard.csproj
+		SccLocalPath3 = .
+		SccProjectFilePathRelativizedFromConnection3 = TraceLabComponentWizard\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C24C637-7B54-4D46-B039-290C7655ED33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C24C637-7B54-4D46-B039-290C7655ED33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C24C637-7B54-4D46-B039-290C7655ED33}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{1C24C637-7B54-4D46-B039-290C7655ED33}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{1C24C637-7B54-4D46-B039-290C7655ED33}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{1C24C637-7B54-4D46-B039-290C7655ED33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C24C637-7B54-4D46-B039-290C7655ED33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C24C637-7B54-4D46-B039-290C7655ED33}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{1C24C637-7B54-4D46-B039-290C7655ED33}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{1C24C637-7B54-4D46-B039-290C7655ED33}.Release|Win32.ActiveCfg = Release|Any CPU
+		{8FE9F672-470E-4E45-996B-BE9F8E76403D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FE9F672-470E-4E45-996B-BE9F8E76403D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FE9F672-470E-4E45-996B-BE9F8E76403D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{8FE9F672-470E-4E45-996B-BE9F8E76403D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{8FE9F672-470E-4E45-996B-BE9F8E76403D}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{8FE9F672-470E-4E45-996B-BE9F8E76403D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FE9F672-470E-4E45-996B-BE9F8E76403D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FE9F672-470E-4E45-996B-BE9F8E76403D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{8FE9F672-470E-4E45-996B-BE9F8E76403D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{8FE9F672-470E-4E45-996B-BE9F8E76403D}.Release|Win32.ActiveCfg = Release|Any CPU
+		{F7D6142A-D316-46C0-A341-40C897AA12AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7D6142A-D316-46C0-A341-40C897AA12AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7D6142A-D316-46C0-A341-40C897AA12AA}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F7D6142A-D316-46C0-A341-40C897AA12AA}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F7D6142A-D316-46C0-A341-40C897AA12AA}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{F7D6142A-D316-46C0-A341-40C897AA12AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7D6142A-D316-46C0-A341-40C897AA12AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7D6142A-D316-46C0-A341-40C897AA12AA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F7D6142A-D316-46C0-A341-40C897AA12AA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F7D6142A-D316-46C0-A341-40C897AA12AA}.Release|Win32.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

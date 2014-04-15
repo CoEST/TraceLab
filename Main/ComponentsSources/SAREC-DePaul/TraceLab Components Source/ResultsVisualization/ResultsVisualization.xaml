@@ -1,0 +1,60 @@
+﻿<!--
+TraceLab - Software Traceability Instrument to Facilitate and Empower Traceability Research
+Copyright (C) 2012-2013 CoEST - National Science Foundation MRI-R2 Grant # CNS: 0959924
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see<http://www.gnu.org/licenses/>.
+-->
+
+<Window x:Class="ResultsVisualization.ResultsVisualizationWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Title="Metrics Results Visualization" Height="600" Width="800" ResizeMode="NoResize">
+
+    <Grid Name="MainGrid" SizeChanged="WindowsReSized" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Label Name="DatasetLabel" Content="Dataset:" Height="30" HorizontalAlignment="Right" 
+               Margin="0,5,210,0" VerticalAlignment="Top" Grid.Row="0" FontWeight="Bold" 
+               VerticalContentAlignment="Center" />
+        <ComboBox Name="DatasetDropDown" Height="30" Width="200" Grid.Row="0" 
+                  SelectionChanged="DatasetChanged" HorizontalAlignment="Right" 
+                  Margin="0,0,10,0" VerticalContentAlignment="Center" />
+
+        <TabControl Name="TabStrip" TabStripPlacement="Top" Grid.Row="1" SelectionChanged="MetricChanged">
+            <TabItem Name="xamlItem">
+                <TabPanel Name="xamlPanel" Margin="5">
+                    <Grid Name="BottomGrid" Margin="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid  Margin="0" Name ="xamlChartGrid" Grid.Column="1" Grid.Row="1" 
+                            ClipToBounds="False" Background="Transparent" />
+                        <Canvas Margin="2" Name="xamlLegendCanvas" Grid.Column="0" Grid.Row="1"/>
+                        <Canvas Margin="2" Name="xamlTextCanvas" ClipToBounds="False" Grid.Column="1" Grid.Row="1" >
+                            <Canvas Name="xamlChartCanvas" />
+                        </Canvas>
+                    </Grid>
+                </TabPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+
+</Window>

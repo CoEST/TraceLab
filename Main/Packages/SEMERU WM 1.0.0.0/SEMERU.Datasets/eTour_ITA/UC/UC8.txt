@@ -1,0 +1,18 @@
+Use case name	MODIFICA DATI PUNTO di ristoro AGENZIA
+Modifica i dati relativi a un determinato punto di ristoro.
+Partecipating
+Actor	Inizializzato da Operatore Agenzia
+Entry
+conditions	•	L’Operatore Agenzia ha effettuato il login.
+Flow of events 		User	System
+	1.		Visualizza una lista dei punti di ristoro come risultato del caso d’uso Ricerca Punto di ristoro,  ne seleziona uno e attiva la funzionalità di modifica dei dati.	
+	2.			Carica i dati del punto di ristoro e visualizza la form di modifica.
+	3.		Modifica i dati contenuti nella form e la sottomette.	
+	4.			Verifica i dati inseriti nella form e chiede conferma dell’operazione. Nel caso in cui i dati inseriti siano invalidi o insufficienti, il sistema attiva il caso d’uso errore dati.
+	5.		Conferma l’operazione.	
+	6.			Memorizza i dati modificati del punto di ristoro.
+Exit conditions	•	Il sistema notifica l’avvenuta modifica dei dati del punto di ristoro.
+•	Operatore Agenzia annulla l’operazione.
+•	Interruzione della connessione al server di eTour.
+Quality 
+requirements	Il sistema blocca i controlli di input nella form una volta ricevuta la conferma della modifica per evitare sottomissioni multiple prima del termine dell’operazione.

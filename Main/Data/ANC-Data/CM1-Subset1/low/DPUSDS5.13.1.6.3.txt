@@ -1,0 +1,1 @@
+Setting Frame Depth in DCI	The optimum frame depth will be determined with benchmark testing.  The default frame depth is 10 frames.  Given the above data, it will take approximately 24 msec to read 10 maximum-sized frames at the maximum data transfer rate.

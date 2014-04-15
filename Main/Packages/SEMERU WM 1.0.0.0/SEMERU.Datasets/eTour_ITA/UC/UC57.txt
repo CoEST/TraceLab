@@ -1,0 +1,15 @@
+Use case name	RICERCA AVANZATA
+Il Turista effettua una ricerca di un sito utilizzando le potenzialità offerte dalla Ricerca Avanzata.
+Partecipating
+Actor	Inizializzato da Turista
+Entry
+conditions	•	Il Turista si è autenticato con successo al sistema.
+Flow of events 		User	System
+	1.		Attiva la funzionalità di ricerca avanzata dalla propria area personale.	
+	2.			Visualizza la form di ricerca avanzata.
+	3.		Compila la form di ricerca avanzata e la sottomette.	
+	4.			Ottiene la posizione del Turista invocando il caso d’uso Localizzazione ed elabora la richiesta.
+Exit conditions	•	Il sistema visualizza una lista di risultati.
+•	Interruzione della connessione al server di eTour.
+Quality 
+requirements	Il sistema effettua l’operazione in massimo 15 secondi.

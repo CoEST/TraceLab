@@ -1,0 +1,35 @@
+package unisa.gps.etour.control. Gestione Utenti Registrati;
+
+import java.rmi. Remote;
+import java.rmi. Remote Exception;
+
+/**
+ *  Interfaccia relativa alle operazioni di  Log In e  Log Out effettuate dall' Utente
+ *  Registrato
+ * 
+ * @author  Penna  Giuseppe
+ * @version  .       e Tour  Project -  Copyright by  S E@ S A  Lab  D M I  University of
+ *           Salerno
+ */
+public interface  I Autenticazione extends  Remote
+{
+
+	//  Costanti statiche che identificano la tipologia di  Utente che si
+	// autentica
+	public static final byte  T U R I S T A =  ;
+	public static final byte  O P_ P U N T O_ D I_ R I S T O R O =  ;
+	
+	/**
+	 *  Metodo per l'autenticazione di un  Utente  Registrato( Turista -  Operatore
+	 *  Punto di  Ristoro)
+	 * 
+	 * @param p User Name  Nome  Utente relativo all' Utente  Registrato
+	 * @param p Password  Password relativa all' Utente  Registrato
+	 * @param p Tipologia Utente  Tipologia dell'utente che si autentica
+	 * @return  Se i dati sono corretti l' Id dell'utente loggato, in caso
+	 *         contrario - 
+	 */
+	public int login( String p Username,  String p Password, byte p Tipologia Utente)
+			throws  Remote Exception;
+
+}

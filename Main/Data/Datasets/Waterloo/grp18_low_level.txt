@@ -1,0 +1,40 @@
+UC1	Name: Administrator login			ID:  UC1
+Event: Administrator login to the system	
+System: 	IPPhone
+Actors: Administrator	
+Overview: Description of internal behaviors when the administrator logins to the system	~
+UC2	Name: Administrator logout			ID: UC2
+Event: Administrator logout the system				
+System: 				
+Actors: Administrator				
+Overview:  Description of internal behaviors when the administrator logouts~
+UC3	Name: Manage User Account				ID:  UC3
+Event: Administrator manage user accounts in the system	
+System: 	
+Actors: Administrator	
+Overview: Description of internal behaviors when the administrator manages user account	~
+UC4	Name: Manage IP and Phone Mapping			ID: UC4
+Event: Administrator manages the IP address and Phone mapping for the user account	
+System: 	
+Actors: Administrator	
+Overview: Description of internal behaviors when Administrator manages IP and Phone mapping for the user~
+UC5	Name: Manage Hardware				ID: UC5
+Event: Administrator manages hardwares	
+System: 	
+Actors: Administrator	
+Overview: Description of internal behaviors when Administrator manages hardwares~
+UC6	Name: Making a Phone Call			ID: UC6
+Event:  Caller makes a phone call
+System: the IP phone subsystem and the server
+Actors: Caller, Callee
+Overview: User picks up the phone, dials the number and starts a conversation~
+UC7	Name: Manage Bills				ID: UC7
+Event: Administrator manages bills for the system including generates bills, modify bill and pay bill.				
+System: 				
+Actors: Administrator				
+Overview: Description of internal behavior of generating bills for all appropriate users~
+UC8	Name: Manage Plans				ID: UC8
+Event: Administrator manages the plans.				
+System: 				
+Actors: Administrator				
+Overview: Description of internal behavior of managing plan for user including set discount plan and modify plan.~

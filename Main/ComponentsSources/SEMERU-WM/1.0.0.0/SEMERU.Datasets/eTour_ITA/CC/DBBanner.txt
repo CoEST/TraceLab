@@ -1,0 +1,106 @@
+/**
+ *  Stub dinamico per la classe  D B Banner.  Viene utilizzato per il testing
+ * delle classi del package  Gestione Advertisement.
+ *
+ * @author  Fabio  Palladino
+ * @version  . 
+ * 
+ * &#   ;      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I -  University of  Salerno
+ */
+package unisa.gps.etour.control. Gestione Advertisement.test.stubs;
+
+import java.sql. S Q L Exception;
+import java.util. Array List;
+
+import unisa.gps.etour.bean. Bean Banner;
+import unisa.gps.etour.repository. I D B Banner;
+
+public class  D B Banner implements  I D B Banner
+{
+
+	private static int  N U M_ T E S T =  ;
+	
+	public boolean cancella Banner(int p Id Banner) throws  S Q L Exception
+	{
+		if ( N U M_ T E S T ==  )
+		{
+			throw new  S Q L Exception();
+		}
+		else
+		{
+			return true;
+		}
+	}
+
+	/* (non- Javadoc)
+	 * @see unisa.gps.etour.repository. I D B Banner#inserisci Banner(unisa.gps.etour.bean. Bean Banner)
+	 */
+	public boolean inserisci Banner( Bean Banner p Banner) throws  S Q L Exception
+	{
+		if( N U M_ T E S T ==   ||  N U M_ T E S T ==  )
+		{
+			return true;
+		}else 
+		{
+			return false;
+		}
+	}
+
+	/* (non- Javadoc)
+	 * @see unisa.gps.etour.repository. I D B Banner#modifica Banner(unisa.gps.etour.bean. Bean Banner)
+	 */
+	public boolean modifica Banner( Bean Banner p Banner) throws  S Q L Exception
+	{
+		return true;
+	}
+
+	/* (non- Javadoc)
+	 * @see unisa.gps.etour.repository. I D B Banner#ottieni Banner(int)
+	 */
+	public  Array List< Bean Banner> ottieni Banner(int p Id Punto Di Ristoro)
+			throws  S Q L Exception
+	{
+		 Array List< Bean Banner> to Return = new  Array List< Bean Banner>();
+		
+		if( N U M_ T E S T ==   ||  N U M_ T E S T ==  )
+		{
+			/* deve restituire un  Array List con   elementi */
+			to Return.add(new  Bean Banner());
+			to Return.add(new  Bean Banner());
+			to Return.add(new  Bean Banner());
+			return to Return;
+		}
+		else if ( N U M_ T E S T ==  )
+		{
+			to Return.add(new  Bean Banner( ,"c:\\ Prova Banner Inserimento.jpg",  ));
+			to Return.add(new  Bean Banner( ,"c:\\ Prova Banner Inserimento.jpg",  ));
+			to Return.add(new  Bean Banner( ,"c:\\ Prova Banner Inserimento.jpg",  ));
+			to Return.add(new  Bean Banner( ,"c:\\ Prova Banner Inserimento.jpg",  ));
+			return to Return;
+		}else
+		{
+			return null;
+		}
+	}
+
+	/* (non- Javadoc)
+	 * @see unisa.gps.etour.repository. I D B Banner#ottieni Banner Da I D(int)
+	 */
+	public  Bean Banner ottieni Banner Da I D(int p Id Banner) throws  S Q L Exception
+	{
+		if ( N U M_ T E S T ==  )
+		{
+			return null;
+		}
+		else 
+		{
+			return new  Bean Banner(  ,"c:// Prova Banner.jpg", );
+		}
+	}
+
+	public static void set N U M_ T E S T(int num_test)
+	{
+		 N U M_ T E S T = num_test;
+	}
+
+}

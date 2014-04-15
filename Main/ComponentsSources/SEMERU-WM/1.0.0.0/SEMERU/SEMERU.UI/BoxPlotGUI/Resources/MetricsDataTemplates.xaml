@@ -1,0 +1,28 @@
+﻿<ResourceDictionary
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SEMERU.UI.BoxPlotGUI.WinFormsHosts"
+             xmlns:metrics="clr-namespace:SEMERU.Types.Metrics;assembly=SEMERU.Types"
+             mc:Ignorable="d">
+
+    <DataTemplate DataType="{x:Type metrics:SummaryDataMetric}">
+        <StackPanel>
+            <Expander Header="Metric Description">
+                <TextBlock Text="{Binding Description}" TextWrapping="WrapWithOverflow" Width="800" />
+            </Expander>
+            <local:BoxPlotHost BoxPlotData="{Binding .}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type metrics:PrecisionRecallCurveMetric}">
+        <StackPanel>
+            <Expander Header="Metric Description">
+                <TextBlock Text="{Binding Description}" TextWrapping="WrapWithOverflow" Width="800" />
+            </Expander>
+            <local:MultiCurveGraphHost Data="{Binding .}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        </StackPanel>
+    </DataTemplate>
+
+</ResourceDictionary>

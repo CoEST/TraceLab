@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<w:Wix xmlns:w="http://schemas.microsoft.com/wix/2006/wi" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+  <?include Variables.wxi ?>
+  <Fragment xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <DirectoryRef Id="TARGETDIR">
+      <Directory Id="bin" Name="bin" />
+      <Directory Id="lib" Name="lib" />
+    </DirectoryRef>
+  </Fragment>
+  <Fragment xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <ComponentGroup Id="TraceLabMain">
+      
+      <Component Id="TraceLab.exe" Directory="bin" Guid="{710FCC34-8FC0-4FD3-AC6B-A14F8743F07F}">
+        <File Id="TraceLab.exe" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\TraceLab.exe" />
+        <File Id="TraceLab.ico" Source="$(var.SolutionDir)Icons\TraceLab.ico"/>
+        <File Id="TraceLabExperiment.ico" Source="$(var.SolutionDir)Icons\TraceLabExperiment.ico"/>
+        <File Id="TraceLabPackage.ico" Source="$(var.SolutionDir)Icons\TraceLabPackage.ico"/>
+        <File Id="TraceLabPkgBuilder.ico" Source="$(var.SolutionDir)Icons\TraceLabPkgBuilder.ico"/>
+
+        <ProgId Id="TraceLab.tpkgfile" Description="TraceLab Package File" Icon="TraceLabPackage.ico">
+          <Extension Id="tpkg" ContentType="application/tpkg">
+            <Verb Id="open" Command="open" TargetFile="TraceLab.exe" Argument="/installpackage:&quot;%1&quot;"/>
+          </Extension>
+        </ProgId>
+
+        <ProgId Id="TraceLab.temlfile" Description="TraceLab Experiment File" Icon="TraceLabExperiment.ico">
+          <Extension Id="teml" ContentType="application/teml">
+            <Verb Id="open" Command="open" TargetFile="TraceLab.exe" Argument="/open:&quot;%1&quot;"/>
+          </Extension>
+        </ProgId>
+        
+        <ProgId Id="TraceLab.tcmlfile" Description="TraceLab Composite Component File">
+          <Extension Id="tcml" ContentType="application/tcml">
+          </Extension>
+        </ProgId>
+      </Component>
+      
+      <Component Id="TraceLab.exe.config" Directory="bin" Guid="{C8C74043-2C27-4CD3-A6CB-DB8334B98D56}">
+        <File Id="TraceLab.exe.config" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\TraceLab.exe.config" />
+      </Component>
+
+      <Component Id="PackageBuilder.exe" Directory="bin" Guid="{17EE9536-D066-11E1-9B6E-E5C96088709B}">
+        <File Id="PackageBuilder.exe" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\PackageBuilder.exe" />
+      </Component>
+
+      <Component Id="TraceLabConsole.exe" Directory="bin" Guid="{2451F6C2-F91C-11E1-9D64-77EE6188709B}">
+        <File Id="TraceLabConsole.exe" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\TraceLabConsole.exe" />
+      </Component>
+
+      <Component Id="TraceLabConsole.exe.config" Directory="bin" Guid="{2EB58FFC-F91C-11E1-8266-79EE6188709B}">
+        <File Id="TraceLabConsole.exe.config" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\TraceLabConsole.exe.config" />
+      </Component>
+
+      <Component Id="AvalonDock.dll" Directory="bin" Guid="{75AB6F7F-D03B-4FF1-962D-70D6F6FFDC48}">
+        <File Id="AvalonDock.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\AvalonDock.dll" />
+      </Component>
+      <Component Id="AvalonDock.Themes.dll" Directory="bin" Guid="{4070F3F2-4B4B-4065-96C6-882C4E85A22C}">
+        <File Id="AvalonDock.Themes.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\AvalonDock.Themes.dll" />
+      </Component>
+      <Component Id="GraphSharp.Controls.dll" Directory="bin" Guid="{25567C3A-6E73-43B1-9532-0CDE99C488CE}">
+        <File Id="GraphSharp.Controls.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\GraphSharp.Controls.dll" />
+      </Component>
+      <Component Id="GraphSharp.dll" Directory="bin" Guid="{79B56583-D229-42BF-9E04-409623E00AAE}">
+        <File Id="GraphSharp.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\GraphSharp.dll" />
+      </Component>
+      <Component Id="IKVM.AWT.WinForms.dll" Directory="bin" Guid="{95AC099D-A7A6-4D47-8B21-A3D51DE0A7EC}">
+        <File Id="IKVM.AWT.WinForms.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.AWT.WinForms.dll" />
+      </Component>
+      <Component Id="IKVM.OpenJDK.Beans.dll" Directory="bin" Guid="{7C6BC373-D69A-48C1-B7F0-52AC997004FC}">
+        <File Id="IKVM.OpenJDK.Beans.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.OpenJDK.Beans.dll" />
+      </Component>
+      <Component Id="IKVM.OpenJDK.Charsets.dll" Directory="bin" Guid="{85B9ECA8-F91C-11E1-86BE-A1EE6188709B}">
+        <File Id="IKVM.OpenJDK.Charsets.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.OpenJDK.Charsets.dll" />
+      </Component>
+      <Component Id="IKVM.OpenJDK.Corba.dll" Directory="bin" Guid="{95367C14-F91C-11E1-AB44-ACEE6188709B}">
+        <File Id="IKVM.OpenJDK.Corba.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.OpenJDK.Corba.dll" />
+      </Component>
+      <Component Id="IKVM.OpenJDK.Core.dll" Directory="bin" Guid="{D7CFD9DE-C9C8-4396-BA90-4342F6635872}">
+        <File Id="IKVM.OpenJDK.Core.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.OpenJDK.Core.dll" />
+      </Component>
+      <Component Id="IKVM.OpenJDK.Jdbc.dll" Directory="bin" Guid="{A8F1EDBA-F91C-11E1-88C3-B0EE6188709B}">
+        <File Id="IKVM.OpenJDK.Jdbc.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.OpenJDK.Jdbc.dll" />
+      </Component>
+      <Component Id="IKVM.OpenJDK.Management.dll" Directory="bin" Guid="{BB428A88-F91C-11E1-A806-B4EE6188709B}">
+        <File Id="IKVM.OpenJDK.Management.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.OpenJDK.Management.dll" />
+      </Component>
+      <Component Id="IKVM.OpenJDK.Media.dll" Directory="bin" Guid="{98AE0170-1350-4A05-B254-19171FC55F36}">
+        <File Id="IKVM.OpenJDK.Media.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.OpenJDK.Media.dll" />
+      </Component>
+      <Component Id="IKVM.OpenJDK.Misc.dll" Directory="bin" Guid="{CD527A62-F91C-11E1-8AA4-BAEE6188709B}">
+        <File Id="IKVM.OpenJDK.Misc.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.OpenJDK.Misc.dll" />
+      </Component>
+      <Component Id="IKVM.OpenJDK.Naming.dll" Directory="bin" Guid="{06C4A870-FA25-459C-A90B-B374432308BC}">
+        <File Id="IKVM.OpenJDK.Naming.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.OpenJDK.Naming.dll" />
+      </Component>
+      <Component Id="IKVM.OpenJDK.Remoting.dll" Directory="bin" Guid="{9B23ECB7-0498-4049-80B3-C47A253A677A}">
+        <File Id="IKVM.OpenJDK.Remoting.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.OpenJDK.Remoting.dll" />
+      </Component>
+      <Component Id="IKVM.OpenJDK.Security.dll" Directory="bin" Guid="{53512802-DC84-4514-88F0-3ED25261379C}">
+        <File Id="IKVM.OpenJDK.Security.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.OpenJDK.Security.dll" />
+      </Component>
+      <Component Id="IKVM.OpenJDK.SwingAWT.dll" Directory="bin" Guid="{E9A89106-21EF-4434-816D-0BE9E922D219}">
+        <File Id="IKVM.OpenJDK.SwingAWT.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.OpenJDK.SwingAWT.dll" />
+      </Component>
+      <Component Id="IKVM.OpenJDK.Text.dll" Directory="bin" Guid="{751F85EF-0CC2-4CDD-AB21-187D65465CF8}">
+        <File Id="IKVM.OpenJDK.Text.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.OpenJDK.Text.dll" />
+      </Component>
+      <Component Id="IKVM.OpenJDK.Tools.dll" Directory="bin" Guid="{E2981314-F91C-11E1-801D-D5EE6188709B}">
+        <File Id="IKVM.OpenJDK.Tools.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.OpenJDK.Tools.dll" />
+      </Component>
+      <Component Id="IKVM.OpenJDK.Util.dll" Directory="bin" Guid="{82FA9D26-F39F-4008-B3EC-0C9F3579C3CD}">
+        <File Id="IKVM.OpenJDK.Util.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.OpenJDK.Util.dll" />
+      </Component>
+      <Component Id="IKVM.OpenJDK.XML.API.dll" Directory="bin" Guid="{030E95A0-F91D-11E1-8B68-DDEE6188709B}">
+        <File Id="IKVM.OpenJDK.XML.API.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.OpenJDK.XML.API.dll" />
+      </Component>
+      <Component Id="IKVM.OpenJDK.XML.Bind.dll" Directory="bin" Guid="{1312F31A-F91D-11E1-891B-E1EE6188709B}">
+        <File Id="IKVM.OpenJDK.XML.Bind.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.OpenJDK.XML.Bind.dll" />
+      </Component>
+      <Component Id="IKVM.OpenJDK.XML.Crypto.dll" Directory="bin" Guid="{2136B71A-F91D-11E1-9434-F0EE6188709B}">
+        <File Id="IKVM.OpenJDK.XML.Crypto.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.OpenJDK.XML.Crypto.dll" />
+      </Component>
+      <Component Id="IKVM.OpenJDK.XML.Parse.dll" Directory="bin" Guid="{2CEEE9EC-F91D-11E1-9D6D-03EF6188709B}">
+        <File Id="IKVM.OpenJDK.XML.Parse.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.OpenJDK.XML.Parse.dll" />
+      </Component>
+      <Component Id="IKVM.OpenJDK.XML.Transform.dll" Directory="bin" Guid="{38F91D16-F91D-11E1-ACC1-0AEF6188709B}">
+        <File Id="IKVM.OpenJDK.XML.Transform.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.OpenJDK.XML.Transform.dll" />
+      </Component>
+      <Component Id="IKVM.OpenJDK.XML.WebServices.dll" Directory="bin" Guid="{47799334-F91D-11E1-998A-0EEF6188709B}">
+        <File Id="IKVM.OpenJDK.XML.WebServices.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.OpenJDK.XML.WebServices.dll" />
+      </Component>
+      <Component Id="IKVM.OpenJDK.XML.XPath.dll" Directory="bin" Guid="{5933DAB2-F91D-11E1-B14E-12EF6188709B}">
+        <File Id="IKVM.OpenJDK.XML.XPath.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.OpenJDK.XML.XPath.dll" />
+      </Component>
+      <Component Id="IKVM.Reflection.dll" Directory="bin" Guid="{6C9C30A4-F91D-11E1-99F7-63EF6188709B}">
+        <File Id="IKVM.Reflection.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.Reflection.dll" />
+      </Component>
+      <Component Id="IKVM.Runtime.dll" Directory="bin" Guid="{6B3915DB-FA83-47C6-9982-F82AABA93A42}">
+        <File Id="IKVM.Runtime.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.Runtime.dll" />
+      </Component>
+      <Component Id="IKVM.Runtime.JNI.dll" Directory="bin" Guid="{7F40DD15-B625-42F5-A7FD-2B69AA3B0537}">
+        <File Id="IKVM.Runtime.JNI.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\IKVM.Runtime.JNI.dll" />
+      </Component>
+      <Component Id="NLog.dll" Directory="bin" Guid="{C4702A6B-67A5-46CB-88B7-60F5CFAB9BA9}">
+        <File Id="NLog.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\NLog.dll" />
+      </Component>
+      <Component Id="Ookii.Dialogs.Wpf.dll" Directory="bin" Guid="{EBDF8934-817B-44F3-B3BE-0CDEEDA3603E}">
+        <File Id="Ookii.Dialogs.Wpf.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\Ookii.Dialogs.Wpf.dll" />
+      </Component>
+      <Component Id="QuickGraph.dll" Directory="bin" Guid="{0DCBF8C7-066E-4CC9-9AA1-B86FEBE9D196}">
+        <File Id="QuickGraph.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\QuickGraph.dll" />
+      </Component>
+      <Component Id="System.Windows.Controls.DataVisualization.Toolkit.dll" Directory="bin" Guid="{341B2019-A9CE-430D-A13A-285D7686788F}">
+        <File Id="System.Windows.Controls.DataVisualization.Toolkit.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\System.Windows.Controls.DataVisualization.Toolkit.dll" />
+      </Component>
+      <Component Id="TraceLab.Core.dll" Directory="bin" Guid="{0FB3093C-48D2-4635-8671-F9924A92597C}">
+        <File Id="TraceLab.Core.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\TraceLab.Core.dll" />
+      </Component>
+      <Component Id="TraceLab.UI.WPF.dll" Directory="bin" Guid="{4345D07B-55E8-4798-8149-FE699375B01A}">
+        <File Id="TraceLab.UI.WPF.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\TraceLab.UI.WPF.dll" />
+      </Component>
+      <Component Id="TraceLabSDK.dll" Directory="bin" Guid="{E4067779-0945-49AC-977F-2F5DD17AB0AF}">
+        <File Id="TraceLabSDK.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\TraceLabSDK.dll" />
+      </Component>
+      <Component Id="WPFExtensions.dll" Directory="bin" Guid="{D228A0EA-AFC3-4249-80E9-85D8B5A8D169}">
+        <File Id="WPFExtensions.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\WPFExtensions.dll" />
+      </Component>
+      <Component Id="WPFToolkit.dll" Directory="bin" Guid="{B975C505-4D90-4E5B-9B97-70C67C7C8CF0}">
+        <File Id="WPFToolkit.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\WPFToolkit.dll" />
+      </Component>
+      <Component Id="WPG.dll" Directory="bin" Guid="{3FB12986-5763-4946-AD99-C741AB231A4C}">
+        <File Id="WPG.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\bin\WPG.dll" />
+      </Component>
+      <Component Id="TraceLabSDK.dll_1" Directory="lib" Guid="{65681C11-8A17-4598-8E22-4D15FB934D0C}">
+        <File Id="TraceLabSDK.dll_1" KeyPath="yes" Source="$(var.TraceLabMainSource)\lib\TraceLabSDK.dll" />
+      </Component>
+      <Component Id="TraceLabSDK.jar" Directory="lib" Guid="{9910EDB6-4761-4AF6-BD1C-386F009F716A}">
+        <File Id="TraceLabSDK.jar" KeyPath="yes" Source="$(var.TraceLabMainSource)\lib\TraceLabSDK.jar" />
+      </Component>
+      <Component Id="mscorlib.dll" Directory="lib" Guid="{00bfe66d-8222-4264-b8e8-ac9fa9669770}">
+        <File Id="mscorlib.dll" KeyPath="yes" Source="$(var.TraceLabMainSource)\lib\mscorlib.dll" />
+      </Component>
+      <Component Id="mscorlib.jar" Directory="lib" Guid="{960f2c47-b62e-4ea7-8f4c-9bd21fac4cd5}">
+        <File Id="mscorlib.jar" KeyPath="yes" Source="$(var.TraceLabMainSource)\lib\mscorlib.jar" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+  <Fragment xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <DirectoryRef Id="bin" />
+  </Fragment>
+  <Fragment xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <DirectoryRef Id="lib" />
+  </Fragment>
+</w:Wix>

@@ -1,0 +1,35 @@
+           Worker Thread
+           "/**
+            * True if this thread is currently processing  .
+             */
+            public boolean busy  ;
+            /**
+             * The thread pool that this object belongs to  .
+             */
+            public Thread  Pool owner  ;"
+           "/**
+             * The constructor  .
+             *
+             * @param o the thread pool
+             */
+            Worker  Thread  (  Thread  Pool o  )
+            {
+              owner = o  ;
+            }"
+           "/**
+             * Scan for and execute tasks  .
+             */
+            public void run  ()
+            {
+              Runnable target = null  ;
+          
+              do
+              {
+                target = owner  . get  Assignment  ();
+                if ( target  !  =null  )
+                {
+                 target  . run  ();
+                 owner  . done  . worker  End  ();
+                }
+              } while ( target  !  =null  );
+            }//  End of Run"

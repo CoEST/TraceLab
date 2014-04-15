@@ -1,0 +1,15 @@
+Nome: EliminaRitardo
+Attori: Amministratore
+Descrizione: Eliminazione di un ritardo da parte dell'Amministratore
+Precondizioni:
+• • •
+L'utente deve essere loggato al sistema come Amministratore L'utente ha svolto il caso d'uso “VisualizzaDettagliSingoloRegistro” Seleziona la data in cui desidera eliminare un ritardo.
+Sequenza degli eventi
+Utente
+Sistema
+2. Elimina l’entrata in ritardo di uno studente e clicca “Salva”
+1. Aggiorna la schermata in base alla data selezionata
+3.	Elimina	l’entrata	in	ritardo dall’archivio.
+Postcondizioni:
+• Il sistema ha eliminato il ritardo. Il sistema rimane sulla schermata del registro.
+•	L’amministratore interrompe l’operazione •	Connessione al server SMOS interrotta

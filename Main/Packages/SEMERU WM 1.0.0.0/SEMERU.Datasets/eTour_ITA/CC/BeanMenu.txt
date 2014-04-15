@@ -1,0 +1,99 @@
+package unisa.gps.etour.bean;
+import java.io. Serializable;
+/**
+ *  Bean  Contenente i dati relativi a un  Menu
+ * 
+ * @author  Martone  Giuseppe
+ * @version  .  �      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I �  University
+ *          of  Salerno
+ */
+public class  Bean Menu implements  Serializable
+{
+	private static final long serial Version U I D = -                    L;
+	private int id;
+	private  String giorno;
+	private int id Punto Di Ristoro;
+
+	/**
+	 *  Costruttore parametrizzato
+	 * 
+	 * @param p Id
+	 * @param p Giorno
+	 * @param p Id Punto Di Ristoro
+	 */
+	public  Bean Menu(int p Id,  String p Giorno, int p Id Punto Di Ristoro)
+	{
+		set Id(p Id);
+		set Giorno(p Giorno);
+		set Id Punto Di Ristoro(p Id Punto Di Ristoro);
+	}
+
+	/**
+	 *  Costruttore  Vuoto
+	 */
+	public  Bean Menu()
+	{
+
+	}
+
+	/**
+	 *  Restituisce il valore di giorno
+	 * 
+	 * @return  Valore di giorno.
+	 */
+	public  String get Giorno()
+	{
+		return giorno;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di giorno
+	 * 
+	 * @param p Giorno  Nuovo valore di giorno.
+	 */
+	public void set Giorno( String p Giorno)
+	{
+		giorno = p Giorno;
+	}
+
+	/**
+	 *  Restituisce il valore di id
+	 * 
+	 * @return  Valore di id.
+	 */
+	public int get Id()
+	{
+		return id;
+	}
+
+	/**
+	 *  Restituisce il valore di id Punto Di Ristoro
+	 * 
+	 * @return  Valore di id Punto Di Ristoro.
+	 */
+	public int get Id Punto Di Ristoro()
+	{
+		return id Punto Di Ristoro;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di id
+	 * 
+	 * @param p Id  Nuovo valore di id.
+	 */
+	public void set Id(int p Id)
+	{
+		id = p Id;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di id Punto Di Ristoro
+	 * 
+	 * @param p Id Punto Di Ristoro  Nuovo valore di id Punto Di Ristoro.
+	 */
+	public void set Id Punto Di Ristoro(int p Id Punto Di Ristoro)
+	{
+		id Punto Di Ristoro = p Id Punto Di Ristoro;
+	}
+
+}

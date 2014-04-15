@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>HIPPA-GOAL-MODEL</id>
+    <name>HIPPA Goal Model</name>
+    <version>1.0</version>
+    <description>HIPPA Regulatory codes</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>AC</id>
+      <content>Access Control. Implement technical policies and procedures for electronic information systems that maintain electronic protected health information to allow access only to those persons or software programs that have been granted access rights as specified in ? 164.308(a)(4).</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>AUD</id>
+      <content>Audit Controls. Implement hardware, software, and/or procedural mechanisms that record and examine activity in information systems that contain or use electronic protected health information.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>AL</id>
+      <content>Automatic logoff. Implement electronic procedures that terminate an electronic session after a predetermined time of inactivity.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>SED</id>
+      <content>Encryption. Implement a mechanism to encrypt electronic protected health information whenever deemed appropriate.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>EAP</id>
+      <content>Emergency access procedure. Establish (and implement as needed) procedures for obtaining necessary electronic protected health information during an emergency.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>TED</id>
+      <content>Encryption and decryption. Implement a mechanism to encrypt and decrypt electronic protected health information.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>IC</id>
+      <content>Integrity controls. Implement security measures to ensure that electronically transmitted electronic protected health information is not improperly modified without detection until disposed of.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>PA</id>
+      <content>Person or entity authentication. Implement procedures to verify that a person or entity seeking access to electronic protected health information is the one claimed.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>TS</id>
+      <content>Transmission security. Implement technical security measures to guard against unauthorized access to electronic protected health information that is being transmitted over an electronic communications network.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UUI</id>
+      <content>Unique user identification. Assign a unique name and/or number for identifying and tracking user identity.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

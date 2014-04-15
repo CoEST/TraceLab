@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp21_low_level</id>
+    <name>Waterloo grp21_low_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp21_low_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>UC1</id>
+      <content>Use Case Number:	UC1
+Authors:	Team Members
+Event:	Subscriber lifts hand set to make a local call.
+System:	IPTX Server (i.e., Call Processing Unit)
+Actors:	Caller and Callee
+Overview:	This use case details the sequence of actions taken on behalf of the actors and the server to complete a local call.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC2</id>
+      <content>Name:
+Create User Account
+Use Case Number:	UC2
+Authors:	Team Members
+Event:	Administrator initiates a process to create a user account.
+System:	IPTX Server
+Actors:	Administrator, UserAccount
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to create a new user account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC3</id>
+      <content>Name:	Edit User Account
+Use Case Number:	UC3
+Authors:	Team Members
+Event:	Administrator initiates process to edit an existing user account.
+System:	IPTXError! Bookmark not defined. Server
+
+Actors:	Administrator, UserAccount
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to edit an existing user account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC4</id>
+      <content>Name:	Remove All Phones from User Account
+Use Case Number:	UC4
+Authors:	Team Members
+Event:	Administrator initiates process to cancel a user account.
+System:	IPTXError! Bookmark not defined. Server
+
+Actors:	Administrator, UserAccount
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to cancel a user account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC5</id>
+      <content>Name:	Create Administrator Account
+Use Case Number:	UC5
+Authors:	Team Members
+Event:	Administrator initiates process to create an administrator account.
+System:	IPTXError! Bookmark not defined. Server
+
+Actors:	Administrator, AdministratorAccount
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to create another administrator account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC8</id>
+      <content>Name:	Create Billing Plan
+Use Case Number:	UC8
+Authors:	Team Members
+Event:	Administrator initiates process to create a billing plan.
+System:	IPTXError! Bookmark not defined. Server
+
+Actors:	Administrator, BillingPlan
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to create a billing plan.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC9</id>
+      <content>Name:	Create Billing Plan from Existing Billing Plan
+Use Case Number:	UC9
+Authors:	Team Members
+Event:	Administrator initiates process to create a new billing plan using an existing plan�s parameters.
+System:	IPTXError! Bookmark not defined. Server
+
+Actors:	Administrator, BillingPlan
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to create a new billing plan based on an existing plan�s parameters.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC10</id>
+      <content>Name:	Set Call Limit
+Use Case Number:	UC10
+Authors:	Team Members
+Event:	Administrator initiates process to set the maximum number of concurrent calls.
+System:	IPTXError! Bookmark not defined. Server
+
+Actors:	Administrator, SystemLoad
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to set the maximum number of concurrent calls.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC11</id>
+      <content>Name:	View Hardware Status
+Use Case Number:	UC11
+Authors:	Team Members
+Event:	Administrator initiates process to view hardware status.
+System:	IPTXError! Bookmark not defined. Server
+
+Actors:	Administrator, Phone, TestLogger
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to view the hardware status.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC12</id>
+      <content>Name:	Perform Hardware Test
+Use Case Number:	UC12
+Authors:	Team Members
+Event:	Administrator initiates process to perform a hardware test.
+System:	IPTX Server
+Actors:	Administrator, Phone, Maintenance, TestLogger
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to perform a hardware test.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC13</id>
+      <content>Name:	Enable Device
+Use Case Number:	UC13
+Authors:	Team Members
+Event:	Administrator initiates process to enable a device.
+System:	IPTX Server
+Actors:	Administrator, Phone
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to enable a device.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC14</id>
+      <content>Name:	Disable Device
+Use Case Number:	UC14
+Authors:	Team Members
+Event:	Administrator initiates process to disable a device.
+System:	IPTX Server
+Actors:	Administrator, Phone
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to disable a device.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC15</id>
+      <content>Name:	Reset Device
+Use Case Number:	UC15
+Authors:	Team Members
+Event:	Administrator initiates process to reset a device.
+System:	IPTX Server
+Actors:	Administrator, Phone
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to reset a device.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC16</id>
+      <content>Name:	View Invoice
+Use Case Number:	UC16
+Authors:	Team Members
+Event:	Administrator initiates process to view an invoice.
+System:	IPTX Server
+Actors:	Administrator, UserAccount, Invoice
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to view an invoice.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC17</id>
+      <content>Name:	Generate Invoice
+
+Use Case Number:	UC17
+Authors:	Team Members
+Event:	Administrator initiates process to generate an invoice.
+System:	IPTXError! Bookmark not defined. Server
+
+Actors:	Administrator, UserAccountError! Bookmark not defined., Invoice
+
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to generate an invoice.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC18</id>
+      <content>Name:	Send InvoiceError! Bookmark not defined.
+
+Use Case Number:	UC18
+Authors:	Team Members
+Event:	Administrator initiates process to send invoice to customer.
+System:	IPTXError! Bookmark not defined. Server
+
+Actors:	Administrator, UserAccountError! Bookmark not defined.
+
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to send a invoice.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC19</id>
+      <content>Name:	Send All Invoices
+Use Case Number:	UC19
+Authors:	Team Members
+Event:	Administrator initiates process to send invoices to all customers.
+System:	IPTXError! Bookmark not defined. Server
+
+Actors:	Administrator, UserAccountError! Bookmark not defined.
+
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to send invoices to all customers.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC20</id>
+      <content>Name:	Change Billing Plan of a PhoneError! Bookmark not defined.
+
+Use Case Number:	UC20
+Authors:	Team Members
+Event:	Administrator initiates process for changing a billing plan of a phone.
+System:	IPTXError! Bookmark not defined. Server
+
+Actors:	Administrator, PhoneError! Bookmark not defined., BillingPlanError! Bookmark not defined.
+
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to allow an administrator to change the billing plan of a phone.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC21</id>
+      <content>Name:	Administrator Login
+Use Case Number:	UC21
+Authors:	Team Members
+Event:	Administrator initiates process for an administrator login operation.
+System:	IPTXError! Bookmark not defined. Server
+
+Actors:	Administrator, SystemConsoleError! Bookmark not defined., AdministratorAccountError! Bookmark not defined.
+
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to allow an administrator to login.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC23</id>
+      <content>Name:	Register Paid Bill
+Use Case Number:	UC23
+Authors:	Team Members
+Event:	Administrator initiates process for registering a paid bill.
+System:	IPTXError! Bookmark not defined. Server (i.e., Administration Server)
+Actors:	Administrator, UserAccountError! Bookmark not defined., InvoiceError! Bookmark not defined.
+
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to allow an administrator to register a paid bill into the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC24</id>
+      <content>Name:	Add ServiceError! Bookmark not defined.
+
+Use Case Number:	UC24
+Authors:	Team Members
+Event:	Administrator initiates process for adding a service to a phone.
+System:	IPTXError! Bookmark not defined. Server
+
+Actors:	Administrator, ServiceError! Bookmark not defined.
+
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to allow an administrator to add a particular service to a user account�s phone.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC25</id>
+      <content>Name:	SuspendError! Bookmark not defined. User Account
+
+Use Case Number:	UC25
+Authors:	Team Members
+Event:	Administrator initiates process for suspending a user account.
+System:	IPTXError! Bookmark not defined. Server
+
+Actors:	Administrator, UserAccountError! Bookmark not defined.
+
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to allow an administrator to suspend an account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC26</id>
+      <content>Name:	ResumeError! Bookmark not defined. User Account
+
+Use Case Number:	UC26
+Authors:	Team Members
+Event:	Administrator initiates process for resuming a user account.
+System:	IPTXError! Bookmark not defined. Server
+
+Actors:	Administrator, UserAccountError! Bookmark not defined.
+
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to allow an administrator to resume an account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC27</id>
+      <content>Name:	Add a PhoneError! Bookmark not defined. to User Account
+
+Use Case Number:	UC27
+Authors:	Team Members
+Event:	Administrator initiates process for adding a phone to a user account.
+System:	IPTXError! Bookmark not defined. Server
+
+Actors:	Administrator, UserAccountError! Bookmark not defined., PhoneError! Bookmark not defined.
+
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to allow an administrator to add a phone to an existing user account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC28</id>
+      <content>Name:	Remove a PhoneError! Bookmark not defined. from User Account
+
+Use Case Number:	UC28
+Authors:	Team Members
+Event:	Administrator initiates process for removing a phone from a user account.
+System:	IPTXError! Bookmark not defined. Server
+
+Actors:	Administrator, PhoneError! Bookmark not defined.
+
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to allow an administrator to remove a phone from a user account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC29</id>
+      <content>Name:	Assign Billing Plan to a PhoneError! Bookmark not defined.
+
+Use Case Number:	UC29
+Authors:	Team Members
+Event:	Administrator initiates process for assigning a billing plan to a phone.
+System:	IPTXError! Bookmark not defined. Server
+
+Actors:	Administrator, PhoneError! Bookmark not defined., BillingPlanError! Bookmark not defined.
+
+Overview:	This use case details the sequence of actions taken on behalf of the administrator and the server to allow an administrator to assign a billing plan to a phone.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

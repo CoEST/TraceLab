@@ -1,0 +1,142 @@
+           White Board Execution Graph
+           "//  Driver data members
+           double avg  Shape  Size  _  Original  ;
+           double avg  Shape  Size  _  Speculate  ;
+          
+           // constraints data members
+           double avg  Text  Size  ;
+           double write  Time  ;
+           double no  Shapes  ;
+           double no  Text  Items  ;
+           double band  Width  ;
+           double target  Response time  ;
+          
+          
+           Vector driver = new Vector  ();
+           Vector constraints = new Vector  ();"
+           "public White  Board  Execution  Graph  (  Vector driver   Vector constraints  ){
+            this  . driver = driver  ;
+            this  . constraints = constraints  ;
+           }// end of constructor"
+           "public String to  String  (){
+           String result  ;
+          
+           result = "" avg  Shape  Size  _  Original = "" + avg  Shape  Size  _  Original +
+              ""\ navg  Shape  Size  _  Speculate = "" + avg  Shape  Size  _  Speculate +
+              ""\ navg  Text  Size = "" + avg  Text  Size +
+              ""\ nwrite  Time = "" + write  Time +
+              ""\ nno  Shapes = "" + no  Shapes +
+              ""\ nno  Text  Items = "" + no  Text  Items +
+              ""\ nband  Width = "" + band  Width +
+              ""\ ntarget  Response time = "" + target  Response time  ;
+          
+           return result  ;
+           }"
+           "public void inject  Drivers  (){
+            System  . out  . println  (""\ t  \ t  INSIDE INJECT DRIVERs METHOD  "");
+            //  To Do  : Run for loop for more then one drivers
+            //  To Do  : have a case insensitive check for driver name and then populate the data member
+            avg  Shape  Size  _  Original = ((  Driver  ) driver  . get  (  0  )). get  Value  From  ();
+            avg  Shape  Size  _  Speculate = ((  Driver  ) driver  . get  (  0  )). get  Value  To  ();
+          
+            System  . out  . println  (""\ t  \ t  LEAVING INJECT DRIVERs METHOD  \ n  "");
+           }// end of populate  Driver"
+           "public void inject  Constraints  (){
+            System  . out  . println  (""\ t  \ t  INSIDE INJECT CONSTRAINTs METHOD  "");
+          
+            //  To Do  : have a case insensitive check for constraints name and then populate the data member
+            //  System  . out  . println  ( constraints  . to  Array  (). length  );
+            for ( int i  =0  ; i  <( constraints  . to  Array  (). length  ); i  ++){
+          
+             Constraints con  Temp = ((  Constraints  ) constraints  . get  ( i  ));
+             //  System  . out  . println  (""  Name = "" + con  Temp  . get  Name  ());
+          
+             if  ( ( con  Temp  . get  Name  ()). equals  ("" avg  Text  Size  "") ) {
+              avg  Text  Size = con  Temp  . get  Value  ();
+             }
+             if  ( ( con  Temp  . get  Name  ()). equals  ("" write  Time  "") ) {
+              write  Time = con  Temp  . get  Value  ();
+             }
+             if  ( ( con  Temp  . get  Name  ()). equals  ("" no  Shapes  "") ) {
+              no  Shapes = con  Temp  . get  Value  ();
+             }
+             if  ( ( con  Temp  . get  Name  ()). equals  ("" no  Text  Items  "") ) {
+              no  Text  Items = con  Temp  . get  Value  ();
+             }
+             if  ( ( con  Temp  . get  Name  ()). equals  ("" target  Response time  "") ) {
+              target  Response time = con  Temp  . get  Value  ();
+             }
+             if  ( ( con  Temp  . get  Name  ()). equals  ("" bandwidth  "") ) {
+              band  Width = con  Temp  . get  Value  ();
+             }
+            }// end of for loop
+           System  . out  . println  (""\ t  \ t  LEAVING INJECT CONSTRAINTs METHOD  \ n  "");
+           }// end of populate  Constraints"
+           "public double time  To  Broadcast  Shape  Before  (){
+            System  . out  . println  (""\ t  \ t  \ t  INSIDE time  To  Broadcast  Shape  Before METHOD  "");
+          
+            double target  Response time  _ temp = 0  .  00  ;
+          
+             for  ( int i  =0  ; i  < no  Shapes  ; i  ++){
+          
+             target  Response time  _ temp +  = ( avg  Shape  Size  _  Original  / band  Width  );
+          
+             }
+            System  . out  . println  (""\ t  \ t  \ t  \ t  Total time to broadcast shape = "" + target  Response time  _ temp  );
+            System  . out  . println  (""\ t  \ t  \ t  LEAVING time  To  Broadcast  Shape  Before METHOD  \ n  "");
+            return target  Response time  _ temp  ;
+           }"
+           "public double time  To  Broadcast  Shape  After  (){
+            System  . out  . println  (""\ t  \ t  \ t  INSIDE time  To  Broadcast  Shape  After METHOD  "");
+          
+            double target  Response time  _ temp = 0  .  00  ;
+          
+             for  ( int i  =0  ; i  < no  Shapes  ; i  ++){
+          
+             target  Response time  _ temp +  = ( avg  Shape  Size  _  Speculate  / band  Width  );
+          
+             }
+            System  . out  . println  (""\ t  \ t  \ t  \ t  Total time to broadcast shape = "" + target  Response time  _ temp  );
+            System  . out  . println  (""\ t  \ t  \ t  LEAVING time  To  Broadcast  Shape  After METHOD  \ n  "");
+            return target  Response time  _ temp  ;
+           }"
+           "public double time  To  Broadcast  Text  (){
+            System  . out  . println  (""\ t  \ t  \ t  INSIDE time  To  Broadcast  Text METHOD  "");
+          
+            double target  Response time  _ temp = 0  .  00  ;
+          
+             for  ( int i  =0  ; i  < no  Text  Items  ; i  ++){
+          
+             target  Response time  _ temp +  = ( avg  Text  Size  / band  Width  );
+          
+             }
+            System  . out  . println  (""\ t  \ t  \ t  \ t  Total time to broadcast text = "" + target  Response time  _ temp  );
+            System  . out  . println  (""\ t  \ t  \ t  LEAVING time  To  Broadcast  Text METHOD  \ n  "");
+            return target  Response time  _ temp  ;
+           }"
+           "public double write  Time  (){
+            System  . out  . println  (""\ t  \ t  \ t  INSIDE write  Time METHOD  "");
+          
+            System  . out  . println  (""\ t  \ t  \ t  \ t  Total time to write = "" + write  Time  );
+          
+            System  . out  . println  (""\ t  \ t  \ t  LEAVING write  Time METHOD  \ n  "");
+            return write  Time  ;
+           }"
+           "public double target  Response  Time  Before  (){
+            System  . out  . println  (""\ t  \ t  INSIDE target  Response  Time  Before METHOD  \ n  "");
+          
+            target  Response time = time  To  Broadcast  Shape  Before  () +
+                      time  To  Broadcast  Text  () + write  Time  ();
+          
+            System  . out  . println  (""\ t  \ t  LEAVING target  Response  Time  Before METHOD  \ n  "");
+            return target  Response time  ;
+           }"
+           "public double target  Response  Time  After  (){
+            System  . out  . println  (""\ t  \ t  INSIDE target  Response  Time  After METHOD  \ n  "");
+          
+            target  Response time = time  To  Broadcast  Shape  After  () +
+                      time  To  Broadcast  Text  () + write  Time  ();
+          
+            System  . out  . println  (""\ t  \ t  LEAVING target  Response  Time  After METHOD  \ n  "");
+            return target  Response time  ;
+           }"

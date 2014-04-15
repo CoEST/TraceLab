@@ -1,0 +1,12 @@
+org.mozilla.javascript.regexp.RegExpImpl.action
+org.mozilla.javascript.NativeString.execIdCall
+org.mozilla.javascript.regexp.SubString.toString
+org.mozilla.javascript.regexp.NativeRegExp.NativeRegExp
+org.mozilla.javascript.RegExpProxy.action
+org.mozilla.javascript.NativeString.findPrototypeId
+org.mozilla.javascript.regexp.RegExpImpl.match_glob
+org.mozilla.javascript.regexp.NativeRegExp.executeRegExp
+org.mozilla.javascript.regexp.SubString.SubString
+org.mozilla.javascript.NativeString.initPrototypeId
+org.mozilla.javascript.regexp.NativeRegExp.getFlags
+org.mozilla.javascript.regexp.RegExpImpl.matchOrReplace

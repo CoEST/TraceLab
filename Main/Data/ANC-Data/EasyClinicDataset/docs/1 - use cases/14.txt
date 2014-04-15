@@ -1,0 +1,63 @@
+Book visit 
+It allows the operator to meet 
+                 request for a booking service 
+                 made by an ambulatory patient 
+                 The Operator has an interest in the record 
+                 renting an outpatient service 
+                 requested by a patient 
+The Operator has been recognized by ` 
+                 System (See UcValOp) The patient is ` 
+                 been recognized by the system (See 
+                 UcValPaz) and has issued to 
+                 The module R S A properly completed 
+The data in the S I O 
+                 not be modified 
+                 Success: The outpatient service 
+                 required is properly booked 
+The operator activates the execution of 
+                 service booking service 
+                 Outpatient 
+1 
+       First visit 
+     
+        The Operator has 
+        received a request 
+        First visit 
+        part of a patient 
+     
+        Inserting anagrafica
+     patient 
+2 View the mask 
+     for booking of
+     service 
+     Outpatient 
+3 Select the type of visit 
+                                that the patient wants 
+                                make 
+4 Inserts motivation of the
+                                Request 
+5 Confirm data inserted
+6 Verify that the sequence 
+     Reservations are 
+     valid 
+     (See BrValSeq) 
+Includes 7 (Select dates 
+     available) 
+8 Confirm your reservation 
+9 Stores data 
+Notify the operator 10 
+     that the operation was ` 
+     concluded successfully 
+Sequence reservations invalid 
+   6 1 Show an appropriate message 
+   6 2 Reinserts execution from step 2 
+Operator cancels the operation 
+Reservations 
+  5 1 ends the use case with failure 
+   8 1 
+   9 1 For a first visit has shown to this point 
+          that will be saved even the personal data 
+          In addition, the patient always in the case of a 
+          Before visiting the system will 
+          view and print the card in hospital 
+          patient

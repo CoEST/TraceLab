@@ -1,0 +1,1470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>CC</id>
+    <name>CC</name>
+    <version>1.1</version>
+    <description>Code classes</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>114</id>
+      <content>Classe                  GUILogin            Data: 18/09/2003
+                                                 Versione:
+                                                 0.01.000
+Descrizione       Realizza  la  maschera  che  guida  il  Paziente
+                  nell'inserimento del codice della hospital  card
+                  e del PIN.
+Attributi
+      Nome         Accesso                Descrizione
+btnAnnulla         Privato   Pulsante   utilizzato  per  ritornare
+                             alla    maschera   implementata    da
+                             GUISfondo
+btnCancella        Privato   Pulsante  utilizzato  per  cancellare
+                             l'ultima    cifra    digitata     sul
+                             panelKeys.
+btnEsegui          Privato   Pulsante utilizzato per confermare  i
+                             dati inseriti.
+panelDisplay       Privato   Pannello  utilizzato per visualizzare
+                             i    codici   inseriti   tramite   il
+                             panelKeys.
+panelKeys          Privato   Pannello   contenente  il  tastierino
+                             numerico  da utilizzare per  inserire
+                             il codice della propria hospital card
+                             ed il proprio PIN.
+Metodi
+      Firma       showLoginError()             Accesso   Pubblico
+   Descrizione    Visualizza un messaggio di errore nel momento in
+                  cui la procedura di validazione del Paziente non
+                  sia andata a buon fine.
+      Firma       show()                       Accesso   Pubblico
+   Descrizione    Visualizza la maschera.
+      Firma       login()                       Accesso   Pubblico
+   Descrizione    Gestisce l'evento generato dal Paziente  quando,
+                  dopo aver inserito Hospital Card e PIN, avvia la
+                  procedura di validazione.
+      Firma       logout()                      Accesso   Pubblico
+   Descrizione    Gestisce  l'evento generato dal Paziente  quando
+                  abbandona il sistema.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>115</id>
+      <content>Classe               GUIPrincipale           Data: 18/09/2003
+                                                 Versione:
+                                                 0.01.000
+Descrizione     Realizza  la maschera principale dell'applicazione
+                Easy  Clinic2003 - Box Tower. Tale maschera ha  il
+                compito di guidare il Paziente nella scelta  delle
+                informazioni da visualizzare.
+Attributi
+     Nome        Accesso                 Descrizione
+btnAnagrafica    Privato   Pulsante utilizzato per accedere alla
+                           sezione Anagrafica.
+btnCartellaClin  Privato   Pulsante utilizzato per accedere alla
+ica                        sezione Cartella Clinica.
+btnPrenotazioni  Privato   Pulsante utilizzato per accedere alla
+                           sezione Prenotazioni.
+btnUscita        Privato   Pulsante utilizzato per abbandonare
+                           l'applicazione.
+Metodi
+      Firma       show()                          Accesso  Pubblico
+  Descrizione   Visualizza la maschera.
+      Firma       abilitaAccesso()             Accesso   Pubblico
+   Descrizione    Gestisce  l'evento generato quando la  procedura
+                  di  validazione  si conclude  con  successo.  Il
+                  Paziente viene quindi abilitato all'accesso.
+      Firma       cartellaClinica()            Accesso   Pubblico
+   Descrizione    Gestisce  l'evento generato quando il  Paziente,
+                  ottenuto l'accesso, clicca sul pulsante Cartella
+                  Clinica,  per  accedere  alla  propria  cartella
+                  clinica.
+      Firma       datiPaziente()               Accesso   Pubblico
+   Descrizione    Gestisce  l'evento generato quando il  Paziente,
+                  ottenuto  l'accesso, clicca  sul  pulsante  Dati
+                  Anagrafici,  per  visualizzare  i  propri   dati
+                  anagrafici.
+      Firma       prenotazioni()               Accesso   Pubblico
+   Descrizione    Gestisce  l'evento generato quando il  Paziente,
+                  ottenuto    l'accesso,   clicca   sul   pulsante
+                  Prenotazioni,  per visualizzare le  prenotazioni
+                  che ha fissato.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>116</id>
+      <content>Classe                GUIAnagrafica          Data: 18/09/2003
+                                                  Versione:
+                                                  0.01.000
+Descrizione       Realizza la maschera utilizzata per mostrare, in
+                  maniera  dettagliata,  i  dati  anagrafici   del
+                  Paziente.
+Attributi
+      Nome        Accesso                Descrizione
+btnRitorna        Privato  Pulsante utilizzato per ritornare  alla
+                           maschera GUIPrincipale.
+panelDati         Privato  Pannello   contenente  tutti   i   dati
+                           anagrafici relativi al Paziente.
+Metodi
+      Firma       visualizzaAnagrafica()        Accesso   Pubblico
+   Descrizione    Gestisce la visualizzazione dettagliata dei dati
+                  anagrafici del Paziente.
+     Firma       getAnagrafica()              Accesso   Pubblico
+   Descrizione    Ottiene i dati anagrafici del Paziente che
+                  accede al sistema.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>117</id>
+      <content>Classe               GUIPrenotazioni         Data: 18/09/2003
+                                                  Versione:
+                                                  0.01.000
+Descrizione       Realizza   la   maschera   utilizzata   per   la
+                  visualizzazione  delle  prenotazioni  effettuate
+                  dal Paziente.
+Attributi
+      Nome         Accesso                Descrizione
+btnRitorna         Privato   Pulsante   utilizzato  per  ritornare
+                             alla maschera GUIPrincipale.
+gridElenco         Privato   Griglia     nelle    quale    vengono
+                             visualizzate solo le prenotazioni che
+                             soddisfano   i  criteri  di   ricerca
+                             impostati dal Paziente.
+listaAppuntament   Privato   Lista     contenente     tutte     le
+i                            prenotazioni effettuate dal Paziente.
+panelParametri     Privato   Pannello contenente tutti gli oggetti
+                             che  danno la possibilit… al Paziente
+                             di  impostare i parametri di  ricerca
+                             delle   prenotazioni:   data   inizio
+                             ricerca e filtraggio tipo visita.
+Metodi
+      Firma       visualizzaPrenotazioni()      Accesso  Pubblico
+   Descrizione    Filtra e visualizza le prenotazioni presenti in
+                  listaAppuntamenti in base ai criteri scelti dal
+                  Paziente e visualizza i risultati in gridElenco.
+      Firma       getPrenotazioni()             Accesso   Pubblico
+   Descrizione    Ottiene l'elenco delle prenotazioni effettuate
+                  dal Paziente.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>118</id>
+      <content>Classe             GUICartellaClinica        Data: 18/09/2003
+                                                  Versione:
+                                                  0.01.000
+Descrizione       Realizza   la   maschera   utilizzata   per   la
+                  visualizzazione  della  cartella   clinica   del
+                  Paziente.
+Attributi
+      Nome         Accesso               Descrizione
+btnDettagli        Privato  Pulsante utilizzato per visualizzare i
+                            dettagli della visita selezionata.
+btnRitorna         Privato  Pulsante  che  consente  di  ritornare
+                            alla maschera principale GUIPrincipale
+panelDatiAnagraf   Privato  Pannello  contenente i dati anagrafici
+ici                         del Paziente.
+panelElencoVisit   Privato  Pannello contenente una griglia  nelle
+e                           quale  vengono visualizzate le  visite
+                            che il Paziente ha sostenuto.
+Metodi
+      Firma       visualizzaDatiPaziente()     Accesso   Pubblico
+   Descrizione    Visualizza,   nella   parte   superiore    della
+                  maschera, i dati anagrafici del Paziente.
+      Firma       visualizzaElencoVisite()     Accesso   Pubblico
+   Descrizione    Visualizza   la   griglia  (panelDatiAnagrafici)
+                  contenete le visite sostenute dal Paziente.
+      Firma       getCartellaClinica()         Accesso   Pubblico
+   Descrizione    Ottiene la cartella clinica del Paziente.
+      Firma       dettagliVisita()             Accesso   Pubblico
+   Descrizione    Gestisce l'evento generato dal Paziente quando
+                  decide di visualizzare i dettagli di una visita
+                  cliccando sul pulsante dettagli presente nella
+                  maschera implementata da GUICartellaClinica</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>119</id>
+      <content>Classe                  GUIVisita            Data: 18/09/2003
+                                                  Versione:
+                                                  0.01.000
+Descrizione       Realizza  la maschera relativa alle  visite  che
+                  offre  possibilit… al Paziente  di  visualizzare
+                  dettagliatamente i dati relativi ad una visita.
+Attributi
+      Nome         Accesso                Descrizione
+btnNext            Privato   Pulsante  utilizzato per visualizzare
+                             il  successivo  esame  relativo  alla
+                             visita in esame.
+btnPrev            Privato   Pulsante  utilizzato per visualizzare
+                             il  precedente  esame  relativo  alla
+                             visita in esame.
+btnRitorna         Privato   Pulsante   utilizzato  per  ritornare
+                             alla  maschera della cartella clinica
+                             (GUICartellaClinica).
+panelDatiEsami     Privato   Pannello  contenente i dati  relativi
+                             ad un esame effettuato dal Paziente.
+panelDatiVisita    Privato   Pannello contenente tutti dati
+                             relativi ad una visita.
+Metodi
+      Firma       create()                      Accesso  Pubblico
+   Descrizione    Costruttore della classe.
+      Firma       destroy()                     Accesso  Pubblico
+   Descrizione    Distruttore della classe.
+      Firma       getDettagliVisita()          Accesso   Pubblico
+   Descrizione    Ottiene i dettagli di una visita.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>120</id>
+      <content>Classe                  GUILogin             Data: 16/09/2003
+                                                  Versione:
+                                                 0.01.000
+Descrizione       Realizza   la  maschera  che  guida  l'Operatore
+                  durante la procedura di validazione.
+Attributi
+      Nome         Accesso                Descrizione
+btnAnnulla         Privato   Pulsante   utilizzato  per  terminare
+                             l'esecuzione  di Easy Clinic  2003  -
+                             Operatore.
+btnEsegui          Privato   Pulsante utilizzato per confermare  i
+                             dati inseriti.
+panelDati          Privato   Pannello  contenente  le  caselle  di
+                             testo  dove l'opera-tore inserisce  i
+                             dati di accesso.
+Metodi
+      Firma       showLoginError()              Accesso   Pubblico
+   Descrizione    Visualizza  un messaggio di errore nel  caso  in
+                  cui  la  procedura di validazione dell'Operatore
+                  non sia andata a buon fine.
+      Firma       login()                       Accesso   Pubblico
+   Descrizione    Gestisce  l'evento generato quando  il  Paziente
+                  avvia la procedura di validazione.
+      Firma       logout()                      Accesso   Pubblico
+   Descrizione    Gestisce  l'evento quando l'Operatore  abbandona
+                  il sistema.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>121</id>
+      <content>Classe               GUIPrincipale           Data: 18/09/2003
+                                                 Versione:
+                                                 0.01.000
+Descrizione     Realizza  la maschera principale dell'applicazione
+                Easy  Clinic2003 - Box Tower. Tale maschera ha  il
+                compito di guidare il Paziente nella scelta  delle
+                informazioni da visualizzare.
+Attributi
+     Nome        Accesso                 Descrizione
+btnAnagrafica    Privato   Pulsante utilizzato per accedere alla
+                           sezione Anagrafica.
+btnCartellaClin  Privato   Pulsante utilizzato per accedere alla
+ica                        sezione Cartella Clinica.
+btnPrenotazioni  Privato   Pulsante utilizzato per accedere alla
+                           sezione Prenotazioni.
+btnUscita        Privato   Pulsante utilizzato per abbandonare
+                           l'applicazione.
+Metodi
+     Nome       show()                          Accesso  Pubblico
+  Descrizione   Visualizza la maschera.
+      Firma       abilitaAccesso()              Accesso   Pubblico
+   Descrizione    Gestisce  l'evento generato quando la  procedura
+                  di validazione va a buon fine.
+      Firma       laboratori()                  Accesso   Pubblico
+   Descrizione    Gestisce  l'evento  generato quando  l'Operatore
+                  accede alla sezione dedicata ai laboratori.
+      Firma       management()                  Accesso  Pubblico
+   Descrizione    Gestisce  l'evento  generato quando  l'Operatore
+                  accede   alla  sezione  dedicata  al  management
+                  dell'ambulatorio.
+      Firma       medici()                      Accesso  Pubblico
+   Descrizione    Gestisce  l'evento  generato quando  l'Operatore
+                  accede  alla sezione dedicata alla gestione  dei
+                  dati  relativi  ai medici afferenti  all'ambula-
+                  torio.
+      Firma       primaVisita()                 Accesso  Pubblico
+   Descrizione    Gestisce  l'evento  generato quando  l'Operatore
+                  avvia  la procedura di prenotazione di una prima
+                  visita.
+      Firma       Visite()                      Accesso  Pubblico
+   Descrizione    Gestisce  l'evento  generato quando  l'Operatore
+                  accede alla sezione dedicata alla gestione delle
+                  visite.
+      Firma       Prenotazioni()                Accesso  Pubblico
+   Descrizione    Gestisce  l'evento  generato quando  l'Operatore
+                  accede  alla sezione Prenotazioni, per avere  un
+                  resoconto di quest'ultime.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>122</id>
+      <content>Classe               GUIAnagrafica          Data: 16/09/2003
+                                                 Versione:
+                                                 0.01.000
+Descrizione       Classe  astratta utilizzata per  la  definizione
+                  delle    classi    GUIAnagraficaLaboratorio    e
+                  GUIAnagraficaMadico.
+Attributi
+      Nome         Accesso                Descrizione
+btnElimina         Privato   Pulsante  che consente di avviare  la
+                             procedura       di       eliminazione
+                             dell'anagrafica di un  laboratorio  o
+                             di un medico.
+btnModifica        Privato   Pulsante  che consente di avviare  la
+                             procedura di modifica dell'anagrafica
+                             di un laboratorio o di un medico.
+btnNuovo           Privato   Pulsante  che consente di avviare  la
+                             procedura   di  inserimento   di   un
+                             laboratorio o di un medico.
+panelDati          Privato   Pannello  contenente  tutti  i   dati
+                             relativi  al  tipo di  anagrafica  in
+                             esame.
+Metodi
+      Firma       notificaSuccesso()            Accesso  Pubblico
+   Descrizione    Visualizza   un  messaggio  per  notificare   il
+                  successo        dell'operazione       effettuata
+                  dall'Operatore.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>123</id>
+      <content>Classe          GUIAnagraficaLaboratorio     Data:
+                                                  16/09/2003
+                                                  Versione:
+                                                  0.01.000
+Descrizione       Realizza  la  maschera  relativa  alla  gestione
+                  dell'anagrafica dei laboratori.
+Attributi
+      Nome         Accesso                Descrizione
+gridElencoLaborat  Privato   Elenco contenente le informazioni
+ori                          principali dei laboratori registrati
+                             all'interno S.I.O.
+Metodi
+      Firma       visualizzaDatiLaboratorio()   Accesso  Pubblico
+   Descrizione    Visualizza    i    dettagli   del    laboratorio
+                  selezionato nella sezione panelDati.
+      Firma       visualizzaElencoLaboratori()  Accesso  Pubblico
+   Descrizione    Visualizza  l'elenco  dei laboratori  registrati
+                  all'interno del S.I.O.
+    Firma      gestioneAnagrafica()             Accesso   Pubblico
+ Descrizione   Si  occupa del reperimento di tutte le informazioni
+               necessarie  per  l'organizzazione  della   maschera
+               implementata da GUIAnagraficaLaboratorio.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>124</id>
+      <content>Classe            GUIAnagraficaMedico      Data: 16/09/2003
+                                                Versione:
+                                                0.01.000
+Descrizione       Realizza  la  maschera  relativa  alla  gestione
+                  dell'anagrafica dei medici.
+Attributi
+      Nome        Accesso                Descrizione
+gridElencoMedici  Privato  Elenco   contenente   le   informazioni
+                           principali  dei  medici registrati  nel
+                           S.I.O.
+Metodi
+      Firma       visualizzaDatiMedico()      Accesso   Pubblico
+   Descrizione    Visualizza  i  dettagli del  medico  selezionato
+                  nella sezione panelDati.
+      Firma       visualizzaElencoMedicii()   Accesso   Pubblico
+   Descrizione    Visualizza  l'elenco dei medici  registrati  nel
+                  S.I.O.
+      Firma       gestioneAnagrafica()          Accesso   Pubblico
+   Descrizione    Si   occupa   del  reperimento   di   tutte   le
+                  informazioni   necessarie  per  l'organizzazione
+                  della       maschera       implementata       da
+                  GUIAnagraficaMedico.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>125</id>
+      <content>Classe                GUIResoconto          Data: 16/09/2003
+                                                 Versione:
+                                                 0.01.000
+Descrizione       Classe  astratta  utilizzata  per  definire   le
+                  classi  GUIResocontoVisite, GUIResocontoEsami  e
+                  GUIResocontoPrenotazioni.
+Attributi
+      Nome        Accesso                Descrizione
+gridRisultati     Privato  Griglia    all'interno   della    quale
+                           verranno  visualizzati i risultati  del
+                           resoconto.
+btnRicerca        Privato  Pulsante  per  avviare  la  ricerca  di
+                           visite, esami o prenotazioni effettuate
+                           in ambulatorio.
+btnUscita         Privato  Pulsante che consente di ritornare alla
+                           maschera        rappresentata        da
+                           GUIPrincipale.
+Metodi
+      Firma       visualizzaRisultati()         Accesso  Pubblico
+   Descrizione    Visualizza   i  risultati  delle  ricerche   che
+                  l'Operatore  effettua per ottenere  i  resoconti
+                  delle attivit… tenute in ambulatorio.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>126</id>
+      <content>Classe             GUIResocontoVisite       Data: 16/09/2003
+                                                 Versione:
+                                                 0.01.000
+Descrizione       Realizza la maschera relativa alla gestione  dei
+                  resoconti delle visite tenute in ambulatorio.
+Attributi
+      Nome        Accesso                Descrizione
+panelParametri    Privato  Pannello    contenente   i    parametri
+                           necessari  per impostare i  criteri  di
+                           creazione dei resoconti delle visite.
+Metodi
+      Firma       resocontoVisite()        Accesso     Pubblico
+   Descrizione    Si  occupa  di  reperire tutte  le  informazioni
+                  necessarie  per la generazione del resoconto  in
+                  osservanza dei criteri specificati.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>127</id>
+      <content>Classe            GUIResocontoEsami       Data: 16/09/2003
+                                               Versione: 0.01.000
+Descrizione       Realizza la maschera relativa alla gestione  dei
+                  resoconti  degli esami prescritti  nelle  visite
+                  sostenute in ambulatorio.
+Attributi
+      Nome        Accesso                Descrizione
+panelParametri    Privato  Pannello contenente i parametri
+                           necessari per impostare i criteri di
+                           creazione dei resoconti degli esami.
+Metodi
+       Firma       resocontoEsami()         Accesso     Pubblico
+   Descrizione    Si  occupa  di  reperire tutte  le  informazioni
+                  necessarie  per la generazione del resoconto  in
+                  osservanza dei criteri specificati.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>128</id>
+      <content>Classe         GUIResocontoPrenotazioni   Data: 16/09/2003
+                                               Versione: 0.01.000
+Descrizione       Realizza la maschera relativa alla gestione  dei
+                  resoconti   delle  prenotazioni  effettuate   in
+                  ambulatorio.
+Attributi
+      Nome        Accesso                Descrizione
+panelParametri    Privato  Pannello  contenente tutti i  parametri
+                           necessari  per impostare i  criteri  di
+                           creazione    dei    resoconti     delle
+                           prenotazioni.
+Metodi
+    Firma     resocontoPrenotazioni()         Accesso   Pubblico
+ Descrizione  Si   occupa   di   reperire  tutte  le  informazioni
+              necessarie  per  la  generazione  del  resoconto  in
+              osservanza dei criteri specificati.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>129</id>
+      <content>Classe           GUIPianiPrenotazioni      Data: 16/09/2003
+                                                Versione: 0.01.000
+Descrizione       Ha   il  compito  di  visualizzare  la  maschera
+                  relativa   alla   gestione   dei   piani   delle
+                  prenotazioni effettuate in ambulatorio.
+Attributi
+      Nome        Accesso                Descrizione
+btnUscita         Privato  Pulsante   che  consente  di  ritornare
+                           alla    maschera    rappresentata    da
+                           GUIPrincipale.
+panelParametri    Privato  Pannello  contenente tutti i  parametri
+                           necessari  per impostare i  criteri  di
+                           creazione dei piani di prenotazioni.
+Metodi
+      Firma       pianiPrenotazioni()       Accesso    Pubblico
+   Descrizione    Si  occupa  di  reperire tutte  le  informazioni
+                  necessarie  per  la  generazione  del  piano  di
+                  prenotazione   in   osservanza    dei    criteri
+                  specificati.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>130</id>
+      <content>Classe               GUITempiMedi          Data: 16/09/2003
+                                                Versione: 0.01.000
+Descrizione      Ha   il   compito  di  visualizzare  la  maschera
+                 relativa  al  calcolo  dei tempi  medi  che  sono
+                 occorsi    per    servire   una   richiesta    di
+                 prenotazione.
+Attributi
+      Nome        Accesso                Descrizione
+btnUscita         Privato   Pulsante che consente di ritornare
+                            alla maschera rappresentata da
+                            GUIPrincipale.
+graphRisultati    Privato   Grafico che indica il tempo medio che
+                            Š occorso per servire una richiesta di
+                            prenotazione.
+panelRisultati    Privato   Pannello contenente i risultati
+                            (numerici) ottenuti dal calcolo dei
+                            tempi medi per servire le richieste di
+                            prenotazioni.
+Metodi
+      Firma       tempiMedi()                   Accesso  Pubblico
+   Descrizione    Si  occupa  di  reperire tutte  le  informazioni
+                  necessarie  per  il calcolo dei  tempi  medi  di
+                  attesa.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>131</id>
+      <content>Classe               GUIManagement       Data: 16/09/2003
+                                                Versione: 0.01.000
+Descrizione           Ha  il  compito di visualizzare la  maschera
+                      relativa  alla gestione delle  funzioni  per
+                      effettuare  un  monitoraggio delle  attivit…
+                      ambulatoriali.
+Attributi
+        Nome          Accesso              Descrizione
+btnPianiPrenotazioni  Privato  Pulsante   che  consente  l'accesso
+                               alla   maschera   implementata   da
+                               GUIPianiPrenotazioni.
+Attributi
+btnResocontoEsami      Privato  Pulsante  che  consente  l'accesso
+                                alla   maschera  implementata   da
+                                GUIResocontoEsami.
+btnResocontoMedicina   Privato  Pulsante  che  consente  l'accesso
+li                              alla   maschera  implementata   da
+                                GUIResocontoMedicinali.
+btnResocontoPrenotaz   Privato  Pulsante  che  consente  l'accesso
+ioni                            alla   maschera  implementata   da
+                                GUIResocontoPrenotazioni.
+btnResocontoVisite     Privato  Pulsante  che  consente  l'accesso
+                                alla   maschera  implementata   da
+                                GUIResocontoVisite.
+btnTempiMedi           Privato  Pulsante  che  consente  l'accesso
+                                alla   maschera  implementata   da
+                                GUITempiMedi.
+Metodi
+      Firma       resocontoVisite()            Accesso   Pubblico
+   Descrizione    Ha  il  compito di richiamare la classe  handler
+                  associata   alla   maschera   implementata    da
+                  GUIResocontoVisite.
+      Firma       resocontoEsami ()            Accesso   Pubblico
+   Descrizione    Ha  il  compito di richiamare la classe  handler
+                  associata   alla   maschera   implementata    da
+                  GUIResocontoEsami.
+      Firma       resocontoPrenotazioni ()     Accesso   Pubblico
+   Descrizione    Ha  il  compito di richiamare la classe  handler
+                  associata   alla   maschera   implementata    da
+                  GUIResocontoPrenotazioni.
+      Firma       tempiMedi()                  Accesso   Pubblico
+   Descrizione    Ha  il  compito di richiamare la classe  handler
+                  associata   alla   maschera   implementata    da
+                  GUITempiMedi.
+      Firma       pianiPrenotazioni()          Accesso   Pubblico
+   Descrizione    Ha  il  compito di richiamare la classe  handler
+                  associata   alla   maschera   implementata    da
+                  GUIPianiPrenotazioni.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>132</id>
+      <content>Classe            GUILoginPaziente       Data: 19/09/03
+                                              Versione: 0.01.000
+Descrizione       Realizza  la maschera che gestisce l'accesso  da
+                  parte dell'operato-re alla sezione Paziente.
+Attributi
+      Nome        Accesso                Descrizione
+btnValida         Privato  Pulsante  che  avvia  la  procedura   di
+                          accesso alla sezione Paziente.
+btnAnnulla        Privato  Pulsante  che  consente di uscire  dalla
+                          maschera di  login.
+editCodiceHC      Privato  Casella di testo utilizzata per
+                          permettere all'operato-re di inserire
+                          il codice dell'Hospital Card del
+                          Paziente.
+editCodoceFiscal  Privato  Casella di testo utilizzata per
+e                          permettere all'operato-re di inserire
+                          il codice fiscale del Paziente.
+Metodi
+      Firma       showLoginError()              Accesso  Pubblico
+   Descrizione    Visualizza  un messaggio di errore nel  caso  in
+                  cui   la   procedura  di  accesso  alla  sezione
+                  Paziente fallisce.
+      Firma       login()                       Accesso  Pubblico
+   Descrizione    Gestisce l'evento generato quando l'Operatore
+                  inserisce il codice dell'hospital card o il
+                  codice fiscale del Paziente ed esegue la
+                  procedura di validazione.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>133</id>
+      <content>Classe               GUIPaziente          Data: 16/09/2003
+                                               Versione: 0.01.000
+Descrizione       Realizza  la  maschera  relativa  alla  gestione
+                  delle    richieste   effettuate   dal   Paziente
+                  all'Operatore.
+Attributi
+      Nome          Accesso               Descrizione
+btnAnnullaPrenot    Privato   Pulsante che consente di avviare  la
+azione                        procedura  di  eliminazione  di  una
+                              procedura
+btnModificaDatiP    Privato   Pulsante che consente di avviare  la
+aziente                       procedura  di  modifica   dei   dati
+                              anagrafici del Paziente.
+btnModificaPreno    Privato   Pulsante che consente di avviare  la
+tazione                       procedura   di   modifica   di   una
+                              prenotazione.
+btnPrenotaVisita    Privato   Pulsante che consente di avviare  la
+                              procedura  di  prenotazione  di  una
+                              visita.
+Metodi
+      Firma       show()                        Accesso  Pubblico
+   Descrizione    Visualizza la maschera.
+      Firma       abilitaAccesso()        Accesso     Pubblico
+   Descrizione    Gestisce  l'evento generato quando la  procedura
+                  di validazione va a buon fine.
+      Firma       eliminaPrenotazione()   Accesso     Pubblico
+   Descrizione    Ha  il  compito  richiamare  la  classe  handler
+                  associata   alla   maschera   rappresentata   da
+                  GUIEliminaPrenotazuione e avviare  la  procedura
+                  di eliminazione di una prenotazione.
+      Firma       modificaAnagrafica()    Accesso     Pubblico
+   Descrizione    Ha  il  compito di richiamare la classe  handler
+                  associata   alla   maschera   rappresentata   da
+                  GUIAnagraficaPaziente e avviare la procedura  di
+                  modifica dei dati anagrafici del Paziente..
+      Firma       modificaPrenotazione()  Accesso     Pubblico
+   Descrizione    Ha  il  compito di richiamare la classe  handler
+                  associata   alla   maschera   rappresentata   da
+                  GUIAnagraficaPaziente ed avviare la procedura di
+                  modifica dei dati relativi ad una prenotazione.
+      Firma       prenotaVisita()         Accesso     Pubblico
+   Descrizione    Ha  il  compito di richiamare la classe  handler
+                  associata   alla   maschera   rappresentata   da
+                  GUIPrenotaVisita  ed  avviare  la  procedura  di
+                  prenotazione di una visita.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>134</id>
+      <content>Classe             GUIPrenotaVisita       Data: 16/09/2003
+                                               Versione: 0.01.000
+Descrizione       Realizza  la  maschera  relativa  alla  gestione
+                  della prenotazione di una visita.
+Attributi
+      Nome        Accesso                Descrizione
+btnAnnulla        Privato  Pulsante   che  consente  di  ritornare
+                           alla    maschera    implementata     da
+                           GUIPaziente.
+btnConfermaTipo   Privato  Pulsante che consente di confermare  il
+                           tipo di visita da prenotare.
+btnPrenota        Privato  Pulsante che consente di confermare  la
+                           prenotazione.
+panelDataVisita   Privato  Pannello   contenente  la  data   della
+                           visita proposta dal sistema.
+panelDati         Privato  Pannello  contenente i  dati  necessari
+                           per effettuare una prenotazione
+panelTipoVisita   Privato  Pannello  contenente  i  vari  tipi  di
+                           visita che possono essere prenotati.
+Metodi
+      Firma       notificaSuccesso()  Accesso       Pubblico
+   Descrizione    Ha   il   compito  di  notificare  il   successo
+                  dell'operazione.
+      Firma       show()             Accesso        Pubblico
+   Descrizione    Visualizza la maschera.
+      Firma       visualizzaDataVisi Accesso        Pubblico
+                  ta()
+   Descrizione    Visualizza la data proposta dal sistema.
+      Firma       visualizzaDatiVisi Accesso        Pubblico
+                  ta ()
+   Descrizione    Visualizza i dati relativi ad una prenotazione.
+      Firma       eliminaPrenotazione()         Accesso  Pubblico
+   Descrizione    Gestisce l'evento generato quando l'Operatore
+                  seleziona una prenotazione ed avvia la procedura
+                  di eliminazione.
+      Firma       modificaPrenotazione()        Accesso  Pubblico
+   Descrizione    Gestisce  l'evento  generato quando  l'Operatore
+                  seleziona una prenotazione ed avvia la procedura
+                  di modifica.
+      Firma       prenotaVisita()               Accesso  Pubblico
+   Descrizione    Gestisce  l'evento  generato quando  l'Operatore
+                  seleziona  ed avvia la procedura di prenotazione
+                  di una nuova visita.
+      Firma       primaVisita()                 Accesso  Pubblico
+   Descrizione    Gestisce  l'evento  generato quando  l'Operatore
+                  seleziona una prenotazione ed avvia la procedura
+                  di prenotazione di una prima visita.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>135</id>
+      <content>Classe         GUISelezionaPrenotazione  Data: 16/09/2003
+                                                Versione: 0.01.000
+Descrizione          Realizza    la   maschera   per    permettere
+                     all'Operatore di selezionare una  determinata
+                     prenotazione.
+Attributi
+        Nome          Accesso              Descrizione
+btnSelezionaPrenota   Privato  Pulsante che consente di confermare
+zioni                          la selezione della prenotazione
+                               fatta nell'elenco.
+Metodi
+    Firma      selezionaPrenotazioni()          Accesso  Pubblico
+ Descrizione   Si  occupa del reperimento di tutte le informazioni
+               necessarie     per     la     realizzazione      di
+               GUISelezionaPrenotazioni.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>136</id>
+      <content>Classe            GUIAnagraficaPaziente        Data:
+                                                   16/09/2003
+                                                   Versione:
+                                                   0.01.000
+Descrizione     Realizza  la  maschera utilizzata per la  gestione
+                dei dati anagrafici di un Paziente.
+Attributi
+     Nome       Accesso                 Descrizione
+btnAnnulla      Privato  Pulsante  che consente di ritornare  alla
+                         maschera implementata da GUIPaziente.
+btnSalva        Privato  Pulsante   che  consente  di   confermare
+                         l'operazio-ne effettuata.
+panelDati       Privato  Pannello contenente i dati necessari  per
+                         l'inseri-mento  e  la modifica  dei  dati
+                         di un Paziente.
+Metodi
+     Firma      notificaSuccesso()               Accesso  Pubblic
+                                                             o
+  Descrizione   Ha   il   compito   di  notificare   il   successo
+                dell'operazione.
+     Firma      show()                            Accesso  Pubblic
+                                                              o
+  Descrizione   Visualizza la maschera.
+     Firma      visualizzaDatiPaziente()          Accesso  Pubblic
+                                                              o
+  Descrizione   Visualizza i dati del Paziente.
+      Firma       editPaziente()                  Accesso  Pubblic
+                                                              o
+   Descrizione    Ha   il  compito  di  reperire  le  informazioni
+                  necessarie per la modifica di un Paziente.
+      Firma       newPaziente ()                 Accesso  Pubblic
+                                                             o
+   Descrizione    Ha   il  compito  di  avviare  la  procedura  di
+                  inserimento di un nuovo Paziente.
+      Firma       savePaziente ()                Accesso  Pubblic
+                                                             o
+   Descrizione    Ha   il  compito  di  avviare  la  procedura  di
+                  salvataggio dei dati di un nuovo Paziente.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>137</id>
+      <content>Classe              GUIHospitalCard         Data:
+                                                  16/09/2003
+                                                  Versione:
+                                                  0.01.000
+Descrizione        Realizza   la   maschera  utilizzata   per   la
+                   visualizzazione  dell'Hospi-tal  Card   di   un
+                   Paziente appena registrato.
+Attributi
+       Nome          Accesso               Descrizione
+.                       .      .
+Metodi
+      Firma        visualizzaHospitalCard()      Accesso  Pubblico
+   Descrizione     Visualizzare i dati della Hospital Card.
+      Firma        stampaHC ()                    Accesso Pubblico
+   Descrizione     Ha  il  compito  di  reperire  i  dati  per  la
+                   visualizzazione dei dati dell'Hospital Card.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>138</id>
+      <content>Classe           GUIEliminaPrenotazione     Data: 16/09/2003
+                                                  Versione:
+                                                  0.01.000
+Descrizione        Realizza   la   maschera  utilizzata   per   la
+                   gestione     dell'annulla-mento     di      una
+                   prenotazione.
+Attributi
+       Nome          Accesso               Descrizione
+btnAnnulla           Privato   Pulsante utilizzato per annullare
+                               l'eliminazione di una visita.
+gridElencoPrenotaz   Privato   Elenco contenente tutte le
+ioni                           prenotazioni attive effettuate da
+                               un Paziente.
+Metodi
+      Firma        VisualizzaElencoPrenotazioni  Accesso  Pubblico
+                   ()
+   Descrizione     Visualizzare    l'elenco   delle   prenotazioni
+                   effettuate dal Paziente.
+      Firma       eliminaPrenotazione()         Accesso   Pubblico
+   Descrizione    Ha   il  compito  di  reperire  le  informazioni
+                  necessarie     per    la    realizzazione     di
+                  GUIEliminaPrenotazione.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>139</id>
+      <content>Classe            GUIElencoPrenotazioni      Data: 19/09/03
+                                                  Versione:
+                                                  0.01.000
+Descrizione       Classe  astratta utilizzate per  la  definizione
+                  delle     classi    GUIEliminaPrenotazione     e
+                  GUISelezionaPrenotazione.
+Attributi
+      Nome         Accesso                Descrizione
+btnAnnulla         Privato   Pulsante  che  consente di  annullare
+                             l'operazione in corso.
+gridPrenotazioni   Privato   Griglia  contenente  l'elenco   delle
+                             prenotazioni  ancora  attive  fissate
+                             dal Paziente.
+Metodi
+      Firma       notificaSuccesso()           Accesso   Pubblico
+   Descrizione    Ha   il   compito  di  notificare  il   successo
+                  dell'operazione.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>140</id>
+      <content>Classe                  GUIVisita            Data:
+                                                  16/09/2003
+                                                  Versione:
+                                                  0.01.000
+Descrizione       Realizza  la maschera utilizzata per la gestione
+                  delle      visite     effettuate     all'interno
+                  dell'ambulatorio.
+Attributi
+      Nome         Accesso               Descrizione
+btnDelete          Privato  Pulsante  che consente di  avviare  la
+                            procedura  di  eliminazione   di   una
+                            visita.
+btnEdit            Privato  Pulsante  che consente di  avviare  la
+                            procedura di modifica di una visita.
+btnNew             Privato  Pulsante  che consente di  avviare  la
+                            procedura di inserimento di una  nuova
+                            visita.
+btnSave            Privato  Pulsante  che consente di  avviare  la
+                            procedura di salvataggio di una visita
+                            appena modificata o inserita.
+btnUndo            Privato  Pulsante  che  consente  di  annullare
+                            l'ultima operazione eseguita.
+Metodi
+      Firma       notificaSuccesso()            Accesso   Pubblico
+   Descrizione    Ha   il   compito  di  notificare  il   successo
+                  dell'operazione.
+      Firma       visualizzaElencoVisite()      Accesso  Pubblico
+   Descrizione    Ha  il  compito  di visualizzare l'elenco  delle
+                  visite.
+      Firma       esami()                        Accesso  Pubblico
+   Descrizione    Ha  il  compito  di  gestire  l'evento  generato
+                  quando    l'Operatore   seleziona   una   visita
+                  dall'elenco e richiede di accedere alla  sezione
+                  che   visualizza  gli  esami  afferenti  a  tale
+                  visita.
+      Firma       visita()                      Accesso  Pubblico
+   Descrizione    Ha   il  compito  di  reperire  le  informazioni
+                  necessarie per la realizzazione di GUIVisita.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>141</id>
+      <content>Classe                  GUIEsame            Data: 16/09/2003
+                                                 Versione:
+                                                 0.01.000
+Descrizione       Realizza la maschera relativa utilizzata per  la
+                  gestione   degli   esami   afferenti   ad    una
+                  particolare visita.
+Attributi
+      Nome         Accesso               Descrizione
+btnDelete          Privato  Pulsante  che consente di  avviare  la
+                            procedura  di  eliminazione   di   una
+                            esame.
+btnEdit            Privato  Pulsante  che consente di  avviare  la
+                            procedura di modifica di una esame.
+btnNew             Privato  Pulsante  che consente di  avviare  la
+                            procedura di inserimento di una  nuova
+                            esame.
+btnSave            Privato  Pulsante  che consente di  avviare  la
+                            procedura di salvataggio di una  esame
+                            appena modificata o inserita.
+btnUndo            Privato  Pulsante  che  consente  di  annullare
+                            l'ultima operazione eseguita.
+Metodi
+      Firma       notificaSuccesso()           Accesso   Pubblico
+   Descrizione    Ha  il  compito  di notificare  il  successo  di
+                  un'operazione   di   inserimento,   modifica   o
+                  eliminazione di un un'esame.
+      Firma       visualizzaDatiEsame()        Accesso   Pubblico
+   Descrizione    Ha il compito di visualizzare i dati relativi ad
+                  un esame.
+      Firma       visualizzaElencoEsami()      Accesso   Pubblico
+   Descrizione    Ha  il  compito  di visualizzare l'elenco  degli
+                  esami di una visita.
+      Firma       esami()                      Accesso   Pubblico
+   Descrizione    Ha   il  compito  di  reperire  le  informazioni
+                  necessarie per la realizzazione di GUIEsame.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>142</id>
+      <content>Classe              OperatoreManager         Data:
+                                                  16/09/2003
+                                                  Versione:
+                                                  0.01.000
+Descrizione       Ha  il  compito gestire le operazioni di accesso
+                  al  sistema software Easy Clinc 2003 - Operatore
+                  da parte dell'Operatore.
+Attributi
+      Nome         Accesso               Descrizione
+.                     .     .
+Metodi
+      Firma       Login()                      Accesso   Pubblico
+   Descrizione    Ha  il  compito di gestire l'operazione di login
+                  dell'Operatore.
+      Firma       logout()                     Accesso   Pubblico
+   Descrizione    Ha  il compito di gestire l'operazione di logout
+                  dell'Operatore.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>143</id>
+      <content>Classe                 PrintManager           Data:
+                                                   16/09/2003
+                                                   Versione:
+                                                   0.01.000
+Descrizione       Ha  il  compito gestire le operazioni di  stampa
+                  messe a disposizione dell'Operatore.
+Attributi
+      Nome          Accesso               Descrizione
+.                      .      .
+Metodi
+      Firma       stampaHospitalCard()          Accesso  Pubblico
+   Descrizione    Ha il compito di provvedere al reperimento delle
+                  informazioni  necessarie  per  la  stampa  della
+                  hospital card.
+      Firma       stampaPianoSettimanale()      Accesso   Pubblico
+   Descrizione    Ha il compito di provvedere al reperimento delle
+                  informazioni necessarie per la stampa del  piano
+                  di prenotazioni settimanale in forma tabellare.
+      Firma       stampaResocontoEsami()        Accesso   Pubblico
+   Descrizione    Ha il compito di provvedere al reperimento delle
+                  informazioni  necessarie  per  la   stampa   dei
+                  resoconti   degli  esami  che   l'Operatore   ha
+                  richiesto.
+      Firma       stampaResocontoPrenotazioni(  Accesso   Pubblico
+                  )
+   Descrizione    Ha il compito di provvedere al reperimento delle
+                  informazioni  necessarie  per  la   stampa   dei
+                  resoconti delle prenotazioni che l'Operatore  ha
+                  richiesto.
+      Firma       stampaResocontoVisite()       Accesso   Pubblico
+   Descrizione    Ha il compito di provvedere al reperimento delle
+                  informazioni  necessarie  per  la   stampa   dei
+                  resoconti   delle  visite  che  l'Operatore   ha
+                  richiesto.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>144</id>
+      <content>Classe             HospitalCardManager        Data:
+                                                   16/09/2003
+                                                   Versione:
+                                                   0.01.000
+Descrizione       Ha   il   compito  gestire  le  operazioni   che
+                  richiedono    l'accesso   ai    dati    relativi
+                  all'hospital card.
+Attributi
+      Nome          Accesso               Descrizione
+.                      .      .
+Metodi
+      Firma       assegnaHC()                   Accesso  Pubblico
+   Descrizione    Ha  il compito di assegnare la hospital card  al
+                  Paziente.
+      Firma       getHospitalCard()             Accesso  Pubblico
+   Descrizione    Restituisce  i  dati  della  hospital  card  del
+                  Paziente.
+      Firma       login()                       Accesso  Pubblico
+   Descrizione    Ha   il  compito,  attraverso  il  codice  della
+                  hospital  card  ed il codice PIN, di  verificare
+                  che  il  Paziente  sia presente all'interno  del
+                  S.I.O.
+      Firma       saveHC()                      Accesso  Pubblico
+   Descrizione    Memorizza  in  maniera permanente i  dati  della
+                  hospital card.
+      Firma       validaPaziente()              Accesso  Pubblico
+   Descrizione    Ha   il  compito,  attraverso  il  codice  della
+                  hospital card, di verificare che il Paziente sia
+                  presente all'interno del S.I.O.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>145</id>
+      <content>Classe               PazienteManager          Data:
+                                                   14/09/2003
+                                                   Versione:
+                                                   0.01.000
+Descrizione       Ha   il   compito  gestire  le  operazioni   che
+                  richiedono  l'accesso  ai  dati  anagrafici  dei
+                  pazienti.
+Attributi
+      Nome          Accesso               Descrizione
+.                      .      .
+Metodi
+      Firma       editPaziente()                Accesso  Pubblico
+   Descrizione    Gestisce l'aggiornamento dei dati anagrafici  di
+                  un Paziente.
+      Firma       findPaziente ()               Accesso  Pubblico
+   Descrizione    Verifica  la presenza di un determinato Paziente
+                  all'interno del S.I.O.
+      Firma       getDatiPaziente ()            Accesso  Pubblico
+   Descrizione    Ha  il compito di reperire tutte le informazione
+                  relative  ai  dati anagrafici di un  determinato
+                  Paziente.
+      Firma       newPaziente ()                Accesso  Pubblico
+   Descrizione    Ha il compito di creare un nuovo Paziente</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>146</id>
+      <content>Classe                MediciManager           Data:
+                                                   16/09/2003
+                                                   Versione:
+                                                   0.01.000
+Descrizione       Ha   il   compito  gestire  le  operazioni   che
+                  richiedono  l'accesso  ai  dati  anagrafici  dei
+                  medici afferenti all'ambulatorio.
+Attributi
+      Nome          Accesso               Descrizione
+.                      .      .
+Metodi
+      Firma       delMedico()                   Accesso  Pubblico
+   Descrizione    Ha il compito di gestire l'eliminazione dei dati
+                  anagrafici di un medico.
+      Firma       editMedico()                  Accesso  Pubblico
+   Descrizione    Ha  il  compito di gestire la modifica dei  dati
+                  anagrafici di un medico.
+      Firma       getElencoMedici()             Accesso  Pubblico
+   Descrizione    Ha  il compito di reperire i dati anagrafici  di
+                  tutti i medici.
+      Firma       getMedicoAt()                 Accesso  Pubblico
+   Descrizione    Ha  il  compito di reperire l'anagrafica  di  un
+                  medico.
+      Firma       newMedico()                   Accesso  Pubblico
+   Descrizione    Ha  il  compito di gestire l'inserimento  di  un
+                  nuovo medico.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>147</id>
+      <content>Classe              LaboratoriManager         Data:
+                                                   16/09/2003
+                                                   Versione:
+                                                   0.01.000
+Descrizione       Ha   il   compito  gestire  le  operazioni   che
+                  richiedono   l'accesso  ai  dati   relativi   ai
+                  laboratori.
+Attributi
+      Nome          Accesso               Descrizione
+.                      .      .
+Metodi
+      Firma       delLaboratorio()               Accesso  Pubblico
+   Descrizione    Ha  il  compito gestire l'eliminazione dei  dati
+                  relativi ad un laboratorio.
+Metodi
+      Firma       editLaboratorio()             Accesso  Pubblico
+   Descrizione    Ha il compito di gestire la modifica dei dati di
+                  un laboratorio.
+      Firma       getElencoLaboratori()         Accesso  Pubblico
+   Descrizione    Ha  il  compito di reperire l'elenco di tutti  i
+                  laboratori.
+      Firma       getLaboratorioAt()            Accesso  Pubblico
+   Descrizione    Ha  il compito di reperire tutte le informazioni
+                  relative ad un laboratorio.
+      Firma       newLaboratorio()              Accesso  Pubblico
+   Descrizione    Ha  il  compito di gestire l'inserimento  di  un
+                  nuovo laboratorio.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>148</id>
+      <content>Classe             PrenotazioniManager        Data:
+                                                   16/09/2003
+                                                   Versione:
+                                                   0.01.000
+Descrizione       Ha   il   compito  gestire  le  operazioni   che
+                  richiedono  l'accesso  ai  dati  relativi   alle
+                  prenotazioni.
+Attributi
+      Nome           Accesso                Descrizione
+.                       .        .
+Metodi
+      Firma       deletePrenotazione()          Accesso  Pubblico
+   Descrizione    Ha  il  compito  gestire l'eliminazione  di  una
+                  prenotazione.
+      Firma       editPrenotazione()            Accesso  Pubblico
+   Descrizione    Ha il compito di gestire la modifica dei dati di
+                  una prenotazione.
+      Firma       getDataDisponibile()          Accesso  Pubblico
+   Descrizione    Dato  il  tipo di visita calcola la  prima  data
+                  disponibile in cui la visita pu• tenersi.
+      Firma       getPrenotazioneAt()           Accesso  Pubblico
+   Descrizione    Ha  il compito di reperire tutte le informazioni
+                  relative ad una prenotazione.
+      Firma       getPrenotazioniPaziente()     Accesso  Pubblico
+   Descrizione    Ha  il compito di reperire tutte le prenotazioni
+                  di un Paziente.
+      Firma       newPrenotazione()             Accesso  Pubblico
+   Descrizione    Ha  il  compito di gestire l'inserimento di  una
+                  nuova prenotazione.
+      Firma       savePrenotazione()            Accesso  Pubblico
+   Descrizione    Ha   il   compito  di  memorizzare  in   maniera
+                  permanente una prenotazione.
+      Firma       pianoSettimanale()            Accesso  Pubblico
+   Descrizione    Ha  il compito di reperire tutte le informazioni
+                  necessarie  alla  composizione  del   piano   di
+                  prenotazioni settimanale
+      Firma       tempiMediAttesa()             Accesso  Pubblico
+   Descrizione    Ha  il  compito di calcolare il tempo  medio  di
+                  attesa che Š occorso per servire la richiesta di
+                  un servizio ambulatoriale.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>149</id>
+      <content>Classe            CartellaClinicaManager      Data:
+                                                   16/09/2003
+                                                   Versione:
+                                                   0.01.000
+Descrizione       Ha  il  compito di gestire i dati che compongono
+                  la cartella clinica di un Paziente.
+Attributi
+      Nome          Accesso               Descrizione
+.                      .      .
+Metodi
+      Firma       getCartellaClinica()          Accesso  Pubblico
+   Descrizione    Si occupa di reperire tutti i dati relativi alla
+                  cartella clinica di un Paziente.
+      Firma       getDettagli()                 Accesso   Pubblico
+   Descrizione    Provvede  a  caricare tutte i  dettagli  di  una
+                  visita.
+      Firma       getDatiPaziente()             Accesso   Pubblico
+   Descrizione    Ha  il compito di reperire i dati anagrafici del
+                  Paziente.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>150</id>
+      <content>Classe                VisiteManager           Data:
+                                                   16/09/2003
+                                                   Versione:
+                                                   0.01.000
+Descrizione       Ha   il   compito  gestire  le  operazioni   che
+                  richiedono   l'accesso  ai  dati  delle   visite
+                  effettuate in ambulatorio.
+Attributi
+      Nome          Accesso               Descrizione
+.                      .      .
+Metodi
+      Firma       delVisita()                   Accesso  Pubblico
+   Descrizione    Ha  il  compito  gestire l'eliminazione  di  una
+                  visita.
+      Firma       editVisita()                  Accesso  Pubblico
+   Descrizione    Ha il compito di gestire la modifica dei dati di
+                  una visita.
+      Firma       getElencoVisite()             Accesso  Pubblico
+   Descrizione    Provvede al reperimento dell'elenco di tutte  le
+                  visite effettuate.
+      Firma       getVisitaAt()                 Accesso  Pubblico
+   Descrizione    Ha  il compito di reperire tutte le informazioni
+                  relative ad una visita.
+      Firma       newVisita()                   Accesso  Pubblico
+   Descrizione    Ha  il  compito di gestire l'inserimento di  una
+                  nuova visita.
+      Firma       resocontoVisite()             Accesso  Pubblico
+   Descrizione    Ha  il compito di reperire tutte le informazioni
+                  necessarie alla composizione del resoconto delle
+                  visite  effettuate  in  un  dato  intervallo  di
+                  tempo.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>151</id>
+      <content>Classe                   Persona              Data:
+                                                   15/09/2003
+                                                   Versione:
+                                                   0.01.000
+Descrizione       Classe  astratta  utilizzata  per  definire   le
+                  classi Operatore, Medico e Paziente.
+Attributi
+      Nome          Accesso               Descrizione
+CAP                 Privato   Codice di avviamento postale
+codiceFiscale       Privato   Codice fiscale della persona
+cognome             Privato   Cognome della persona
+dataNascita         Privato   Data di nascita della persona
+indirizzo           Privato   Indirizzo della persona
+luogoNascita        Privato   Luogo di nascita della persona
+luogoResidenza      Privato   Luogo di residenza della persona
+nome                Privato   Nome della persona
+note                Privato   Note aggiuntive
+provinciaNascita    Privato   Provincia di nascita della persona
+provinciaResiden    Privato   Provincia di residenza della
+za                            persona
+recapiti            Privato   Recapiti della persona
+sesso               Privato   Sesso della persona
+Metodi
+      Firma       .                             Accesso      .
+   Descrizione    .</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>152</id>
+      <content>Classe                  Operatore             Data: 20/09/03
+                                                   Versione:
+                                                   0.01.000
+Descrizione       Contiene     l'anagrafica    degli     impiegati
+                  dell'ambulatorio.
+Attributi
+      Nome          Accesso               Descrizione
+login               Privato   Login dell'Operatore.
+password            Privato   Password associata alla login.
+Metodi
+      Firma       validaOperatore()             Accesso  Pubblico
+   Descrizione    Si   occupa   della  procedura  di   validazione
+                  dell'Operatore.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>153</id>
+      <content>Classe                    Medico              Data: 20/09/03
+                                                   Versione:
+                                                   0.01.000
+Descrizione       Contiene   l'anagrafica  dei  medici   afferenti
+                  all'ambulatorio.
+Attributi
+      Nome          Accesso               Descrizione
+annoAbilitazione    Privato   Anno   in  cui  il  medico  Š  stato
+                              abilitato    all'eser-cizio    della
+                              professione.
+Metodi
+      Firma       create()                      Accesso  Pubblico
+   Descrizione    Ha il compito di creare un nuovo oggetto di tipo
+                  Medico
+      Firma       delete()                      Accesso  Pubblico
+   Descrizione    Si  occupa  dell'eliminazione  dei  dati  di  un
+                  medico.
+      Firma       getAttributes()               Accesso  Pubblico
+   Descrizione    Si   occupa   del  reperimento  di    tutte   le
+                  informazioni relative ad un medico.
+      Firma       save()                        Accesso  Pubblico
+   Descrizione    Provvede  alla  memorizzazione dei  dati  di  un
+                  medico all'interno del S.I.O.
+      Firma       setAttributes()               Accesso  Pubblico
+   Descrizione    Si occupa di settare gli attributi di un medico.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>154</id>
+      <content>Classe                   Paziente             Data:
+                                                   15/09/2003
+                                                   Versione:
+                                                   0.01.000
+Descrizione       Contiene  l'anagrafica  dei  pazienti  afferenti
+                  all'ambulatorio.
+Attributi
+      Nome          Accesso               Descrizione
+dataRegistrazion    Privato   Data in cui il Paziente ha
+e                             contattato per la prima volta
+                              l'ambulatorio.
+Metodi
+      Firma       create()                      Accesso  Pubblico
+   Descrizione    Ha il compito di creare un nuovo oggetto di tipo
+                  Paziente
+      Firma       getAttributes()               Accesso  Pubblico
+   Descrizione    Si  occupa di reperire tutte le informazioni  ad
+                  relative ad esso.
+      Firma       save()                        Accesso  Pubblico
+   Descrizione    Provvede  alla  memorizzazione dei  dati  di  un
+                  Paziente all'interno del S.I.O.
+      Firma       setAttributes()               Accesso  Pubblico
+   Descrizione    Si   occupa  di  settare  gli  attributi  di  un
+                  Paziente.
+Metodi
+      Firma       validaPaziente()              Accesso  Pubblico
+   Descrizione    Si  occupa  della  procedura di validazione  del
+                  Paziente.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>155</id>
+      <content>Classe                   Visita             Data: 15/09/2003
+                                                 Versione:
+                                                 0.01.000
+Descrizione       Contiene   i  dati  di  una  visita  tenuta   in
+                  ambulatorio.
+Attributi
+      Nome          Accesso               Descrizione
+anamnesi            Privato   Anamnesi fatta dal medico
+data                Privato   Data in cui il Paziente ha
+                              sostenuto la visita
+diagnosi            Privato   Diagnosi fatta dal medico
+motivo              Privato   Motivazione della visita
+rilevazioniStrume   Privato   Rilevazioni strumentali fatte
+ntali                         durante la visita
+terapia             Privato   Terapia prescritta dal medico.
+Metodi
+      Firma       create()                      Accesso  Pubblico
+   Descrizione    Ha il compito di creare un nuovo oggetto di tipo
+                  Visita
+      Firma       delete()                      Accesso  Pubblico
+   Descrizione    Provvede all'eliminazione di una visita.
+      Firma       save()                        Accesso  Pubblico
+   Descrizione    Provvede  alla memorizzazione dei  dati  di  una
+                  visita all'interno del S.I.O.
+      Firma       getAttributes()               Accesso  Pubblico
+   Descrizione    Si  occupa  di  reperire tutte  le  informazioni
+                  relative ad una visita.
+      Firma       setAttributes()               Accesso  Pubblico
+   Descrizione    Si   occupa  di  settare  gli  attributi  di  un
+                  Paziente.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>156</id>
+      <content>Classe                   Esame              Data: 14/09/2003
+                                                 Versione:
+                                                 0.01.000
+Descrizione       Contiene  i  dati  di  un  esame  che  Š   stato
+                  prescritto    in   una   visita   tenutasi    in
+                  ambulatorio.
+Attributi
+      Nome          Accesso               Descrizione
+data                Privato   Data in cui il Paziente ha
+                              effettuato l'esame
+diagnosi            Privato   Diagnosi fatta dal medico.
+risultati           Privato   Risultati dell'esame.
+Metodi
+      Firma       create()                      Accesso  Pubblico
+   Descrizione    Ha il compito di creare un nuovo oggetto di tipo
+                  Esame
+      Firma       delete()                      Accesso  Pubblico
+   Descrizione    Provvede all'eliminazione di un esame.
+      Firma       save()                        Accesso  Pubblico
+   Descrizione    Provvede  alla  memorizzazione dei  dati  di  un
+                  esame all'interno del S.I.O.
+Metodi
+      Firma       getAttributes()               Accesso  Pubblico
+   Descrizione    Si  occupa  di  reperire tutte  le  informazioni
+                  relative ad un esame.
+      Firma       setAttributes()               Accesso  Pubblico
+   Descrizione    Si occupa di settare gli attributi di un esame.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>157</id>
+      <content>Classe                  TipoEsame             Data:
+                                                   15/09/2003
+                                                   Versione:
+                                                   0.01.000
+Descrizione       Contiene  la  descrizione dei  diversi  tipi  di
+                  esami che possono essere effettuati.
+Attributi
+      Nome          Accesso               Descrizione
+descrizione         Privato   Descrizione della tipologia di
+                              esame.
+Metodi
+      Firma       .                             Accesso      .
+   Descrizione    .</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>158</id>
+      <content>Classe                 Laboratorio            Data:
+                                                   15/09/2003
+                                                   Versione:
+                                                   0.01.000
+Descrizione       Contiene  i dati di un laboratorio in  cui  sono
+                  stati   effettuati  gli  esami   prescritti   in
+                  ambulatorio.
+Attributi
+      Nome          Accesso               Descrizione
+CAP                 Privato   Codice avviamento postale
+citt…               Privato   Citt… in cui Š situato il
+                              laboratorio
+indirizzo           Privato   Indirizzo in cui Š situato il
+                              laboratorio
+partitaIva          Privato   Partita Iva del laboratorio
+provincia           Privato   Provincia in cui Š situato il
+                              laboratorio
+ragioneSociale      Privato   Ragiona sociale del laboratorio
+recapiti            Privato   Recapiti del laboratorio.
+Metodi
+      Firma       create()                      Accesso  Pubblico
+   Descrizione    Ha il compito di creare un nuovo oggetto di tipo
+                  Laboratorio.
+      Firma       delete()                      Accesso  Pubblico
+   Descrizione    Provvede  all'eliminazione dei dati relativi  ad
+                  un laboratorio.
+      Firma       save()                        Accesso  Pubblico
+   Descrizione    Provvede  alla memorizzazione dei dati  relativi
+                  ad un laboratorio all'interno del S.I.O.
+Metodi
+      Firma       getAttributes()               Accesso  Pubblico
+   Descrizione    Si   occupa   del  reperimento   di   tutte   le
+                  informazioni relative ad un laboratorio.
+      Firma       setAttributes()               Accesso  Pubblico
+   Descrizione    Si   occupa  di  settare  gli  attributi  di  un
+                  laboratorio.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>159</id>
+      <content>Classe                 Prenotazione           Data:
+                                                   15/09/2003
+                                                   Versione:
+                                                   0.01.000
+Descrizione       Contiene i dati di una prenotazione che Š  stata
+                  effettuata in ambulatorio.
+Attributi
+      Nome          Accesso               Descrizione
+dataRichiesta       Privato   Data in cui Š stata effettuata la
+                              prenotazione.
+dataVisita          Privato   Data in cui si terr… la visita.
+motivo              Privato   Motivazione per cui Š stata
+                              effettuata la richiesta.
+ora                 Privato   Ora in cui si terr… la visita.
+Metodi
+      Firma       create()                      Accesso  Pubblico
+   Descrizione    Ha il compito di creare un nuovo oggetto di tipo
+                  Prenotazione.
+      Firma       delete()                      Accesso  Pubblico
+   Descrizione    Provvede all'eliminazione di una prenotazione.
+      Firma       save()                        Accesso  Pubblico
+   Descrizione    Provvede alla memorizzazione di una prenotazione
+                  all'interno del S.I.O.
+      Firma       getAttributes()               Accesso  Pubblico
+   Descrizione    Si   occupa   del  reperimento   di   tutte   le
+                  informazioni relative ad una prenotazione.
+      Firma       setAttributes()               Accesso  Pubblico
+   Descrizione    Si  occupa  di  settare  gli  attributi  di  una
+                  prenotazione.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>160</id>
+      <content>Classe                  TipoVisita            Data: 20/09/03
+                                                   Versione:
+                                                   0.01.000
+Descrizione       Contiene  la  descrizione dei  diversi  tipi  di
+                  visita   che   possono  essere   effettuate   in
+                  ambulatorio.
+Attributi
+      Nome          Accesso               Descrizione
+codice              Privato   Codice della tipologia di visita
+                              (PV, DH, C).
+descrizione         Privato   Descrizione della tipologia di
+                              visita.
+Metodi
+      Firma       .                             Accesso      .
+   Descrizione    .</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

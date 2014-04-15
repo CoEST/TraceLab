@@ -1,0 +1,45 @@
+Input examination 
+It allows the operator to record 
+                 results of a examination  supported by a 
+                 patient required a visit 
+                 held in outpatient
+                 The Operator's interest to enter 
+                 details of a review supported by a 
+                 Patient 
+The Operator has been recognized by ` 
+                 System (See UcValOp) and the visit to 
+                 refers the examination must be already 
+                 recorded in the S I O 
+The data in the S I O 
+                 not be modified 
+                 Success: The Folder Clinic Patient 
+                 argued that the examination is updated 
+The operator activates the execution of 
+                 input service  of data from an 
+                 examination 
+1 View the mask 
+     to record 
+     of examination 
+2 Input necessary data to
+                                registration 
+                                of examination 
+3 Confirm input
+4 Verify the data inserted
+     by operator
+5 Stores data confirm the elimination 
+6 Notify the operator 
+     that the operation was ` 
+     concluded successfully 
+Invalid data set 
+   4 1 Show an appropriate message 
+   4 2 take back running from 1 step 
+          underpinned the fields of the form with data 
+          inserted by user
+Operator cancels the operation 
+Registration 
+   3 1 ends the use case with failure 
+   4 1 The data required for registration of a 
+          consideration are: the type of examination 
+          information relating to the laboratory where they 
+          made the values of the results and 
+          diagnostic evaluation made by the doctor

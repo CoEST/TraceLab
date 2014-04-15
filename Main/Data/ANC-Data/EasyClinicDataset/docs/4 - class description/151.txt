@@ -1,0 +1,25 @@
+Class Person Date: 
+                                                    15/09/2003 
+                                                    Version: 
+                                                    0 01 000 
+Description abstract class used to define the 
+                   Operator classes and Doctor Patient 
+Attributes 
+       Name Access Description 
+CAP Private Postal Code 
+codiceFiscale Private Company ID of the person 
+Private First name Last name of the person 
+dataNascita Private Date of birth of the person 
+Private Address address of the person 
+luogoNascita Private Place of birth of the person 
+luogoResidenza Private Place of residence of the person 
+Private Name name of the person 
+Private notes Additional Notes 
+Private provinciaNascita Province of birth of the person 
+provinciaResiden private residence of the Province 
+ person 
+Private details of the person Addresses 
+Private sex sex of the person 
+Methods 
+       Signature Access 
+    Description

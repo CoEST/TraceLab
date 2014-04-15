@@ -1,0 +1,59 @@
+Record visit 
+It allows the operator to record a 
+                 visit held in outpatient
+                 The Operator has an interest in a record 
+                 visit held in outpatient
+The Operator has been recognized by ` 
+                 System (See UcValOp) and the Operator has 
+                 received the data of for visit 
+The Clinic of Folder 
+                 Patient who was subjected to `visit 
+                 is not changed 
+                 Success: All information is 
+                 stored in the folder 
+                 Patient Clinic 
+The operator activates the execution of 
+                 registration service of a visit 
+1 View the mask 
+     to record of the visit
+
+2 inputs the neccesary data of
+                                the registration of 
+                                visit 
+3 Confirm input
+4 Verify the data insert
+     by operator
+5 Stores data 
+6 Notify the operator 
+     that the operation was  
+     concluded successfully 
+Input Data about to a new examination 
+   6 1 Inserting new examination 
+              The Operator's interest to input data 
+              an examination of the visit concerned 
+              Inserting examination 
+   6 2 Back on 6 point
+Invalid data set 
+   4 1 Show an appropriate message 
+   4 2 take back running from 1 
+          underpinned the fields of the form with data 
+          insert by user
+Operator cancels the operation 
+Registration 
+   3 1 ends the use case with failure 
+   4 1 The data required for registration of 
+          visit are: the date the name of the doctor who 
+          carried out the survey the reason for the visit 
+          illnesses accused by the patient history 
+          made by medical diagnosis tests 
+          prescribed therapy prescribed (indicating 
+          Medicines and time of recruitment) and 'necessary 
+          Furthermore, the inclusion of possible values 
+          instrumental observations made during the visit 
+          (eg heart beat the pressure 
+          n number of blood found dioptres etc) 
+          For biological testing and / or instrumental is ` 
+          must enter information on the 
+          laboratory that has made them the values of 
+          results of each examination and evaluation 
+          diagnosis made by medical

@@ -1,0 +1,124 @@
+package unisa.gps.etour.bean;
+import java.io. Serializable;
+
+/**
+ *  Bean  Contenente i dati relativi ai  Piatti
+ * 
+ * @author  Martone  Giuseppe
+ * @version  .  �      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I �  University
+ *          of  Salerno
+ */
+
+public class  Bean Piatto implements  Serializable
+{
+	private int id;
+	private  String nome;
+	private double prezzo;
+	private int id Menu;
+	private static final long serial Version U I D = -                    L;
+
+	/**
+	 *  Costruttore parametrizzato
+	 * 
+	 * @param p Id
+	 * @param p Nome
+	 * @param p Prezzo
+	 * @param p Id Menu
+	 */
+	public  Bean Piatto(int p Id,  String p Nome, double p Prezzo, int p Id Menu)
+	{
+		set Id(p Id);
+		set Nome(p Nome);
+		set Prezzo(p Prezzo);
+		set Id Menu(p Id Menu);
+	}
+
+	/**
+	 *  Costruttore  Vuoto
+	 */
+	public  Bean Piatto()
+	{
+
+	}
+
+	/**
+	 *  Restituisce il valore di nome
+	 * 
+	 * @return  Valore di nome.
+	 */
+	public  String get Nome()
+	{
+		return nome;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di nome
+	 * 
+	 * @param p Nome  Nuovo valore di nome.
+	 */
+	public void set Nome( String p Nome)
+	{
+		nome = p Nome;
+	}
+
+	/**
+	 *  Restituisce il valore di prezzo
+	 * 
+	 * @return  Valore di prezzo.
+	 */
+	public double get Prezzo()
+	{
+		return prezzo;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di prezzo
+	 * 
+	 * @param p Prezzo  Nuovo valore di prezzo.
+	 */
+	public void set Prezzo(double p Prezzo)
+	{
+		prezzo = p Prezzo;
+	}
+
+	/**
+	 *  Restituisce il valore di id
+	 * 
+	 * @return  Valore di id.
+	 */
+	public int get Id()
+	{
+		return id;
+	}
+
+	/**
+	 *  Restituisce il valore di id Menu
+	 * 
+	 * @return  Valore di id Menu.
+	 */
+	public int get Id Menu()
+	{
+		return id Menu;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di id
+	 * 
+	 * @param p Id  Nuovo valore di id.
+	 */
+	public void set Id(int p Id)
+	{
+		id = p Id;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di id Menu
+	 * 
+	 * @param p Id Menu  Nuovo valore di id Menu.
+	 */
+	public void set Id Menu(int p Id Menu)
+	{
+		id Menu = p Id Menu;
+	}
+
+}

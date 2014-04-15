@@ -1,0 +1,20 @@
+Login Operator test case by Date: 
+    C06 login registered in S I O 20/06/2003 
+            and password correctly but not 
+            recorded in S I O 
+                                          Version: 
+                                          0 02 000 
+Use Case He performs the functions 
+UcValOpe necessary to authenticate an 
+            Operator 
+High Priority 
+Set up the login Rocolo is `recorded in the SIO 
+            The password is `rocco not registered in 
+            I S O 
+Description test 
+Input Login: Rocolo 
+            Password: rocco 
+The Oracle system does not allow access to 
+            patient 
+Classes cover valid: CE2 
+            Classes invalid: CE10

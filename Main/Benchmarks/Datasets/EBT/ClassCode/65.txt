@@ -1,0 +1,26 @@
+           About Dialog
+           "public About  Dialog  (  JFrame parent   boolean modal  ) {
+              
+               super ( parent   modal  );
+               
+                 get  Content  Pane (). set  Layout ( new Border  Layout ());
+                 set  Title (""  About  "");
+                 set  Name ("" about  Dialog  "");
+                 
+                 add  Window  Listener ( new Window  Adapter () {
+                   public void window  Closing (  Window  Event evt  ) {
+                      set  Visible ( false  );
+                 dispose ();
+                   }
+                 } );
+          
+            text = new JText  Area  ();
+            text  . append  (""  Notification Processing Application  \ r  \ n  "");
+            text  . append  (""  Version 1  .  0  \ r  \ n  "");
+            text  . append  (""  Author  : Fuhu Liu  \ r  \ n  "");
+            text  . set  Editable  ( false  );
+            get  Content  Pane  (). add  ( text  ""  Center  "");
+               
+               pack  ();
+             }"
+           private JText  Area text  ;

@@ -1,0 +1,57 @@
+UC1	
+Name: Deactivate System	
+ID: UC1
+Event: Administrator brings IP Phone system offline
+System: Phone System
+Actors: Administrator (Initiator)
+Overview: Description of internal behavior when an administrator brings the IP Phone system offline.
+Preconditions: Server is started~
+UC2	
+Name: Initialize System	
+ID: UC2
+Event: Administrator turns on and initializes IP Phone system
+System: Phone System
+Actors: Administrator (Initiator)
+Overview: Description of internal behavior when an administrator brings IP Phone system online.~
+UC3	
+Name: Make a Call	
+ID: UC3
+Event: User calls another user
+System: Phone System 
+Actors: Caller (initiator) and Callee
+Overview: Description of internal behavior when a user makes a call to another user in the system. ~
+UC4	
+Name: Administrator Login	
+ID: UC4
+Event: Administrator logs into the system console
+System: System Console
+Actors: Administrator (Initiator)
+Overview: Description of internal behavior when an administrator logs into the system console.~
+UC5	
+Name: Administrator Logoff	
+ID: UC5
+Event: Administrator logs out of the system console
+System: System Console
+Actors: Administrator (Initiator)
+Overview: Description of internal behavior when an administrator logs out of the system console.~
+UC6	
+Name: User Account Administration	
+ID: UC6
+Event: Administrator modifies user account settings
+System: System Console
+Actors: Administrator (Initiator)
+Overview: Description of internal behavior when administrator attempts to modify user/ account information~
+UC7	
+Name: Calling Plan Management	
+ID: UC7
+Event: Administrator modifies calling plan settings applicable to all users
+System: System Console
+Actors: Administrator (Initiator)
+Overview: Description of internal behavior when administrator accesses universal billing plan configuration~
+UC8	
+Name: System Configuration	
+ID: UC8
+Event: Administrator modifies system settings
+System: System Console
+Actors: Administrator (Initiator)
+Overview: Description of internal behavior when administrator accesses system configuration~

@@ -1,0 +1,18 @@
+Use case name ATTIVACONVENZIONE 
+Convention active request by a refreshment point. 
+Partecipating 
+Actor initialization Agency Operator 
+Entry 
+Operator conditions • The Agency is in the form of a designated point of rest. 
+
+Flow of events User System 
+1. Enable the activation function of the Convention. 
+2 Load the data request of the Convention from the point of rest and displays the corresponding form. 
+3 Check the data of the agreement and decide for activation. 
+4 Asks for confirmation of the activation. 
+5 Confirm the operation. 
+6. Processing the request. 
+Exit conditions • The system shall notify the activation of the convention. 
+• Interruption of the connection to the server ETOUR. 
+Quality 
+requirements

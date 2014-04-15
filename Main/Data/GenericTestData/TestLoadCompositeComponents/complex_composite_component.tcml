@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CompositeComponentMetadataDefinition xmlVersion="1">
+  <Info>
+    <ID>67b4764b-04c0-4912-9643-a343edcab8c7</ID>
+    <Version />
+    <Label>Complex Composite Component</Label>
+    <Name>Complex Composite Component</Name>
+    <Author />
+    <Description />
+  </Info>
+  <Input />
+  <Output>
+    <OutputItemDefinition Name="test4" Type="System.Int32" />
+  </Output>
+  <Import>
+    <ImportItemDefinition Name="test1" Type="System.Int32" />
+  </Import>
+  <ConfigDefinition>
+    <IsJava>False</IsJava>
+    <ConfigProperties>
+      <PropertyObject>
+        <Version>2</Version>
+        <Name>6d0cf31a-a3b8-4e1e-90bd-164de4bb1a8e:34184e55-c66a-491e-ba41-8aaa2c11ef50:Value</Name>
+        <DisplayName>Composite Component Config 1</DisplayName>
+        <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+        <Visible>True</Visible>
+        <IsEnum>False</IsEnum>
+        <Value IsNull="False">
+          <int>0</int>
+        </Value>
+      </PropertyObject>
+      <PropertyObject>
+        <Version>2</Version>
+        <Name>6d0cf31a-a3b8-4e1e-90bd-164de4bb1a8e:9dc3255b-0daf-447a-921d-ce0039672278:Value</Name>
+        <DisplayName>Composite Component Config 2</DisplayName>
+        <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+        <Visible>False</Visible>
+        <IsEnum>False</IsEnum>
+        <Value IsNull="False">
+          <int>0</int>
+        </Value>
+      </PropertyObject>
+    </ConfigProperties>
+  </ConfigDefinition>
+  <ComponentGraph>
+    <graph>
+      <ExperimentInfo>
+        <Version>1</Version>
+        <Id>17f7d621-2bf4-46ba-be16-e6e82551ee60</Id>
+        <Name>New Experiment</Name>
+        <LayoutName>EfficientSugiyama</LayoutName>
+      </ExperimentInfo>
+      <node id="Start">
+        <SerializedVertexData Version="1" X="200" Y="100">
+          <Metadata type="TraceLab.Core.Components.StartNodeMetadata, TraceLab.Core, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Start" />
+        </SerializedVertexData>
+      </node>
+      <node id="End">
+        <SerializedVertexData Version="1" X="200" Y="200">
+          <Metadata type="TraceLab.Core.Components.EndNodeMetadata, TraceLab.Core, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="End" />
+        </SerializedVertexData>
+      </node>
+      <node id="6d0cf31a-a3b8-4e1e-90bd-164de4bb1a8e">
+        <SerializedVertexData Version="1" X="203" Y="155">
+          <Metadata type="TraceLab.Core.Components.CompositeComponentMetadata, TraceLab.Core, Version=0.1.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Composite Component" ComponentMetadataDefinitionID="364eff30-25e6-4fe9-a6d1-db54fc6d9b0e">
+            <IOSpec Version="1">
+              <Input />
+              <Output>
+                <OutputItem>
+                  <OutputItemDefinition Name="test4" Type="System.Int32" />
+                  <OutputAs>test4</OutputAs>
+                </OutputItem>
+              </Output>
+              <Import>
+                <ImportItem>
+                  <ImportItemDefinition Name="test1" Type="System.Int32" />
+                  <ImportAs>test1</ImportAs>
+                </ImportItem>
+              </Import>
+            </IOSpec>
+            <ConfigWrapper Version="1" IsJava="False">
+              <ConfigValues>
+                <PropertyObject>
+                  <Version>2</Version>
+                  <Name>34184e55-c66a-491e-ba41-8aaa2c11ef50:Value</Name>
+                  <DisplayName>Config 1</DisplayName>
+                  <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+                  <Visible>True</Visible>
+                  <IsEnum>False</IsEnum>
+                  <Value IsNull="False">
+                    <int>0</int>
+                  </Value>
+                </PropertyObject>
+                <PropertyObject>
+                  <Version>2</Version>
+                  <Name>9dc3255b-0daf-447a-921d-ce0039672278:Value</Name>
+                  <DisplayName>Config 2</DisplayName>
+                  <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+                  <Visible>False</Visible>
+                  <IsEnum>False</IsEnum>
+                  <Value IsNull="False">
+                    <int>0</int>
+                  </Value>
+                </PropertyObject>
+              </ConfigValues>
+            </ConfigWrapper>
+          </Metadata>
+        </SerializedVertexData>
+      </node>
+      <edge id="328de43c-4057-4a15-a911-4aee80aa5b07" source="Start" target="6d0cf31a-a3b8-4e1e-90bd-164de4bb1a8e" />
+      <edge id="d752e6a2-9231-4f90-9600-3ca42022719d" source="6d0cf31a-a3b8-4e1e-90bd-164de4bb1a8e" target="End" />
+    </graph>
+  </ComponentGraph>
+</CompositeComponentMetadataDefinition>

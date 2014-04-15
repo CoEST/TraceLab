@@ -1,0 +1,18 @@
+Access section patient performed (by code 
+     tax) 
+     The service was launched following the express request 
+by the actor The Operator logs on to form 
+on the management section of the patient (body 
+of GUILoginPaziente) insert the tax code that Patient 
+has made a request and select the function 
+The validation then passes control to the instance of 
+GUILoginPazienteHandler which delegates to the instance of 
+PazienteManager the task of managing the service this growth 
+deals to validate the data entered by using 
+The body of the patient outcome is the 
+notified backward up to the instance of GUILoginPazienteHandler 
+which requires the application of GUIPazienteHandler to enable 
+access by the Section Patient 
+applicant and that object shall display 
+main form (for instance GUIPaziente) This feature is ` 
+been described by the sequence diagram of Fig 3 13

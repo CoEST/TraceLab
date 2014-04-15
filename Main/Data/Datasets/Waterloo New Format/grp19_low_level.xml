@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp19_low_level</id>
+    <name>Waterloo grp19_low_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp19_low_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>UC1</id>
+      <content>Use Case Number: UC1
+Name: Customer Make Call
+Authors: M1, M2, M3, M4
+Event: Caller picks up the phone and dials a 4-digit number. The phone number is the input.
+System: The phone systems of the caller and callee and the server that processes the connection.
+Actors: Caller, callee
+Overview: This use case captures the process of making a call.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC2</id>
+      <content>Use Case Number: UC2
+Name: Customer Receive Call
+Authors: M1, M2, M3, M4
+Event: Callee picks up the phone when the phone is ringing.
+System: The phone systems of the caller and callee and the server that processes the connection.
+Actors: Caller, callee
+Overview: This use case captures the process of receiving a call.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC3</id>
+      <content>Use Case Number: UC3
+Name: Customer Setup Speed Dial
+Authors: M1, M2, M3, M4
+Event: Customer picks up the phone and dial to setup a number as speed dial
+System: The phone system of the caller and the server that processes the call.
+Actors: Caller
+Overview: This use case captures the process of which a customer wants to set up the certain numbers as speed dial.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC4</id>
+      <content>Use Case Number: UC4
+Name: Administrator Starts, Login, and Shutdown the System Console
+Authors: M1, M2, M3, M4
+Event: Administrator starts the system console, login, and shut down the system console
+System: The system console
+Actors: Administrator
+Overview: This use case captures the process of which administrator starts, login, and shut down the system console user interface.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC5</id>
+      <content>Use Case Number: UC5
+Name: Administrator Managing Customer Accounts
+Authors: M1, M2, M3, M4
+Event: Administrator selects in system console to manage customer accounts
+System: The server and system console
+Actors: Administrator
+Overview: This use case captures the process of which administrator managing customer accounts in the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC6</id>
+      <content>Use Case Number: UC6
+Name: Administrator Setup Call Filter for Customer
+Authors: M1, M2, M3, M4
+Event: Administrator selects in system console to setup call filter for certain customer
+System: System and system console
+Actors: Administrator
+Overview: This use case captures the process of administrator setting up call filter for certain customer</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC7</id>
+      <content>Use Case Number: UC7
+Name: Administrator Change Bill Plan of Customer
+Authors: M1, M2, M3, M4
+Event: Administrator selects in system console to change a customer�s bill plan
+System: The server and system console
+Actors: Administrator
+Overview: This use case captures the process of which administrator changes the bill plan of a customer</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC8</id>
+      <content>Use Case Number: UC8
+Name: Administrator Request Display Customer Bill
+Authors: M1, M2, M3, M4
+Event: Administrator selects in system console to display current bill of customer
+System: The server and system console
+Actors: Administrator
+Overview: This use case captures the process of administrator requesting to display the current bill of particular customer</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC9</id>
+      <content>Use Case Number: UC9
+Name: Administrator Record Customer Bill Payment
+Authors: M1, M2, M3, M4
+Event: Administrator selects in system console to record payment
+System: The server and system console
+Actors: Administrator
+Overview: This use case captures the process of administrator recording a bill payment</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC10</id>
+      <content>Use Case Number: UC10
+Name: Administrator Search Customer Information
+Authors: M1, M2, M3, M4
+Event: Administrator selects search for customer in system console
+System: The server and system console
+Actors: Administrator
+Overview: This use case captures the process of the administrator performing customer searches in the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC11</id>
+      <content>Use Case Number: UC11
+Name: Administrator Managing Billing Plans
+Authors: M1, M2, M3, M4
+Event: Administrator selects in system console to manage billing plans
+System: The server and system console
+Actors: Administrator
+Overview: This use case captures the process of administrator managing the bill plans in the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC12</id>
+      <content>Use Case Number: UC12
+Name: Administrator Managing Phone Hardware/Software
+Authors: M1, M2, M3, M4
+Event: Administrator selects in system console to manage phone hardware/software
+System: The server, system console and phone systems
+Actors: Administrator
+Overview:  This use case captures the process of which administrator managing the hardware and software of the phone subsystems</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC13</id>
+      <content>Use Case Number: UC13
+Name: Administrator Request Display System Status
+Authors: M1, M2, M3, M4
+Event: Administrator selects in system console to request displaying the current system status
+System: The server, system console and phone systems
+Actors: Administrator
+Overview:  This use case captures the process of which administrator requesting to display the current system status</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC14</id>
+      <content>Use Case Number: UC14
+Name: Administrator Change Max System Load
+Authors: M1, M2, M3, M4
+Event: Administrator selects in system console to change maximum number of calls allowed concurrently
+System: The server and system console
+Actors: Administrators
+Overview: This use case captures the process of changing the maximum number of calls allowed concurrently</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC15</id>
+      <content>Use Case Number: UC15
+Name: Administrator Managing System Resources
+Authors: M1, M2, M3, M4
+Event: Administrator selects in system console to manage system resources
+System: The server, system console, and phone subsystem
+Actors: Administrators
+Overview: This use case captures the process of assigning managing system resources</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

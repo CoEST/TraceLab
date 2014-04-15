@@ -1,0 +1,11 @@
+Nome: VisualizzaElencoIndirizzi
+Attori: Amministratore
+Descrizione: Permette di visualizzare l’elenco degli Indirizzi
+Precondizioni:
+•	L’utente è loggato al sistema con il ruolo di Amministratore •	L’utente clicca sul pulsante “Gestione Indirizzi”
+Sequenza degli eventi
+Utente
+Sistema
+1.	Visualizza l’elenco degli indirizzi.
+Postcondizioni:
+•	Il sistema mostra l’elenco degli indirizzi presenti nell’archivio •	Connessione al server SMOS interrotta

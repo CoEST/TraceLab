@@ -1,0 +1,14 @@
+org.mozilla.javascript.ScriptRuntime.setName
+org.mozilla.javascript.ScriptRuntime.propIncrDecr
+org.mozilla.javascript.Decompiler.decompile
+org.mozilla.javascript.Interpreter.bytecodeName
+org.mozilla.javascript.ScriptRuntime.bind
+org.mozilla.javascript.Interpreter.interpretLoop
+org.mozilla.javascript.Parser.assignExpr
+org.mozilla.javascript.Interpreter.visitExpression
+org.mozilla.javascript.TokenStream.getToken
+org.mozilla.javascript.IRFactory.makeReference
+org.mozilla.javascript.IRFactory.createAssignment
+org.mozilla.javascript.ScriptRuntime.callRef
+org.mozilla.javascript.Token.name
+org.mozilla.javascript.TokenStream.readRegExp

@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp34_high_level</id>
+    <name>Waterloo grp34_high_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp34_high_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>F1</id>
+      <content>User dials a number to make a phone call</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F2</id>
+      <content>User picks up the phone to answer phone call</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F3</id>
+      <content>System Console validates�Administrator with a login name and password pair.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F4</id>
+      <content>Administrator adds a user to the System.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F5</id>
+      <content>Administrator removes the IP address and phone number from user account, sets account status as inactive.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F6</id>
+      <content>Administrator sets account status as active.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F7</id>
+      <content>Administrator sets account status as suspended if User account is overdue for 2 weeks or phone has problems and need to be taken out of service.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F8</id>
+      <content>Administrator can add phone number to existing active account without a phone number.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F9</id>
+      <content>Set user account as Ex-Employee</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F10</id>
+      <content>Change user information on the System such as IP address, billing address, billing plans associated with an account, account privilege, etc.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F11</id>
+      <content>Administrator can perform system test to verify functionality of the system. Administrator may request such test at any time.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F12</id>
+      <content>Ping user�s IP address to see if there is proper connection between the System and the user�s phone on a nightly basis.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F13</id>
+      <content>Administrator can perform connectivity between a user and the System.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F14</id>
+      <content>Administrator is able to set a value for the maximum number of calls allowed in the System.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F15</id>
+      <content>The system keep track of the duration of each call, the date and time of the call is made.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F16</id>
+      <content>Print monthly bill for the all users</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F17</id>
+      <content>Administrator is able to view user�s bill for any billing period.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F18</id>
+      <content>Administrator records bill payment made by users.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F19</id>
+      <content>Extra features supported by the System</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F20</id>
+      <content>User add/edit/remove phone numbers they would like to filter by calling Administrator</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F21</id>
+      <content>Two rates:
+1. Office hours
+2. Non-office hours and weekends. Manager account get 50% off from normal employee rates.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F22</id>
+      <content>Allows Administrator to add new calling plan to the System</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F23</id>
+      <content>Administrator can make changes to the existing calling plans.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F24</id>
+      <content>Phone numbers that start with 0 are dedicated to special numbers such as calling admin, voicemail, 911, etc.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F25</id>
+      <content>All phone numbers are 4 digits in length.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N1</id>
+      <content>A user friendly graphical interface to the System Console.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N2</id>
+      <content>System should available at all time. Uptime is critical because user will not be able to make call if System is down.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N3</id>
+      <content>System should be able to expand easily to be able to handle more users and higher connection capacity.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

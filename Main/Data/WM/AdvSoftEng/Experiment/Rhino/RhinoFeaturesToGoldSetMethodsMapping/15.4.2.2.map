@@ -1,0 +1,6 @@
+org.mozilla.javascript.ScriptRuntime.toUint32
+org.mozilla.javascript.NativeArray.iterativeMethod
+org.mozilla.javascript.NativeArray.jsConstructor
+org.mozilla.javascript.NativeArray.execIdCall
+org.mozilla.javascript.NativeArray.getClassName
+org.mozilla.javascript.NativeArray.NativeArray

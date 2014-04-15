@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp32_high_level</id>
+    <name>Waterloo grp32_high_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp32_high_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>F1</id>
+      <content>User sends calls to another user</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F2</id>
+      <content>User receives calls from another user</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F3</id>
+      <content>Administrator needs to log in to use system console</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F4</id>
+      <content>Administrator needs to find an available phone number</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F5</id>
+      <content>System validates input of the administrator</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F6</id>
+      <content>Administrator adds a user to the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F7</id>
+      <content>Administrator finds available IP</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F8</id>
+      <content>Associate a phone number with an IP</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F9</id>
+      <content>Cancel a user�s service</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F10</id>
+      <content>Disassociate an IP and phone number pair, freeing them to use again</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F11</id>
+      <content>Disassociate phone number and IP from a user account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F12</id>
+      <content>A cancelled user�s records must be retained in the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F13</id>
+      <content>Server can display the status of the phones</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F14</id>
+      <content>System has HW tests to run in order to check HW functionality</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F15</id>
+      <content>System alerts administrator if errors are detected</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F16</id>
+      <content>System checks for offline phones and reports to administrator</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F17</id>
+      <content>System checks for SW failure and reports to administrator</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F18</id>
+      <content>System checks for any corrections after failure and re-establishes phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F19</id>
+      <content>System is hung and automatically recovers to a default state after a certain period</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F20</id>
+      <content>Administrator can set the maximum number of concurrent calls</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F21</id>
+      <content>System must track all phone calls</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F22</id>
+      <content>Administrator can display a user�s bill through console</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F23</id>
+      <content>System issues bills at the end of each billing period</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F24</id>
+      <content>Administrator can display a specified user account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F25</id>
+      <content>Administrator can update user account to reflect bill payment</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F26</id>
+      <content>Administrator can suspend the service of a user</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F27</id>
+      <content>Administrator can change the billing rate of billing plans</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F28</id>
+      <content>Administrator can change a specified user account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F29</id>
+      <content>Administrator can change a user�s phone number</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F30</id>
+      <content>Initialize/set up a new phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F31</id>
+      <content>Assign a phone number to a user</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F32</id>
+      <content>Check if the customer exists, based on the phone number</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F33</id>
+      <content>Poll the phone for its status</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F34</id>
+      <content>List system errors &amp; suggestions of which programs to run to fix/evaluate further.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F35</id>
+      <content>Change the start/end time of the discount billing period</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F36</id>
+      <content>Change the length of the billing period</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F37</id>
+      <content>Print a user�s bill upon request</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F38</id>
+      <content>Print a user�s bill when his service is terminated</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F39</id>
+      <content>Announce a hardware failure in a phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F40</id>
+      <content>Modify the status of the phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F41</id>
+      <content>Press a digit on the phone�s keypad</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F42</id>
+      <content>Collect the dialed digits</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F43</id>
+      <content>Validate the phone number belongs to a user</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F44</id>
+      <content>Return the IP address that corresponds to a phone number</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F45</id>
+      <content>Validate that the caller can make outgoing calls, and the number is not blocked</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F46</id>
+      <content>Validate the callee is online to receive a call</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F47</id>
+      <content>Start billing users for their calls</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F48</id>
+      <content>Calculate the amount owing for a bill</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F49</id>
+      <content>Display a user�s bill on the screen</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F50</id>
+      <content>Create a user�s bill at the beginning of a billing period</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F51</id>
+      <content>The caller hears a message saying the number does not exist.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F52</id>
+      <content>Find a user based on user data</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F53</id>
+      <content>Edit a user�s information</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F54</id>
+      <content>Administrator logs out of the console</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F55</id>
+      <content>Change the user�s originator/ receiver privileges</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F56</id>
+      <content>Add a phone number to the disallowed caller�s list</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F57</id>
+      <content>Add a phone number to the special numbers list.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F58</id>
+      <content>Remove a phone number from the special numbers list</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F59</id>
+      <content>The caller picks up the phone and hears a dial tone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F60</id>
+      <content>A user hangs up the phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F61</id>
+      <content>The callee picks up the phone to start a call</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F62</id>
+      <content>A tone is played (dial, playtone, busy signal, etc.)</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F63</id>
+      <content>A beep is heard by the callee while he is on the phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F64</id>
+      <content>The user presses �#� to switch to other line</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F65</id>
+      <content>The caller is forwarded to the callee�s voice mailbox</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F66</id>
+      <content>The caller is forwarded to the callee�s voice mailbox</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F67</id>
+      <content>A greeting message is heard by the caller</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F68</id>
+      <content>The caller can record a message for the callee</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F69</id>
+      <content>The caller cannot leave a message because the mailbox is full</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F70</id>
+      <content>A user can access his voice mailbox by dialing �1000�.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F71</id>
+      <content>A user can delete his message by pressing the �7� button.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F72</id>
+      <content>A user can replay his message by pressing the �3� button.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F73</id>
+      <content>A user must enter a password before having access to his voicemail</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F74</id>
+      <content>That caller can now reach the callee</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F75</id>
+      <content>A user can delete his message by pressing the �9� button.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N1</id>
+      <content>Any function can be access via the menu or a button (instead of command line)</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N2</id>
+      <content>One administrator at a time, with option to extend to multiple administrators</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N3</id>
+      <content>The maximum time it takes for the user to receive either a ring tone or busy signal should be 2 seconds</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N4</id>
+      <content>The maximum time it takes for sound to travel from speaker to receiver should be 500 milliseconds.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N5</id>
+      <content>The maximum time it takes for the caller to hear the dial tone when he picks up the phone should be 500 milliseconds.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N6</id>
+      <content>There must be a way to retrieve lost passwords.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N7</id>
+      <content>The system should be backed up every night during a period where few calls take place</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N8</id>
+      <content>If there is a delay of 5 seconds after a key is pressed and the number is not complete, the call is timed out and a fast busy signal is heard</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N9</id>
+      <content>If the caller hangs up any time during dialing or while in the call, the connection is terminated</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N10</id>
+      <content>The callee is busy</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N11</id>
+      <content>Are performed every ten minutes to ensure system is in functional state</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

@@ -1,0 +1,32 @@
+F1	Users make call~
+F2	Users receive call~
+F3	Administrator login system~
+F4	Administrator logout system~
+F5	Administrator adds a new user account~
+F6	Administrator edits an existing user account~
+F7	Administrator cancel user account~
+F8	Administrator find a phone number when adding a new user account~
+F9	Administrator find an IP when adding a new user account~
+F10	Administrator associates IP and phone number for a new user account~
+F11	Administrator adds/remove a call plan to/from user’s account~
+F12	Administrator adds call plan to system~
+F13	Administrator deletes call plan from system~
+F14	Administrator edits call plan~
+F15	Administrator runs tests for hardware~
+F16	Administrator set max number of connections~
+F17	Administrator adds or deletes anther administrator~
+F18	Administrator removes out of service device and/or add new device~
+F19	Administrator monitors hardware in the system~
+F20	Administrator requests to display hardware information~
+F21	Administrator modify user’s bill~
+F22	Administrator record user’s payment~
+F23	Administrator print user’s bill~
+F24	System automatically record call duration~
+F25	Administrator suspends user account~
+F26	Administrator resumes a user’s service~
+F27	Administrator monitors all calling processes~
+N1	Console receives error messages~
+N2	Console alerts administrator about the error messages~
+N3	System automatically run periodic tests~
+N4	System automatically record duration of each phone call~
+N5	System automatically sends bills to users~

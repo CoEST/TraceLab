@@ -1,0 +1,186 @@
+           Event Model
+           "protected Vector Event  Shapes = new Vector  ();
+              protected Vector Event  Lines = new Vector  ();
+              protected EB Shape ebs   ebs  2  ;
+              protected Event  Line mline  ;
+              protected Color Shape  Color = new Color (  190    190    190  );
+              protected EBT ebt  ;
+              protected int Current  Event  ;
+              protected int ES Cursor  ;
+              protected JPanel Popup  ;
+              private JButton Notify  Button  ;
+              protected int Minimum  No  Rects  ;
+              private boolean Notify  Button  Status  ;
+              public String server  IP = null  ;"
+           "public Event  Model  (  EBT e  )
+              {
+            ebt = e  ;
+            Current  Event = -1  ;
+            Notify  Button = new JButton  (""  Notify  "");
+              set  Layout  ( null  );
+            Notify  Button  . set  Bounds  (  305    265    80    25  );
+            Minimum  No  Rects = 1  ;
+          
+            add  (  Notify  Button  );
+            Notify  Button  . set  Visible  ( false  );
+          
+          
+            Notify  Button  . add  Action  Listener  ( new Action  Listener  ()
+            {
+              public void action  Performed  (  Action  Event e  )
+              {
+               String  Buffer sb = Generate  Event  ();
+               // Create a wrapper around the string event to specify that it is an event
+               String Event  Str = ""  EVENT  |"" + sb  . to  String  ();
+               try
+               {
+                //  HERE WE NEED TO SPECIFY THE eventserver IP ADDRESS
+                System  . out  . println  (""  IP  : "" + ebt  . server  IP  );
+                Socket socket = new Socket  ( ebt  . server  IP    1701  );
+                System  . out  . println  ("" conn IP  : "" + ebt  . server  IP  );
+                Output  Stream os = socket  . get  Output  Stream  ();
+                Output  Stream  Writer osw = new Output  Stream  Writer  ( os  );
+                Print  Writer pw = new Print  Writer  ( osw  );
+                pw  . println  (  Event  Str  );
+                pw  . flush  ();
+                System  . out  . println  (""  Sent message from EVENT MODEL  "" + sb  . to  String  ());
+               }
+               catch (  Exception ex  )
+               {
+                System  . err  . println  ( ex  );
+               }
+          
+               Clear  Data  ();
+               Notify  Button  . set  Visible  ( false  );
+               Notify  Button  Status = false  ;
+               repaint  ();
+              }
+            }); //  End of Notify  Button Action Listener
+           }// end of Event  Model method"
+           "public void get  IP Server  ( String server  IP  )
+           {
+          
+            this  . server  IP = server  IP  ;
+           }"
+           "public void Clear  Vectors  ()
+              {
+            Event  Shapes  . remove  All  Elements  ();
+            Event  Lines  . remove  All  Elements  ();
+              }"
+           "public void draw  Model  ()
+              {
+            repaint  ();
+              }"
+           "public void draw  Model  (  EBShape sh  )
+              {
+            Event  Shapes  . set  Element  At  ( sh   ESCursor  );
+            repaint  ();
+              }"
+           "private void Clear  Data  ()
+              {
+              for ( int i = 0  ; i < Event  Shapes  . size  (); i  ++)
+              {
+              ebs = (  EBShape  )  Event  Shapes  . element  At  ( i  );
+              ebs  .  Update  requirement Info  ("""""""""""");
+             }
+              }"
+           "public void Clicked ( int x   int y  )
+              {
+              int Hit = 0  ;
+              for ( int i = 0  ; i < Event  Shapes  . size  (); i  ++)
+              {
+             ebs = (  EBShape  )  Event  Shapes  . element  At  ( i  );
+          
+                      if (( x >  = ebs  .  Get  X  () && ( x <  = ebs  .  Get  X  () + 130  )) &
+                  ( y >  = ebs  .  Get  Y  () && ( y <  = ebs  .  Get  Y  () + 35  )))
+                  {
+                Hit = 1  ;
+              }
+          
+              if ( Hit == 1 && i < Event  Shapes  . size  ())
+              {
+                  ESCursor = i  ;
+                  ebt  . get  requirement Text  ( ebs  );
+                    break  ;
+              }
+             }
+              }"
+           "public void Check  Notify  Status  ()
+             {
+              //  Check if Minimum Standards have been met  .
+              int j = 0  ;
+              for ( j = 0  ; j < Minimum  No  Rects  ; j  ++)
+              {
+              ebs  2 = (  EBShape  )  Event  Shapes  . element  At  ( j  );
+          
+                   if (((((  EBShape  )  Event  Shapes  . element  At  ( j  )).  Get  Reqno  ()). length  ()) == 0  )
+                   {
+              break  ;
+              }
+              }
+          
+            System  . out  . println  (""  MIN RECTS  : "" + Minimum  No  Rects  );
+          
+              if ( ( j < Minimum  No  Rects  -1  ) )
+              {
+             Notify  Button  Status = false  ;
+             System  . out  . println  (""  Notify Button still OFF  .  j = "" + j  );
+            }
+              else
+              {
+             Notify  Button  Status = true  ;
+             System  . out  . println  (""  Setting Notify Button ON  .  j = "" + j  );
+            }
+              }"
+           protected void Build  Event  (){}
+           "protected void Add  Line  ( int t   int l   int r   int b  )
+              {
+            Event  Lines  . add  Element  ( new Event  Line  ( t   l   r   b  ));
+              }"
+           "protected void Add  Event  Rect  ( int x   int y   int color  Status  )
+              {
+            if ( color  Status == 1  )
+            {
+             Event  Shapes  . add  Element  ( new EBShape  ( x   y   new Color (  100    100    100  )));
+                 }
+                 else
+                 {
+                  Event  Shapes  . add  Element  ( new EBShape  ( x   y   new Color (  255    255    255  )));
+            }
+              }"
+           "public String get  requirement Text  (  String r   String p   String m  )
+              {
+            return new String  (""  requirementwill go here  "");
+           }"
+           "public String  Buffer Generate  Event  ()
+              {
+            return new String  Buffer  ("" "");
+           }// end of Generate  Event method"
+           "protected void paint  Component  (  Graphics g  )
+              {
+                  super  . paint  Component  ( g  );
+              for ( int i = 0  ; i < Event  Shapes  . size  (); i  ++)
+              {
+                        ebs = (  EBShape  )  Event  Shapes  . element  At  ( i  );
+               g  . set  Color  ( ebs  .  Get  C  ());
+                        g  . draw  3DRect  ( ebs  .  Get  X  () ebs  .  Get  Y  ()  170    35   false  );
+               g  . draw  String  ( ebs  .  Get  Reqno  () ebs  .  Get  X  ()+  5   ebs  .  Get  Y  ()+  15  );
+               g  . draw  String  ( ebs  .  Get  Project  () ebs  .  Get  X  ()+  5   ebs  .  Get  Y  ()+  30  );
+          
+                  }
+          
+            g  . set  Color  ( new Color (  155    155    155  ));
+              for ( int i = 0  ; i < Event  Lines  . size  (); i  ++)
+              {
+                   mline = (  Event  Line  )  Event  Lines  . element  At  ( i  );
+                      g  . draw  Line  ( mline  .  Get  T  () mline  .  Get  L  () mline  .  Get  R  () mline  .  Get  B  ());
+          
+                  }
+          
+            g  . set  Color  ( new Color (  50    50    50  ));
+            System  . out  . println  (""  Status of the button is "" + Notify  Button  Status  );
+            if (  Notify  Button  Status == true  )
+             Notify  Button  . set  Visible  ( true  );
+            else
+             Notify  Button  . set  Visible  ( false  );
+            }// end of paint  Component method"

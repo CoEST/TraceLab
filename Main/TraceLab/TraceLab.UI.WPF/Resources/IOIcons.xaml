@@ -1,0 +1,44 @@
+﻿<!--
+TraceLab - Software Traceability Instrument to Facilitate and Empower Traceability Research
+Copyright (C) 2012-2013 CoEST - National Science Foundation MRI-R2 Grant # CNS: 0959924
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see<http://www.gnu.org/licenses/>.
+-->
+
+<ResourceDictionary
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+
+    <DrawingImage x:Key="InputIcon">
+        <DrawingImage.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="SteelBlue" Geometry="F1 M 13.4764,13.6422L 7.22544,13.9514L 5.59789,12.3239L 11.8738,12.0396L 12.1956,5.72618L 13.8231,7.35374L 13.4764,13.6422 Z M 9.67771,9.84349L 3.46738,10.1934L 1.79922,8.5252L 8.10638,8.27217L 8.39691,1.92751L 10.0651,3.59568L 9.67771,9.84349 Z "/>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <DrawingImage x:Key="OutputIcon">
+        <DrawingImage.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="SteelBlue" Geometry="F1 M 3.30927,12.6772L 3,6.42623L 4.62756,4.79867L 4.91183,11.0746L 11.2252,11.3964L 9.59769,13.0239L 3.30927,12.6772 Z M 7.10794,8.87849L 6.75806,2.66817L 8.42623,1L 8.67926,7.30717L 15.0239,7.59769L 13.3558,9.26586L 7.10794,8.87849 Z "/>
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    
+</ResourceDictionary>

@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp08_high_level</id>
+    <name>Waterloo grp08_high_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp08_high_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>F1</id>
+      <content>Interface for Administrator to monitor and control the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F2</id>
+      <content>There is only one Administrator account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F3</id>
+      <content>Administrator logs into the console using a name/password combination.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F4</id>
+      <content>The console should validate the login name/password combination.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F5</id>
+      <content>All console features are accessible by every Administrator.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F6</id>
+      <content>The console is only on the server machine.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F7</id>
+      <content>The system may be extended to handle access by multiple Administrators at the same time.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F8</id>
+      <content>The system should validate all data inputted by Administrators and display errors.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F9</id>
+      <content>The console allows the display of all assigned phone numbers.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F10</id>
+      <content>The console allows the display of all assigned IP addresses.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F11</id>
+      <content>The console allows the Administrator to search for an unassigned phone number.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F12</id>
+      <content>The console allows the association of a phone number with an IP address.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F13</id>
+      <content>The console supports users.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F14</id>
+      <content>The console supports accounts.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F15</id>
+      <content>The console allows the association of a user to an account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F16</id>
+      <content>The console allows the association of an account to a phone number and IP.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F17</id>
+      <content>User and account information is stored indefinitely in the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F18</id>
+      <content>The console supports billing plans.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F19</id>
+      <content>The console displays the status of each phone.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F20</id>
+      <content>The console displays the error log for the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F21</id>
+      <content>The system console must alert the Administrator if there is an error.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F22</id>
+      <content>The console allows the Administrator to conduct tests on the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F23</id>
+      <content>The console allows the Administrator to request tests to be conducted at regular intervals.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F24</id>
+      <content>The console allows Administrators to remove a phone from service.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F25</id>
+      <content>The console allows Administrators to enable a phone.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F26</id>
+      <content>The console allows Administrator to reset the call processing software.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F27</id>
+      <content>The console allows the Administrator to set the maximum number of simultaneous calls.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F28</id>
+      <content>The console displays the system load.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F29</id>
+      <content>The console calculates a suggested maximum number of simultaneous calls.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F30</id>
+      <content>The console displays any user�s bill for any billing period.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F31</id>
+      <content>The console allows the Administrators to enter payment information on an account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F32</id>
+      <content>The console allows the Administrator to generate bills for each account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F33</id>
+      <content>The console displays a list of all overdue accounts.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F34</id>
+      <content>Each user should store name and accounts.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F35</id>
+      <content>Each account should store phone number and billing plan.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F36</id>
+      <content>Phone numbers can be re-used.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F37</id>
+      <content>Each account may possess different call privileges to originate and receive calls in terms of filters.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F38</id>
+      <content>Status checks can be requested for the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F39</id>
+      <content>Error logs are maintained by the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F40</id>
+      <content>Administrator can request hardware test at any time to verify the hardware�s function.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F41</id>
+      <content>Automated hardware tests will be performed regularly.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F42</id>
+      <content>A phone can be set to �out of service� status if there is a hardware problem.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F43</id>
+      <content>A phone can be enabled by administrator if there is a repaired or newly added hardware.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F44</id>
+      <content>The system console must be able to receive error message from the hardware phone.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F45</id>
+      <content>The system supports changes to the maximum number of simultaneous calls in the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F46</id>
+      <content>Callee�s phone displays caller�s number.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F47</id>
+      <content>Off-hook starts dial tone.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F48</id>
+      <content>The input of first digit would stop the dial tone and start dialling process.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F49</id>
+      <content>After the user dials four digits, the server should attempt to establish a connection.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F50</id>
+      <content>Caller hears busy signal when connecting to an off-hook callee.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F51</id>
+      <content>Caller hears busy signal when an invalid number dialled.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F52</id>
+      <content>Caller hears ring tone and callee�s phone rings when connecting to an on-hook callee.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F53</id>
+      <content>Stop connection attempt after 30 seconds had passed.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F54</id>
+      <content>Stop dialing after 20 seconds had passed.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F55</id>
+      <content>Stop dial tone after 20 seconds had passed.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F56</id>
+      <content>Connect caller and callee and establish audio connection after callee off-hook.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F57</id>
+      <content>Call is disconnected after either callee or caller on-hook.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F58</id>
+      <content>Once received a reset signal from the server, the phone must reset itself and return to the initial state of operation.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F59</id>
+      <content>Server maintains a count of the number of simultaneous calls.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F60</id>
+      <content>When the number of simultaneous calls is equal or above the value defined, any connection attempt always produces fast busy tone.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F61</id>
+      <content>Phone numbers contain four digits.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F62</id>
+      <content>Phone numbers are mapped to IP addresses.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F63</id>
+      <content>Billing system must keep a record of every established call on every account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F64</id>
+      <content>Call rate is calculated based on billing plan of account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F65</id>
+      <content>Each billing period is one month.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F66</id>
+      <content>A bill for each account is generated and sent to its user at the end of each billing period.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F67</id>
+      <content>A bill is immediately generated and sent to a user whose account is cancelled.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F68</id>
+      <content>Each bill shows the account history and charges within its billing period.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F69</id>
+      <content>A bill is generated for each account (not user).</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F70</id>
+      <content>There are three types of charges: calls, fines, and taxes</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F71</id>
+      <content>Each call has an associated charge (cost) based on a variety of factors.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F72</id>
+      <content>A 10% compounded interest is charged on overdue accounts.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F73</id>
+      <content>Tax (in percentage) can be applied on taxable charges.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F74</id>
+      <content>Only certain types of charges are taxable.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F75</id>
+      <content>Charge calculation is performed at the end of each call and logged in the call history.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F76</id>
+      <content>A report is generated for the Administrator at the end of each billing period listing all accounts that have not been paid for two months.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F77</id>
+      <content>Billing plan is used to determine call rate at a certain time.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F78</id>
+      <content>Billing plans can be added or modified.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F79</id>
+      <content>Calls started during the discount period are charged a discounted rate.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F80</id>
+      <content>A discount rate allows only a percentage of the regular rate to be charged on calls.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N1</id>
+      <content>The behaviour of the IP phone system should be similar to traditional phones from the perspective of its users.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N2</id>
+      <content>The system should be reliable at all times.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N3</id>
+      <content>Users� personal and billing information should be protected.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N4</id>
+      <content>The system should be able to handle as many simultaneous connections as possible.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N5</id>
+      <content>The system should be user-friendly.  The user and administrator should be able to adapt to the system very easily.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

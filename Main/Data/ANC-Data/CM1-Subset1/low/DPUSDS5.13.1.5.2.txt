@@ -1,0 +1,1 @@
+Ring buffer data structure	The pIn and pOut pointers are defined  as follows:* pIn	- last location filled with data* pOut	- last empty location

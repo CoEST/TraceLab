@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp21_high_level</id>
+    <name>Waterloo grp21_high_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp21_high_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>F1</id>
+      <content>The system will need to keep track of available resources.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F2</id>
+      <content>Check if caller and callee are permitted to make and answer phone calls respectively.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F3</id>
+      <content>Dial tone sent to caller if resources are available to make a phone call.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F4</id>
+      <content>Caller is sent an idle tone while dialing.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F5</id>
+      <content>Phone numbers are four digits long.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F6</id>
+      <content>After picking up the receiver, the caller must finish dialing the phone number before a certain period of time. In addition, the caller has a limited amount of time between dialling successive digits.  Failure to meet the above conditions results in a Dial Timeout, and the caller is sent a fast busy tone.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F7</id>
+      <content>Caller dials a non-existent phone number.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F8</id>
+      <content>If the callee is off-hook, caller is sent a slow busy tone.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F9</id>
+      <content>When caller dials a valid number, caller�s phone is sent a ring tone and callee�s phone rings.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F10</id>
+      <content>The callee must answer within a certain period of time, otherwise the caller is sent a fast busy tone and callee�s phone stops ringing.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F11</id>
+      <content>When a call is terminated from either side, the other user is sent a fast busy tone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F12</id>
+      <content>Allow administrators to login to the System Console using the assigned username and password.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F13</id>
+      <content>Allow current administrators to assign and update administrator privileges.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F14</id>
+      <content>In order to create a user account, an administrator must be able to find an unassigned phone number.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F15</id>
+      <content>In order to create a user account, an administrator must be able to find an unassigned IP address.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F16</id>
+      <content>Allow administrators to create and cancel user accounts (includes assigning a billing plan, updating status of user, call privileges, and account balance, and add/remove IP-phone number mapping).</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F17</id>
+      <content>Administrator must be able to create a new class of service.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F18</id>
+      <content>Administrator must be able to create (incl. assign services) and edit a billing plan.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F19</id>
+      <content>Administrators must be able to view current status of the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F20</id>
+      <content>Administrators must be able to conduct a connectivity test to ensure that a user�s phone is connected to the system at their request</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F21</id>
+      <content>If a new or repaired device is added to the system, the administrator may request to enable the device</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F22</id>
+      <content>Need to disable a phone for repairs or replacement</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F23</id>
+      <content>Allow administrator to reset a particular phone if it is deadlocked.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F24</id>
+      <content>An alert to the administrator via the System Console when there is an error or when returning results of a hardware test.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F25</id>
+      <content>Periodically executing a hardware fault detection test.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F26</id>
+      <content>Administrator should be allowed set a value for the maximum allowable number of calls.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F27</id>
+      <content>Administrators should be allowed to generate and send billing invoices.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F28</id>
+      <content>The system should be able to automatically generate and send billing invoices.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N1</id>
+      <content>Callers and callees should be able to use the system without knowledge of the underlying logic.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N2</id>
+      <content>If a connection is established, the caller will be connected to the expected callee.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N3</id>
+      <content>The conversations over this system are secure, and will not be overheard by any party other than the caller and callee.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N4</id>
+      <content>Failure of a telephone will not affect the remaining phones connected to the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N5</id>
+      <content>Callers should be able to make calls at all times.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N6</id>
+      <content>If the number of users increases, the system will continue to function smoothly in spite of the additional volume.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N7</id>
+      <content>The system will be designed such that it can be easily extended to support new features.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N8</id>
+      <content>Upon lifting the receiver to make a call, the caller will hear a dial tone within a specific period of time.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

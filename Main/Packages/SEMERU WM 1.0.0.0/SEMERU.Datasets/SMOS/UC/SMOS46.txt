@@ -1,0 +1,18 @@
+Nome: InserimentoPagella
+Attori: Amministratore
+Descrizione: Inserimento di una pagella di uno studente eseguito dall’Amministratore
+Precondizioni:
+•	L'utente si è loggato al sistema come Amministratore •	L’utente clicca sul pulsante “Pagelle online”
+Sequenza degli eventi
+Utente
+2. Sceglie la classe dell'alunno di cui inserire la pagella
+4. Seleziona l'alunno a cui inserire la pagella cliccando sul relativo tasto
+6. Inserisce i voti della pagella, tutti o in parte, e clicca sul tasto “salva”
+Sistema
+1. Visualizza l’elenco delle classi presenti nel sistema riferito all’anno accademico in corso con accanto un pulsante “Pagelle” associato ad ogni classe
+3. Visualizza l'elenco degli alunni della classe scelta dall'utente
+5. Visualizza il form per l'inserimento di una pagella
+7. Inserisce i voti inseriti nell'archivio e riporta l'utente alla pagina di visualizzazione degli studenti della classe.
+Postcondizioni:
+• • •
+Nel sistema è stata aggiunta la pagella relativa ad un alunno. L’utente interrompe l’operazione Connessione al server SMOS interrotta

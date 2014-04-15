@@ -1,0 +1,13 @@
+Use case name	CONTROLLA NUMERO BANNER
+Verifica se un punto di ristoro ha inserito il numero massimo di banner ad esso consentiti.
+Partecipating
+Actor	
+Entry
+conditions	•	L’Operatore Agenzia vuole inserire un nuovo banner
+Flow of events 		User	System
+	1.			Carica i dati della convenzione del punto di ristoro e verifica che il numero di banner specificati sia inferiore al numero di banner attuali. Se non è verificata, termina l’operazione di inserimento e visualizza una notifica.
+	2.		Conferma la lettura della notifica.	
+	3.			Recupera lo stato precedente.
+Exit conditions	•	Il sistema restituisce il controllo dell’interazione all’utente.
+•	Interruzione della connessione al server di eTour.
+Quality requirements	

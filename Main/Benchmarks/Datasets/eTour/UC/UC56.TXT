@@ -1,0 +1,14 @@
+Use case name LOCALIZATION 
+Returns the current position of the tourist. 
+Partecipating 
+Actor System initialization 
+Entry 
+conditions • E 'began a search or an advanced search. 
+Flow of events Gps System 
+1. The system requires the data for the position. 
+2 The GPS calculates the position of the tourist. 
+3 The system is on hold until the data of the position. 
+Exit conditions • The system receives the position of the tourist. 
+• The position of the tourist is not detectable by GPS. 
+Quality 
+The GPS requirements into the transaction in more than 5 seconds.

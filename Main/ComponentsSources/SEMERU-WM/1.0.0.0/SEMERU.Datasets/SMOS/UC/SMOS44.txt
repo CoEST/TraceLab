@@ -1,0 +1,12 @@
+Nome: EffettuaMonitoraggioStudenti
+Attori: Amministratore
+Descrizione: Consente di interrogare il sistema circa il numero di assenze e note associate agli studenti
+Precondizioni:
+•	L’utente è loggato al sistema come amministratore •	L’utente clicca sul pulsante “Monitoraggio Studenti”
+Sequenza degli eventi
+Utente
+Sistema
+1. Cerca nell'archivio gli studenti che abbiano, per l'anno scolastico in corso un numero di assenze e note superiori ad una soglia prestabilita.
+2. Visualizza una schermata di presentazione dei dati ottenuti.
+Postcondizioni: :
+•	Sono state le informazioni circa assenze e note degli alunni. •	Connessione al server SMOS interrotta.

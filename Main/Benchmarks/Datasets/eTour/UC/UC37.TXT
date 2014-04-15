@@ -1,0 +1,13 @@
+Use case name LOGOUT 
+Ends the current session. 
+Participating 
+Actor initialization Registered User 
+Entry 
+conditions • A registered user has previously made a successful Login. 
+Flow of events User System 
+1. Access the functionality of disconnection from the system. 
+2 Asks for confirmation of the transaction. 
+3 Confirm the request for disconnection. 
+4 Disconnects the Registered User. 
+Exit conditions • The system shall notify the successful operation logout. 
+Quality requirements

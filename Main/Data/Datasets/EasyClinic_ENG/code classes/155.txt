@@ -1,0 +1,30 @@
+Class Visit Date: 15/09/2003 
+                                                  Version: 
+                                                  0 01 000 
+It contains data description of a visit held in 
+                   outpatient 
+Attributes 
+       Name Access Description 
+History made history private doctor 
+Private Data on where the patient has 
+                               supported the visit 
+Private diagnosis made by medical diagnosis 
+Private reason Grounds visit 
+Private rilevazioniStrume instrumental observations made 
+ntal during the visit 
+Private therapy treatment prescribed by the doctor 
+Methods 
+       Signature create () Public Access 
+    Description Its task is to create a new object of type 
+                   Visit 
+       Signature delete () Public Access 
+    Provides description of a visit to 
+       Signature save () Public Access 
+    Description Provides data storage to a 
+                   visit within the S I O 
+       Signature GetAttributes () Public Access 
+    It description to find all the information 
+                   on a visit 
+       Signature setAttributes () Public Access 
+    It description to set the attributes of a 
+                   Patient

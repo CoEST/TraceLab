@@ -1,0 +1,26 @@
+Class MediciManager Date: 
+                                                    16/09/2003 
+                                                    Version: 
+                                                    0 01 000 
+Description has the task to manage operations 
+                   require access to anagrafica data of 
+                   doctors who are at outpatient
+Attributes 
+       Name Access Description 
+                                
+Methods 
+       Signature delMedico () Public Access 
+    Description Its task is to manage the disposal of data 
+                   details of a doctor 
+       Signature editMedico () Public Access 
+    Description Its task is to manage the change of data 
+                   anagrafica of a doctor 
+       Signature getElencoMedici () Public Access 
+    Description has the task of finding the anagrafica data of 
+                   all doctors 
+       Signature getMedicoAt () Public Access 
+    Description Its task is to raise the anagrafica of a 
+                   doctor 
+       Signature NewMedia () Public Access 
+    Description Its task is to manage the insertion of a 
+                   new doctor

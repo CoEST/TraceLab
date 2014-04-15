@@ -1,0 +1,192 @@
+/**
+ *  Classe di test per la  News Table Model
+ *
+ * @author  Mario  Gallo
+ * @version  . 
+ * 
+ * &#   ;      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I -  University of  Salerno
+ */
+package unisa.gps.etour.gui.operatore agenzia .tables.test;
+
+import java.util. Array List;
+import java.util. Date;
+
+import unisa.gps.etour.bean. Bean News;
+import unisa.gps.etour.gui.operatore agenzia .tables. News Table Model;
+import junit.framework. Test Case;
+
+public class  News Table Model Test extends  Test Case
+{
+
+	private  News Table Model table Model;
+	private  Bean News a News;
+	private  Bean News a News Modificata;
+	
+	public  News Table Model Test( String p Name)
+	{
+		super(p Name);
+		a News = new  Bean News(" Una news di esempio",new  Date(),new  Date(), , );
+		a News Modificata = new  Bean News(" Una news modificata di esempio",new  Date(),new  Date(), , );
+	}
+
+	protected void set Up() throws  Exception
+	{
+		super.set Up();
+		table Model = new  News Table Model();
+	}
+
+	/*
+	 *  Verifica il comportamento del costruttore con un arraylist di  Bean News.
+	 */
+	public void test Costruttore Con Array List()
+	{
+		 Array List< Bean News> test = new  Array List< Bean News>();
+		for (int i =  ; i <   ; i++)
+		{
+			test.add(new  Bean News("un testo" + i, new  Date(),new  Date(), ,i));
+		}
+		table Model = new  News Table Model(test);
+		for (int i =  ; i <   ; i++)
+		{
+			assert Same(test.get(i).get Id(), table Model.get I D(i));
+		}
+		
+	}
+
+	/*
+	 *  Verifica il comporamento del costruttore con un arraylist nullo.
+	 */
+	public void test Costruttore Con Array List Null()
+	{
+		table Model = new  News Table Model(null);
+	}
+	
+	/*
+	 *  Verifica il comportamento del costruttore con un arraylist vuoto.
+	 */
+	public void test Costruttore Con Array List Vuoto()
+	{
+		table Model = new  News Table Model(new  Array List< Bean News>());	
+	}
+	
+	/*
+	 *  Verifica il comportamento del metodo con dei parametri corretti.
+	 */
+	public void test Get Value At Parametri Corretti()
+	{
+		//  Inserisce nel model due bean di test.
+		table Model.insert News(a News);
+		table Model.insert News(a News Modificata);
+		
+		// Verifica i dati inseriti.
+		assert Same(a News.get News(), table Model.get Value At( ,  ));
+		assert Same(a News.get Priorita(), table Model.get Value At( ,  ));
+		assert Same(a News Modificata.get News(), table Model.get Value At( ,  ));
+		assert Same(a News Modificata.get Priorita(), table Model.get Value At( ,  ));	
+	}
+	
+	/*
+	 *  Verifica il comporamento del metodo con un indice di riga sballato.
+	 */
+	public void test Get Value At Riga Sballata()
+	{
+		try
+		{
+			table Model.get Value At(  ,  );
+			fail(" Dovrebbe essere sollevata un'eccezione");
+		}
+		catch ( Illegal Argument Exception success)
+		{
+		}
+	}
+
+	/*
+	 *  Verifica il comporamento del metodo con un indice di colonna sballato.
+	 */
+	public void test Get Value At Colonna Sballata()
+	{
+		try
+		{
+			table Model.get Value At( , -      );
+			fail(" Dovrebbe essere sollevata un'eccezione");
+		}
+		catch ( Illegal Argument Exception success)
+		{
+		}
+	}
+
+	/*
+	 *  Verifica il comporamento del metodo con parametro corretto.
+	 */
+	public void test Insert News Parametro Corretto()
+	{
+		table Model.insert News(a News);
+		assert Same(a News.get Id(),table Model.get I D( ));		
+	}
+	
+	/*
+	 *  Verifica il comporamento del metodo con parametro a null
+	 */
+	public void test Insert News Parametro Null()
+	{
+		try
+		{
+			table Model.insert News(null);
+			fail(" Dovrebbe essere sollevata un'eccezione");
+		}
+		catch ( Illegal Argument Exception success)
+		{
+		}
+	}
+
+	/*
+	 *  Verifica il comporamento del metodo con parametro corretto.
+	 */
+	public void test Update News Parametro Corretto()
+	{
+		table Model.insert News(a News);
+		table Model.update News(a News Modificata);
+		assert Same(a News Modificata.get News(),table Model.get Value At( ,  ));
+		assert Same(a News Modificata.get Priorita(),table Model.get Value At( ,  ));
+		assert Same(a News Modificata.get Id(),table Model.get I D( ));
+	}
+	
+	/*
+	 *  Verifica il comporamento del metodo con parametro a null
+	 */
+	public void test Update News Parametro Null()
+	{
+		
+		try
+		{
+			table Model.update News(null);
+			fail(" Dovrebbe essere sollevata un'eccezione");
+		}
+		catch ( Illegal Argument Exception success)
+		{
+		}
+	}
+
+	/*
+	 *  Verifica il comporamento del metodo con parametro corretto.
+	 */	
+	public void test Remove News Parametro Corretto()
+	{
+		table Model.insert News(a News);
+		assert Same(a News.get Id(), table Model.remove News( ));
+	}
+	
+	/*
+	 *  Verifica il comporamento del metodo con indice di riga sballato.
+	 */
+	public void test Remove News Riga Sballata()
+	{
+		try
+		{
+			table Model.remove News(-    );
+			fail(" Dovrebbe essere sollevata un'eccezione");
+		}
+		catch ( Illegal Argument Exception success){}
+	}
+
+}

@@ -1,0 +1,47 @@
+/**
+ *  Interfaccia che offre i servizi di gestione dell'advertisement 
+ * all'operatore agenzia.
+ *
+ * @author  Autore
+ * @version  . 
+ * 
+ * ©      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I –  University of  Salerno
+ */
+package com.trapan.spg.control. Gestione Advertisement;
+
+import java.rmi. Remote Exception;
+import java.util. Array List;
+
+import com.trapan.spg.bean. Bean News;
+
+public interface  I Gestione Advetisement Agenzia extends  I Gestione Advertisement
+{
+	/**
+	 *  Metodo che inserisce una nuova news nel sistema.
+	 * 
+	 * @param p News  Bean contenente i dati della news
+	 * @throws  Remote Exception
+	 */
+	public boolean inserisci News( Bean News p News) throws  Remote Exception;
+	/**
+	 *  Metodo che cancella una news dal sistema.
+	 *
+	 * @param p News I D  I D della news da cancellare.
+	 * @throws  Remote Exception
+	 */
+	public boolean cancella News(int p News I D) throws  Remote Exception;
+	/**
+	 *  Metodo che modifica il testo di una news.
+	 *
+	 * @param p News  Bean contenente i dati della news 
+	 * @throws  Remote Exception
+	 */
+	public boolean modifica News( Bean News p News) throws  Remote Exception;
+	/**
+	 *  Restituisce la lista delle news attive.
+	 *
+	 * @return  Array List  Array List di  News
+	 * @throws  Remote Exception
+	 */
+	public  Array List< Bean News> ottieni All News() throws  Remote Exception;
+}

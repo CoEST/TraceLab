@@ -1,0 +1,251 @@
+           Notification Event
+           "public String m  _  Subscriber  Name = """";
+              public String m  _  Event  ID = """";
+              public String m  _  Message type = """";
+              public String m  _  Event  Type = """";
+              public int m  _  Number  Of  Requirements = 0  ;
+              public String m  _  Event  Time = """";
+              public String m  _  Left  String = """";  // String representation of left side
+              public String m  _  Right  String = """";   // String representation of right side
+              public Array  List m  _  Left  Side  ;
+              public Array  List m  _  Right  Side  ;
+              public String m  _  User = """";"
+           "public Notification  _  Event  ()
+              {
+               m  _  Left  Side = new Array  List  ();
+               m  _  Right  Side = new Array  List  ();
+              }"
+           "public Object clone  () throws Clone  Not  Supported  Exception
+           {
+          
+            Notification  _  Event n  Evt = (  Notification  _  Event  ) super  . clone  ();
+               n  Evt  . m  _  Left  Side = new Array  List  ();
+               n  Evt  . m  _  Right  Side = new Array  List  ();
+          
+                  Iterator i = m  _  Left  Side  . iterator  ();
+          
+                  while  ( i  . has  Next  ())
+                  {
+                   Requirement requirement 1 = (  Requirement  )( i  . next  ());
+                   Requirement requirement 2 = (  Requirement  ) requirement 1  . clone  ();
+                   n  Evt  . m  _  Left  Side  . add  ( requirement 2  );
+                  }
+          
+                  i = m  _  Right  Side  . iterator  ();
+                  while  ( i  . has  Next  ())
+                  {
+                   Requirement requirement 1 = (  Requirement  )( i  . next  ());
+                   Requirement requirement 2 = (  Requirement  ) requirement 1  . clone  ();
+                   n  Evt  . m  _  Right  Side  . add  ( requirement 2  );
+                  }
+          
+            return n  Evt  ;
+          
+           }"
+           "public void Parse  Event  (  String Text  Line  )
+           {
+          
+               String  Tokenizer Line  St  ; // Tokenizer for the line
+          
+                  int i  =0  ;
+          
+            Line  St = new String  Tokenizer  (  Text  Line   ""|"");
+          
+                  m  _  Subscriber  Name = Line  St  . next  Token  (); // subscriber name
+                  m  _  Event  ID = Line  St  . next  Token  ();  // event  ID
+                  m  _  Message type = Line  St  . next  Token  ();  // message type  . Always ""  EVENT  "" here
+                  m  _  Event  Type = Line  St  . next  Token  ();  // event type
+                  m  _  Number  Of  Requirements = new Integer  (  Line  St  . next  Token  ()). int  Value  ();  // number of requirements
+                  m  _  Event  Time = Line  St  . next  Token  ();  // event time
+          
+                  // Read requirements information according to event type
+          
+                  if ( m  _  Event  Type  . equals  (""  New  ""))
+                  {
+                   String str = Line  St  . next  Token  ();
+                   m  _  Right  String +  = str  ;
+                      Requirement requirement= new Requirement  ();
+                      requirement .  Parse  Requirement  ( str  );
+                      m  _  Right  Side  . add  ( requirement );
+                  }
+          
+                  if ( m  _  Event  Type  . equals  (""  Obsolete  ""))
+                  {
+                   String str = Line  St  . next  Token  ();
+                   m  _  Left  String  +  =str  ;
+                      Requirement requirement= new Requirement  ();
+                      requirement .  Parse  Requirement  ( str  );
+                      m  _  Left  Side  . add  ( requirement );
+                  }
+          
+                  if ( m  _  Event  Type  . equals  (""  Modify  ""))
+                  {
+                   String str = Line  St  . next  Token  ();
+                   m  _  Left  String +  =str  ;
+                   m  _  Right  String +  = str  ;
+                      Requirement requirement= new Requirement  ();
+                      requirement .  Parse  Requirement  ( str  );
+                      m  _  Left  Side  . add  ( requirement );
+                      m  _  Right  Side  . add  ( requirement );
+                  }
+          
+                  if ( m  _  Event  Type  . equals  (""  Replace  ""))
+                  {
+          
+                   String str = Line  St  . next  Token  ();
+                   m  _  Left  String +  = str  ;
+                      Requirement requirement= new Requirement  ();
+                      requirement .  Parse  Requirement  ( str  );
+                      m  _  Left  Side  . add  ( requirement );
+          
+                   str = Line  St  . next  Token  ();
+                   m  _  Right  String +  = str  ;
+                      requirement= new Requirement  ();
+                      requirement .  Parse  Requirement  ( str  );
+                      m  _  Right  Side  . add  ( requirement );
+                  }
+          
+                  if ( m  _  Event  Type  . equals  (""  Refine  ""))
+                  {
+                   String str = Line  St  . next  Token  ();
+                   m  _  Left  String +  = str  ;
+                      Requirement requirement= new Requirement  ();
+                      requirement .  Parse  Requirement  ( str  );
+                      m  _  Left  Side  . add  ( requirement );
+                      // requirements after decompose
+                      for ( i  =0  ; i  < m  _  Number  Of  Requirements  ; i  ++){
+                    str = Line  St  . next  Token  ();
+                    m  _  Right  String = m  _  Right  String + str +""|"";
+                          requirement= new Requirement  ();
+                       requirement .  Parse  Requirement  ( str  );
+                       m  _  Right  Side  . add  ( requirement );
+                      }
+          
+                  }
+          
+                  if ( m  _  Event  Type  . equals  (""  Decompose  ""))
+                  {
+                   String str = Line  St  . next  Token  ();
+                   m  _  Left  String +  = str  ;
+                      Requirement requirement= new Requirement  ();
+                      requirement .  Parse  Requirement  ( str  );
+                      m  _  Left  Side  . add  ( requirement );
+                      // requirements after decompose
+                      for ( i  =0  ; i  < m  _  Number  Of  Requirements  ; i  ++){
+                    str = Line  St  . next  Token  ();
+                    m  _  Right  String = m  _  Right  String + str +""|"";
+                          requirement= new Requirement  ();
+                       requirement .  Parse  Requirement  ( str  );"
+           "// Set the other members before calling this function
+          
+           public void Parse  Left  And  Right  Lists  (  String Left  Line   String Right  Line  )
+           {
+          
+            m  _  Left  Side = new Array  List  ();
+               m  _  Right  Side = new Array  List  ();
+          
+            if ( m  _  Event  Type  . equals  (""  New  "")) {
+                   Requirement requirement= new Requirement  ();
+                      requirement .  Parse  Requirement  (  Right  Line  );
+                      m  _  Right  Side  . add  ( requirement );
+                  }
+          
+            if ( m  _  Event  Type  . equals  (""  Obsolete  "")) {
+                   Requirement requirement= new Requirement  ();
+                      requirement .  Parse  Requirement  (  Left  Line  );
+                      m  _  Left  Side  . add  ( requirement );
+               }
+          
+               if ( m  _  Event  Type  . equals  (""  Modify  "")) {
+                   Requirement requirement= new Requirement  ();
+                      requirement .  Parse  Requirement  (  Left  Line  );
+                      m  _  Left  Side  . add  ( requirement );
+                   requirement= new Requirement  ();
+                requirement .  Parse  Requirement  (  Right  Line  );
+                   m  _  Right  Side  . add  ( requirement );
+               }
+          
+                  if ( m  _  Event  Type  . equals  (""  Replace  "")) {
+                Requirement requirement= new Requirement  ();
+                   requirement .  Parse  Requirement  (  Left  Line  );
+                   m  _  Left  Side  . add  ( requirement );
+                      requirement= new Requirement  ();
+                   requirement .  Parse  Requirement  (  Right  Line  );
+                      m  _  Right  Side  . add  ( requirement );
+                  }
+          
+                  if ( m  _  Event  Type  . equals  (""  Refine  "")) {
+                   Requirement requirement= new Requirement  ();
+                      requirement .  Parse  Requirement  (  Left  Line  );
+                      m  _  Left  Side  . add  ( requirement );
+                      String  Tokenizer Line  St = new String  Tokenizer  (  Right  Line   ""|"");
+                      // requirements after refine
+                      for ( int i  =0  ; i  < m  _  Number  Of  Requirements  ; i  ++){
+                       String requirement Line = Line  St  . next  Token  ();
+                       requirement= new Requirement  ();
+                    requirement .  Parse  Requirement  (  requirement Line  );
+                       m  _  Right  Side  . add  ( requirement );
+                      }
+            }
+          
+                  if ( m  _  Event  Type  . equals  (""  Decompose  "")) {
+                   Requirement requirement= new Requirement  ();
+                      requirement .  Parse  Requirement  (  Left  Line  );
+                      m  _  Left  Side  . add  ( requirement );
+                      String  Tokenizer Line  St = new String  Tokenizer  (  Right  Line   ""|"");
+                      // requirements after decompose
+                      for ( int i  =0  ; i  < m  _  Number  Of  Requirements  ; i  ++){
+                       String requirement Line = Line  St  . next  Token  ();
+                       requirement= new Requirement  ();
+                    requirement .  Parse  Requirement  (  requirement Line  );
+                       m  _  Right  Side  . add  ( requirement );
+                      }
+            }
+          
+               if ( m  _  Event  Type  . equals  (""  Merge  "")) {
+                Requirement requirement= new Requirement  ();
+                   requirement .  Parse  Requirement  (  Right  Line  );
+                   m  _  Right  Side  . add  ( req  );
+                      String  Tokenizer Line  St = new String  Tokenizer  (  Left  Line   ""|"");
+                      // requirements after decompose
+                      for ( int i  =0  ; i  < m  _  Number  Of  Requirements  ; i  ++){
+                       String Req  Line = Line  St  . next  Token  ();
+                       req = new Requirement  ();
+                    req  .  Parse  Requirement  (  Req  Line  );
+                       m  _  Left  Side  . add  ( req  );
+                      }
+                  }
+          
+          
+           }"
+           "public void Display  Values  ()
+              {
+               System  . out  . println  (""\ r  \ n  Values of the event  :\ r  \ n  "");
+               System  . out  . println  ("" m  _  Subscriber  Name  : ""+ m  _  Subscriber  Name  );
+               System  . out  . println  ("" m  _  Event  ID  : ""+ m  _  Event  ID  );
+               System  . out  . println  ("" m  _  Message type  : ""+ m  _  Message type  );
+               System  . out  . println  ("" m  _  Event  Type  : ""+ m  _  Event  Type  );
+               System  . out  . println  ("" m  _  Number  Of  Requirements  : ""+ m  _  Number  Of  Requirements  );
+               System  . out  . println  ("" m  _  Event  Time  : ""+ m  _  Event  Time  );
+          
+               System  . out  . println  (""\ r  \ n  Left Side  :\ r  \ n  "");
+          
+               Requirement requirement= new Requirement  ();
+          
+                  Iterator i = m  _  Left  Side  . iterator  ();
+                  while  ( i  . has  Next  ()) {
+                   requirement= (  Requirement  )( i  . next  ());
+                   System  . out  . println  ( requirement . m  _  Requirement  ID  +""  "");
+                  }
+          
+               System  . out  . println  (""\ r  \ n  Right Side  :\ r  \ n  "");
+          
+                  i = m  _  Right  Side  . iterator  ();
+                  while  ( i  . has  Next  ()) {
+                   requirement= (  Requirement  )( i  . next  ());
+                   System  . out  . println  ( requirement . m  _  Requirement  ID  +""  "");
+                  }
+          
+                  System  . out  . println  (""\ r  \ n  End of Event  \ r  \ n  "");
+                  System  . out  . println  (""  --------------  \ r  \ n  "");
+              }"

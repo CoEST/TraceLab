@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp10_high_level</id>
+    <name>Waterloo grp10_high_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp10_high_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>F1</id>
+      <content>System that acts as the Call Manager that processes the exchanges between the individual phone subsystems, and maintains a database of all the system clients.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F2</id>
+      <content>The Phone System, through the System Interface Console, can be turned on or off.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F3</id>
+      <content>Embedded code that runs on the phone�s hardware. There are multiple instances, which is dependent on the amount of units in the IP Phone network.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F4</id>
+      <content>System that translates the protocol information from the IP Phone hardware to the Call Managing Server and vice versa.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F5</id>
+      <content>System that translates the protocol information between XML and Signaling Server/Call Manager.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F6</id>
+      <content>Graphics User Interface (GUI) application that provides access to Phone System management and client account modifications.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F7</id>
+      <content>Nortel i2004 IPPhone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F8</id>
+      <content>Database application system that manages client accounts.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F9</id>
+      <content>Tabular association, located on the Server, of IP Phone Numbers to IP Addresses of the Nortel i2004 IPPhones</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F10</id>
+      <content>Tabular association, located on the Server, of IP Phone Numbers to Client Accounts</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F11</id>
+      <content>The Phone System shall receive a communication request from an active Caller to another active Callee, and then make an audio connection to the specified Phone Number/IP mapping.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F12</id>
+      <content>The System Console shall be accessed by an Administrator, and provide a GUI to monitor and control a network of phones (Server) and client accounts (Client Database).</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F13</id>
+      <content>A Caller with a disabled account can not originate a call to a Callee.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F14</id>
+      <content>A Caller account that has been resumed from a suspended state can originate a call to a Callee.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F15</id>
+      <content>A successful network connection between a Caller and Callee creates a successful audio communication.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F16</id>
+      <content>Any disruption in the development of the network connection between a Caller and Callee causes an unsuccessful audio connection.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F17</id>
+      <content>The Nortel i2004 IP Phone will start ringing after a successful connection from a Caller to a Callee�s phone number.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F18</id>
+      <content>The Nortel i2004 IP Phone will stop ringing after the Callee�s phone handset is released (i.e. �off hook�).</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F19</id>
+      <content>A Caller with an active account is allowed to send a call request, using the IP Phone, to a specified Callee phone number.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F20</id>
+      <content>A Callee with an active account is allowed to receive a call request, using the IP Phone, from a specified non-filtered Caller phone number.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F21</id>
+      <content>A Caller can make a 911 emergency call at anytime.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F22</id>
+      <content>A Callee whose phone channel is occupied by other network activity will return a busy signal to the Caller.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F23</id>
+      <content>A Callee with a disabled account can not receive any phone calls from any Caller.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F24</id>
+      <content>A Callee account that has been resumed from a suspended state can receive a call from any Caller.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F25</id>
+      <content>A Caller whose phone handset is �off hook� will return a dial tone to the Caller.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F26</id>
+      <content>A Callee whose phone handset is �off hook� will return a busy signal to the Caller.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F27</id>
+      <content>A Caller can place the phone handset �on hook� at anytime during a communication exchange and terminate the audio and data connection.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F28</id>
+      <content>A Callee can place the phone handset �on hook� at anytime during a communication exchange and terminate the audio and data connection.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F29</id>
+      <content>A Caller whose number is identified as being restricted under the Callee�s account can not complete the phone connection.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F30</id>
+      <content>An invalid Callee phone number will not establish a phone connection</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F31</id>
+      <content>A Caller that does not have a specified Phone feature listed in their account will not have it available for use.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F32</id>
+      <content>A Callee that does not have a specified Phone feature listed in their account will not have it available for use.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F33</id>
+      <content>Any faults, failures, or status checks of the phone hardware system is displayed to the Administrator through the System Console GUI interface.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F34</id>
+      <content>Faults in specific phone hardware or in a specific network of phones are automatically alerted to the System Console. Passing alerts are also automatically sent back to the System Console.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F35</id>
+      <content>System and phone hardware status can be manually checked by the Administrator to ensure that they are running properly.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F36</id>
+      <content>Errors or exceptions that occur in the operation of the Phone System software, (i.e. phone subsystem, server, administrative console) are immediately displayed to the Administrator.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F37</id>
+      <content>Remote initialization of a selected IP Phone from the System Console.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F38</id>
+      <content>Remote disabling of a selected IP Phones functionality from the System Console.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F39</id>
+      <content>A reset signal from the System Console will restart the software in a specified Phone Subsystem(s).</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F40</id>
+      <content>A new record is added into the client database through the System Console.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F41</id>
+      <content>A client account is terminated from the active phone system through the System Console, but the record is archived in the client database.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F42</id>
+      <content>Client accounts and activities for up to 7 years are stored in the Server database.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F43</id>
+      <content>A client that can not pay the specified bill amount is not allowed to use the IP Phone System.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F44</id>
+      <content>The attributes of a client�s account can be modified through the System Console.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F45</id>
+      <content>Input by an Administrator, through the System Interface Console, must maintain the consistency of the Server network and Client database. Any problems with the input will produce an equivalent error message describing the problem.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F46</id>
+      <content>The Phone System call processing load is adjusted through the System Console.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F47</id>
+      <content>All transactions in the Phone System are logged and archived in the Server database.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F48</id>
+      <content>After the successful completion of a communication transaction the cost of the exchange is immediately calculated.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F49</id>
+      <content>The Server database automatically generates a client�s bill value after a given period of time.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F50</id>
+      <content>After a specified time period has been reached an email summarizing the activities and cost of the client�s account is sent.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F51</id>
+      <content>An Administrator can manually send a preformatted electronic or paper-based summary of the client�s account activities and cost of the client�s account. The Administrator can request additional information to be added in the bill summary.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F52</id>
+      <content>Termination of an account�s services results in the automatic generation of an email containing the current billing summary and costs are sent.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F53</id>
+      <content>Upon reception of payment for a particular account, the transaction is recorded and the user account associated with the bill is updated.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F54</id>
+      <content>Any client bill can be viewed by the Administrator through the System Console.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F55</id>
+      <content>A new plan is created and added to the Server database through the System Console.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F56</id>
+      <content>The attributes of a billing plan can be modified through the System Console.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F57</id>
+      <content>Changes in the status of either an IP address or phone number or both from an account are modified on the IP address/phone number mapping table automatically.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F58</id>
+      <content>All archived data regarding clients, bill transactions, communication logs, and Phone System history can be viewed by the Administrator through the System Console.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF1</id>
+      <content>Every client that uses the Phone System through an IP Phone must have an active account in the Server database.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF2</id>
+      <content>Every Administrator that modifies the Server settings or Client database must have an active account in the Server.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF3</id>
+      <content>Network hardware modularity so that additional Nortel i2004 IP Phones can be easily added to the network with minimal overhead.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF4</id>
+      <content>Users of standard land line connections experience the same reliability in communication with the IP Phone System.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF5</id>
+      <content>Users and Administrators should understand the documentation for the Phone Subsystem, and Server with little difficulty.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF6</id>
+      <content>Changes requested/issued to a user�s account attributes are applied to the proper account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF7</id>
+      <content>Failure in the main Phone System Server will be supported by a secondary server that substitutes for the original server.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF8</id>
+      <content>Users that know how to operate, dial a phone number, and communicate with a standard telephone can use the IP Phone System</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF9</id>
+      <content>Administrators that have access privileges to the Server, can access a standard a common Unix terminal, and utilize a GUI interface can use the System Administrative Console.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF10</id>
+      <content>Both audio and data connections are performed seamlessly with minimal latency.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF11</id>
+      <content>Network resources to support the specified load balance should be available at all times.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF12</id>
+      <content>Users of the System Interface Console that can navigate a windows-based application, access and modify information in windows-based input fields will feel comfortable with the GUI design.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF13</id>
+      <content>The network is compatible with other IP Phone manufactures.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF14</id>
+      <content>Each major Phone System component exists independently of each other.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF15</id>
+      <content>Users of the Phone Subsystem are assured of a secure audio communication.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF16</id>
+      <content>Administrators of the Phone System are assured of a secure data network.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF17</id>
+      <content>Administration can run test scripts to ensure the functionality of key Phone System features and communication network integrity.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF18</id>
+      <content>Faults in the phone hardware can be disabled for maintenance and re-enabled as the Phone System is active.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

@@ -1,0 +1,1492 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>UC</id>
+    <name>UC</name>
+    <version>1.1</version>
+    <description>Use cases</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>1</id>
+      <content>Input anagrafica laboratory 
+It allows the operator to enter 
+                 the anagrafica of a laboratory 
+                 analysis or any data that the 
+                 characterize 
+                 Has an interest to enter the age of 
+                 laboratory within the S I O 
+The Operator has been recognized by ` 
+                 System (See UcValOp) and has 
+                 all the data that characterize 
+                 the anagrafica of the laboratory 
+The data in the S I O 
+                 not be modified 
+                 Success: The anagrafica of the laboratory 
+                 is properly inserted inside 
+                 the S I O 
+The operator activates the execution of 
+                 the anagrafica input service 
+                 Laboratory 
+1 View the mask 
+     to enter 
+     information needed
+2 Inserts data about the anagrafica of 
+                                laboratory 
+3 Confirm placement 
+4 Verify the data entered 
+     by 
+5 Stores data 
+6 Notify that the operation 
+     it is `finished with 
+     success 
+Data entered invalid 
+4 1 Display a message showing the 
+          data deemed invalid 
+   4 2 Reinserts running from 1 
+          underpinned the fields of the form with data 
+          Entered 
+Operator cancels operation 
+   3 1 ends the execution of use case with 
+          failure 
+   2 1 The anagrafica of a laboratory is characterized ` 
+          by the following data: name VAT 
+          address city province CAP addresses 
+          Additional telephone and Notes 
+          NB: In italics are highlighted data 
+          Optional whose inclusion does not affect 
+          on the correct completion of operation</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>10</id>
+      <content>Delete visit 
+It allows the operator to delete a 
+                 Visit previously recorded 
+                 The Operator's interest to delete a 
+                 Visit previously recorded 
+The Operator has been recognized by ` 
+                 System (See UcValOp) and the visit 
+                 is registered in the S I O 
+The data in the S I O 
+                 not be modified 
+                 Success: The Folder Clinic Patient 
+                 which was submitted to visit 
+                 eliminated is updated 
+The operator activates the execution of 
+                 service elimination of a visit 
+1 View the list of 
+     visits in 
+     chronological order 
+2 Select the visit to
+                                delete 
+3 Confirm the selection 
+4 View the mask 
+     for viewing 
+     of visit 
+5 Confirm the delete 
+6 Delete the visit and 
+     examinations related to it 
+Notify the operator 7 
+     that the operation was ` 
+     concluded successfully 
+Operator cancels the operation 
+Review 
+  3 1 ends the use case with failure 
+   5 1 
+   4 1 The mask will contain data on the visit 
+          selected so as to allow the operator
+          to verify them in detail before proceeding 
+          to delete</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>11</id>
+      <content>Input examination 
+It allows the operator to record 
+                 results of a examination  supported by a 
+                 patient required a visit 
+                 held in outpatient
+                 The Operator's interest to enter 
+                 details of a review supported by a 
+                 Patient 
+The Operator has been recognized by ` 
+                 System (See UcValOp) and the visit to 
+                 refers the examination must be already 
+                 recorded in the S I O 
+The data in the S I O 
+                 not be modified 
+                 Success: The Folder Clinic Patient 
+                 argued that the examination is updated 
+The operator activates the execution of 
+                 input service  of data from an 
+                 examination 
+1 View the mask 
+     to record 
+     of examination 
+2 Input necessary data to
+                                registration 
+                                of examination 
+3 Confirm input
+4 Verify the data inserted
+     by operator
+5 Stores data confirm the elimination 
+6 Notify the operator 
+     that the operation was ` 
+     concluded successfully 
+Invalid data set 
+   4 1 Show an appropriate message 
+   4 2 take back running from 1 step 
+          underpinned the fields of the form with data 
+          inserted by user
+Operator cancels the operation 
+Registration 
+   3 1 ends the use case with failure 
+   4 1 The data required for registration of a 
+          consideration are: the type of examination 
+          information relating to the laboratory where they 
+          made the values of the results and 
+          diagnostic evaluation made by the doctor</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>12</id>
+      <content>Changing examination 
+It allows the operator to change a 
+                 examination  previously recorded 
+                 The Operator has an interest in change 
+                 examination  previously recorded 
+The Operator has been recognized by ` 
+                 System (See UcValOp) examination is 
+                 registered in the S I O and 
+                 The Operator has received the results of 
+                 to be change
+The Clinic of Folder 
+                 Patient who has undergone ` 
+                 is not changed 
+                 Success: Information on examination 
+                 to be updated within 
+                 of the patient's Clinic Folder
+The operator activates the execution of 
+                 service to modify an examination 
+1 View a list of 
+     tests carried out in 
+     chronological order 
+2 Select the examination by 
+                                change 
+3 Confirm your selection 
+4 View the mask 
+     for the modification of a 
+     examination 
+5 Change of data 
+6 Confirm Changes 
+7 Verify the data inserted
+     by operator
+Remember the 8 
+     updates 
+Communicate to the operator 9 
+     that the operation was ` 
+     concluded successfully 
+Invalid data set 
+   7 1 Show an appropriate message 
+   7 2 take back running from 4 
+          underpinned the fields of the form with data 
+          inserted by operator 
+Operator cancels the operation 
+Review 
+  3 1 ends the use case with failure 
+   6 1 
+   4 1 The data required for registration of a 
+          consideration are: the type of examination 
+          information relating to the laboratory where they 
+          made the values of the results and 
+          diagnostic evaluation made by the doctor</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>13</id>
+      <content>Delete examination 
+It allows the operator to delete a 
+                 Visit previously recorded 
+                 The Operator's interest to delete a 
+                 review previously recorded 
+The Operator has been recognized by ` 
+                 System (See UcValOp) and the examination showed 
+                 registered in the S I O 
+The data in the S I O 
+                 not be modified 
+                 Success: The Folder Clinic Patient 
+                 who had undergone to examination eliminated 
+                 is updated 
+The operator activates the execution of 
+                 service elimination of an examination 
+1 View a list of 
+     examinations conducted in 
+     chronological order 
+2 Select the examination to
+                                change 
+3 Confirm your selection 
+4 View the mask 
+     for viewing 
+     of 
+5 Confirm delte
+6 Delete the examination 
+Notify the operator 7 
+     that the operation was ` 
+     concluded successfully 
+Operator cancels the operation 
+Review 
+  3 1 ends the use case with failure 
+   5 1 
+   4 1 The mask will contain information relating to 
+          selected so as to allow the 
+          to monitor them in detail before proceeding 
+          to delete</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>14</id>
+      <content>Book visit 
+It allows the operator to meet 
+                 request for a booking service 
+                 made by an ambulatory patient 
+                 The Operator has an interest in the record 
+                 renting an outpatient service 
+                 requested by a patient 
+The Operator has been recognized by ` 
+                 System (See UcValOp) The patient is ` 
+                 been recognized by the system (See 
+                 UcValPaz) and has issued to 
+                 The module R S A properly completed 
+The data in the S I O 
+                 not be modified 
+                 Success: The outpatient service 
+                 required is properly booked 
+The operator activates the execution of 
+                 service booking service 
+                 Outpatient 
+1 
+       First visit 
+     
+        The Operator has 
+        received a request 
+        First visit 
+        part of a patient 
+     
+        Inserting anagrafica
+     patient 
+2 View the mask 
+     for booking of
+     service 
+     Outpatient 
+3 Select the type of visit 
+                                that the patient wants 
+                                make 
+4 Inserts motivation of the
+                                Request 
+5 Confirm data inserted
+6 Verify that the sequence 
+     Reservations are 
+     valid 
+     (See BrValSeq) 
+Includes 7 (Select dates 
+     available) 
+8 Confirm your reservation 
+9 Stores data 
+Notify the operator 10 
+     that the operation was ` 
+     concluded successfully 
+Sequence reservations invalid 
+   6 1 Show an appropriate message 
+   6 2 Reinserts execution from step 2 
+Operator cancels the operation 
+Reservations 
+  5 1 ends the use case with failure 
+   8 1 
+   9 1 For a first visit has shown to this point 
+          that will be saved even the personal data 
+          In addition, the patient always in the case of a 
+          Before visiting the system will 
+          view and print the card in hospital 
+          patient</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>15</id>
+      <content>Changing reservation 
+It allows the operator to meet 
+                 request to change a reservation 
+                 a service by Outpatient 
+                 To change a patient means the 
+                 shift the date to a date 
+                 Next 
+                 The Operator has an interest in changing the 
+                 renting an outpatient service 
+                 previously requested by a patient 
+The Operator has been recognized by ` 
+                 System (See UcValOp) The patient is ` 
+                 been recognized by the system (See 
+                 UcValPaz) and the reservation of which 
+                 requires the amendment is `this 
+                 in the S I O 
+The data in the S I O 
+                 not be modified 
+                 Success: The reservation is 
+                 successfully slipped a date 
+                 Next 
+The operator activates the execution of 
+                 Service to changing a reservation 
+1 View the list of 
+     Reservations for the 
+     Patient 
+2 Select the reservation 
+                                to be change 
+3 Confirm  selection 
+4 View the mask 
+     for changing the 
+     Reservations 
+5 Includes (Select dates 
+     available) 
+6 confirm the change 
+7 Verification that the sequence 
+     Reservations is 
+     valid 
+     (See BrValSeq) 
+Remember the 8 
+     updates 
+Notify the operator 10 
+     that the operation was ` 
+     concluded successfully 
+Sequence reservations invalid 
+   7 1 System: Show an appropriate message 
+   7 2 System: Rejuvenating running from 4 step
+Operator cancels the operation 
+Review 
+  3 1 ends the use case with failure 
+   6 1 
+   7 1 The sequence of reservations must be ricontrollata 
+          because the patient may take the 
+          Editing a different reservation 
+          since last</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>16</id>
+      <content>Cancel Reservation 
+It allows the operator to meet 
+                 request for annulment of a 
+                 renting an outpatient service 
+                 by a patient 
+                 The Operator's interest to cancel 
+                 reservation an outpatient ambulatorial service 
+                 previously requested by a patient 
+The Operator has been recognized by ` 
+                 System (See UcValOp) The patient is ` 
+                 been recognized by the system (See 
+                 UcValPaz) and the reservation of which 
+                 requires the cancellation is `this 
+                 in the S I O 
+The data in the S I O 
+                 not be modified 
+                 Success: The reservation is 
+                 definitively annulled 
+The operator activates the execution of 
+                 service cancellation of a 
+                 Reservations 
+1 View the list of 
+     Reservations for the 
+     Patient 
+2 Select the reservation 
+                                to be changing
+3 Confirm cancellation 
+4 Verify that the sequence 
+     Reservations are 
+     valid 
+     (See BrValSeq) 
+5 Cancel Reservation 
+6 Notify the operator 
+     that the operation was ` 
+     concluded successfully 
+Sequence reservations invalid 
+   4 1 Show an appropriate message 
+   4 2 Reinserts running from 1 step
+Operator cancels the operation 
+Review 
+   3 1 ends the use case with failure 
+   4 1 The sequence of reservations must be ricontrollata 
+          because the patient may take 
+          the cancellation of a reservation other than the 
+          last</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>17</id>
+      <content>Changing anagrafica patient 
+It allows the operator to change 
+                the anagrafica of a patient that are 
+                at outpatient
+                It deals with the modification of data 
+                about anagrafica a Patient 
+The Operator has been recognized by ` 
+                System (See UcValOp) The patient is ` 
+                been recognized by the system (See 
+                UcValPaz) and the age of the patient is ` 
+                inside of S I O 
+The anagrafica data Patient 
+                are not modified, remain in 
+                This was before execution
+                Success: The anagrafica of the patient is 
+                properly changed
+The operator activates the execution of 
+                change Service  of the anagrafica
+                Patient 
+1 View the mask 
+     for editing 
+     the anagrafica of 
+     Patient 
+2 Cgange the anagrafica of 
+                               Patient 
+3 Confirm Changes 
+4 Verify the data inserted by operator
+5 Remember the 
+     updates 
+6 Notify that the operation 
+     it is `finished with 
+     success 
+Invalid data set 
+   4 1 Display a message showing the 
+          data deemed invalid 
+   4 2 Reinserts running from 1 
+          underpinned the fields of the form with data 
+          insterted by user
+Operator cancels function 
+change
+   3 1 ends the execution of use case with 
+          failure 
+   2 1 The anagrafica of a patient is characterized by ` 
+          following data: name surname sex code 
+          Tax date of birth place of birth 
+          province of birth place of address 
+          home province of residence address ZIP code 
+          Additional telephone and Notes 
+          NB: In italics are highlighted data 
+          Optional whose inclusion does not affect 
+          on the correct completion of the operation</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>18</id>
+      <content>input anagrafica patient 
+It allows the operator to enter 
+                 the anagrafica of a patient who contact 
+                 for the first time the outpatient 
+                 The Operator has an interest in record 
+                 the anagrafica of a new patient in 
+                 As the contact for the first 
+                 After the surgery and requires a 
+                 Before booking for a Visit 
+The Operator has been recognized by ` 
+                 System (See UcValOp) The Patient 
+                 issued to the form S A R 
+                 with the section about anagrafica 
+                 successfully completed 
+The data in the S I O 
+                 not be modified 
+                 Success: The anagrafica of the patient is 
+                 correctly maintained in memory and 
+                 stored in the S I O only 
+                 end of the reservation of the First 
+                 Visit 
+The operator activates the execution of 
+                 reservation service of a First 
+                 Visit 
+1 View the mask 
+     for input of necessary
+     information 
+2 Inserts data about anagrafica of 
+                                Patient 
+3 Confirm input
+4 Verify the data inserted 
+     by operator
+5 Build and assigns 
+     Hospital Card 
+     (See BrCreCar) 
+10 First visit 
+Invalid data set 
+   4 1 Display a message showing the 
+          data deemed invalid 
+   4 2 Reinserts running from 1 step
+          underpinned the fields of the form with data 
+          inserted by operator
+Operator cancels function 
+insertion 
+   3 1 ends the execution of use case with 
+          failure 
+   2 1 The anagrafica  of a patient is characterized by ` 
+          following data: name surname sex code 
+          Tax date of birth place of birth 
+          province of birth place of address 
+          home province of residence address ZIP code 
+          Additional telephone and Notes 
+          NB: In italics are highlighted data 
+          Optional whose inclusion does not affect 
+          on the correctly completion ofthe operation</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>19</id>
+      <content>Access section patient 
+It allows access to this patient 
+                 by enabling the operator to 
+                 meet one or more Requests received 
+                 by Patient 
+                 The Operator's interest to access the section of
+                 the patient in order to 
+                 enslave the requests received from 
+                 Patient 
+The Operator has been recognized by ` 
+                 System (See UcValOp) 
+The system denies access to 
+                 section patient 
+                 Success: The operator gets access 
+                 section and enabled the patient to 
+                 meet the requests received from 
+                 Patient 
+The operator activates the execution of 
+                 service access to section patient 
+Includes 1 (valid patient) 
+2 View mask of
+     section patient 
+Operator cancels the operation 
+access to patient session 
+  3 1 ends the use case with failure</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>2</id>
+      <content>Changing anagrafica laboratory 
+It allows the operator to change 
+                the anagrafica of a laboratory analysis 
+                It deals with the modification of data 
+                about anagrafica of laboratory 
+                analysis 
+The Operator has been recognized by 
+                System (See UcValOp) and anagrafica 
+                Laboratory is inside the 
+                I S O 
+The anagrafica data of 
+                laboratory are not changed: 
+                remain in the state this first 
+                of 
+                Success: The anagrafica of the laboratory 
+                is properly amended 
+The operator activates the execution of 
+                Service changing of the anagrafica of 
+                laboratory 
+1 View the list of 
+     laboratories 
+     in the S I O 
+2 Select the laboratory  Which change 
+                               the anagrafica 
+3 Confirm your selection 
+4 View the mask 
+     for editing 
+    the anagrafica of 
+     laboratory 
+5 Changing the angrafica of 
+                               laboratory 
+Confirm the changes 6 
+7 Verify the data insert by operator
+8 Remember the 
+     updates 
+9 Notify  that the operation 
+     it is finished with 
+     success 
+Data entered invalid 
+   7 1 Display a message showing the 
+          data deemed invalid 
+   7 2 Reinserts running from 4 
+          underpinned the fields of the form with data 
+          Entered 
+Operator cancels operation 
+  3 1 ends the execution of use case with 
+   6 1 failure 
+   5 1 The anagrafica of a laboratory is characterized ` 
+          by the following data: name VAT 
+          address city province CAP addresses 
+          Additional telephone and Notes 
+          NB: In italics are highlighted data 
+          Optional whose inclusion does not affect 
+          on the proper completion of</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>20</id>
+      <content>Validation patient 
+He works to perform the functions 
+                necessary to authenticate an 
+                Patient 
+                Has an interest in validating the patient to 
+                access to the section relating to his 
+                information 
+The Operator has been recognized by ` 
+                System (See UcValOp) The patient must 
+                provide the operator with the Hospital or Card 
+                its tax code 
+The patient is not recognized ` 
+                system 
+                Success: The patient is recognized by ` 
+                System Operator and access to its 
+                section 
+The Operator active enforcement of a 
+                depending on a specific 
+                patient 
+1 View the mask 
+     for validating the 
+     Patient 
+2 input the code of
+                               Hospital Card 
+3 Confirm validation 
+4 Verify that the code 
+     Card's Hospital 
+     identifies a patient 
+     within S I O 
+5 Get information 
+     Patient 
+6 Transfer in the memory 
+     Patient data 
+Validation through tax code 
+   2 1 injects the tax code 
+          Patient 
+   2 2 Reinserts running from step 3 
+Operator cancels function 
+validation 
+   3 1 ends the execution of use case with 
+          failure 
+Login failed 
+   4 1 Show appropriate message 
+   4 2 Reinserts execution from step 2</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>21</id>
+      <content>Show clinic folder
+Allows a patient of view 
+                Clinic folder own folder using the 
+                specific locations displaced 
+                of the outpatient
+                He has an interest in access to your 
+                Folder Clinic 
+`The patient has been recognized by 
+                system 
+                (See UcAccTB) 
+The patient obtains 
+                display information 
+                contained in their clinic folder 
+The patient activates the execution of 
+                service display Folder 
+                Clinic 
+1 Access to the database and 
+     retrieves information 
+     on the folder 
+     Clinical Patient 
+2 View details 
+     Patient and the list 
+     of visits 
+     in chronological order and 
+     pathology 
+Patient displays details visit 
+   2 1 Select a visit from the list and 
+          requires viewing details 
+   2 2 Access to the database and retrieves the 
+          details of the visit selected 
+   2 3 Display the mask containing the 
+          details of the visit 
+Patient decides to print the 
+Folder own clinic 
+   2 1 Start printing the folder 
+          Clinical 
+   2 2 generates the report and sends it to 
+          Printer 
+Patient decides to print 
+details of a visit 
+  2 3 1 Start printing the details of 
+          visit 
+  2 3 2 generates the report and sends it to 
+          Printer 
+   2 1 For each visit lists the date the 
+          name of the doctor who carried out the survey and 
+          reason for the visit 
+   2 3 for each visit lists the date the 
+          name of the doctor who made the visit 
+          reason for the visit and accused by illnesses 
+          patient history made by the doctor 
+          diagnostic tests prescribed therapy 
+          (giving medicines and time of recruitment) 
+          They are required altresý reported values 
+          any observations made instrumental 
+          during the visit (eg heartbeat 
+          blood pressure values of n number of 
+          dioptres found etc) For examinations 
+          biological and / or instrumental once these 
+          have been made are given the 
+          information relating to the laboratory that has 
+          made and the values of the results of each 
+          examination and diagnostic evaluation made by 
+          doctor</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>22</id>
+      <content>Show Reservations 
+Allows a patient of view 
+                The list of reservation profits 
+                using the appropriate locations 
+                displaced of the outpatient 
+                He has an interest in access to the 
+                their reservations profits 
+`The patient has been recognized by 
+                system 
+                (See UcAccTB) 
+The patient obtains 
+                Display the list of its 
+                Reservations 
+The patient activates the execution of 
+                service displaying the 
+                their reservations 
+1 Access to the database and 
+     retrieves information 
+     on the reservation
+     Patient information useful 
+2 View the list of 
+     bookings 
+     the patient in order 
+     chronological 
+Patient decides to print the list 
+reservations 
+   2 1 Start printing the list of 
+          Reservations 
+   2 2 generates the report and sends it to 
+          Printer 
+   2 1 for each reservation lists the date 
+          time type of access and why 
+          visit</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>23</id>
+      <content>Show anagrafica
+Allows a patient of view 
+                their anagrafica data using the 
+                specific locations displaced 
+                of the outpatient
+                He has an interest in access to your 
+                anagrafica information  
+`The patient has been recognized by 
+                system 
+                (See UcAccTB) 
+The patient obtains 
+                display of their data 
+                anagrafica
+The patient activates the execution of 
+                service display their 
+                data anagrafica
+1 Access to the database and 
+     retrieves information 
+     about anagrafica 
+     Patient 
+2 View 
+     information anagrafiche 
+     Patient 
+Patient decides to print 
+Information displayed 
+   2 1 Start printing the list of 
+          Reservations 
+   2 2 generates the report and sends it to 
+          Printer 
+   2 1 The age of a patient is characterized by ` 
+          following data: name surname sex code 
+          Tax date of birth place of birth 
+          province of birth place of address 
+          home province of residence address ZIP code 
+          Additional telephone and Notes</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>24</id>
+      <content>Access Box Tower 
+Allows the patient to access a 
+                locations of internally displaced 
+                of the outpatient 
+                He's Interest to log on to 
+                see your information 
+The patient must be in possession of 
+                Hospital Card 
+The patient is not recognized ` 
+                system 
+                Success: The patient is recognized by ` 
+                system and is authorized to have access to 
+                His section 
+Patient access to one of the locations 
+                displaced of the outpatient
+Includes 1 (valid patient) 
+2 find 
+     Information 
+     patients 
+3 Transfer in the memory 
+     Patient data 
+4 View the mask 
+     root of a Box 
+     Tower</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>25</id>
+      <content>Validation patient 
+He works to perform the functions 
+                necessary to authenticate an 
+                patient 
+                it's Interest to log on to 
+                see your information 
+The patient must be in possession of 
+                Hospital Card 
+The patient is not recognized ` 
+                system 
+                Success: The patient is recognized by ` 
+                system and access to its section 
+Patient access to Box Tower 
+1 View the mask 
+     for the operation 
+     login 
+2 input the code 
+                               Hospital Card and the code 
+                               PIN 
+3 Confirm validation 
+4 Verify that the couple 
+     (Hospital Card PIN) 
+     identifies a patient 
+     within S I O 
+Patient cancels function 
+validation 
+   3 1 ends the execution of use case with 
+          failure 
+Validation Failed 
+   4 1 Show appropriate message 
+   4 2 Reinserts running from 1 step</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>26</id>
+      <content>Report reservations 
+It allows the operator to have a 
+                 report on reservation
+                 The Operator's interest to have a 
+                 report of reservation done 
+The Operator has been recognized by ` 
+                 System (See UcValOp) 
+The operator activates the execution of 
+                 service report reservation 
+1 View the mask 
+     for viewing of the report of reservation
+2 Select the 
+             time gap 
+3 Select the type of 
+                                Information summary 
+4 Confirm selection 
+5 Access to the database and 
+     found in the 
+     training required 
+6 View 
+     information obtained 
+Operator decides to print 
+information 
+   6 1 Start printing information 
+          displayed 
+   6 2 generates the report and sends it to 
+          Printer 
+Operator cancels the operation 
+   4 1 ends the use case with failure 
+   3 1 An operator can "access the following 
+          summary information: 
+          for a particular patient you want 
+             know the sequence of bookings 
+             in a given period or throughout the period 
+             where it was in contact with the clinic 
+             specifying the dates of appointments and 
+             the types of visit; 
+          for a specific date you want 
+          a list of all reservations 
+          made</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>27</id>
+      <content>Report visits 
+It allows the operator to have a 
+                 record visits 
+                 of the outpatient inside so 
+                 have a total of visits 
+                 made by a patient visits 
+                 supported by a doctor etc 
+                 The Operator's interest to have a 
+                 report of visits 
+                 within of the outpatient 
+The Operator has been recognized by ` 
+                 System (See UcValOp) 
+The operator activates the execution of 
+                 service record visits 
+1 View the mask 
+     for viewing 
+     the reporting of 
+     visits 
+2 Select the time gap
+3 Select the type of 
+                                Information summary 
+4 Confirm selection 
+5 Access to the database and 
+     found in the 
+     training required 
+6 View 
+     information obtained 
+Operator decides to print 
+information 
+   6 1 Start printing information 
+          displayed 
+   6 2 generates the report and sends it to 
+          Printer 
+Operator cancels the operation 
+   4 1 ends the use case with failure 
+   The Operator 3 1 can access the following 
+          summary information: 
+           all visits with 
+             On the patient undergoes a doctor visit 
+             who led the visit; 
+           all visits made by the same 
+          doctor with the dates of patients 
+          visited the examinations required; 
+           all visits made by a patient 
+          with the dates of doctor 
+          accused of diagnostic pathology examinations 
+          and medicines prescribed</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>28</id>
+      <content>Report examinations 
+It allows the operator to have a 
+                 report on tests carried out in 
+                 reference to visits made in 
+                 outpatient 
+                 The Operator's interest to have a 
+                 report of tests carried out 
+The Operator has been recognized by ` 
+                 System (See UcValOp) 
+The operator activates the execution of 
+                 reporting service examinations 
+1 View the mask 
+     for viewing 
+     the reporting of 
+     exams 
+2 Select the 
+                                storm 
+3 Confirm your selection 
+4 Access to the database and 
+     found in the 
+     training required 
+5 View 
+     information obtained 
+Operator decides to print 
+information 
+   5 1 Start printing information 
+          displayed 
+   5 2 generates the report and sends it to 
+          Printer 
+Operator cancels the operation 
+   3 1 ends the use case with failure 
+   2 1 The system displays a list of exams 
+          indicating the date prescribed prescription 
+          completion date patient medical 
+          prescriber diagnosis and laboratory where 
+          The examination was carried out is</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>29</id>
+      <content>The average time of waiting 
+It allows the operator to get an estimate 
+                 the average time required to serve a 
+                 Booking 
+                 The Operator's interest to have a 
+                 estimating the average time to serve a 
+                 reservation request 
+The operator activates the execution of 
+                 service for calculating the estimated time 
+                 average 
+1 View a mask 
+     to see the 
+     result of the calculation 
+     estimation of time 
+     medium to serve a 
+     request 
+     Reservations 
+2 Start function 
+3 View results 
+     calculating 
+Operator decides to print 
+information 
+   3 1 Start printing information 
+          displayed 
+   3 2 generates the report and sends it to 
+          Printer 
+Operator cancels the operation 
+   2 1 ends the use case with failure 
+   1 1 The time of service delivered in days is `equal 
+          the time between the date of request 
+          reservation and when the appointment 
+          is assigned</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>3</id>
+      <content>Delete anagrafica laboratory 
+It allows the operator to remove 
+                the anagrafica of a laboratory of
+                analysis 
+                He works for the elimination of data 
+                at anagrafica on a laboratory 
+                analysis 
+The Operator has been recognized by  
+                System (See UcValOp) and age 
+                Laboratory is `inside the 
+                I S O 
+The anagrafica data of 
+                laboratory are not changed: 
+                remain in the state this first 
+                of execution
+                Success: The age of the laboratory 
+                is successfully eliminated 
+The operator activates the execution of 
+                elimination of the anagrafica of 
+                Laboratory 
+1 View the list of 
+      laboratories 
+     in the S I O 
+2 Select the laboratory 
+                               which change 
+                               the anagrafica
+3 Confirm your selection 
+4 View the mask 
+     to eliminate 
+     the anagrafica of 
+     laboratory 
+6 confirm the delete of 
+                               laboratory 
+7 Delete the data 
+     about anagrafica of 
+     laboratory 
+Notify 8 that the operation 
+     it is `finished with 
+     success 
+Operator cancels operation 
+  3 1 ends the execution of use case with 
+   6 1 failure 
+   4 1 The mask will contain data on the 
+          laboratory selected to enable 
+          the operator to monitor them in detail before 
+          to act the delete</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>30</id>
+      <content>Plans reservations 
+It allows the operator to view and / or 
+                 print in tabular form plans 
+                 Bookings made for each type 
+                 Visit 
+                 The Operator's interest to see 
+                 and / or print the plans of reservations 
+                 made 
+The Operator has been recognized by ` 
+                 System (See UcValOp) 
+The operator activates the execution of 
+                 service to view and / or print 
+                 Plans reservations 
+1 View a mask 
+     To view and 
+     print plans 
+     Reservations 
+2 Select the type of 
+                                visit 
+3 Enable 
+4 Access to the database and 
+     found in the 
+     training required 
+5 View 
+     information obtained 
+Operator decides to print 
+information 
+   5 1 Start printing information 
+          displayed 
+   5 2 generates the report and sends it to 
+          Printer 
+Operator cancels the operation 
+   3 1 ends the use case with failure 
+   2 1 The types of access that the operator can "select 
+          are: First Visit Day and Hospital Visit 
+          Check 
+   5 1 for each reservation in this plan 
+          Reservations is the name and 
+          name of patient</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>4</id>
+      <content>Inserting anagrafica doctor 
+It allows the operator to input 
+                the anagrafica of a doctor who works 
+                at the outpatient 
+                The Operator is responsible to 
+                input of doctor anagrafica
+                in the S I O 
+The Operator has been recognized by ` 
+                System (See UcValOp) and has 
+                all the data that characterize 
+                the doctor anagrafica
+The data in the S I O 
+                not be modified 
+                Success: The doctor anagrafica is 
+                correctly inserted in the 
+                I S O 
+The operator activates the execution of 
+                input service of the 
+                doctor anagrafica
+1 View the mask 
+     for input of 
+     needed information 
+2 Inserts data of doctor anagrafica
+3 Confirm input
+4 Verify the data insert by operator
+5 Stores data 
+6 Notify that the operation 
+     is finished with 
+     success 
+Data entered invalid 
+   4 1 Display a message showing the 
+          data deemed invalid 
+   4 2 take back running from point 1 
+          underpinned the fields of the form with data 
+          insert by operator
+Operator cancels operation 
+3 1 ends the execution of use case with 
+          failure 
+   2 1 The age of a physician is `characterized by 
+          following data: name surname sex code 
+          Tax date of birth place of birth 
+          province of birth place of address 
+          home province of residence address ZIP code 
+          telephone specialization year 
+          certification and additional notes 
+          NB: In italics are highlighted data 
+          Optional whose inclusion does not affect 
+          on the correct completion of the operation</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>5</id>
+      <content>Changing  doctor anagrafica
+It allows the operator to change 
+                the anagrafica of a doctor who works 
+                at the outpatient 
+                It deals with the modification of data 
+                about a doctor anagrafica 
+The Operator has been recognized by ` 
+                System (See UcValOp) and age 
+                `the doctor is present within the 
+                I S O 
+The anagrafica data of the doctor 
+                are not modified, remain in 
+                This was before 
+                Success: The personal doctor is 
+                correctly changed 
+The operator activates the execution of 
+                Chanching service of the doctor anagrafica
+1 View the list of 
+     doctors present 
+     in the S I O 
+2 Select the anagrafica doctor which
+                               change the anagrafica
+3 Confirm the selection 
+4 View the mask 
+     for changing of 
+     the doctor anagrafica
+5 Changing the anagrafica of 
+                               doctor 
+6 Confirm Changes 
+7 Verify the data insert by operator
+Remember the 8 
+     updates 
+Notify 9 that the operation 
+     it is `finished with 
+     success 
+Data entered invalid 
+   7 1 Display a message showing the 
+          data are invalid 
+   7 2 take back running from 4 
+          underpinned the fields of the form with data 
+          insert by user
+Operator cancels operation 
+  3 1 ends the execution of use case with 
+   6 1 failure 
+   5 1 The anagrafica of a doctor is `characterized by 
+          following data: name surname sex code 
+          Tax date of birth place of birth 
+          province of birth place of address 
+          home province of residence address ZIP code 
+          telephone specialization year 
+          certification and additional notes 
+          NB: In italics are highlighted data 
+          Optional whose inclusion does not affect 
+          on the correct completion of operation</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>6</id>
+      <content>Delete anagrafica doctor 
+It allows the operator to delete 
+                the anagrafica of a doctor who works 
+                at the outpatient 
+                He works for the delete of data 
+                of anagrafica related to a doctor 
+The Operator has been recognized by ` 
+                System (See UcValOp) and anagrafica 
+                `the doctor is present within the 
+                I S O 
+The details of the doctor 
+                are not modified, remain in 
+                This state was before execution
+                Success: The  doctor anagrafica is 
+                successfully deleted 
+The operator activates the execution of 
+                delete of the register service 
+                Laboratory 
+1 View the list of 
+      laboratories that are
+     in the S I O 
+2 Select the doctor which 
+                               changing the anagrafica
+3 Confirm the selection 
+4 View the mask 
+     to delete 
+     the doctor anagrafica
+6 confirm to delete of 
+                               doctor 
+7 Delete the data 
+     about anagrafica of 
+     doctor 
+Notify 8 that the operation 
+     it is `finished with 
+     success 
+Operator cancels operation 
+  3 1 ends the execution of use case with 
+   6 1 failure 
+   4 1 The mask will contain data about the medical 
+          selected so as to allow the operator 
+          to examine them in detail before proceeding 
+          to delete</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>7</id>
+      <content>Validation operator 
+He works to perform the functions 
+                necessary to authenticate an 
+                Operator 
+                It's Interest to make their 
+                validation in order to use the 
+                all features available 
+                System 
+The Operator is not recognized by 
+                system 
+                Success: The Operator is recognized by  
+                system and enabled it 
+The operator tries to log on system
+1 View the mask 
+     for validation 
+     of operator
+2 Inserts login and password 
+3 Confirm data 
+4 verify login and 
+     identify a password 
+     Operator within 
+     the S I O 
+5 allows access 
+6 View the main mask 
+
+Operator cancels the operation 
+validation 
+   3 1 System: ends the execution of use case with 
+          failure 
+Validation Failed 
+   4 1 System: Show appropriate message 
+   4 2 System: take back the execution by 1 point 
+          underpinned the fields of the form with data 
+          insert by user</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>8</id>
+      <content>Record visit 
+It allows the operator to record a 
+                 visit held in outpatient
+                 The Operator has an interest in a record 
+                 visit held in outpatient
+The Operator has been recognized by ` 
+                 System (See UcValOp) and the Operator has 
+                 received the data of for visit 
+The Clinic of Folder 
+                 Patient who was subjected to `visit 
+                 is not changed 
+                 Success: All information is 
+                 stored in the folder 
+                 Patient Clinic 
+The operator activates the execution of 
+                 registration service of a visit 
+1 View the mask 
+     to record of the visit
+
+2 inputs the neccesary data of
+                                the registration of 
+                                visit 
+3 Confirm input
+4 Verify the data insert
+     by operator
+5 Stores data 
+6 Notify the operator 
+     that the operation was  
+     concluded successfully 
+Input Data about to a new examination 
+   6 1 Inserting new examination 
+              The Operator's interest to input data 
+              an examination of the visit concerned 
+              Inserting examination 
+   6 2 Back on 6 point
+Invalid data set 
+   4 1 Show an appropriate message 
+   4 2 take back running from 1 
+          underpinned the fields of the form with data 
+          insert by user
+Operator cancels the operation 
+Registration 
+   3 1 ends the use case with failure 
+   4 1 The data required for registration of 
+          visit are: the date the name of the doctor who 
+          carried out the survey the reason for the visit 
+          illnesses accused by the patient history 
+          made by medical diagnosis tests 
+          prescribed therapy prescribed (indicating 
+          Medicines and time of recruitment) and 'necessary 
+          Furthermore, the inclusion of possible values 
+          instrumental observations made during the visit 
+          (eg heart beat the pressure 
+          n number of blood found dioptres etc) 
+          For biological testing and / or instrumental is ` 
+          must enter information on the 
+          laboratory that has made them the values of 
+          results of each examination and evaluation 
+          diagnosis made by medical</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>9</id>
+      <content>Changing visit 
+It allows the operator to change a 
+                 Visit previously recorded 
+                 The Operator has an interest in a change 
+                 Visit previously recorded 
+The Operator has been recognized by  
+                 System (See UcValOp) visit 
+                 is registered in the S I O 
+                 Operator and received data 
+                 visit to be changing
+The clinic of Folder 
+                 Patient who was subjected to `visit 
+                 is not changed 
+                 Success: Information on 
+                 Visit concerned are updated 
+                 Folder inside the Clinic of
+                 Patient 
+The operator activates the execution of 
+                 service editing a visit 
+1 View the list of 
+     visits in 
+     chronological order 
+2 Select the visit by 
+                                change 
+3 Confirm your selection 
+4 View the mask 
+     for the modification of a 
+     visit 
+5 Changing data of the
+                                visit 
+6 Confirm Changes 
+7 Verify the data insert
+     by operator
+8 Remember the 
+     updates 
+9 Notify to the operator
+     that the operation was ` 
+     concluded successfully 
+Input of Data about to a 
+new examination 
+   5 1 Inserting new examination 
+              The Operator is interest to input data of
+              an examination of the visit in object 
+   5 2 Return to step 5 
+Changing data on an examination 
+   5 1 
+            Change examination data 
+          
+              The Operator's interest to modify the data 
+              an examination of the visit 
+          
+              Edit review 
+   5 2 Return to step 5 
+Changing data on a 
+examination 
+   5 1 
+            Deleting data examination  
+          
+              The Operator's interest to delete data 
+              an examination of the visit 
+          
+              Delete examination 
+   5 2 Return to step 5 
+Invalid data set 
+   7 1 Show an appropriate message 
+   7 2 take back running from 4 step
+          underpinned the fields of the form with data 
+          inserted by operator
+Operator cancels the operation 
+change
+  3 1 ends the use case with failure 
+   6 1 
+   4 1 The data required for registration of 
+          visit are: the date the name of the doctor who 
+          carried out the survey the reason for the visit 
+          illnesses accused by the patient history 
+          made by medical diagnosis tests 
+          prescribed therapy prescribed (indicating 
+          Medicines and time of recruitment) and 'necessary 
+          Furthermore, the inclusion of possible values 
+          instrumental observations made during the visit 
+          (eg heart beat the pressure 
+          n number of blood found dioptres etc) 
+          For biological testing and / or instrumental is ` 
+          must enter information on the 
+          laboratory that has made them the values of 
+          results of each examination and evaluation 
+          diagnosis made by medical</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

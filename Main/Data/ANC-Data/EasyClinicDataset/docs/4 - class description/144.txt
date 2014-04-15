@@ -1,0 +1,29 @@
+Class HospitalCardManager Date: 
+                                                    16/09/2003 
+                                                    Version: 
+                                                    0 01 000 
+Description has the task to manage operations 
+                   require access to data 
+                   all'hospital card 
+Attributes 
+       Name Access Description 
+                                
+Methods 
+       Signature assegnaHC () Public Access 
+    Description Its task is to assign the card to hospital 
+                   Patient 
+       Signature getHospitalCard () Public Access 
+    Returns description of the data card in hospital 
+                   Patient 
+       Signature login () Public Access 
+    Description It is through code 
+                   hospital card and PIN to verify 
+                   that the patient is present within the 
+                   I S O 
+       Signature saveHC () Public Access 
+    Description permanently store data 
+                   hospital card 
+       Signature validaPaziente () Public Access 
+    Description It is through code 
+                   hospital card to verify that the patient is 
+                   inside of S I O

@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp23_low_level</id>
+    <name>Waterloo grp23_low_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp23_low_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>UC1</id>
+      <content>Name:   Make Call	ID:  1
+Event: user makes phone call to another user
+System: IP Phone System
+Actors: User (also known as caller)
+Over View: Description of internal behaviour when a user makes a phone call</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC2</id>
+      <content>Name: Receive Call	ID: 2
+Event: user(callee) receives a call from another user(caller)
+System: IP Phone System
+Actors: Users (a caller, a callee)
+Over View: Description of internal behaviour when a user receives a phone call</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC3</id>
+      <content>Name: Login	ID: 3
+Event: Administrator logs into the sever
+System: IP Phone System
+Actors: Administrator
+Over View: Description of internal behaviour while the administrator logs in.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC4</id>
+      <content>Name: Add User Account	ID :4
+Event: Administrator adds one new account or active a cancelled account
+System: IP Phone System
+Actors: Administrator(initiator)
+Over View: Description of internal behaviour while the administrator adds one new account or active a cancelled account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC5</id>
+      <content>Name: Edit User Account	ID :5
+Event: Administrator edit a particular user account
+System: IP Phone System
+Actors: Administrator
+Over View: Description of internal behaviour while the administrator edits a particular user account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC6</id>
+      <content>Name: Cancel User Service	ID :6
+Event: Administrator cancel a particular user�s service
+System: IP Phone System
+Actors: Administrator(initiator)
+Over View: Description of internal behaviour while the administrator cancels a particular user�s service</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC7</id>
+      <content>Name: Add Call Plan	ID:7
+Event: Administrator adds a new plan to the system, specifically to PlanList
+System: IP Phone System
+Actors: Administrator
+Over View: Description of internal behaviour while the administrator adds a new plan.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC8</id>
+      <content>Name: Delete Call Plan	ID:8
+Event: Administrator deletes an existing plan from the system
+System: IP Phone System
+Actors: Administrator
+Over View: Description of internal behaviour while the administrator deletes a plan.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC9</id>
+      <content>Name: Edit Call Plan	ID:9
+Event: Administrator edits an existing plan in the system
+System: IP Phone System
+Actors: Administrator
+Over View: Description of internal behaviour while the administrator edits a plan.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC10</id>
+      <content>Name: Set Max Number of Calls Allowed	ID:10
+Event: Administrator sets the maximum number of calls allowed at a time
+System: IP Phone System
+Actors: Administrator
+Over View: Description of internal behaviour while the administrator sets the number</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC11</id>
+      <content>Name:   Enable Phone	ID:  11
+Event: Enable a new/repaired phone in the system
+System: IP Phone System
+Actors: Administrator
+Over View: Description of internal behaviour when a new/repaired phone is enabled in     the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC12</id>
+      <content>Name:   Display Hardware Status	ID:  12
+Event: Display the status information of the hardware in System Console
+System: IP Phone System
+Actors: Administrator
+Over View: Description of internal behaviour when a administrator requests to display the status of the hardware of the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC13</id>
+      <content>Name:   Check Phone	ID:  13
+Event: Run connectivity tests on an IP phone
+System: IP Phone System
+Actors: Administrator
+Over View: Description of internal behaviour when administrator run tests on a phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC14</id>
+      <content>Name: Logout	ID: 14
+Event: Administrator logout the system
+System: IP Phone System
+Actors: Administrator
+Over View: Description of internal behaviour after the operator logoff.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC15</id>
+      <content>Name: Add administrator	ID: 15
+Event: Administrator adds one more administrator to the system
+System: IP Phone System
+Actors: Administrator(an existing administrator)
+Over View: Description of internal behaviour when a new administrator is added.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC16</id>
+      <content>Name: Delete Administrator	ID: 16
+Event: Administrator deletes another administrator
+System: IP Phone System
+Actors: Administrator
+Over View: Description of internal behaviour when an existing administrator is deleted.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC18</id>
+      <content>Name:   Print Bill	ID:  18
+Event: Administrator asks system to print user�s bill
+System: IP Phone System
+Actors: Administrator
+Over View: Description of internal behaviour when administrator requests to print user�s bill</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC19</id>
+      <content>Name: Suspend User Service	ID :19
+Event: Administrator suspends a particular user�s service
+System: IP Phone System
+Actors: Administrator(initiator)
+Over View: Description of internal behaviour while the administrator suspends a particular user�s service</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC20</id>
+      <content>Name: Resume User Service	ID :20
+Event: Administrator resumes a particular user�s service
+System: IP Phone System
+Actors: Administrator(initiator)
+Over View: Description of internal behaviour while the administrator resumes a particular user�s service</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC21</id>
+      <content>Name: Monitor Call Process	ID :21
+Event: Administrator monitors all of the calling processes.
+System: IP Phone System
+Actors: Administrator(initiator)
+Over View: Description of internal behaviour while the administrator monitors call process.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

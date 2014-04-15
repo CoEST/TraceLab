@@ -1,0 +1,16 @@
+Use case name MODIFICAPASSWORD 
+The Agency Operator chooses to change the password associated with your account 
+Partecipating 
+Actor initialization Agency Operator 
+Entry 
+Operator conditions • The agency has logged. 
+Flow of events User System 
+5 Choose to change your password by pressing the appropriate 
+Button 
+6. Upload the form to change the password associated with that work agency 
+7 Change your password by entering the new choice and confirming 
+8 Save your changes 
+Exit conditions • The system confirms the success of Operation 
+• Interruption of the connection to the server 
+Quality 
+requirements

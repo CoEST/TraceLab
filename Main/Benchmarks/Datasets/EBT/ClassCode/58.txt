@@ -1,0 +1,19 @@
+           Subscribed Model
+           "private String Subscriber  Name  ;
+              private String Subscriber  Reqno  ;
+              private String Subscriber  Module  ;
+              private String Subscriber  Keyword  1  ;
+              private String Subscriber  Keyword  2  ;"
+           "public Subscribed  Model  (  String sn   String sr   String sm   String sk  1   String sk  2  )
+              {
+            Subscriber  Name = sn  ;
+            Subscriber  Reqno = sr  ;
+            Subscriber  Module = sm  ;
+            Subscriber  Keyword  1 = sk  1  ;
+            Subscriber  Keyword  2 = sk  2  ;
+              }"
+           public String Get  Subscriber  Name  () { return Subscriber  Name  ;}
+           public String Get  Subscriber  Reqno  () { return Subscriber  Reqno  ;}
+           public String Get  Subscriber  Module  () { return Subscriber  Module  ;}
+           public String Get  Subscriber  Keyword  1  () { return Subscriber  Keyword  1  ;}
+           public String Get  Subscriber  Keyword  2  () { return Subscriber  Keyword  2  ;}

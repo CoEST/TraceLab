@@ -1,0 +1,88 @@
+Changing visit 
+It allows the operator to change a 
+                 Visit previously recorded 
+                 The Operator has an interest in a change 
+                 Visit previously recorded 
+The Operator has been recognized by  
+                 System (See UcValOp) visit 
+                 is registered in the S I O 
+                 Operator and received data 
+                 visit to be changing
+The clinic of Folder 
+                 Patient who was subjected to `visit 
+                 is not changed 
+                 Success: Information on 
+                 Visit concerned are updated 
+                 Folder inside the Clinic of
+                 Patient 
+The operator activates the execution of 
+                 service editing a visit 
+1 View the list of 
+     visits in 
+     chronological order 
+2 Select the visit by 
+                                change 
+3 Confirm your selection 
+4 View the mask 
+     for the modification of a 
+     visit 
+5 Changing data of the
+                                visit 
+6 Confirm Changes 
+7 Verify the data insert
+     by operator
+8 Remember the 
+     updates 
+9 Notify to the operator
+     that the operation was ` 
+     concluded successfully 
+Input of Data about to a 
+new examination 
+   5 1 Inserting new examination 
+              The Operator is interest to input data of
+              an examination of the visit in object 
+   5 2 Return to step 5 
+Changing data on an examination 
+   5 1 
+            Change examination data 
+          
+              The Operator's interest to modify the data 
+              an examination of the visit 
+          
+              Edit review 
+   5 2 Return to step 5 
+Changing data on a 
+examination 
+   5 1 
+            Deleting data examination  
+          
+              The Operator's interest to delete data 
+              an examination of the visit 
+          
+              Delete examination 
+   5 2 Return to step 5 
+Invalid data set 
+   7 1 Show an appropriate message 
+   7 2 take back running from 4 step
+          underpinned the fields of the form with data 
+          inserted by operator
+Operator cancels the operation 
+change
+  3 1 ends the use case with failure 
+   6 1 
+   4 1 The data required for registration of 
+          visit are: the date the name of the doctor who 
+          carried out the survey the reason for the visit 
+          illnesses accused by the patient history 
+          made by medical diagnosis tests 
+          prescribed therapy prescribed (indicating 
+          Medicines and time of recruitment) and 'necessary 
+          Furthermore, the inclusion of possible values 
+          instrumental observations made during the visit 
+          (eg heart beat the pressure 
+          n number of blood found dioptres etc) 
+          For biological testing and / or instrumental is ` 
+          must enter information on the 
+          laboratory that has made them the values of 
+          results of each examination and evaluation 
+          diagnosis made by medical

@@ -1,0 +1,18 @@
+Use case name INSERISCIFEEDBACK 
+Inserts a feedback for the selected site. 
+Partecipating 
+Actor initialized by Tourist 
+Entry 
+conditions ï The tourist card is in a particular site. 
+Flow of events User System 
+1. Activate the feature on the issue of feedback. 
+2 Verify that the visitor has not already issued a feedback for the site and displays a form for entering the feedback for the selected site. In case the visitor has already issued a feedback for the site selected, activates the use case FeedbackGi‡Rilasciato. 
+3 Fill out the form, selecting one vote and inserting a comment, then submit. 
+4 Verify the data entered and confirm the cheide. Where the data is invalid or insufficient, the system activates the use case Errored. 
+5 Confirming the issue of feedback. 
+6. Remember feedback and inserts the selected site in the list of sites visited. 
+Exit conditions ï The system shall notify the successful combination of feedback to the site 
+ï The Tourist cancel the operation 
+ï Interruption of the connection to the server ETOUR. 
+Quality 
+requirements

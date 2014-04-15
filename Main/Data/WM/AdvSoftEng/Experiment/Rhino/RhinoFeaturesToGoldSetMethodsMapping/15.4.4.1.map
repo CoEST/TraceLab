@@ -1,0 +1,4 @@
+org.mozilla.javascript.NativeArray.initPrototypeId
+org.mozilla.javascript.NativeArray.execIdCall
+org.mozilla.javascript.IdScriptableObject.initPrototypeConstructor
+org.mozilla.javascript.NativeArray.findPrototypeId

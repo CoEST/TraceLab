@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OpenIDE-Module: tracelab.project.template
+OpenIDE-Module-Localizing-Bundle: tracelab/project/template/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

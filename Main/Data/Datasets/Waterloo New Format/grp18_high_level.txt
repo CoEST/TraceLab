@@ -1,0 +1,53 @@
+F1	Administrator Login to the system~
+F2	Administrator logout from the system~
+F3	Login with Invalid user name/password~
+F4	Administrator can add a new user account~
+F5	Administrator Edit user’s Account info~
+F6	Administrator can find an unassigned phone number~
+F7	Administrator can find an available IP~
+F8	Administrator can construct a mapping of a phone number and an IP~
+F9	Administrator can find a user account~
+F10	Administrator can add a phone # to an account~
+F11	Cancel the user Account from The system~
+F12	Remove IP and phone # map from user account~
+F13	Unused IP and phone # is available for reuse~
+F14	Caller can make a phone call~
+F15	Callee can receive a phone call~
+F16	Administrator can set the maximum calls allowed in the system~
+F17	Temporarily suspend user account~
+F18	Reactive the suspended user account~
+F19	Administrator requests system status~
+F20	Administrator can test the hardware~
+F21	Administrator can test an IP Phone~
+F22	Administrator can disable a hardware~
+F23	Administrator can enable a hardware~
+F24	System can automatically perform hardware test~
+F25	Administrator can add a new calling plan~
+F26	Administrator is able to edit user’s plan~
+F27	Administrator is able to add discount plan for user~
+F28	Administrator is able to modify user’s discount plan~
+F29	Generate bills and print them out~
+F30	Administrator is able to generate bill for any specific user~
+F31	Administrator is able to display any bill~
+F32	Administrator is able to indicate that bill is paid~
+F33	Administrator is able to modify any bill~
+F34	System will record all call records for billing purpose~
+F35	Administrator is able to terminate any connection~
+F36	Functionality for user to make long distance call~
+F37	To find an exist IP/Phone number mapping~
+F38	System provide easy use interface~
+F39	Callee does not pick up the phone~
+F40	Callee line is busy~
+F41	Caller dials an invalid phone~
+F42	Caller dials a digit before the dial tone is set~
+F43	Caller does not dial a number within 30 seconds~
+F44	Phone crashes during the call~
+F45	System can not originate call~
+F46	Caller dials less than 4 digits~
+F47	Caller dials more than 4 digits~
+F48	Max load balance is reached~
+N1	System is reliable~
+N2	Throughout Quick response~
+N3	Easy to use~
+N4	System is able to work with large set of data~
+N5	Prevent any invalid login and data access~

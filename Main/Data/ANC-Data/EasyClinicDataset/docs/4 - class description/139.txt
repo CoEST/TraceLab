@@ -1,0 +1,17 @@
+Class GUIElencoPrenotazioni Date: 19/09/03 
+                                                   Version: 
+                                                   0 01 000 
+Description abstract class used to define 
+                   GUIEliminaPrenotazione of classes and 
+                   GUISelezionaPrenotazione 
+Attributes 
+       Name Access Description 
+Private btnAnnulla button that allows you to cancel 
+                              the current operation 
+Private gridPrenotazioni grid containing the list of 
+                              Reservations still active set 
+                              by Patient 
+Methods 
+       Signature notificaSuccesso () Public Access 
+    Description Its task is to notify the success 
+                   of

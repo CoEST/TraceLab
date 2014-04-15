@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp06_low_level</id>
+    <name>Waterloo grp06_low_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp06_low_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>UC1</id>
+      <content>Name:	Originate/Receive VoIP Call
+Authors:	M4
+Events:	The user places an outgoing call to another user
+System:	Caller, Callee, System
+Actors:	User (Caller), User (Callee)
+Overview:	This use case captures the process of one user making a call to another user, establishing a connection, and engaging in conversation</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC2</id>
+      <content>Name:	Connect a VoIP Phone
+Authors:	M1
+Events:	Administrator/User plugs in a VoIP telephone set.
+System:	VoIP Telephone Set (phone) and Console.
+Actors:	Administrator/User (initiator)
+Overview:	This use case captures the process of Administrator/User plugging in a phone and the initialization of VoIP telephone service.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC3</id>
+      <content>Name:	Disconnect a VoIP Phone
+Authors:	M1
+Events:	Administrator/User unplugs a VoIP telephone set.
+System:	VoIP Telephone Set (phone) and Console
+Actors:	Administrator/User (initiator)
+Overview:	This use case captures the process of Administrator/User unplugging a phone and the finalization of VoIP telephone service.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC4</id>
+      <content>Name:	Disable/Enable Phone
+Authors:	M1
+Events:	The administrator selects the Disable/Enable Phone option from the Maintenance tab.
+System:	Console, and VoIP Telephone Set
+Actors:	Administrator
+Overview:	This use case captures the process of the administrator disabling a phone or re-enabling a disabled phone.  Once a phone is disabled, it can no longer be used by or assigned to a user.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC5</id>
+      <content>Name:	Add/Edit User Account
+Authors:	M3
+Events:	The administrator selects the option to add or edit a user account from the administrative console.
+System:	Console
+Actors:	Administrator
+Overview:	This use case captures the process of the administrator adding a new user account or editing an existing user account for the VoIP telephone system.  The administrator defines the user�s name, contact information, billing plan, filter options, phone IP, and phone number [optional].</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC6</id>
+      <content>Name:	Cancel User Account
+Authors:	M3
+Events:	The administrator selects the option to cancel a user account from the administrative console.
+System:	Console
+Actors:	Administrator
+Overview:	This use case captures the process of the administrator canceling a user account from the VoIP telephone system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC7</id>
+      <content>Name:	Add/Edit Billing Plan
+Authors:	M1
+Events:	Administrator selects the option to add a new billing plan or edit an existing billing plan from the administrative console.
+System:	Console and Phone Manager (PM)
+Actors:	Administrator (initiator)
+Overview:	This use case captures the process of Administrator adding a new billing plan to or editing an existing billing plan of the VoIP telephone system.  Administrator defines/changes the regular rate, the discount periods during which discount rates apply, and the discount rates for each of the n discount periods defined.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC8</id>
+      <content>Name:	Delete Billing Plan
+Authors:	M1
+Events:	Administrator selects the option to delete existing billing plans from the administrative console.
+System:	Console and Phone Manager (PM)
+Actors:	Administrator (initiator)
+Overview:	This use case captures the process of Administrator deleting existing billing plans from the VoIP telephone system.  Only inactive billing plans can be deleted.  A billing plan is inactive if it is not associated with any user account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC9</id>
+      <content>Name:	Run test
+Authors:	M2
+Events:	The administrator selects a specific test to run on the system.
+System:	Console
+Actors:	Administrator, Time
+Overview:	The use case provides the general process that the system goes through in order to test various aspects of the system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC10</id>
+      <content>Name:	View Bill
+Authors:	M2
+Events:	The administrator selects the view option for a specific user�s bill
+System:	The Console
+Actors:	Administrator
+Overview:	This use case captures the process of viewing/printing one bill of a specific user to the screen of the administrative console.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC11</id>
+      <content>Name:	Logon (to Admin Console)
+Authors:	M3
+Events:	The administrator opens the administration application that runs on the administrative console.
+System:	Account Manager; Console Manager
+Actors:	Administrator
+Overview:	This use case captures the process of the administrator starting up the Administration Console application and logging in as the system administrator.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC12</id>
+      <content>Name:	Log Off (Admin Console)
+Authors:	M3
+Events:	The administrator chooses to close the Administration Console application.
+System:	Account Manager; Console Manager
+Actors:	Administrator
+Overview:	This use case captures the process of the administrator closing the administration console application for the VoIP telephone system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC13</id>
+      <content>Name:	Reset Phone Software
+Authors:	M2
+Events:	The administrator selects to reset the software on a user�s phone through the administrative console.
+System:	Console, VoIP Telephone Set
+Actors:	Administrator
+Overview:	This use case captures the process of the administrator resetting or reinitializing the software that is running on a VoIP phone that is registered within the VoIP network. The purpose of this use case is that a serious error could have occurred on the VoIP phone or the user wishes to reset their phone�s settings.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC14</id>
+      <content>Name:	Balance System Load
+Authors:	M2
+Events:	The user changes the maximum number of simultaneous connections that the system can handle.
+System:	Console
+Actors:	Administrator
+Overview:	This use case captures the process of the administrator attempting to limit the number of simultaneous connections (phone calls, or other client connections) in the VoIP network.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC15</id>
+      <content>Name:	Pay Bill
+Authors:	M4
+Events:	Administrator selects the option to enter a user�s bill payment
+System:	Console
+Actors:	Administrator (initiator)
+Overview:	This use case captures the process of Administrator adding a new billing plan to or editing an existing billing plan of the VoIP telephone system.  Administrator defines/changes the regular rate, the discount periods during which discount rates apply, and the discount rates for each of the n discount periods defined.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC16</id>
+      <content>Name:	Add/Edit Admin Accounts
+Authors:	M4
+Events:	Super Administrator can add or edit an administrator account
+System:	Console
+Actors:	Super-Administrator (initiator)
+Overview:	The Super-admin specifies a username and password for a general admin, which can manipulate user accounts</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC17</id>
+      <content>Name:	Delete Admin Accounts
+Authors:	M4
+Events:	Super Administrator can delete an administrator account
+System:	Console
+Actors:	Super Administrator (initiator)
+Overview:	The super-admin deletes an administrator account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC18</id>
+      <content>Name:	Suspend/Reactivate User Account
+Authors:	M3
+Events:	The administrator selects to suspend or activate a user account.
+System:	Console
+Actors:	Administrator
+Overview:	This use case captures the process of the administrator suspending a user account or reactivating a previously suspended user account.  Upon reactivating a user account, the administrator defines the phone IP address to be associated with this account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC19</id>
+      <content>Name:	Change Billing Period
+Authors:	M4
+Events:	The administrator determines the billing period for a specific user�s account
+System:	Console
+Actors:	Administrator
+Overview:	This use case captures the process of the Administrator defining the billing interval, as well as billing start date, mapped to a specific user account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC20</id>
+      <content>Name:	Print Bill
+Authors:	M2
+Events:	End of the current billing, when a user account is cancelled or a change in billing period causes the current time to be at or beyond the end of the new billing period.
+System:	Console
+Actors:	Time
+Overview:	This use case captures the process of printing the user�s bill after billing period has expired, when a user account has been cancelled, or a change in the billing period causes the current time to be at or beyond the end of the new billing period.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC21</id>
+      <content>Name:	View Call History
+Authors:	M1
+Events:	Administrator selects the option to view the call history.
+System:	Console
+Actors:	Administrator
+Overview:	This use case captures the process of administrator viewing and/or printing the call history of a specific user for a specific period.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

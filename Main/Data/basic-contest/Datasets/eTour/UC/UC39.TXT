@@ -1,0 +1,19 @@
+Use case name MODIFICABANNER 
+Changing the image of a banner ad. 
+Partecipating 
+Actor initialization Operator Point Of Restaurants 
+Entry 
+conditions • The Point Of Restaurant Operator has successfully authenticated to the system. 
+Flow of events User System 
+1. Select the editing functionality of the banner. 
+2 View the list of banner associated with the point of rest. 
+3 Select a banner from the list and enter the editing functionality. 
+4 Displays a form for the selection of an image. 
+5 Select a picture and send the request to change the system. 
+6. Check the characteristics of the inserted and asks for confirmation of the change of the banner. In the event that the inserted image is not valid, enable the use case Errored. 
+7 Confirmation of the transaction change. 
+8 Bookmark this new image for the selected banner. 
+Exit conditions • The system shall notify the successful modification of the banner. 
+• The Point Of Operator Restaurant cancels the operation. 
+• Interruption of the connection to the server ETOUR. 
+Quality requirements

@@ -1,0 +1,17 @@
+Use case name ELIMINABANNER 
+Delete a banner ad associated with the point of rest. 
+Partecipating 
+Actor initialization Operator Point Of Restaurants 
+Entry 
+conditions • The Point Of Restaurant Operator has successfully authenticated to the system. 
+Flow of events User System 
+1. Select the feature for 'removal of the banner. 
+2 View the list of banner associated with the point of rest. 
+3 Select a banner from the list and enter the function of elimination. 
+4 Displays a message confirming the deletion. 
+5 Confirm the operation. 
+6. Removes the banner. 
+Exit conditions • The system shall notify the successful elimination of the selected banner. 
+• The Point Of Operator Restaurant cancels the operation. 
+• Interruption of the connection to the server ETOUR. 
+Quality requirements

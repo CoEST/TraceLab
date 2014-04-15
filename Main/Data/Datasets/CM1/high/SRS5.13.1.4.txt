@@ -1,0 +1,1 @@
+ The DPU-TMALI  shall provide TMALI_HK to the DPU-CCM on request.

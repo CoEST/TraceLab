@@ -1,0 +1,15 @@
+Nome: InserisciNuovaClasse
+Attori: Amministratore
+Descrizione: Inserisce una nuova classe nell’archivio
+Precondizioni:
+•	L’utente è loggato al sistema come Amministratore • L’utente ha già eseguito il caso d’uso “VisualizzaElencoClassi” e il sistema
+sta visualizzando l’elenco delle classi di un particolare anno accademico. •	L’ utente clicca sul pulsante “Nuova Classe”
+Sequenza degli eventi
+Utente
+2.	Compila il form 3.	Clicca sul pulsante “Salva”
+Sistema
+1. Il sistema mostra il form da compilare con: nome, indirizzo, anno accademico.
+4. Effettua dei controlli sulla validità dei dati immessi e inserisce la nuova classe nell’archivio; nel caso in cui i dati inseriti non sono validi, attiva il caso d’uso “ErroreDati”.
+Postcondizioni:
+• • • •
+L’utente ha inserito una classe nel sistema E’ notificato l’errore dati Connessione al server SMOS interrotta L’Amministratore interrompe l’operazione

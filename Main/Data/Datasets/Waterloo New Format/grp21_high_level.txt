@@ -1,0 +1,36 @@
+F1	The system will need to keep track of available resources.~
+F2	Check if caller and callee are permitted to make and answer phone calls respectively.~
+F3	Dial tone sent to caller if resources are available to make a phone call.~
+F4	Caller is sent an idle tone while dialing.~
+F5	Phone numbers are four digits long.~
+F6	After picking up the receiver, the caller must finish dialing the phone number before a certain period of time. In addition, the caller has a limited amount of time between dialling successive digits.  Failure to meet the above conditions results in a Dial Timeout, and the caller is sent a fast busy tone.~
+F7	Caller dials a non-existent phone number.~
+F8	If the callee is off-hook, caller is sent a slow busy tone.~
+F9	When caller dials a valid number, caller’s phone is sent a ring tone and callee’s phone rings.~
+F10	The callee must answer within a certain period of time, otherwise the caller is sent a fast busy tone and callee’s phone stops ringing.~
+F11	When a call is terminated from either side, the other user is sent a fast busy tone~
+F12	Allow administrators to login to the System Console using the assigned username and password.~
+F13	Allow current administrators to assign and update administrator privileges.~
+F14	In order to create a user account, an administrator must be able to find an unassigned phone number.~
+F15	In order to create a user account, an administrator must be able to find an unassigned IP address.~
+F16	Allow administrators to create and cancel user accounts (includes assigning a billing plan, updating status of user, call privileges, and account balance, and add/remove IP-phone number mapping).~
+F17	Administrator must be able to create a new class of service.~
+F18	Administrator must be able to create (incl. assign services) and edit a billing plan.~
+F19	Administrators must be able to view current status of the system.~
+F20	Administrators must be able to conduct a connectivity test to ensure that a user’s phone is connected to the system at their request~
+F21	If a new or repaired device is added to the system, the administrator may request to enable the device~
+F22	Need to disable a phone for repairs or replacement~
+F23	Allow administrator to reset a particular phone if it is deadlocked.~
+F24	An alert to the administrator via the System Console when there is an error or when returning results of a hardware test.  ~
+F25	Periodically executing a hardware fault detection test.~
+F26	Administrator should be allowed set a value for the maximum allowable number of calls.~
+F27	Administrators should be allowed to generate and send billing invoices.~
+F28	The system should be able to automatically generate and send billing invoices.~
+N1	Callers and callees should be able to use the system without knowledge of the underlying logic.~
+N2	If a connection is established, the caller will be connected to the expected callee.~
+N3	The conversations over this system are secure, and will not be overheard by any party other than the caller and callee.~
+N4	Failure of a telephone will not affect the remaining phones connected to the system.~
+N5	Callers should be able to make calls at all times.~
+N6	If the number of users increases, the system will continue to function smoothly in spite of the additional volume.~
+N7	The system will be designed such that it can be easily extended to support new features.~
+N8	Upon lifting the receiver to make a call, the caller will hear a dial tone within a specific period of time.~

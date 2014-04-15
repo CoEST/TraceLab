@@ -1,0 +1,4 @@
+org.mozilla.javascript.ScriptRuntime.initStandardObjects
+org.mozilla.javascript.tools.shell.Main.<static constructor>[0]
+org.mozilla.javascript.tools.shell.Main.getGlobal
+org.mozilla.javascript.ScriptRuntime.getGlobal

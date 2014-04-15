@@ -1,0 +1,66 @@
+UC1	Use Case Number: UC1
+Authors: Group 33
+Event: User picks up the phone and dials a phone number. The off-hook event is the input to the system.
+System: telephone exchange system
+Actors: User
+Overview: User wants to make a phone call. User picks up the phone and dials the phone number. ~
+UC2	Use Case Number: UC2
+Authors: Group 33
+Event: User dials a phone number. The phone number is passed in as input.
+System: telephone exchange system
+Actors: User 1, User 2
+Overview: A user dials a phone number, waits until the person on the other end picks up his phone, and then starts talking with him. At the end of the conversation, user hangs up the phone.~
+UC3	Use Case Number: UC3
+Authors: Group 33
+Event: User picks up a ringing phone. The off-hook event is passed in as input.
+System: telephone exchange system
+Actors: User 1, User 2
+Overview: User 1’s phone rings. User 1 picks up the phone. User 1 has a conversation with the person calling. User 1 hangs up the phone.~
+UC4	Use Case Number: UC4
+Authors: Group 33
+Event: User phones the voicemail subsystem. The voicemail phone number is the input.
+System: telephone exchange system
+Actors: User
+Overview: User picks up the phone and dials the voicemail subsystem number. User is redirected to the voicemail subsystem.~
+UC5	Use Case Number: UC5
+Authors: Group 33
+Event: User places the person he is talking to on hold. The phone number of the person that user wants to switch to is the input.
+System: telephone exchange system
+Actors: User 1, User 2, User 3
+Overview: User 1 hears a tone indicating that a person has called him while talking to user 2. User 1 places user 2 on hold by pressing 1. User 1 starts talking to user 3.~
+UC6	Use Case Number: UC6
+Authors: Group 33
+Event: Administrator logs in to the system console. The administrator password is the input.
+System: telephone exchange system
+Actors: Administrator
+Overview: The administrator wants to access some of the functionality of the system console. The administrator logs in to the console by providing a login name and a password. The administrator can then access the functionality of the console.~
+UC7	Use Case Number: UC7
+Authors: Group 33
+Event: Administrator wants to find a user in the system. The search criteria are the input to the system.
+System: telephone exchange system
+Actors: Administrator
+Overview: The administrator wants to find a user in the system. He enters some search criteria of the wanted user, and the system finds the user for him.~
+UC8	Use Case Number: UC8
+Authors: Group 33
+Event: Administrator wants to manage a user’s account on the system. The operation that the administrator wants to perform and the user he wants to perform it on are the input.
+System: telephone exchange system
+Actors: Administrator
+Overview: The administrator wants to manage a user’s account. He either registers a new user to the system, or finds an existing user and changes the user’s account information~
+UC9	Use Case Number: UC9
+Authors: Group 33
+Event: Administrator manages the billing of a specific user. The selected user account and the operation to perform are the input.
+System: telephone exchange system
+Actors: Administrator
+Overview: The administrator wants to record that a user has paid his bill, to view a particular user’s bill or to print a particular user’s bill. He finds the needed user and performs the desired task.~
+UC10	Use Case Number: UC10
+Authors: Group 33
+Event: Administrator chooses the ‘edit plans’ option on the main menu. This is the only input.
+System: telephone exchange system
+Actors: Administrator
+Overview: The administrator wants to change the billing plan rates or the times at which the discount rates apply. He selects the ‘edit plans’ option on the main menu and makes the needed changes.~
+UC13	Use Case Number: UC13
+Authors: Group 33
+Event: Administrator chooses the ‘configure periodic task’ option on the system console. There is no other input.
+System: telephone exchange system
+Actors: Administrator
+Overview: Administrator decides to change the time frame at which periodic tasks are run. Administrator logs in to the console and chooses the ‘configure periodic tasks’ option. Then he enters the new time frame.~

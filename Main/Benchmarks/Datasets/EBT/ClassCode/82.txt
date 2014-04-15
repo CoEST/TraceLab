@@ -1,0 +1,202 @@
+           Tokenizer
+           "/**
+               * Constructor  .
+               * @param in  Stream the stream containing a program  .
+               */
+              public Tokenizer  ( Reader in  Stream )
+              {
+                  errors = 0  ;
+                  ch = '  \  0'  ;
+                  current  Line = 1  ;
+                  in = new Pushback  Reader  ( in  Stream );
+              }"
+           "/**
+               * Gets current line number  .
+               * @return current line number  .
+               */
+              public int get  Line  Number  ( )
+              {
+                  return current  Line  ;
+              }"
+           "/**
+               * Gets error count  .
+               * @return error count  .
+               */
+              public int get  Error  Count  ( )
+              {
+                  return errors  ;
+              }"
+           "/**
+               * Get the next opening or closing symbol  .
+               * Return false if end of file  .
+               * Skip past comments and character and string constants
+               */
+              public char get  Next  Open  Close  ( )
+              {
+                  while  ( next  Char  ( ) )
+                  {
+                      if  ( ch == '  /  ' )
+                          process  Slash  ( );
+                      else if  ( ch == '  \  '' || ch == '  ""  ' )
+                          skip  Quote  ( ch );
+                      else if  ( ch == '  \\  ' )  // Extra case   not in text
+                          next  Char  ( );
+                      else if  ( ch == '  (  ' || ch == '  [  ' || ch == '  {  ' ||
+                               ch == '  )  ' || ch == '  ]  ' || ch == '  }  ' )
+                          return ch  ;
+                  }
+                  return '  \  0'  ;       // End of file
+              }"
+           "/**
+               * Return true if ch can be part of a Java identifier
+               */
+              private static final boolean is  Id  Char  ( char ch )
+              {
+                  return Character  . is  Java  Identifier  Part  ( ch );
+              }"
+           "/**
+               * Return an identifier read from input stream
+               * First character is already read into ch
+               */
+              private String get  Remaining  String  ( )
+              {
+                  String result = """" + ch  ;
+          
+                  for  ( ; next  Char  ( ); result +  = ch )
+                      if  ( ! is  Id  Char  ( ch ) )
+                      {
+                          put  Back  Char  ( );
+                          break  ;
+                      }
+          
+                  return result  ;
+              }"
+           "/**
+               * Return next identifier   skipping comments
+               * string constants   and character constants  .
+               * Place identifier in current  Id  Node  . word and return false
+               * only if end of stream is reached  .
+               */
+              public String get  Next  ID  ( )
+              {
+                  while  ( next  Char  ( ) )
+                  {
+                      if  ( ch == '  /  ' )
+                          process  Slash  ( );
+                      else if  ( ch == '  \\  ' )
+                          next  Char  ( );
+                      else if  ( ch == '  \  '' || ch == '  ""  ' )
+                          skip  Quote  ( ch );
+                      else if  ( !  Character  . is  Digit  ( ch ) && is  Id  Char  ( ch ) )
+                          return get  Remaining  String  ( );
+                  }
+                  return """";       // End of file
+              }"
+           "/**
+               * next  Char sets ch based on the next character in the input stream  .
+               * put  Back  Char puts the character back onto the stream  .
+               * It should only be used once after a next  Char  .
+               * Both routines adjust current  Line if necessary  .
+               */
+              private boolean next  Char  ( )
+              {
+                  try
+                  {
+                      int read  Val = in  . read  ( );
+                      if  ( read  Val == -1 )
+                          return false  ;
+                      ch = ( char  ) read  Val  ;
+                      if  ( ch == '  \ n  ' )
+                          current  Line  ++;
+                      return true  ;
+                  }
+                  catch  ( IO Exception e )
+                    { return false  ; }
+              }"
+           "private void put  Back  Char  ( )
+              {
+                  if  ( ch == '  \ n  ' )
+                      current  Line  --  ;
+                  try
+                    { in  . unread  ( ( int  ) ch ); }
+                  catch  ( IO Exception e ) { }
+              }"
+           "/**
+               * Precondition  : We are about to process a comment  ; have already seen
+               *                 comment  -start token
+               * Post condition  : Stream will be set immediately after
+               *                 comment  -ending token
+               */
+              private void skip  Comment  ( int start )
+              {
+                  if  ( start == SLASH  _  SLASH )
+                  {
+                      while  ( next  Char  ( ) && ( ch !  = '  \ n  ' ) )
+                          ;
+                      return  ;
+                  }
+          
+                      // Look for a */ sequence
+                  boolean state = false  ;   // True if we have seen *
+          
+                  while  ( next  Char  ( ) )
+                  {
+                      if  ( state && ch == '  /  ' )
+                          return  ;
+                      state = ( ch == '  *  ' );
+                  }
+                  errors  ++;
+                  System  . out  . println  ( ""  Unterminated comment  !"" );
+              }"
+           "/**
+               * Precondition  : We are about to process a quote  ; have already seen
+               *                   beginning quote  .
+               * Post condition  : Stream will be set immediately after
+               *                   matching quote
+               */
+              private void skip  Quote  ( char quote  Type )
+              {
+                  while  ( next  Char  ( ) )
+                  {
+                      if  ( ch == quote  Type )
+                          return  ;
+                      if  ( ch == '  \ n  ' )
+                      {
+                          errors  ++;
+                          System  . out  . println  ( ""  Missing closed quote at line "" +
+                                              current  Line );
+                          return  ;
+                      }
+                      else if  ( ch == '  \\  ' )
+                          next  Char  ( );
+                  }
+              }"
+           "/**
+               * After the opening slash is seen deal with next character  .
+               * If it is a comment starter   process it  ; otherwise put back
+               * the next character if it is not a new line  .
+               */
+              private void process  Slash  ( )
+              {
+                  if  ( next  Char  ( ) )
+                  {
+                      if  ( ch == '  *  ' )
+                      {
+                          // Javadoc comment
+                          if  ( next  Char  ( ) && ch !  = '  *  ' )
+                              put  Back  Char  ( );
+                          skip  Comment  ( SLASH  _  STAR );
+                      }
+                      else if  ( ch == '  /  ' )
+                          skip  Comment  ( SLASH  _  SLASH );
+                      else if  ( ch !  = '  \ n  ' )
+                          put  Back  Char  ( );
+                  }
+              }"
+           "public static final int SLASH  _  SLASH = 0  ;
+              public static final int SLASH  _  STAR  = 1  ;
+          
+              private Pushback  Reader in  ;    // The input stream
+              private char ch  ;              // Current character
+              private int current  Line  ;      // Current line
+              private int errors  ;           // Number of errors seen"

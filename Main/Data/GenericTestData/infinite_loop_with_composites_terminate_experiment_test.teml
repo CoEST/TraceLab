@@ -1,0 +1,137 @@
+﻿<graph>
+  <ExperimentInfo>
+    <Version>1</Version>
+    <Id>bf00929a-671c-476f-b2f5-abd1d9d968fa</Id>
+    <Name>Graph with infinite loop with composite components</Name>
+    <Author>Author</Author>
+    <Contributors>Contributors</Contributors>
+    <Description>Testing graph for testing termination of experiment that has composite components. </Description>
+  </ExperimentInfo>
+  <node id="Start">
+    <SerializedVertexData Version="1" X="159" Y="150">
+      <Metadata type="TraceLab.Core.Components.StartNodeMetadata, TraceLab.Core, Version=0.4.1.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Start" />
+    </SerializedVertexData>
+  </node>
+  <node id="End">
+    <SerializedVertexData Version="1" X="377" Y="338">
+      <Metadata type="TraceLab.Core.Components.EndNodeMetadata, TraceLab.Core, Version=0.4.1.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="End" />
+    </SerializedVertexData>
+  </node>
+  <node id="5739b921-e98e-4b06-abd6-4db3ed67d5c2">
+    <SerializedVertexData Version="1" X="160" Y="218">
+      <Metadata type="TraceLab.Core.Components.CompositeComponentMetadata, TraceLab.Core, Version=0.4.1.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Dummy Composite Component" ComponentMetadataDefinitionID="364eff30-25e6-4fe9-a6d1-db54fc6d9b0e" WaitsForAllPredecessors="False">
+        <IOSpec Version="1">
+          <Input />
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="test4" Type="System.Int32" />
+              <OutputAs>test4</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import>
+            <ImportItem>
+              <ImportItemDefinition Name="test1" Type="System.Int32" />
+              <ImportAs>test1</ImportAs>
+            </ImportItem>
+          </Import>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>34184e55-c66a-491e-ba41-8aaa2c11ef50:Value</Name>
+              <DisplayName>Config 1</DisplayName>
+              <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <int>0</int>
+              </Value>
+            </PropertyObject>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>9dc3255b-0daf-447a-921d-ce0039672278:Value</Name>
+              <DisplayName>Config 2</DisplayName>
+              <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>False</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <int>0</int>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="6d62c356-cc07-4d12-837e-85e54595aa99">
+    <SerializedVertexData Version="1" X="363" Y="219.04">
+      <Metadata type="TraceLab.Core.Components.DecisionMetadata, TraceLab.Core, Version=0.4.1.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Decision" WaitsForAllPredecessors="True">
+        <DecisionCode>x = Load("test4");
+if(x&gt;-1) {
+   Select("Dummy Composite Component");
+} else {
+   Select("End");
+}
+</DecisionCode>
+        <DecisionMetadataDefinition>
+          <ID>8eca5add-dc67-4373-a314-3de5cf9f5e37</ID>
+          <Classname>DecisionModule_8eca5add_dc67_4373_a314_3de5cf9f5e37</Classname>
+          <Assembly>c:\p4root\reLab\branches\aczauderna\Decisions\8eca5add-dc67-4373-a314-3de5cf9f5e37.dll</Assembly>
+        </DecisionMetadataDefinition>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="220b2517-124e-46b6-9aa2-2601356fea17">
+    <SerializedVertexData Version="1" X="213" Y="288">
+      <Metadata type="TraceLab.Core.Components.CompositeComponentMetadata, TraceLab.Core, Version=0.4.1.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Dummy Composite Component 2" ComponentMetadataDefinitionID="364eff30-25e6-4fe9-a6d1-db54fc6d9b0e" WaitsForAllPredecessors="False">
+        <IOSpec Version="1">
+          <Input />
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="test4" Type="System.Int32" />
+              <OutputAs>test4</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import>
+            <ImportItem>
+              <ImportItemDefinition Name="test1" Type="System.Int32" />
+              <ImportAs>test1</ImportAs>
+            </ImportItem>
+          </Import>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>34184e55-c66a-491e-ba41-8aaa2c11ef50:Value</Name>
+              <DisplayName>Config 1</DisplayName>
+              <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <int>1</int>
+              </Value>
+            </PropertyObject>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>9dc3255b-0daf-447a-921d-ce0039672278:Value</Name>
+              <DisplayName>Config 2</DisplayName>
+              <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>False</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <int>2</int>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <edge id="77c6bff6-a38f-4576-958e-3f0c3ac0d88f" source="Start" target="5739b921-e98e-4b06-abd6-4db3ed67d5c2" />
+  <edge id="be5e5702-50b7-49e3-a249-71df0c9d447a" source="5739b921-e98e-4b06-abd6-4db3ed67d5c2" target="220b2517-124e-46b6-9aa2-2601356fea17" />
+  <edge id="24619b3e-686d-4e25-b854-2345cb745c1c" source="6d62c356-cc07-4d12-837e-85e54595aa99" target="End" />
+  <edge id="0a1c67e9-f76b-493d-9f64-177a49cc9735" source="6d62c356-cc07-4d12-837e-85e54595aa99" target="5739b921-e98e-4b06-abd6-4db3ed67d5c2" />
+  <edge id="8aecda77-0de1-499b-8ca9-c9ea7fbc5e98" source="220b2517-124e-46b6-9aa2-2601356fea17" target="6d62c356-cc07-4d12-837e-85e54595aa99" />
+</graph>

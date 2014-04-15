@@ -1,0 +1,29 @@
+UC1	Event: Administrator manages system hardware through the system console
+System: Server
+Actors: Administrator
+Overview: This use case captures how an Administrator manages the hardware of the system.~
+UC2	Event: Administrator attempt to logon/off to the server
+System: Server
+Actors: Administrator
+Overview: This use case captures the process of the administrator logging on/off the server. 
+User ID and password are passed as inputs.~
+UC3	Event: Administrator making changes to the user account settings
+System: Server
+Actors: Administrator
+Overview: This use case captures the process of the administrator making changes to the user account information~
+UC4	Event: Hardware test running automatically (every 30 secs)
+System: Server
+Actors: Timer
+Overview: This use case captures the process of a hardware test running automatically~
+UC5	Event: Administrator making changes to bill plan information
+System: Server
+Actors: Administrator
+Overview: This use case captures the process of the administrator making changes to the billing plan~
+UC6	Event: Administrator make changes to the IP-Phone mapping
+System: Server, Phone Subsystem`
+Actors: Administrator, Caller
+Overview: This use case captures the process of the administrator making changes to the IP-Phone mapping ~
+UC7	Event: Caller picks up the phone and dials a number to place a call to callee
+System: Server, Phone Subsystem
+Actors: Caller, Callee
+Overview: Captures the process of a complete calling sequence from caller picks up the phone to either party hangs up.~

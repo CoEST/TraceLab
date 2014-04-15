@@ -1,0 +1,18 @@
+Use case name INSERISCINEWS 
+Inserts a new news in the system. 
+Participating 
+Actor initialization Agency Operator 
+Entry 
+Operator conditions • The agency has logged. 
+Flow of events User System 
+1. Activate the feature to insert a news. 
+2 Displays the corresponding form. 
+3 Fill out the form and submit. 
+4 Verify the data entered and asks for confirmation of the transaction. Where the data is invalid or insufficient, the system activates the use case Errored. 
+5 Confirm the operation of insertion. 
+6. Stores the data of the new news. 
+Exit conditions • The system shall notify the proper placement of the news. 
+• The Operator Agency cancels the operation. 
+• Interruption of the connection to the server ETOUR. 
+Quality 
+requirements

@@ -1,0 +1,8 @@
+org.mozilla.javascript.TokenStream.getToken
+org.mozilla.javascript.Decompiler.decompile
+org.mozilla.javascript.IRFactory.createAssignment
+org.mozilla.javascript.IRFactory.createBinary
+org.mozilla.javascript.Interpreter.interpretLoop
+org.mozilla.javascript.Parser.mulExpr
+org.mozilla.javascript.Token.name
+org.mozilla.javascript.Interpreter.visitExpression

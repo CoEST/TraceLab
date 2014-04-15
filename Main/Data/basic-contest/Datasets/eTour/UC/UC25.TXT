@@ -1,0 +1,15 @@
+Use case name VISUALIZZAREPORTSTATISTICI 
+View statistical report relating to a selected location. 
+Partecipating 
+Actor initialization Agency Operator 
+Entry 
+Operator conditions • The agency has logged. 
+Flow of events User System 
+1. Activate the feature on the statistical report. 
+2 Upload the list of places in the system and displays them in a form. 
+3 Select a location and submit the form. 
+4 Upload midsize site feedback obtained by activating the RicercaSito use case for the location selected. Prepare the statistical report. 
+Exit conditions • The system displays the statistical report for the selected location. 
+• Interruption of the connection to the server 
+Quality 
+requirements

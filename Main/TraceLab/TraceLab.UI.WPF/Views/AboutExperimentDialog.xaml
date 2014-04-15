@@ -1,0 +1,84 @@
+﻿<!--
+TraceLab - Software Traceability Instrument to Facilitate and Empower Traceability Research
+Copyright (C) 2012-2013 CoEST - National Science Foundation MRI-R2 Grant # CNS: 0959924
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see<http://www.gnu.org/licenses/>.
+-->
+
+<Window x:Class="TraceLab.UI.WPF.Views.AboutExperimentDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Title="Experiment Information"
+        Icon="/TraceLab.UI.WPF;component/Resources/Icon_About16.png"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        SizeToContent="WidthAndHeight">
+
+    <Window.Resources>
+        <Style x:Key="LabelStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="TextAlignment" Value="Right" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+        <Style x:Key="BoxStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="Margin" Value="0 5 5 5" />
+        </Style>
+        <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="5 0 0 0" />
+            <Setter Property="Width" Value="80" />
+        </Style>
+    </Window.Resources>
+
+    <StackPanel Orientation="Vertical" Background="SlateGray">
+        <Grid Background="LightGray" Margin="5" Width="500">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelStyle}">Experiment name:</TextBlock>
+            <TextBox Name="ExperimentNameBox" 
+                     Grid.Row="0" Grid.Column="1" Style="{StaticResource BoxStyle}" Text="{Binding Name}" />
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelStyle}">Author(s):</TextBlock>
+            <TextBox Name="AuthorBox" 
+                     Grid.Row="1" Grid.Column="1" Style="{StaticResource BoxStyle}" Text="{Binding Author}" />
+
+            <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource LabelStyle}">Contributors:</TextBlock>
+            <TextBox Name="ContributorsBox" 
+                     Grid.Row="2" Grid.Column="1" Style="{StaticResource BoxStyle}" Text="{Binding Contributors}" />
+
+            <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource LabelStyle}">Description:</TextBlock>
+            <TextBox Name="DescriptionBox" 
+                     Grid.Row="3" Grid.Column="1" Style="{StaticResource BoxStyle}" Height="80" TextWrapping="Wrap" 
+                     Text="{Binding Description}" />
+        </Grid>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 5 5">
+            <Button x:Name="CancelButton" Style="{StaticResource ButtonStyle}" IsCancel="True">Cancel</Button>
+            <Button x:Name="UpdateButton" Style="{StaticResource ButtonStyle}" Click="UpdateButton_Click">Update</Button>
+        </StackPanel>
+
+    </StackPanel>
+</Window>

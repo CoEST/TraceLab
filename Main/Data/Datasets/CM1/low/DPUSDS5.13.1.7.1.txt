@@ -1,0 +1,1 @@
+Housekeeping	The TMALI CSC collects housekeeping data that can be retrieved via a call to tmaliHkGet().   TMALI CSC housekeeping is returned via the TMALI_HK data structure.

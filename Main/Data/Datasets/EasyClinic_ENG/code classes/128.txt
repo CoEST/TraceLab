@@ -1,0 +1,16 @@
+Class GUIResocontoPrenotazioni Date: 16/09/2003 
+                                                Version: 0 01 000 
+Description Make the mask on the management of 
+                   report of reservation in 
+                   outpatient 
+Attributes 
+       Name Access Description 
+Private panelParametri panel containing all the parameters 
+                            necessary to set criteria 
+                            creation of reports 
+                            Reservations 
+Methods 
+     Signature resocontoPrenotazioni () Public Access 
+  It description to find all the information 
+               necessary to generate the report in 
+               compliance with the criteria specified

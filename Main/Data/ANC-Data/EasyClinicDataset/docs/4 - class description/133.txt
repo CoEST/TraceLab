@@ -1,0 +1,45 @@
+Class GUIPaziente Date: 16/09/2003 
+                                                Version: 0 01 000 
+Description Make the mask on the management 
+                   of reservation by Patient 
+                   the operator 
+Attributes 
+       Name Access Description 
+Private btnAnnullaPrenot button that allows you to start 
+action procedure delete of a 
+                               procedure 
+Private btnModificaDatiP button that allows you to start 
+pazient procedure for changing the data 
+                               anagrafica Patient 
+Private btnModificaPreno button that allows you to start 
+assessment procedure for changing a 
+                               Reservations 
+Private btnPrenotaVisita button that allows you to start 
+                               reservation procedure of a 
+                               visit 
+Methods 
+       Signature show () Public Access 
+    Description View mask 
+       Signature abilitaAccesso () Public Access 
+    Description Manages the event generated when the procedure 
+                   validation goes well 
+       Signature eliminaPrenotazione () Public Access 
+    Its task description call the handler class 
+                   associated with the mask represented by 
+                   GUIEliminaPrenotazuione and begin the process 
+                   delete of a reservation 
+       Signature modificaAnagrafica () Public Access 
+    Description Its task is to draw handler class 
+                   associated with the mask represented by 
+                   GUIAnagraficaPaziente and begin the process of 
+                   Review of data anagrafica Patient 
+       Signature modificaPrenotazione () Public Access 
+    Description Its task is to draw handler class 
+                   associated with the mask represented by 
+                   GUIAnagraficaPaziente and start the procedure 
+                   Review of data relating to a reservation 
+       Signature prenotaVisita () Public Access 
+    Description Its task is to draw handler class 
+                   associated with the mask represented by 
+                   GUIPrenotaVisita and start the procedure 
+                   reservation a visit

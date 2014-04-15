@@ -1,0 +1,249 @@
+﻿<!--
+TraceLab - Software Traceability Instrument to Facilitate and Empower Traceability Research
+Copyright (C) 2012-2013 CoEST - National Science Foundation MRI-R2 Grant # CNS: 0959924
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see<http://www.gnu.org/licenses/>.
+-->
+
+<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:TraceLab.UI.WPF.Views"
+    xmlns:viewmodels="clr-namespace:TraceLab.UI.WPF.ViewModels"
+    xmlns:Converters="clr-namespace:TraceLab.UI.WPF.Converters"
+    xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+    x:Class="TraceLab.UI.WPF.Views.StartPage"
+    Background="White"
+    x:Name="startPage">
+
+    <UserControl.Resources>
+        <ControlTemplate x:Key="HyperlinkButtonTemplate" TargetType="{x:Type Button}">
+            <TextBlock Name="innerText" Cursor="Hand" >
+                <ContentPresenter />
+            </TextBlock>
+            <ControlTemplate.Triggers>
+                <Trigger Property="Button.IsMouseOver" Value="true">
+                    <Setter TargetName="innerText" Property="Foreground" Value="Teal" />
+                    <Setter TargetName="innerText" Property="TextDecorations" Value="Underline" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <Style x:Key="HyperlinkButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template" Value="{StaticResource HyperlinkButtonTemplate}" />
+            <Setter Property="Margin" Value="10 5 10 5" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="Teal" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="IconStyle" TargetType="{x:Type Image}">
+            <Setter Property="Height"  Value="16" />
+            <Setter Property="Margin" Value="0 0 5 0" />
+        </Style>
+
+        <Style TargetType="{x:Type TabControl}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabControl}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TabPanel Grid.Row="0" Margin="0 0 0 -1" Panel.ZIndex="1" IsItemsHost="True" Background="Transparent" />
+                            <Border Grid.Row="1" BorderBrush="Teal" BorderThickness="1" >
+                                <ContentPresenter ContentSource="SelectedContent" />
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type TabItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <Grid>
+                            <Border Name="Border" Background="White" BorderBrush="Teal" BorderThickness="1">
+                                <ContentPresenter Name="ContentSite" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                                  ContentSource="Header" Margin="10 2 10 2"/>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="#FF95DBDB" />
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="False">
+                                <Setter TargetName="Border" Property="Background" Value="White" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ListBoxHighlightStyle" TargetType="ListBoxItem">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Margin" Value="5 5 5 5" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Border Name="Border" Padding="1" SnapsToDevicePixels="true">
+                            <ContentPresenter />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="true">
+                                <Setter TargetName="Border" Property="Background" Value="Transparent"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="Border" Property="Background" Value="#FF95DBDB"/>
+                                <Setter Property="Cursor" Value="Hand" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <EventSetter Event="PreviewMouseLeftButtonDown" Handler="ListBox_MouseLeftButtonDown_OpenLinkURL" />
+        </Style>
+    </UserControl.Resources>
+
+    <DockPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Image DockPanel.Dock="Top" VerticalAlignment="Top" HorizontalAlignment="Left" Height="230" Width="1400"
+               Source="/TraceLab.UI.WPF;component/Resources/Image_StartPageHeader.png" />
+
+        <Grid DockPanel.Dock="Left" VerticalAlignment="Stretch" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <ListBox Grid.Row="0" BorderThickness="0">
+                <ListBox.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
+                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent" />
+                </ListBox.Resources>
+                <Button Style="{StaticResource HyperlinkButtonStyle}" Command="{Binding New}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/TraceLab.UI.WPF;component/Resources/NewDocumentHS.png" Style="{StaticResource IconStyle}" />
+                        <TextBlock Text="Create New Experiment..." />
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource HyperlinkButtonStyle}" Command="{Binding Open}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/TraceLab.UI.WPF;component/Resources/openHS.png" Style="{StaticResource IconStyle}" />
+                        <TextBlock Text="Open Existing Experiment..." />
+                    </StackPanel>
+                </Button>
+            </ListBox>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Separator Grid.Row="0" Background="Teal" HorizontalAlignment="Stretch" Margin="0 10 0 10"/>
+                <TextBlock Grid.Row="1" Margin="10 5 0 5" FontSize="14" FontWeight="Bold">Recent Experiments</TextBlock>
+                <ListBox Grid.Row="2" BorderThickness="0" VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                         ItemsSource="{Binding RecentExperiments}">
+                    <ListBox.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
+                        <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent" />
+                    </ListBox.Resources>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Button HorizontalContentAlignment="Left" Style="{StaticResource HyperlinkButtonStyle}"
+                                        Command="{Binding ElementName=startPage, Path=DataContext.Open}" CommandParameter="{Binding FullPath}">
+                                <StackPanel Orientation="Horizontal" >
+                                    <Image Source="/TraceLab.UI.WPF;component/Resources/Icon_TraceLab16.png" Style="{StaticResource IconStyle}" />
+                                    <TextBlock Text="{Binding Filename}" ToolTip="{Binding FullPath}" />
+                                </StackPanel>
+                            </Button>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="5">
+                <Image Height="64" Margin="0 0 5 0" Source="/TraceLab.UI.WPF;component/Resources/Image_NSFLogo.png" />
+                <TextBlock MaxWidth="150" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"
+                           FontSize="10">TraceLab is funded under National Science Foundation MRI-R2 Grant # CNS: 0959924.</TextBlock>
+            </StackPanel>
+        </Grid>
+
+        <TabControl HorizontalAlignment="Stretch" Margin="0 0 5 5" BorderThickness="1" BorderBrush="Teal" Background="White">
+            <TabItem Header="Online Resources">
+                <ListBox BorderThickness="0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                         ItemContainerStyle="{StaticResource ListBoxHighlightStyle}" ItemsSource="{Binding Links}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <DockPanel Margin="5">
+                                <Image Width="32" Height="32" Margin="0 0 10 0" DockPanel.Dock="Left" VerticalAlignment="Center">
+                                    <Image.Style>
+                                        <Style>
+                                            <Setter Property="Image.Source" Value="/TraceLab.UI.WPF;component/Resources/Icon_Link32.png" />
+                                            <Style.Triggers>
+                                                <Trigger  Property="Image.IsMouseOver" Value="True">
+                                                    <Setter Property="Image.Source" Value="/TraceLab.UI.WPF;component/Resources/Icon_Link32-Alt.png" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+                                <TextBlock DockPanel.Dock="Top" TextWrapping="Wrap" FontSize="14" FontWeight="Bold" Text="{Binding Title}" />
+                                <TextBlock TextWrapping="Wrap" Text="{Binding Description}" />
+                            </DockPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </TabItem>
+
+            <TabItem Header="Video Tutorials">
+                <ListBox BorderThickness="0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                         ItemContainerStyle="{StaticResource ListBoxHighlightStyle}" ItemsSource="{Binding Videos}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <DockPanel Margin="5">                                
+                                <Image Width="32" Height="32" Margin="0 0 10 0" DockPanel.Dock="Left" VerticalAlignment="Center">
+                                    <Image.Style>
+                                        <Style>
+                                            <Setter Property="Image.Source" Value="/TraceLab.UI.WPF;component/Resources/Icon_Play32.png" />
+                                            <Style.Triggers>
+                                                <Trigger  Property="Image.IsMouseOver" Value="True">
+                                                    <Setter Property="Image.Source" Value="/TraceLab.UI.WPF;component/Resources/Icon_Play32-Alt.png" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+                                <TextBlock DockPanel.Dock="Top" TextWrapping="Wrap" FontSize="14" FontWeight="Bold" Text="{Binding Title}" />
+                                <TextBlock TextWrapping="Wrap" Text="{Binding Description}" />
+                            </DockPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+
+</UserControl>

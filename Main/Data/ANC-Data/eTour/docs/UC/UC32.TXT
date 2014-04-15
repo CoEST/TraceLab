@@ -1,0 +1,12 @@
+Use case name ERROREMODIFICAPASSWORD 
+E 'was asked to enter a password but is not confirmed in a correct way. 
+Participating 
+Actor 
+Entry 
+conditions • It has been pressed the button to confirm the password change 
+Flow of events User System 
+4 Notify an error message. 
+5 Confirmation of the reading of the notification. 
+6. Back to change your password. 
+Exit conditions • The system returns control to the user interaction. 
+Quality requirements

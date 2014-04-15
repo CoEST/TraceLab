@@ -1,0 +1,217 @@
+﻿<!--
+TraceLab - Software Traceability Instrument to Facilitate and Empower Traceability Research
+Copyright (C) 2012-2013 CoEST - National Science Foundation MRI-R2 Grant # CNS: 0959924
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see<http://www.gnu.org/licenses/>.
+-->
+
+<ad:DockableContent x:Class="TraceLab.UI.WPF.Views.OutputWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock"
+             xmlns:local="clr-namespace:TraceLab.UI.WPF.Views"
+             xmlns:settings="clr-namespace:TraceLab.Core.Settings;assembly=TraceLab.Core"
+             xmlns:Converters="clr-namespace:TraceLab.UI.WPF.Converters"
+             xmlns:Utilities="clr-namespace:TraceLab.UI.WPF.Utilities"
+             xmlns:Resources="clr-namespace:TraceLab.UI.WPF.Resources"
+             xmlns:Controls="clr-namespace:TraceLab.UI.WPF.Controls"
+             xmlns:NLog="clr-namespace:NLog;assembly=NLog"
+             xmlns:CoreViewModels="clr-namespace:TraceLab.Core.ViewModels;assembly=TraceLab.Core"
+             x:Name="OutputLog"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <ad:DockableContent.Resources>
+        <Style x:Key="LinkButton" TargetType="Button" BasedOn="{StaticResource ResourceKey={x:Type Button}}">
+            <Setter Property="Width" Value="Auto"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <ContentPresenter Content="{TemplateBinding Content}" 
+                                  ContentTemplate="{TemplateBinding  ContentTemplate}"
+                                  VerticalAlignment="Center"
+                                  >
+                            <ContentPresenter.Resources>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="TextDecorations" Value="Underline" />
+                                </Style>
+                            </ContentPresenter.Resources>
+                        </ContentPresenter>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="Blue" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Foreground" Value="Red" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+        <DataTemplate DataType="{x:Type CoreViewModels:LogInfo}">
+            <StackPanel>
+                <TextBlock Text="{Binding Message}" HorizontalAlignment="Stretch" TextWrapping="Wrap" />
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type CoreViewModels:ComponentLogInfo}">
+            <StackPanel>
+                <TextBlock Text="{Binding Message}" HorizontalAlignment="Stretch" TextWrapping="Wrap" />
+                <StackPanel Name="exceptionPanel" Visibility="{Binding Path=Exception, Converter={Converters:NullToVisibilityConverter True=Collapsed, False=Visible}}">
+                    <TextBlock Text="Exception occured in component" FontWeight="Bold" />
+                    <Button Name="ViewException" Style="{StaticResource LinkButton}" 
+                                            Click="ViewExceptionButton_Click">
+                        View exception details...
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+
+    </ad:DockableContent.Resources>
+    <DockPanel>
+        <ToolBarTray DockPanel.Dock="Top">
+
+            <ToolBar Band="1" BandIndex="1" ToolBarTray.IsLocked="True" Loaded="ToolBar_Loaded" HorizontalAlignment="Stretch">
+                <ToolBar.Resources>
+                    <DataTemplate DataType="{x:Type settings:GlobalLogLevelSetting}" x:Key="GlobalLogLevelSettingMenuTemplate">
+                        <TextBlock Text="{Binding Level}"/>
+                    </DataTemplate>
+
+                    <Style TargetType="MenuItem" x:Key="GlobalLogLevelSettingMenuContainerStyle">
+                        <Setter Property="IsChecked" Value="{Binding IsEnabled}"/>
+                        <Setter Property="CommandParameter" Value="{Binding Path=.}" />
+                        <Setter Property="Command" Value="{Binding Path=DataContext.SettingsViewModel.SetGlobalLogLevelSettingCommand, RelativeSource={RelativeSource AncestorType={x:Type ToolBar}}}" />
+                    </Style>
+
+                    <Style x:Key="MenuItemStyle" TargetType="{x:Type MenuItem}">
+                        <Style.Triggers>
+                            <Trigger Property="Role" Value="TopLevelHeader">
+                                <Setter Property="Template" Value="{StaticResource {x:Static MenuItem.SubmenuHeaderTemplateKey}}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ToolBar.Resources>
+
+                <Button Command="{Binding LogViewModel.ClearCommand}">
+                    <Image Height="16" Width="16" Source="/TraceLab.UI.WPF;component/Resources/ClearAll.png" />
+                    <Button.ToolTip>
+                        Clear all
+                    </Button.ToolTip>
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Style.Triggers>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <Resources:GrayscaleEffect x:Name="grayscaleEffect" Factor="0" />
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <Separator Visibility="{Binding Path=SettingsViewModel.GlobalLogLevelsSettings, Converter={Converters:NullToVisibilityConverter True=Collapsed, False=Visible}}" />
+
+                <Menu ToolBar.OverflowMode="AsNeeded" Background="{x:Null}" 
+                      Visibility="{Binding Path=SettingsViewModel.GlobalLogLevelsSettings, Converter={Converters:NullToVisibilityConverter True=Collapsed, False=Visible}}">
+                    <MenuItem Header="Global Log Levels" Style="{StaticResource MenuItemStyle}" IsCheckable="False" Name="GlobalLogLevelsSettingsMenu"
+                                ItemTemplate="{StaticResource GlobalLogLevelSettingMenuTemplate}" 
+                                ItemContainerStyle="{StaticResource GlobalLogLevelSettingMenuContainerStyle}"
+                                ItemsSource="{Binding Path=SettingsViewModel.GlobalLogLevelsSettings}" >
+                    </MenuItem>
+                </Menu>
+
+            </ToolBar>
+
+        </ToolBarTray>
+
+        <ListView x:Name="OutputLogView" ItemsSource="{Binding Path=LogViewModel.Events}" Utilities:ListViewAutoScrollExtension.AutoScroll="true">
+            <ListView.View>
+                <GridView>
+                    
+                    <!-- Level Icon -->
+                    <Controls:FixedWidthGridViewColumn FixedWidth="24">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Height="12" Width="12">
+                                    <Image.Style>
+                                        <Style TargetType="{x:Type Image}">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Level}" Value="{x:Static NLog:LogLevel.Info}">
+                                                    <Setter Property="Source" Value="/TraceLab.UI.WPF;component/Resources/icon_info_12x12.png" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Level}" Value="{x:Static NLog:LogLevel.Trace}">
+                                                    <Setter Property="Source" Value="/TraceLab.UI.WPF;component/Resources/icon_trace_12x12.png" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Level}" Value="{x:Static NLog:LogLevel.Debug}">
+                                                    <Setter Property="Source" Value="/TraceLab.UI.WPF;component/Resources/icon_debug_12x12.png" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Level}" Value="{x:Static NLog:LogLevel.Warn}">
+                                                    <Setter Property="Source" Value="/TraceLab.UI.WPF;component/Resources/icon_warning_12x12.png" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Level}" Value="{x:Static NLog:LogLevel.Error}">
+                                                    <Setter Property="Source" Value="/TraceLab.UI.WPF;component/Resources/icon_error_12x12.png" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Level}" Value="{x:Static NLog:LogLevel.Fatal}">
+                                                    <Setter Property="Source" Value="/TraceLab.UI.WPF;component/Resources/icon_error_12x12.png" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </Controls:FixedWidthGridViewColumn>
+                    
+                    <!-- Severity -->
+                    <Controls:FixedWidthGridViewColumn FixedWidth="60" Header="Severity">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Level}" HorizontalAlignment="Stretch" VerticalAlignment="Top" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </Controls:FixedWidthGridViewColumn>
+                    
+                    <!-- Source of log message -->
+                    <GridViewColumn Header="Source" DisplayMemberBinding="{Binding SourceName}" Width="250">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding SourceName}" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Top" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    
+                    <!-- Message -->
+                    <GridViewColumn Header="Message" Width="600">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <ContentControl Content="{Binding}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="VerticalContentAlignment" Value="Top" />
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+    </DockPanel>
+</ad:DockableContent>

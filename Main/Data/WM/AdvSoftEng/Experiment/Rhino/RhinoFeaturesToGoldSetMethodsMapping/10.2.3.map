@@ -1,0 +1,4 @@
+org.mozilla.javascript.ScriptRuntime.setName
+org.mozilla.javascript.ScriptRuntime.getValueFunctionAndThis
+org.mozilla.javascript.ScriptRuntime.initFunction
+org.mozilla.javascript.Interpreter.initFrame

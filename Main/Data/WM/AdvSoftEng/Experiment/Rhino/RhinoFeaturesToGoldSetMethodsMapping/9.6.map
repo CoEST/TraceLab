@@ -1,0 +1,2 @@
+org.mozilla.javascript.ScriptRuntime.toNumber
+org.mozilla.javascript.ScriptRuntime.toUint32

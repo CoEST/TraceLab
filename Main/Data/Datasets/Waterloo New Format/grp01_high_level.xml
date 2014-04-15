@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp01_high_level</id>
+    <name>Waterloo grp01_high_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp01_high_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>F1</id>
+      <content>Grant administrator access through system console.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F2</id>
+      <content>Administrator can find available phone numbers.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F3</id>
+      <content>Administrator can find available IP address.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F4</id>
+      <content>Administrator can associate an IP address to a phone number.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F5</id>
+      <content>The administrator can map the IP address and phone number to a customer�s account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F6</id>
+      <content>Grant accounts the ability to originate and receive calls.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F7</id>
+      <content>Administrator can block incoming calls to an account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F8</id>
+      <content>Administrator can exclusively allow incoming calls to an account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F9</id>
+      <content>Administrator can disassociate an IP address and number pair from a customer�s account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F10</id>
+      <content>Administrator can disassociate an IP address from an number.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F11</id>
+      <content>Administrator can view associates between phone numbers, IP address and customer accounts.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F12</id>
+      <content>Administrator can view which devices, if any, are out of service.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F13</id>
+      <content>Administrator can take a phone out of service.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F14</id>
+      <content>Administrator can put a phone back in service.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F15</id>
+      <content>System alerts administrator of any errors that occur.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F16</id>
+      <content>Administrator can reset any phone.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F17</id>
+      <content>System periodically runs automated hardware fault tests on itself.  Administrator can view results of tests in report form.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F18</id>
+      <content>Administrator can set the maximum number of allowable connections between phones.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F19</id>
+      <content>System can store records of calls made.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F20</id>
+      <content>Administrator can print a bill for a customer�s account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F21</id>
+      <content>System calculates and includes taxes on bills.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F22</id>
+      <content>If customer fails to make a bill payment, a warning appears on the next bill.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F23</id>
+      <content>At the end if each customer�s billing period, system will automatically print out a bill.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F24</id>
+      <content>Administrator can assign a billing plan to a customer.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F25</id>
+      <content>Administrator can create a new billing plan.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F26</id>
+      <content>Administrator can view the details of any customer�s account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F27</id>
+      <content>Administrators can create new administrative accounts.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F28</id>
+      <content>The administrator can take a customer�s information and create a new account for him/her with a billing plan.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F29</id>
+      <content>The administrator can suspend a user�s account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F30</id>
+      <content>The administrator can cancel a customer�s account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F31</id>
+      <content>Accounts that have been suspended for 30 days automatically become cancelled.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F32</id>
+      <content>Administrator can view the history of a system loads in graph form.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F33</id>
+      <content>Administrator can log out of the system console.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F34</id>
+      <content>If an administrative is inactive for five minutes, then he is automatically logged out.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F35</id>
+      <content>The caller will hear a dial tone before placing a call.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F36</id>
+      <content>The user will be able to dial a number to make a call.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F37</id>
+      <content>The system will ensure that the number of current connections is less than maximum number of allowable connections before allowing a new call.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F38</id>
+      <content>The system can establish a connection between two phones.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F39</id>
+      <content>The system can disconnect a call between two phones.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F40</id>
+      <content>If system will be able to detect if a phone is left off the hook.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F41</id>
+      <content>If a phone tries to establish a connection with another phone under certain conditions, then the caller will receive a busy signal.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F42</id>
+      <content>Billing periods for customers can start on different days for each customer.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F43</id>
+      <content>Phone numbers shall belong to groups, which represent their areas.  Calling phone numbers outside the group will incur long distance charges.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F44</id>
+      <content>If the callee does not pick up the phone when being called, after five minutes of ringing the call disconnections.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F45</id>
+      <content>The system only will only allow one administrator to be logged in at one time.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F46</id>
+      <content>The administrator should be able to access the system console through a TCP/IP protocol.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F47</id>
+      <content>All error messages will be assigned severity levels.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F48</id>
+      <content>Administrator can reverse the suspension of a customer�s account.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F49</id>
+      <content>A user can call the administrator (0000) at any time</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF1</id>
+      <content>The phone system must be consistently available for customer use, both in making and receiving calls.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF2</id>
+      <content>The phone system should be built to handle small numbers of customer accounts and phones, as well as large numbers of accounts and phones.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF3</id>
+      <content>The phone network and administration systems should be secure and unavailable to unauthorized users.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF4</id>
+      <content>The phone system should respond promptly to both administrators and customers using the phone system.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF5</id>
+      <content>The phone system should be available for use by the customers and administrators for the vast majority of times.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF6</id>
+      <content>The system should function reliably, responding correctly to the administrator and customer commands, not giving frequent errors or crashing.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF7</id>
+      <content>No customers should be able to make phone calls without being charged for them.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF8</id>
+      <content>The administration system console should be easy for administrators to use.  Functions should be intuitive so that administrators can use them with minimal training.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>NF9</id>
+      <content>The telephone interface and feedback should provide customers with an experience consistent with other telephone systems.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

@@ -1,0 +1,272 @@
+           Event Notifier
+           "// Variables to process the requirement
+           private String requirement No  ;          //  Requirement No  .
+           private String Proj  Name  ;       //  Project name
+           private String Mod  Path  ;        //  Modular path
+           private String requirement Text  ;        //  Descriptive text
+           private String Event  Type  ;      //""  Merge  "" ""  Decompose  "" etc  .
+           private String Event  Message  ;   //  The entire event message
+           private String Event  ID  ;        //  Event ID   i  . e  . 114
+           private String err  Msg  ;
+          
+           //  Actual  Subscribers contains all the actual subscribers for this requirement   initially empty
+           protected Vector Actual  Subscribers = new Vector  ();
+          
+           // Variables to open the database connection
+           private Connection conn   conn  2  ;
+           private Result  Set rs   rs  2  ;
+           private Statement stmt   stmt  2  ;"
+           "public Event  Notifier  (  String rno   String proj   String mod   String rtext    String e  ID   String em   String event  Type  )
+           {
+            requirement No = rno  ;        //  Requirement number
+            Proj  Name = proj  ;    // project name
+            Mod  Path = mod  ;      //  Modular path
+            requirement Text = rtext  ;    //  Descriptive text
+            Event  ID = e  ID  ;      //  The event ID of current event   i  . e  . 114  .
+            Event  Message = em  ; // unprocessed message  .  Forward it to subscriber  . The whole event string coming from Event  Parser  .
+                  err  Msg  =  """";
+          
+                  // The Event  Type field is added by Haroon because when we send
+                  // the message to subscribermanager then we need this field  .
+                  // example ( decompose   replace   modify  ...)
+                    Event  Type = event  Type  ;
+          
+          
+            // Open the database for pulling subscriptions and for pulling subscription
+            // manager information
+            try
+            {
+                Class  . for  Name  ("" sun  . jdbc  . odbc  .  Jdbc  Odbc  Driver  "");
+                conn = Driver  Manager  . get  Connection  ("" jdbc  : odbc  :  EBT  """"  EBT  """"  EBT  "");
+                conn  2 = Driver  Manager  . get  Connection  ("" jdbc  : odbc  :  EBT  """"  EBT  """"  EBT  "");
+          
+                stmt = conn  . create  Statement  ();
+                stmt  2 = conn  2  . create  Statement  ();
+               }
+               catch (  Exception ex  )
+               {
+                System  . out  . println  (""  A problem occurred establishing the database connection  "");
+            }
+          
+            // Construct a rough set of potential subscribers
+            System  . out  . println  (""  Identifying subscribers  "");
+            Identify  Subscribers  ();
+          
+            // Process the set of subscribers and send notification to actual subscribers
+            System  . out  . println  (""  Processing results  "");
+                  Process  Result  Set  ();
+          
+          
+            // Dispatch messages to subscribers
+            System  . out  . println  (""  Dispatching event  "");
+            Dispatch  Event  ();
+          
+           } // End No  -param Constructor  ."
+           "// finds the subscribers for this requirement
+           public void Identify  Subscribers  ()
+           {
+            String m  SQL  ;
+            // Create an SQL statement that will limit the selection as much as possible
+            // If a subscription is to a specific requirement - check for requirement match
+            // otherwise other fields must be tested for a match  .  0
+          
+                  System  . out  . println  (""  Subscription  Projname = "" + Proj  Name  );
+          
+            // query the table SUBSCRIPTION   the select conditions are  :
+            //  Subscription  Projname matches the project name and
+            //  Subscriber  Dependency equals ""  Requirements  ""
+          
+            m  SQL = ""  SELECT Subscriber  Name   Subscription  requirement No   Subscription  Module   Subscription  Keyword  1   Subscription  Keyword  2 "" +
+            "" FROM SUBSCRIPTION "" +  "" WHERE Subscription  Projname = '  "" + Proj  Name + ""  ' AND Subscriber  Dependency =  ' Requirements  '  "";
+          
+             try
+             {
+                    rs = stmt  . execute  Query  ( m  SQL  );
+          
+            }
+            catch (  Exception e  )
+            {
+             System  . out  . println  (""  ERROR IN ACCESSING SUBSCRIPTION TABLE  "");
+                System  . out  . println  (""  Error in updating Event  Master  "" + e  );
+               }
+          
+           } // Ending Identify  Subscribers  () Method  ."
+           "//  Reads the result from Identify  Subscribers method selection
+           // and adds each result into Actual  Subscribers Vector  .
+           void Process  Result  Set  ()
+           {
+          
+            String s  Name   s  Reqno   s  Module   s  Key  1   s  Key  2  ;
+            try
+            {
+             System  . out  . println  (""  ENTER THE RS  "");
+             while ( rs  . next  ())
+             {
+          
+              // Read next record from result set
+              s  Name = rs  . get  String  (  1  );  //  Subscriber  Name
+              s  Reqno = rs  . get  String  (  2  ); //  Subscription  requirement No
+              s  Module = rs  . get  String  (  3  ); //  Subscription  Module
+              s  Key  1 = rs  . get  String  (  4  ); //  Subscription  Keyword  1
+              s  Key  2 = rs  . get  String  (  5  ); //  Subscription  Keyword  2
+          
+          
+              System  . out  . println  (""  Rs  : Name  : "" + s  Name  );
+              System  . out  . println  (""  Rs  : s  Reqno  : "" + s  Reqno  );
+              System  . out  . println  (""  Rs  : s  Module  : "" + s  Module  );
+              System  . out  . println  (""  Rs  : s  Key  1  : "" + s  Key  1  );
+              System  . out  . println  (""  Rs  : s  Key  2  : "" + s  Key  2  );
+          
+              // If this represents a subscriber - add them to the vector
+              // Add some logic here based on event type ( et  ).
+              int Add  This  Subscriber = 0  ;
+          
+              // Simplify compound expression to simplify debugging  .
+              // Assume to start with that all subscriptions should be notified  .
+              boolean Add  Sub = true  ;
+          
+              // if the Subscription  requirement No  ( attribute of table SUBSCRIPTION  ) is not null
+              // and it is not equal to the requirement No  . of current requirement  
+              // the Add  Sub  =false
+          
+              System  . out  . println  (""** SReqno  : "" + s  Reqno + ""\ n ** Reqno  : "" + requirement No  );
+              if ( s  Reqno !  = null && ! s  Reqno  . equals  (  requirement No  ))
+              {
+               Add  Sub = false  ;
+              }
+          
+              // if the Subscription  Module  ( attribute  ) is not null and does not contain the
+              // modular path of current requirement
+                 if ( s  Module !  = null  )
+                 {
+               if ( s  Module  . trim  (). length  () > 0 && !  Contains  (  Mod  Path   s  Module  ))
+                Add  Sub = false  ;
+                 }
+          
+              System  . out  . println  (""** Add  Sub  : "" + Add  Sub  );
+              if (  Add  Sub  )
+              {
+               Actual  Subscribers  . add  Element  ( new Subscribed  Model  ( s  Name   s  Reqno   s  Module   s  Key  1   s  Key  2  ));
+                System  . out  . println  (""  Add Subscriber  *******************: ""+ s  Name  );
+              }
+              //  Now Actual  Subscribers contains all the subscribers for the current requirement .
+          
+          
+             }
+             rs  . close  ();
+            }
+            catch (  Exception e  )
+            {
+             System  . out  . println  (""  Problem with result set rs  :  "" + e  );
+            } // End try
+          
+           }"
+           "// Send messages to all subscribers listed in Actual  Subscriber Vector
+          // Possible that a sort routine can be added later so that all notification to
+          // the same subscribermanager can be batched  .  This is not implemented yet  .
+          
+           public void Dispatch  Event  ()
+           {
+            String ip = "" "";
+            String sub  Name = "" "";
+            String Bundled  Message = "" "";
+            String send  Port = ""  "";
+            int Port  No = 1705  ;
+          
+          
+            System  . out  . println  (""  Actual Subscriber Size is  : "" + Actual  Subscribers  . size  () );
+            for ( int i = 0  ; i < Actual  Subscribers  . size  (); i  ++)
+            {
+          
+             System  . out  . println  (""  Actual Subscriber Size is  : "" + Actual  Subscribers  . size  () );
+          
+             Subscribed  Model sm = (  Subscribed  Model  )  Actual  Subscribers  . element  At  ( i  );
+          
+             // Get ip address etc of the subscriber
+             String m  SQL  ;
+                   m  SQL = ""  SELECT SUBSCRIBERS  .  SUBSCRIBER NAME   subscribermanager  .  SUBSCRIBER IP ADDRESS    subscribermanager  .  subscribermanager   "" +
+                 ""  subscribermanager  .  SUBSCRIBERPORT "" +
+                 "" FROM SUBSCRIBERS   subscribermanager "" +
+                 "" WHERE SUBSCRIBERS  .  SUBSCRIBER NAME = '  "" + sm  .  Get  Subscriber  Name  ()
+                          + ""  ' AND "" + "" SUBSCRIBERS  .  subscribermanager=subscribermanager  .  subscribermanager  "";
+          
+          
+             System  . out  . println  (""  Subscriber name is  : "" + sm  .  Get  Subscriber  Name  ());
+          
+             try
+             {
+                   rs  2 = stmt  . execute  Query  ( m  SQL  );
+               System  . out  . println  (""  SQL Query is  : "" + rs  2  . get  Fetch  Size  ());
+          
+              if ( rs  2  . next  ())
+              {
+          
+               sub  Name = rs  2  . get  String  (  1  );
+                  ip = rs  2  . get  String  (  2  );
+               send  Port = rs  2  . get  String  (  4  );
+               // Convert port number to int  .
+               Port  No = Integer  . parse  Int  ( send  Port  );
+          
+                        System  . out  . println  (""  IP Address is  : "" + ip + ""  Port is  : ""+  Port  No  );
+               }
+             }
+             catch (  Exception e  )
+             {
+                 System  . out  . println  (""  Error in retrieving IP address "" + e  );
+                }
+          
+             //  Input  Stream  Reader isr = new Input  Stream  Reader  (  System  . in  );
+             //  Buffered  Reader br = new Buffered  Reader  ( isr  );
+             try
+             {
+              Socket socket = new Socket  ( ip    Port  No  );
+          
+              Output  Stream os = socket  . get  Output  Stream  ();
+              Output  Stream  Writer osw = new Output  Stream  Writer  ( os  );
+              Print  Writer pw = new Print  Writer  ( osw  );
+          
+          
+              //  The following line is changed by haroon before that it only send 3 arguments now it send 6 args  .
+              //  Date and time is added by Haroon
+          
+              Date date = new Date  ();
+          
+              pw  . println  ( new String ( sub  Name + ""|"" +  Event  ID +""|"" +  Event  Message + ""|"" + Event  Type + ""|""+ ""  2  "" + ""|"" +  date  . to  String  ()));
+              System  . out  . println  (( sub  Name + ""|"" +  Event  ID +""|"" +  Event  Message + ""|"" + Event  Type + ""|""+ ""  2  "" + ""|"" +  date  . to  String  ()));
+          
+              System  . out  . println  (""  Sent message to  : "" + ip + ""    Port Number "" + send  Port  );
+              pw  . flush  ();
+             }
+             catch (  IO Exception e  )
+             {
+              System  . err  . println  (""  Failed to open  / write to socket for notification  "" + e  );
+                       //  Try to write email stuffs here
+                       err  Msg +  = ""  Failed to open  / write to socket  (""+ ip  +""/""+ send  Port  +"") for notification  :\ r  \ n  ""+
+                               ""  Subscriber Name  : ""+ sub  Name  +
+                               ""\ r  \ n  Event  ID  : ""+  Event  ID  +
+                               ""\ r  \ n  Event Message  : ""+  Event  Message  +""\ r  \ n  "";
+          
+                 String unsent  Str  =  ""  Insert into FAILED SUBSCRIPTION (  Subscriber  Name    Event  ID    Event  Message    Subscriber  IP    Subscriber  Port  ) values (  '  ""+
+                                  sub  Name  +""  '    '  ""+  Event  ID  +""  '    '  ""+  Event  Message  +""  '    '  ""+ ip  +""  '    '  ""+  Port  No  +""  '  )"";
+                     try"
+           "public String get  Error  Message  ()
+           {
+               return err  Msg  ;
+          
+           }"
+           "public boolean Contains  (  String Context  String   String Search  String  )
+           {
+            int c  Len = Context  String  . length  ();
+            int s  Len = Search  String  . length  ();
+            if (  Search  String  . length  () == 0  )
+             return false  ;
+          
+            for ( int i = 0  ; i < c  Len  -s  Len  +  1  ; i  ++)
+            {
+             if (  Context  String  . region  Matches  ( true   i    Search  String    0   s  Len  ))
+             {
+              return true  ;
+             }
+            }
+            return false  ;
+           }"

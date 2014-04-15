@@ -1,0 +1,14 @@
+
+Nome: Login
+Attori: Utente registrato
+Descrizione: Permette ad un utente di loggarsi al sistema
+Precondizioni:
+L’utente non è loggato al sistema L’utente possiede username e password Compila e sottomette il form per il login
+Sequenza degli eventi
+Utente
+Sistema
+1.	Verifica che username e password abbiano lunghezza >=5. Se la condizione è rispettata passa al punto due, altrimenti notifica l'errore all'utente.
+2.	Cerca nell’archivio se username e password inseriti dall’utente sono presenti tra gli utenti loggabili
+3.	Se la ricerca ha avuto successo l’utente viene loggato al sistema
+Postcondizioni:
+•	Il sistema visualizza l’area di lavoro dell’Utente Registrato •	Interruzione della connessione al server SMOS

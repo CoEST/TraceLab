@@ -1,0 +1,311 @@
+package unisa.gps.etour.repository;
+
+import java.sql. Connection;
+import java.sql. Date;
+import java.sql. Result Set;
+import java.sql. S Q L Exception;
+import java.sql. Statement;
+import java.util. Array List;
+
+import unisa.gps.etour.bean. Bean Visita P R;
+
+/**
+ *  Classe che implementa l'interfaccia  I D B Visita P R
+ * 
+ * @author  Martone  Giuseppe
+ * @version  .  �      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I �  University
+ *          of  Salerno
+ */
+public class  D B Visita P R implements  I D B Visita P R
+{
+	//  Costruttore vuoto
+	public  D B Visita P R()
+	{
+
+	}
+
+	public boolean inserisci Visita P R( Bean Visita P R p Visita) throws  S Q L Exception
+	{
+		//  Variabile per la connessione
+		 Connection conn = null;
+		//  Variabile per le query
+		 Statement stat = null;
+		//  Variabile per i risultati delle query
+		 Result Set result = null;
+		try
+		{
+			//  Creo la data di visita
+			java.sql. Date data Visita = new  Date(p Visita.get Data Visita()
+					.get Time());
+			//  Ottengo la connessione
+			conn =  D B Connessione Pool.ottieni Connessione();
+			//  Creazione dello  Statement
+			stat = conn.create Statement();
+			//  Query per ottenere la media dei voti di un bene
+			 String query Media Voti = " S E L E C T  Media Voti,  Numero Voti  F R O M punto di ristoro   W H E R E  Id ="
+					+ p Visita.get Id Punto Di Ristoro();
+			result = stat.execute Query(query Media Voti);
+			//  Variabile per la media dei voti
+			double media =  ;
+			//  Variabile per il numero di voti
+			int numero Voti =  ;
+			if (result.next())
+			{
+				media = result.get Double(" Media Voti");
+				numero Voti = result.get Int(" Numero Voti");
+				media = ((media * numero Voti) + p Visita.get Voto())
+						/ ++numero Voti;
+			}
+			//  Query per l'inserimento
+			 String query = " I N S E R T  I N T O visitapr( Id Turista,  Id Punto Di Ristoro,  Data Visita,  Voto,  Commento)  V A L U E S ("
+					+ p Visita.get Id Turista()
+					+ " ,"
+					+ p Visita.get Id Punto Di Ristoro()
+					+ " ,'"
+					+ data Visita
+					+ "',"
+					+ p Visita.get Voto() + " ,'" + p Visita.get Commento() + "')";
+			 String query  = " U P D A T E punto di ristoro   S E T  Media Voti = " + media
+					+ ",  Numero Voti = " + numero Voti + "  W H E R E  Id="
+					+ p Visita.get Id Punto Di Ristoro();
+			//  Si esegue la query di  Inserimento
+			stat.execute Query(" B E G I N");
+			int i = stat.execute Update(query);
+			i = i * stat.execute Update(query );
+			stat.execute Query(" C O M M I T");
+			//  Si ritorna il backup
+			return (i ==  );
+		}
+		//  Viene eseguito sempre e si occupa di chiudere il  Result, lo  Statement
+		// e la  Connessione
+		finally
+		{
+			if (result != null)
+			{
+				result.close();
+			}
+			if (stat != null)
+			{
+				stat.close();
+			}
+			if (conn != null)
+			{
+				 D B Connessione Pool.rilascia Connessione(conn);
+			}
+		}
+	}
+
+	public boolean modifica Visita P R( Bean Visita P R p Visita) throws  S Q L Exception
+	{
+		//  Variabile per la connessione
+		 Connection conn = null;
+		//  Variabile per le query
+		 Statement stat = null;
+		try
+		{
+			//  Creo la data di visita
+			java.sql. Date data Visita = new  Date(p Visita.get Data Visita()
+					.get Time());
+			//  Ottengo la connessione
+			conn =  D B Connessione Pool.ottieni Connessione();
+			//  Creazione dello  Statement
+			stat = conn.create Statement();
+			//  Query di modifica
+			 String query = " U P D A T E visitapr   S E T  " + "  Data Visita = '"
+					+ data Visita + "',  Commento = '" + p Visita.get Commento()
+					+ "'  W H E R E  Id Punto Di Ristoro = "
+					+ p Visita.get Id Punto Di Ristoro() + "  A N D  Id Turista = "
+					+ p Visita.get Id Turista();
+			//  Si esegue la query di  Modifica
+			int i = stat.execute Update(query);
+			//  Si ritorna il backup
+			return (i ==  );
+		}
+		//  Viene eseguito sempre e si occupa di chiudere il  Result, lo  Statement
+		// e la  Connessione
+		finally
+		{
+			if (stat != null)
+			{
+				stat.close();
+			}
+			if (conn != null)
+			{
+				 D B Connessione Pool.rilascia Connessione(conn);
+			}
+		}
+
+	}
+
+	public  Array List< Bean Visita P R> ottieni Lista Visita P R(int p Id Punto Di Ristoro)
+			throws  S Q L Exception
+	{
+		//  Variabile per la connessione
+		 Connection conn = null;
+		//  Variabile per le query
+		 Statement stat = null;
+		//  Variabile per i risultati delle query
+		 Result Set result = null;
+		try
+		{
+			//  Ottengo la connessione
+			conn =  D B Connessione Pool.ottieni Connessione();
+			//  Creazione dello  Statement
+			stat = conn.create Statement();
+			//  Query per l'estrazione della lista delle visite per un certo
+			// punto di ristoro
+			 String query = " S E L E C T *  F R O M visitapr  W H E R E  Id Punto Di Ristoro = "
+					+ p Id Punto Di Ristoro;
+			//  Viene eseguita la query
+			result = stat.execute Query(query);
+			 Array List< Bean Visita P R> lista = new  Array List< Bean Visita P R>();
+			//  Si estraggono i risultati dal result set e si inseriscono nella
+			// lista
+			// da restituire
+			while (result.next())
+			{
+				java.util. Date data Visita = new java.util. Date(result.get Date(
+						" Data Visita").get Time());
+				lista.add(new  Bean Visita P R(result.get Int(" Voto"), result
+						.get Int(" Id Punto Di Ristoro"), result
+						.get String(" Commento"), result.get Int(" Id Turista"),
+						data Visita));
+			}
+			return lista;
+		}
+		//  Viene eseguito sempre e si occupa di chiudere il  Result, lo  Statement
+		// e la  Connessione
+		finally
+		{
+			if (result != null)
+			{
+				result.close();
+			}
+			if (stat != null)
+			{
+				stat.close();
+			}
+			if (conn != null)
+			{
+				 D B Connessione Pool.rilascia Connessione(conn);
+			}
+		}
+
+	}
+
+	public  Array List< Bean Visita P R> ottieni Lista Visita P R Turista(int p Id Turista)
+			throws  S Q L Exception
+	{
+		//  Variabile per la connessione
+		 Connection conn = null;
+		//  Variabile per le query
+		 Statement stat = null;
+		//  Variabile per i risultati delle query
+		 Result Set result = null;
+		try
+		{
+			//  Ottengo la connessione
+			conn =  D B Connessione Pool.ottieni Connessione();
+			//  Creazione dello  Statement
+			stat = conn.create Statement();
+			//  Query per l'estrazione della lista delle visite per un certo
+			// punto di ristoro di un  Turista
+			 String query = " S E L E C T *  F R O M visitapr  W H E R E  Id Turista = "
+					+ p Id Turista;
+			//  Viene eseguita la query
+			result = stat.execute Query(query);
+			//  Lista che conterrà i  Bean Visita P R
+			 Array List< Bean Visita P R> lista = new  Array List< Bean Visita P R>();
+			//  Si estraggono i risultati dal result set e si inseriscono nella
+			// lista
+			// da restituire
+			while (result.next())
+			{
+				//  Aggiungo i  Bean Visita P R alla lista
+				java.util. Date data Visita = new java.util. Date(result.get Date(
+						" Data Visita").get Time());
+				lista.add(new  Bean Visita P R(result.get Int(" Voto"), result
+						.get Int(" Id Punto Di Ristoro"), result
+						.get String(" Commento"), result.get Int(" Id Turista"),
+						data Visita));
+			}
+			//  Ritorno la lista
+			return lista;
+		}
+		//  Viene eseguito sempre e si occupa di chiudere il  Result, lo  Statement
+		// e la  Connessione
+		finally
+		{
+			if (result != null)
+			{
+				result.close();
+			}
+			if (stat != null)
+			{
+				stat.close();
+			}
+			if (conn != null)
+			{
+				 D B Connessione Pool.rilascia Connessione(conn);
+			}
+		}
+
+	}
+
+	public  Bean Visita P R ottieni Visita P R(int p Id Punto Di Ristoro, int p Id Turista)
+			throws  S Q L Exception
+	{
+		//  Variabile per la connessione
+		 Connection conn = null;
+		//  Variabile per le query
+		 Statement stat = null;
+		//  Variabile per i risultati delle query
+		 Result Set result = null;
+		try
+		{
+			//  Ottengo la connessione
+			conn =  D B Connessione Pool.ottieni Connessione();
+			//  Creazione dello  Statement
+			stat = conn.create Statement();
+			//  Query per l'estrazione della visita effettuata da un turista per
+			// un determinato punto di ristoro
+			 String query = " S E L E C T *  F R O M visitapr  W H E R E  Id Punto Di Ristoro = "
+					+ p Id Punto Di Ristoro + "  A N D  Id Turista =  " + p Id Turista;
+			//  Viene eseguita la query
+			result = stat.execute Query(query);
+			//  Ottengo il bean della visita cercata in base all'id del turista e
+			// del punto di ristoro
+			 Bean Visita P R bean Temp = null;
+			if (result.next())
+			{
+				//  Creo il  Bean Visita P R
+				java.util. Date data Visita = new java.util. Date(result.get Date(
+						" Data Visita").get Time());
+				bean Temp = new  Bean Visita P R(result.get Int(" Voto"), result
+						.get Int(" Id Punto Di Ristoro"), result
+						.get String(" Commento"), result.get Int(" Id Turista"),
+						data Visita);
+			}
+			//  Ritorno il  Bean Temp
+			return bean Temp;
+		}
+		//  Viene eseguito sempre e si occupa di chiudere il  Result, lo  Statement
+		// e la  Connessione
+		finally
+		{
+			if (result != null)
+			{
+				result.close();
+			}
+			if (stat != null)
+			{
+				stat.close();
+			}
+			if (conn != null)
+			{
+				 D B Connessione Pool.rilascia Connessione(conn);
+			}
+		}
+	}
+
+}

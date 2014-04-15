@@ -1,0 +1,10 @@
+org.mozilla.javascript.Parser.statementHelper
+org.mozilla.javascript.TokenStream.stringToKeyword
+org.mozilla.javascript.Interpreter.dumpICode
+org.mozilla.javascript.Decompiler.decompile
+org.mozilla.javascript.Parser.condition
+org.mozilla.javascript.Interpreter.bytecodeSpan
+org.mozilla.javascript.Interpreter.interpretLoop
+org.mozilla.javascript.Interpreter.visitStatement
+org.mozilla.javascript.IRFactory.createWhile
+org.mozilla.javascript.Token.name

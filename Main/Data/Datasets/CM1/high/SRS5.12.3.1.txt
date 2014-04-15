@@ -1,0 +1,1 @@
+ The DPU-CCM shall record an error to the LAST_BOOT_IVEC location in EEPROM and discontinue strobing the Watchdog Timer should an unrecoverable software error occur.  An unrecoverable software error is defined as an error that causes a loss of commandability or ground communication.

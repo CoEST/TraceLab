@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp14_high_level</id>
+    <name>Waterloo grp14_high_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp14_high_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>F1</id>
+      <content>A user can make a phone call</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F2</id>
+      <content>If user can set up his phone to forward incoming calls to another phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F3</id>
+      <content>If a user receives a call while on the phone, he is notified by beeps and can switch between calls</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F4</id>
+      <content>An incoming phone call displays the callers name and number</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F5</id>
+      <content>A voicemail system that is protected by a password</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F6</id>
+      <content>User can specify the users that can call their phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F7</id>
+      <content>Each user account has a unique user name</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F8</id>
+      <content>Create a new account to use a certain telephone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F9</id>
+      <content>Disables the user by suspending the account, so a history of the user can be kept.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F10</id>
+      <content>Update a user�s account</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F11</id>
+      <content>Place a user�s account on hold, so he/she can�t use any telephone services</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F12</id>
+      <content>An invoice must list the following information for every incoming and outgoing call in the department:
+-�� Caller and callee number
+-�� Call start times
+-�� Call duration
+-�� Billing plan
+-�� Invoice balance
+-�� Department billing plan
+- Any warnings like feature suspension or late payments</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F13</id>
+      <content>System generates log information for each call placed, like the call�s start time, callee number, and duration</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F14</id>
+      <content>A billing plan specifies a set of price rates of a call and the conditions that come with it. Call features are also specified in the plan</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F15</id>
+      <content>Administrator can change the price/options for a billing plan</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F16</id>
+      <content>Department managers must pay monthly invoices for the department�s phone services</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F17</id>
+      <content>After an invoice is generated, it is sent to the corresponding department</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F18</id>
+      <content>System must be able to generate invoice statements for all departments</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F19</id>
+      <content>Invoices are generated automatically at least  once a month</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F20</id>
+      <content>Error messages are sent to the administrator and user phone when an error is detected on the phone</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F21</id>
+      <content>New phones can be added into the system, and assigned an IP</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F22</id>
+      <content>Phones can be disabled and removed from the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F23</id>
+      <content>Phones can be reset</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F24</id>
+      <content>Admin can find which IP is assigned to which user</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F25</id>
+      <content>Admin can see the status of a phone, whether it is enabled or disabled.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F26</id>
+      <content>The max number of calls that the system can handle</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F27</id>
+      <content>Make a phone usable to an employee</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F28</id>
+      <content>Disable phone from being used</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F29</id>
+      <content>Display how many concurrent calls are in progress</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F30</id>
+      <content>The system can run automated tests to check the status of phones</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F31</id>
+      <content>Admin can run manual tests against individual phones</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F32</id>
+      <content>The system can handle erroneous input (ie. Invalid IP, phone number, etc) and generate an appropriate error message</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F33</id>
+      <content>If a caller dials an invalid number then the system tells the caller to hang up and try again</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F34</id>
+      <content>The administrator can reset an employees password or change it</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F35</id>
+      <content>If all IP addresses have already been assigned to users, then no more user accounts can be created</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F36</id>
+      <content>If all possible phone numbers have already been assigned to users, then no more user accounts can be created</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F37</id>
+      <content>The user account creation process can verify that proper data is inputted in its appropriate fields (ie. Phone numbers are digits only, unique user name)</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F38</id>
+      <content>If a device is being added to the system, and it is already registered with a system, then the system assigns the device its old IP address</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F39</id>
+      <content>The system can send the following messages to a phone
+-�� No available IP
+-�� Disabled
+-�� Error</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F40</id>
+      <content>If there are no available IP addresses to be mapped to a phone, then the system sends a message to the phone displaying �No available IP�</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>F41</id>
+      <content>If the system is testing a phone, and the phone does not reply, then the system will stop waiting and conclude the phone has timed out after 1 second</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N1</id>
+      <content>This system can be upgraded to support 2000 employees in the future</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N2</id>
+      <content>This system can be run manual and automatic tests, display phone status, and support adding, removing and resetting phones in less than 10 minutes.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N3</id>
+      <content>99.9% of all phone conversations will not be disconnected midway through, and the system will only be down for a total of 24 hours a year</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N4</id>
+      <content>VoIP phone must operate the same as a regular phone to an employee</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>N5</id>
+      <content>Each user can protect their voicemail with a PIN, and only administrators will have access to the system</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

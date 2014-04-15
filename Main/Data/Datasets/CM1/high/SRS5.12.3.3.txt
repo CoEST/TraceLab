@@ -1,0 +1,1 @@
+ The DPU-CCM shall collect a TASK_HBEAT from  DPU-SCUI, DPU-CCM, DPU-DCX, DPU-TMALI, and DPU-DPA .  Non-responsive tasks will be reported in DPU_HK.

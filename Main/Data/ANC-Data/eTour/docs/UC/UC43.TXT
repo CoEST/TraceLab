@@ -1,0 +1,18 @@
+Use case name MODIFICADATIPUNTODIRISTORO 
+Change data point associated refreshment. 
+Partecipating 
+Actor initialization Operator Point Of Restaurants 
+Entry 
+conditions • The Point Restaurant Operator has successfully authenticated to the system. 
+Flow of events User System 
+1. Enable the functionality of the information required by the point of rest. 
+2 Upload data point Refreshments and displays them in a form. 
+3 Change data in the form and submit. 
+4 Verify the data entered and asks for confirmation of the change. Where the data is invalid or insufficient, the system activates the use case Errored. 
+5 Confirm the operation. 
+6. Stores the modified data of the point of rest. 
+Exit conditions • The notification system has been changing the data point selected restaurants. 
+• Restaurant Point Of Operator cancels the operation. 
+• Interruption of the connection to the server ETOUR. 
+Quality 
+requirements

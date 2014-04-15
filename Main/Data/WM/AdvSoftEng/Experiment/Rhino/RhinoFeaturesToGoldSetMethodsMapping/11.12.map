@@ -1,0 +1,15 @@
+org.mozilla.javascript.Interpreter.resolveGoto
+org.mozilla.javascript.Interpreter.dumpICode
+org.mozilla.javascript.IRFactory.createCondExpr
+org.mozilla.javascript.Decompiler.decompile
+org.mozilla.javascript.Interpreter.bytecodeSpan
+org.mozilla.javascript.IRFactory.isAlwaysDefinedBoolean
+org.mozilla.javascript.Interpreter.addGotoOp
+org.mozilla.javascript.Interpreter.interpretLoop
+org.mozilla.javascript.Parser.condExpr
+org.mozilla.javascript.Parser.assignExpr
+org.mozilla.javascript.Interpreter.visitExpression
+org.mozilla.javascript.TokenStream.getToken
+org.mozilla.javascript.Node.getDouble
+org.mozilla.javascript.Token.name
+org.mozilla.javascript.Interpreter.resolveForwardGoto

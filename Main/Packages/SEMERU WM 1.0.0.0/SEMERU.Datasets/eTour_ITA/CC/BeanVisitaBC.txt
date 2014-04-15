@@ -1,0 +1,149 @@
+package unisa.gps.etour.bean;
+import java.io. Serializable;
+import java.util. Date;
+/**
+ *  Bean  Contenente i dati relativi ai feedback di un  Bene  Culturale
+ * 
+ * @author  Martone  Giuseppe
+ * @version  .  �      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I �  University
+ *          of  Salerno
+ */
+public class  Bean Visita B C implements  Serializable
+{
+	private static final long serial Version U I D =                     L;
+	private int voto;
+	private int id Bene Culturale;
+	private  String commento;
+	private int  Id Turista;
+	private  Date data Visita;
+
+	/**
+	 *  Costruttore parametrizzato
+	 * 
+	 * @param p Voto
+	 * @param p Id Bene Culturale
+	 * @param p Commento
+	 * @param p Id Turista
+	 * @param p Data Visita
+	 */
+	public  Bean Visita B C(int p Voto, int p Id Bene Culturale,
+			 String p Commento, int p Id Turista,  Date p Data Visita)
+	{
+		set Voto(p Voto);
+		set Id Bene Culturale(p Id Bene Culturale);
+		set Commento(p Commento);
+		set Id Turista(p Id Turista);
+		set Data Visita(p Data Visita);
+	}
+
+	/**
+	 *  Costruttore  Vuoto
+	 */
+	public  Bean Visita B C()
+	{
+
+	}
+
+	/**
+	 *  Restituisce il valore di commento
+	 * 
+	 * @return  Valore di commento.
+	 */
+	public  String get Commento()
+	{
+		return commento;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di commento
+	 * 
+	 * @param p Commento  Nuovo valore di commento.
+	 */
+	public void set Commento( String p Commento)
+	{
+		commento = p Commento;
+	}
+
+	/**
+	 *  Restituisce il valore di data Visita
+	 * 
+	 * @return  Valore di data Visita.
+	 */
+	public  Date get Data Visita()
+	{
+		return data Visita;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di data Visita
+	 * 
+	 * @param p Data Visita  Nuovo valore di data Visita.
+	 */
+	public void set Data Visita( Date p Data Visita)
+	{
+		data Visita = p Data Visita;
+	}
+
+	/**
+	 *  Restituisce il valore di id Bene Culturale
+	 * 
+	 * @return  Valore di id Bene Culturale.
+	 */
+	public int get Id Bene Culturale()
+	{
+		return id Bene Culturale;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di id Bene Culturale
+	 * 
+	 * @param p Id Bene Culturale  Nuovo valore di id Bene Culturale.
+	 */
+	public void set Id Bene Culturale(int p Id Bene Culturale)
+	{
+		id Bene Culturale = p Id Bene Culturale;
+	}
+
+	/**
+	 *  Restituisce il valore di  Id Turista
+	 * 
+	 * @return  Valore di  Id Turista.
+	 */
+	public int get Id Turista()
+	{
+		return  Id Turista;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di  Id Turista
+	 * 
+	 * @param p Id Turista  Nuovo valore di  Id Turista.
+	 */
+	public void set Id Turista(int p Id Turista)
+	{
+		 Id Turista = p Id Turista;
+	}
+
+	/**
+	 *  Restituisce il valore di voto
+	 * 
+	 * @return  Valore di voto.
+	 */
+	public int get Voto()
+	{
+		return voto;
+	}
+
+	/**
+	 *  Imposta il nuovo valore di voto
+	 * 
+	 * @param p Voto  Nuovo valore di voto.
+	 */
+	public void set Voto(int p Voto)
+	{
+		voto = p Voto;
+	}
+
+	
+
+}

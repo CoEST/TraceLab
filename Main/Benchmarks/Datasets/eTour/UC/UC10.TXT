@@ -1,0 +1,13 @@
+Use case name VISUALIZZASCHEDAPUNTODIRISTORO 
+View the details of a selected point of rest. 
+Partecipating 
+Actor initialization Agency Operator 
+Entry 
+Operator conditions • The agency has logged. 
+Flow of events User System 
+1. View the list of points of rest as a result of the use case RicercaPuntoDiRistoro, it selects and activates a function to view the card. 
+2 Upload data to a selected restaurant. 
+Exit conditions • The system displays the details of the selected point of rest. 
+• Interruption of the connection to the server ETOUR. 
+Quality 
+requirements

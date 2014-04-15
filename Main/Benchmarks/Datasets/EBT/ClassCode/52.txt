@@ -1,0 +1,33 @@
+           Pair
+           "private String query  ID  ;
+           private String query  String  ;"
+           "public Pair  (  String query  ID   String query  String  ) {
+          
+            this  . query  ID = query  ID  ;
+            this  . query  String = query  String  ;
+          
+           }"
+           "public String get  Query  ID  () {
+            return this  . query  ID  ;
+           }"
+           "public String get  Query  String  () {
+            return this  . query  String  ;
+           }"
+           "public void set  Query  ID  (  String query  ID  ) {
+            this  . query  ID = query  ID ;
+           }"
+           "public void set  Query  String  (  String query  String  ) {
+            this  . query  String = query  String  ;
+           }"
+           "public String to  String  (){
+          
+          
+            return ""  Query ID  : ""
+              + this  . query  ID
+              + ""\ n  ""
+              +""  Query String : ""
+              + this  . query  String
+              + ""\ n  "";
+          
+          
+           }"

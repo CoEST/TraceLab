@@ -1,0 +1,29 @@
+package unisa.gps.etour.util;
+
+import java.io. File;
+
+/**
+ *  Classe che contiene le costanti ambientali del sistema.
+ *
+ * @author  Palladino  Fabio
+ * @version  . 
+ * 
+ * &#   ;      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I -  University of  Salerno
+ */
+public class  Costanti Globali
+{
+	/**  Priorità massima di una news. */
+	public static final int  M A X_ P R I O R I T Y_ N E W S =  ;
+	/**  Priorità minima di una news. */
+	public static final int  M I N_ P R I O R I T Y_ N E W S =  ;	
+	/**  Massimo numero di news attive nel sistema. */
+	public static final int  M A X_ N E W S_ A T T I V E =   ;	
+	/**  Path della directory contenente le immagini
+	 * dei banner memorizzate sul server. */
+	public static final  String  S E R V E R_ I M A G E_ P A T H = "c:"
+		+ File.separator+" Immagini Banner"+ File.separator;	
+	/**  U R L del server per le chiamate  R M I */
+	public static final  String  S E R V E R_ U R L = "localhost/";	
+	/**  Millisecondi di    giorni */
+	public static final long  T R E N T A_ G I O R N I =            L;
+}

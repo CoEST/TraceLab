@@ -1,0 +1,13 @@
+Class TipoEsame Date: 
+                                                    15/09/2003 
+                                                    Version: 
+                                                    0 01 000 
+Description contains a description of the different types of 
+                   tests that can be made 
+Attributes 
+       Name Access Description 
+Private description description of the type of 
+                               examination 
+Methods 
+       Signature Access 
+    Description

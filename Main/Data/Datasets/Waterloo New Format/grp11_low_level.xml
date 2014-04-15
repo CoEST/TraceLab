@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp11_low_level</id>
+    <name>Waterloo grp11_low_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp11_low_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>UC1</id>
+      <content>Name 	MANAGE HARDWARE
+Use Case Number	Use Case # 1
+Authors 	Group 11
+Event	Admin requests to perform a hardware management functions/activities
+
+System
+System Console
+
+Actors	Administrator (initiator)
+
+Overview	This use case captures the process of the Administrator setting system parameters, viewing system error history, viewing hardware status information, performing searches associated with a IP address or phone number, including tests on individual phones, enabling, disabling and resetting IP Addresses</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC2</id>
+      <content>Name 	MANAGE USERS
+Use Case Number	Use Case #2
+Authors 	Group 11
+Event	Admin requests to perform user management functions
+
+System
+System Console
+
+Actors	Administrator (initiator)
+
+Overview	This use case captures the process of the Administrator managing user information, adding new users and new user accounts to the system and activating or suspending users</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC3</id>
+      <content>Name 	MANAGE ACCOUNTS
+Use Case Number	Use Case #3
+Authors 	Group 11
+Event	Administrator manages user accounts
+
+System
+System Console
+
+Actors	Administrator, System
+
+Overview	This use case captures the process of the Administrator managing accounts, includes the process adding new user accounts</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC4</id>
+      <content>Name 	MANAGE CALLING PLANS
+Use Case Number	Use Case #4
+Authors 	Group 11
+Event	Admin request to perform calling plan activities
+
+System
+System Console
+
+Actors	Administrator
+
+Overview	This use case captures the process of the Administrator creating, viewing, modifying or removing calling plans</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC5</id>
+      <content>Name 	MANAGE BILLS
+Use Case Number	Use Case #5
+Authors 	Group 11
+Event	Admin requests to perform tasks related to the bill
+
+System
+System Console
+
+Actors	Administrator (initiator)
+
+Overview	This use case captures the process of the Administrator searching, viewing, modifying, adjusting, resending bills as well as recording bill payment</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC6</id>
+      <content>Name 	TEST HARDWARE
+Use Case Number	Use Case # 6
+Authors 	Group 11
+Event	Admin requests to perform a hardware test
+
+System
+System Console
+
+Actors	Administrator (initiator)
+
+Overview	This use case captures the process of the Administrator</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC7</id>
+      <content>Name 	MAKE CALL
+Use Case Number	Use Case #7
+Authors 	Group 11
+Event	The User initiates a call
+
+System
+User Phones
+
+Actors	UserA � Caller, UserB � Callee
+
+Overview	This use case captures the process of the User initiating a call and the callee answering the call</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC8</id>
+      <content>Name 	SYSTEM INITIALISATION
+Use Case Number	Use Case #8
+Authors 	Group 11
+Event	System perform initialisation when System is first starting
+
+System
+System
+
+Actors
+Overview	This use case captures the process of initialising the phone system
+
+Related Use Cases	Use Case #1 � Hardware Management</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC9</id>
+      <content>Name 	SYSTEM SHUTDOWN
+Use Case Number	Use Case #9
+Authors 	Group 11
+Event	System performs shutdown
+
+System
+System
+
+Actors
+Overview	This use case captures the process of the system shutting down, whether due to power failure or due to routine maintenance</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

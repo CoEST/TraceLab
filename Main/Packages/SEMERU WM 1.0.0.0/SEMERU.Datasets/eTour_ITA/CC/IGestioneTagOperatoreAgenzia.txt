@@ -1,0 +1,53 @@
+package unisa.gps.etour.control. Gestione Tag;
+
+import java.rmi. Remote Exception;
+
+import unisa.gps.etour.bean. Bean Tag;
+
+/**
+ *  Interfaccia per la gestione dei  Tag da parte dell' Operatore  Agenzia
+ * 
+ * @author  Morelli  Giuseppe
+ * @version  .  �      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I �  University
+ *          of  Salerno
+ */
+public interface  I Gestione Tag Operatore Agenzia extends  I Gestione Tag Comune
+{
+
+	/**
+	 *  Metodo per l'inserimento di un nuovo  Tag
+	 * 
+	 * @param p Tag Nuovo contenente tutti i dati del nuovo  Tag
+	 * @return  Booleano: true se l'operazione va a buon fine, false altrimenti
+	 * @throws  Remote Exception  Eccezione  Remota
+	 */
+	public boolean inserisci Tag( Bean Tag p Tag Nuovo) throws  Remote Exception;
+
+	/**
+	 *  Metodo per la cancellazione di un  Tag esistente
+	 * 
+	 * @param p Tag I D per l'identificazione del  Tag in questione
+	 * @return  Booleano: true se l'operazione va a buon fine, false altrimenti
+	 * @throws  Remote Exception  Eccezione  Remota
+	 */
+	public boolean cancella Tag(int p Tag I D) throws  Remote Exception;
+
+	/**
+	 *  Metodo per la modifica di un  Tag
+	 * 
+	 * @param p Tag Modificato contenente i dati nuovi del  Tag
+	 * @return  Booleano: true se l'operazione va a buon fine, false altrimenti
+	 * @throws  Remote Exception  Eccezione  Remota
+	 */
+	public boolean modifica Tag( Bean Tag p Tag Modificato) throws  Remote Exception;
+
+	/**
+	 *  Metodo che restituisce un  Tag identificato dal suo  I D
+	 * 
+	 * @param p Tag I D per identificare un particolare  Tag
+	 * @return un  Bean Tag contenente i dati del  Tag interessato
+	 * @throws  Remote Exception  Eccezione  Remota
+	 */
+	public  Bean Tag ottieni Tag(int p Tag I D) throws  Remote Exception;
+
+}

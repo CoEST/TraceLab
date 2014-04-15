@@ -1,0 +1,19 @@
+Class GUIPianiPrenotazioni Date: 16/09/2003 
+                                                 Version: 0 01 000 
+Description Its task is to display the mask 
+                   on the management of the plans 
+                   Reservations made in outpatient 
+Attributes 
+       Name Access Description 
+Private btnUscita button that allows you to return 
+                            the mask represented by 
+                            GUIPrincipale 
+Private panelParametri panel containing all the parameters 
+                            necessary to set criteria 
+                            creation of plans for reservations 
+Methods 
+       Signature pianiPrenotazioni () Public Access 
+    It description to find all the information 
+                   necessary for the generation of plan 
+                   reservation in compliance with the criteria 
+                   specified

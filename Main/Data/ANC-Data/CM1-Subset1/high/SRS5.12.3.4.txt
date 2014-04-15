@@ -1,0 +1,1 @@
+  The DPU-CCM shall be able to count a consecutively reported error.  When the the count for a particular error ID, exceeds 250 for a particular reporting period, the error code will be replaced with a error code sequence which shall include the original error code and the number of times the error was reported.  

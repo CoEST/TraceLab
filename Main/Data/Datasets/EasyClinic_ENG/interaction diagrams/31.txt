@@ -1,0 +1,16 @@
+Operator Login Scenario validation run 
+     The service was launched following the express request 
+by the actor Operator The access to the screen 
+on the management of the system (for instance 
+GUILogin) enter login and password and check the function 
+The validation then passes control to the instance of 
+GUILoginHandler which delegates to the instance of OperatoreManager 
+the task of managing the latter deals with 
+validate the data entered by using the panel 
+The successful operator is notified of a 
+backward up the application of which requires GUILoginHandler 
+to the instance of GUIPrincipaleHandler to enable access to 
+Patient applicant and that object shall display 
+the main form (for instance GUIPrincipale) This 
+feature is was described by the sequence diagram of 
+Fig 3 2

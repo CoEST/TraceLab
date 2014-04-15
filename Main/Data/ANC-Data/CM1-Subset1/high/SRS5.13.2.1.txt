@@ -1,0 +1,1 @@
+ The DPU-TMALI shall allocate a ring buffer of size specified by TMALI_BUFFER_SIZE provided during initialization for storing incoming frames of data.  The default buffer size shall be 15 MB.

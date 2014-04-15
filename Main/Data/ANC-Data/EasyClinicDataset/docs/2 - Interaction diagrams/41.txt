@@ -1,0 +1,111 @@
+reservation a first visit 
+     The service was launched following the express request 
+by the actor The Operator logs on to form 
+main (for instance GUIPrincipale) and there select the function 
+reservation an initial visit and then passes control 
+GUIPrincipaleHandler to the instance of the delegation which application 
+GUIPrenotaVisitaHandler to the task of managing the service Given 
+you are reservation a first visit passes control 
+the application of which will GUIAnagraficaPazienteHandler 
+the integration of anagrafica patient data
+     
+     Creation of the new Patient 
+     
+     The application displays the class GUIAnagraficaPazienteHandler 
+the mask on the input of anagrafica data of 
+Patient (for instance GUIAnagraficaPaziente) At this point 
+the operator inserts the data and confirmation of patient 
+such data, then passes control to the instance of 
+GUIAnagraficaPazienteHandler who moved to the instance of 
+PazienteManager verify that the patient within 
+If SIO of the patient `This is not then the operation can" 
+and then continue GUIAnagraficaPazienteHandler delegation 
+PazienteManager to the instance of the task of creating the new 
+The patient by the panel shall Patient 
+the creation of a new patient according to data inserted by operator 
+
+     Creating the Hospital Card 
+     
+     The application of class PazienteManager passes control 
+to the instance of HospitalCardManager which in turn means 
+The body of Hospital Card provides for the creation of a new 
+Hospital Card to be assigned to Patient A after the 
+creation sends a notification message that the success 
+the backward up to the instance of 
+GUIPrenotaVisitaHandler 
+     
+     Choosing the type of visit 
+     
+     The application of class GUIPrenotaVisitaHandler displays the 
+mask on the reservation to visit the 
+Patient must be subject (for instance GUIPrenotaVisita) On this 
+Operator select the form and confirms the type of access and 
+control returns to the instance of the GUIPrenotaVisitaHandler 
+which delegation is to include a new reservation 
+to the instance of PrenotazioniManager 
+     
+     Creating the new reservation 
+     
+     The application of class through the application PrenotazioniManager 
+reservation creates a new reservation, at this point 
+The body of Reservation shall verify the validity of 
+reservation or check that the new reservation respects 
+the sequence of reservations valid If the 
+Reservations is a valid reservation shall notify the 
+success of the creation of a reservation 
+backward up to the instance of GUIPrenotaVisitaHandler 
+     
+     Finding data available 
+     
+     The application of the proxy class GUIPrenotaVisitaHandler 
+to the instance of PrenotazioniManager task of finding the first 
+date available when the visit can "keep this date is 
+GUIPrenotaVisitaHandler given to the instance of which shall 
+to display it on form 
+reservation a visit (for instance GUIPrenotaVisita) 
+The Operator confirmed the date proposed by the system and control 
+is returned to the instance of GUIPrenotaVisitaHandler 
+     
+     Storing data on Patient and Hospital Card 
+     
+     The application of class GUIPrenotaVisitaHandler pass 
+GUIAnagraficaPazienteHandler control application to 
+allow it to store data Patient 
+The application GUIAnagraficaPazienteHandler in turn delegated 
+to store personal data relating to patient 
+PazienteManager to the instance of the class that through the application 
+Patient in stores on a permanent basis The data 
+Control is returned to the backward class 
+HospitalCardManager which provides through the application of 
+Hospital Card rescue data Hospital Card 
+on the patient who is reservation the visit Once 
+completion of the operations is returned to storage 
+backward a message notifying the success of the up 
+to come to the instance of the class GUIAnagraficaPazienteHandler 
+     
+     Viewing and printing the Hospital Card 
+     
+      The application of the proxy class GUIAnagraficaPazienteHandler 
+to view and print the application Hospital Card 
+Class GUIHospitalCardHandler latter obtains data 
+Card on Hospital by the appropriate body to HospitalCardManager 
+displays the data on screen on the display 
+the Hospital Card (for instance GUIHospitalCard) and the delegation 
+to print the Hospital Card to the instance of the class 
+PrintManager control is returned backward to 
+reaching application GUIPrenotaVisitaHandler 
+     
+     storing reservation 
+     
+     The application of class GUIPrenotaVisitaHandler at this point 
+proceed to store the reservation by delegating this 
+PrenotazioniManager task to the instance of this application 
+through the application for reservation shall saving 
+data on the reservation Once this 
+operation control passes to the instance of 
+GUIPrenotaVisitaHandler which in turn deals with 
+notify success by viewing 
+a special message on the screen on the reservation 
+a visit (for instance GUIPrenotaVisita) 
+     This feature is was described by the collaboration 
+diagram of Fig 3 16

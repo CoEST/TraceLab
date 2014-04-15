@@ -1,0 +1,18 @@
+Use case name MODIFICABENECULTURALE 
+Change data of a cultural object in the system. 
+Partecipating 
+Actor initialization Agency Operator 
+Entry 
+Operator conditions • The agency has logged. 
+Flow of events User System 
+1. View the list of cultural goods as a result of the use case RicercaBeneCulturale, it selects and activates a function of change. 
+2 Load the data of the cultural and displays the form for editing. 
+3 Change data in the form and submit. 
+4 Verify the data entered and asks for confirmation of the transaction. Where the data is invalid or insufficient, the system activates the use case Errored. 
+5 Confirm the operation. 
+6. Stores the modified data of the cultural. 
+Exit conditions • The notification system has been changing the data of the cultural. 
+• Operator Agency cancels the operation. 
+• Interruption of the connection to the server ETOUR. 
+Quality 
+The system requirements blocks of input controls in the form once we receive confirmation of the change to avoid multiple submissions before the end of the operation.

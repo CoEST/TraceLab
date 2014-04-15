@@ -1,0 +1,1 @@
+Setting DCI Bit Arrangement	The bit arrangement of the DCI control/status register can be set via tmaliBitArrangementSet().

@@ -1,0 +1,15 @@
+Nome: VisualizzaElencoRegistri
+Attori: Amministratore
+Descrizione: Visualizza l’elenco dei registri per un anno accademico
+Precondizioni:
+•	L'utente deve essere loggato al sistema come Amministratore •	Clicca sul pulsante “Registro Digitale”
+Sequenza degli eventi
+Utente
+Sistema
+2. Seleziona l’anno scolastico
+1. Mostra una schermata per la selezione dell’anno accademico di interesse.
+3. Cerca nell’archivio tutti i registri digitali di quell’anno e li visualizza associati alla classe cui appartengono.
+Postcondizioni:
+•
+• •
+Il sistema sta visualizzando l’elenco dei registri riferiti ad un particolare anno accademico L’amministratore interrompe l’operazione Connessione al server SMOS interrotta

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package ID="A939607B-7159-4466-88C4-A869044F81C6" Name="TestPackage">
+  <DataFiles>
+    <PackageFile ID="D7B2FAFD-8AF3-49CB-BB8D-42D59EB5374C" Path="./Data/coest.xml" CompressedHash="hDhWHW33q7c9he6Dg57Zo1I0P94JwHviKCRdbW+tAZs=" CompressedSize="190" UncompressedHash="34vh6/HU9E/zMlcj/66X7h29ZvU2uaLP7tPXsn0ZzPM=" UncompressedSize="88" />
+    <PackageFile ID="6CB59158-BDE4-41E7-8B94-295F5A650836" Path="./Data/coest1.xml" CompressedHash="u3BwopJ8Z+c0EY+NinBGB4DMMGlvtqj+okIqDbNZDMo=" CompressedSize="56389" UncompressedHash="bIfV6LhS7UWuG6tzhkDnxflQyG+iqabVbahpw7k9Rm0=" UncompressedSize="333923" />
+    <PackageFile ID="819DE7C9-D2E8-4A4C-9886-282D7820FB76" Path="./Components/Importer.dll" CompressedHash="Uk5yebvCi0hu79ZnSR/hPYHEQ8bnFz26CvKMwE+JhHY=" CompressedSize="7107" UncompressedHash="3x3vMiNXNC266eG+LyHl4D76WE/J3iPrf1Jd2OC5kMw=" UncompressedSize="14848" />
+    <PackageFile ID="C132D5FD-8532-419D-8C73-3648156DA5FA" Path="./Types/DictionaryTermWeights.dll" CompressedHash="OxAHPuw89ur+VLPIjAr2+hR3vPzeWnc2n8WCZkkU8Gs=" CompressedSize="4215" UncompressedHash="tcBnqHcyndpXx3vcam+bMFqcr45/isMz722kwExtXW8=" UncompressedSize="7680" />
+    <PackageFile ID="B96A4428-8E6E-4178-AF4F-F988B5C2401E" Path="./Data/randomfile.something" CompressedHash="vh+E0yjFxPLMJXsJkOm2tMr1pBhdfhYQnNUp7T+sFZo=" CompressedSize="170" UncompressedHash="y0/qSVb8ZZDx3VO/7K5NafADxvau0UlF51D4wJZf+QI=" UncompressedSize="45" />
+    <PackageFile ID="D7B2FAFD-8AF3-49CB-AAAD-42D59EB5374C" Path="./somerandomfile.xml" CompressedHash="MNpkj8JYmf3OFz4uicswBmA6nG3t9qOtDTSbGWmfhn8=" CompressedSize="195" UncompressedHash="A9qaAMsiCmdXwVS6ugoyJCHPT01qLKJ5s0l62AtWRZ0=" UncompressedSize="74" />
+  </DataFiles>
+  <References>
+    <PackageReference ID="1886E5F6-27CA-4D42-AB51-7B7BBD9E97C1" Name="SomeOther TestPackage 2" />
+    <PackageReference ID="E6D01E22-7C9E-4B75-B7C3-6FC8B33A9593" Name="Another Package" />
+  </References>
+  <ComponentLocations>
+    <Location>./Components</Location>
+  </ComponentLocations>
+  <TypeLocations>
+    <Location>./Types</Location>
+  </TypeLocations>
+</Package>

@@ -1,0 +1,122 @@
+package unisa.gps.etour.repository;
+
+import java.sql. S Q L Exception;
+import java.util. Array List;
+
+import unisa.gps.etour.bean. Bean Tag;
+
+/**
+ *  Interfaccia per la gestione dei  Tag nel database
+ * 
+ * @author  Miranda  Mauro
+ * @version  .  �      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I �  University
+ *          of  Salerno
+ */
+public interface  I D B Tag
+{
+	/**
+	 *  Aggiunge un tag
+	 * 
+	 * @param p Tag  Tag da aggiungere
+	 * @throws  S Q L Exception
+	 */
+	public boolean inserisci Tag( Bean Tag p Tag) throws  S Q L Exception;
+
+	/**
+	 *  Modifica i dati di un tag
+	 * 
+	 * @param p Tag  Tag da modificare
+	 * @throws  S Q L Exception
+	 * @return  True se e' stato modificato false altrimenti
+	 */
+	public boolean modifica Tag( Bean Tag p Tag) throws  S Q L Exception;
+
+	/**
+	 *  Elimina un tag dal database
+	 * 
+	 * @param p Id Tag  Identificativo  Tag da eliminare
+	 * @throws  S Q L Exception
+	 * @return  True se e' stato cancellato false altrimenti
+	 */
+	public boolean cancella Tag(int p Id Tag) throws  S Q L Exception;
+
+	/**
+	 *  Restituisce la lista dei tag presenti nel database
+	 * 
+	 * @throws  S Q L Exception
+	 * @return  Lista contenente i tag
+	 */
+	public  Array List< Bean Tag> ottieni Lista Tag() throws  S Q L Exception;
+
+	/**
+	 *  Restituisce un singolo tag
+	 * 
+	 * @param p Id  Identificativo del tag
+	 * @throws  S Q L Exception
+	 * @return  Tag
+	 */
+	public  Bean Tag ottieni Tag(int p Id) throws  S Q L Exception;
+
+	/**
+	 *  Aggiunge un  Tag ad un bene culturale
+	 * 
+	 * @param p Id Bene Culturale  Identificativo del  Bene  Culturale
+	 * @param p Id Tag  Identificativo del tag
+	 * @throws  S Q L Exception
+	 */
+	public boolean aggiunge Tag Bene Culturale(int p Id Bene Culturale, int p Id Tag)
+			throws  S Q L Exception;
+
+	/**
+	 *  Aggiunge un  Tag ad un punto di ristoro
+	 * 
+	 * @param p Id Punto Di Ristoro  Identificativo del punto di ristoro
+	 * @param p Id Tag  Identificativo del tag
+	 * @throws  S Q L Exception
+	 */
+	public boolean aggiunge Tag Punto Di Ristoro(int p Id Punto Di Ristoro, int p Id Tag)
+			throws  S Q L Exception;
+
+	/**
+	 *  Restituisce la lista dei tag di un bene culturale
+	 * 
+	 * @param p Id Bene Culturale  Identificativo del  Bene  Culturale
+	 * @throws  S Q L Exception
+	 * @return  Lista di tag
+	 */
+	public  Array List< Bean Tag> ottieni Tag Bene Culturale(int p Id Bene Culturale)
+			throws  S Q L Exception;
+
+	/**
+	 *  Restituisce la lista dei tag di un punto di ristoro
+	 * 
+	 * @param p Id Punto Di Ristoro  Identificativo del punto di ristoro
+	 * @throws  S Q L Exception
+	 * @return  Lista di tag
+	 */
+	public  Array List< Bean Tag> ottieni Tag Punto Di Ristoro(int p Id Punto Di Ristoro)
+			throws  S Q L Exception;
+
+	/**
+	 *  Elimina un  Tag ad un bene culturale
+	 * 
+	 * @param p Id Bene Culturale  Identificativo del  Bene  Culturale
+	 * @param p Id Tag  Identificativo del tag
+	 * @throws  S Q L Exception
+	 * @return  True se e' stato cancellato false altrimenti
+	 */
+	public boolean cancella Tag Bene Culturale(int p Id Bene Culturale, int p Id Tag)
+			throws  S Q L Exception;
+
+	/**
+	 *  Elimina un tag ad un punto di ristoro
+	 * 
+	 * @param p Id Punto Di Ristoro  Identificativo
+	 * @param p Id Tag  Identificativo del tag
+	 * @throws  S Q L Exception
+	 * @return  True se e' stato cancellato false altrimenti
+	 */
+	public boolean cancella Tag Punto Di Ristoro(int p Id Punto Di Ristoro, int p Id Tag)
+			throws  S Q L Exception;
+
+}

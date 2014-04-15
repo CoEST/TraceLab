@@ -1,0 +1,15 @@
+Nome: ModificaAssenza
+Attori: Amministratore
+Descrizione: Modifica delle assenze da parte dell'Amministratore. La modifica è da intendersi come inserimento/cancellazione dell’assenza.
+Precondizioni:
+• • •
+L'utente deve essere loggato al sistema come Amministratore L'utente ha svolto il caso d'uso “VisualizzaDettagliSingoloRegistro” Seleziona la data in cui desidera modificare un’assenza
+Sequenza degli eventi
+Utente
+Sistema
+2. Modifica l'assenza (Inserisce o Elimina) e clicca “Salva”
+1. Aggiorna la schermata in base alla data selezionata
+3. Invia i dati modificati al server. Il sistema invia una e-mail di rettifica al genitore dell'alunno.
+Postcondizioni:
+• Il sistema ha modificato l'assenza selezionata ed ha inviato ai genitori una notifica della modifica. Il sistema rimane sulla schermata del registro.
+•	L’amministratore interrompe l’operazione •	Connessione al server SMOS interrotta

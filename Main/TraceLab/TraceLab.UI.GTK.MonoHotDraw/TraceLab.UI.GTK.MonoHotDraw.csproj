@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D5D2EB0A-662A-471D-94C0-FD51C96E9429}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>TraceLab.UI.GTK.MonoHotDraw</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug MONO_DEV|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug MONO_WIN</OutputPath>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Mono.Cairo" />
+    <Reference Include="Mono.Posix" />
+    <Reference Include="System.Core" />
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="ContainerCanvas.cs" />
+    <Compile Include="DrawingEventArgs.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="gtk-gui\generated.cs" />
+    <Compile Include="gtk-gui\MonoHotDraw.SteticComponent.cs" />
+    <Compile Include="IDrawing.cs" />
+    <Compile Include="IDrawingEditor.cs" />
+    <Compile Include="IDrawingView.cs" />
+    <Compile Include="KeyEvent.cs" />
+    <Compile Include="MonoHotDraw.Commands\AbstractCommand.cs" />
+    <Compile Include="MonoHotDraw.Commands\AbstractUndoActivity.cs" />
+    <Compile Include="MonoHotDraw.Commands\BringToFrontCommand.cs" />
+    <Compile Include="MonoHotDraw.Commands\ChangeAttributeCommand.cs" />
+    <Compile Include="MonoHotDraw.Commands\Clipboard.cs" />
+    <Compile Include="MonoHotDraw.Commands\CopyCommand.cs" />
+    <Compile Include="MonoHotDraw.Commands\CutCommand.cs" />
+    <Compile Include="MonoHotDraw.Commands\DeleteCommand.cs" />
+    <Compile Include="MonoHotDraw.Commands\DeleteFromDrawingVisitor.cs" />
+    <Compile Include="MonoHotDraw.Commands\DuplicateCommand.cs" />
+    <Compile Include="MonoHotDraw.Commands\FigureTransferCommand.cs" />
+    <Compile Include="MonoHotDraw.Commands\ICommand.cs" />
+    <Compile Include="MonoHotDraw.Commands\InsertIntoDrawingVisitor.cs" />
+    <Compile Include="MonoHotDraw.Commands\IUndoActivity.cs" />
+    <Compile Include="MonoHotDraw.Commands\NullUndoActivity.cs" />
+    <Compile Include="MonoHotDraw.Commands\PasteCommand.cs" />
+    <Compile Include="MonoHotDraw.Commands\RedoCommand.cs" />
+    <Compile Include="MonoHotDraw.Commands\SelectAllCommand.cs" />
+    <Compile Include="MonoHotDraw.Commands\SendToBackCommand.cs" />
+    <Compile Include="MonoHotDraw.Commands\UndoableCommand.cs" />
+    <Compile Include="MonoHotDraw.Commands\UndoCommand.cs" />
+    <Compile Include="MonoHotDraw.Commands\UndoManager.cs" />
+    <Compile Include="MonoHotDraw.Connectors\AbstractConnector.cs" />
+    <Compile Include="MonoHotDraw.Connectors\ChopBoxConnector.cs" />
+    <Compile Include="MonoHotDraw.Connectors\ChopEllipseConnector.cs" />
+    <Compile Include="MonoHotDraw.Connectors\IConnector.cs" />
+    <Compile Include="MonoHotDraw.Figures\AbstractFigure.cs" />
+    <Compile Include="MonoHotDraw.Figures\AttributeFigure.cs" />
+    <Compile Include="MonoHotDraw.Figures\BaseBoxFigure.cs" />
+    <Compile Include="MonoHotDraw.Figures\CompositeFigure.cs" />
+    <Compile Include="MonoHotDraw.Figures\EllipseFigure.cs" />
+    <Compile Include="MonoHotDraw.Figures\FigureAttribute.cs" />
+    <Compile Include="MonoHotDraw.Figures\FigureCollection.cs" />
+    <Compile Include="MonoHotDraw.Figures\FigureEventArgs.cs" />
+    <Compile Include="MonoHotDraw.Figures\IConnectionFigure.cs" />
+    <Compile Include="MonoHotDraw.Figures\IFigure.cs" />
+    <Compile Include="MonoHotDraw.Figures\IFigureVisitor.cs" />
+    <Compile Include="MonoHotDraw.Figures\LineConnection.cs" />
+    <Compile Include="MonoHotDraw.Figures\LineTerminal.cs" />
+    <Compile Include="MonoHotDraw.Figures\MultiLineTextFigure.cs" />
+    <Compile Include="MonoHotDraw.Figures\PolyLineFigure.cs" />
+    <Compile Include="MonoHotDraw.Figures\RectangleFigure.cs" />
+    <Compile Include="MonoHotDraw.Figures\SimpleTextFigure.cs" />
+    <Compile Include="MonoHotDraw.Figures\TriangleArrowLineTerminal.cs" />
+    <Compile Include="MonoHotDraw.Handles\AbstractHandle.cs" />
+    <Compile Include="MonoHotDraw.Handles\ChangeConnectionEndHandle.cs" />
+    <Compile Include="MonoHotDraw.Handles\ChangeConnectionHandle.cs" />
+    <Compile Include="MonoHotDraw.Handles\ChangeConnectionStartHandle.cs" />
+    <Compile Include="MonoHotDraw.Handles\EastHandle.cs" />
+    <Compile Include="MonoHotDraw.Handles\IHandle.cs" />
+    <Compile Include="MonoHotDraw.Handles\LineConnectionHandle.cs" />
+    <Compile Include="MonoHotDraw.Handles\LocatorHandle.cs" />
+    <Compile Include="MonoHotDraw.Handles\NorthEastHandle.cs" />
+    <Compile Include="MonoHotDraw.Handles\NorthHandle.cs" />
+    <Compile Include="MonoHotDraw.Handles\NorthWestHandle.cs" />
+    <Compile Include="MonoHotDraw.Handles\PolyLineHandle.cs" />
+    <Compile Include="MonoHotDraw.Handles\ResizeHandle.cs" />
+    <Compile Include="MonoHotDraw.Handles\SouthEastHandle.cs" />
+    <Compile Include="MonoHotDraw.Handles\SouthHandle.cs" />
+    <Compile Include="MonoHotDraw.Handles\SouthWestHandle.cs" />
+    <Compile Include="MonoHotDraw.Handles\UndoableHandle.cs" />
+    <Compile Include="MonoHotDraw.Handles\WestHandle.cs" />
+    <Compile Include="MonoHotDraw.Locators\ILocator.cs" />
+    <Compile Include="MonoHotDraw.Locators\PolyLineLocator.cs" />
+    <Compile Include="MonoHotDraw.Locators\QuickActionLocator.cs" />
+    <Compile Include="MonoHotDraw.Locators\QuickActionPosition.cs" />
+    <Compile Include="MonoHotDraw.Locators\RelativeLocator.cs" />
+    <Compile Include="MonoHotDraw.Serialization\ColorSerializationSurrogate.cs" />
+    <Compile Include="MonoHotDraw.Serialization\GenericCloner.cs" />
+    <Compile Include="MonoHotDraw.Serialization\PointDSerializationSurrogate.cs" />
+    <Compile Include="MonoHotDraw.Tools\AbstractTool.cs" />
+    <Compile Include="MonoHotDraw.Tools\CompositeFigureTool.cs" />
+    <Compile Include="MonoHotDraw.Tools\ConnectionCreationTool.cs" />
+    <Compile Include="MonoHotDraw.Tools\CreationTool.cs" />
+    <Compile Include="MonoHotDraw.Tools\DragCreationTool.cs" />
+    <Compile Include="MonoHotDraw.Tools\DragTool.cs" />
+    <Compile Include="MonoHotDraw.Tools\FigureTool.cs" />
+    <Compile Include="MonoHotDraw.Tools\HandleTracker.cs" />
+    <Compile Include="MonoHotDraw.Tools\ITool.cs" />
+    <Compile Include="MonoHotDraw.Tools\MultiLineTextTool.cs" />
+    <Compile Include="MonoHotDraw.Tools\PolyLineFigureTool.cs" />
+    <Compile Include="MonoHotDraw.Tools\ResizeCreationTool.cs" />
+    <Compile Include="MonoHotDraw.Tools\SelectAreaTool.cs" />
+    <Compile Include="MonoHotDraw.Tools\SelectionTool.cs" />
+    <Compile Include="MonoHotDraw.Tools\SimpleTextTool.cs" />
+    <Compile Include="MonoHotDraw.Tools\TextTool.cs" />
+    <Compile Include="MonoHotDraw.Util\CairoFigures.cs" />
+    <Compile Include="MonoHotDraw.Util\CursorFactory.cs" />
+    <Compile Include="MonoHotDraw.Util\Dash.cs" />
+    <Compile Include="MonoHotDraw.Util\FontFactory.cs" />
+    <Compile Include="MonoHotDraw.Util\GdkCairoHelper.cs" />
+    <Compile Include="MonoHotDraw.Util\Geometry.cs" />
+    <Compile Include="MonoHotDraw.Util\RectangleD.cs" />
+    <Compile Include="MouseEvent.cs" />
+    <Compile Include="StandardDrawing.cs" />
+    <Compile Include="StandardDrawingView.cs" />
+    <Compile Include="SteticComponent.cs" />
+    <Compile Include="MonoHotDraw.Handles\ToggleButtonHandle.cs" />
+    <Compile Include="MonoHotDraw.Locators\AbsoluteLocator.cs" />
+    <Compile Include="MonoHotDraw.Handles\PixbufHandle.cs" />
+    <Compile Include="MonoHotDraw.Figures\HStackFigure.cs" />
+    <Compile Include="MonoHotDraw.Figures\StackFigure.cs" />
+    <Compile Include="MonoHotDraw.Figures\VStackFigure.cs" />
+    <Compile Include="MonoHotDraw.Figures\PixbufFigure.cs" />
+    <Compile Include="MonoHotDraw.Tools\PanTool.cs" />
+    <Compile Include="MonoHotDraw.Util\CustomCursorFactory.cs" />
+    <Compile Include="MonoHotDraw.Locators\CenterLineLocator.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <EmbeddedResource Include="gtk-gui\gui.stetic">
+      <LogicalName>gui.stetic</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\cursor_grabbing.png" />
+    <EmbeddedResource Include="Resources\cursor-grab-open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MonoHotDraw.Figures\" />
+    <Folder Include="MonoHotDraw.Tools\" />
+    <Folder Include="MonoHotDraw.Handles\" />
+    <Folder Include="MonoHotDraw.Commands\" />
+    <Folder Include="MonoHotDraw.Connectors\" />
+    <Folder Include="MonoHotDraw.Locators\" />
+    <Folder Include="MonoHotDraw.Serialization\" />
+    <Folder Include="MonoHotDraw.Util\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+</Project>

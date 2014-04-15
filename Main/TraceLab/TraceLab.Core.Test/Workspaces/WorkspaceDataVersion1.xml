@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<WorkspaceUnitData>
+  <Version>1</Version>
+  <DataType>TraceLab.Core.Test.Workspaces.TestObject, TraceLab.Core.Test, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null</DataType>
+  <Data>
+    <TestObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <Value>this is a test</Value>
+    </TestObject>
+  </Data>
+</WorkspaceUnitData>

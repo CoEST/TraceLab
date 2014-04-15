@@ -1,0 +1,321 @@
+           Notification Processing
+           "// member variables for menu
+           private JMenu  Bar menu  Bar  ;
+          
+           // subscriber list
+           private JList Subscriber  List  ;
+           private Default  List  Model list  Model  ;
+          
+           // popup menu
+          
+           private JPopup  Menu popup  ;
+          
+           // database and eventserver information
+           String m  _  User  Name  =  """";
+           String m  _  DSN=  """";
+           String m  _  Event  Server  IP=  """";
+           String m  _  Event  Server  Port  =  """";
+           Connection m  _ conn  ;
+          
+           Result  Set rs  ;
+           Statement stmt  ;"
+           "public Notification  _  Processing  ()
+           {
+          
+            set  Default  Close  Operation  (  JFrame  .  DO  _  NOTHING  _  ON  _  CLOSE  );
+          
+            add  Window  Listener  ( new Window  Adapter  ()
+            {
+             public void window  Closing  (  Window  Event evt  )
+             {
+              try
+              {
+               exit  Application  ();
+              }
+              catch (  Exception e  ) {}
+             }
+            });
+          
+                  JMenu menu  ;
+                  JMenu  Item menu  Item  ;
+          
+                  //  Create the menu bar  .
+                  menu  Bar = new JMenu  Bar  ();
+                  this  . set  JMenu  Bar  ( menu  Bar  );
+          
+                  menu = new JMenu  (""  File  "");
+                  menu  Bar  . add  ( menu  );
+          
+                  menu  Item = new JMenu  Item  (""  Open log database  "");
+                  menu  Item  . add  Action  Listener
+                  ( new Action  Listener ()
+                  {
+                   public void action  Performed (  Action  Event evt  )
+                   {
+                    open  Menu  Item  Action  Performed ( evt  );
+                   }
+                 }
+                 );
+          
+                  menu  . add  ( menu  Item  );
+          
+                  menu  Item = new JMenu  Item  (""  Close log database  "");
+                  menu  Item  . add  Action  Listener
+                  ( new Action  Listener ()
+                  {
+                   public void action  Performed (  Action  Event evt  )
+                   {
+                      save  Menu  Item  Action  Performed ( evt  );
+                   }
+                 }
+                 );
+                  menu  . add  ( menu  Item  );
+          
+                  menu  Item = new JMenu  Item  (""  Exit  "");
+                  menu  Item  . add  Action  Listener
+                  ( new Action  Listener ()
+                  {
+                   public void action  Performed (  Action  Event evt  )
+                   {
+                      exit  Menu  Item  Action  Performed ( evt  );
+                   }
+                 }
+                 );
+                  menu  . add  ( menu  Item  );
+          
+                  menu = new JMenu  (""  Edit  "");
+                  menu  Bar  . add  ( menu  );
+          
+                  menu  Item = new JMenu  Item  (""  Open Events  "");
+                  menu  Item  . add  Action  Listener
+                  ( new Action  Listener ()
+                  {
+                   public void action  Performed (  Action  Event evt  )
+                   {
+                      open  Events  Menu  Item  Action  Performed ( evt  );
+                   }
+                 }
+                 );
+                  menu  . add  ( menu  Item  );
+          
+                  menu = new JMenu  (""  Help  "");
+                  menu  Bar  . add  ( menu  );
+          
+                  menu  Item = new JMenu  Item  (""  About  "");
+                  menu  Item  . add  Action  Listener
+                  ( new Action  Listener ()
+                  {
+                   public void action  Performed (  Action  Event evt  ) {
+                      about  Menu  Item  Action  Performed ( evt  );
+                   }
+                 }
+                 );
+                  menu  . add  ( menu  Item  );
+          
+                  // Create a scroll pane to hold the list
+                  list  Model = new Default  List  Model  ();
+                  Subscriber  List = new JList  ( list  Model  );
+                  Subscriber  List  . set  Selection  Mode  (  List  Selection  Model  .  SINGLE  _  SELECTION  );
+                  JScroll  Pane scroll  Pane = new JScroll  Pane  (  Subscriber  List  );
+                  get  Content  Pane  (). add  ( scroll  Pane  );
+          
+                  // Create popup menu
+          
+                  popup = new JPopup  Menu  ();
+          
+              JMenu  Item popup  Open = new JMenu  Item  ();
+              popup  Open  . set  Text (""  Open Events  "");
+              popup  Open  . add  Action  Listener
+              ( new Action  Listener ()
+              {
+                public void action  Performed (  Action  Event evt  )
+                {
+                   popup  Open  Action  Performed ( evt  );
+                  }
+              }
+              );
+              popup  . add  ( popup  Open  );
+          
+          
+              // Add mouse event for popup menu
+              Subscriber  List  . add  Mouse  Listener ( new Mouse  Adapter () {
+                   public void mouse  Released (  Mouse  Event evt  ) {
+              if ( evt  . is  Popup  Trigger  ()){
+                       popup  . show  ( evt  . get  Component  () evt  . get  X  () evt  . get  Y  ());
+                       }
+               }
+                   public void mouse  Clicked (  Mouse  Event evt  ) {
+              int click  Count = evt  . get  Click  Count  ();
+              if  ( click  Count  >  =2  ) {
+               double  Click  Subscriber  List  ( evt  );
+              }
+               }
+                 }"
+           "public static void main  (  String args  [])
+           {
+            try
+            {
+             Notification  _  Processing main  Frame = new Notification  _  Processing  ();
+             main  Frame  . set  Size  (  600   400  );
+             main  Frame  . set  Location  (  100   100  );
+             main  Frame  . set  Title  (""  Notification  _  Processing  "");
+             main  Frame  . set  Visible  ( true  );
+            }
+            catch (  Throwable t  ) {
+             t  . print  Stack  Trace  ();
+             //  Ensure the application exits with an error condition  .
+             System  . exit  (  1  );
+            }
+           }"
+           "void exit  Application  ()
+            {
+              try
+              {
+                  int reply = JOption  Pane  . show  Confirm  Dialog  ( this  
+                                                            ""  Do you really want to exit  ?""
+                                                            ""  Notification  _  Processing - Exit  "" 
+                                                            JOption  Pane  .  YES  _  NO  _  OPTION  
+                                                            JOption  Pane  .  QUESTION  _  MESSAGE  );
+          
+               if ( reply == JOption  Pane  .  YES  _  OPTION  )
+               {
+                   this  . set  Visible  ( false  );    // hide the Frame
+                   this  . dispose  ();            // free the system resources
+                   System  . exit  (  0  );            // close the application
+               }
+          
+              }
+              catch (  Exception e  )
+              {
+               System  . out  . println  ( e  );
+             }
+          
+              }"
+           "// action for ""  Open log database  ""
+           private void open  Menu  Item  Action  Performed (  Action  Event evt  )
+           {
+            new Config  Dialog  ( this   true  ). show  ();
+          
+               if  ( m  _  DSN  . equals  ("""") || m  _  Event  Server  IP  . equals  ("""") || m  _  Event  Server  Port  . equals  (""""))
+               {
+                return  ;
+               }
+          
+               System  . out  . println  (""  eventlog DSN  : ""+ m  _  DSN  );
+            System  . out  . println  (""  eventserver IP  : ""+ m  _  Event  Server  IP  );
+            System  . out  . println  (""  eventserver Port  : ""+ m  _  Event  Server  Port  );
+               list  Model  . clear  ();
+          
+            try
+            {
+             Class  . for  Name  ("" sun  . jdbc  . odbc  .  Jdbc  Odbc  Driver  "");
+             m  _ conn = Driver  Manager  . get  Connection  ("" jdbc  : odbc  :""+ m  _  DSN  """""""");
+             stmt = m  _ conn  . create  Statement  ();
+            }
+            catch (  Exception ex  )
+            {
+             System  . out  . println  (""  Problem with connection  :  "" + ex  );
+               }
+          
+               String m  SQL = ""  SELECT distinct Subscriber  Name FROM Event  Details  "";
+          
+            try
+            {
+             rs = stmt  . execute  Query  ( m  SQL  );
+             while ( rs  . next  ())
+             {
+              String Subs  Name = rs  . get  String  (  1  );
+              list  Model  . add  Element  (  Subs  Name  );
+             }
+             rs  . close  ();
+            }
+            catch (  Exception e  )
+            {
+             System  . out  . println  (""  Problem with query  :  "" + e  );
+            }
+          
+           }"
+           "// action for ""  Close log database  ""
+           private void save  Menu  Item  Action  Performed (  Action  Event evt  )
+           {
+                try
+                {
+                 m  _ conn  . close  ();
+             m  _  DSN=  """";
+             m  _  Event  Server  IP=  """";
+             m  _  Event  Server  Port  =  """";
+          
+             list  Model  . clear  ();
+          
+                 }
+                 catch (  Exception e  )
+                 {
+             System  . out  . println  (""  Problem with database connection  : "" + e  );
+               }
+          
+           }"
+           "// action for "" exit  ""
+           private void exit  Menu  Item  Action  Performed (  Action  Event evt  )
+           {
+            exit  Application  ();
+           }"
+           "// action for ""  Open Events  "" in popup menu
+           private void popup  Open  Action  Performed (  Action  Event evt  )
+           {
+            open  Events  Menu  Item  Action  Performed  ( evt  );
+           }"
+           "// action for ""  Open Events  ""
+           private void open  Events  Menu  Item  Action  Performed (  Action  Event evt  )
+           {
+            if (! list  Model  . is  Empty  ())
+            {
+             int index = Subscriber  List  . get  Selected  Index  ();
+                   if ( index !  = -1  )
+                   {
+              String Subs  Name = (  String  ) list  Model  . get  ( index  );
+                       new Events  Processor  ( this   true    Subs  Name  ). show  ();
+                   }
+            }
+          
+           }"
+           "// action for "" double click on Subscriber List  ""
+           private void double  Click  Subscriber  List (  Mouse  Event evt  )
+           {
+            if (! list  Model  . is  Empty  ())
+            {
+             int index = Subscriber  List  . get  Selected  Index  ();
+                   if ( index !  = -1  )
+                   {
+              String Subs  Name = (  String  ) list  Model  . get  ( index  );
+                       new Events  Processor  ( this   true    Subs  Name  ). show  ();
+                   }
+            }
+          
+           }"
+           "// action for ""  About  ""
+           private void about  Menu  Item  Action  Performed (  Action  Event evt  )
+           {
+            new About  Dialog ( this   true  ). show  ();
+           }"
+           "void Update  Display  List  ()
+           {
+                  list  Model  . remove  All  Elements  ();
+          
+               String m  SQL = ""  SELECT distinct Subscriber  Name FROM Event  Details  "";
+          
+            try
+            {
+             rs = stmt  . execute  Query  ( m  SQL  );
+             while ( rs  . next  ())
+             {
+              String Subs  Name = rs  . get  String  (  1  );
+              list  Model  . add  Element  (  Subs  Name  );
+             }
+             rs  . close  ();
+            }
+            catch (  Exception e  )
+            {
+             System  . out  . println  (""  Notification  _  Processing  : Problem with query  :  "" + e  );
+            }
+          
+           }"

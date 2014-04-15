@@ -1,0 +1,9 @@
+org.mozilla.javascript.TokenStream.getToken
+org.mozilla.javascript.IRFactory.createUnary
+org.mozilla.javascript.Decompiler.decompile
+org.mozilla.javascript.Node.setDouble
+org.mozilla.javascript.Parser.unaryExpr
+org.mozilla.javascript.Interpreter.interpretLoop
+org.mozilla.javascript.Node.getDouble
+org.mozilla.javascript.Token.name
+org.mozilla.javascript.Interpreter.visitExpression

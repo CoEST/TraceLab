@@ -1,0 +1,225 @@
+﻿<graph>
+  <References>
+    <PackageReference ID="f2b198ee-3595-4ff3-8a3a-1a6f5c10c341" Name="TraceLab Components" />
+  </References>
+  <ExperimentInfo>
+    <Version>2</Version>
+    <Id>1b1d00a1-f972-4088-b695-fda5fdd64d69</Id>
+    <Name>Decision Scope with composite component</Name>
+    <LayoutName>EfficientSugiyama</LayoutName>
+    <Author>Re Lab</Author>
+    <Description>Experiment testing proper functionality when composite component is inside the scope.</Description>
+  </ExperimentInfo>
+  <node id="Start">
+    <SerializedVertexData Version="1" X="241" Y="32">
+      <Metadata type="TraceLab.Core.Components.StartNodeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Start" />
+    </SerializedVertexData>
+  </node>
+  <node id="End">
+    <SerializedVertexData Version="1" X="259" Y="527">
+      <Metadata type="TraceLab.Core.Components.EndNodeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="End" WaitsForAllPredecessors="True" />
+    </SerializedVertexData>
+  </node>
+  <node id="ba15853f-03fa-4a51-b0c0-e92382ee23a9">
+    <SerializedVertexData Version="1" X="260" Y="191">
+      <Metadata type="TraceLab.Core.Components.DecisionMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Decision" WaitsForAllPredecessors="True">
+        <DecisionCode>Select("Scope 1");
+</DecisionCode>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="48f63d91-1e8e-4590-bbaf-eb8d9d9995e1">
+    <SerializedVertexData Version="1" X="260" Y="431">
+      <Metadata type="TraceLab.Core.Components.ExitDecisionMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Exit" />
+    </SerializedVertexData>
+  </node>
+  <node id="c4ba6fd8-9854-4a51-94e7-97869ad0937e">
+    <SerializedVertexDataWithSize Version="1" X="132.5" Y="314.5" Width="235" Height="167">
+      <Metadata type="TraceLab.Core.Components.ScopeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Scope 1">
+        <ComponentGraph>
+          <graph>
+            <References>
+              <PackageReference ID="f2b198ee-3595-4ff3-8a3a-1a6f5c10c341" Name="TraceLab Components" />
+            </References>
+            <ExperimentInfo>
+              <Version>2</Version>
+              <Id>9aea195f-5db7-4300-9e64-e7fca50ec970</Id>
+            </ExperimentInfo>
+            <node id="219ee658-2a1f-4469-8515-269d3fa04199">
+              <SerializedVertexData Version="1" X="164.474" Y="15">
+                <Metadata type="TraceLab.Core.Components.StartNodeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Enter" />
+              </SerializedVertexData>
+            </node>
+            <node id="d890d5c5-9274-4516-8e31-0413e95f90b0">
+              <SerializedVertexData Version="1" X="192.468" Y="129">
+                <Metadata type="TraceLab.Core.Components.EndNodeMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Exit" WaitsForAllPredecessors="True" />
+              </SerializedVertexData>
+            </node>
+            <node id="f9045527-023d-4bde-82e6-7e46fa93a75a">
+              <SerializedVertexData Version="1" X="108" Y="71">
+                <Metadata type="TraceLab.Core.Components.CompositeComponentMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="TFIDF VSM Tracer" ComponentMetadataDefinitionID="af54813e-50f2-4dd9-98df-112193f7d7e5" WaitsForAllPredecessors="True">
+                  <IOSpec Version="2">
+                    <Input>
+                      <IOItem>
+                        <IOItemDefinition Name="sourceArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" IOType="Input" />
+                        <MappedTo>sourceArtifacts</MappedTo>
+                      </IOItem>
+                      <IOItem>
+                        <IOItemDefinition Name="targetArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" IOType="Input" />
+                        <MappedTo>targetArtifacts</MappedTo>
+                      </IOItem>
+                    </Input>
+                    <Output>
+                      <IOItem>
+                        <IOItemDefinition Name="similarityMatrix" Type="TraceLabSDK.Types.TLSimilarityMatrix" IOType="Output" />
+                        <MappedTo>similarityMatrix</MappedTo>
+                      </IOItem>
+                    </Output>
+                  </IOSpec>
+                  <ConfigWrapper Version="1" IsJava="False">
+                    <ConfigValues>
+                      <PropertyObject>
+                        <Version>3</Version>
+                        <Name>cec52391-1b01-4c91-acf5-def0400b8db6:SimilarityMetric</Name>
+                        <DisplayName>Similarity Method</DisplayName>
+                        <Description />
+                        <ActualValueType>TraceLab.Core.Components.EnumValueCollection, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151</ActualValueType>
+                        <ValueType>Tracer.SimilarityMetricMethod, Tracer, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null</ValueType>
+                        <Visible>True</Visible>
+                        <IsEnum>True</IsEnum>
+                        <EnumInfo>
+                          <EnumValueCollection>
+                            <SourceEnum>Tracer.SimilarityMetricMethod, Tracer, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null</SourceEnum>
+                            <Value>Cosine</Value>
+                            <PossibleValues>
+                              <ArrayOfEnumValue xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                <EnumValue>
+                                  <Value>Cosine</Value>
+                                </EnumValue>
+                                <EnumValue>
+                                  <Value>Dice</Value>
+                                </EnumValue>
+                                <EnumValue>
+                                  <Value>Jaccard</Value>
+                                </EnumValue>
+                                <EnumValue>
+                                  <Value>SimpleMatching</Value>
+                                </EnumValue>
+                              </ArrayOfEnumValue>
+                            </PossibleValues>
+                          </EnumValueCollection>
+                        </EnumInfo>
+                      </PropertyObject>
+                    </ConfigValues>
+                  </ConfigWrapper>
+                </Metadata>
+              </SerializedVertexData>
+            </node>
+            <edge id="5967c6eb-af65-4efe-a1cf-be33a2320bfd" source="219ee658-2a1f-4469-8515-269d3fa04199" target="f9045527-023d-4bde-82e6-7e46fa93a75a" isFixed="False" isVisible="True" />
+            <edge id="b9d23f26-6776-4842-afb7-e3a956ec88b2" source="f9045527-023d-4bde-82e6-7e46fa93a75a" target="d890d5c5-9274-4516-8e31-0413e95f90b0" isFixed="False" isVisible="True" />
+          </graph>
+        </ComponentGraph>
+      </Metadata>
+    </SerializedVertexDataWithSize>
+  </node>
+  <node id="44219946-da91-40c4-bca5-1079e2a3c175">
+    <SerializedVertexData Version="1" X="148" Y="107">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Import Source" ComponentMetadataDefinitionID="72de6818-d833-5f76-8600-7e89a01f6588" WaitsForAllPredecessors="True">
+        <IOSpec Version="2">
+          <Input />
+          <Output>
+            <IOItem>
+              <IOItemDefinition Name="listOfArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" IOType="Output" />
+              <MappedTo>sourceArtifacts</MappedTo>
+            </IOItem>
+          </Output>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>3</Version>
+              <Name>Path</Name>
+              <DisplayName>File to import</DisplayName>
+              <Description />
+              <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Culture=neutral, PublicKeyToken=2c83cea59a8bb151</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <FilePath>
+                  <Version>2</Version>
+                  <Relative>HIPPA\11HIPAA_Goal_Model.xml</Relative>
+                </FilePath>
+              </Value>
+            </PropertyObject>
+            <PropertyObject>
+              <Version>3</Version>
+              <Name>TrimElementValues</Name>
+              <DisplayName>Trim Element Values</DisplayName>
+              <Description />
+              <ValueType>System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <boolean>false</boolean>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="9d34465d-8289-44b6-baac-2fc38ba30851">
+    <SerializedVertexData Version="1" X="333" Y="107">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Import Target" ComponentMetadataDefinitionID="72de6818-d833-5f76-8600-7e89a01f6588" WaitsForAllPredecessors="True">
+        <IOSpec Version="2">
+          <Input />
+          <Output>
+            <IOItem>
+              <IOItemDefinition Name="listOfArtifacts" Type="TraceLabSDK.Types.TLArtifactsCollection" IOType="Output" />
+              <MappedTo>targetArtifacts</MappedTo>
+            </IOItem>
+          </Output>
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>3</Version>
+              <Name>Path</Name>
+              <DisplayName>File to import</DisplayName>
+              <Description />
+              <ValueType>TraceLabSDK.Component.Config.FilePath, TraceLabSDK, Culture=neutral, PublicKeyToken=2c83cea59a8bb151</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <FilePath>
+                  <Version>2</Version>
+                  <Relative>HIPPA\2CCHIT.xml</Relative>
+                </FilePath>
+              </Value>
+            </PropertyObject>
+            <PropertyObject>
+              <Version>3</Version>
+              <Name>TrimElementValues</Name>
+              <DisplayName>Trim Element Values</DisplayName>
+              <Description />
+              <ValueType>System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <boolean>false</boolean>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <edge id="7e84a384-fe5d-43a4-a746-15cd78b25cd1" source="Start" target="44219946-da91-40c4-bca5-1079e2a3c175" isFixed="False" isVisible="True" />
+  <edge id="15dc6045-69b3-4965-8eeb-48a22b044175" source="Start" target="9d34465d-8289-44b6-baac-2fc38ba30851" isFixed="False" isVisible="True" />
+  <edge id="6ef21bf3-51f1-4091-ba74-211638569cad" source="ba15853f-03fa-4a51-b0c0-e92382ee23a9" target="48f63d91-1e8e-4590-bbaf-eb8d9d9995e1" isFixed="True" isVisible="False" />
+  <edge id="560d6ca7-3ba3-478e-b399-b472de7453db" source="ba15853f-03fa-4a51-b0c0-e92382ee23a9" target="c4ba6fd8-9854-4a51-94e7-97869ad0937e" isFixed="True" isVisible="True" />
+  <edge id="a510b8fd-f5a3-48f6-913e-21bd209f2de8" source="48f63d91-1e8e-4590-bbaf-eb8d9d9995e1" target="End" isFixed="False" isVisible="True" />
+  <edge id="2fc10ca0-bcf9-4636-82ef-235b517db829" source="c4ba6fd8-9854-4a51-94e7-97869ad0937e" target="48f63d91-1e8e-4590-bbaf-eb8d9d9995e1" isFixed="True" isVisible="True" />
+  <edge id="6a96fdb6-3005-480d-8649-93432ab3e0ce" source="44219946-da91-40c4-bca5-1079e2a3c175" target="ba15853f-03fa-4a51-b0c0-e92382ee23a9" isFixed="False" isVisible="True" />
+  <edge id="0905013e-3706-4417-8a99-cd8edaaa57b0" source="9d34465d-8289-44b6-baac-2fc38ba30851" target="ba15853f-03fa-4a51-b0c0-e92382ee23a9" isFixed="False" isVisible="True" />
+</graph>

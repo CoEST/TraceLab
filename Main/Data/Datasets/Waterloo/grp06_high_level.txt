@@ -1,0 +1,39 @@
+F01	Administrator can add new billing plans to System.~
+F02	Administrator can edit existing billing plan in System.~
+F03	Administrator can delete inactive billing plans from System.~
+F04	Administrator can define/edit the regular rate of a billing plan.~
+F05	Administrator can define/edit/delete one or more discount periods of a billing plan.~
+F06	Administrator can define/edit the discount rate of a discount period of a billing plan.~
+F07	System should monitor the event of a VoIP telephone being connected (plugged in).~
+F08	System should monitor the event of a VoIP telephone being disconnected (unplugged).~
+F09	System should translate the phone number dialed into the IP address and port number of the recipient of the call.~
+F10	Administrator can change the billing period length and set an effective date for the new billing period.~
+F11	Administrator can disable a connected, enabled phone.~
+F12	Administrator can enable a disabled phone.~
+F13	The system performs both administrator initiated connectivity test and scheduled periodic tests. This test polls each phone to see if it is still connected to the system.~
+F14	Prints a bill for a specific user or a list of users.~
+F15	If an error occurs on the phone or the user requests a reset, then administer resets the phone’s software.~
+F16	The Administrator sets the maximum amount simultaneous phone calls that the system can support.~
+F17	Administrator can add a new user account to System.~
+F18	Administrator can edit existing user account in System.~
+F19	Administrator can cancel a user account from System.~
+F20	Administrator can login with a username and password and enter the Administration Console application.~
+F21	Administrator can log out of the system and close the Admin Console application.~
+F22	User is able to originate a VoIP call.~
+F23	User is able to receive a VoIP call.~
+F24	Operators enter bill payment to update account status~
+F25	SuperAdmin can add an administrator account~
+F26	SuperAdmin can edit an administrator account~
+F27	SuperAdmin can delete an administrator account~
+F28	When the user specified load balancing number is less than the amount of current phone connections the color of the current number of connections is highlighted with a distinctive color.~
+F29	Administrator can view and print a specific bill of a specific user.~
+F30	Administrator can view and print call history of a specific user for a specified period of time.~
+F31	Administrator can suspend an active user account.~
+F32	Administrator can reactivate a suspended user account.~
+N01	Administrator must logon to the admin console to perform account management, billing, and system maintenance operations~
+N02	Different types of admin accounts define different access levels.~
+N03	Support different types of phones that conform to the specifications.~
+N04	System must provide uninterrupted voice service during a call.~
+N05	System must not introduce delays or distortions to the voice data.~
+N06	The VoIP phones should function exactly like traditional phones.~
+N07	The admin console must have an intuitive GUI.~

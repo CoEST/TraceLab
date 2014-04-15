@@ -1,0 +1,25 @@
+Medical Class Date: 20/09/03 
+                                                    Version: 
+                                                    0 01 000 
+Contains the description of doctors who are age 
+                   at outpatient 
+Attributes 
+       Name Access Description 
+Private annoAbilitazione year in which the doctor was 
+                               licensed to practice 
+                               profession 
+Methods 
+       Signature create () Public Access 
+    Description Its task is to create a new object of type 
+                   Doctor 
+       Signature delete () Public Access 
+    It description of the delete of a 
+                   doctor 
+       Signature GetAttributes () Public Access 
+    It description of the retrieval of all 
+                   information relating to a doctor 
+       Signature save () Public Access 
+    Description Provides storage of data from an 
+                   doctor within the S I O 
+       Signature setAttributes () Public Access 
+    It description to set the attributes of a physician

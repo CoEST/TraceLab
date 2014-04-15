@@ -1,0 +1,177 @@
+﻿<graph>
+  <ExperimentInfo>
+    <Version>1</Version>
+    <Id>eb09bc3d-a2af-448b-af72-5ecb49ab4584</Id>
+    <Name>Test Long Experiment (2seconds)</Name>
+    <LayoutName>EfficientSugiyama</LayoutName>
+    <Description>The long experiment takes more than 2 seconds to execute as each component sleep for 500ms.</Description>
+  </ExperimentInfo>
+  <node id="Start">
+    <SerializedVertexData Version="1" X="267" Y="87">
+      <Metadata type="TraceLab.Core.Components.StartNodeMetadata, TraceLab.Core, Version=0.4.1.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Start" />
+    </SerializedVertexData>
+  </node>
+  <node id="End">
+    <SerializedVertexData Version="1" X="265" Y="496">
+      <Metadata type="TraceLab.Core.Components.EndNodeMetadata, TraceLab.Core, Version=0.4.1.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="End" />
+    </SerializedVertexData>
+  </node>
+  <node id="0e2f0c7f-ef29-4ca7-b429-b308453f67a6">
+    <SerializedVertexData Version="1" X="261" Y="143">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.4.1.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Init test_a" ComponentMetadataDefinitionID="3e60ccf8-5ed0-4ee4-aa27-d3ae0ee2f0cc" WaitsForAllPredecessors="True">
+        <IOSpec Version="1">
+          <Input />
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="testoutput" Type="System.Int32" />
+              <OutputAs>test_a</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import />
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues />
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="164b356a-2dbb-447c-83e9-2a093c1f6779">
+    <SerializedVertexData Version="1" X="263" Y="312">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.4.1.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Multiplier (sleeps 500ms)" ComponentMetadataDefinitionID="5653b972-3e37-4cf7-826f-f33a68030fa3" WaitsForAllPredecessors="True">
+        <IOSpec Version="1">
+          <Input>
+            <InputItem>
+              <InputItemDefinition Name="testinput" Type="System.Int32" />
+              <MappedTo>test_a</MappedTo>
+            </InputItem>
+          </Input>
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="testoutput" Type="System.Int32" />
+              <OutputAs>test_a</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import />
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues />
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="9c3b1d6a-c15b-4fa1-9cb6-f7b663c9f419">
+    <SerializedVertexData Version="1" X="258" Y="432">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.4.1.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Multiplier (sleeps 500ms)" ComponentMetadataDefinitionID="5653b972-3e37-4cf7-826f-f33a68030fa3" WaitsForAllPredecessors="False">
+        <IOSpec Version="1">
+          <Input>
+            <InputItem>
+              <InputItemDefinition Name="testinput" Type="System.Int32" />
+              <MappedTo>test_a</MappedTo>
+            </InputItem>
+          </Input>
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="testoutput" Type="System.Int32" />
+              <OutputAs>test_a</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import />
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues />
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="030ee13b-d4e1-45da-99c9-a5e76dbd8775">
+    <SerializedVertexData Version="1" X="264" Y="370">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.4.1.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Multiplier (sleeps 500ms)" ComponentMetadataDefinitionID="5653b972-3e37-4cf7-826f-f33a68030fa3" WaitsForAllPredecessors="False">
+        <IOSpec Version="1">
+          <Input>
+            <InputItem>
+              <InputItemDefinition Name="testinput" Type="System.Int32" />
+              <MappedTo>test_a</MappedTo>
+            </InputItem>
+          </Input>
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="testoutput" Type="System.Int32" />
+              <OutputAs>test_a</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import />
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues />
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="ba5a8e81-9db6-4025-b149-05cfb95d663e">
+    <SerializedVertexData Version="1" X="265" Y="192">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.4.1.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Incrementer By Specified Value" ComponentMetadataDefinitionID="e83abfc7-a495-4458-99e0-1d756cf8d626" WaitsForAllPredecessors="False">
+        <IOSpec Version="1">
+          <Input>
+            <InputItem>
+              <InputItemDefinition Name="integer" Type="System.Int32" />
+              <MappedTo>test_a</MappedTo>
+            </InputItem>
+          </Input>
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="integer" Type="System.Int32" />
+              <OutputAs>test_a</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import />
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues>
+            <PropertyObject>
+              <Version>2</Version>
+              <Name>IncrementBy</Name>
+              <DisplayName>Increment by value</DisplayName>
+              <ValueType>System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</ValueType>
+              <Visible>True</Visible>
+              <IsEnum>False</IsEnum>
+              <Value IsNull="False">
+                <int>2</int>
+              </Value>
+            </PropertyObject>
+          </ConfigValues>
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <node id="184bf06c-89bc-4830-affb-ac1bcf0186c7">
+    <SerializedVertexData Version="1" X="265" Y="246">
+      <Metadata type="TraceLab.Core.Components.ComponentMetadata, TraceLab.Core, Version=0.4.1.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151" Label="Multiplier (sleeps 500ms)" ComponentMetadataDefinitionID="5653b972-3e37-4cf7-826f-f33a68030fa3" WaitsForAllPredecessors="True">
+        <IOSpec Version="1">
+          <Input>
+            <InputItem>
+              <InputItemDefinition Name="testinput" Type="System.Int32" />
+              <MappedTo>test_a</MappedTo>
+            </InputItem>
+          </Input>
+          <Output>
+            <OutputItem>
+              <OutputItemDefinition Name="testoutput" Type="System.Int32" />
+              <OutputAs>test_a</OutputAs>
+            </OutputItem>
+          </Output>
+          <Import />
+        </IOSpec>
+        <ConfigWrapper Version="1" IsJava="False">
+          <ConfigValues />
+        </ConfigWrapper>
+      </Metadata>
+    </SerializedVertexData>
+  </node>
+  <edge id="2043d870-536d-4973-81f0-d2356e4d8318" source="Start" target="0e2f0c7f-ef29-4ca7-b429-b308453f67a6" />
+  <edge id="49fb00c8-b12f-42ec-a181-3b91793546ff" source="0e2f0c7f-ef29-4ca7-b429-b308453f67a6" target="ba5a8e81-9db6-4025-b149-05cfb95d663e" />
+  <edge id="c21e860c-5d62-4b58-b65b-efad5a074860" source="164b356a-2dbb-447c-83e9-2a093c1f6779" target="030ee13b-d4e1-45da-99c9-a5e76dbd8775" />
+  <edge id="42843dc7-1df8-452d-a2a5-97e3ed311872" source="9c3b1d6a-c15b-4fa1-9cb6-f7b663c9f419" target="End" />
+  <edge id="801108ef-e558-481a-9c01-46c54d800628" source="030ee13b-d4e1-45da-99c9-a5e76dbd8775" target="9c3b1d6a-c15b-4fa1-9cb6-f7b663c9f419" />
+  <edge id="994899be-4c0c-4630-8b4b-345b30c9174c" source="ba5a8e81-9db6-4025-b149-05cfb95d663e" target="184bf06c-89bc-4830-affb-ac1bcf0186c7" />
+  <edge id="b00570cb-9607-456d-9333-482685d8ed48" source="184bf06c-89bc-4830-affb-ac1bcf0186c7" target="164b356a-2dbb-447c-83e9-2a093c1f6779" />
+</graph>

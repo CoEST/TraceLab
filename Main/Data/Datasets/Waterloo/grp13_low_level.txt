@@ -1,0 +1,65 @@
+UC1	Event:  The user wishes to speak to another user in the system.
+System:  The system consists of the phones and server.
+Actors:
+-	Caller
+-	Callee
+-	Server
+Overview:  A user can act as a caller and make a phone call to another user in the system 
+                   - making them the callee.  The caller picks up the phone and dials the 
+                   extension of the callee to make the voice connection.  When the conversation 
+                   is done, both users hang up their phones.~
+UC2	Event: Administrator wishes to add a user, cancel a user, or change a user’s privileges or 
+            phones.
+System: The system consists of the graphical user interface system (GUI), the user 
+              records, and the extension number to IP mapping.
+Actors:
+-	Administrator
+Overview: Administrator views user accounts and has the option to add a new user or edit 
+                  a user’s account.  Editing a user’s account allows the administrator to change 
+                  the account privileges, or the phones associated with the account.~
+UC3	Event: Administrator performs administrative actions such as resetting call processing    
+           software of a phone line, checking all the phone systems by running periodic 
+           tests, resetting the acceptable load of the system, viewing the system load. 
+System:  The system consists of the phones and system and Administrator.
+Actors: 
+-	System
+-	Administrator
+Overview: This use case captures the scenarios where administrator validates the 
+                  capability of the system.~
+UC4	Event: User logs on to his/her voice messages account and listens to the new or archived 
+            messages. 
+Actors: 
+-	User 
+-	System
+Overview: This use case captures the scenarios where user logs on the voice message 
+                  account, and listens to the new or archived messages. After hearing each 
+                  message, user has the option to delete or save the message.~
+UC7	Event:  	The Administrator sends bills to show service charges.
+System:	The system consists of the phones and system.
+Actors: 
+	     -	Administrator
+                 - 	System
+Overview:	The Administrator requests the bills from the system. The email and           
+                        paper version of the bills are given to the departments.~
+UC9	Event:          Add credit to the department’s bill 
+System:       The system consists of the phones and system.
+Actors:	
+                    -	User
+                    -	Administrator
+                    -	System
+Overview:   Department sends money to the Administrator who updates the system to add credit 
+                    to the department’s bill~
+UC10	Event:          Issue bill to users with outstanding balance
+System:       The system consists of the phones and system.
+Actors:	
+        -   Administrator
+        -   System
+
+Overview:   Handles the case where the department has not paid his bill for one full period~
+UC12	Event:        The administrator views IP Phone hardware status and choose to add or delete an IP Phone.
+System:      The system is the server and phones.
+Actors:	
+       -    Administrator
+ 	       -    System
+	       
+Overview:  The Administrator wishes to see the IP Phone status and choose to add and delete an IP Phone.  Adding an IP phone is for the system to search a new IP Phone. To delete and IP phone the administrator must make sure that no extension is associated with that phone. If that is the case, system shows an error message.~

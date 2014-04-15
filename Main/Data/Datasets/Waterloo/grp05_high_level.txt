@@ -1,0 +1,54 @@
+F1	Administrator can log into the System Console~
+F2	Ability to add new users to the system.~
+F3	Allow administrator to find unassigned phone number.~
+F4	Allow administrator to find available IP address~
+F5	Mechanism to associate an IP address to a phone number.~
+F6	Allow administrator to associate privileges to a user~
+F7	Users should be able to apply filters to their phone calls.~
+F8	Administrator must be able to associate a user to a phone number and IP~
+F9	Mechanism to dissociate an IP address from a phone number.~
+F10	Mechanism to dissociate an IP address and phone number from a user.~
+F11	Deactivate the user’s telephone service~
+F12	The user’s records should be kept indefinitely.~
+F13	Server must store results of previous tests run.~
+F14	The administrator may request hardware tests.~
+F15	The administrator may request to see the results of the most recently run tests~
+F16	System must be able to calculate and give a recommendation on the load size~
+F17	Allow the administrator to set the load size~
+F18	Display the current maximum load size~
+F19	Display the current load of the system.~
+F20	Allows administrator to search for a user~
+F21	The results of the search is displayed to the administrator~
+F22	The server must be able to conduct automated tests periodically.~
+F23	If a phone is unresponsive, system resources are released.~
+F24	When a phone is corrected, then resources are reassigned to it.~
+F25	The System Console must have a Graphical User Interface~
+F26	Administrator must be able to view a user’s bill for any billing period~
+F27	Administrator must be able to record a user’s payment and deduct it from their account~
+F28	Administrator should be able to add new billing plans~
+F29	Administrator should be able to add modify existing billing plans~
+F30	Administrator should be able to attach billing plan to user~
+F31	Administrator should be able to suspend a user’s account~
+F32	Administrator should be able to reactivate a user’s account~
+F33	At the end of each billing period, the system must generate and send a bill to each user~
+F34	User should be able to place phone calls~
+F35	User should be able to receive phone calls.~
+F36	User should be able to terminate phone calls.~
+F37	The server must store important information about each successful call.~
+F38	The server checks that the requested number is available for use.~
+F39	The administrator can print a user’s bill.~
+F40	Administrator should be able to remove existing billing plans.~
+F41	Administrator should be able to view the list of administrators.~
+F42	Administrator should be able to change the password to his/her account.~
+F43	Administrator should be able to create administrator accounts.~
+F44	Administrator should be able to delete administrator accounts.~
+F45	Administrator should be able to save resources.~
+F46	Administrator should be able to restore resources.~
+N1	Only one administrator can log in at a time~
+N2	Administrator must provide a valid user name and password~
+N3	A phone malfunction must not affect the system as a whole.~
+N4	An administrator can only save valid input~
+N5	User Manuals will be provided for all aspects of the system~
+N6	The system should be able to handle as many users as there are phone numbers~
+N7	The system console load time should be brief~
+N8	The system load will be large enough to handle the phone traffic~

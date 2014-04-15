@@ -1,0 +1,14 @@
+Use case name ELIMINAACCOUNTTURISTA 
+Delete the account of a tourist from the system. 
+Partecipating 
+Actor initialization Agency Operator 
+Entry 
+Operator conditions • The agency has logged. 
+Flow of events User System 
+1. Tourists from the list obtained by activating the use case RicercaTurista will select and activate a feature for disposal. 
+2 Asks for confirmation of the transaction. 
+3 Confirm the operation. 
+4 Delete the selected data. 
+Exit conditions • The notification system has been elimination of selected accounts Turista. 
+• Interruption of the connection to the server ETOUR. 
+Quality requirements

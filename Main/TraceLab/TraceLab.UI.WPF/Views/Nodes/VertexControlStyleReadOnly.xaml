@@ -1,0 +1,101 @@
+﻿<!--
+TraceLab - Software Traceability Instrument to Facilitate and Empower Traceability Research
+Copyright (C) 2012-2013 CoEST - National Science Foundation MRI-R2 Grant # CNS: 0959924
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see<http://www.gnu.org/licenses/>.
+-->
+
+<ResourceDictionary
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Converters="clr-namespace:TraceLab.UI.WPF.Converters"  
+             xmlns:GraphSharp_Controls="clr-namespace:GraphSharp.Controls;assembly=GraphSharp.Controls"
+             xmlns:WPFExtensions_AttachedBehaviours="clr-namespace:WPFExtensions.AttachedBehaviours;assembly=WPFExtensions"   
+             mc:Ignorable="d">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/TraceLab.UI.WPF;component/Views/Nodes/NodeResources.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- 
+    VERTEX CONTROL Readonly Style
+    Base style for all nodes in the subgraph or contest experiment. 
+    Nodes are not draggable in the subgraph and they don't change color when mouse over.
+    -->
+    <Style TargetType="{x:Type GraphSharp_Controls:VertexControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type GraphSharp_Controls:VertexControl}">
+                    <ContentPresenter Content="{Binding ., RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type GraphSharp_Controls:VertexControl}}}" 
+                                                      ContentTemplateSelector="{StaticResource NodeControlSelector}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Panel.ZIndex" Value="{Binding Vertex.IsInfoPaneExpanded, Converter={Converters:BoolConverter True=3, False=1}, Mode=OneWay, RelativeSource={RelativeSource Self}}"/>
+        <Setter Property="GraphSharp_Controls:GraphElementBehaviour.HighlightTrigger" Value="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}"/>
+        <Setter Property="WPFExtensions_AttachedBehaviours:DragBehaviour.IsDragEnabled" Value="False"/>
+        <Setter Property="WPFExtensions_AttachedBehaviours:DragBehaviour.X" Value="{Binding CenterX, Mode=TwoWay, RelativeSource={RelativeSource Self}}"/>
+        <Setter Property="WPFExtensions_AttachedBehaviours:DragBehaviour.Y" Value="{Binding CenterY, Mode=TwoWay, RelativeSource={RelativeSource Self}}"/>
+
+        <Setter Property="GraphSharp_Controls:GraphCanvas.X" Value="{Binding CenterX, Mode=TwoWay, RelativeSource={RelativeSource Self}}"/>
+        <Setter Property="GraphSharp_Controls:GraphCanvas.Y" Value="{Binding CenterY, Mode=TwoWay, RelativeSource={RelativeSource Self}}"/>
+
+        <Setter Property="Canvas.Left" Value="{Binding TopLeftX, Mode=OneWay, RelativeSource={RelativeSource Self}}"/>
+        <Setter Property="Canvas.Top" Value="{Binding TopLeftY, Mode=OneWay, RelativeSource={RelativeSource Self}}"/>
+        <Setter Property="CenterX" Value="{Binding Vertex.Data.X, Mode=TwoWay, RelativeSource={RelativeSource Self}}"/>
+        <Setter Property="CenterY" Value="{Binding Vertex.Data.Y, Mode=TwoWay, RelativeSource={RelativeSource Self}}"/>
+
+        <Setter Property="BorderThickness" Value="2,2,2,2"/>
+        <Setter Property="Padding" Value="5,1,2,1"/>
+        <Setter Property="Background" Value="{StaticResource DefaultNodeBackground}"/>
+        <Setter Property="Foreground" Value="{StaticResource DefaultNodeForeground}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DefaultNodeBorderBrush}"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Vertex.IsExecuting, IsAsync=True, RelativeSource={RelativeSource Self}}" Value="True">
+                <DataTrigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation 
+                                        Duration="0:0:0.1" To="{StaticResource HighlightedBorderColor}"
+                                        Storyboard.TargetProperty="BorderBrush.Color"/>
+                            <ColorAnimation 
+                                        Duration="0:0:0.1" To="{StaticResource HighlightedBackgroundColor}"
+                                        Storyboard.TargetProperty="Background.Color"/>
+                            <ColorAnimation 
+                                        Duration="0:0:0.1" To="{StaticResource HighlightedForegroundColor}"
+                                        Storyboard.TargetProperty="Foreground.Color"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.EnterActions>
+                <DataTrigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation 
+                                        Duration="0:0:0.1" To="{StaticResource DefaultBorderColor}"
+                                        Storyboard.TargetProperty="BorderBrush.Color"/>
+                            <ColorAnimation 
+                                        Duration="0:0:0.1" To="{StaticResource DefaultBackgroundColor}"
+                                        Storyboard.TargetProperty="Background.Color"/>
+                            <ColorAnimation 
+                                        Duration="0:0:0.1" To="{StaticResource DefaultForegroundColor}"
+                                        Storyboard.TargetProperty="Foreground.Color"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.ExitActions>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    
+</ResourceDictionary>

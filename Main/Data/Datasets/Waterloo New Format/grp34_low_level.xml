@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<artifacts_collection>
+  <collection_info>
+    <id>grp34_low_level</id>
+    <name>Waterloo grp34_low_level</name>
+    <version>1.1</version>
+    <description>Waterloo grp34_low_level</description>
+  </collection_info>
+  <artifacts>
+    <artifact>
+      <id>UC1</id>
+      <content>Name: Adding new user	ID: UC1
+Authors: M2
+Event: Administrator requests to add a new user account into the system
+System: IP Telephone System
+Actors: Administrator
+Overview: This user case captures the process of adding a new user into the system. When a user is added, the system set the user status to �I�</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC2</id>
+      <content>Name: Editing existing user
+ID: UC2
+Authors: M2
+Event: Administrator requests to edit an existing user account in the system
+System: IP Telephone System
+Actors: Administrator
+Overview: This use case captures the process of editing an existing user account in the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC3</id>
+      <content>Name: Assigning phone number/IP address
+ID: UC3
+Authors: M2
+Event: Administrator assigns phone number/IP address to an existing user who does not have a phone number/IP address
+System: IP Telephone System
+Actors: Administrator
+Overview: This use case captures the process of assigning a randomly generated phone number/IP address to a user.  The user must exists in the system and does not have a phone number/IP address</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC4</id>
+      <content>Name: Canceling user�s service	ID: UC4
+Authors: M2
+Event: Administrator requests to delete an existing user in the system
+System: IP Telephone System
+Actors: Administrator
+Overview: Capture the process of deleting the user and disassociating phone number/IP address from a user who no longer exists in the system</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC5</id>
+      <content>Name: Add Filter Phone Numbers
+ID: UC5
+Authors: M2
+Event: User wants to add filter on one or more phone number(s)
+System: IP Telephone System
+Actors: Administrator
+Overview: This use case captures the process of adding filter to one or more phone numbers.  Once the phone number is filtered from the user, the user would not be able to accept calls from the filtered number.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC6</id>
+      <content>Name: Edit/Remove Filter Phone Numbers
+ID: UC6
+Authors: M2
+Event: User wants to modify or remove filter on one or more phone number(s)
+System: IP Telephone System
+Actors: Administrator
+Overview: This use case captures the process of modifying/removing filter on one or more phone numbers.  Once a filter has been removed from a number, the user can receive call from that number again</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC7</id>
+      <content>Name: Individual Connectivity Test
+ID: UC7
+Authors: M2
+Event: User complains his/.her phone does not work
+System: IP Telephone System
+Actors: Administrator
+Overview: Administrator requests connectivity test for a specific phone number.  The system will indicate whether the phone �pass� or �fail� the test</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC8</id>
+      <content>Name: System Hardware Test
+ID: UC8
+Authors: M2
+Event: Administrator requests hardware test
+System: IP Telephone System
+Actors: Administrator
+Overview: Administrator requests a hardware test; system captures hardware status; system reports the hardware status.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC10</id>
+      <content>Name: Activate User Service
+ID: UC10
+Authors: M2
+Event: Administrator wants to activate a phone number from an existing user
+System: IP Telephone System
+Actors: Administrator
+Overview: The use case captures the process of activating the phone number of a suspended user. After the phone has been activated, the user status will be set to �A�</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC11</id>
+      <content>Name: Suspend User Service
+ID: UC11
+Authors: M2
+Event: Administrator requests to suspend a user who has overdue payment for 2 weeks or whose hardware is not working properly
+System: IP Telephone System
+Actors: Administrator
+Overview: This use case captures the process of suspending a user who has overdue payment for 2 weeks or whose hardware is not working properly.  The system sets the user status = �S�</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC12</id>
+      <content>Name: Record Bill Payment	ID: UC12
+Authors: M2
+Event: Administrator requests to record a bill payment from a user
+System: IP Telephone System
+Actors: Administrator
+Overview: Whenever the user make a payment, the administrator will record the payment in the system If the user does not make a payment more than 2 weeks, system suspend the user.  Any unpaid amount will be carried over to the next month</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC13</id>
+      <content>Name: Add Calling Plan
+ID: UC13
+Authors: M2
+Event: Administrator requests to add new calling plan
+System: IP Telephone System
+Actors: Administrator
+Overview: Whenever there is a new calling plan, the administrator needs to add to the system before the plan can be assigned to the user.  No two calling plans have the same name.</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC14</id>
+      <content>Name: Edit Existing Calling Plan
+ID: UC14
+Authors: M2
+Event: Administrator wants to modify an existing calling plan
+System: IP Telephone System
+Actors: Administrator
+Overview: This use case captures the process of editing an existing calling plan</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC15</id>
+      <content>Name: Print Bill
+ID: UC15
+Authors: M2
+Event: Administrator requests to print a bill of an employee
+System: IP Telephone System
+Actors: Administrator
+Overview: This use case captures the process of printing an employee�s phone bill during a specified period</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC16</id>
+      <content>Name:  Automatic Print Bill
+ID: UC16
+Authors: M2
+Event: Date Timer signals end of billing period
+System: IP Telephone System, Printer
+Actors: Server
+Overview: This use case captures the process of automatic printing of bills for each billing period</content>
+      <parent_id />
+    </artifact>
+    <artifact>
+      <id>UC17</id>
+      <content>Name: Send/Receive call
+ID: UC17
+Authors: M2
+Event: Caller places a call to the callee
+System: IP Telephone System
+Actors: Caller (initiator), Server, Callee
+Overview: The caller picks up the phone, dials the 4 digit number and the phone sends each digit to the server individually. The server sets up a connection between the caller and the callee and increments the max count by 1 (the count is responsible for ensuring the number of connections does not exceed the capacity). The connection is disconnected when either side hangs up the phone.</content>
+      <parent_id />
+    </artifact>
+  </artifacts>
+</artifacts_collection>

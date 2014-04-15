@@ -1,0 +1,10 @@
+org.mozilla.javascript.NativeArray.getElem
+org.mozilla.javascript.NativeArray.setLengthProperty
+org.mozilla.javascript.Context.reportError
+org.mozilla.javascript.NativeArray.setElem
+org.mozilla.javascript.NativeString.getLength
+org.mozilla.javascript.NativeArray.getClassName
+org.mozilla.javascript.Context.setLocale
+org.mozilla.javascript.Context.getLocale
+org.mozilla.javascript.NativeArray.getLengthProperty
+org.mozilla.javascript.NativeArray.NativeArray

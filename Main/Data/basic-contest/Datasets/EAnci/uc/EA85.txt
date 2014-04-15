@@ -1,0 +1,58 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf110
+{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;\f1\ftech\fcharset0 Wingdings-Regular;\f2\fnil\fcharset0 LucidaGrande;
+\f3\fnil\fcharset77 ZapfDingbatsITC;\f4\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f0\b\fs24 \cf0 Nome caso d\'92uso\
+
+\b0 RicercaFascicoloEdilizio\
+
+\b Attori partecipanti\
+
+\b0 Iniziato da cittadino\
+
+\b Flusso di eventi\
+
+\b0 1.\
+3. 5.\
+Il cittadino accede all'area di ricerca 2. Il sistema visualizza la form per\
+l'inserimento della chiave di ricerca Il cittadino inserisce la chiave di ricerca\
+4. Ilsistemamostrairisultatidellaricerca Il cittadino seleziona il fascicolo\
+6. Ilsistemavisualizzailfascicolo\
+
+\b Condizione di entrata\
+
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Il cittadino si \'e8 autenticato nel sistema\
+
+\b Condizioni di uscita\
+
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Il sistema visualizza il fascicolo, OR 
+\f3 \uc0\u10146 
+\f4  
+\f0 Nel caso in cui il cittadino non \'e8 trovato il sistema richiama il caso d'uso\
+
+\b DatiErrati
+\b0 , OR 
+\f1 \uc0\u61656 
+\f2  
+\f0 Nel caso di fallimenti tecnici il sistema\
+richiama	il	caso	d'uso\
+
+\b ServizioNonDisponibile
+\b0 , OR 
+\f1 \uc0\u61656 
+\f2  
+\f0 Se il cittadino vuole una copia del\
+fascicolo trovato, chiama il caso d'uso\
+
+\b RichiestaCopiaFascicoloEdilizio\
+Requisiti di qualita
+\f1\b0 \uc0\u61656 
+\f2  
+\f0 Non previsti}

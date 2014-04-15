@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+
+  <?define ProductName = "TraceLab" ?>
+  <?define Version = "0.5.2.0" ?>
+  <?define ProductID = "77E8964E-0E66-4783-AB1B-7770B08A6111"?>
+  <?define UpgradeCode = "e5d1ca53-c184-4232-bd5f-1b5a72e3fd7a"?>
+  <!-- Product name as you want it to appear in Add/Remove Programs-->
+  <!--<?if $(var.Platform) = x64 ?>
+    <?define ProductName = "Product Name (64 bit)" ?>
+    <?define Win64 = "yes" ?>
+    <?define PlatformProgramFilesFolder = "ProgramFiles64Folder" ?>
+  <?else ?>
+    <?define ProductName = "Product Name" ?>
+    <?define Win64 = "no" ?>
+    <?define PlatformProgramFilesFolder = "ProgramFilesFolder" ?>
+  <?endif ?>-->
+
+  <?define TraceLabMainSource = "$(env.TEMP)\TraceLabInstaller" ?>
+  <!--<?define ComponentsSource = "$(env.TEMP)\TraceLabInstaller\Components" ?>-->
+  <?define TypesSource = "$(env.TEMP)\TraceLabInstaller\Types" ?>
+  <?define TutorialSource = "$(env.TEMP)\TraceLabInstaller\Tutorials" ?>
+  <?define PackagesSource = "$(env.TEMP)\TraceLabInstaller\Packages" ?>
+
+  <!--<Property Id="INSTALLLOCATION">
+    <RegistrySearch Id="RegistrySearch" Type="raw" Root="HKLM" Win64="$(var.Win64)" Key="Software\Company\Product" Name="InstallLocation" />
+  </Property>-->
+  <!-- TODO: Put your code here. -->
+</Include>

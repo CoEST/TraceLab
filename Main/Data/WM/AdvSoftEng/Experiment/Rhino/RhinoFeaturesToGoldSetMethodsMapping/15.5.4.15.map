@@ -1,0 +1,4 @@
+org.mozilla.javascript.NativeString.execIdCall
+org.mozilla.javascript.NativeString.js_substring
+org.mozilla.javascript.NativeString.findPrototypeId
+org.mozilla.javascript.NativeString.initPrototypeId

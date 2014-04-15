@@ -1,0 +1,18 @@
+Use case name REGISTRATION 
+Requires the creation of a new system. 
+Partecipating 
+Actor initialized by Guest User 
+Entry 
+conditions • Guest User have access to the system. 
+Flow of events User System 
+1. Enable the logging feature. 
+2 View the registration form. 
+3 Fill out the form and submit. 
+4 Verify the data entered and asks for confirmation of the transaction. Where the data is invalid or insufficient, the system activates the use case Errored. 
+5 Confirm the operation. 
+6. Create a new account with the data entered. 
+Exit conditions • The system shall notify the successful operation of recording. 
+• Guest User cancels the operation. 
+• Interruption of the connection to the server ETOUR. 
+Quality 
+requirements

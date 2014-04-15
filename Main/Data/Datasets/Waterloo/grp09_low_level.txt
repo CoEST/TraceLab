@@ -1,0 +1,112 @@
+UC1	Name: Administrator Login
+ID: UC1	Author: M2
+Event: The administrator is logging into the server application
+System: Server Administrative Console
+Actors: Administrator
+Overview:  The administrator logs into the system~
+UC2	Name: Create New Profile 	ID: UC2	Author: M3
+Event: Customer requests addition to the VoIP system
+System: Server Administrative Console
+Actors: Administrator
+Overview: This use case captures the process of setting up an account for a new user~
+UC3	Name: Add New Account
+ID: UC3	Author: M2
+Event: The administrator adds a new account to a customer profile
+System: Server Administrative Console
+Actors: Administrator
+Overview:  The administrator adds a new account that involves mapping a new extension to an IP address.~
+UC4	Name: Search Profile
+ID: UC4	Author: M2
+Event: The administrator searches for a customer 
+System: Server Administrative Console
+Actors: Administrator
+Overview: The administrator searches for a customer in the database based on certain search criteria~
+UC5	Name: Update Profile 	ID: UC5	Author: M2
+Event: A customer has requested for an update on his/her account
+System: Server Administrative Console
+Actors: Administrator
+Overview: The administrator modifies the user account information from externally provided details~
+UC6	Name: Switch Billing Plan
+ID: UC6   	Author: M1
+Event: Administrator changes a customer’s current billing plan
+System: Server Administrative Console
+Actors: Administrator
+Overview: The administrator searches for a customer profile and switches plan~
+UC7	Name: Create Basic Plan
+ID: UC7	Author: M2
+Event: The administrator is creating a new basic plan 
+System: Server Administrative Console
+Actors: Administrator
+Overview: The administrator accesses the system, chooses to create a new billing plan, enters the details of the plan and saves it.~
+UC8	Name: Create Discount Plan
+ID: UC8	Author: M2
+Event: The administrator is creating a new discount plan 
+System: Server Administrative Console
+Actors: Administrator
+Overview: The administrator accesses the system, chooses to create a new discount plan, enters the details of the plan and saves it.~
+UC9	Name: Attach Discount Billing Plan
+ID: UC9	Author: M2
+Event: The administrator is adding a new discount plan to a billing plan
+System: Server Administrative Console
+Actors: Administrator
+Overview:  The administrator attaches a discount plan to a billing plan~
+UC10	Name:  Pay Bill	ID: UC10	Author: M3
+Event: Administrator enters payment information for customer.
+System: Server Administrative Console
+Actors: Administrator
+Overview: Illustrates process of inputting customer payment information into system.~
+UC11	Name:  View Outstanding Accounts	ID: UC11	Author: M4
+Event: The administrator is viewing the information for all the account holders that have overdue payments
+System: Server Administrative Console
+Actors: Administrator
+Overview:  The administrator looks up the users whose accounts are overdue~
+UC12	Name:  Suspend Account
+ID: UC12	Author: M4
+Event: The administrator is viewing the information for all the account holders that have overdue payments
+System: Server Administrative Console
+Actors: Administrator
+Overview:  The administrator looks up the users whose accounts are overdue~
+UC13	Name:  Terminate Service
+ID: UC13	Author: M4
+Event: The administrator cancels an account
+System: Server Administrative Console
+Actors: Administrator
+Overview:  The administrator searches for customer and deactivates account~
+UC14	Name:  Resume Service
+ID: UC14	Author: M4
+Event: The administrator cancels and account
+System: Server Administrative Console
+Actors: Administrator
+Overview:  The administrator searches for customer and deactivates account~
+UC15	Name: Extension/IP Lookup	ID: UC15	Author: M2
+Event: The administrator is finding an IP from an extension number or vice-versa
+System: Server Administrative Console
+Actors: Administrator
+Overview:  The administrator navigates the interfaces to lookup extensions and IP addresses~
+UC16	Name: Adjust Call Load
+ID: UC16	Author: M2
+Event: The administrator adjusts the maximum call load
+System: Server Administrative Console
+Actors: Administrator
+Overview:  The administrator sets the maximum call load~
+UC17	Name: Check Call Load
+ID: UC17	Author: M2
+Event: The administrator checks for the current call load
+System: Server Administrative Console
+Actors: Administrator
+Overview:  The administrator verifies the current call load~
+UC18	Name: Enable Device	ID: UC18	Author: M2
+Event: The administrator is manually enabling a device
+System: Server Administrative Console
+Actors: Administrator
+Overview:  The administrator enters the choice of enabling or disabling a device. System ensures that the device is not already enabled or disabled.~
+UC19	Name: Disable Device	ID: UC19	Author: M2
+Event: The administrator is manually disabling a device
+System: Server Administrative Console
+Actors: Administrator
+Overview:  The administrator enters the choice of enabling or disabling a device. System ensures that the device is not already enabled or disabled.~
+
+
+
+
+

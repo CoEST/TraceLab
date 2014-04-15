@@ -1,0 +1,634 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>Debug Method </title>
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="Debug method" />
+    <meta name="System.Keywords" content="ComponentLogger.Debug method" />
+    <meta name="Microsoft.Help.F1" content="TraceLabSDK.ComponentLogger.Debug" />
+    <meta name="Microsoft.Help.F1" content="TraceLabSDK.ComponentLogger.Debug``1" />
+    <meta name="Microsoft.Help.F1" content="TraceLabSDK.ComponentLogger.Debug``2" />
+    <meta name="Microsoft.Help.F1" content="TraceLabSDK.ComponentLogger.Debug``3" />
+    <meta name="Microsoft.Help.Id" content="Overload:TraceLabSDK.ComponentLogger.Debug" />
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    <link rel="stylesheet" type="text/css" href="../styles/Presentation.css" />
+    <link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <meta name="container" content="TraceLabSDK" />
+    <meta name="file" content="3798ece6-dccc-04b1-7449-7aa2b8bcbb39" />
+    <meta name="guid" content="3798ece6-dccc-04b1-7449-7aa2b8bcbb39" />
+    <xml>
+      <MSHelp:Attr Name="AssetID" Value="Overload:TraceLabSDK.ComponentLogger.Debug" />
+      <MSHelp:TOCTitle Title="Debug Method " />
+      <MSHelp:RLTitle Title="ComponentLogger.Debug Method  (TraceLabSDK)" />
+      <MSHelp:Keyword Index="A" Term="Overload:TraceLabSDK.ComponentLogger.Debug" />
+      <MSHelp:Keyword Index="A" Term="frlrfTraceLabSDKComponentLoggerClassDebugTopic" />
+      <MSHelp:Keyword Index="K" Term="Debug method" />
+      <MSHelp:Keyword Index="K" Term="ComponentLogger.Debug method" />
+      <MSHelp:Keyword Index="F" Term="TraceLabSDK.ComponentLogger.Debug" />
+      <MSHelp:Attr Name="DevLang" Value="CSharp" />
+      <MSHelp:Attr Name="DevLang" Value="VB" />
+      <MSHelp:Attr Name="Locale" Value="en-us" />
+      <MSHelp:Attr Name="TopicType" Value="kbSyntax" />
+      <MSHelp:Attr Name="TopicType" Value="apiref" />
+      <MSHelp:Attr Name="AssemblyVersion" Value="0.5.0.0" />
+    </xml>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+    <img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+    <div id="header">
+      <table id="topTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+              <img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label><label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span>    </span>
+            <span id="devlangsDropdown" class="filter" tabindex="0">
+              <img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> <label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label><label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label><label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label><label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label><label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label></span>
+            <span>    </span>
+            <span id="memberOptionsDropdown" class="filter" tabindex="0">
+              <img id="memberOptionsDropdownImage" src="../icons/dropdown.gif" /> <label id="memberOptionsMenuAllLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Show All </nobr></label><label id="memberOptionsMenuMultipleLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered </nobr></label><label id="memberOptionsMenuProtectedLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered </nobr></label><label id="memberOptionsMenuInheritedLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered </nobr></label></span>
+          </td>
+        </tr>
+      </table>
+      <div id="devlangsMenu">
+        <input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="CSharpCheckbox">C#</label>
+        <br />
+        <input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label>
+        <br />
+        <input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label>
+        <br />
+      </div>
+      <div id="memberOptionsMenu">
+        <input id="ProtectedCheckbox" type="checkbox" data="Protected" value="on" onClick="SetMemberOptions(this, 'vis')" />
+        <label class="checkboxLabel" for="ProtectedCheckbox">Include Protected Members</label>
+        <br />
+        <input id="InheritedCheckbox" type="checkbox" data="Inherited" value="on" onClick="SetMemberOptions(this, 'decl')" />
+        <label class="checkboxLabel" for="InheritedCheckbox">Include Inherited Members</label>
+        <br />
+      </div>
+      <table id="bottomTable" cellpadding="0" cellspacing="0">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">A Sandcastle Documented Class Library</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">ComponentLogger<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>Debug Method </span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td align="left">
+            <a href="01ec396a-6a02-417e-cea8-5e054ccba988.htm">ComponentLogger Interface</a> <a href="#seeAlsoToggle" onclick="OpenSection(seeAlsoToggle)">See Also</a> <span id="headfeedbackarea" class="feedbackhead"><a href="javascript:SubmitFeedback('','A Sandcastle Documented Class Library','','','','%0\dYour%20feedback%20is%20used%20to%20improve%20the%20documentation%20and%20the%20product.%20Your%20e-mail%20address%20will%20not%20be%20used%20for%20any%20other%20purpose%20and%20is%20disposed%20of%20after%20the%20issue%20you%20report%20is%20resolved.%20%20While%20working%20to%20resolve%20the%20issue%20that%20you%20report,%20you%20may%20be%20contacted%20via%20e-mail%20to%20get%20further%20details%20or%20clarification%20on%20the%20feedback%20you%20sent.%20After%20the%20issue%20you%20report%20has%20been%20addressed,%20you%20may%20receive%20an%20e-mail%20to%20let%20you%20know%20that%20your%20feedback%20has%20been%20addressed.%0\A%0\d','Customer%20Feedback');">Send Feedback</a></span></td>
+        </tr>
+      </table>
+      <table id="gradientTable">
+        <tr>
+          <td class="nsrBottom" background="../icons/gradient.gif" />
+        </tr>
+      </table>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <span style="color: DarkGray"></span>
+        <h1 class="heading">
+          <span onclick="ExpandCollapse(overloadMembersTableToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(overloadMembersTableToggle, event)" tabindex="0">
+            <img id="overloadMembersTableToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Overload List</span>
+        </h1>
+        <div id="overloadMembersTableSection" class="section" name="collapseableSection" style="">
+          <table id="memberList" class="members" frame="lhs" cellpadding="2">
+            <col width="10%" />
+            <tr>
+              <th class="iconColumn">
+               
+            </th>
+              <th class="nameColumn">Name</th>
+              <th class="descriptionColumn">Description</th>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="59612bca-881c-fad6-0126-e61926edcec1.htm">Debug(Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="d0d2ec01-d277-e81b-e513-e9a1e50bd6de.htm">Debug(String)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="22d914a0-9540-b897-d030-d8b5fa67fd4b.htm">Debug<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>T<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(T)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="57a1ac51-38fb-e810-57a3-a42cfed245e8.htm">Debug(IFormatProvider, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="7fbb5190-9b19-9696-d8e0-a766ee53319a.htm">Debug<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>T<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, T)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="4bc44f1a-ef0c-cd70-aee5-7dd6ec8231c8.htm">Debug(String, Boolean)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="eefd30ad-abf6-170f-d902-502f9e614e8d.htm">Debug(String, Byte)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="f4371759-68e4-f11f-1264-e732868cf800.htm">Debug(String, Char)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="8e827115-3214-626f-99dc-72c8fba00b18.htm">Debug(String, Decimal)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="106fd374-252b-c8ee-372d-ba91af63e0f0.htm">Debug(String, Double)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="a73ae10c-69ab-d8ed-973a-fc2e41d9ae92.htm">Debug(String, Int32)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="dd80b5f1-a69f-4ea7-845d-16b7d1d6885d.htm">Debug(String, Int64)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="67803844-d160-6962-9139-824a7707167e.htm">Debug(String, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="e72b423c-6793-178a-9571-a739e4b13674.htm">Debug(String, <span class="languageSpecificText"><span class="cpp">array&lt;</span></span>Object<span class="languageSpecificText"><span class="cpp">&gt;</span><span class="cs">[]</span><span class="vb">()</span><span class="nu">[]</span><span class="fs">[]</span></span>)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified parameters
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="9306f9df-a54c-62d6-3291-a3518036144a.htm">Debug(String, Single)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="6fa46e17-f51e-603f-a58f-86062a02f97f.htm">Debug(String, String)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="2d9f5fb5-bd3b-6f77-527b-1a8fbfa15d41.htm">Debug<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(String, TArgument)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified parameter
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="4c18afc5-213b-6abf-c1d7-5fde2e6c608e.htm">Debug(IFormatProvider, String, Boolean)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="37c8131d-3098-8812-d3cd-b050987825fa.htm">Debug(IFormatProvider, String, Byte)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="9fe53086-d26c-3f00-f7cc-9938809dfd31.htm">Debug(IFormatProvider, String, Char)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="9ffdbef2-6bfd-90dc-308d-70e325cd5c1c.htm">Debug(IFormatProvider, String, Decimal)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="be0eb186-ca78-70fe-9607-4fa6ba165d53.htm">Debug(IFormatProvider, String, Double)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="53d3b475-6e6e-18b1-9928-48a1102a45fb.htm">Debug(IFormatProvider, String, Int32)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="a16c093b-a548-d860-0732-8c9e51355ae0.htm">Debug(IFormatProvider, String, Int64)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="5abeedcb-c404-3e2c-850a-24232f8405b3.htm">Debug(IFormatProvider, String, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="f979d867-194f-946f-a954-dd22ef4beaa0.htm">Debug(IFormatProvider, String, <span class="languageSpecificText"><span class="cpp">array&lt;</span></span>Object<span class="languageSpecificText"><span class="cpp">&gt;</span><span class="cs">[]</span><span class="vb">()</span><span class="nu">[]</span><span class="fs">[]</span></span>)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified parameters
+            and formatting them with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="476a3b25-740d-c722-d6c2-1b45d70b160f.htm">Debug(IFormatProvider, String, Single)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="605ed093-d7aa-4c12-222d-dc5f8b8ba055.htm">Debug(IFormatProvider, String, String)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="83bdbb5f-2114-2c89-943f-eb17c3648205.htm">Debug<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, String, TArgument)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified parameter
+            and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="7c36ace4-9c8b-d23f-19ea-4c167363cda0.htm">Debug(String, Object, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified parameters
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="06d92958-5d6a-3640-3486-ca354e240380.htm">Debug<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(String, TArgument1, TArgument2)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified parameters
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="5b2f8ee2-5374-007a-f61a-b375aaffd9b1.htm">Debug<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, String, TArgument1, TArgument2)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified arguments
+            formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="8f51b354-0dcf-d1f7-eadb-5d0c3f8d5d80.htm">Debug(String, Object, Object, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified parameters.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="a81052ef-eaa4-1284-8b98-5580fd1fc785.htm">Debug<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2, TArgument3<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(String, TArgument1, TArgument2, TArgument3)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified parameters.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="cddd2664-a3ce-ecc8-b9cd-c003e96143f3.htm">Debug<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2, TArgument3<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, String, TArgument1, TArgument2, TArgument3)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Debug level using the specified arguments
+            formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <h1 class="heading">
+          <span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+            <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See Also</span>
+        </h1>
+        <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+          <div class="seeAlsoStyle">
+            <a href="01ec396a-6a02-417e-cea8-5e054ccba988.htm">ComponentLogger Interface</a>
+          </div>
+          <div class="seeAlsoStyle">
+            <a href="4ff5a3f4-d1e8-7e05-0e2e-268377981a02.htm">ComponentLogger Members</a>
+          </div>
+          <div class="seeAlsoStyle">
+            <a href="23af86fa-6a55-b6e1-c801-36be425319a2.htm">TraceLabSDK Namespace</a>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+        </div>
+        <A NAME="feedback"></A>
+        <span id="fb" class="feedbackcss"></span>
+      </div>
+    </div>
+  </body>
+</html>

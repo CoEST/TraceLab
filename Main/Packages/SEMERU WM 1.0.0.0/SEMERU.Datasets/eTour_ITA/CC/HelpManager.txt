@@ -1,0 +1,95 @@
+package unisa.gps.etour.gui;
+
+import java.awt.event. Mouse Adapter;
+import java.awt.event. Mouse Event;
+import java.io.*;
+import java.util. Hash Map;
+import java.util. Scanner;
+import java.util. String Tokenizer;
+import java.net. U R I Syntax Exception;
+import javax.swing. J Component;
+import javax.swing.text. J Text Component;
+
+/**
+ *  Questa classe realizza il meccanismo della guida sensibile al 
+ * contesto.
+ * 
+ * @version  . 
+ * @author  Mario  Gallo
+ * 
+ * &#   ;      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I -
+ *          University of  Salerno
+ */
+public class  Help Manager extends  Mouse Adapter
+{
+	private  Hash Map< String, String> dizionario;
+	private  J Text Component destinazione;
+	private  String previous Message;
+	
+	/**
+	 * <p> Il costruttore crea una nuova istanza della classe per il
+	 * managing della guida in linea a partire dal file contenente 
+	 * la guida vera e propria e il componente nel quale visualizzarla.</p>
+	 * 
+	 * @param p Percorso  String - il percorso del file della guida.
+	 * @param p Component  J Text Component - il componente nel quale visualizzare
+	 * la guida.
+	 * @throws  File Not Found Exception - se il file della guida indicato non viene
+	 * trovato.
+	 * 
+	 */
+	public  Help Manager( String p Percorso,  J Text Component p Component) throws  File Not Found Exception
+	{
+		dizionario = new  Hash Map< String, String>();
+		destinazione = p Component;
+		 File a File = null;
+		try
+		{
+			a File = new  File(get Class().get Resource(p Percorso).to U R I());
+		}
+		catch ( U R I Syntax Exception ex)
+		{
+			ex.print Stack Trace();
+		}
+		 Scanner scanning = new  Scanner(new  Buffered Reader(new  File Reader(a File)));
+		 String Tokenizer tokenizer;
+		while (scanning.has Next())
+		{
+			tokenizer = new  String Tokenizer(scanning.next Line(),"##");
+			dizionario.put(tokenizer.next Token(), tokenizer.next Token());
+		}
+		
+		scanning.close();
+	}
+
+	/**
+	 *  Questo metodo gestisce l'evento che occorre quando il puntatore
+	 * del mouse entra nell'area di un componente.
+	 * 
+	 * @param p Mouse Entered Event  Mouse Event - l'evento generato dal mouse.
+	 * 
+	 */
+	public void mouse Entered( Mouse Event p Mouse Entered Event)
+	{
+		previous Message = destinazione.get Text();
+		 J Component componente = ( J Component) p Mouse Entered Event.get Component();
+		 String help = dizionario.get(componente.get Name());
+		destinazione.set Text(help);	
+		destinazione.repaint();
+	}
+
+	/**
+	 * 
+	 *  Questo metodo gestisce l'evento che occorre quando il puntatore
+	 * del mouse esce dall'area di un componente.
+	 * 
+	 * @param p Mouse Exited Event  Mouse Event - l'evento generato dal mouse.
+	 * 
+	 */
+	public void mouse Exited( Mouse Event p Mouse Exited Event)
+	{
+		destinazione.set Text(previous Message);
+		destinazione.repaint();
+
+	}
+}

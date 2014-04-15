@@ -1,0 +1,1 @@
+Initialization	The TMALI CSC is initialized by spawning the tmaliTask() with the startup default parameters.  This task will allocate memory for the TMALI_EVENT_QUEUE, install DCI ISRs, initialize static variables and data structures, and then enter an end-less loop in which it transfers the data from the DCI to the TMALI queue, throttled by the semaphore semDciWait.

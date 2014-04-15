@@ -1,0 +1,80 @@
+package unisa.gps.etour.control. Gestione Beni Culturali.test.stub;
+
+import java.sql. S Q L Exception;
+import java.util. Array List;
+import java.util. Date;
+import unisa.gps.etour.bean. Bean Visita B C;
+import unisa.gps.etour.bean. Bean Visita P R;
+import unisa.gps.etour.repository. I D B Visita B C;
+
+public class  D B Visita B C implements  I D B Visita B C
+{
+	public boolean inserisci Visita B C( Bean Visita B C p Visita) throws  S Q L Exception
+	{
+		return false;
+	}
+
+	public boolean modifica Visita B C( Bean Visita B C p Visita) throws  S Q L Exception
+	{
+		return false;
+	}
+
+	public  Array List< Bean Visita B C> ottieni Lista Visita B C(int p Id Bene Culturale)
+			throws  S Q L Exception
+	{
+		 Array List< Bean Visita B C> finte Visite = new  Array List< Bean Visita B C>( );
+		
+		finte Visite.add(new  Bean Visita B C( ,  , " Bellissima mostra",  , new  Date()));
+		finte Visite.add(new  Bean Visita B C( ,  , " Mostra particolare ma interessante",  , new  Date()));
+		finte Visite.add(new  Bean Visita B C( ,  , " Bellissima mostra",  , new  Date()));
+		finte Visite.add(new  Bean Visita B C( ,  , " Mostra particolare ma interessante",  , new  Date()));
+		finte Visite.add(new  Bean Visita B C( ,  , " Bellissima mostra",  , new  Date()));
+		finte Visite.add(new  Bean Visita B C( ,  , " Mostra particolare ma interessante",  , new  Date()));
+		finte Visite.add(new  Bean Visita B C( ,  , " Bellissima mostra",  , new  Date()));
+		finte Visite.add(new  Bean Visita B C( ,  , " Mostra particolare ma interessante",  , new  Date()));
+		finte Visite.add(new  Bean Visita B C( ,  , " Bellissima mostra",  , new  Date()));
+		finte Visite.add(new  Bean Visita B C( ,  , " Mostra particolare ma interessante",  , new  Date()));
+
+		
+//		finte Visite.add(new  Bean Visita B C( ,  , " Questa mostra non e' male",  , new  Date(new  Date().get Time() - (unisa.gps.etour.util. Costanti Globali. T R E N T A_ G I O R N I *  ))));
+		finte Visite.add(new  Bean Visita B C( ,  , " Questa mostra non e' male",  , new  Date(new  Date().get Time() -            L)));
+		finte Visite.add(new  Bean Visita B C( ,  , " Questa mostra non e' male",  , new  Date(new  Date().get Time() - (unisa.gps.etour.util. Costanti Globali. T R E N T A_ G I O R N I *  ))));
+
+		
+//		finte Visite.add(new  Bean Visita B C( ,  , " E' bello ma si paga tanto!",  , new  Date(   ,  ,   )));
+//		finte Visite.add(new  Bean Visita B C( ,  , " Si mangia abbastanza bene!",  , new  Date(   ,  ,   )));
+//		finte Visite.add(new  Bean Visita B C( ,  , " Si mangia molto bene!",  , new  Date(   ,  ,  )));
+//		finte Visite.add(new  Bean Visita B C( ,  , " Si mangia!",  , new  Date(   ,  ,   )));
+//		finte Visite.add(new  Bean Visita B C( ,  , " Bello il posto",  , new  Date(   ,  ,   )));
+//		finte Visite.add(new  Bean Visita B C( ,  , " Ottima la vista sul mare",  , new  Date(   ,  ,   )));
+//		finte Visite.add(new  Bean Visita B C( ,  , " Bell",  , new  Date(   ,  ,   )));
+//		finte Visite.add(new  Bean Visita B C( ,  , " I think it's a bad place",  , new  Date(   ,  ,   )));
+//		finte Visite.add(new  Bean Visita B C( ,  , " W l'aria aperta",  , new  Date(   ,  ,   )));
+//		finte Visite.add(new  Bean Visita B C( ,  , " Meglio degli altri",  , new  Date(   ,  ,  )));
+//		finte Visite.add(new  Bean Visita B C( ,  , " Forza napoli",   , new  Date(   ,  ,  )));
+//		finte Visite.add(new  Bean Visita B C( ,  , " Si mangia abbastanza bene!",   , new  Date(   ,  ,  )));
+//		finte Visite.add(new  Bean Visita B C( ,  , " Si mangia molto bene!",   , new  Date(   ,  ,   )));
+//		finte Visite.add(new  Bean Visita B C( ,  , "ottimo",   , new  Date(   ,  ,   )));
+//		finte Visite.add(new  Bean Visita B C( ,  , "ottimo",   , new  Date(   ,  ,   )));
+//		finte Visite.add(new  Bean Visita B C( ,  , " Sono stato proprio bene",   , new  Date(   ,  ,   )));
+//		finte Visite.add(new  Bean Visita B C( ,  , " Ottimo posto",   , new  Date(   ,  ,   )));
+//		finte Visite.add(new  Bean Visita B C( ,  , " Mi sa che non ci torno",   , new  Date(   ,  ,   )));
+//		finte Visite.add(new  Bean Visita B C( ,  , " Penso che esista di meglio",   , new  Date(   ,  ,   )));
+//		finte Visite.add(new  Bean Visita B C( ,  , " Fa schifo",   , new  Date(   ,  ,   )));
+//		finte Visite.add(new  Bean Visita B C( ,  , " Tropp bellissimo",   , new  Date(   ,  ,   )));
+		
+		return finte Visite;	
+	}
+
+	public  Array List< Bean Visita B C> ottieni Lista Visita B C Turista(int p Id Turista)
+			throws  S Q L Exception
+	{
+		return null;
+	}
+
+	public  Bean Visita B C ottieni Visita B C(int p Id Bene Culturale, int p Id Turista)
+			throws  S Q L Exception
+	{
+		return null;
+	}
+}

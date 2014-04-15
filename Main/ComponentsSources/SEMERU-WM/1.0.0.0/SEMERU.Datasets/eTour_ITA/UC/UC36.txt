@@ -1,0 +1,12 @@
+Use case name	LOGIN ERRATO
+I dati forniti per il login non sono corretti.
+Participating
+Actor	
+Entry
+Conditions	•	I dati forniti per il login non sono corretti.
+Flow of events 		User	System
+	1.			Notifica che i dati inseriti per il login non sono validi e chiede conferma della lettura.
+	2.		Conferma la lettura della notifica.	
+	3.			Recupera lo stato precedente.
+Exit conditions	•	Il sistema restituisce il controllo dell’interazione all’utente.
+Quality requirements	

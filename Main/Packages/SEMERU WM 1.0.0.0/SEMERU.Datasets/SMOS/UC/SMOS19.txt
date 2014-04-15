@@ -1,0 +1,14 @@
+Nome:VisualizzaDettagliIndirizzo
+Attori: Amministratore
+Descrizione: Permette di visualizzare i dettagli di un indirizzo
+Precondizioni:
+• •
+•
+L’utente ha già effettuato il login L’utente ha già eseguito il caso d’uso “VisualizzaElencoIndirizzi” e il sistema sta visualizzando l’elenco degli indirizzi L’utente clicca sul pulsante “mostra dettagli indirizzo”
+Sequenza degli eventi
+Utente
+Sistema
+1.	Visualizza la schermata con i dettagli di un singolo indirizzo; in particolare :nome indirizzo.
+Postcondizioni:
+• L’utente visualizza le informazioni dettagliate relative ad un singolo indirizzo.
+• Connessione al server SMOS interrotta Connessione al server SMOS interrotta

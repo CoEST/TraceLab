@@ -1,0 +1,12 @@
+Use case name LOGINERRATO 
+The data supplied for the login is incorrect. 
+Participating 
+Actor 
+Entry 
+Conditions • The data supplied for the login is incorrect. 
+Flow of events User System 
+1. Notice that the data entered for the login is not valid and asks for confirmation of the reading. 
+2 Confirmation of the reading of the notification. 
+3 Recovers the previous state. 
+Exit conditions • The system returns control to the user interaction. 
+Quality requirements

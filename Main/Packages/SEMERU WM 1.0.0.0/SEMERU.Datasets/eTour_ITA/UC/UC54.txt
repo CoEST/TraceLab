@@ -1,0 +1,15 @@
+Use case name	MODIFICA COMMENTO
+Modifica il commento precedentemente rilasciato.
+Partecipating
+Actor	Inizializzato da Turista
+Entry
+conditions	•	Turista si trova nella scheda di un determinato sito.
+Flow of events 		User	System
+	1.		Sceglie di modificare il commento relativo al feedback rilasciato per il sito tramite l’apposita funzionalità.	
+	2.			Verifica i dati inseriti e chiede conferma dell’operazione di modifica. Nel caso in cui i dati inseriti siano invalidi o insufficienti, il sistema attiva il caso d’uso errore dati.
+	3.		Conferma la modifica del commento.	
+	4.			Modifica il commento relativo al feedback selezionato
+Exit conditions	•	Il sistema notifica l’avvenuta modifica del commento
+•	Interruzione della connessione al server di eTour.
+Quality 
+requirements	

@@ -1,0 +1,50 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using TraceLabSDK.Types;
+using System.IO;
+using System.Text.RegularExpressions;
+
+/// SEMERU Component Library Extension - Custom additions to the SEMERU Component Library
+/// Copyright © 2012-2013 SEMERU
+/// 
+/// This file is part of the SEMERU Component Library Extension.
+/// 
+/// The SEMERU Component Library Extension is free software: you can redistribute it
+/// and/or modify it under the terms of the GNU General Public License as published
+/// by the Free Software Foundation, either version 3 of the License, or (at your
+/// option) any later version.
+/// 
+/// The SEMERU Component Library Extension is distributed in the hope that it will
+/// be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+/// License for more details.
+/// 
+/// You should have received a copy of the GNU General Public License along with the
+/// SEMERU Component Library Extension.  If not, see <http://www.gnu.org/licenses/>.
+
+namespace SEMERU.ICPC12.Importers
+{
+    public static class GoldSet
+    {
+        public static TLSimilarityMatrix Import(string directory)
+        {
+            TLSimilarityMatrix matrix = new TLSimilarityMatrix();
+
+            foreach (String file in Directory.GetFiles(directory))
+            {
+                String feature = Similarities.ExtractFeatureID(file);
+                StreamReader links = new StreamReader(file);
+                String link;
+
+                while ((link = links.ReadLine()) != null)
+                {
+                    matrix.AddLink(feature, link, 1);
+                }
+                links.Close();
+            }
+            return matrix;
+        }
+    }
+}

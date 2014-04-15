@@ -1,0 +1,30 @@
+F1	Caller establishes a call by dialing a 4-digit extension~
+F2	Phone manager verifies that the user’s IP exist~
+F3	Depending on different cases, caller hears different tones~
+F4	Callee receives call from caller~
+F5	Conversation ends between caller and callee~
+F6	A new user subscribes to the service and a new account is generated~
+F7	User terminates the service~
+F8	System calculates amount for each call~
+F9	Bills are automatically generated to all subscribers~
+F10	Warnings are sent to users who have an outstanding account~
+F11	System must consist of a server and several phone subsystems~
+F12	A graphical user interface is available to the Administrator~
+F13	System must be able to monitor phone events as well as display system status information~
+F14	System should have basic fault detection. If there is a system fault, it should notify the Administrator.~
+F15	Administrator should have the ability to create new billing plan~
+F16	System administrator must be able to resolve potential conflicts, view information and modify account information~
+F17	Administrator should have the ability to test the system manually~
+N1	Call connection response time must be quick~
+N2	System console must be easy to learn and use~
+N3	System must use minimal computing resources to perform tasks~
+N4	Call failure frequency must be non-existent at all~
+N5	System must be able to detect invalid input~
+N6	System should be reusable on different platform~
+N7	System should work with large number of users~
+N8	System should easily extend new features~
+N9	System design and components should be reusable~
+N10	System should be easily modified~
+N11	System should be easily verified for correctness~
+N12	Design, architecture and code of the system are easy to learn~
+N13	Level of interaction between modules should be clearly defined~ 

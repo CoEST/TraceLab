@@ -1,0 +1,548 @@
+package unisa.gps.etour.gui;
+
+import java.awt. Dimension;
+import java.awt. Point;
+import java.awt. Rectangle;
+import java.awt.event. Action Event;
+import java.awt.event. Action Listener;
+import java.beans. Property Veto Exception;
+import java.util. Iterator;
+import java.util. Vector;
+import javax.swing. Default Desktop Manager;
+import javax.swing. Image Icon;
+import javax.swing. J Component;
+import javax.swing. J Desktop Pane;
+import javax.swing. J Internal Frame;
+import javax.swing. J Menu Item;
+import javax.swing. J Popup Menu;
+import unisa.gps.etour.gui.operatore agenzia . I Scheda;
+
+/**
+ *  Classe per la gestione personalizzata degli internal frame inseriti in un
+ *  J Desktop Pane.
+ * 
+ * @version  . 
+ * @author  Mario  Gallo 
+ * 
+ * &#   ;      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I -
+ *          University of  Salerno
+ */
+public class  Desk Manager extends  Default Desktop Manager
+{
+	private static final  String  U R L_ I M A G E S = "/unisa/gps/etour/gui/images/";
+	private  J Popup Menu desk Menu;
+	private  J Menu Item riduci Tutti;
+	private  J Menu Item ripristina Tutti;
+	private  J Menu Item chiudi Tutti;
+	private  Vector< J Internal Frame> iconified Frames;
+	private int location X;
+	private int location Y;
+
+	/**
+	 *  Costruttore di default.
+	 */
+	public  Desk Manager()
+	{
+		super();
+		iconified Frames = new  Vector< J Internal Frame>();
+		initialize Desk Menu();
+		location X =  ;
+		location Y = - ;
+	}
+
+	/**
+	 *  Gestisce lo spostamento dei  J Internal Frame all'interno dell'area del
+	 *  J Desktop Pane, impedendo che i frame escano fuori dalla area visibile.
+	 * 
+	 * @param javax.swing. J Component a Component - il componente del quale
+	 *            gestire lo spostamento.
+	 * @param int x - cordinata x del punto in cui &egrave; stato spostato il
+	 *            componente.
+	 * @param int y - cordinata y del punto in cui &egrave; stato spostato il
+	 *            componente.
+	 */
+	public void drag Frame( J Component a Component, int x, int y)
+	{
+		if (a Component instanceof  J Internal Frame)
+		{
+			 J Internal Frame frame = ( J Internal Frame) a Component;
+			if (frame.is Icon())
+			{
+				x = frame.get Location().x;
+				y = frame.get Location().y;
+			}
+			else
+			{
+				 J Desktop Pane desk = frame.get Desktop Pane();
+				 Dimension d = desk.get Size();
+				if (x <  )
+				{
+					x =  ;
+				}
+
+				else
+				{
+					if (x + frame.get Width() > d.width)
+					{
+						x = d.width - frame.get Width();
+					}
+				}
+
+				if (y <  )
+				{
+					y =  ;
+				}
+				else
+				{
+					if (y + frame.get Height() > d.height)
+					{
+						y = d.height - frame.get Height();
+					}
+				}
+			}
+		}
+
+		super.drag Frame(a Component, x, y);
+	}
+
+	/**
+	 *  Personalizza l'azione di riduzione ad icona degli  J Internal Frame, creando
+	 * delle barre cliccabili sul fondo del  J Desktop Pane.
+	 *
+	 * @param  J Internal Frame frame - un frame interno ad un
+	 *             J Desktop Pane.
+	 */
+	public void iconify Frame( J Internal Frame frame)
+	{
+		try
+		{
+			 J Desktop Pane desk = frame.get Desktop Pane();
+			 Dimension d = desk.get Size();
+			frame.set Closable(false);
+			frame.set Maximizable(true);
+			frame.set Iconifiable(false);
+			 Rectangle caratteristiche;
+			if (frame.is Maximum())
+			{
+				caratteristiche = frame.get Normal Bounds();
+			}
+			else
+				caratteristiche = frame.get Bounds();
+			frame.set Size(   ,   );
+			set Previous Bounds(frame, caratteristiche);
+			if (iconified Frames.is Empty())
+			{
+				location X =  ;
+			}
+			else
+			{
+				location X +=    ;
+			}
+			if (location Y == - )
+			{
+				location Y = d.height -   ;
+			}
+			if (location X +     > d.width)
+			{
+				location X =  ;
+				location Y -=   ;
+			}
+			frame.set Location(location X, location Y);
+			frame.set Resizable(false);
+			iconified Frames.add(frame);
+		}
+		catch ( Exception ex)
+		{
+			ex.print Stack Trace();
+		}
+	}
+
+	/**
+	 *  Ripristina il frame dall'azione di riduzione a icona, reimpostando la
+	 * posizione e la grandezza che aveva prima.
+	 *
+	 * @param javax.swing. J Internal Frame frame - un frame interno a un
+	 *             J Desktop Pane.
+	 */
+	public void deiconify Frame( J Internal Frame frame)
+	{
+		try
+		{
+			 J Desktop Pane desk = frame.get Desktop Pane();
+			 Dimension desk Size = desk.get Size();
+			iconified Frames.remove(frame);
+			 Rectangle caratteristiche = get Previous Bounds(frame);
+			if (caratteristiche.width > desk Size.width)
+			{
+				caratteristiche.width = desk Size.width;
+				caratteristiche.x =  ;
+			}
+			if (caratteristiche.width + caratteristiche.x > desk Size.width)
+			{
+				caratteristiche.x = (desk Size.width - caratteristiche.width) /  ;
+			}
+			if (caratteristiche.height > desk Size.height)
+			{
+				caratteristiche.height = desk Size.height;
+				caratteristiche.y =  ;
+			}
+			if (caratteristiche.height + caratteristiche.y > desk Size.height)
+			{
+				caratteristiche.y = (desk Size.height - caratteristiche.height) /  ;
+			}
+			frame.set Size(caratteristiche.width, caratteristiche.height);
+			frame.set Location(caratteristiche.x, caratteristiche.y);
+			frame.set Iconifiable(true);
+			frame.set Closable(true);
+			if (frame instanceof  I Scheda)
+			{
+				frame.set Maximizable(false);
+				frame.set Resizable(false);
+			}
+			else
+			{
+				frame.set Maximizable(true);
+				frame.set Resizable(true);
+			}
+			location X -=    ;
+			if (location X <  )
+			{
+				location X = desk Size.width /     -    ;
+				if (location Y != desk Size.height -   )
+				{
+					location Y -=   ;
+				}
+			}
+			repaint Iconified Frames(desk);
+		}
+		catch ( Exception ex)
+		{
+			ex.print Stack Trace();
+		}
+	}
+
+	/**
+	 *  Restituisce il focus a un frame selezionato, e, nel caso in cui il frame
+	 * sia iconificato, lo deiconifica.
+	 * 
+	 * @param frame  J Internal Frame - un frame all'interno di un
+	 *             J Desktop Pane
+	 */
+	public void activate Frame( J Internal Frame frame)
+	{
+		try
+		{
+			if (frame.is Icon())
+				frame.set Icon(false);
+			frame.set Selected(true);
+			super.activate Frame(frame);
+		}
+		catch ( Property Veto Exception e)
+		{
+			e.print Stack Trace();
+		}
+
+	}
+
+	/**
+	 *  Centra il frame fornito come parametro nel  J Desktop Pane.
+	 * 
+	 * @param javax.swing. J Internal Frame frame - un frame interno ad un
+	 *             J Desktop Pane.
+	 * @return void
+	 */
+	public void center Frame( J Internal Frame frame)
+	{
+		 J Desktop Pane desk = frame.get Desktop Pane();
+		 Dimension d = desk.get Size();
+		 Dimension f = frame.get Size();
+		frame.set Location(d.width /   - f.width /  , d.height /   - f.height
+				/  );
+	}
+
+	/**
+	 *  Ridisegna i frames iconificati presenti nel desktop pane fornito.
+	 * 
+	 * @param javax.swing. J Desktop Pane desk - un desktop pane associato a un
+	 *            desk manager.
+	 * @throws  Illegal Argument Exception - &egrave; stato fornito come parametro un
+	 *              J Desktop Pane a cui non &egrave; associato un  Desk  Manager.
+	 */
+	public void repaint Iconified Frames( J Desktop Pane desk)
+			throws  Illegal Argument Exception
+	{
+		if (desk.get Desktop Manager() != this)
+			throw new  Illegal Argument Exception(
+					" Non � stato trovato nessun oggetto"
+							+ "di tipo  Desk Manager associato!");
+		 Iterator< J Internal Frame> iconificati = iconified Frames.iterator();
+		int i =  ;
+		int x Location;
+		int y Location = desk.get Height() -   ;
+		while (iconificati.has Next())
+		{
+			 J Internal Frame corrente = iconificati.next();
+			x Location =     * i;
+			if (x Location +     >= desk.get Width())
+			{
+				x Location =  ;
+				y Location -=   ;
+				i =  ;
+			}
+			corrente.set Location(x Location, y Location);
+			i++;
+		}
+	}
+
+	/**
+	 *  Ridisegna ( e se necessario ridimensiona ) tutti i frame contenuti in un
+	 * dato  J Desktop Pane.
+	 * 
+	 * @param javax.swing. J Desktop Pane desk - un desktop pane.
+	 * @throws  Illegal Argument Exception - se il desktop pane fornito non &egrave;
+	 *             associato a un desktop manager di tipo  Desk Manager.
+	 */
+	public void repaint All Frames( J Desktop Pane desk)
+			throws  Illegal Argument Exception
+	{
+		if (desk.get Desktop Manager() != this)
+			throw new  Illegal Argument Exception(
+					" Non � stato trovato nessun oggetto"
+							+ "di tipo  Desk Manager associato!");
+		 J Internal Frame[] frames = desk.get All Frames();
+		 Dimension desk Size = desk.get Size();
+		for (int i =  ; i < frames.length; i++)
+		{
+			 J Internal Frame corrente = frames[i];
+			if (!corrente.is Icon())
+			{
+				 Rectangle frame Bounds = corrente.get Bounds();
+				if (frame Bounds.width > desk Size.width)
+					frame Bounds.width = desk Size.width;
+				if (frame Bounds.height > desk Size.height)
+					frame Bounds.height = desk Size.height;
+				if (frame Bounds.x + frame Bounds.width > desk Size.width)
+					frame Bounds.x = desk Size.width - frame Bounds.width;
+				if (frame Bounds.y + frame Bounds.height > desk Size.height)
+					frame Bounds.y = desk Size.height - frame Bounds.height;
+				corrente.set Bounds(frame Bounds);
+			}
+
+		}
+		repaint Iconified Frames(desk);
+	}
+
+	/**
+	 *  Apre un frame della classe specificata utilizzando la visualizzazione a
+	 * cascata.  Se &egrave; gi&agrave; presente un frame della classe fornita, il frame viene
+	 * attivato.
+	 * 
+	 * @param  Class classe - un tipo di classe che estende  J Internal Frame.
+	 * @param javax.swing. J Desktop Pane desk - un desktop pane.
+	 * @throws  Illegal Argument Exception - la classe fornita non &egrave; un
+	 *              J Internal Frame.
+	 */
+	public void open Frame( Class classe,  J Desktop Pane desk)
+			throws  Illegal Argument Exception
+	{
+		if (classe.get Superclass() !=  J Internal Frame.class)
+			throw new  Illegal Argument Exception(
+					" La classe fornita in input non ha"
+							+ " come superclasse javax.swing. J Internal Frame.");
+		try
+		{
+			 J Internal Frame[] frames = desk.get All Frames();
+			int i;
+			for (i =  ; i < frames.length; i++)
+				if (frames[i].get Class().equals(classe))
+					break;
+			if (i == frames.length)
+			{
+				 J Internal Frame nuovo = ( J Internal Frame) classe.new Instance();
+				desk.add(nuovo,  Integer. M A X_ V A L U E);
+				 Dimension frame Size = nuovo.get Preferred Size();
+				nuovo.set Size(frame Size);
+				 Dimension desk Size = desk.get Size();
+				 Point pos Nuovo = new  Point(  ,   );
+				for (i = frames.length -  ; i >=  ; i--)
+				{
+					if (frames[i].get Location().equals(pos Nuovo))
+					{
+						pos Nuovo.x = frames[i].get Location().x +   ;
+						pos Nuovo.y = frames[i].get Location().y +   ;
+					}
+				}
+				if ((pos Nuovo.x + frame Size.width > desk Size.width)
+						|| (pos Nuovo.y + frame Size.height > desk Size.height))
+					center Frame(nuovo);
+				else
+					nuovo.set Location(pos Nuovo);
+				nuovo.set Visible(true);
+			}
+			else
+			{
+				activate Frame(frames[i]);
+
+			}
+		}
+		catch ( Exception ex)
+		{
+			ex.print Stack Trace();
+		}
+	}
+
+	/**
+	 *  Visualizza un popup menu con opzioni relativi ai frame di un desktop pane
+	 * nel punto selezionato.
+	 * 
+	 * @param java.awt. Point a Point - il punto dove collocare il menu.
+	 * @param javax.swing. J Desktop Pane desk - un  J Desktop Pane cui &grave; associato un
+	 *            istanza di  Desk Manager.
+	 * @throws  Illegal Argument Exception - &grave; stato fornito come parametro un
+	 *              J Desktop Pane a cui non &grave; associato un  Desk  Manager.
+	 */
+	public void show Popup Menu( Point a Point,  J Desktop Pane desk)
+	{
+		if (desk.get Desktop Manager() != this)
+			throw new  Illegal Argument Exception(
+					" Non � stato trovato nessun oggetto"
+							+ "di tipo  Desk Manager associato!");
+		ripristina Tutti.set Enabled(true);
+		chiudi Tutti.set Enabled(true);
+		riduci Tutti.set Enabled(true);
+		 J Internal Frame[] frames = desk.get All Frames();
+		if (frames.length ==  )
+		{
+			ripristina Tutti.set Enabled(false);
+			chiudi Tutti.set Enabled(false);
+			riduci Tutti.set Enabled(false);
+		}
+		if (iconified Frames.size() ==  )
+		{
+			ripristina Tutti.set Enabled(false);
+
+		}
+		if (iconified Frames.size() == frames.length)
+		{
+			riduci Tutti.set Enabled(false);
+		}
+		desk Menu.show(desk, a Point.x, a Point.y);
+	}
+
+	/**
+	 *  Deiconifica tutti i frames precedentemente iconificati.
+	 *
+	 */
+	public void deiconify All()
+	{
+		if (iconified Frames.size() !=  )
+		{
+			 Vector< J Internal Frame> copia = ( Vector< J Internal Frame>) iconified Frames
+					.clone();
+			 Iterator< J Internal Frame> frames = copia.iterator();
+			while (frames.has Next())
+			{
+				try
+				{
+					frames.next().set Icon(false);
+				}
+				catch ( Property Veto Exception e)
+				{
+					e.print Stack Trace();
+				}
+
+			}
+			copia = null;
+			iconified Frames.remove All Elements();
+
+		}
+	}
+
+	/**
+	 *  Iconifica tutti i frame di un  J Desktop Pane fornito cui &grave; associato un
+	 *  Desk Manager.
+	 * 
+	 * @param  J Desktop Pane desk - un desktop pane.
+	 * @throws  Illegal Argument Exception - &grave; stato fornito come parametro un
+	 *              J Desktop Pane a cui non &grave; associato un  Desk  Manager.
+	 */
+	public void iconify All( J Desktop Pane desk)
+	{
+		if (desk.get Desktop Manager() != this)
+			throw new  Illegal Argument Exception(
+					" Non � stato trovato nessun oggetto"
+							+ "di tipo  Desk Manager associato!");
+		 J Internal Frame[] frames = desk.get All Frames();
+		for (int i =  ; i < frames.length; i++)
+			try
+			{
+				frames[i].set Icon(true);
+			}
+			catch ( Property Veto Exception e)
+			{
+				e.print Stack Trace();
+			}
+	}
+
+	/**
+	 *  Chiude tutti i frame presenti in un dato  J Desktop Pane.
+	 * 
+	 * @param javax.swing. J Desktop Pane desk - un desktop pane cui &grave; associato un
+	 *             Desk Manager.
+	 * @throws  Illegal Argument Exception - &grave; stato fornito come parametro un
+	 *              J Desktop Pane a cui non &grave; associato un  Desk  Manager.
+	 */
+	public void close All( J Desktop Pane desk)
+	{
+		if (desk.get Desktop Manager() != this)
+			throw new  Illegal Argument Exception(
+					" Non � stato trovato nessun oggetto"
+							+ "di tipo  Desk Manager associato!");
+		 J Internal Frame[] frames = desk.get All Frames();
+		if (frames.length !=  )
+		{
+			for (int i =  ; i < frames.length; i++)
+				frames[i].dispose();
+			iconified Frames.remove All Elements();
+		}
+	}
+
+	/**
+	 *  Inizializza il  Desk Menu.
+	 * 
+	 */
+	public void initialize Desk Menu()
+	{
+		desk Menu = new  J Popup Menu();
+		riduci Tutti = new  J Menu Item(" Riduci tutti a icona");
+		riduci Tutti.set Icon(new  Image Icon(get Class().get Resource(
+				 U R L_ I M A G E S + "reduce All.png")));
+		ripristina Tutti = new  J Menu Item(" Ripristina tutti");
+		ripristina Tutti.set Icon(new  Image Icon(get Class().get Resource(
+				 U R L_ I M A G E S + "activateall.png")));
+		chiudi Tutti = new  J Menu Item(" Chiudi tutti");
+		chiudi Tutti.set Icon(new  Image Icon(get Class().get Resource(
+				 U R L_ I M A G E S + "closeall.png")));
+		desk Menu.add(riduci Tutti);
+		desk Menu.add Separator();
+		desk Menu.add(ripristina Tutti);
+		desk Menu.add Separator();
+		desk Menu.add(chiudi Tutti);
+		 Action Listener menu Listener = new  Action Listener()
+		{
+			public void action Performed( Action Event a Event)
+			{
+				if (a Event.get Source() == ripristina Tutti)
+					deiconify All();
+				if (a Event.get Source() == chiudi Tutti)
+					close All(( J Desktop Pane) desk Menu.get Invoker());
+				if (a Event.get Source() == riduci Tutti)
+					iconify All(( J Desktop Pane) desk Menu.get Invoker());
+			}
+
+		};
+		riduci Tutti.add Action Listener(menu Listener);
+		ripristina Tutti.add Action Listener(menu Listener);
+		chiudi Tutti.add Action Listener(menu Listener);
+	}
+}

@@ -1,0 +1,16 @@
+org.mozilla.javascript.Node.toString
+org.mozilla.javascript.Decompiler.decompile
+org.mozilla.javascript.Interpreter.bytecodeName
+org.mozilla.javascript.TokenStream.getString
+org.mozilla.javascript.Kit.xDigitToInt
+org.mozilla.javascript.Interpreter.interpretLoop
+org.mozilla.javascript.regexp.NativeRegExp.toASCIIHexDigit
+org.mozilla.javascript.IRFactory.createString
+org.mozilla.javascript.Interpreter.visitExpression
+org.mozilla.javascript.TokenStream.getStringFromBuffer
+org.mozilla.javascript.TokenStream.getToken
+org.mozilla.javascript.TokenStream.addToString
+org.mozilla.javascript.ScriptRuntime.stringToNumber
+org.mozilla.javascript.TokenStream.tokenToString
+org.mozilla.javascript.Decompiler.addString
+org.mozilla.javascript.Token.name

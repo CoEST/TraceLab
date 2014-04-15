@@ -1,0 +1,234 @@
+﻿package unisa.gps.etour.control. Gestione Utenti Registrati;
+
+import java.rmi. Remote Exception;
+import java.util. Array List;
+
+import unisa.gps.etour.bean. Bean Bene Culturale;
+import unisa.gps.etour.bean. Bean Preferenza Di Ricerca;
+import unisa.gps.etour.bean. Bean Preferenze Generiche;
+import unisa.gps.etour.bean. Bean Punto Di Ristoro;
+import unisa.gps.etour.bean. Bean Turista;
+import unisa.gps.etour.bean. Bean Visita B C;
+import unisa.gps.etour.bean. Bean Visita P R;
+
+/**
+ *  Interfaccia relativa alla gestione dei  Dati del  Turista
+ * 
+ * @author  Penna  Giuseppe,  Leone  Federico
+ * @version  .       e Tour  Project -  Copyright by  S E@ S A  Lab  D M I  University of
+ *           Salerno
+ */
+public interface  I Gestione Turista Client extends  I Gestione Turista Comune
+{
+
+	/**
+	 *  Metodo per l'inserimento di un  Turista
+	 * 
+	 * @param p Turista  Contenitore di tutti i dati relativi al  Turista da
+	 *            inserire
+	 * @return  Booleano:  True se l'inserimento ha successo,  False altrimenti
+	 * @throws  Remote Exception  Eccezione  Remota
+	 */
+	public boolean inserisci Turista( Bean Turista p Turista)
+			throws  Remote Exception;
+
+	/**
+	 *  Metodo per l'inserimento delle  Preferenze  Generiche del  Turista
+	 * 
+	 * @param p Id Turista  Identificativo del  Turista al quale associare le
+	 *             Preferenze  Generiche
+	 * @param p Preferenze Generiche  Le  Preferenze  Generiche da inserire
+	 * @return  Booleano:  True se l'inserimento ha successo,  False altrimenti
+	 * @throws  Remote Exception  Eccezione  Remota
+	 */
+	public boolean inserisci Preferenze Generiche(
+			 Bean Preferenze Generiche p Preferenze Generiche)
+			throws  Remote Exception;
+
+	/**
+	 *  Metodo per l'estrazione delle  Preferenze  Generiche dato il  Turista
+	 * 
+	 * @param p Id Turista  Identificativo del  Turista del quale si vogliono
+	 *            ottenere le  Preferenze  Generiche
+	 * @return  Le  Preferenze  Generiche relative al  Turista dato
+	 * @throws  Remote Exception  Eccezione  Remota
+	 */
+	public  Bean Preferenze Generiche ottieni Preferenze Generiche(int p Id Turista)
+			throws  Remote Exception;
+
+	/**
+	 *  Metodo per la modifica delle  Preferenze  Generiche dato il  Turista
+	 * 
+	 * @param p Id Turista  Identificativo del  Turista per il quale si vogliono
+	 *            modificare le  Preferenze  Generiche
+	 * @param p Preferenze Generiche Nuove  Le  Preferenze  Generiche da inserire
+	 * @param p Preferenze Generiche Vecchie  Le  Preferenze  Generiche da sostituire
+	 * @return  Booleano:  True se la modifica ha successo,  False altrimenti
+	 * @throws  Remote Exception
+	 */
+	public boolean modifica Preferenze Generiche(
+			 Bean Preferenze Generiche p Preferenze Generiche Nuove)
+			throws  Remote Exception;
+
+	/**
+	 *  Metodo per la cancellazione delle  Preferenze  Generiche associate al
+	 *  Turista
+	 * 
+	 * @param p Id Turista  Identificativo del  Turista per il quale si vogliono
+	 *            cancellare le  Preferenze  Generiche
+	 * @return  Le  Preferenze  Generiche cancellate
+	 * @throws  Remote Exception  Eccezione  Remota
+	 */
+	public  Bean Preferenze Generiche cancella Preferenze Generiche(int p Id Turista)
+			throws  Remote Exception;
+
+	/**
+	 *  Metodo per l'inserimento di una  Preferenza  Di  Ricerca
+	 * 
+	 * @param p Id Turista  Identificativo del  Turista per il quale si intende
+	 *            inserire una  Preferenza  Di  Ricerca
+	 * @param p Preferenza Di Ricerca  Preferenza  Di  Ricerca da inserire
+	 * @return  Boolean:  True se l'inserimento ha successo,  False altrimenti
+	 * @throws  Remote Exception
+	 */
+	public boolean inserisci Preferenza Di Ricerca(int p Id Turista,
+			 Bean Preferenza Di Ricerca p Preferenza Di Ricerca)
+			throws  Remote Exception;
+
+	/**
+	 *  Metodo per l'estrazione dell'insieme di  Preferenze  Di  Ricerca dato il
+	 *  Turista
+	 * 
+	 * @param p Id Turista  Identificativo del  Turista per il quale si vogliono
+	 *            estrarre le  Preferenze  Di  Ricerca
+	 * @return  Insieme delle  Preferenze  Di  Ricerca associate al  Turista dato
+	 * @throws  Remote Exception  Eccezione  Remota
+	 */
+	public  Bean Preferenza Di Ricerca[] ottieni Preferenze Di Ricerca(
+			int p Id Turista) throws  Remote Exception;
+
+	/**
+	 *  Metodo per la cancellazione di una  Preferenza di  Ricerca dato il suo
+	 * identificativo e il  Turista
+	 * 
+	 * @param p Id Turista  Identificativo del  Turista per il quale si vuole
+	 *            cancellare una  Preferenza di  Ricerca
+	 * @param p Id Preferenza Di Ricerca  Identificativo della  Preferenza  Di  Ricerca
+	 *            da cancellare
+	 * @return  La  Preferenza  Di  Ricerca cancellata
+	 * @throws  Remote Exception  Eccezione  Remota
+	 */
+	public  Bean Preferenza Di Ricerca cancella Preferenze Di Ricerca(int p Id Turista,
+			int p Id Preferenza Di Ricerca) throws  Remote Exception;
+
+	/**
+	 *  Metodo per l'estrazione della lista ai riferimenti ai  Beni  Culturali
+	 * visitati da un  Turista
+	 * 
+	 * @param p Id Turista  Identificativo del  Turista
+	 * @return  Lista di riferimenti ai  Beni  Culturali visitati
+	 * @throws  Remote Exception  Eccezione  Remota
+	 */
+	public  Bean Visita B C[] ottieni Beni Culturali Visitati(int p Id Turista)
+			throws  Remote Exception;
+
+	/**
+	 *  Metodo per l'estrazione della lista ai riferimenti ai  Punti di  Ristoro
+	 * visitati da un  Turista
+	 * 
+	 * @param p Id Turista  Identificativo del  Turista
+	 * @return  Lista di riferimenti ai  Punti di  Ristoro visitati
+	 * @throws  Remote Exception  Eccezione  Remota
+	 */
+	public  Bean Visita P R[] ottieni Punti Di Ristoro Visitati(int p Id Turista)
+			throws  Remote Exception;
+
+	/**
+	 *  Metodo per l'inserimento di un  Bene  Culturale  Visitato
+	 * 
+	 * @param p Visita B C  Pacchetto contenente tutte le informazioni relative alla
+	 *            visita
+	 * @return true se l'elemento è inserito con successo, false altrimenti
+	 * @throws  Remote Exception  Eccezione  Remota
+	 */
+	public boolean inserisci Bene Culturale Visitato( Bean Visita B C p Visita B C)
+			throws  Remote Exception;
+
+	/**
+	 *  Metodo per l'inserimento di un  Punto di  Ristoro  Visitato
+	 * 
+	 * @param p Visita P R  Pacchetto contenente tutte le informazioni relative alla
+	 *            visita
+	 * @return true se l'elemento è inserito con successo, false altrimenti
+	 * @throws  Remote Exception  Eccezione  Remota
+	 */
+	public boolean inserisci Punto Di Ristoro Visitato( Bean Visita P R p Visita P R)
+			throws  Remote Exception;
+	
+	/** 
+	 *  Metodo per l'inserimento di un  Bene  Culturale nella lista dei  Preferiti
+	 *
+	 * @param p Id Turista  Identificativo del  Turista
+	 * @param p Id Bene Culturale  Identificativo del  Bene  Culturale
+	 * @return true se l'inserimento va a buon fine, false altrimenti
+	 * @throws  Remote Exception  Eccezione  Remota
+	 */
+	public boolean inserisci Bene Culturale Preferito(int p Id Turista,
+			int p Id Bene Culturale) throws  Remote Exception;
+	
+	/** 
+	 *  Metodo per l'inserimento di un  Punto di  Ristoro nella lista dei  Preferiti
+	 *
+	 * @param p Id Turista  Identificativo del  Turista
+	 * @param p Id Punto Di Ristoro  Identificativo del  Punto di  Ristoro
+	 * @return true se l'inserimento va a buon fine, false altrimenti
+	 * @throws  Remote Exception  Eccezione  Remota
+	 */
+	public boolean inserisci Punto Di Ristoro Preferito(int p Id Turista,
+			int p Id Punto Di Ristoro) throws  Remote Exception;
+	
+	/** 
+	 *  Metodo per la cancellazione di un  Bene  Culturale dalla lista dei  Preferiti
+	 *
+	 * @param p Id Turista  Identificativo del  Turista
+	 * @param p Id Bene Culturale  Identificativo del  Bene  Culturale
+	 * @return true se la cancellazione ha esito positivo, false altrimenti
+	 * @throws  Remote Exception  Eccezione  Remota
+	 */
+	public boolean cancella Bene Culturale Preferito(int p Id Turista,
+			int p Id Bene Culturale) throws  Remote Exception;
+	
+	/** 
+	 *  Metodo per la cancellazione di un  Punto di  Ristoro dalla lista dei  Preferiti
+	 *
+	 * @param p Id Turista  Identificativo del  Turista
+	 * @param p Id Punto Di Ristoro  Identificativo del  Punto di  Ristoro
+	 * @return true se la cancellazione ha esito positivo, false altrimenti
+	 * @throws  Remote Exception  Eccezione  Remota
+	 */
+	public boolean cancella Punto Di Ristoro Preferito(int p Id Turista,
+			int p Id Punto Di Ristoro) throws  Remote Exception;
+	
+	/** 
+	 *  Metodo per l'estrazione della lista dei  Beni  Culturali  Preferiti
+	 *
+	 * @param p Id Turista  Identificativo del  Turista
+	 * @return  Lista di  Beni  Culturali  Preferiti
+	 * @throws  Remote Exception  Eccezione  Remota
+	 */
+	public  Bean Bene Culturale[] ottieni Beni Culturali Preferiti(int p Id Turista)
+	throws  Remote Exception;
+	
+	/** 
+	 *  Metodo per l'estrazione della lista dei  Punti di  Ristoro
+	 *
+	 * @param p Id Turista  Identificativo del  Turista
+	 * @return  Lista di  Punti di  Ristoro  Preferiti
+	 * @throws  Remote Exception  Eccezione  Remota
+	 */
+	public  Bean Punto Di Ristoro[] ottieni Punti Di Ristoro Preferiti(int p Id Turista)
+	throws  Remote Exception;
+	
+	
+}
+

@@ -1,0 +1,9 @@
+C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\bin\Debug\TraceLab.Core.dll
+C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\bin\Debug\TraceLab.Core.pdb
+C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\bin\Debug\TraceLab.Core.dll.CodeAnalysisLog.xml
+C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\bin\Debug\TraceLab.Core.dll.lastcodeanalysissucceeded
+C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\obj\Debug\TraceLab.Core.csprojResolveAssemblyReference.cache
+C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\obj\Debug\Interop.mscoree.dll
+C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\obj\Debug\TraceLab.Core.csproj.ResolveComReference.cache
+C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\obj\Debug\TraceLab.Core.dll
+C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\obj\Debug\TraceLab.Core.pdb

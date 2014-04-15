@@ -1,0 +1,14 @@
+Nome: ModificaNota
+Attori: Amministratore
+Descrizione: Modifica di una Nota Disciplinare
+Precondizioni:
+•	L'utente deve essere loggato al sistema come Amministratore •	L'utente ha svolto il caso d’uso “VisualizzaDettagliNota”
+Sequenza degli eventi
+Utente
+Sistema
+1. L'utente modifica uno o più campi del	form	visualizzato:	Studente, descrizione,	docente,	data.
+2. L'utente clicca su “Salva”
+3. Il sistema salva le modifiche
+Postcondizioni:
+• I dati della nota sono stati modificati. Il sistema ritorna alla schermata del registro.
+•	L’amministratore interrompe l’operazione •	Connessione al server SMOS interrotta

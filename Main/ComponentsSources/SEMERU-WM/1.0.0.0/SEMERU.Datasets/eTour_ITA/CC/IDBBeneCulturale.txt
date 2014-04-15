@@ -1,0 +1,154 @@
+﻿package unisa.gps.etour.repository;
+
+import java.sql. S Q L Exception;
+import java.util. Array List;
+
+import unisa.gps.etour.bean. Bean Bene Culturale;
+import unisa.gps.etour.bean. Bean Tag;
+import unisa.gps.etour.util. Punto  D;
+
+/**
+ *  Interfaccia per la gestione dei  Beni  Culturali sul database
+ * 
+ * @author  Miranda  Mauro
+ * @version  .  �      e Tour  Project -  Copyright by  S E@ S A  Lab  D M I �  University
+ *          of  Salerno
+ */
+
+public interface  I D B Bene Culturale
+{
+	/**
+	 *  Aggiunge un  Bene  Culturale dato in input
+	 * 
+	 * @param p Bene  Bene  Culturale da inserire nel database
+	 * @throws  S Q L Exception
+	 */
+	public boolean inserisci Bene Culturale( Bean Bene Culturale p Bene)
+			throws  S Q L Exception;
+
+	/**
+	 *  Modifica le informazioni del bene culturale
+	 * 
+	 * @param p Bene  Contiene le informazioni da modificare nel database
+	 * @throws  S Q L Exception
+	 * @return  True se c'e' stata una modifica false altrimenti
+	 */
+	public boolean modifica Bene Culturale( Bean Bene Culturale p Bene)
+			throws  S Q L Exception;
+
+	/**
+	 *  Elimina un bene culturale dal database
+	 * 
+	 * @param p Id Bene  Identificativo  Bene culturale da eliminare
+	 * @throws  S Q L Exception
+	 * @return  True se e' stato cancellato false altrimenti
+	 */
+	public boolean cancella Bene Culturale(int p Id Bene) throws  S Q L Exception;
+
+	/**
+	 *  Restituisce il bene culturale con id dato in input
+	 * 
+	 * @param p Id  Bene culturale da estrarre dal database
+	 * @throws  S Q L Exception
+	 * @return  Bene culturale ottenuto dal database
+	 */
+	public  Bean Bene Culturale ottieni Bene Culturale(int p Id) throws  S Q L Exception;
+
+	/**
+	 *  Ricerca.  Restituisce la lista di beni culturali che hanno nel nome o
+	 * nella descrizione la stringa data in input, filtrati secondo i tag e la
+	 * distanza massima.  La lista restituita contiene il numero di beni dato in input. 
+	 *  Per scorrere la reale lista, che potrebbe contenere piu' di
+	 * dieci elementi, si utilizza il parametro num Pagina.
+	 * 
+	 * @param p Keyword  Stringa che contiene la parola chiave da ricercare nel
+	 *            nome o nella descrizione del bene culturale
+	 * @param p Tags  Lista di tag utilizzati come filtro per la ricerca. il
+	 *            numero massimo di tag da inserire non deve superare le cinque
+	 *            unita'.  In caso si superi questo numero gli altri tag in
+	 *            eccesso verrano ignorati.
+	 * @param p Num Pagina  Il numero di pagina che si vuole visualizzare.  O per la
+	 *             � pagina (i primi    risultati),   per la  � pagina (i
+	 *            risultati dal    al   ) ecc...
+	 * @param p Posizione  Posizione dell'utente che ha effettuato la ricerca
+	 * @param p Distanza Massima  Distanza massima dall'utente al bene da ricercare
+	 * @param p Numero Elementi Per Pagina  Numero di elementi da restituire per pagina
+	 * @throws  S Q L Exception
+	 * @return lista contenete dieci beni culturali
+	 */
+	public  Array List< Bean Bene Culturale> ricerca( String p Keyword,
+			 Array List< Bean Tag> p Tags, int p Num Pagina,int p Numero Elementi Per Pagina,  Punto  D p Posizione,
+			double p Distanza Massima) throws  S Q L Exception;
+
+	/**
+	 *  Ricerca avanzata.  Restituisce la lista di beni culturali che hanno nel
+	 * nome o nella descrizione la stringa data in input, ordinati secondo le
+	 * preferenze del turista e filtrati secondo i tag e la distanza massima.  La
+	 * lista restituita contiene il numero di beni dato in input.  Per scorrere
+	 * la reale lista, che potrebbe contenere piu' elementi, si
+	 * utilizza il paramtro num Pagina.
+	 * 
+	 * @param p Id Turista  Identificativo del turista che ha effettuato la ricerca
+	 * @param p Keyword  Stringa che contiene la parola chiave da ricercare nel
+	 *            nome o nella descrizione del bene culturale
+	 * @param p Tags  Lista di tag utilizzati come filtro per la ricerca. il
+	 *            numero massimo di tag da inserire non deve superare le cinque
+	 *            unita'.  In caso si superi questo numero gli altri tag in
+	 *            eccesso verrano ignorati.
+	 * @param p Num Pagina  Il numero di pagina che si vuole visualizzare.  O per la
+	 *             � pagina (i primi    risultati),   per la  � pagina (i
+	 *            risultati dal    al   ) ecc...
+	 * @param p Posizione  Posizione dell'utente che ha effettuato la ricerca
+	 * @param p Distanza Massima  Distanza massima dall'utente al bene da ricercare
+	 * @param p Numero Elementi Per Pagina  Numero di elementi da restituire per pagina
+	 * @throws  S Q L Exception
+	 * @return lista contenete dieci beni culturali
+	 */
+	public  Array List< Bean Bene Culturale> ricerca Avanzata(int p Id Turista,
+			 String p Keyword,  Array List< Bean Tag> p Tags, int p Num Pagina, int p Numero Elementi Per Pagina,
+			 Punto  D p Posizione, double p Distanza Massima) throws  S Q L Exception;
+
+	/**
+	 *  Metodo per ottenere il numero di elementi per una ricerca avanzata.
+	 * 
+	 * @param p Keyword  Stringa che contiene la parola chiave da ricercare nel
+	 *            nome o nella descrizione del bene culturale
+	 * @param p Tags  Lista di tag utilizzati come filtro per la ricerca. il
+	 *            numero massimo di tag da inserire non deve superare le cinque
+	 *            unita'.  In caso si superi questo numero gli altri tag in
+	 *            eccesso verrano ignorati.
+	 * @param p Posizione  Posizione dell'utente che ha effettuato la ricerca
+	 * @param p Distanza Massima  Distanza massima dall'utente al bene da ricercare
+	 * @throws  S Q L Exception
+	 * @return  Numero di pagine totali.
+	 */
+	public int ottieni Numero Elementi Ricerca( String p Keyword,
+			 Array List< Bean Tag> p Tags,  Punto  D p Posizione,
+			double p Distanza Massima) throws  S Q L Exception;
+
+	/**
+	 *  Metodo per ottenere il numero di elementi per una ricerca avanzata.
+	 * 
+	 * @param p Id Turista identificativo del turista che ha effettuato la ricerca
+	 * @param p Keyword  Stringa che contiene la parola chiave da ricercare nel
+	 *            nome o nella descrizione del bene culturale
+	 * @param p Tags lista di tag utilizzati come filtro per la ricerca. il
+	 *            numero massimo di tag da inserire non deve superare le cinque
+	 *            unita'.  In caso si superi questo numero gli altri tag in
+	 *            eccesso verrano ignorati.
+	 * @param p Posizione  Posizione dell'utente che ha effettuato la ricerca
+	 * @param p Distanza Massima  Distanza massima dall'utente al bene da ricercare
+	 * @throws  S Q L Exception
+	 * @return numero di pagine totali.
+	 */
+	public int ottieni Numero Elementi Ricerca Avanzata(int p Id Turista,
+			 String p Keyword,  Array List< Bean Tag> p Tags,  Punto  D p Posizione,
+			double p Distanza Massima) throws  S Q L Exception;
+	/**
+	 *  Restituisce la lista di tutti i beni culturali
+	 * 
+	 * @throws  S Q L Exception
+	 * @return  Lista di tutti i beni culturali
+	 */
+	public  Array List< Bean Bene Culturale> ottieni Lista B C() throws  S Q L Exception;
+}

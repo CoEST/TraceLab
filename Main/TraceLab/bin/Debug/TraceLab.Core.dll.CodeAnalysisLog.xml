@@ -1,0 +1,869 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 10.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="10.0">
+ <Targets>
+  <Target Name="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\bin\Debug\TraceLab.Core.dll">
+   <Modules>
+    <Module Name="tracelab.core.dll">
+     <Namespaces>
+      <Namespace Name="TraceLab.Core.Benchmarks">
+       <Types>
+        <Type Name="BenchmarkInfo" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'BenchmarkInfo'.</Issue>
+          </Message>
+          <Message TypeName="ImplementSerializationConstructors" Category="Microsoft.Usage" CheckId="CA2229" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+           <Issue Name="CreateMagicConstructor" Certainty="95" Level="Error">Add a constructor to BenchmarkInfo with the following signature: 'protected BenchmarkInfo(SerializationInfo info, StreamingContext context)'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="BenchmarkLoader" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#FindTemplateComponentMetadata(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Benchmarks" File="BenchmarkLoader.cs" Line="66">In method 'BenchmarkLoader.FindTemplateComponentMetadata(string)', call System.IDisposable.Dispose on object 'reader' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ReadBenchmark(System.String)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Benchmarks" File="BenchmarkLoader.cs" Line="74">In method 'BenchmarkLoader.ReadBenchmark(string)', call System.IDisposable.Dispose on object 'reader' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ReadExperimentResultsUnitname(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Benchmarks" File="BenchmarkLoader.cs" Line="110">In method 'BenchmarkLoader.ReadExperimentResultsUnitname(string)', call System.IDisposable.Dispose on object 'reader' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BenchmarkWizard" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ExecutePublishResults(System.String,System.String,TraceLab.Core.WebserviceAccess.Callback`1&lt;TraceLab.Core.WebserviceAccess.ContestResultsPublishedResponse&gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Benchmarks" File="BenchmarkWizard.cs" Line="375">In method 'BenchmarkWizard.ExecutePublishResults(string, string, Callback&lt;ContestResultsPublishedResponse&gt;)', call System.IDisposable.Dispose on object 'benchmarkWorkspaceWrapper' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="DefiningBenchmark" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+           <Issue Name="DependsOnFix" Certainty="95" Level="CriticalError">Implement IDisposable on 'DefiningBenchmark' because it creates members of the following IDisposable types: 'ExperimentWorkspaceWrapper'. If 'DefiningBenchmark' has previously shipped, adding new members that implement IDisposable to this type is considered a breaking change to existing consumers.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="TraceLab.Core.Components">
+       <Types>
+        <Type Name="ComponentMetadata" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Components" File="ComponentMetadata.cs" Line="48">'ComponentMetadata.ComponentMetadata()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;ComponentMetadata..ctor()&#xD;&#xA;Metadata.InitLoggingNodeSettings():Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#.ctor(TraceLab.Core.Components.ComponentMetadataDefinition,System.String)" Kind="Method" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Components" File="ComponentMetadata.cs" Line="57">'ComponentMetadata.ComponentMetadata(ComponentMetadataDefinition, string)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;ComponentMetadata..ctor(ComponentMetadataDefinition, String)&#xD;&#xA;ComponentMetadata.set_ComponentMetadataDefinition(ComponentMetadataDefinition):Void&#xD;&#xA;ComponentMetadata.set_ComponentMetadataDefinitionID(String)&#xD;&#xA;Metadata.InitLoggingNodeSettings():Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Components" File="ComponentMetadata.cs" Line="57">'ComponentMetadata.ComponentMetadata(ComponentMetadataDefinition, string)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;ComponentMetadata..ctor(ComponentMetadataDefinition, String)&#xD;&#xA;ComponentMetadata.set_ComponentMetadataDefinition(ComponentMetadataDefinition):Void&#xD;&#xA;ComponentMetadata.set_ComponentMetadataDefinitionID(String):Void&#xD;&#xA;Metadata.NotifyPropertyChanged(String):Void&#xD;&#xA;Metadata.set_IsModified(Boolean):Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ComponentScanner" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#ReadCompositeComponentFile(System.Xml.Serialization.XmlSerializer,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Components" File="ComponentScanner.cs" Line="349">In method 'ComponentScanner.ReadCompositeComponentFile(XmlSerializer, string)', call System.IDisposable.Dispose on object 'reader' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ComponentTemplateMetadata" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'ComponentTemplateMetadata'.</Issue>
+          </Message>
+          <Message TypeName="ImplementSerializationConstructors" Category="Microsoft.Usage" CheckId="CA2229" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+           <Issue Name="CreateMagicConstructor" Certainty="95" Level="Error">Add a constructor to ComponentTemplateMetadata with the following signature: 'protected ComponentTemplateMetadata(SerializationInfo info, StreamingContext context)'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="CompositeComponentBaseMetadata" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'CompositeComponentBaseMetadata'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Components" File="CompositeComponentBaseMetadata.cs" Line="42">'CompositeComponentBaseMetadata.CompositeComponentBaseMetadata()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentBaseMetadata..ctor()&#xD;&#xA;Metadata.InitLoggingNodeSettings():Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="CompositeComponentMetadata" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'CompositeComponentMetadata'.</Issue>
+          </Message>
+          <Message TypeName="ImplementSerializationConstructors" Category="Microsoft.Usage" CheckId="CA2229" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+           <Issue Name="CreateMagicConstructor" Certainty="95" Level="Error">Add a constructor to CompositeComponentMetadata with the following signature: 'protected CompositeComponentMetadata(SerializationInfo info, StreamingContext context)'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#.ctor(TraceLab.Core.Components.CompositeComponentMetadataDefinition,System.String)" Kind="Method" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Components" File="CompositeComponentMetadata.cs" Line="47">'CompositeComponentMetadata.CompositeComponentMetadata(CompositeComponentMetadataDefinition, string)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentMetadata..ctor(CompositeComponentMetadataDefinition, String)&#xD;&#xA;CompositeComponentMetadata.set_ComponentMetadataDefinition(CompositeComponentMetadataDefinition):Void&#xD;&#xA;CompositeComponentMetadata.set_ComponentMetadataDefinitionID(String):Void&#xD;&#xA;Metadata.NotifyPropertyChanged(String):Void&#xD;&#xA;Metadata.set_IsModified(Boolean):Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="CompositeComponentMetadataDefinition" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#DetermineDependency()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Components" File="CompositeComponentMetadataDefinition.cs" Line="228">In method 'CompositeComponentMetadataDefinition.DetermineDependency()', call System.IDisposable.Dispose on object 'new StringReader(this.m_experimentXml)' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#PostProcessReadXml(TraceLab.Core.Components.ComponentsLibrary,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Components" File="CompositeComponentMetadataDefinition.cs" Line="257">In method 'CompositeComponentMetadataDefinition.PostProcessReadXml(ComponentsLibrary, string)', object 'new StringReader(this.m_experimentXml)' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'new StringReader(this.m_experimentXml)' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="IOItem" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#System.Xml.Serialization.IXmlSerializable.GetSchema()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Components" File="IOItem.cs" Line="156">Make 'IOItem' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'IXmlSerializable.GetSchema()' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="IOSpec" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#System.Xml.Serialization.IXmlSerializable.GetSchema()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Components" File="IOSpec.cs" Line="524">Make 'IOSpec' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'IXmlSerializable.GetSchema()' and is visible to derived classes.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="LibraryHelper+PackageManagerSetup" Kind="Class" Accessibility="Private" ExternallyVisible="False">
+         <Members>
+          <Member Name="#m_manager" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkAllNonSerializableFields" Category="Microsoft.Usage" CheckId="CA2235" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error">Field 'LibraryHelper.PackageManagerSetup.m_manager' is a member of type 'LibraryHelper.PackageManagerSetup', which is serializable, but is of type 'PackageManager', which is not serializable. Add the NonSerializedAttribute to 'LibraryHelper.PackageManagerSetup.m_manager'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="LoopScopeMetadata" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'LoopScopeMetadata'.</Issue>
+          </Message>
+          <Message TypeName="ImplementSerializationConstructors" Category="Microsoft.Usage" CheckId="CA2229" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+           <Issue Name="CreateMagicConstructor" Certainty="95" Level="Error">Add a constructor to LoopScopeMetadata with the following signature: 'protected LoopScopeMetadata(SerializationInfo info, StreamingContext context)'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="PackageAwareComponentLibrary" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#DecisionsDirectoryPath" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_DecisionsDirectoryPath()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Components" File="PackageAwareComponentLibrary.cs" Line="126">'PackageAwareComponentLibrary.DecisionsDirectoryPath.get()' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ScopeBaseMetadata" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'ScopeBaseMetadata'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#PostProcessReadXml(TraceLab.Core.Components.IComponentsLibrary,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Components" File="ScopeBaseMetadata.cs" Line="135">In method 'ScopeBaseMetadata.PostProcessReadXml(IComponentsLibrary, string)', object 'new StringReader(this.m_experimentXml)' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'new StringReader(this.m_experimentXml)' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ScopeMetadata" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementSerializationConstructors" Category="Microsoft.Usage" CheckId="CA2229" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+           <Issue Name="CreateMagicConstructor" Certainty="95" Level="Error">Add a constructor to ScopeMetadata with the following signature: 'protected ScopeMetadata(SerializationInfo info, StreamingContext context)'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="TraceLab.Core.Decisions">
+       <Types>
+        <Type Name="DecisionModuleCompilator" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#CompileDecisionModule(System.String,System.String,System.Collections.Generic.IEnumerable`1&lt;System.String&gt;)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Decisions" File="DecisionModuleCompilator.cs" Line="56">In method 'DecisionModuleCompilator.CompileDecisionModule(string, string, IEnumerable&lt;string&gt;)', call System.IDisposable.Dispose on object 'csCompiler' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="TraceLab.Core.Exceptions">
+       <Types>
+        <Type Name="ExperimentLoadException" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+           <Issue Certainty="95" Level="Error">Add [Serializable] to 'ExperimentLoadException' as this type implements ISerializable.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="FilesCopyFailuresException" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+           <Issue Certainty="95" Level="Error">Add [Serializable] to 'FilesCopyFailuresException' as this type implements ISerializable.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="TraceLab.Core.ExperimentExecution">
+       <Types>
+        <Type Name="GraphAdapter" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#Adapt(TraceLab.Core.Experiments.IExperiment,TraceLab.Core.Components.LoggerNameRoot,TraceLab.Core.ExperimentExecution.IRunnableNodeFactory,TraceLab.Core.Components.ComponentsLibrary,System.Collections.Generic.List`1&lt;System.String&gt;,System.AppDomain,System.Threading.ManualResetEvent,System.Boolean)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\ExperimentExecution" File="GraphAdapter.cs" Line="86">In method 'GraphAdapter.Adapt(IExperiment, LoggerNameRoot, IRunnableNodeFactory, ComponentsLibrary, List&lt;string&gt;, AppDomain, ManualResetEvent, bool)', object 'runnableExperiment' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'runnableExperiment' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Adapt(TraceLab.Core.Experiments.IExperiment,TraceLab.Core.ExperimentExecution.IRunnableNodeFactory,TraceLab.Core.Components.ComponentsLibrary,System.Collections.Generic.List`1&lt;System.String&gt;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\ExperimentExecution" File="GraphAdapter.cs" Line="57">In method 'GraphAdapter.Adapt(IExperiment, IRunnableNodeFactory, ComponentsLibrary, List&lt;string&gt;)', call System.IDisposable.Dispose on object 'new ManualResetEvent(false)' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="RunnableNode" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Messages>
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+           <Issue Name="NonBreaking" Certainty="95" Level="CriticalError">Implement IDisposable on 'RunnableNode' because it creates members of the following IDisposable types: 'AutoResetEvent'.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#m_nodeResetEvent" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkAllNonSerializableFields" Category="Microsoft.Usage" CheckId="CA2235" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error">Field 'RunnableNode.m_nodeResetEvent' is a member of type 'RunnableNode', which is serializable, but is of type 'AutoResetEvent', which is not serializable. Add the NonSerializedAttribute to 'RunnableNode.m_nodeResetEvent'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#m_nodeThread" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkAllNonSerializableFields" Category="Microsoft.Usage" CheckId="CA2235" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error">Field 'RunnableNode.m_nodeThread' is a member of type 'RunnableNode', which is serializable, but is of type 'Thread', which is not serializable. Add the NonSerializedAttribute to 'RunnableNode.m_nodeThread'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="RunnableNodeFactory" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#CreateCompositeComponentNode(System.String,TraceLab.Core.Components.CompositeComponentMetadata,TraceLab.Core.Components.LoggerNameRoot,TraceLab.Core.Components.ComponentsLibrary,System.AppDomain,System.Threading.ManualResetEvent)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\ExperimentExecution" File="RunnableNodeFactory.cs" Line="125">In method 'RunnableNodeFactory.CreateCompositeComponentNode(string, CompositeComponentMetadata, LoggerNameRoot, ComponentsLibrary, AppDomain, ManualResetEvent)', call System.IDisposable.Dispose on object 'workspaceWrapper' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#CreateLoopNode(System.String,TraceLab.Core.Components.LoopScopeMetadata,TraceLab.Core.Components.LoggerNameRoot,TraceLab.Core.Components.ComponentsLibrary,System.AppDomain,System.Threading.ManualResetEvent)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\ExperimentExecution" File="RunnableNodeFactory.cs" Line="172">In method 'RunnableNodeFactory.CreateLoopNode(string, LoopScopeMetadata, LoggerNameRoot, ComponentsLibrary, AppDomain, ManualResetEvent)', call System.IDisposable.Dispose on object 'workspaceWrapper' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#CreateScopeCompositeComponentNode(System.String,TraceLab.Core.Components.ScopeBaseMetadata,TraceLab.Core.Components.LoggerNameRoot,TraceLab.Core.Components.ComponentsLibrary,System.AppDomain,System.Threading.ManualResetEvent)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\ExperimentExecution" File="RunnableNodeFactory.cs" Line="148">In method 'RunnableNodeFactory.CreateScopeCompositeComponentNode(string, ScopeBaseMetadata, LoggerNameRoot, ComponentsLibrary, AppDomain, ManualResetEvent)', call System.IDisposable.Dispose on object 'workspaceWrapper' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="TraceLab.Core.Experiments">
+       <Types>
+        <Type Name="BaseExperiment" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#CreateExperimentRunner(TraceLab.Core.Workspaces.Workspace,TraceLab.Core.Components.ComponentsLibrary,TraceLabSDK.Types.Contests.TLExperimentResults)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Experiments" File="BaseExperiment.cs" Line="799">In method 'BaseExperiment.CreateExperimentRunner(Workspace, ComponentsLibrary, TLExperimentResults)', object 'dispatcher' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'dispatcher' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Experiments" File="BaseExperiment.cs" Line="785">In method 'BaseExperiment.CreateExperimentRunner(Workspace, ComponentsLibrary, TLExperimentResults)', call System.IDisposable.Dispose on object 'experimentWorkspaceWrapper' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="CompositeComponentEditableGraph" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor(TraceLab.Core.Experiments.BaseExperiment)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Experiments" File="CompositeComponentEditableGraph.cs" Line="66">'CompositeComponentEditableGraph.CompositeComponentEditableGraph(BaseExperiment)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentEditableGraph..ctor(BaseExperiment)&#xD;&#xA;BaseExperiment.CopyFrom(BaseExperiment):Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Experiments" File="CompositeComponentEditableGraph.cs" Line="66">'CompositeComponentEditableGraph.CompositeComponentEditableGraph(BaseExperiment)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentEditableGraph..ctor(BaseExperiment)&#xD;&#xA;BaseExperiment.CopyFrom(BaseExperiment):Void&#xD;&#xA;CompositeComponentGraph.set_OwnerNode(CompositeComponentNode):Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#.ctor(TraceLab.Core.Experiments.CompositeComponentNode,TraceLab.Core.Experiments.CompositeComponentEditableGraph)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Experiments" File="CompositeComponentEditableGraph.cs" Line="83">'CompositeComponentEditableGraph.CompositeComponentEditableGraph(CompositeComponentNode, CompositeComponentEditableGraph)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentEditableGraph..ctor(CompositeComponentNode, CompositeComponentEditableGraph)&#xD;&#xA;BaseExperiment.CopyFrom(BaseExperiment):Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Experiments" File="CompositeComponentEditableGraph.cs" Line="83">'CompositeComponentEditableGraph.CompositeComponentEditableGraph(CompositeComponentNode, CompositeComponentEditableGraph)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentEditableGraph..ctor(CompositeComponentNode, CompositeComponentEditableGraph)&#xD;&#xA;BaseExperiment.CopyFrom(BaseExperiment):Void&#xD;&#xA;CompositeComponentGraph.set_OwnerNode(CompositeComponentNode):Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="CompositeComponentGraph" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor(TraceLab.Core.Experiments.BaseExperiment)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Experiments" File="CompositeComponentGraph.cs" Line="145">'CompositeComponentGraph.CompositeComponentGraph(BaseExperiment)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentGraph..ctor(BaseExperiment)&#xD;&#xA;BaseExperiment.CopyFrom(BaseExperiment):Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Experiments" File="CompositeComponentGraph.cs" Line="145">'CompositeComponentGraph.CompositeComponentGraph(BaseExperiment)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentGraph..ctor(BaseExperiment)&#xD;&#xA;BaseExperiment.CopyFrom(BaseExperiment):Void&#xD;&#xA;CompositeComponentGraph.set_OwnerNode(CompositeComponentNode):Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#.ctor(TraceLab.Core.Experiments.CompositeComponentNode,TraceLab.Core.Experiments.CompositeComponentGraph)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Experiments" File="CompositeComponentGraph.cs" Line="145">'CompositeComponentGraph.CompositeComponentGraph(CompositeComponentNode, CompositeComponentGraph)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentGraph..ctor(CompositeComponentNode, CompositeComponentGraph)&#xD;&#xA;BaseExperiment.CopyFrom(BaseExperiment):Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Experiments" File="CompositeComponentGraph.cs" Line="145">'CompositeComponentGraph.CompositeComponentGraph(CompositeComponentNode, CompositeComponentGraph)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentGraph..ctor(CompositeComponentNode, CompositeComponentGraph)&#xD;&#xA;BaseExperiment.CopyFrom(BaseExperiment):Void&#xD;&#xA;CompositeComponentGraph.set_OwnerNode(CompositeComponentNode):Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="CompositeComponentNode" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor(System.String,TraceLab.Core.Experiments.SerializedVertexData)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Experiments" File="CompositeComponentNode.cs" Line="30">'CompositeComponentNode.CompositeComponentNode(string, SerializedVertexData)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentNode..ctor(String, SerializedVertexData)&#xD;&#xA;CompositeComponentNode.InitializeComponentGraph():Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Experiments" File="CompositeComponentNode.cs" Line="30">'CompositeComponentNode.CompositeComponentNode(string, SerializedVertexData)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentNode..ctor(String, SerializedVertexData)&#xD;&#xA;CompositeComponentNode.InitializeComponentGraph():Void&#xD;&#xA;CompositeComponentNode.InitializeComponentGraph(Settings):Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#.ctor(System.String,TraceLab.Core.Experiments.SerializedVertexData,TraceLab.Core.Settings.Settings)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Experiments" File="CompositeComponentNode.cs" Line="36">'CompositeComponentNode.CompositeComponentNode(string, SerializedVertexData, Settings)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentNode..ctor(String, SerializedVertexData, Settings)&#xD;&#xA;CompositeComponentNode.InitializeComponentGraph(Settings):Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="DefiningCompositeComponentSetup" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#DefineComponent()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Experiments" File="DefiningCompositeComponentSetup.cs" Line="375">Object 'writer' can be disposed more than once in method 'DefiningCompositeComponentSetup.DefineComponent()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 375</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="IExperiment" Kind="Interface" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#EdgeAdded" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'EdgeAction&lt;ExperimentNode, ExperimentNodeConnection&gt;' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'EdgeAction&lt;ExperimentNode, ExperimentNodeConnection&gt;' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#EdgeRemoved" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'EdgeAction&lt;ExperimentNode, ExperimentNodeConnection&gt;' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'EdgeAction&lt;ExperimentNode, ExperimentNodeConnection&gt;' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#NodeAdded" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'VertexAction&lt;ExperimentNode&gt;' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'VertexAction&lt;ExperimentNode&gt;' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#NodeRemoved" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'VertexAction&lt;ExperimentNode&gt;' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'VertexAction&lt;ExperimentNode&gt;' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="RecentExperimentList" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+           <Issue Certainty="75" Level="Warning">Add [Serializable] to 'RecentExperimentList' as this type implements ISerializable.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="RecentExperimentsHelper" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#SaveRecentExperimentListToXML(TraceLab.Core.Experiments.RecentExperimentList,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Experiments" File="RecentExperimentsHelper.cs" Line="106">Object 'writer' can be disposed more than once in method 'RecentExperimentsHelper.SaveRecentExperimentListToXML(RecentExperimentList, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 106</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="SerializedVertexData" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+           <Issue Name="MakeOverridable" Certainty="60" Level="Error">Make 'SerializedVertexData'.GetObjectData virtual and overridable.</Issue>
+          </Message>
+          <Message TypeName="ImplementSerializationConstructors" Category="Microsoft.Usage" CheckId="CA2229" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+           <Issue Name="MakeUnsealedMagicConstructorFamily" Certainty="95" Level="Error">Declare the serialization constructor of 'SerializedVertexData', an unsealed type, as protected.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="SerializedVertexDataWithSize" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'SerializedVertexDataWithSize'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="TraceLab.Core.PackageSystem">
+       <Types>
+        <Type Name="Package" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ComputeHash(System.IO.Stream)" Kind="Method" Static="True" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\PackageSystem" File="Package.cs" Line="570">In method 'Package.ComputeHash(Stream)', call System.IDisposable.Dispose on object 'shaM' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Item[System.String]" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Accessors>
+            <Accessor Name="#get_Item(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+             <Messages>
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\PackageSystem" File="Package.cs" Line="116">'Package.this.get(string)' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+              </Message>
+             </Messages>
+            </Accessor>
+           </Accessors>
+          </Member>
+          <Member Name="#SaveManifest()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\PackageSystem" File="Package.cs" Line="498">Object 'stream' can be disposed more than once in method 'Package.SaveManifest()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 498</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Unpack(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\PackageSystem" File="Package.cs" Line="282">In method 'Package.Unpack(string)', call System.IDisposable.Dispose on object 'reader' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="PackageException" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+           <Issue Certainty="95" Level="Error">Add [Serializable] to 'PackageException' as this type implements ISerializable.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="TraceLab.Core.ViewModels">
+       <Types>
+        <Type Name="ApplicationViewModel" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#CreateNewApplicationViewModel(TraceLab.Core.ViewModels.ApplicationViewModel,TraceLab.Core.Experiments.Experiment)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\ViewModels" File="ApplicationViewModel.cs" Line="53">In method 'ApplicationViewModel.CreateNewApplicationViewModel(ApplicationViewModel, Experiment)', object 'newApplicationViewModel' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'newApplicationViewModel' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="LogViewModel" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\ViewModels" File="LogViewModel.cs" Line="117">In method 'LogViewModel.LogViewModel(string)', call System.IDisposable.Dispose on object 'asyncTargetWrapper' before all references to it are out of scope.</Issue>
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\ViewModels" File="LogViewModel.cs" Line="116">In method 'LogViewModel.LogViewModel(string)', call System.IDisposable.Dispose on object 'target' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="WebsiteLink" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#SaveLinksToXML(System.String,System.Collections.Generic.List`1&lt;TraceLab.Core.ViewModels.WebsiteLink&gt;,System.Collections.Generic.List`1&lt;TraceLab.Core.ViewModels.WebsiteLink&gt;)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\ViewModels" File="WebsiteLink.cs" Line="165">Object 'writer' can be disposed more than once in method 'WebsiteLink.SaveLinksToXML(string, List&lt;WebsiteLink&gt;, List&lt;WebsiteLink&gt;)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 165</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="TraceLab.Core.WebserviceAccess">
+       <Types>
+        <Type Name="Callback`1" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#CallCompleted" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="Breaking">
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'CallCompletedEventHandler&lt;T&gt;' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="JsonSerializer" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Deserialize`1(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\WebserviceAccess" File="JSONSerializer.cs" Line="75">In method 'JsonSerializer.Deserialize&lt;T&gt;(string)', object 'memorystream' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'memorystream' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\WebserviceAccess" File="JSONSerializer.cs" Line="79">Object 'memorystream' can be disposed more than once in method 'JsonSerializer.Deserialize&lt;T&gt;(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 79</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Serialize`1(!!0,System.Collections.Generic.IEnumerable`1&lt;System.Type&gt;)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\WebserviceAccess" File="JSONSerializer.cs" Line="55">In method 'JsonSerializer.Serialize&lt;T&gt;(T, IEnumerable&lt;Type&gt;)', object 'memorystream' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'memorystream' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="WebserviceAccessor" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#CallServiceAsync`1(TraceLab.Core.WebserviceAccess.TraceLabServiceCommands,System.String,TraceLab.Core.WebserviceAccess.Callback`1&lt;!!0&gt;)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\WebserviceAccess" File="WebserviceAccessor.cs" Line="177">In method 'WebserviceAccessor.CallServiceAsync&lt;T&gt;(TraceLabServiceCommands, string, Callback&lt;T&gt;)', call System.IDisposable.Dispose on object 'webClient' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="TraceLab.Core.Workspaces">
+       <Types>
+        <Type Name="Workspace" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Store(System.String,System.Object)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotLockOnObjectsWithWeakIdentity" Category="Microsoft.Reliability" CheckId="CA2002" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="CriticalError" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Workspaces" File="Workspace.cs" Line="617">'Workspace.Store(string, object)' locks on a reference of type 'Workspace'. Replace this with a lock against an object with strong-identity.</Issue>
+             <Issue Certainty="75" Level="CriticalError" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Workspaces" File="Workspace.cs" Line="626">'Workspace.Store(string, object)' locks on a reference of type 'Workspace'. Replace this with a lock against an object with strong-identity.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#StoreBytes(System.String,System.Type,System.Byte[])" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotLockOnObjectsWithWeakIdentity" Category="Microsoft.Reliability" CheckId="CA2002" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="CriticalError" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Workspaces" File="Workspace.cs" Line="684">'Workspace.StoreBytes(string, Type, byte[])' locks on a reference of type 'Workspace'. Replace this with a lock against an object with strong-identity.</Issue>
+             <Issue Certainty="75" Level="CriticalError" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Workspaces" File="Workspace.cs" Line="693">'Workspace.StoreBytes(string, Type, byte[])' locks on a reference of type 'Workspace'. Replace this with a lock against an object with strong-identity.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="WorkspaceManager" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#InitWorkspaceInternal(System.Collections.Generic.List`1&lt;System.String&gt;,System.String,System.String,TraceLab.Core.Workspaces.Serialization.StreamManager)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="ExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Workspaces" File="WorkspaceManager.cs" Line="62">In method 'WorkspaceManager.InitWorkspaceInternal(List&lt;string&gt;, string, string, StreamManager)', object 'new Workspace(workspaceDirectory, cacheDirectory, typeDirectories, manager)' is not disposed along all exception paths. Call System.IDisposable.Dispose on object 'new Workspace(workspaceDirectory, cacheDirectory, typeDirectories, manager)' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="WorkspaceUnitData" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ReadCurrentRawVersion(System.IO.BinaryReader)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Workspaces" File="WorkspaceUnitData.cs" Line="274">In method 'WorkspaceUnitData.ReadCurrentRawVersion(BinaryReader)', call System.IDisposable.Dispose on object 'mem' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#WriteData(System.IO.BinaryWriter)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Workspaces" File="WorkspaceUnitData.cs" Line="303">In method 'WorkspaceUnitData.WriteData(BinaryWriter)', call System.IDisposable.Dispose on object 'mem' before all references to it are out of scope.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="WorkspaceWrapper" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#Store(System.String,System.Object)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Workspaces" File="WorkspaceWrapper.cs" Line="242">In method 'WorkspaceWrapper.Store(string, object)', call System.IDisposable.Dispose on object 'stream' before all references to it are out of scope.</Issue>
+            </Message>
+            <Message TypeName="Provide correct arguments to formatting methods" Category="Microsoft.Usage" CheckId="CA2241" Status="Active" Created="2014-04-15 20:22:41Z" FixCategory="DependsOnFix">
+             <Issue Name="MissingFormatItem" Certainty="75" Level="Warning" Path="C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core\Workspaces" File="WorkspaceWrapper.cs" Line="218">Method 'WorkspaceWrapper.Store(string, object)' calls 'string.Format(IFormatProvider, string, params object[])' and does not provide a format item for argument "1". The provided format string is: '"Given object is null. It is not allowed to store null objects in the workspace."'</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009">
+   <Name>Declare event handlers correctly</Name>
+   <Description>By convention, .NET events have two parameters that specify the event sender and event data. Event handler signatures should follow this form: void MyEventHandler(object sender, EventArgs e). The 'sender' parameter is always of type System.Object, even if it is possible to employ a more specific type. The 'e' parameter is always of type System.EventArgs. Events that do not provide event data should use the System.EventHandler delegate type. Event handlers return void so that they can send each event to multiple target methods. Any value returned by a target would be lost after the first call.</Description>
+   <Resolution Name="First">Declare the first parameter of {0} as an object named 'sender'.</Resolution>
+   <Resolution Name="Second">Declare the second parameter of {0} as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182133(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000">
+   <Name>Dispose objects before losing scope</Name>
+   <Description>If a disposable object is not explicitly disposed before all references to it are out of scope, the object will be disposed at some indeterminate time when the garbage collector runs the finalizer of the object. Because an exceptional event might occur that will prevent the finalizer of the object from running, the object should be explicitly disposed instead.</Description>
+   <Resolution Name="ExceptionEdge">In method {0}, object {1} is not disposed along all exception paths. Call System.IDisposable.Dispose on object {1} before all references to it are out of scope.</Resolution>
+   <Resolution Name="NonExceptionEdge">In method {0}, call System.IDisposable.Dispose on object {1} before all references to it are out of scope.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182289(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202">
+   <Name>Do not dispose objects multiple times</Name>
+   <Description>A correctly implemented Dispose method can be called multiple times without throwing an exception. However, this is not guaranteed and to avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.</Description>
+   <Resolution Name="Default">Object {0} can be disposed more than once in method {1}. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 498</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182334(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214">
+   <Name>Do not call overridable methods in constructors</Name>
+   <Description>Virtual methods defined on the class should not be called from constructors. If a derived class has overridden the method, the derived class version will be called (before the derived class constructor is called).</Description>
+   <Resolution Name="Default">{0} contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: {1}</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182331(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalWarning</MessageLevel>
+   <File Name="usagerules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotLockOnObjectsWithWeakIdentity" Category="Microsoft.Reliability" CheckId="CA2002">
+   <Name>Do not lock on objects with weak identity</Name>
+   <Description>Don't take locks on objects that may bleed across AppDomains or that don't have a strong identity.</Description>
+   <Resolution Name="Default">{0} locks on a reference of type {1}. Replace this with a lock against an object with strong-identity.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182290(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">CriticalError</MessageLevel>
+   <File Name="reliabilityrules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065">
+   <Name>Do not raise exceptions in unexpected locations</Name>
+   <Description>Do not explicitly raise exceptions from unexpected locations. There are some methods, such as Equals and GetHashCode, which users do not expect to raise exceptions. Therefore calls to these methods are not commonly wrapped in try catch blocks.</Description>
+   <Resolution Name="PropertyGetter">{0} creates an exception of type {1}, an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/bb386039(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Error, Warning</MessageLevel>
+   <File Name="designrules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240">
+   <Name>Implement ISerializable correctly</Name>
+   <Description>If a type is assignable to ISerializable, it should implement GetObjectData. For unsealed types, the GetObjectData method should be callable and overridable by derived types.</Description>
+   <Resolution Name="Default">Add an implementation of GetObjectData to type {0}.</Resolution>
+   <Resolution Name="MakeOverridable">Make {0}.GetObjectData virtual and overridable.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182342(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="60">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="ImplementSerializationConstructors" Category="Microsoft.Usage" CheckId="CA2229">
+   <Name>Implement serialization constructors</Name>
+   <Description>The constructor signature accepts the same arguments as ISerializable.GetObjectData, namely, a SerializationInfo instance and a StreamingContext instance. The constructor should be protected for non-sealed classes and private for sealed classes. Failure to implement a serialization constructor will cause deserialization to fail, and throw a SerializationException.</Description>
+   <Resolution Name="CreateMagicConstructor">Add a constructor to {0} with the following signature: 'protected {0}(SerializationInfo info, StreamingContext context)'.</Resolution>
+   <Resolution Name="MakeUnsealedMagicConstructorFamily">Declare the serialization constructor of {0}, an unsealed type, as protected.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182343(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033">
+   <Name>Interface methods should be callable by child types</Name>
+   <Description>Explicit method implementations are defined with private accessibility. Classes that derive from classes with explicit method implementations and choose to re-declare them on the class will not be able to call into the base class implementation unless the base class has provided an alternate method with appropriate accessibility. When overriding a base class method that has been hidden by explicit interface implementation, in order to call into the base class implementation, a derived class must cast the base pointer to the relevant interface. When calling through this reference, however, the derived class implementation will actually be invoked, resulting in recursion and an eventual stack overflow.</Description>
+   <Resolution Name="Default">Make {0} sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of {1} and is visible to derived classes.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182153(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkAllNonSerializableFields" Category="Microsoft.Usage" CheckId="CA2235">
+   <Name>Mark all non-serializable fields</Name>
+   <Description>All fields that cannot be serialized directly should have the NonSerializedAttribute. Types that have the SerializableAttribute should not have fields of types that do not have the SerializableAttribute unless the fields are marked with the NonSerializedAttribute.</Description>
+   <Resolution Name="Default">Field {0} is a member of type {1}, which is serializable, but is of type {2}, which is not serializable. Add the NonSerializedAttribute to {0}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182349(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237">
+   <Name>Mark ISerializable types with SerializableAttribute</Name>
+   <Description>The System.Runtime.Serialization.ISerializable interface allows the type to customize its serialization, while the Serializable attribute enables the runtime to recognize the type as being serializable.</Description>
+   <Resolution Name="Default">Add [Serializable] to {0} as this type implements ISerializable.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182350(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="usagerules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="Provide correct arguments to formatting methods" Category="Microsoft.Usage" CheckId="CA2241">
+   <Name>Provide correct arguments to formatting methods</Name>
+   <Description>Provide the correct number of arguments to String.Format calls.</Description>
+   <Resolution Name="MissingFormatItem">Method {0} calls {1} and does not provide a format item for argument {2}. The provided format string is: '{3}'</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182361(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="10.0.0.0" />
+  </Rule>
+  <Rule TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001">
+   <Name>Types that own disposable fields should be disposable</Name>
+   <Description>Types that declare disposable members should also implement IDisposable. If the type does not own any unmanaged resources, do not implement a finalizer on it.</Description>
+   <Resolution Name="DependsOnFix">Implement IDisposable on {0} because it creates members of the following IDisposable types: {1}. If {0} has previously shipped, adding new members that implement IDisposable to this type is considered a breaking change to existing consumers.</Resolution>
+   <Resolution Name="NonBreaking">Implement IDisposable on {0} because it creates members of the following IDisposable types: {1}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182172(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="10.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

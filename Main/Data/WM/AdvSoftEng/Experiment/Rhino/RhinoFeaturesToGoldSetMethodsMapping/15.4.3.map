@@ -1,0 +1,2 @@
+org.mozilla.javascript.ScriptableObject.getFunctionPrototype
+org.mozilla.javascript.IdFunctionObject.getPrototype

@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{297CEC7B-CF41-4EA0-B5C5-C972B4D8C9DD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SEMERU.UI</RootNamespace>
+    <AssemblyName>SEMERU.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit">
+      <HintPath>..\..\external\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TraceLabSDK, Version=0.5.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\external\TraceLab\TraceLabSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="TraceLabSDK.Types, Version=0.5.0.0, Culture=neutral, PublicKeyToken=2c83cea59a8bb151, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\external\TraceLab\TraceLabSDK.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="ZedGraph">
+      <HintPath>..\..\external\ZedGraph\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BoxPlotGUI\BoxPlotGUIComponent.cs" />
+    <Compile Include="BoxPlotGUI\BoxPlotUserControl\MultiCurveGraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BoxPlotGUI\BoxPlotUserControl\MultiCurveGraph.designer.cs">
+      <DependentUpon>MultiCurveGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BoxPlotGUI\BoxPlotUserControl\SummaryDataMetricBoxPlot.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BoxPlotGUI\BoxPlotUserControl\SummaryDataMetricBoxPlot.designer.cs">
+      <DependentUpon>SummaryDataMetricBoxPlot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BoxPlotGUI\EvaluationResultsView.xaml.cs">
+      <DependentUpon>EvaluationResultsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BoxPlotGUI\WinFormsHosts\BoxPlotHost.xaml.cs">
+      <DependentUpon>BoxPlotHost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BoxPlotGUI\WinFormsHosts\MultiCurveGraphHost.xaml.cs">
+      <DependentUpon>MultiCurveGraphHost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ExperimentalResultsGUI.cs" />
+    <Compile Include="Components\SimpleResultsGUI.cs" />
+    <Compile Include="Windows\BaseWindow.cs" />
+    <Compile Include="Windows\ExperimentalResultsWindow.xaml.cs">
+      <DependentUpon>ExperimentalResultsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Windows\SimpleResultsWindow.xaml.cs">
+      <DependentUpon>SimpleResultsWindow.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="BoxPlotGUI\EvaluationResultsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BoxPlotGUI\Resources\DataStatisticsMetricTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BoxPlotGUI\Resources\MetricsDataTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BoxPlotGUI\WinFormsHosts\BoxPlotHost.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BoxPlotGUI\WinFormsHosts\MultiCurveGraphHost.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\SimpleResultsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Windows\ExperimentalResultsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SEMERU.Types\SEMERU.Types.csproj">
+      <Project>{9383DEC8-64CB-43A5-AC96-6CFE407430FD}</Project>
+      <Name>SEMERU.Types</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BoxPlotGUI\BoxPlotUserControl\MultiCurveGraph.resx">
+      <DependentUpon>MultiCurveGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BoxPlotGUI\BoxPlotUserControl\SummaryDataMetricBoxPlot.resx">
+      <DependentUpon>SummaryDataMetricBoxPlot.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetPath)" "$(SolutionDir)..\bin\Components"
+copy "$(SolutionDir)..\external\ZedGraph\ZedGraph.dll" "$(SolutionDir)..\bin\Components"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

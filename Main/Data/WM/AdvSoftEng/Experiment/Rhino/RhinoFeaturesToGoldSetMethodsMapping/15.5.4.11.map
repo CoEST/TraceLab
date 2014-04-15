@@ -1,0 +1,17 @@
+org.mozilla.javascript.regexp.RegExpImpl.action
+org.mozilla.javascript.regexp.RegExpImpl.interpretDollar
+org.mozilla.javascript.regexp.NativeRegExp.NativeRegExp
+org.mozilla.javascript.regexp.SubString.toString
+org.mozilla.javascript.regexp.NativeRegExp.compileRE
+org.mozilla.javascript.regexp.RegExpImpl.replace_glob
+org.mozilla.javascript.regexp.RegExpImpl.do_replace
+org.mozilla.javascript.regexp.NativeRegExp.isDigit
+org.mozilla.javascript.regexp.RegExpImpl.getParenSubString
+org.mozilla.javascript.NativeString.initPrototypeId
+org.mozilla.javascript.regexp.RegExpImpl.matchOrReplace
+org.mozilla.javascript.NativeString.execIdCall
+org.mozilla.javascript.RegExpProxy.action
+org.mozilla.javascript.NativeString.findPrototypeId
+org.mozilla.javascript.regexp.NativeRegExp.executeRegExp
+org.mozilla.javascript.regexp.SubString.SubString
+org.mozilla.javascript.regexp.NativeRegExp.getFlags

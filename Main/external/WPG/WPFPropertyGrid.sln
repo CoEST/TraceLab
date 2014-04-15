@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFPropertyGrid", "WPFPropertyGrid.csproj", "{48BBCE6B-EAD5-4B56-B5E1-219D1CBD3E23}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = WPFPropertyGrid.csproj
+		SccLocalPath1 = .
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48BBCE6B-EAD5-4B56-B5E1-219D1CBD3E23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48BBCE6B-EAD5-4B56-B5E1-219D1CBD3E23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48BBCE6B-EAD5-4B56-B5E1-219D1CBD3E23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48BBCE6B-EAD5-4B56-B5E1-219D1CBD3E23}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

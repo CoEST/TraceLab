@@ -1,0 +1,103 @@
+package unisa.gps.etour.control. Gestione Beni Culturali.test.stub;
+
+import java.sql. S Q L Exception;
+import java.util. Array List;
+import unisa.gps.etour.bean. Bean Bene Culturale;
+import unisa.gps.etour.bean. Bean Tag;
+import unisa.gps.etour.repository. I D B Bene Culturale;
+import unisa.gps.etour.util. Punto  D;
+
+public class  D B Bene Culturale implements  I D B Bene Culturale
+{
+	private  Array List< Bean Bene Culturale> b;
+
+	public  D B Bene Culturale()
+	{
+		b = new  Array List< Bean Bene Culturale>( );
+	}
+
+	public boolean cancella Bene Culturale(int p Id Bene) throws  S Q L Exception
+	{
+		boolean ris = false;
+
+		for (int i =  ; i < b.size(); i++)
+			if (b.get(i).get Id() == p Id Bene)
+			{
+				b.remove(i);
+				ris = true;
+			}
+
+		return ris;
+	}
+
+	public boolean inserisci Bene Culturale( Bean Bene Culturale p Bene)
+			throws  S Q L Exception
+	{
+		return (b.add(p Bene));
+	}
+
+	public boolean modifica Bene Culturale( Bean Bene Culturale p Bene)
+			throws  S Q L Exception
+	{
+		boolean ris = false;
+
+		for (int i =  ; i < b.size(); i++)
+			if (b.get(i).get Id() == p Bene.get Id())
+			{
+				b.set(i, p Bene);
+				return true;
+			}
+
+		return ris;
+	}
+
+	public  Bean Bene Culturale ottieni Bene Culturale(int p Id) throws  S Q L Exception
+	{
+		 Bean Bene Culturale ris = null;
+
+		for (int i =  ; i < b.size(); i++)
+			if (b.get(i).get Id() == p Id)
+				ris = b.get(i);
+
+		return ris;
+	}
+
+	public  Array List< Bean Bene Culturale> ottieni Lista B C() throws  S Q L Exception
+	{
+		return b;
+	}
+
+	public int ottieni Numero Elementi Ricerca( String p Keyword,
+			 Array List< Bean Tag> p Tags,  Punto  D p Posizione,
+			double p Distanza Massima) throws  S Q L Exception
+	{
+		//  T O D O  Auto-generated method stub
+		return  ;
+	}
+
+	public int ottieni Numero Elementi Ricerca Avanzata(int p Id Turista,
+			 String p Keyword,  Array List< Bean Tag> p Tags,  Punto  D p Posizione,
+			double p Distanza Massima) throws  S Q L Exception
+	{
+		//  T O D O  Auto-generated method stub
+		return  ;
+	}
+
+	public  Array List< Bean Bene Culturale> ricerca( String p Keyword,
+			 Array List< Bean Tag> p Tags, int p Num Pagina,
+			int p Numero Elementi Per Pagina,  Punto  D p Posizione,
+			double p Distanza Massima) throws  S Q L Exception
+	{
+		//  T O D O  Auto-generated method stub
+		return null;
+	}
+
+	public  Array List< Bean Bene Culturale> ricerca Avanzata(int p Id Turista,
+			 String p Keyword,  Array List< Bean Tag> p Tags, int p Num Pagina,
+			int p Numero Elementi Per Pagina,  Punto  D p Posizione,
+			double p Distanza Massima) throws  S Q L Exception
+	{
+		//  T O D O  Auto-generated method stub
+		return null;
+	}
+}

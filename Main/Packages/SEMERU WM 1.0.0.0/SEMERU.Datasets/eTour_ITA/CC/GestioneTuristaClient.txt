@@ -1,0 +1,629 @@
+﻿package unisa.gps.etour.control. Gestione Utenti Registrati;
+
+import java.rmi. Remote Exception;
+import java.sql. S Q L Exception;
+import java.util. Array List;
+import java.util. Iterator;
+
+import unisa.gps.etour.bean. Bean Bene Culturale;
+import unisa.gps.etour.bean. Bean Preferenza Di Ricerca;
+import unisa.gps.etour.bean. Bean Preferenze Generiche;
+import unisa.gps.etour.bean. Bean Punto Di Ristoro;
+import unisa.gps.etour.bean. Bean Turista;
+import unisa.gps.etour.bean. Bean Visita B C;
+import unisa.gps.etour.bean. Bean Visita P R;
+import unisa.gps.etour.repository. D B Bene Culturale;
+import unisa.gps.etour.repository. D B Preferenze Di Ricerca;
+import unisa.gps.etour.repository. D B Preferenze Generiche;
+import unisa.gps.etour.repository. D B Punto Di Ristoro;
+import unisa.gps.etour.repository. D B Turista;
+import unisa.gps.etour.repository. D B Visita B C;
+import unisa.gps.etour.repository. D B Visita P R;
+import unisa.gps.etour.repository. I D B Bene Culturale;
+import unisa.gps.etour.repository. I D B Preferenze Di Ricerca;
+import unisa.gps.etour.repository. I D B Preferenze Generiche;
+import unisa.gps.etour.repository. I D B Punto Di Ristoro;
+import unisa.gps.etour.repository. I D B Turista;
+import unisa.gps.etour.repository. I D B Visita B C;
+import unisa.gps.etour.repository. I D B Visita P R;
+import unisa.gps.etour.util. Controllo Dati;
+import unisa.gps.etour.util. Messaggi Errore;
+
+/**
+ *  Classe relativa alla gestione dei  Dati del  Turista
+ * 
+ * @author  Leone  Federico
+ * @version  .       e Tour  Project -  Copyright by  S E@ S A  Lab  D M I  University of
+ *           Salerno
+ */
+
+public class  Gestione Turista Client extends  Gestione Turista Comune implements
+		 I Gestione Turista Client
+{
+	private static final long serial Version U I D = -                    L;
+	private  I D B Turista profilo Turista;				// Gestione dati relativi al turista
+	private  I D B Preferenze Generiche pref Gen Turista;			// Gestione preferenze generiche del turista
+	private  I D B Preferenze Di Ricerca pref Ric Turista;			// Gestione preferenze di ricerca del turista
+	private  I D B Visita B C visitati B C;					// Gestione beni culturali visitati
+	private  I D B Visita P R visitati P R;					// Gestione punti di ristoro visitati
+	private  I D B Bene Culturale bene Culturale;				// Gestione beni culturali (ci serve unicamente x ottenere un bean  Bene Culturale
+									//a partire dal suo  I D
+	private  I D B Punto Di Ristoro punto Di Ristoro;			// Gestione punti di ristoro (utilizzo identico all'oggetto "bene Culturale"
+
+	public  Gestione Turista Client() throws  Remote Exception
+	{
+		super();
+
+		profilo Turista = new  D B Turista();
+		pref Gen Turista = new  D B Preferenze Generiche();
+		pref Ric Turista = new  D B Preferenze Di Ricerca();
+		visitati B C = new  D B Visita B C();
+		visitati P R = new  D B Visita P R();
+		bene Culturale = new  D B Bene Culturale();
+		punto Di Ristoro = new  D B Punto Di Ristoro();
+	}
+
+	/*
+	 * (non- Javadoc)
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Utenti Registrati. I Gestione Turista Client#cancella Preferenze Di Ricerca(int,
+	 *      int)
+	 */
+	public  Bean Preferenza Di Ricerca cancella Preferenze Di Ricerca(int p Id Turista,int p Id Preferenza Di Ricerca) throws  Remote Exception
+	{
+		try
+		{
+			boolean cancellazione = true;
+			 Bean Preferenza Di Ricerca  Pref Ric = new  Bean Preferenza Di Ricerca();
+			 Array List< Bean Preferenza Di Ricerca>  Elenco Pref Ric = new  Array List< Bean Preferenza Di Ricerca>();
+
+			 Elenco Pref Ric = pref Ric Turista.ottieni Preferenze Di Ricerca Del Turista(p Id Turista);
+			 Iterator< Bean Preferenza Di Ricerca> elenco =  Elenco Pref Ric.iterator();
+
+			while (elenco.has Next() && cancellazione == true)
+			{
+				 Pref Ric = elenco.next();
+				if ( Pref Ric.get Id() == p Id Preferenza Di Ricerca)
+					cancellazione = false; //  Trovata la ricorrenza con l'id
+				// che ci interessa usciamo dal
+				// ciclo
+			}
+
+			cancellazione = pref Ric Turista.cancella Preferenza Di Ricerca Turista(
+					p Id Turista, p Id Preferenza Di Ricerca);
+			return  Pref Ric;
+		}
+		catch ( S Q L Exception e)
+		{
+			// se dal data layer viene lanciata una eccezione  S Q L Exception
+			// si lancia l'eccezione remota  Remote Exception
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+
+	}
+
+	/*
+	 * (non- Javadoc)
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Utenti Registrati. I Gestione Turista Client#cancella Preferenze Generiche(int)
+	 */
+	public  Bean Preferenze Generiche cancella Preferenze Generiche(int p Id Turista) throws  Remote Exception
+	{
+		try
+		{
+			 Bean Preferenze Generiche temp = pref Gen Turista.ottieni Preferenza Generica(p Id Turista);
+			boolean cancellazione = pref Gen Turista.cancella Preferenza Generica(temp.get Id());
+
+			if (cancellazione)
+				return temp;
+			else
+				return null; //  La cancellazione non è avvenuta
+		}
+		catch ( S Q L Exception e)
+		{
+			// se dal data layer viene lanciata una eccezione  S Q L Exception
+			// si lancia l'eccezione remota  Remote Exception
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+
+	}
+
+	/*
+	 * (non- Javadoc)
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Utenti Registrati. I Gestione Turista Client#inserisci Preferenza Di Ricerca(int,
+	 *      unisa.gps.etour.bean. Bean Preferenza Di Ricerca)
+	 */
+	public boolean inserisci Preferenza Di Ricerca(int p Id Turista, Bean Preferenza Di Ricerca p Preferenza Di Ricerca) throws  Remote Exception
+	{
+		try
+		{
+			boolean check Dati =  Controllo Dati.check Bean Preferenza Di Ricerca(p Preferenza Di Ricerca);
+
+			if (check Dati)
+			{ //  Se il controllo dei dati è positivo
+				return pref Ric Turista.inserisci Preferenza Di Ricerca Del Turista(p Id Turista, p Preferenza Di Ricerca.get Id());
+			}
+			else
+			{
+				return false; //  Errore nei dati
+			}
+
+		}
+		catch ( S Q L Exception e)
+		{
+			// se dal data layer viene lanciata una eccezione  S Q L Exception
+			// si lancia l'eccezione remota  Remote Exception
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+	}
+
+	/*
+	 * (non- Javadoc)
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Utenti Registrati. I Gestione Turista Client#inserisci Preferenze Generiche(unisa.gps.etour.bean. Bean Preferenze Generiche)
+	 */
+	public boolean inserisci Preferenze Generiche( Bean Preferenze Generiche p Preferenze Generiche) throws  Remote Exception
+	{
+		try
+		{
+			boolean check Dati =  Controllo Dati.check Bean Preferenze Generiche(p Preferenze Generiche);
+
+			if (check Dati)
+			{ //  Se il controllo dei dati è positivo
+				return pref Gen Turista.inserisci Preferenza Genenerica(p Preferenze Generiche);
+			}
+			else
+			{
+				return false; //  Errore nei dati
+			}
+
+		}
+		catch ( S Q L Exception e)
+		{
+			// se dal data layer viene lanciata una eccezione  S Q L Exception
+			// si lancia l'eccezione remota  Remote Exception
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+	}
+
+	/*
+	 * (non- Javadoc)
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Utenti Registrati. I Gestione Turista Client#inserisci Turista(unisa.gps.etour.bean. Bean Turista)
+	 */
+	public boolean inserisci Turista( Bean Turista p Turista) throws  Remote Exception
+	{
+		try
+		{
+			
+			// Controllo se l'username inserito è già presente nel  D B
+			 Bean Turista temp = profilo Turista.ottieni Turista(p Turista.get Username());
+			
+			// Se non esiste un turista associato all'username scelta
+			if (temp == null)
+			{
+				boolean check Dati =  Controllo Dati.check Bean Turista(p Turista);
+
+				if (check Dati)
+				{ //  Se il controllo dei dati è positivo
+					return profilo Turista.inserisci Turista(p Turista);
+				}
+				else
+				{
+					return false; //  Errore nei dati
+				}
+			}
+			else
+			{
+				return false; // Username già presente nel  D B
+			}
+
+
+		}
+		catch ( S Q L Exception e)
+		{
+			// se dal data layer viene lanciata una eccezione  S Q L Exception
+			// si lancia l'eccezione remota  Remote Exception
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+	}
+
+	/*
+	 * (non- Javadoc)
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Utenti Registrati. I Gestione Turista Client#modifica Preferenze Generiche(unisa.gps.etour.bean. Bean Preferenze Generiche)
+	 */
+	public boolean modifica Preferenze Generiche( Bean Preferenze Generiche p Preferenze Generiche Nuove) throws  Remote Exception
+	{
+		try
+		{
+			boolean check Dati =  Controllo Dati.check Bean Preferenze Generiche(p Preferenze Generiche Nuove);
+
+			if (check Dati)
+			{ //  Se il controllo dei dati è positivo
+				return pref Gen Turista.modifica Preferenza Generica(p Preferenze Generiche Nuove);
+			}
+			else
+			{
+				return false; //  Errore nei dati
+			}
+
+		}
+		catch ( S Q L Exception e)
+		{
+			// se dal data layer viene lanciata una eccezione  S Q L Exception
+			// si lancia l'eccezione remota  Remote Exception
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+	}
+
+	/*
+	 * (non- Javadoc)
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Utenti Registrati. I Gestione Turista Client#ottieni Preferenze Di Ricerca(int)
+	 */
+	public  Bean Preferenza Di Ricerca[] ottieni Preferenze Di Ricerca(int p Id Turista) throws  Remote Exception
+	{
+		// Array contenente l'elenco delle preferenze di ricerca del turista con  I D = p Id Turista
+		 Bean Preferenza Di Ricerca[] preferenze = null;
+		
+		try
+		{
+			//** Conversione da arraylist (tipo di ritorno del metodo "ottieni Preferenze Di Ricerca") a array semplice**
+			 Array List< Bean Preferenza Di Ricerca> lista Preferenze = pref Ric Turista.ottieni Preferenze Di Ricerca Del Turista(p Id Turista);
+			preferenze = new  Bean Preferenza Di Ricerca[lista Preferenze.size()];
+			preferenze = lista Preferenze.to Array(preferenze);
+			//** Fine conversione**
+		}
+		catch ( S Q L Exception e)
+		{
+			// se dal data layer viene lanciata una eccezione  S Q L Exception
+			// si lancia l'eccezione remota  Remote Exception
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+		
+		return preferenze;
+		
+	}
+
+	/*
+	 * (non- Javadoc)
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Utenti Registrati. I Gestione Turista Client#ottieni Preferenze Generiche(int)
+	 */
+	public  Bean Preferenze Generiche ottieni Preferenze Generiche(int p Id Turista) throws  Remote Exception
+	{
+		try
+		{
+			return pref Gen Turista.ottieni Preferenza Generica(p Id Turista);
+		}
+		catch ( S Q L Exception e)
+		{
+			// se dal data layer viene lanciata una eccezione  S Q L Exception
+			// si lancia l'eccezione remota  Remote Exception
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+	}
+
+	/*
+	 * (non- Javadoc)
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Utenti Registrati. Gestione Turista Comune#modifica Turista(unisa.gps.etour.bean. Bean Turista)
+	 */
+	public boolean modifica Turista( Bean Turista pprofilo Turista) throws  Remote Exception
+	{
+		try
+		{
+			// Variabile booleana che conterrà true,se il bean è corretto, false altrimenti
+			boolean check Dati =  Controllo Dati.check Bean Turista(pprofilo Turista);
+
+			if (check Dati)
+			{ //  Se il controllo dei dati è positivo
+				return profilo Turista.modifica Turista(pprofilo Turista);
+			}
+			else
+			{
+				return false; //  Errore nei dati
+			}
+
+		}
+		catch ( S Q L Exception e)
+		{
+			// se dal data layer viene lanciata una eccezione  S Q L Exception
+			// si lancia l'eccezione remota  Remote Exception
+			throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+		}
+
+	}
+
+	/*
+	 * (non- Javadoc)
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Utenti Registrati. I Gestione Turista Client#ottieni Beni Culturali Visitati(int)
+	 */
+	public  Bean Visita B C[] ottieni Beni Culturali Visitati(int p Id Turista) throws  Remote Exception
+	{
+		 Bean Visita B C[] visitati = null;
+		if (p Id Turista >  )
+		{
+			try
+			{
+				 Array List< Bean Visita B C> lista visitati  = visitati B C.ottieni Lista Visita B C Turista(p Id Turista);
+				visitati = new  Bean Visita B C[lista visitati .size()];
+				visitati = lista visitati .to Array(visitati);
+			}
+			catch ( S Q L Exception e)
+			{
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+			}
+			catch ( Exception e)
+			{
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+			}
+
+		}
+		return visitati;
+	}
+
+	/*
+	 * (non- Javadoc)
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Utenti Registrati. I Gestione Turista Client#ottieni Punti Di Ristoro Visitati(int)
+	 */
+	public  Bean Visita P R[] ottieni Punti Di Ristoro Visitati(int p Id Turista) throws  Remote Exception
+	{
+		// Array contenente l'elenco dei punti di ristoro visitati dal turista con id "p Id Turista"
+		 Bean Visita P R[] visitati = null;
+		if (p Id Turista >  )
+		{
+			try
+			{
+				 Array List< Bean Visita P R> lista visitati  = visitati P R.ottieni Lista Visita P R Turista(p Id Turista);
+				visitati = new  Bean Visita P R[lista visitati .size()];
+				visitati = lista visitati .to Array(visitati);
+			}
+			catch ( S Q L Exception e)
+			{
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+			}
+			catch ( Exception e)
+			{
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+			}
+
+		}
+		return visitati;
+	}
+
+	/*
+	 * (non- Javadoc)
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Utenti Registrati. I Gestione Turista Client#inserisci Bene Culturale Visitato(unisa.gps.etour.bean. Bean Visita B C)
+	 */
+	public boolean inserisci Bene Culturale Visitato( Bean Visita B C p Visita B C) throws  Remote Exception
+	{
+		if ( Controllo Dati.check Bean Visita B C(p Visita B C))
+		{
+			try
+			{
+				
+				return visitati B C.inserisci Visita B C(p Visita B C);
+			}
+			catch ( S Q L Exception e)
+			{
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+			}
+			catch ( Exception e)
+			{
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+			}
+		}
+		return false;
+	}
+
+	/*
+	 * (non- Javadoc)
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Utenti Registrati. I Gestione Turista Client#inserisci Punto Di Ristoro Visitato(unisa.gps.etour.bean. Bean Visita P R)
+	 */
+	public boolean inserisci Punto Di Ristoro Visitato( Bean Visita P R p Visita P R) throws  Remote Exception
+	{
+		if ( Controllo Dati.check Bean Visita P R(p Visita P R))
+		{
+			try
+			{
+				return visitati P R.inserisci Visita P R(p Visita P R);
+			}
+			catch ( S Q L Exception e)
+			{
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+			}
+			catch ( Exception e)
+			{
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+			}
+		}
+		return false;
+	}
+
+	/*
+	 * (non- Javadoc)
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Utenti Registrati. I Gestione Turista Client#inserisci Bene Culturale Preferito(int,
+	 *      int)
+	 */
+	public boolean inserisci Bene Culturale Preferito(int p Id Turista,int p Id Bene Culturale) throws  Remote Exception
+	{
+		if (p Id Turista >   && p Id Bene Culturale >  )
+		{
+			try
+			{
+				return profilo Turista.inserisci Bene Culturale Preferito(p Id Turista, p Id Bene Culturale);
+			}
+			catch ( S Q L Exception e)
+			{
+
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+			}
+			catch ( Exception e)
+			{
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+			}
+		}
+		return false;
+	}
+
+	/*
+	 * (non- Javadoc)
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Utenti Registrati. I Gestione Turista Client#inserisci Punto Di Ristoro Preferito(int,
+	 *      int)
+	 */
+	public boolean inserisci Punto Di Ristoro Preferito(int p Id Turista,int p Id Punto Di Ristoro) throws  Remote Exception
+	{
+		if (p Id Turista >   && p Id Punto Di Ristoro >  )
+		{
+			try
+			{
+				return profilo Turista.inserisci Punto Di Ristoro Preferito(p Id Turista, p Id Punto Di Ristoro);
+			}
+			catch ( S Q L Exception e)
+			{
+
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+			}
+			catch ( Exception e)
+			{
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+			}
+		}
+		return false;
+	}
+
+	/*
+	 * (non- Javadoc)
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Utenti Registrati. I Gestione Turista Client#cancella Bene Culturale Preferito(int,
+	 *      int)
+	 */
+	public boolean cancella Bene Culturale Preferito(int p Id Turista,int p Id Bene Culturale) throws  Remote Exception
+	{
+		if (p Id Turista >   && p Id Bene Culturale >  )
+		{
+			try
+			{
+				return profilo Turista.cancella Bene Culturale Preferito(p Id Turista, p Id Bene Culturale);
+			}
+			catch ( S Q L Exception e)
+			{
+
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+			}
+			catch ( Exception e)
+			{
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+			}
+		}
+		return false;
+	}
+
+	/*
+	 * (non- Javadoc)
+	 * 
+	 * @see unisa.gps.etour.control. Gestione Utenti Registrati. I Gestione Turista Client#cancella Punto Di Ristoro Preferito(int,
+	 *      int)
+	 */
+	public boolean cancella Punto Di Ristoro Preferito(int p Id Turista,int p Id Punto Di Ristoro) throws  Remote Exception
+	{
+		if (p Id Turista >   && p Id Punto Di Ristoro >  )
+		{
+			try
+			{
+				return profilo Turista.cancella Punto Di Ristoro Preferito(p Id Turista, p Id Punto Di Ristoro);
+			}
+			catch ( S Q L Exception e)
+			{
+
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+			}
+			catch ( Exception e)
+			{
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+			}
+		}
+		return false;
+	}
+
+	/* (non- Javadoc)
+	 * @see unisa.gps.etour.control. Gestione Utenti Registrati. I Gestione Turista Client#ottieni Beni Culturali Preferiti(int)
+	 */
+	public  Bean Bene Culturale[] ottieni Beni Culturali Preferiti(int p Id Turista) throws  Remote Exception
+	{
+		if (p Id Turista >  )
+		{
+			try
+			{
+				// Elenco dei beni culturali preferiti del turista cn id = "p Id Turista"
+				 Array List< Integer> lista Preferiti = profilo Turista.ottieni Beni Culturali Preferiti(p Id Turista);
+				// Conversione da arraylist a array semplice
+				 Bean Bene Culturale[] preferiti = null;
+				preferiti = new  Bean Bene Culturale[lista Preferiti.size()];
+				preferiti = lista Preferiti.to Array(preferiti);
+				
+				int k =  ; // Contatore di ciclo
+				for ( Integer i : lista Preferiti)
+				{
+					// Riempie l'array preferiti con i bean di tutti i beni culturali preferiti dal turista
+					preferiti[k++] = bene Culturale.ottieni Bene Culturale(i);
+				}
+			}
+			catch ( S Q L Exception e)
+			{
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+			}
+			catch ( Exception e)
+			{
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+			}
+		}
+		return null;
+	}
+
+	/* (non- Javadoc)
+	 * @see unisa.gps.etour.control. Gestione Utenti Registrati. I Gestione Turista Client#ottieni Punti Di Ristoro Preferiti(int)
+	 */
+	public  Bean Punto Di Ristoro[] ottieni Punti Di Ristoro Preferiti(int p Id Turista) throws  Remote Exception
+	{
+		if (p Id Turista >  )
+		{
+			try
+			{	
+				// Elenco dei punti di ristoro preferiti del turista cn id = "p Id Turista"
+				 Array List< Integer> lista Preferiti = profilo Turista.ottieni Punto Di Ristoro Preferiti(p Id Turista);
+				
+				// Conversione da arraylist a array semplice
+				 Bean Punto Di Ristoro[] preferiti = null;
+				preferiti = new  Bean Punto Di Ristoro[lista Preferiti.size()];
+				preferiti = lista Preferiti.to Array(preferiti);
+				
+				int k =  ; // Contatore di ciclo
+				for ( Integer i : lista Preferiti)
+				{
+					// Riempie l'array preferiti con i bean di tutti i beni culturali preferiti dal turista
+					preferiti[k++] = punto Di Ristoro.ottieni Punto Di Ristoro(i);
+				}
+			}
+			catch ( S Q L Exception e)
+			{
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ D B M S);
+			}
+			catch ( Exception e)
+			{
+				throw new  Remote Exception( Messaggi Errore. E R R O R E_ S C O N O S C I U T O);
+			}
+		}
+		return null;
+	}
+}
+
