@@ -1,0 +1,6 @@
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\Deploy\bin\TraceLabConsole.exe.config
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\Deploy\bin\TraceLabConsole.exe
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\Deploy\bin\TraceLabConsole.pdb
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabConsole\obj\x86\Release\TraceLabConsole.csprojResolveAssemblyReference.cache
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabConsole\obj\x86\Release\TraceLabConsole.exe
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabConsole\obj\x86\Release\TraceLabConsole.pdb

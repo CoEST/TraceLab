@@ -44,3 +44,6 @@ C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\obj\Debug\TraceLab.Properties
 C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\obj\Debug\TraceLab.csproj.GenerateResource.Cache
 C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\obj\Debug\TraceLab.exe
 C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\obj\Debug\TraceLab.pdb
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\bin\Debug\TraceLab.exe.config
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\obj\Debug\TraceLab.exe
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\obj\Debug\TraceLab.pdb

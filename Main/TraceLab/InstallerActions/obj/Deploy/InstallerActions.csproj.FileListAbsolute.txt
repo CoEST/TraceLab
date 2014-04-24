@@ -1,0 +1,6 @@
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\WixInstaller\InstallerActions.dll
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\WixInstaller\InstallerActions.CA.dll
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\WixInstaller\InstallerActions.pdb
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\InstallerActions\obj\Deploy\InstallerActions.csprojResolveAssemblyReference.cache
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\InstallerActions\obj\Deploy\InstallerActions.dll
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\InstallerActions\obj\Deploy\InstallerActions.pdb

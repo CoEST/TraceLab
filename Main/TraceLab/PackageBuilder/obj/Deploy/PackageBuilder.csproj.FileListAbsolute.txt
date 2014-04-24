@@ -1,0 +1,7 @@
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\Deploy\bin\PackageBuilder.exe
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\Deploy\bin\PackageBuilder.pdb
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\PackageBuilder\obj\Deploy\PackageBuilder.csprojResolveAssemblyReference.cache
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\PackageBuilder\obj\Deploy\PackageBuilder.Properties.Resources.resources
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\PackageBuilder\obj\Deploy\PackageBuilder.csproj.GenerateResource.Cache
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\PackageBuilder\obj\Deploy\PackageBuilder.exe
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\PackageBuilder\obj\Deploy\PackageBuilder.pdb

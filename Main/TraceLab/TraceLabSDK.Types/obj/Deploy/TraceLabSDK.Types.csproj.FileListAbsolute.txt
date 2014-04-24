@@ -1,0 +1,3 @@
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\Deploy\Types\TraceLabSDK.Types.dll
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabSDK.Types\obj\Deploy\TraceLabSDK.Types.csprojResolveAssemblyReference.cache
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabSDK.Types\obj\Deploy\TraceLabSDK.Types.dll
