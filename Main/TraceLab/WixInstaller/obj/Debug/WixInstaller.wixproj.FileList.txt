@@ -1,0 +1,7 @@
+obj\Debug\CoreTypes.wixobj
+obj\Debug\Packages.wixobj
+obj\Debug\Product.wixobj
+obj\Debug\TraceLabMain.wixobj
+obj\Debug\Tutorials.wixobj
+obj\Debug\UpgradeCustomActions.wixobj
+obj\Debug\Product.Generated.wixobj

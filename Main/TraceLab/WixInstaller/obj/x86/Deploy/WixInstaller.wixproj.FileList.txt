@@ -1,3 +1,5 @@
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\WixInstaller\bin\x86\Deploy\TraceLab Installer.msi
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\WixInstaller\bin\x86\Deploy\TraceLab Installer.wixpdb
 obj\x86\Deploy\CoreTypes.wixobj
 obj\x86\Deploy\Packages.wixobj
 obj\x86\Deploy\Product.wixobj
@@ -5,5 +7,3 @@ obj\x86\Deploy\TraceLabMain.wixobj
 obj\x86\Deploy\Tutorials.wixobj
 obj\x86\Deploy\UpgradeCustomActions.wixobj
 obj\x86\Deploy\Product.Generated.wixobj
-C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\WixInstaller\bin\x86\Deploy\TraceLab Installer.msi
-C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\WixInstaller\bin\x86\Deploy\TraceLab Installer.wixpdb

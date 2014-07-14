@@ -1,0 +1,3 @@
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\bin\Deploy\TraceLab.UI.GTK.dll
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\TraceLab.UI.GTK\obj\Deploy\TraceLab.UI.GTK.csprojResolveAssemblyReference.cache
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\TraceLab.UI.GTK\obj\Deploy\TraceLab.UI.GTK.dll

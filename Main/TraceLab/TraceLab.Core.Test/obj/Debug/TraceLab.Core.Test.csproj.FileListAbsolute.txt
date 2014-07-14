@@ -6,3 +6,11 @@ C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\bin\Test\Debug\TraceLab.Core.
 C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core.Test\obj\Debug\TraceLab.Core.Test.csprojResolveAssemblyReference.cache
 C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core.Test\obj\Debug\TraceLab.Core.Test.dll
 C:\p4_root\MRI_Trace\relab\release\latest\TraceLab\TraceLab.Core.Test\obj\Debug\TraceLab.Core.Test.pdb
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\bin\Test\Debug\PackageSystem\PackageSystemTestResources\Components\Importer.dll
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\bin\Test\Debug\PackageSystem\PackageSystemTestResources\Types\DictionaryTermWeights.dll
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\bin\Test\Debug\TraceLab.Core.Test.dll.config
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\bin\Test\Debug\TraceLab.Core.Test.dll
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\bin\Test\Debug\TraceLab.Core.Test.pdb
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\TraceLab.Core.Test\obj\Debug\TraceLab.Core.Test.csprojResolveAssemblyReference.cache
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\TraceLab.Core.Test\obj\Debug\TraceLab.Core.Test.dll
+C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\TraceLab.Core.Test\obj\Debug\TraceLab.Core.Test.pdb

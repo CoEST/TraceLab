@@ -37,7 +37,8 @@ namespace TraceLab
         {
             Initialize(args);
 
-           // ApplicationViewModel.RegisteredUser = KeyValidator.ValidateKey(UserDirectory);
+            //ApplicationViewModel.RegisteredUser = KeyValidator.ValidateKey(UserDirectory);
+            ApplicationViewModel.RegisteredUser = "Coest";
 
             if (InitViewModel())
             {

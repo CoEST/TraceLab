@@ -3,25 +3,25 @@
   <?include Variables.wxi ?>
   <Fragment xmlns="http://schemas.microsoft.com/wix/2006/wi">
         <DirectoryRef Id="TYPESDIR">
-            <Component Id="cmp1B53B25A7BEE4DF880CFE853B965FF20" Guid="{9BE62F01-2903-4BEE-97E8-03CF8AEBE149}">
+            <Component Id="cmp1B53B25A7BEE4DF880CFE853B965FF20" Guid="{95CFDC3D-2D88-474E-931B-380F9F4E8CF3}">
                 <File Id="fil6C7F223185C45A952DFD3B0416B87547" KeyPath="yes" Source="$(var.TypesSource)\System.Windows.Controls.DataVisualization.Toolkit.dll" />
             </Component>
-            <Component Id="cmp475C80B06193A1EAF3EB2E0C7971B310" Guid="{0AA47B9F-52A7-4BB9-8D9F-8CEBD79EB7AC}">
+            <Component Id="cmp475C80B06193A1EAF3EB2E0C7971B310" Guid="{12F18E09-7E18-4516-9CA9-F84C5F720F35}">
                 <File Id="fil6E7CD8508323D5D12230EE64DE7377C5" KeyPath="yes" Source="$(var.TypesSource)\TraceLabSDK.Types.dll" />
             </Component>
-            <Component Id="cmp7DB10A5A80F83521A3959626BDB66D5F" Guid="{C960F7B3-8D29-44A4-9EDD-86D9473BFA97}">
+            <Component Id="cmp7DB10A5A80F83521A3959626BDB66D5F" Guid="{9E64E065-5481-4CF2-BE79-A553C21E2966}">
                 <File Id="fil3CE5A2ED3F19CC046FFC4912E0FDBD61" KeyPath="yes" Source="$(var.TypesSource)\TraceLabSDK.Types.jar" />
             </Component>
-            <Component Id="cmpA4CF1B86B67ED8FFCE3B12F761D6FD3C" Guid="{1964B05A-5E1E-4085-9EA3-A1009CE7F575}">
+            <Component Id="cmpA4CF1B86B67ED8FFCE3B12F761D6FD3C" Guid="{51F86B4F-EBA9-41CB-AC72-34CC8F3CC42F}">
                 <File Id="fil3502210731F7A99BA8F672542A72A4A5" KeyPath="yes" Source="$(var.TypesSource)\TraceLabSDK.Types.UI.dll" />
             </Component>
-            <Component Id="cmp31E1C43ECBAE780730564E88D873B5B8" Guid="{690256A9-55BC-4406-A1DF-4548B5F0A5F6}">
+            <Component Id="cmp31E1C43ECBAE780730564E88D873B5B8" Guid="{EEE47897-EDD5-4F8B-83C4-B47F57A85F88}">
                 <File Id="fil07D9667D670341A3602E2AB5827781A7" KeyPath="yes" Source="$(var.TypesSource)\TraceLabSDK.Types.UI.WPF.dll" />
             </Component>
-            <Component Id="cmp59A6AEFCC947C2FE8EFA4288FF519028" Guid="{FB9B60A9-F832-456D-986F-9F3B69558EBB}">
+            <Component Id="cmp59A6AEFCC947C2FE8EFA4288FF519028" Guid="{F5AB15C5-3F39-4621-AF3E-0EC93E95C1BA}">
                 <File Id="filEADE8381625403D432267FF5F41374FA" KeyPath="yes" Source="$(var.TypesSource)\TraceLabSDK.Types.XML" />
             </Component>
-            <Component Id="cmpF91138F3470B90745E4C1285EAE571F9" Guid="{FBDB65A9-655D-4BBE-AD88-DC46764E9576}">
+            <Component Id="cmpF91138F3470B90745E4C1285EAE571F9" Guid="{B2CD0BFA-4737-48DF-9FDC-A2DD5E6F9818}">
                 <File Id="filFE54D1999077DD5A4D38BD7EA74250E6" KeyPath="yes" Source="$(var.TypesSource)\WPFToolkit.dll" />
             </Component>
         </DirectoryRef>
