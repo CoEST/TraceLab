@@ -52,7 +52,6 @@
     <WarningLevel>4</WarningLevel>
     <Optimize>false</Optimize>
     <ConsolePause>false</ConsolePause>
-    <Commandlineparameters>-base:C:\p4root\relab\branches\aczauderna\TraceLab\bin\DebugMono</Commandlineparameters>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <OutputPath>bin\Release\</OutputPath>

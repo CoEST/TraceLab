@@ -47,7 +47,7 @@ namespace TraceLab.UI.GTK.PropertyGridEditors
         public override void SetFilePath (String newFilenameLocation)
         {
             #if DEBUG
-            Console.WriteLine ("SetFilePath Absolute = " + newFilePath);
+            ///Console.WriteLine ("SetFilePath Absolute = " + newFilePath);
             #endif
 
             if(newFilenameLocation != null) 
