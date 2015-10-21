@@ -27,10 +27,18 @@ namespace TraceLab.UI.GTK.PropertyGridEditors
         public override bool DialogueEdit {
             get { return true; }
         }
-        
+
+        // HERZUM SPRINT 4.3: TLAB-238 TLAB-243
         public override void LaunchDialogue ()
         {
             string newDirectoryLocation = SelectFileDialog(null);
+            SetDirectory (newDirectoryLocation);
+        }
+        // END HERZUM SPRINT 4.3: TLAB-238 TLAB-243
+
+        // HERZUM SPRINT 4.2: TLAB-202
+        public override void SetDirectory (String newDirectoryLocation)
+        {
             if(newDirectoryLocation != null) 
             {
                 DirectoryPath path = Property.GetValue(Instance) as DirectoryPath;
@@ -38,21 +46,26 @@ namespace TraceLab.UI.GTK.PropertyGridEditors
                 {
                     path.Absolute = newDirectoryLocation;
                 }
-                else 
+                else   
                 {
                     //construct new filepath
                     path = new DirectoryPath();
                     //string experimentPath = TODO - get experiment path
                     //string dataRoot = System.IO.Path.GetDirectoryName(experimentPath);
                     string dataRoot = null;
-                    
+                  
+                    // HERZUM SPRINT 5.0: TLAB-238 TLAB-243
+                    dataRoot = DataRoot;
+                    // END HERZUM SPRINT 5.0: TLAB-238 TLAB-243
+
                     path.Init(newDirectoryLocation, dataRoot);
                 }
-                
+
                 Property.SetValue(Instance, path);
             }
         }
-        
+        // END HERZUM SPRINT 4.2: TLAB-202
+
         protected override string GetValueText ()
         {
             DirectoryPath filepath = Property.GetValue(Instance) as DirectoryPath;

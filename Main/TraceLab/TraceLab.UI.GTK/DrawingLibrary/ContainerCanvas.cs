@@ -159,7 +159,11 @@ namespace MonoHotDraw {
             //anyway, that's why check for _children null
             if(_children != null)
             {
-    			foreach (ContainerCanvasChild  child in _children.Values) {
+                // HERZUM SPRINT 2.5 TLAB-167
+                var buffer = new List<ContainerCanvasChild>(_children.Values);
+                foreach (ContainerCanvasChild  child in buffer) {
+                // foreach (ContainerCanvasChild  child in _children.Values) {
+                // END HERZUM SPRINT 2.5 TLAB-167  			
     				callback (child.Child);
     			}
             }

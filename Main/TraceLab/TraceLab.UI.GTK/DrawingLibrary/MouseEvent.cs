@@ -60,6 +60,20 @@ namespace MonoHotDraw {
             return false;
         }
 
+        //TLAB-184
+        public bool isCentralButtonPressed(){
+            Gdk.EventButton mouseButtonEvent = this.GdkEvent as Gdk.EventButton;
+            if (mouseButtonEvent != null) 
+            {
+                if(mouseButtonEvent.Button == 2)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        ///TLAB-184
+        
 		private PointD _drawingPoint;
 	}
 }

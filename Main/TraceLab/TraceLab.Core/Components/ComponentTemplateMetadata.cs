@@ -26,6 +26,7 @@ namespace TraceLab.Core.Components
 {
     [XmlRoot("Metadata")]
     [Serializable]
+    [Obsolete("Used in benchmarks (contests) - currently functionality is disabled")]
     public class ComponentTemplateMetadata : Metadata, IConfigurableAndIOSpecifiable, IXmlSerializable
     {
         private ComponentTemplateMetadata() { }

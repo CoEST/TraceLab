@@ -1,4 +1,0 @@
-2009-06-11  Manuel Cerón  <ceronman@gmail.com>
-
-	* ChopBoxConnector.cs: Improved FindEnd and FindStart
-

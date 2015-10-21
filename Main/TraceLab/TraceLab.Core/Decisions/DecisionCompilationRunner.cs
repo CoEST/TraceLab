@@ -196,7 +196,8 @@ namespace TraceLab.Core.Decisions
         public static Dictionary<string, string> PrepareSuccessorNodesLabelIdLookup(ExperimentNode decisionNode, IExperiment experiment)
         {
             Dictionary<string, string> successorNodeLabelIdLookup = new Dictionary<string, string>();
-            foreach (ExperimentNodeConnection outEdge in experiment.OutEdges(decisionNode))
+        //foreach (ExperimentNodeConnection outEdge in experiment.OutEdges(decisionNode)) TLAB-171
+            foreach (ExperimentNodeConnection outEdge in decisionNode.Owner.OutEdges(decisionNode))
             {
                 try
                 {

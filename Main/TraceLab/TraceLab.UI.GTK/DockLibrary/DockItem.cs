@@ -137,7 +137,8 @@ namespace MonoDevelop.Components.Docking
 				if (widget == null) {
 					widget = new DockItemContainer (frame, this);
 					widget.Visible = false; // Required to ensure that the Shown event is fired
-					widget.Label = label;
+                    //TLAB-231 232 Commenting this to avoid double title label
+				//	widget.Label = label    ;
 					widget.Shown += SetupContent;
 				}
 				return widget;

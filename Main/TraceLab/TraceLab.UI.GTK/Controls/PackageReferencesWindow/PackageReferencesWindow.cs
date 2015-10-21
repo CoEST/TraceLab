@@ -20,13 +20,13 @@ using TraceLab.Core.ViewModels;
 using TraceLab.Core.PackageSystem;
 using TraceLabSDK.PackageSystem;
 using System.Collections.Generic;
+using System.Linq;
+using TraceLab.Core.Experiments;
 
 namespace TraceLab.UI.GTK
 {
     public partial class PackageReferencesWindow : Window
     {
-        ApplicationViewModel viewModel;
-
         #region Constructors
         public PackageReferencesWindow() : base(WindowType.Toplevel)
         {
@@ -36,64 +36,81 @@ namespace TraceLab.UI.GTK
         public PackageReferencesWindow(ApplicationViewModel viewModel) : this()
         {
             if (viewModel == null)
-                throw new ArgumentNullException();
-            this.viewModel = viewModel;
+                throw new ArgumentNullException("viewModel");
 
-            TreeStore treeStore = new TreeStore(typeof(PackageReferenceNode));
-            FormatTreeView(treeStore);
-            BuildModel(treeStore);
-            treeView.Model = treeStore;
+            if(viewModel.Experiment == null)
+                throw new InvalidOperationException("Package reference window cannot be used when there is no experiment opened");
+
+            this.m_experiment = viewModel.Experiment;
+
+            m_treeStore = new Gtk.TreeStore(typeof(PackageReferenceNode));
+            FormatTreeView();
+            BuildModel();
+            treeView.Model = m_treeStore;
         }
         #endregion
 
-        void FormatTreeView(TreeStore treeStore)
+        private void FormatTreeView()
         {
             treeView.HeadersVisible = false;
             treeView.EnableTreeLines = true;
 
-            CellRendererToggle checkboxCellRenderer = new CellRendererToggle();
-            checkboxCellRenderer.Activatable = true;
-            checkboxCellRenderer.Toggled += delegate(object o, ToggledArgs args) 
-            {
-                TreeIter iter;      
-                if (treeStore.GetIter(out iter, new TreePath(args.Path))) 
-                {
-                    PackageReferenceNode node = (PackageReferenceNode)treeStore.GetValue(iter, 0);              
-                    node.State = !node.State;
-                }
-            };
-            treeView.AppendColumn("CheckBox", checkboxCellRenderer);
-            
-            CellRendererText nameCellRenderer = new CellRendererText();
-            treeView.AppendColumn("Name", nameCellRenderer);
-            
-            treeView.Columns[0].SetCellDataFunc(checkboxCellRenderer, new TreeCellDataFunc(RenderCheckBox));
-            treeView.Columns[1].SetCellDataFunc(nameCellRenderer, new TreeCellDataFunc(RenderName));
+            CellRendererToggle includeCheckBoxRenderer = new CellRendererToggle();
+            TreeViewColumn includeColumn = treeView.AppendColumn("Include", includeCheckBoxRenderer);
+            includeColumn.SetCellDataFunc(includeCheckBoxRenderer, new TreeCellDataFunc(RenderIncludeCheckBox));
+            includeCheckBoxRenderer.Activatable = true;
+            includeCheckBoxRenderer.Toggled += HandleToggled;;
+
+            CellRendererText nameRenderer = new CellRendererText();
+            TreeViewColumn nameColumn = treeView.AppendColumn("Name", nameRenderer);
+            nameColumn.SetCellDataFunc(nameRenderer, new TreeCellDataFunc(RenderName));      
         }
 
-        void BuildModel(TreeStore treeStore)
+        private void HandleToggled (object o, ToggledArgs args)
         {
-            foreach (IPackage package in PackageManager.Instance)
+            TreeIter iter;      
+            if (m_treeStore.GetIter(out iter, new TreePath(args.Path))) 
             {
-                PackageReferenceNode node = new PackageReferenceNode(package);
-                //foreach(IPackageFile file in package.Files)
-                //    file.Path
-                treeStore.AppendValues(node);
+                PackageReferenceNode node = (PackageReferenceNode)m_treeStore.GetValue(iter, 0);              
+                node.State = !node.State;
+
+                var packageReference = new TraceLab.Core.PackageSystem.PackageReference(node.Package);
+
+                if (node.State == false) 
+                {
+                    PackagesViewModelHelper.RemoveReference(m_experiment, packageReference);
+                }
+                else if(node.State && !m_experiment.References.Contains(packageReference))
+                {
+                    PackagesViewModelHelper.AddReference(m_experiment, packageReference);
+                }
             }
         }
 
-        void RenderCheckBox(TreeViewColumn column, CellRenderer cell, TreeModel model, TreeIter iter)
+        private void BuildModel()
         {
-            PackageReferenceNode node = (PackageReferenceNode) model.GetValue(iter, 0);
-            CellRendererToggle toggle = (cell as CellRendererToggle);
-            toggle.Active = node.State;
+            foreach (IPackage package in PackageManager.Instance)
+            {
+                bool initialState = m_experiment.References.Any( (p) => p.ID.Equals(package.ID));
+                PackageReferenceNode node = new PackageReferenceNode(package, initialState);
+                m_treeStore.AppendValues(node);
+            }
         }
 
-        void RenderName(TreeViewColumn column, CellRenderer cell, TreeModel model, TreeIter iter)
+        private void RenderIncludeCheckBox(TreeViewColumn layout, CellRenderer cell, TreeModel model, TreeIter iter)
+        {
+            PackageReferenceNode node = (PackageReferenceNode)model.GetValue(iter, 0);
+            (cell as CellRendererToggle).Active = node.State;
+        }
+
+        private void RenderName(TreeViewColumn column, CellRenderer cell, TreeModel model, TreeIter iter)
         {
             PackageReferenceNode node = (PackageReferenceNode) model.GetValue(iter, 0);
             (cell as CellRendererText).Text = node.Name;
         }
+
+        private IExperiment m_experiment;
+        private Gtk.TreeStore m_treeStore;
     }
 }
 

@@ -52,6 +52,7 @@
     <WarningLevel>4</WarningLevel>
     <Optimize>false</Optimize>
     <ConsolePause>false</ConsolePause>
+    <Commandlineparameters>-base:C:\p4root\relab\branches\aczauderna\TraceLab\bin\DebugMono</Commandlineparameters>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <OutputPath>bin\Release\</OutputPath>
@@ -102,6 +103,7 @@
     <OutputPath>bin\DebugMono</OutputPath>
     <DefineConstants>TRACE;DEBUG;MONO;MONO_DEV</DefineConstants>
     <WarningLevel>4</WarningLevel>
+    <Commandlineparameters>-base:C:\p4root\relab\branches\aczauderna\TraceLab\bin\DebugMono</Commandlineparameters>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release Mono|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

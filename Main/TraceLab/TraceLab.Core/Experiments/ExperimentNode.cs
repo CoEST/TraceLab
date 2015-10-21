@@ -59,7 +59,10 @@ namespace TraceLab.Core.Experiments
         public string ID
         {
             get { return m_id; }
-            protected set
+            // HERZUM SPRINT 2.3 TLAB-56 TLAB-57 TLAB-58 TLAB-59
+            // protected set
+            set
+            // END HERZUM SPRINT 2.3 TLAB-56 TLAB-57 TLAB-58 TLAB-59
             {
                 if (m_id != value)
                 {
@@ -133,14 +136,25 @@ namespace TraceLab.Core.Experiments
 
         void m_data_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
+ 
             if (e.PropertyName == "IsModified")
             {
                 NotifyPropertyChanged("IsModified");
+
             }
             if (e.PropertyName == "ErrorMessage")
             {
                 SetError(Data.ErrorMessage);
             }
+
+            // HERZUM SPRINT 5.3 TLAB-251
+            CompositeComponentGraph subgraph = Owner as CompositeComponentGraph;
+            if (subgraph != null) {
+                subgraph.IsModified = true;
+                if (subgraph.OwnerNode != null)
+                    subgraph.OwnerNode.NotifyPropertyChanged (e.PropertyName);
+            }
+            // END HERZUM SPRINT 5.3 TLAB-251
         }
 
         public virtual bool IsModified
@@ -212,9 +226,10 @@ namespace TraceLab.Core.Experiments
             get { return m_owner; }
             set
             {
-                if (m_owner != null)
-                    throw new InvalidOperationException("ExperimentNode must have owning experiment!");
-
+                // HERZUM SPRINT 2.3 TLAB-56 TLAB-57 TLAB-58 TLAB-59
+                //if (m_owner != null)
+                //    throw new InvalidOperationException("ExperimentNode must have owning experiment!");
+                // END HERZUM SPRINT 2.3 TLAB-56 TLAB-57 TLAB-58 TLAB-59
                 m_owner = value;
             }
         }

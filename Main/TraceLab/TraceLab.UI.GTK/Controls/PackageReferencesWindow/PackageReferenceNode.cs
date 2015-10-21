@@ -21,13 +21,23 @@ namespace TraceLab.UI.GTK
 {
     public class PackageReferenceNode
     {
-        public string Name { get; set; }
+        public string Name 
+        { 
+            get { return Package.Name; }
+        }
+
+        public IPackage Package
+        {
+            get;
+            private set;
+        }
+
         public bool State { get; set; }
 
-        public PackageReferenceNode (IPackage package)
+        public PackageReferenceNode (IPackage package, bool initialState)
         {
-            Name = package.Name;
-            State = (new Random().Next(1) == 1);
+            Package = package;
+            State = initialState;
         }
     }
 }

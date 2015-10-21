@@ -25,7 +25,6 @@ using TraceLab.Core.PackageSystem;
 using TraceLab.Core.Settings;
 using TraceLab.Core.ViewModels;
 using TraceLab.Core.Workspaces;
-using TraceLab.Core.ViewModels;
 
 namespace TraceLab
 {
@@ -35,16 +34,14 @@ namespace TraceLab
 
         public void Run(string[] args)
         {
-            Initialize(args);
+            Initialize (args);
 
-            //ApplicationViewModel.RegisteredUser = KeyValidator.ValidateKey(UserDirectory);
-            ApplicationViewModel.RegisteredUser = "Coest";
+            ApplicationViewModel.RegisteredUser = KeyValidator.ValidateKey (UserDirectory);
 
-            if (InitViewModel())
-            {
-                RunUI();
-            }
-
+            if (InitViewModel ()) {
+                RunUI ();
+            } 
+                      
         }
 
         protected abstract void RunUI();
@@ -64,7 +61,8 @@ namespace TraceLab
             PackagesToInstall = new List<string>();
 
             Processor = new CommandLineProcessor();
-
+        //    SetExperimentFileToBeOpen ( "C:"+System.IO.Path.DirectorySeparatorChar+"Users"+Path.DirectorySeparatorChar+"emanuele.forlano"+Path.DirectorySeparatorChar+"Desktop"+Path.DirectorySeparatorChar+"traelab-deploy"+Path.DirectorySeparatorChar+"WINDOWS"+Path.DirectorySeparatorChar+"twhile.teml");
+          
             Processor.Commands["o"] = new Action<string>(SetExperimentFileToBeOpen);
             Processor.Commands["open"] = new Action<string>(SetExperimentFileToBeOpen);
 
@@ -119,10 +117,11 @@ namespace TraceLab
         /// <param name="value">The value.</param>
         private static void SetExperimentFileToBeOpen(string value)
         {
-            if (string.IsNullOrEmpty(value))
+         if (string.IsNullOrEmpty(value))
                 throw new ArgumentNullException("value");
 
             ExperimentFileToBeOpen = value;
+           
         }
 
         private static void SetComponentsDirectory(string value)
@@ -427,7 +426,8 @@ namespace TraceLab
             // Install any packages that were queued at the start
             var packagesDir = settings.PackagePaths.LastOrDefault();
             if (PackagesToInstall.Count > 0)
-            {
+                UnpackNewPackagesIn ((string)packagesDir);
+                /*
                 if (UnpackNewPackagesIn((string)packagesDir))
                 {
                     System.Windows.Forms.MessageBox.Show("New package(s) have been installed. TraceLab needs to be re-launched.",
@@ -447,6 +447,12 @@ namespace TraceLab
                 }
             }
 
+            if (TraceLabSDK.RuntimeInfo.IsRunInMono) {
+                //  we force Tracelab execution because if Tracelab runs in mono when one opens a package mono.exe remains in execution 
+                // also after the unpacking operation is done
+                startTraceLab = true;
+            }
+*/
             if (startTraceLab)
             {
                 // Append all the type directories from the package locations.
@@ -462,12 +468,14 @@ namespace TraceLab
                 Workspace.RegisterPackageTypes(componentLibrary.PackageTypeDirectories);
                 MainViewModel.ComponentLibraryViewModel = componentLibrary;
                 MainViewModel.BenchmarkWizard = new BenchmarkWizard(BenchmarkDirectory, ComponentsLibrary.Instance, Workspace, typeDirectories, UserDirectory, settings);
-
+                           
                 if (String.IsNullOrEmpty(ExperimentFileToBeOpen) == false || string.IsNullOrEmpty(settings.DefaultExperiment) == false)
                 {
                     string file = string.IsNullOrEmpty(ExperimentFileToBeOpen) ? settings.DefaultExperiment : ExperimentFileToBeOpen;
                     try
                     {
+                        var w2 = new List<string>(settings.TypePaths.Select(path => path.Path));
+                        ComponentsLibrary.Instance.Rescan(PackageManager.Instance, w2, false);
                         MainViewModel.Experiment = TraceLab.Core.Experiments.ExperimentManager.Load(file, ComponentsLibrary.Instance);
                         RecentExperimentsHelper.UpdateRecentExperimentList(TraceLab.Core.Settings.Settings.RecentExperimentsPath, file);
                     }
@@ -479,13 +487,14 @@ namespace TraceLab
                         if (!TraceLabSDK.RuntimeInfo.IsRunInMono)
                         {
                             System.Windows.Forms.MessageBox.Show(msg, "Experiment Loading Failure", 
-                                System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Exclamation);
+                                                                 System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Exclamation);
                         }
                     }
                 }
             }
-
+         
             return startTraceLab;
+
         }
 
         private static TraceLab.Core.Workspaces.Workspace InitWorkspace(IEnumerable<string> typeDirectories, string workspaceDirectory, string cacheDirectory)
@@ -508,7 +517,7 @@ namespace TraceLab
             return workspace;
         }
 
-        private static TraceLab.Core.ViewModels.ComponentLibraryViewModel CreateComponentLibraryViewModel(PackageManager pkgManager, Settings settings, string decisionDirectory, string dataRoot)
+        private static TraceLab.Core.ViewModels.ComponentLibraryViewModel CreateComponentLibraryViewModel(PackageManager pkgManager,  TraceLab.Core.Settings.Settings settings, string decisionDirectory, string dataRoot)
         {
             ComponentsLibrary.Init(settings.ComponentPaths);
 
@@ -565,7 +574,7 @@ namespace TraceLab
 
                         if (Directory.Exists(pkgDirectory))
                         {
-                            var result = System.Windows.Forms.MessageBox.Show("Package \"" + pkg.Name + "\" already exists.  Would you like to overwrite it?",
+                           var result = System.Windows.Forms.MessageBox.Show("Package \"" + pkg.Name + "\" already exists.  Would you like to overwrite it?",
                                             "Package Overwrite Confirmation", System.Windows.Forms.MessageBoxButtons.YesNo,
                                             System.Windows.Forms.MessageBoxIcon.Question);
 

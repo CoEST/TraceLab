@@ -35,6 +35,15 @@ namespace TraceLab.UI.GTK
         public NodeConnectionControlFactory NodeConnectionControlFactory { get; private set; }
         public NodeControlFactory NodeControlFactory { get; private set; }
 
+        static ApplicationContext()
+        {
+            //init additional WPF extension to check for UI
+            TraceLab.Core.Workspaces.WorkspaceUIAssemblyExtensions.Extensions = 
+                new string[] { ".UI.GTK.dll", 
+                TraceLab.Core.Workspaces.WorkspaceUIAssemblyExtensions.DEFAULT_EXTENSION 
+            };
+        }
+
         public ApplicationContext(ApplicationViewModel applicationViewModel)
         {
             Application = applicationViewModel;

@@ -17,6 +17,9 @@
 using System;
 using TraceLab.Core.Experiments;
 using Gtk;
+using System.Xml.Serialization;
+using System.Xml;
+using System.IO;
 
 namespace TraceLab.UI.GTK
 {
@@ -72,7 +75,13 @@ namespace TraceLab.UI.GTK
                 {
                     try
                     {
-                        ExperimentManager.Save(experiment, file);
+                        string extension = file.Substring (file.Length - 6);
+
+                        if (extension.Equals (".temlx")) {
+                           ExperimentManager.SaveToCrypt(experiment, file);
+                        } else {
+                            ExperimentManager.Save(experiment, file);
+                        }
                     }
                     catch (System.IO.IOException e)
                     {

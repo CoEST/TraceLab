@@ -24,26 +24,51 @@ using TraceLabSDK;
 namespace TraceLab.Core.Components
 {
     /// <summary>
-    /// A private class whose job is to load a BaseComponent
-    /// Sets the configuration, when loading the component
+    /// A private class whose job is to load and construct an instance object of a component class - an actual 
+    /// object that contains Compute method that is executed during experiment run.
+    /// 
+    /// ComponentLoader is used when the experiment is being prepared to run.
+    /// 
+    /// It uses the components metadata and corresponding definition to locate an assembly that must be loaded,
+    /// and classname that must be constructed. 
+    /// 
+    /// Component loader sets the configuration values in the constructed component based on its configuration metadata.
     /// </summary>
     class ComponentLoader : MarshalByRefObject
     {
         private ComponentMetadata m_metadata;
         private IWorkspaceInternal m_workspace;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ComponentLoader"/> class.
+        /// 
+        /// Note, that this component loader is constructed in the secondary App Domain via CreateInstanceAndUnwrap.
+        /// (See LoadComponent method in the ComponentsLibrary).
+        /// It is essential that this is done in another App Domain, so that the assembly can be unloaded, after
+        /// experiment execution is completed. 
+        /// </summary>
+        /// <param name="metadata">The metadata.</param>
+        /// <param name="workspace">The workspace.</param>
         public ComponentLoader(ComponentMetadata metadata, IWorkspaceInternal workspace)
         {
             m_metadata = metadata;
             m_workspace = workspace;
         }
 
+        /// <summary>
+        /// Gets the loaded component. This property holds the constructed component object,
+        /// once the Load method is completed
+        /// </summary>
         public IComponent LoadedComponent
         {
             get;
             private set;
         }
 
+        /// <summary>
+        /// Loads the component based on the provided component metadata. 
+        /// </summary>
+        /// <param name="logger">The logger - logger provided for the component.</param>
         public void Load(ComponentLogger logger)
         {
             if (LoadedComponent == null)

@@ -28,6 +28,18 @@ namespace TraceLab.UI.GTK
     {
         private PropertyGrid propertyGrid;
 
+        // HERZUM SPRINT 2.4: TLAB-162
+        private ApplicationContext m_applicationContext;
+        public ComponentInfoPanel (ApplicationContext applicationContext) : this()
+        {
+            m_applicationContext = applicationContext;
+
+            // HERZUM SPRINT 5.0: TLAB-238 TLAB-243
+            propertyGrid.DataRoot = System.IO.Path.GetDirectoryName(m_applicationContext.Application.Experiment.ExperimentInfo.FilePath);
+            // END // HERZUM SPRINT 5.0: TLAB-238 TLAB-243
+        }
+        // END HERZUM SPRINT 2.4: TLAB-162
+
         public ComponentInfoPanel()
         { 
             this.Build();
@@ -40,6 +52,15 @@ namespace TraceLab.UI.GTK
             this.configurationExpander.Add(propertyGrid);
             this.configurationExpander.ShowAll();
             this.errorTextView.InitColorTags();
+            // HERZUM SPRINT 4.2: TLAB-225
+            this.IOExpander.Expanded = false;
+            this.configurationExpander.Expanded = false;
+            this.componentInfoExpander.Expanded = false;
+            propertyGrid.ShowToolbar = false;
+            propertyGrid.PropertySort=PropertySort.Alphabetical;
+            this.ResizeMode = ResizeMode.Immediate;
+            // END HERZUM SPRINT 4.2: TLAB-225
+
         }
 
         private BasicNodeControl m_component;
@@ -64,6 +85,9 @@ namespace TraceLab.UI.GTK
                     SetConfigurationInfo(isEditable);
                     SetInputInfo(isEditable);
                     SetOutputInfo(isEditable);
+                    // HERZUM BUG FIX: alignment input-output TLAB-255
+                    ResizeInputOutputInfo ();
+                    // END HERZUM BUG FIX: alignment input-output TLAB-255
                     RefreshError();
 
                     m_component.ExperimentNode.ErrorChanged += HandleErrorChanged;
@@ -127,8 +151,14 @@ namespace TraceLab.UI.GTK
             }
         }
 
+        // HERZUM BUG FIX: alignment input-output TLAB-255
+        private int maxLengthInput=0;
+        private int maxLengthInputMapped=0;
+        TreeViewColumn t_Input, t_InputMapped,  t_InputType;
+        // END HERZUM BUG FIX: alignment input-output TLAB-255
         private void SetInputInfo(bool isEditable) 
         {
+            Gdk.Color colorBack;
             if(m_metadata.IOSpec.Input.Count > 0)
             {
                 //set columns in input and output views
@@ -136,16 +166,42 @@ namespace TraceLab.UI.GTK
 
                 Gtk.CellRendererText textRenderer = new Gtk.CellRendererText();
 
+                // HERZUM SPRINT 4.2: TLAB-226
+                // HERZUM SPRINT 5: TLAB-242
+                colorBack = new  Gdk.Color (245, 245, 245);
+                textRenderer.CellBackgroundGdk = colorBack;
+                // END HERZUM SPRINT 5: TLAB-242
+                //textRenderer.CellBackground = "grey";
+                // END HERZUM SPRINT 4.2: TLAB-226
+
                 //inputs
-                this.inputView.AppendColumn("Input", textRenderer, "text", 0);
-                this.inputView.AppendColumn(CreateInputMappingColumnWithComboBox(inputStore, "Mapped to"));
-                this.inputView.AppendColumn("Type", textRenderer, "text", 2);
+                // HERZUM BUG FIX: alignment input-output TLAB-255
+                //HERZUM SPRINT 5.4 TLAB-241;
+                t_Input = this.inputView.AppendColumn( Convert.ToChar (187) + " Input", textRenderer, "text", 0);
+                t_Input.Resizable = true;
+                //END HERZUM SPRINT 5.4 TLAB-241
+                t_InputMapped=CreateInputMappingColumnWithComboBox (inputStore, "Mapped to");
+                t_InputMapped.Resizable = true;
+                inputView.AppendColumn(t_InputMapped);
+                t_InputType=this.inputView.AppendColumn("Type", textRenderer, "text", 2);
+                t_InputType.Resizable = true;
+                //END HERZUM BUG FIX TLAB-255
 
                 //prepare input and output store
+                // HERZUM BUG FIX: alignment input-output TLAB-255
+                int currentLengthInput=0;
+                int currentLengthInputMapped=0;
                 foreach(IOItem item in m_metadata.IOSpec.Input.Values) 
                 {
                     inputStore.AddNode(new IOItemNode(item));
+                    currentLengthInput = item.IOItemDefinition.Name.Length;
+                    currentLengthInputMapped = item.MappedTo.Length;
+                    if (currentLengthInput>maxLengthInput)
+                        maxLengthInput = currentLengthInput;
+                    if (currentLengthInputMapped > maxLengthInputMapped)
+                        maxLengthInputMapped = currentLengthInputMapped;
                 }
+                // END HERZUM BUG FIX: alignment input-output TLAB-255
 
                 inputView.NodeStore = inputStore;
 
@@ -172,6 +228,10 @@ namespace TraceLab.UI.GTK
             {
                 IOItemNode item = (IOItemNode)selection.SelectedNode;
                 ExperimentHelper.HighlightIOInExperiment(m_experimentOwner, item.MappedTo);
+
+                // HERZUM BUG FIX TLAB-254.3  
+                propertyGrid.UnSelect ();
+                // END HERZUM BUG FIX TLAB-254.3
             }
         }
 
@@ -181,13 +241,18 @@ namespace TraceLab.UI.GTK
             ExperimentHelper.HighlightIOInExperiment(m_experimentOwner, mapping);
         }
 
+
+        // HERZUM BUG FIX: alignment input-output TLAB-255
+        private int maxLengthOutput=0;
+        private int maxLengthOutputAs=0;
+        TreeViewColumn t_Output, t_OutputAs,  t_OutputType;
+        // END HERZUM BUG FIX: alignment input-output TLAB-255
         private void SetOutputInfo(bool isEditable) 
         {
             if(m_metadata.IOSpec.Output.Count > 0)
             {
                 //set columns in input and output views
                 Gtk.NodeStore outputStore = new Gtk.NodeStore(typeof(IOItemNode));
-                
                 Gtk.CellRendererText textRenderer = new Gtk.CellRendererText();
 
                 Gtk.CellRendererText editableTextRenderer = new CellRendererText();
@@ -197,14 +262,39 @@ namespace TraceLab.UI.GTK
                     n.MappedTo = args.NewText;
                     RefreshIOHighlightInExperiment(n.MappedTo);
                 };
-                
-                this.outputView.AppendColumn("Output", textRenderer, "text", 0);
-                this.outputView.AppendColumn("Output as", editableTextRenderer, "text", 1);
-                this.outputView.AppendColumn("Type", textRenderer, "text", 2);
 
+                // HERZUM SPRINT 4.2: TLAB-226
+                //textRenderer.CellBackground = "grey";
+                // HERZUM SPRINT 5: TLAB-242
+                Gdk.Color colorBack = new  Gdk.Color (245, 245, 245);
+                textRenderer.CellBackgroundGdk = colorBack;
+                // END HERZUM SPRINT 5: TLAB-242
+                // END HERZUM SPRINT 4.2: TLAB-226 
+
+                // HERZUM BUG FIX: alignment input-output TLAB-255
+                //HERZUM SPRINT 5.4 TLAB-241
+                t_Output = this.outputView.AppendColumn(Convert.ToChar(171) + " Output", textRenderer, "text", 0);
+                t_Output.Resizable = true;
+                //END HERZUM SPRINT 5.4 TLAB-241
+                t_OutputAs=this.outputView.AppendColumn("Output as", editableTextRenderer, "text", 1);
+                t_OutputAs.Resizable = true;
+                t_OutputType=this.outputView.AppendColumn("Type", textRenderer, "text", 2);
+                t_OutputType.Resizable = true;
+                // END HERZUM BUG FIX: alignment input-output TLAB-255
+
+                int currentLengthOutput;
+                int currentLengthOutputAs;
                 foreach(IOItem item in m_metadata.IOSpec.Output.Values) 
                 {
                     outputStore.AddNode(new IOItemNode(item));
+                    // HERZUM BUG FIX: alignment input-output TLAB-255
+                    currentLengthOutput = item.IOItemDefinition.Name.Length;
+                    currentLengthOutputAs = item.MappedTo.Length;
+                    if (currentLengthOutput>maxLengthOutput)
+                        maxLengthOutput = currentLengthOutput;
+                    if (currentLengthOutputAs>maxLengthOutputAs)
+                        maxLengthOutputAs = currentLengthOutputAs;
+                    // END HERZUM BUG FIX: alignment input-output TLAB-255
                 }
 
                 outputView.NodeStore = outputStore;
@@ -220,6 +310,43 @@ namespace TraceLab.UI.GTK
                 outputView.Visible = false;
             }
         }
+
+        // HERZUM BUG FIX: alignment input-output TLAB-255
+        private void ResizeInputOutputInfo() 
+        {
+            if (maxLengthOutput < maxLengthInput)
+            {
+                if (outputView.Columns.Length > 0)
+                    outputView.Columns [0].MinWidth = maxLengthInput * 7 + 15;
+                if (inputView.Columns.Length > 0)
+                    inputView.Columns [0].MinWidth = maxLengthInput * 7 + 15;
+            }
+            else
+                {
+                if (inputView.Columns.Length>0)
+                    inputView.Columns [0].MinWidth = maxLengthOutput * 7 + 15;
+                if (outputView.Columns.Length>0)
+                    outputView.Columns [0].MinWidth = maxLengthOutput * 7 + 15;
+                }
+
+
+            if (maxLengthOutputAs < maxLengthInputMapped)
+            {
+                if (outputView.Columns.Length > 0)
+                    outputView.Columns [1].MinWidth = maxLengthInputMapped * 7 + 15;
+                if (inputView.Columns.Length > 0)
+                    inputView.Columns [1].MinWidth = maxLengthInputMapped * 7 + 15;
+            }
+            else
+            {
+                if (inputView.Columns.Length>0)
+                    inputView.Columns [1].MinWidth = maxLengthOutputAs * 7 + 15;
+                if (outputView.Columns.Length>0)
+                    outputView.Columns [1].MinWidth = maxLengthOutputAs * 7 + 15;
+            }
+        }
+        // END HERZUM BUG FIX: alignment input-output TLAB-255
+
 
         /// <summary>
         /// Creates the input mapping column with combo box.
@@ -252,7 +379,10 @@ namespace TraceLab.UI.GTK
                 IOItemNode currentItem = (IOItemNode)inputStore.GetNode (new TreePath (args.Path));
                 ExperimentNode currentNode = m_component.ExperimentNode;
                 string currentType = currentItem.Type;
-                InputMappings availableInputMappingsPerNode = new InputMappings (currentNode.Owner);
+                // HERZUM SPRINT 2.4: TLAB-162
+                //InputMappings availableInputMappingsPerNode = new InputMappings (currentNode.Owner);
+                InputMappings availableInputMappingsPerNode = new InputMappings (m_applicationContext.Application.Experiment);
+                // END HERZUM SPRINT 2.4: TLAB-162
                 if (currentNode != null && availableInputMappingsPerNode.ContainsMappingsForNode (currentNode)) {
                     foreach (string incomingOutput in availableInputMappingsPerNode [currentNode].Keys) {
                         if (string.Equals (currentType, availableInputMappingsPerNode [currentNode] [incomingOutput])) {
@@ -299,6 +429,108 @@ namespace TraceLab.UI.GTK
             //update text in the control
             this.Component.Text = m_metadata.Label;
         }
+
+
+        // HERZUM SPRINT 4.2: TLAB-225
+        // HERZUM SPRINT 5.1: TLAB-225
+        int wPanel, hPanel, hIO=0;
+        protected void OnIOExpanderActivated (object sender, EventArgs e)
+        {
+            System.Collections.IEnumerator enumerator;
+            if (hIO==0)
+            {
+                if (inputView.NodeStore!=null)
+                {
+                    // HERZUM BUG FIX TLAB-254
+                    hIO += 30;
+                    // END HERZUM BUG FIX TLAB-254
+                    enumerator =inputView.NodeStore.GetEnumerator();
+                    while (enumerator.MoveNext())
+                        hIO += 25;
+                }
+                if (outputView.NodeStore!=null)
+                {
+                    // HERZUM BUG FIX TLAB-254
+                    hIO += 30;
+                    // END HERZUM BUG FIX TLAB-254
+                    enumerator =outputView.NodeStore.GetEnumerator();
+                    while (enumerator.MoveNext())
+                        hIO += 25;
+                }
+            }
+            GdkWindow.GetSize(out wPanel, out hPanel);
+            if (IOExpander.Expanded)
+            {
+                GdkWindow.Resize(wPanel,hPanel+hIO);
+            }
+            else
+            {
+                if (configurationExpander.Visible && !configurationExpander.Expanded && componentInfoExpander.Visible && !componentInfoExpander.Expanded)
+                    GdkWindow.Resize (600, 100);
+                else
+                    GdkWindow.Resize (wPanel, hPanel - hIO);
+            }
+            //throw new NotImplementedException ();
+        }
+
+
+        int hConf=0;
+        protected void OnConfigurationExpanderActivated (object sender, EventArgs e)
+        {
+            if (hConf==0)
+            {
+                // HERZUM BUG FIX TLAB-254
+                //hConf = 10;
+                // END HERZUM BUG FIX TLAB-254
+                foreach (Gtk.Object obj in configurationExpander.Children)
+                    if (obj is PropertyGrid)
+                        //hConf += ((PropertyGrid)obj).CountPropertyGrid ()*27;  
+                        hConf += ((PropertyGrid)obj).CountPropertyGrid ()*25;                
+            }
+
+            GdkWindow.GetSize (out wPanel, out hPanel);
+            if (configurationExpander.Expanded) {
+                GdkWindow.Resize (wPanel, hPanel + hConf);
+            } else {
+                if (componentInfoExpander.Visible && !componentInfoExpander.Expanded && IOExpander.Visible && !IOExpander.Expanded)
+                    GdkWindow.Resize (600, 100);
+                else
+                    GdkWindow.Resize (wPanel, hPanel - hConf);
+            }
+            //throw new NotImplementedException ();
+        }
+
+
+        int wInfo=0, hInfo=0, hDesc=0; 
+        protected void OnComponentInfoExpanderActivated (object sender, EventArgs e)
+        {
+            if (wInfo==0 || hInfo==0)
+            {
+                componentInfoExpander.GdkWindow.GetSize (out wInfo, out hInfo);
+                hInfo = hInfo - hConf - hIO;
+                if (descriptionValue.Visible) {
+                    // HERZUM BUG FIX TLAB-254
+                    //hDesc = (int)(((descriptionValue.Text.Length / 50)) + 1 * 20) + 30;   
+                    hDesc = (int)(((descriptionValue.Text.Length / 50) + 1) * 10+5);     
+                    // END HERZUM BUG FIX TLAB-254
+                }
+            }
+
+            GdkWindow.GetSize (out wPanel, out hPanel);
+            if (componentInfoExpander.Expanded) {
+                GdkWindow.Resize (wPanel, hPanel + hInfo + hDesc);
+               
+            } else {
+                if (configurationExpander.Visible && !configurationExpander.Expanded && IOExpander.Visible && !IOExpander.Expanded)
+                    GdkWindow.Resize (600, 100);
+                else
+                    GdkWindow.Resize(wPanel,hPanel - hInfo -  hDesc);
+            }
+            //throw new NotImplementedException ();
+        }
+        // END HERZUM SPRINT 5.1: TLAB-225
+        // END HERZUM SPRINT 4.2: TLAB-225
+
     }
 }
 

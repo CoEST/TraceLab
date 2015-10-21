@@ -67,6 +67,29 @@ namespace TraceLab.Core.Experiments
             }
         }
 
+        // HERZUM SPRINT 1.1 MAX    
+        /// <summary>
+        /// Node height
+        /// </summary>
+
+        private String m_widget_status;
+
+        [XmlAttribute("WidgetStatus")]
+        public String WidgetStatus
+        {
+            get { return m_widget_status; }
+            set
+            {
+                if (m_widget_status != value)
+                {
+                    m_widget_status = value;
+                    NotifyPropertyChanged("WidgetStatus");
+                    IsModified = true;
+                }
+            }
+        }
+        // END // HERZUM SPRINT 1.1 MAX
+
         public override void ReadXml(System.Xml.XmlReader reader)
         {
             ReadXmlVertexData(reader, (r) =>
@@ -75,6 +98,9 @@ namespace TraceLab.Core.Experiments
                 Y = double.Parse(r.GetAttribute("Y"), CultureInfo.CurrentCulture);
                 Width = double.Parse(r.GetAttribute("Width"), CultureInfo.CurrentCulture);
                 Height = double.Parse(r.GetAttribute("Height"), CultureInfo.CurrentCulture);
+                // HERZUM SPRINT 1.1 MAX
+                WidgetStatus = r.GetAttribute("WidgetStatus");
+                // END HERZUM SPRINT 1.1 MAX
             });
         }
 
@@ -86,6 +112,9 @@ namespace TraceLab.Core.Experiments
                 w.WriteAttributeString("Y", Y.ToString(CultureInfo.CurrentCulture));
                 w.WriteAttributeString("Width", Width.ToString(CultureInfo.CurrentCulture));
                 w.WriteAttributeString("Height", Height.ToString(CultureInfo.CurrentCulture));
+                // HERZUM SPRINT 1.1 MAX
+                w.WriteAttributeString("WidgetStatus", WidgetStatus);
+                // END HERZUM SPRINT 1.1 MAX
             });
         }
 
@@ -96,6 +125,9 @@ namespace TraceLab.Core.Experiments
             clone.Y = Y;
             clone.Width = Width;
             clone.Height = Height;
+            // HERZUM SPRINT 1.1 MAX
+            clone.WidgetStatus = WidgetStatus;
+            // END HERZUM SPRINT 1.1 MAX
             clone.Metadata = Metadata.Clone();
 
             clone.m_isInitialized = m_isInitialized;

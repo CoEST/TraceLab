@@ -23,7 +23,7 @@ namespace TraceLab.UI.GTK
 		private global::Gtk.Label labelOnlineResources;
 		private global::Gtk.NodeView videoTutorialsTreeView;
 		private global::Gtk.Label labelVideoTutorials;
-		
+
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);

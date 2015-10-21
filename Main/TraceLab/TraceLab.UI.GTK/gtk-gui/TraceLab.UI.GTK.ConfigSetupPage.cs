@@ -8,7 +8,7 @@ namespace TraceLab.UI.GTK
 		private global::Gtk.VBox vbox2;
 		private global::Gtk.TextView textview1;
 		private global::Gtk.TreeView configView;
-		
+
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);

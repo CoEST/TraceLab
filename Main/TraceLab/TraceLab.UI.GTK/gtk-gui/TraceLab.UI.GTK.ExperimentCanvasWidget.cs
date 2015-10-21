@@ -15,7 +15,7 @@ namespace TraceLab.UI.GTK
 		private global::Gtk.HSeparator hseparator1;
 		private global::Gtk.ToggleButton selectionToolButton;
 		private global::Gtk.ToggleButton panToolButton;
-		
+
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
@@ -59,20 +59,23 @@ namespace TraceLab.UI.GTK
 			this.vbox1.Spacing = 6;
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.zoomScale = new global::Gtk.VScale (null);
+			this.zoomScale.HeightRequest = 300;
 			this.zoomScale.CanFocus = true;
 			this.zoomScale.Name = "zoomScale";
 			this.zoomScale.Inverted = true;
-			this.zoomScale.Adjustment.Lower = 0.1;
-			this.zoomScale.Adjustment.Upper = 3;
-			this.zoomScale.Adjustment.PageIncrement = 0.1;
-			this.zoomScale.Adjustment.StepIncrement = 0.01;
-			this.zoomScale.Adjustment.Value = 1;
+			this.zoomScale.Adjustment.Lower = 0.1D;
+			this.zoomScale.Adjustment.Upper = 3D;
+			this.zoomScale.Adjustment.PageIncrement = 0.1D;
+			this.zoomScale.Adjustment.StepIncrement = 0.01D;
+			this.zoomScale.Adjustment.Value = 1D;
 			this.zoomScale.DrawValue = true;
 			this.zoomScale.Digits = 2;
 			this.zoomScale.ValuePos = ((global::Gtk.PositionType)(3));
 			this.vbox1.Add (this.zoomScale);
 			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.zoomScale]));
 			w4.Position = 0;
+			w4.Expand = false;
+			w4.Fill = false;
 			// Container child vbox1.Gtk.Box+BoxChild
 			this.scaleToOriginalSizeButton = new global::Gtk.Button ();
 			this.scaleToOriginalSizeButton.TooltipMarkup = "Zoom to orginal 1:1 scale";

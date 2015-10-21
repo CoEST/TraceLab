@@ -27,6 +27,11 @@ using System.Linq;
 using Gdk;
 using Gtk;
 
+// HERZUM SPRINT 2.3 TLAB-60
+using TraceLab.Core.Experiments;
+using TraceLab.Core.Components;
+// END HERZUM SPRINT 2.3 TLAB-60
+
 namespace TraceLab.UI.GTK
 {
     public class BasicNodeControl: SimpleTextFigure, IComponentControl
@@ -217,7 +222,58 @@ namespace TraceLab.UI.GTK
                 return rect;
             }
         }
-        
+
+
+        // HERZUM SPRINT 2.3 TLAB-60
+        private ScopeNodeBase GetScopeUp(ExperimentNode experimentNode, BaseExperiment experiment, double x, double y){
+            BasicNodeControl componentControl;
+            foreach (ExperimentNode node in experiment.Vertices)
+                if (node is ScopeNodeBase && !node.Equals(experimentNode))
+                    if(m_applicationContext.NodeControlFactory.TryGetNodeControl(node, out componentControl)){                       
+                        ScopeNodeControl scopeNodeControl = componentControl as ScopeNodeControl;
+                        if (scopeNodeControl.ContainsPoint (x, y))
+                            return node as ScopeNodeBase;
+                    }
+            return null;
+        }
+
+        /*
+        private ScopeNodeBase GetScopeUp(ExperimentNode experimentNode, BaseExperiment experiment, double x, double y){
+            BasicNodeControl componentControl;
+            ScopeNodeBase scopeUp = null;
+            ExperimentCanvasPad pad = null;
+            if (experiment == null)
+                return null;
+            foreach (ExperimentNode node in experiment.Vertices)
+                if (node is ScopeNodeBase && !node.Equals(experimentNode))
+                    if(m_applicationContext.NodeControlFactory.TryGetNodeControl(node, out componentControl)){
+                        ScopeBaseMetadata  scopeBaseMetadata  = node.Data.Metadata as ScopeBaseMetadata;
+                        int xMouse = 0;
+                        int yMouse = 0; 
+                        BasicNodeControl internalComponentControl = null;
+                        foreach (ExperimentNode internalNode in scopeBaseMetadata.ComponentGraph.Vertices){
+                            m_applicationContext.NodeControlFactory.TryGetNodeControl(internalNode, out internalComponentControl) ;
+                            break;
+                        } 
+                        if (internalComponentControl == null)
+                            return null;
+                            pad = ExperimentCanvasPadFactory.GetExperimentCanvasPad (m_applicationContext, componentControl);
+                        if (pad == null)
+                            return null;
+                        pad.ExperimentCanvasWidget.GetPointer(out xMouse, out yMouse);
+                        scopeUp = GetScopeUp(experimentNode, scopeBaseMetadata.ComponentGraph as BaseExperiment, xMouse, yMouse);
+                        if (scopeUp != null)
+                            return scopeUp;
+                        ScopeNodeControl scopeNodeControl = componentControl as ScopeNodeControl;
+                        if (scopeNodeControl.ContainsPoint (x, y))
+                            return node as ScopeNodeBase;
+                    }
+            return null;
+        }
+        */
+        // END HERZUM SPRINT 2.3 TLAB-60
+
+
         public override ITool CreateFigureTool(IPrimaryToolDelegator mainTool, IDrawingEditor editor, 
                                                ITool defaultTool, MouseEvent ev)
         {
@@ -227,11 +283,44 @@ namespace TraceLab.UI.GTK
                 //when drag is completed update model data
                 dragTool.DragCompleted += (object sender, EventArgs e) =>  
                 {
+
                     this.ExperimentNode.Data.X = this.DisplayBox.X;
                     this.ExperimentNode.Data.Y = this.DisplayBox.Y;
+
+                    // HERZUM SPRINT 2.3 TLAB-60
+                    int xMouse = 0;
+                    int yMouse = 0; 
+                    ScopeNodeBase scopeNode = GetScopeUp(ExperimentNode, ExperimentNode.Owner as BaseExperiment, ExperimentNode.Data.X, ExperimentNode.Data.Y);
+                    if (scopeNode !=  null){
+                        ScopeBaseMetadata  scopeBaseMetadata  = scopeNode.Data.Metadata as ScopeBaseMetadata;
+                        BaseExperiment experimentTarget = scopeBaseMetadata.ComponentGraph; 
+                        BasicNodeControl componentControl = null;
+                        ExperimentCanvasPad pad = null;
+                        foreach (ExperimentNode node in scopeBaseMetadata.ComponentGraph.Vertices){
+                            m_applicationContext.NodeControlFactory.TryGetNodeControl(node, out componentControl) ;
+                            break;
+                        } 
+                        if (componentControl!= null)
+                            pad = ExperimentCanvasPadFactory.GetExperimentCanvasPad(m_applicationContext, componentControl);
+
+                        if (pad != null){
+                            pad.ExperimentCanvasWidget.GetPointer(out xMouse, out yMouse);
+                            // HERZUM SPRINT 2.4 TLAB-56 TLAB-57 TLAB-58 TLAB-59 CLASS
+                            //TraceLab.Core.Experiments.Clipboard.Cut(ExperimentNode.Owner as BaseExperiment);
+                            //TraceLab.Core.Experiments.Clipboard.Paste(experimentTarget,xMouse,yMouse);
+
+                            DragClipboard.Cut(m_applicationContext, ExperimentNode.Owner as BaseExperiment);
+                            DragClipboard.Paste(m_applicationContext, experimentTarget,xMouse,yMouse);
+                            // END HERZUM SPRINT 2.4 TLAB-56 TLAB-57 TLAB-58 TLAB-59 CLASS
+                            pad.DisplayAddedSubgraph(experimentTarget);
+                        }
+
+                    }
+                    // END HERZUM SPRINT 2.3 TLAB-60
+
+
                 };
             }
-            
             return base.CreateFigureTool(mainTool, editor, defaultTool, ev);
         }
 
@@ -264,6 +353,25 @@ namespace TraceLab.UI.GTK
             set;
         }
 
+
+        // HERZUM SPRINT 2.0: TLAB-136-2
+        public virtual void CompositeComponentNoSelected(BasicNodeControl focusControl) 
+        {
+            if (!this.Equals(focusControl)){
+                ExperimentCanvasPad pad = ExperimentCanvasPadFactory.GetExperimentCanvasPad(m_applicationContext, this);
+                ExperimentCanvasPad pad2 = ExperimentCanvasPadFactory.GetExperimentCanvasPad(m_applicationContext, focusControl);
+                if (!pad.Equals(pad2)){
+                    pad.ExperimentCanvasWidget.ExperimentCanvas.View.RemoveFromSelection(this);
+                    this.IsSelected = false;
+                } 
+            }
+        }
+        // END HERZUM SPRINT 2.0: TLAB-136-2
+
+        //HERZUM SPRINT 2: TLAB-156
+        public virtual void AdaptsZoom(double valueZoom){}
+        //HERZUM END SPRINT 2: TLAB-156
+
         public override bool IsSelected {
             get {
                 return base.IsSelected;
@@ -272,6 +380,24 @@ namespace TraceLab.UI.GTK
                 //update also corresponding value in model experiment node
                 base.IsSelected = value;
                 this.ExperimentNode.IsSelected = value;
+
+                // HERZUM SPRINT 2.0 TLAB-154
+                /* HERZUM SPRINT 2.3 TO DO
+                ExperimentCanvasPad pad = ExperimentCanvasPadFactory.GetExperimentCanvasPad(m_applicationContext, this);
+                pad.ExperimentCanvasWidget.ExperimentCanvas.View.Drawing.Remove (this);
+                pad.ExperimentCanvasWidget.ExperimentCanvas.View.Drawing.Add (this);
+                */
+                // END HERZUM SPRINT 2.3 TO DO
+                // END HERZUM SPRINT 2.0 TLAB-154
+
+
+                // HERZUM SPRINT 2.0 TLAB-136-2
+                BasicNodeControl componentControl;
+                if (value)
+                    foreach (ExperimentNode node in m_applicationContext.Application.Experiment.Vertices)
+                        if (m_applicationContext.NodeControlFactory.TryGetNodeControl (node, out componentControl)) 
+                            componentControl.CompositeComponentNoSelected (this);
+                // END HERZUM SPRINT 2.0 TLAB-136-2
             }
         }
 

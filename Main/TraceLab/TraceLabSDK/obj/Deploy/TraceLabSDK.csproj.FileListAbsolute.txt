@@ -1,3 +1,0 @@
-C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\Deploy\lib\TraceLabSDK.XML
-C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\Deploy\lib\TraceLabSDK.dll
-C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabSDK\obj\Deploy\TraceLabSDK.dll

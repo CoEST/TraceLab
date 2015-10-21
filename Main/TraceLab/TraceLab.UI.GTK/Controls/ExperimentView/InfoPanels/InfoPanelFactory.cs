@@ -18,9 +18,12 @@ using System;
 using System.Collections.Generic;
 using MonoDevelop.Components.Docking;
 using Gtk;
+using TraceLab.Core.Components;
 
 namespace TraceLab.UI.GTK
 {
+
+   
     /// <summary>
     /// Info panel factory - helper class for Main Window responsible for managing
     /// and creating component info panels in the given Dock Frame.
@@ -29,6 +32,10 @@ namespace TraceLab.UI.GTK
     {
         private DockFrame m_mainWindowDockFrame;
         private ApplicationContext m_applicationContext;
+
+        private static string DECISION_INFO_PANEL_TITLE_LABEL = "If construct:";
+        private static string LOOP_INFO_PANEL_TITLE_LABEL = "Loop while:";
+        private static string GOTO_INFO_PANEL_TITLE_LABEL = "Goto construct:";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TraceLab.UI.GTK.InfoPanelFactory"/> class.
@@ -45,6 +52,29 @@ namespace TraceLab.UI.GTK
             //case 1: decision panel
             //must be check first, as it inherits from ComponentControl
             DecisionNodeControl decisionControl = basicComponentControl as DecisionNodeControl;
+            // HERZUM SPRINT 1.1 LOOP
+            // TO DO New LoopInfoPanel
+
+            // HERZUM SPRINT 2.0: TLAB-65
+            /*
+            ChallengeNodeControl challengeControl = basicComponentControl as ChallengeNodeControl;
+            if(challengeControl != null) 
+            {
+                AboutExperimentDialog  dialog = new AboutExperimentDialog(m_applicationContext.MainWindow.);
+                return dialog;
+            }
+            */
+            // END HERZUM SPRINT 2.0: TLAB-65
+
+            LoopNodeControl loopControl = basicComponentControl as LoopNodeControl;
+            if(loopControl != null) 
+            {
+                LoopDecisionInfoPanel panel = new LoopDecisionInfoPanel(m_applicationContext);
+                panel.LoopNodeControl = loopControl;
+                return panel;
+            } 
+
+            // END HERZUM SPRINT 1.1 LOOP
             if(decisionControl != null) 
             {
                 DecisionInfoPanel panel = new DecisionInfoPanel(m_applicationContext);
@@ -53,11 +83,24 @@ namespace TraceLab.UI.GTK
             }
             else 
             {
+                // SPRINT 2: TLAB-98, TLAB-127
                 //case 2: Component Panel
+                if(basicComponentControl is ScopeNodeControl || basicComponentControl is CommentNodeControl) 
+                {
+                    BaseInfoPanel panel = new BaseInfoPanel();
+                    panel.Component = basicComponentControl;
+                    return panel;
+                }
+                // END SPRINT2: TLAB-98, TLAB-127
+                //case 3: Component Panel
                 if(basicComponentControl is ComponentControl || basicComponentControl is CompositeComponentControl) 
                 {
-                    ComponentInfoPanel panel = new ComponentInfoPanel();
+                    // HERZUM SPRINT 2.4: TLAB-162
+                    ComponentInfoPanel panel = new ComponentInfoPanel(m_applicationContext);
+                    // END HERZUM SPRINT 2.4: TLAB-162
+
                     panel.Component = basicComponentControl;
+
                     return panel;
                 }
             }
@@ -83,10 +126,28 @@ namespace TraceLab.UI.GTK
                 infoDockItem = m_mainWindowDockFrame.AddItem(component.ExperimentNode.ID);
                 infoDockItem.Content = CreateInfoWidget(component);
 
-                infoDockItem.Label = component.ExperimentNode.Data.Metadata.Label;
+                if (component is DecisionNodeControl) {
+                //    string m = component.ExperimentNode.ID;
+                  //  if (m. ID.Equals (DecisionMetadataDefinition.GotoDecisionGuid)) {
+                    if(component.ExperimentNode.Data.Metadata.Label.Equals("Goto Decision")){
+                        infoDockItem.Label = GOTO_INFO_PANEL_TITLE_LABEL;
+                    } else {
+                        infoDockItem.Label = DECISION_INFO_PANEL_TITLE_LABEL;
+                    }
+                } else if (component is LoopNodeControl) {
+                    infoDockItem.Label = LOOP_INFO_PANEL_TITLE_LABEL;
+                } else {
+                    infoDockItem.Label = component.ExperimentNode.Data.Metadata.Label;
+                }
+
                 infoDockItem.DefaultHeight = 150;
-                infoDockItem.DefaultWidth = 200;
-                
+                //infoDockItem.DefaultWidth = 200;
+                // HERZUM SPRINT 4.2: TLAB-226
+                infoDockItem.DefaultHeight = 100;
+                if(component is ScopeNodeControl || component is CommentNodeControl) 
+                    infoDockItem.DefaultHeight = 50;
+                // END HERZUM SPRINT 4.2: TLAB-226
+
                 infoDockItem.DefaultLocation = GetLocation();
 
                 infoDockItem.Visible = true;
@@ -107,12 +168,18 @@ namespace TraceLab.UI.GTK
                 m_mainWindowDockFrame.SetStatus(infoDockItem, DockItemStatus.Floating);
                 Gdk.Rectangle floatRectangle = infoDockItem.FloatingPosition;
                 floatRectangle.Width = 350;
-                floatRectangle.Height = 180;
+                //floatRectangle.Height = 180;
+                // HERZUM SPRINT 4.2: TLAB-225
+                floatRectangle.Height = 100;
+                if(component is ScopeNodeControl || component is CommentNodeControl) 
+                    floatRectangle.Height = 50;
+                // END HERZUM SPRINT 4.2: TLAB-225
                 
                 //location of info box next to the component node just sligthly below cursor click
                 floatRectangle.X = defaultLocationX;
                 floatRectangle.Y = defaultLocationY + 20;
                 infoDockItem.SetFloatMode(floatRectangle);
+
             }
             else
             {

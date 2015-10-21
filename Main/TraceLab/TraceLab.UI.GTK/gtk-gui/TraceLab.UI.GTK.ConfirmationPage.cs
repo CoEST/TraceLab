@@ -6,7 +6,7 @@ namespace TraceLab.UI.GTK
 	{
 		private global::Gtk.VBox vbox2;
 		private global::Gtk.TextView messageTextView;
-		
+
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);

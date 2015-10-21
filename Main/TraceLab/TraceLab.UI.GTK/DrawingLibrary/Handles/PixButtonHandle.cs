@@ -18,12 +18,24 @@ using System;
 using MonoHotDraw.Figures;
 using MonoHotDraw.Locators;
 
+//HERZUM SPRINT 5.5 TLAB-253
+using Cairo;
+using Gdk;
+using MonoHotDraw.Util;
+//END HERZUM SPRINT 5.5 TLAB-253
+
 namespace MonoHotDraw.Handles
 {
     public class PixButtonHandle : PixbufHandle
     {
         private bool clicked = false;
         private Action m_action;
+        //HERZUM SPRINT 5.5 TLAB-253
+        private int m_xAnchor, m_yAnchor;
+        private double m_valueZoom=1;
+        private double m_offsetPanX=0, m_offsetPanY=0;
+        private bool is_resize=false;
+        //END HERZUM SPRINT 5.5 TLAB-253
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MonoHotDraw.Handles.PixButtonHandle"/> class.
@@ -33,10 +45,24 @@ namespace MonoHotDraw.Handles
         /// <param name="locator">Locator.</param>
         /// <param name="pixbuf">Pixbuf.</param>
         /// <param name="action">Action.</param>
+
         public PixButtonHandle(IFigure owner, ILocator locator, Gdk.Pixbuf pixbuf, Action action)
             : base (owner, locator, pixbuf) 
         {
             m_action = action;
+        }
+
+        public PixButtonHandle(IFigure owner, ILocator locator, Gdk.Pixbuf pixbuf, Action action, int xAnchor, int yAnchor, double valueZoom, double offsetPanX, double offsetPanY)
+            : base (owner, locator, pixbuf) 
+        {
+            m_action = action;
+            m_xAnchor = xAnchor;
+            m_yAnchor = yAnchor;
+            m_valueZoom = valueZoom;
+            m_offsetPanX = offsetPanX;
+            m_offsetPanY = offsetPanY;
+            is_resize = true;
+
         }
 
         public override void InvokeStart (MouseEvent ev)
@@ -49,14 +75,47 @@ namespace MonoHotDraw.Handles
         public override void InvokeEnd (MouseEvent ev)
         {
             base.InvokeEnd (ev);
-            
+
             if (clicked) 
             {
                 m_action();
             }
-            
+   
             clicked = false;
+            is_resize = false;
         }
+
+        //HERZUM SPRINT 5.5 TLAB-253
+        public override void InvokeStep (MouseEvent ev)
+        {
+            if (is_resize)
+            {
+                DrawSelectionRect ((Gtk.Widget) ev.View, ev.GdkEvent.Window);
+                PointD anchor = new PointD ((m_xAnchor+m_offsetPanX)*m_valueZoom, (m_yAnchor+m_offsetPanY)*m_valueZoom);
+                PointD corner = new PointD ((ev.X+m_offsetPanX)*m_valueZoom, (ev.Y+m_offsetPanY)*m_valueZoom);
+                _selectionRect = new RectangleD (anchor, corner);
+                DrawSelectionRect ((Gtk.Widget) ev.View, ev.GdkEvent.Window);
+            }
+        }
+
+        private RectangleD _selectionRect;
+
+        private void DrawSelectionRect (Gtk.Widget widget, Gdk.Window window) {
+            Gdk.GC gc = (widget.Style.WhiteGC);
+            gc.SetLineAttributes (1,LineStyle.OnOffDash, CapStyle.Butt, JoinStyle.Miter);
+            gc.Function = Function.Xor;
+            _selectionRect.Normalize ();
+                      
+            Gdk.Point[] points = new Gdk.Point[4];
+            points [0] = new Gdk.Point((int)_selectionRect.X, (int)_selectionRect.Y);
+            points [1] = new Gdk.Point((int)_selectionRect.X2, (int)_selectionRect.Y);
+            points [2] = new Gdk.Point((int)_selectionRect.X2, (int)_selectionRect.Y2);
+            points [3] = new Gdk.Point((int)_selectionRect.X, (int)_selectionRect.Y2);
+
+            window.DrawPolygon(gc, false, points);
+        }
+        //END HERZUM SPRINT 5.5 TLAB-253 
+
     }
 }
 

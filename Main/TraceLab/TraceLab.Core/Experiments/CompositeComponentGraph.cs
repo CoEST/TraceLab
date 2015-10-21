@@ -17,6 +17,15 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
+using TraceLab.Core.Utilities;
+
+// HERZUM SPRINT 2.4 TLAB-157
+using TraceLab.Core.Components;
+// END HERZUM SPRINT 2.4 TLAB-157
+
+// HERZUM SPRINT 5.3 TLAB-251
+using System.ComponentModel;
+// END HERZUM SPRINT 5.3 TLAB-251
 
 namespace TraceLab.Core.Experiments
 {
@@ -65,7 +74,7 @@ namespace TraceLab.Core.Experiments
             CopyFrom(componentGraph);
             OwnerNode = compositeComponentNode;
         }
-        
+
         public override BaseExperiment Clone()
         {
             var clone = new CompositeComponentGraph(this);
@@ -97,15 +106,6 @@ namespace TraceLab.Core.Experiments
 
         #endregion
 
-        /// <summary>
-        /// Calculates the modification.
-        /// </summary>
-        /// <returns></returns>
-        protected override bool CalculateModification()
-        {
-            return base.CalculateModification();
-        }
-             
         private string m_fullGraphIdPath;
 
         /// <summary>
@@ -121,6 +121,12 @@ namespace TraceLab.Core.Experiments
                 }
                 return m_fullGraphIdPath;
             }
+            // HERZUM SPRINT 1.0
+            set
+            {
+                m_fullGraphIdPath = value;
+            }
+            // END HERZUM SPRINT 1.0
         }
 
         /// <summary>
@@ -128,6 +134,11 @@ namespace TraceLab.Core.Experiments
         /// </summary>
         private void DiscoverFullGraphIDPath()
         {
+            // HERZUM SPRINT 2.4 TLAB-157
+            if (OwnerNode == null)
+                return;
+            // END HERZUM SPRINT 2.4 TLAB-157
+
             //call the method that discovers it along with top owner node
             CompositeComponentGraph parentGraph = OwnerNode.Owner as CompositeComponentGraph;
             if (parentGraph != null)
@@ -141,7 +152,7 @@ namespace TraceLab.Core.Experiments
                 m_fullGraphIdPath = OwnerNode.ID;
             }
         }
-        
+
         private ObservableCollection<TraceLabSDK.PackageSystem.IPackageReference> m_references = new ObservableCollection<TraceLabSDK.PackageSystem.IPackageReference>();
         /// <summary>
         /// Gets or sets the collection of references to the packages
@@ -166,6 +177,23 @@ namespace TraceLab.Core.Experiments
                 }
             }
         }
+
+        // HERZUM SPRINT 4.0: TLAB-204
+        public bool IncludeChallenge() {
+            foreach (ExperimentNode node in Vertices){
+                ChallengeMetadata ch_meta = node.Data.Metadata as ChallengeMetadata;
+                if (ch_meta != null)
+                    return true;
+                CompositeComponentBaseMetadata meta = node.Data.Metadata as CompositeComponentBaseMetadata;
+                // HERZUM SPRINT 4.2: BUG FIX - add meta.ComponentGraph != null
+                if (meta != null && meta.ComponentGraph != null){
+                    if (meta.ComponentGraph.IncludeChallenge ())
+                        return true;
+                }
+            }
+            return false;
+        }
+        // END HERZUM SPRINT 4.0: TLAB-204
 
         #region Create Composite Component
 
@@ -194,6 +222,7 @@ namespace TraceLab.Core.Experiments
                     var clonedNode = node.Clone();
                     clonedNodeLookup[node] = clonedNode;
                     compositeComponentGraph.SetLogLevelSettings(clonedNode, compositeComponentGraph.Settings);
+
                     compositeComponentGraph.AddVertex(clonedNode);
 
                     if (clonedNode.ID == "Start" && compositeComponentGraph.StartNode == null)
@@ -232,29 +261,29 @@ namespace TraceLab.Core.Experiments
 
             //move graph closer to the origin point
             TraceLab.Core.Utilities.ExperimentHelper.MoveGraphCloserToOriginPoint(compositeComponentGraph, 200, 200);
-                        
+
             if (originalExperiment.References != null)
             {
-                if (!TraceLabSDK.RuntimeInfo.IsRunInMono)
-                {
-                    compositeComponentGraph.References = new ObservableCollection<TraceLabSDK.PackageSystem.IPackageReference>(originalExperiment.References);
-                }
-                else
-                {
-                    // Mono currently has not implemented constructor of ObservableCollection(IEnumerable<T> collection)
-                    // thus we have to add references manually
-                    compositeComponentGraph.References = new ObservableCollection<TraceLabSDK.PackageSystem.IPackageReference>();
-                    foreach (TraceLabSDK.PackageSystem.IPackageReference reference in originalExperiment.References)
-                    {
-                        compositeComponentGraph.References.Add(reference);
-                    }
-                }
+                compositeComponentGraph.References = originalExperiment.References.CopyCollection();
             }
 
             compositeComponentGraph.OwnerNode = null;
 
             return compositeComponentGraph;
         }
+
+        // HERZUM SPRINT 2.4 TLAB-157
+        public static CompositeComponentGraph ConstructEmptyGraph()
+        {
+            var compositeComponentGraph = new CompositeComponentGraph();
+
+            // Clone experiment info.
+            compositeComponentGraph.ExperimentInfo = new ExperimentInfo();       
+            compositeComponentGraph.OwnerNode = null;
+            return compositeComponentGraph;
+
+        }
+        // END HERZUM SPRINT 2.4 TLAB-157
 
         /// <summary>
         /// Assures that all decision are selected with their scopes.
@@ -284,7 +313,10 @@ namespace TraceLab.Core.Experiments
                         ScopeNode scopeNode = node as ScopeNode;
                         if (scopeNode != null)
                         {
-                            if (!scopeNode.DecisionNode.IsSelected)
+                            // HERZUM SPRINT 2.3 TLAB 140
+                            if (scopeNode.DecisionNode != null)
+                                // END HERZUM SPRINT 2.3 TLAB 140
+                                if (!scopeNode.DecisionNode.IsSelected)
                             {
                                 scopeNode.DecisionNode.IsSelected = true;
                                 SelectDecisionsScopes(originalExperiment, scopeNode.DecisionNode);
@@ -353,7 +385,11 @@ namespace TraceLab.Core.Experiments
         /// If some selected nodes didn't have any incoming paths they are automatically connected to the start node.
         /// </summary>
         /// <param name="compositeComponentGraph">The composite component graph.</param>
-        private static void ConnectNodesToStartAndEndNode(CompositeComponentGraph compositeComponentGraph)
+
+        // HERZUM SPRINT 2.4 TLAB-157
+        // private static void ConnectNodesToStartAndEndNode(CompositeComponentGraph compositeComponentGraph)
+        public static void ConnectNodesToStartAndEndNode(CompositeComponentGraph compositeComponentGraph)
+        // END HERZUM SPRINT 2.4 TLAB-157
         {
             if (compositeComponentGraph.StartNode == null || compositeComponentGraph.EndNode == null)
             {
@@ -399,6 +435,15 @@ namespace TraceLab.Core.Experiments
                         }
                     }
                 }
+                // HERZUM SPRINT 3.0: COMPOSITE BUG FIX
+                if (compositeComponentGraph.EdgeCount == 0 && compositeComponentGraph.StartNode != null && compositeComponentGraph.EndNode != null){
+                    compositeComponentGraph.AddEdge(new ExperimentNodeConnection(Guid.NewGuid().ToString(), compositeComponentGraph.StartNode, compositeComponentGraph.EndNode));
+                    compositeComponentGraph.StartNode.Data.X = 0;
+                    compositeComponentGraph.StartNode.Data.Y = 0;
+                    compositeComponentGraph.EndNode.Data.X = 0;
+                    compositeComponentGraph.EndNode.Data.Y = 100;
+                }
+                // END HERZUM SPRINT 3.0: COMPOSITE BUG FIX
             }
         }
 
@@ -438,5 +483,148 @@ namespace TraceLab.Core.Experiments
         }
 
         #endregion
+
+        // HERZUM SPRINT 5.3 TLAB-251
+        #region Modification
+
+        private bool m_isModified;
+
+        /// <summary>
+        /// Calculates the modification.
+        /// </summary>
+        /// <returns></returns>
+        /// 
+        /*
+        protected override bool CalculateModification()
+        {
+            return base.CalculateModification();
+        }
+        */
+        public bool CalculateModification()
+        {
+            bool isModified = base.CalculateModification();
+            isModified |= m_isModified;
+            return isModified;
+        }
+
+        /// <summary>
+        /// Resets the modified flag.
+        /// </summary>
+        public override void ResetModifiedFlag()
+        {
+            m_isModified = false;
+            base.ResetModifiedFlag();
+        }
+
+        /// <summary>
+        /// Handles the PropertyChanged event of the ExperimentNode control.
+        /// If property of change is IsModified - set experiment to be modified as well.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.ComponentModel.PropertyChangedEventArgs"/> instance containing the event data.</param>
+        private void ExperimentNode_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "IsModified" || e.PropertyName == "Data")
+            {
+                var node = (ExperimentNode)sender;
+                IsModified = true;
+            }
+        }
+
+        /// <summary>
+        /// Handles the PropertyChanged event of the ExperimentNodeConnection control.
+        /// If property of change is IsModified - set experiment to be modified as well.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.ComponentModel.PropertyChangedEventArgs"/> instance containing the event data.</param>
+        private void ExperimentNodeConnection_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "IsModified")
+            {
+                IsModified = true;
+            }
+        }
+
+        /// <summary>
+        /// Called when vertex is added to experiment
+        /// When vertex is added the experiment should be set to be modified.
+        /// It also attaches listener to vertex changes. So it can also set modify flag to true when anything in the node is modified.
+        /// </summary>
+        /// <param name="args">The args.</param>
+        protected override void OnVertexAdded(ExperimentNode args)
+        {
+            base.OnVertexAdded(args);
+            m_isModified = true;
+            IsModified = true;
+            args.PropertyChanged += ExperimentNode_PropertyChanged;
+        }
+
+        /// <summary>
+        /// Called when vertex is removed from experiment
+        /// When vertex is removed the experiment should be set to be modified.
+        /// </summary>
+        /// <param name="args">The args.</param>
+        protected override void OnVertexRemoved(ExperimentNode args)
+        {
+            base.OnVertexRemoved(args);
+            m_isModified = true;
+            IsModified = true;
+            args.PropertyChanged -= ExperimentNode_PropertyChanged;
+        }
+
+        /// <summary>
+        /// Called when edge is added to experiment.
+        /// When edge is added the experiment should be set to be modified.
+        /// It also attaches listener to edge changes. So it can also set modify flag when edge changes.
+        /// </summary>
+        /// <param name="args">The args.</param>
+        protected override void OnEdgeAdded(ExperimentNodeConnection args)
+        {
+            base.OnEdgeAdded(args);
+            m_isModified = true;
+            IsModified = true;
+            //listen to modification of the edge
+            args.PropertyChanged += ExperimentNodeConnection_PropertyChanged;
+        }
+
+        /// <summary>
+        /// Called when edge is removed from experiment.
+        /// When edge is removed the experiment should be set to be modified.
+        /// </summary>
+        /// <param name="args">The args.</param>
+        protected override void OnEdgeRemoved(ExperimentNodeConnection args)
+        {
+            base.OnEdgeRemoved(args);
+            m_isModified = true;
+            IsModified = true;
+            args.PropertyChanged -= ExperimentNodeConnection_PropertyChanged;
+        }
+
+        #endregion
+
+        public override bool IsModified
+        {
+            set
+            {
+                base.IsModified = value;
+                // if (value && OwnerNode!=null){
+                if (OwnerNode!=null){
+                    BaseExperiment exp = OwnerNode.Owner as BaseExperiment;
+                    if (exp != null){
+                        exp.IsModified = value;
+                        // return;
+                    }
+                    /*
+                    CompositeComponentGraph sub_exp = OwnerNode.Owner as CompositeComponentGraph;
+                    if (sub_exp != null){
+                        sub_exp.IsModified = value;
+                        return;
+                    }
+                    */
+                }
+            }
+        }
+        // END HERZUM SPRINT 5.3 TLAB-251
+
     }
-}
+} 

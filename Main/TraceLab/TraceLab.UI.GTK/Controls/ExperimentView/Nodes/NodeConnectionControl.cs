@@ -82,19 +82,42 @@ namespace TraceLab.UI.GTK
         public override bool CanConnectEnd (IFigure figure) 
         {
             bool isTargetValid = false;
+            ExperimentNode node;
             IComponentControl componentControl = figure as IComponentControl;
             if(componentControl != null) 
             {
-                ExperimentNode node = componentControl.ExperimentNode;
+                node = componentControl.ExperimentNode;
+
                 if (node != null && node is ScopeNode == false &&
                     (node is ExperimentEndNode || node is ComponentNode || node is ExperimentDecisionNode || node is CompositeComponentNode))
                 {
                     isTargetValid = true;
                 }
-            }
+                // HERZUM SPRINT 0.0
+                else if (node != null && node is ScopeNode == true) {
+                    ScopeNode scopeNode = node as ScopeNode;
+                    if (scopeNode.DecisionNode == null)
+                    {
+                        isTargetValid = true;
+                    }
+                }
+                // END HERZUM 0.0
+                // SPRINT 2.0 TLAB-135
+                if (isTargetValid)
+                {
+                    IComponentControl startComponentControl = StartConnector.Owner as IComponentControl;
+                    if (startComponentControl.ExperimentNode!=null)
+                        foreach(ExperimentNodeConnection edge in componentControl.ExperimentNode.Owner.Edges)
+                            if (edge.Source.Equals(startComponentControl.ExperimentNode) && edge.Target.Equals(node))
+                                isTargetValid = false;
+                    // END SPRINT 2.0 TLAB-135
+                }
 
+            }
             return isTargetValid;
         }
+
+        private bool isSourceComment =false;
 
         /// <summary>
         /// Determines whether the specified figure can be connected at the start of connection
@@ -146,6 +169,12 @@ namespace TraceLab.UI.GTK
                         ExperimentNodeConnection nodeConnection = ownerExperiment.AddConnection(startComponentControl.ExperimentNode, endComponentControl.ExperimentNode);
                         OnConnectionCompleted(nodeConnection);
                         m_experimentNodeConnection = nodeConnection;
+                        
+                        // SPRINT 2: TLAB-129
+                        CommentNode comment = nodeConnection.Source as CommentNode;
+                        if (comment != null)
+                             isSourceComment = true;
+                        // END SPRINT 2: TLAB-129
                     }
                 }
             }
@@ -170,6 +199,17 @@ namespace TraceLab.UI.GTK
         {
             LineColor = s_defaultColor;
             FillColor = s_defaultColor;
+
+            // SPRINT 2: TLAB-129
+            if (isSourceComment)
+            {
+                double[] dash = {2, 0, 2};
+                base.Dashes=dash;
+                base.BasicDraw(context);
+                return;
+            }
+            // END SPRINT 2: TLAB-129
+
             base.BasicDraw(context);
             DrawArrowHead(context, EndPoint, StartPoint);
         }
@@ -180,6 +220,19 @@ namespace TraceLab.UI.GTK
             FillColor = s_selectedColor;
             //base draw selected is not implemented, and if so, it calls BasicDraw overriden above
             //thus call BasicDraw directly
+
+            // SPRINT 2: TLAB-129
+            if (isSourceComment)
+            {
+                double[] dash = {2, 0, 2};
+                base.Dashes=dash;
+                base.BasicDraw(context);
+                return;
+            }
+            // END SPRINT 2: TLAB-129
+
+
+
             base.BasicDraw(context);
             DrawArrowHead(context, EndPoint, StartPoint);
         }
@@ -225,7 +278,20 @@ namespace TraceLab.UI.GTK
                         yield return handle;
                     }
 
-                    yield return m_removeHandle;
+                    // HERZUM SPRINT 2.1: TLAB-140
+                    bool ifScopeEdge = false;
+                    bool scopeExitEdge = false;
+                    if (m_experimentNodeConnection != null && m_experimentNodeConnection.Source != null && m_experimentNodeConnection.Source != null){
+                        ExperimentDecisionNode decisionSource = (m_experimentNodeConnection.Source as ExperimentDecisionNode);
+                        ScopeNode scopeSource = m_experimentNodeConnection.Source as ScopeNode;
+                        ScopeNode scopeTarget = m_experimentNodeConnection.Target as ScopeNode;
+                        ExitDecisionNode exitTarget = m_experimentNodeConnection.Target as ExitDecisionNode;
+                        ifScopeEdge = decisionSource != null && (scopeTarget != null || exitTarget !=null);
+                        scopeExitEdge = scopeSource != null && exitTarget != null;
+                    }
+                    if (!ifScopeEdge && !scopeExitEdge) 
+                    // END HERZUM SPRINT 2.1: TLAB-140.1: TLAB-140
+                        yield return m_removeHandle;
                 }
             }
         }

@@ -39,12 +39,13 @@ namespace TraceLab.UI.GTK
 
             ToolItem recentExperimentButton = ConstrucRecentExperimentsMenuButton();
             toolbar.AppendItem(recentExperimentButton);
-
             toolbar.AppendItem(File.Save.CreateToolBarItem());
             toolbar.AppendItem(File.SaveAs.CreateToolBarItem());
+
             toolbar.AppendItem(new SeparatorToolItem());
 
-	    toolbar.AppendItem(File.Settings.CreateToolBarItem());
+            toolbar.AppendItem(File.PackageBuilder.CreateToolBarItem());
+	        toolbar.AppendItem(File.Settings.CreateToolBarItem());
 
             ToolItem helpMenuButton = ConstructHelpMenuButton();
             toolbar.AppendItem(helpMenuButton);

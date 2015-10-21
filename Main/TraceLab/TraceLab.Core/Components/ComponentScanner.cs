@@ -26,6 +26,17 @@ namespace TraceLab.Core.Components
 {
     /// <summary>
     /// Scans a set of directories in search for the components, both primitive components found in assemblies, and .teml composite components.
+    /// 
+    /// The Component Scanner is responsible for finding all components definitions. It scans all components directories defined in application 
+    /// settings, and components directories in installed packages. In each directory it searches for assemblies (.dll files), loads each of them, 
+    /// and finds classes with Component attribute. For each class it creates metadata definition instance with all the information about such component: 
+    /// its assembly, classname, name of a component, author, descritpion, input/output specification, Configuration specification; 
+    /// in case of composite components it loads the subgraph experiment.
+    /// 
+    /// Once such metadata definitions are stored, the component scanner is closed and all components assemblies are unloaded. 
+    /// More specifically, scanning is done in secondary app domain, therefore all assemblies are loaded into it, 
+    /// and once scanning is completed the app domain is destroyed. Therefore, it is possible to Rescan library, 
+    /// and recompile components without a need to close TraceLab each time there is newly compiled assembly. 
     /// </summary>
     class ComponentScanner : MarshalByRefObject
     {

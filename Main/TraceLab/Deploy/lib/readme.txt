@@ -1,1 +1,0 @@
-mscorlib.jar is needed for java developers for ikvm

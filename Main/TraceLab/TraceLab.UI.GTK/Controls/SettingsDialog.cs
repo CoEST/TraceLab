@@ -129,7 +129,10 @@ namespace TraceLab.UI.GTK
         {
             string directoryPath;
 
-            if (FileDialogs.SelectCatalogDialog (this, out directoryPath)) 
+            // HERZUM SPRINT 4: TLAB-214
+            // if (FileDialogs.SelectCatalogDialog (this, out directoryPath)) 
+            if (FileDialogs.SelectCatalogDialog (this, out directoryPath, null)) 
+            // END HERZUM SPRINT 4: TLAB-214
             {
                 addComponentDirectoryToTree(directoryPath);
             }
@@ -163,7 +166,10 @@ namespace TraceLab.UI.GTK
         {
             string directoryPath;
 
-            if (FileDialogs.SelectCatalogDialog (this, out directoryPath))
+            // HERZUM SPRINT 4: TLAB-214
+            // if (FileDialogs.SelectCatalogDialog (this, out directoryPath))
+            if (FileDialogs.SelectCatalogDialog (this, out directoryPath, null))
+            // END HERZUM SPRINT 4: TLAB-214
             {
                 addTypeDirectoryToTree(directoryPath);
             }
@@ -190,7 +196,10 @@ namespace TraceLab.UI.GTK
         {
             string directoryPath;
 
-            if (FileDialogs.SelectCatalogDialog (this, out directoryPath)) 
+            // HERZUM SPRINT 4: TLAB-214
+            // if (FileDialogs.SelectCatalogDialog (this, out directoryPath)) 
+            if (FileDialogs.SelectCatalogDialog (this, out directoryPath, null)) 
+            // END HERZUM SPRINT 4: TLAB-214
             {
                 tbx_defaultExperimentDirectory.Text= directoryPath;
             }

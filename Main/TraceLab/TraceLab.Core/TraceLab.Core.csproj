@@ -19,8 +19,6 @@
     </SccAuxPath>
     <SccProvider>
     </SccProvider>
-    <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>TraceLab.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -33,6 +31,8 @@
     <RunCodeAnalysis>true</RunCodeAnalysis>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>TraceLab.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -44,6 +44,8 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>true</RunCodeAnalysis>
     <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>TraceLab.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Deploy|AnyCPU'">
     <OutputPath>..\Deploy\bin\</OutputPath>
@@ -62,6 +64,8 @@
     <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
     <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
     <WarningLevel>4</WarningLevel>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>TraceLab.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug Mono|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -70,6 +74,8 @@
     <WarningLevel>4</WarningLevel>
     <DebugSymbols>True</DebugSymbols>
     <DefineConstants>TRACE;DEBUG;MONO</DefineConstants>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>TraceLab.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug MONO_DEV|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -78,6 +84,8 @@
     <OutputPath>bin\DebugMono</OutputPath>
     <DefineConstants>TRACE;DEBUG;MONO;MONO_DEV</DefineConstants>
     <WarningLevel>4</WarningLevel>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>TraceLab.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release Mono|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -86,6 +94,14 @@
     <OutputPath>bin\ReleaseMono</OutputPath>
     <DefineConstants>TRACE;MONO</DefineConstants>
     <WarningLevel>4</WarningLevel>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>TraceLab.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Windows|AnyCPU' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Windows</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -224,12 +240,19 @@
     <Compile Include="Components\RescanLibraryGuard.cs" />
     <Compile Include="Experiments\ScopeNode.cs" />
     <Compile Include="Messages.cs" />
+    <Compile Include="PackageBuilder\PackageCreator.cs" />
+    <Compile Include="PackageBuilder\PackageBuilderViewModel.cs" />
+    <Compile Include="Exceptions\PackageCreationFailureException.cs" />
+    <Compile Include="PackageBuilder\PackageFileSourceInfo.cs" />
+    <Compile Include="PackageBuilder\PackageHeirarchyItem.cs" />
+    <Compile Include="PackageBuilder\PackageSourceInfo.cs" />
     <Compile Include="PackageSystem\Package.cs" />
     <Compile Include="PackageSystem\PackageAlreadyExistsException.cs" />
     <Compile Include="PackageSystem\PackageException.cs" />
     <Compile Include="PackageSystem\PackageFile.cs" />
     <Compile Include="PackageSystem\PackageManager.cs" />
     <Compile Include="PackageSystem\PackageReference.cs" />
+    <Compile Include="PackageSystem\PackagesViewModelHelper.cs" />
     <Compile Include="Settings\ApplicationSettings.cs" />
     <Compile Include="Settings\ExperimentSettings.cs" />
     <Compile Include="Settings\GlobalLogLevelSettingEventArgs.cs" />
@@ -261,6 +284,7 @@
     <Compile Include="Utilities\IModifiable.cs" />
     <Compile Include="Utilities\InputMappings.cs" />
     <Compile Include="Utilities\ObjectCopier.cs" />
+    <Compile Include="Utilities\ObservableCollectionExtension.cs" />
     <Compile Include="Utilities\ObservableDictionary.cs" />
     <Compile Include="Components\CompositeComponentMetadata.cs" />
     <Compile Include="Components\CompositeComponentMetadataDefinition.cs" />
@@ -342,6 +366,15 @@
     <Compile Include="Workspaces\WorkspaceWrapperFactory.cs" />
     <Compile Include="Components\Metadata.cs" />
     <Compile Include="Workspaces\WorkspaceViewerLoader.cs" />
+    <Compile Include="Components\ScopeMetadataDefinition.cs" />
+    <Compile Include="Components\CommentMetadataDefinition.cs" />
+    <Compile Include="Components\CommentMetadata.cs" />
+    <Compile Include="Experiments\CommentNode.cs" />
+    <Compile Include="Experiments\ChallengeNode.cs" />
+    <Compile Include="Components\ChallengeMetadataDefinition.cs" />
+    <Compile Include="Components\ChallengeMetadata.cs" />
+    <Compile Include="Utilities\Crypto.cs" />
+    <Compile Include="Experiments\Clipboard.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TraceLabSDK\TraceLabSDK.csproj">
@@ -366,10 +399,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="TraceLab.snk" />
+    <None Include="UmlDiagrams\ComponentMetadata.cd" />
+    <None Include="UmlDiagrams\Components.cd" />
+    <None Include="UmlDiagrams\ExperimentNodes.cd" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\OnlineContent.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

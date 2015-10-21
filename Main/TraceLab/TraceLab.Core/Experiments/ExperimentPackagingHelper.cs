@@ -149,7 +149,11 @@ namespace TraceLab.Core.Experiments
         {
             //1. First record current absolute path to real file -> this file is going to be added to package
             m_absoluteLocation = Path.GetFullPath(filePath.Absolute);
-            
+
+            // HERZUM SPRINT 2.6 TLAB-82
+            if (filePath.Relative!=null)
+            // HERZUM SPRINT 2.6 TLAB-82
+
             //2. Determine new relative directory by eliminating '../../' -> it has to be subdirectory, so we can add it to the package.
             m_relativeLocation = DetermineRelativePathToSubDir(filePath.Relative, out m_foldersPath);
         }
@@ -171,6 +175,11 @@ namespace TraceLab.Core.Experiments
             foldersPath = new LinkedList<string>();
 
             char dirSeparatorChar = System.IO.Path.DirectorySeparatorChar;
+
+            // HERZUM SPRINT 5.5: TLAB-202
+            if (relative != null && relative.EndsWith (dirSeparatorChar.ToString ()))
+                relative = relative.Remove (relative.Length -1);
+            // END SPRINT 5.5: TLAB-202
 
             string[] directories = relative.Split(dirSeparatorChar);
 
@@ -412,6 +421,9 @@ namespace TraceLab.Core.Experiments
                                             PackageFileInfo packageDirectoryInfo = new PackageFileInfo(dirPath);
                                             m_directories.Add(packageDirectoryInfo);
 
+                                            // HERZUM SPRINT 3.0: TLAB-82
+                                            if (dirPath.Relative!=null)
+                                            // END HERZUM SPRINT 3.0: TLAB-82
                                             //Change config value relative path -> this path is saved within experiment (note, we operate on the experiment clone)
                                             //so that relative path is in the subfolder of Experiment folder
                                             dirPath.Relative = packageDirectoryInfo.RelativeLocation;

@@ -18,6 +18,10 @@ using System;
 using TraceLab.Core.Experiments;
 using Gtk;
 
+// HERZUM SPRINT 3.0: TLAB-176
+using TraceLab.Core.Components;
+// END HERZUM SPRINT 3.0: TLAB-176
+
 namespace TraceLab.UI.GTK
 {
     public partial class DefineCompositeComponentWizard : Gtk.Window
@@ -28,23 +32,73 @@ namespace TraceLab.UI.GTK
             this.Build ();
         }
 
+        // HERZUM SPRINT 3.0: TLAB-176
+        private bool IncludeChallenge(CompositeComponentGraph experiment) {
+            if (experiment == null)
+                return false;
+            foreach (ExperimentNode node in experiment.Vertices){
+                ChallengeMetadata ch_meta = node.Data.Metadata as ChallengeMetadata;
+                if (ch_meta != null){
+
+                    // HERZUM SPRINT 3.0: TLAB-176
+                    ExperimentNodeConnection firstInEdge = experiment.InEdge (node,0);
+                    ExperimentNodeConnection firstOutEdge = experiment.OutEdge (node,0);
+                    if (firstInEdge != null && firstInEdge.Source!= null && firstOutEdge != null && firstOutEdge.Target!= null)
+                        experiment.AddEdge(new ExperimentNodeConnection(Guid.NewGuid().ToString(), firstInEdge.Source, firstOutEdge.Target));
+                    // END HERZUM SPRINT 3.0: TLAB-176
+                    experiment.RemoveVertex (node);
+                    return true;
+                }
+                CompositeComponentBaseMetadata meta = node.Data.Metadata as CompositeComponentBaseMetadata;
+                if (meta != null)
+                    return IncludeChallenge(meta.ComponentGraph);
+            }
+            return false;
+        }
+
+        internal void ShowMessageDialog(string message, string title, Gtk.ButtonsType buttonsType, Gtk.MessageType messageType)
+        {
+            Gtk.MessageDialog dlg = new Gtk.MessageDialog(new Gtk.Window("Message"), 
+                                                          Gtk.DialogFlags.Modal, 
+                                                          messageType, 
+                                                          buttonsType, message);
+            dlg.Title = title;
+            dlg.Run();
+            dlg.Destroy();
+        }
+        // END HERZUM SPRINT 3.0: TLAB-176
+
         public DefineCompositeComponentWizard(ApplicationContext context) : this() 
         {
+
             //setup extracts selected nodes from current experiment and constructs composite component
             m_setup = new DefiningCompositeComponentSetup(context.Application.Experiment);
-            
+
+            // HERZUM SPRINT 3.0: TLAB-176
+            if (IncludeChallenge(m_setup.CompositeComponentGraph))
+            {
+                ShowMessageDialog("Challenge Component Removed",
+                                  "Define Composite", Gtk.ButtonsType.Ok, Gtk.MessageType.Warning);
+            }
+            // END HERZUM SPRINT 3.0: TLAB-176
+
+            // HERZUM SPRINT 2.4 TLAB-157
             //create new experiment drawer with own factories
+            /*
             ExperimentDrawer drawer = new ExperimentDrawer(this.experimentcanvaswidget1,
                                                            new NodeControlFactory(context),
                                                            new NodeConnectionControlFactory(context));
-            
             //draw composite component that is being defined into canvas
             drawer.DrawExperiment(m_setup.CompositeComponentGraph, false);
-            
+            */
+
+            ExperimentCanvasPadFactory.CreateCompositeExperimentCanvasPad(context, this.experimentcanvaswidget1, m_setup.CompositeComponentGraph) ;
+            // END HERZUM SPRINT 2.4 TLAB-157
+
             //zoom to fit moves view to display entire graph in the visible canvas
             //rather part that is not visible
             this.experimentcanvaswidget1.ZoomToFit();
-            
+
             //if experiment is smaller than than the view scale it to original 
             if(this.experimentcanvaswidget1.ZoomScale > 1)
             {

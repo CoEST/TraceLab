@@ -21,6 +21,10 @@ using System.ComponentModel;
 using System.Reflection;
 using MonoDevelop.Components.PropertyGrid;
 
+// HERZUM SPRINT 5.5: TLAB-242
+using Gtk;
+// END HERZUM SPRINT 5.5: TLAB-202
+
 namespace TraceLab.UI.GTK.PropertyGridEditors
 {
     /// <summary>
@@ -68,6 +72,7 @@ namespace TraceLab.UI.GTK.PropertyGridEditors
 		{
 		}
 		
+        // 
 		public void Initialize (EditSession session)
 		{
             prop = session.Property;
@@ -107,7 +112,24 @@ namespace TraceLab.UI.GTK.PropertyGridEditors
 				combo.AppendText (str);
 			}
 		}
-		
+
+        // HERZUM SPRINT 5.5: TLAB-242
+        private void setActiveComboBoxValue (Gtk.ComboBox cb, string s)
+        {                      
+            Gtk.TreeIter iter;
+            cb.Model.GetIterFirst (out iter);
+            do {
+                    GLib.Value thisRow = new GLib.Value ();
+                    cb.Model.GetValue (iter, 0, ref thisRow);
+                    if ((thisRow.Val as string).Equals (s)) {
+                        cb.SetActiveIter (iter);
+                            break;
+                }
+            } while (cb.Model.IterNext (ref iter));          
+        }
+        // END HERZUM SPRINT 5.5: TLAB-242
+
+
 		protected override void OnDestroyed ()
 		{
 			base.OnDestroyed ();
@@ -120,12 +142,24 @@ namespace TraceLab.UI.GTK.PropertyGridEditors
 
 		public object Value {
 			get {
-                return values.GetValue (combo.Active);
+                // HERZUM SPRINT 5.5: TLAB-242
+                // return values.GetValue (combo.Active);
+                TreeIter tree;
+                combo.GetActiveIter(out tree);
+                return combo.Model.GetValue (tree, 0);
+                // END HERZUM SPRINT 5.5: TLAB-242
 			}
 			set {
+                // HERZUM SPRINT 5.5: TLAB-242
+                /*
 				int i = Array.IndexOf (values, value);
 				if (i != -1)
 					combo.Active = i;
+                */
+                TraceLab.Core.Components.EnumValueCollection val = value as TraceLab.Core.Components.EnumValueCollection;
+                if (val != null)
+                    setActiveComboBoxValue (combo, val.CurrentValue.Value);
+                // END HERZUM SPRINT 5.5: TLAB-242               
 			}
 		}
 

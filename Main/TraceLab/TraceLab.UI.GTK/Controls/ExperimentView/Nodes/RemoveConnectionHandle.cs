@@ -52,7 +52,11 @@ namespace TraceLab.UI.GTK
             
             if (clicked) 
             {
-                Experiment ownerExperiment = m_ownerConnection.Owner;
+                // HERZUM SPRINT 2.0 TLAB-99
+                // Experiment ownerExperiment = m_ownerConnection.Owner;
+                IEditableExperiment ownerExperiment = m_ownerConnection.ExperimentNodeConnection.Target.Owner as IEditableExperiment;
+                if(ownerExperiment != null) 
+                // END HERZUM SPRINT 2.0 TLAB-99
                 ownerExperiment.RemoveConnection(m_ownerConnection.ExperimentNodeConnection);
             }
             

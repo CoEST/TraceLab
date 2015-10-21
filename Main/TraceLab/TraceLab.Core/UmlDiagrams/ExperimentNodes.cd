@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TraceLab.Core.Experiments.ExperimentNode" Collapsed="true">
+    <Position X="1" Y="3.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AQAIAACEAAA0kaAFwIAgAAAAgAAAAJUIACgAAACQQTA=</HashCode>
+      <FileName>Experiments\ExperimentNode.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Data" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TraceLab.Core.Experiments.LoopScopeNode" Collapsed="true">
+    <Position X="3.5" Y="10.5" Width="2.25" />
+    <InheritanceLine Type="TraceLab.Core.Experiments.ScopeNodeBase" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.144" Y="10.191" />
+        <Point X="3.144" Y="10.875" />
+        <Point X="3.5" Y="10.875" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Experiments\LoopScopeNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Experiments.ScopeNodeBase" Collapsed="true">
+    <Position X="2.75" Y="9.5" Width="2.25" />
+    <InheritanceLine Type="TraceLab.Core.Experiments.CompositeComponentNode" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.144" Y="9.191" />
+        <Point X="3.144" Y="9.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAACAAAAAAAAAAEAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Experiments\ScopeNodeBase.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DataWithSize" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TraceLab.Core.Experiments.ScopeNode" Collapsed="true">
+    <Position X="3.5" Y="11.25" Width="2.25" />
+    <InheritanceLine Type="TraceLab.Core.Experiments.ScopeNodeBase" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.144" Y="10.191" />
+        <Point X="3.144" Y="11.25" />
+        <Point X="3.711" Y="11.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgACAAAAAAAAAAAAgAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Experiments\ScopeNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Experiments.CompositeComponentNode" Collapsed="true">
+    <Position X="2.75" Y="8.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAACAABAAAAAAUAAAAAAAAAAAAAgAAABA=</HashCode>
+      <FileName>Experiments\CompositeComponentNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Experiments.ComponentNode" Collapsed="true">
+    <Position X="2.75" Y="6.25" Width="2.25" />
+    <InheritanceLine Type="TraceLab.Core.Experiments.ExperimentNode" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="2" Y="4.312" />
+        <Point X="2" Y="6.562" />
+        <Point X="2.75" Y="6.562" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Experiments\ComponentNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Experiments.ExitDecisionNode" Collapsed="true">
+    <Position X="2.75" Y="7.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Experiments\ExitDecisionNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Experiments.ExperimentStartNode" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="2.25" />
+    <InheritanceLine Type="TraceLab.Core.Experiments.ExperimentNode" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="2" Y="4.312" />
+        <Point X="2" Y="5.116" />
+        <Point X="2.75" Y="5.116" />
+        <Point X="2.75" Y="5.125" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Experiments\ExperimentStartNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Experiments.ExperimentDecisionNode" Collapsed="true">
+    <Position X="2.75" Y="7" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Experiments\ExperimentDecisionNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Experiments.SerializedVertexData" Collapsed="true">
+    <Position X="6" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IQAAAAAEQAAAAJBhgIAAAAAiwBBIAIAIAAAAgCAEaBA=</HashCode>
+      <FileName>Experiments\SerializedVertexData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Metadata" />
+    </ShowAsAssociation>
+    <Lollipop Position="1.194" Collapsed="true" />
+  </Class>
+  <Class Name="TraceLab.Core.Experiments.SerializedVertexDataWithSize" Collapsed="true">
+    <Position X="5.75" Y="7" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAABAAAAAEACAAAAAACAAAAAgAAAABA=</HashCode>
+      <FileName>Experiments\SerializedVertexDataWithSize.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Components.Metadata" Collapsed="true">
+    <Position X="8.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AICAAAQUEAAAAqBhBIAgAAAy0AFAQBIBAAAAhMAAABA=</HashCode>
+      <FileName>Components\Metadata.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TraceLab.Core.Experiments.BaseExperiment" Collapsed="true">
+    <Position X="0.5" Y="1" Width="4" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>SThCICYUgQAIi+CxEKOAAwAJkAEQACABgIIFCCABwxQ=</HashCode>
+      <FileName>Experiments\BaseExperiment.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TraceLab.Core.Experiments.Experiment" Collapsed="true">
+    <Position X="5.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>SAAAAAAUAAQAAAAgQAAAAAAAAAAQAQAAAAAkAAAAABE=</HashCode>
+      <FileName>Experiments\Experiment.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TraceLab.Core.Experiments.CompositeComponentEditableGraph" Collapsed="true">
+    <Position X="8.25" Y="1.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAABA=</HashCode>
+      <FileName>Experiments\CompositeComponentEditableGraph.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TraceLab.Core.Experiments.CompositeComponentGraph" Collapsed="true">
+    <Position X="5.5" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAQAAAQAAAIQAABAAAAAAAQAQDQAAAwIAAAARA=</HashCode>
+      <FileName>Experiments\CompositeComponentGraph.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Components.ComponentMetadata" Collapsed="true">
+    <Position X="9.75" Y="6.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAoBAAUIACAECBAgAAEAQAiAARAUJAAAQAAkAAQArg=</HashCode>
+      <FileName>Components\ComponentMetadata.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Right" Position="0.1" />
+  </Class>
+  <Class Name="TraceLab.Core.Components.CompositeComponentBaseMetadata" Collapsed="true">
+    <Position X="9.75" Y="8.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>CIAAAAAAAACAAAAAAAAAAAAAQAAAAAABAAAAAgAAACA=</HashCode>
+      <FileName>Components\CompositeComponentBaseMetadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Components.DecisionMetadata" Collapsed="true">
+    <Position X="9.75" Y="7" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAUAACgAGAxAQAEAACiAUBAAAAIAABAgAAQADA=</HashCode>
+      <FileName>Components\DecisionMetadata.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Right" Position="0.129" Collapsed="true" />
+  </Class>
+  <Class Name="TraceLab.Core.Components.EndNodeMetadata" Collapsed="true">
+    <Position X="9.75" Y="5.5" Width="2" />
+    <InheritanceLine Type="TraceLab.Core.Components.Metadata" FixedToPoint="true">
+      <Path>
+        <Point X="9.5" Y="4.312" />
+        <Point X="9.5" Y="5.875" />
+        <Point X="9.75" Y="5.875" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAUAAAAAAAAAAAAAAACAABAAAAAAAAAgAAAABA=</HashCode>
+      <FileName>Components\EndNodeMetadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Components.ExitDecisionMetadata" Collapsed="true">
+    <Position X="9.75" Y="7.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAUAAAAAAAAAAAAAAACAABAAAAAAAAAgAAAABA=</HashCode>
+      <FileName>Components\ExitDecisionMetadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Components.StartNodeMetadata" Collapsed="true">
+    <Position X="9.75" Y="4.75" Width="2" />
+    <InheritanceLine Type="TraceLab.Core.Components.Metadata" FixedToPoint="true">
+      <Path>
+        <Point X="9.5" Y="4.312" />
+        <Point X="9.5" Y="5.125" />
+        <Point X="9.75" Y="5.125" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAUAAAAAAAAAAAAAAACAABAAAAAAAAAgAAAABA=</HashCode>
+      <FileName>Components\StartNodeMetadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Experiments.ExperimentEndNode" Collapsed="true">
+    <Position X="2.75" Y="5.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Experiments\ExperimentEndNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Components.CompositeComponentMetadata" Collapsed="true">
+    <Position X="12.75" Y="8.5" Width="2.5" />
+    <InheritanceLine Type="TraceLab.Core.Components.CompositeComponentBaseMetadata" FixedToPoint="true">
+      <Path>
+        <Point X="12.25" Y="8.875" />
+        <Point X="12.75" Y="8.875" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAoBAAUIACAECBIAAAAAQACAAQAUBAAAQAAkgAUAJg=</HashCode>
+      <FileName>Components\CompositeComponentMetadata.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TraceLab.Core.Components.ScopeBaseMetadata" Collapsed="true">
+    <Position X="10.25" Y="9.5" Width="2.5" />
+    <InheritanceLine Type="TraceLab.Core.Components.CompositeComponentBaseMetadata" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.688" Y="9.191" />
+        <Point X="10.688" Y="9.346" />
+        <Point X="10.797" Y="9.346" />
+        <Point X="10.797" Y="9.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAICAACBIAAAAAAACAAAAQAAAAAAAggAAAAA=</HashCode>
+      <FileName>Components\ScopeBaseMetadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Components.LoopScopeMetadata" Collapsed="true">
+    <Position X="11" Y="10.5" Width="2" />
+    <InheritanceLine Type="TraceLab.Core.Components.ScopeBaseMetadata" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.797" Y="10.191" />
+        <Point X="10.797" Y="10.938" />
+        <Point X="11" Y="10.938" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAACgAGAQAQAEAACCAUAAAAAIAABAgAAQADA=</HashCode>
+      <FileName>Components\LoopScopeMetadata.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Right" Position="0.1" />
+  </Class>
+  <Class Name="TraceLab.Core.Components.ScopeMetadata" Collapsed="true">
+    <Position X="11" Y="11.25" Width="1.5" />
+    <InheritanceLine Type="TraceLab.Core.Components.ScopeBaseMetadata" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.797" Y="10.191" />
+        <Point X="10.797" Y="11.562" />
+        <Point X="11" Y="11.562" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Components\ScopeMetadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

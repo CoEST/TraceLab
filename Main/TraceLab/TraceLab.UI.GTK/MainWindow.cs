@@ -13,51 +13,50 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see<http://www.gnu.org/licenses/>.
-
 using System;
 using Gtk;
 using MonoDevelop.Components.Docking;
 using TraceLab.Core.ViewModels;
 using System.Collections.Generic;
 
-namespace TraceLab.UI.GTK 
+namespace TraceLab.UI.GTK
 {
-    public class MainWindow 
+    public class MainWindow
     {
         // keeps track of how many main windows are open
         private static int m_mainWindowCounter = 0;
-
         private DockFrame m_dockFrame;
         private ApplicationContext m_applicationContext;
         private InfoPanelFactory m_infoPanelFactory;
-       
+        private static string CLOSE_MAIN_WINDOW_WARN_MSG = "Experiment has been modified. Are you sure you want to close without saving?";
+
         /// <summary>
         /// Initializes a new instance of the <see cref="TraceLab.UI.GTK.MainWindow"/> class.
         /// </summary>
-        public MainWindow(ApplicationContext dataContext)
+        public MainWindow (ApplicationContext dataContext)
         {
             m_applicationContext = dataContext;
 
             // Init dock frame
-            m_dockFrame = new DockFrame();
+            m_dockFrame = new DockFrame ();
             m_dockFrame.CompactGuiLevel = 5;
 
             // Init component info panel
-            m_infoPanelFactory = new InfoPanelFactory(m_applicationContext, m_dockFrame);
+            m_infoPanelFactory = new InfoPanelFactory (m_applicationContext, m_dockFrame);
 
             //build the window
-            CreateWindow();
+            CreateWindow ();
             
             //set window application view model to all UI panels in current chrome
             //note, that application vm should not be set before m_windowShell.ShowAll is called
-            SetApplicationViewModel(m_applicationContext.Application);
+            SetApplicationViewModel (m_applicationContext.Application);
             
             // initiate action handlers for all actions in application
-            new ActionHandlers(dataContext);
+            new ActionHandlers (dataContext);
             
             //attach handler to closing event of a main window
             this.WindowShell.DeleteEvent += MainWindow_DeleteEvent;
-            
+        
             m_mainWindowCounter++;
         }
 
@@ -67,17 +66,15 @@ namespace TraceLab.UI.GTK
         /// <param name='applicationViewModel'>
         /// Application view model.
         /// </param>
-        public void SetApplicationViewModel(ApplicationViewModel applicationViewModel) 
+        public void SetApplicationViewModel (ApplicationViewModel applicationViewModel)
         {
             // change application view model in all current pads
-            foreach(IDockPad pad in ApplicationPads) 
-            {
-                pad.SetApplicationModel(applicationViewModel);
+            foreach (IDockPad pad in ApplicationPads) {
+                pad.SetApplicationModel (applicationViewModel);
             }
 
             //set experiment name
-            if(applicationViewModel.Experiment != null)
-            {
+            if (applicationViewModel.Experiment != null) {
                 m_applicationContext.Application.PropertyChanged += HandleApplicationPropertyChanged;
                 this.WindowShell.Title = applicationViewModel.ExperimentName;
             }
@@ -92,8 +89,7 @@ namespace TraceLab.UI.GTK
         /// <param name="e">E.</param>
         private void HandleApplicationPropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if(e.PropertyName.Equals("ExperimentName"))
-            {
+            if (e.PropertyName.Equals ("ExperimentName")) {
                 this.WindowShell.Title = (sender as ApplicationViewModel).ExperimentName;
             }
         }
@@ -103,21 +99,21 @@ namespace TraceLab.UI.GTK
         /// <summary>
         /// Creates the window.
         /// </summary>
-        private void CreateWindow()
+        private void CreateWindow ()
         {
             int width = 1000;
             int height = 750;
             bool maximize = false;
 
-            this.WindowShell = new WindowShell("TraceLab.GenericWindow", "TraceLab", width, height, maximize);
+            this.WindowShell = new WindowShell ("TraceLab.GenericWindow", "TraceLab", width, height, maximize);
             
-            CreateMainToolBar();
+            CreateMainToolBar ();
 
-            CreateMainStatusBar();
+            CreateMainStatusBar ();
 
-            CreatePanels();
+            CreatePanels ();
             
-            this.WindowShell.ShowAll();
+            this.WindowShell.ShowAll ();
         }
 
         /// <summary>
@@ -126,18 +122,18 @@ namespace TraceLab.UI.GTK
         /// <param name='shell'>
         /// Shell.
         /// </param>
-        private void CreateMainToolBar()
+        private void CreateMainToolBar ()
         {
             Toolbar main_toolbar = this.WindowShell.CreateToolBar ("main_toolbar"); 
             main_toolbar.IconSize = IconSize.SmallToolbar;
             main_toolbar.ToolbarStyle = ToolbarStyle.Icons;
 
-            m_applicationContext.Actions.CreateToolBar(main_toolbar);
+            m_applicationContext.Actions.CreateToolBar (main_toolbar);
         }
 
-        private void CreateMainStatusBar() 
+        private void CreateMainStatusBar ()
         {
-            this.WindowShell.CreateProgressBar("main_progress_bar");
+            this.WindowShell.CreateProgressBar ("main_progress_bar");
         }
 
         /// <summary>
@@ -146,12 +142,12 @@ namespace TraceLab.UI.GTK
         /// <param name='shell'>
         /// Shell.
         /// </param>
-        private void CreatePanels()
+        private void CreatePanels ()
         {
-            HBox panelContainer = this.WindowShell.CreateLayout();
+            HBox panelContainer = this.WindowShell.CreateLayout ();
             
-            CreateDockAndPads(panelContainer);
-            panelContainer.ShowAll();
+            CreateDockAndPads (panelContainer);
+            panelContainer.ShowAll ();
         }
 
         /// <summary>
@@ -160,24 +156,22 @@ namespace TraceLab.UI.GTK
         /// <param name='container'>
         /// Container.
         /// </param>
-        private void CreateDockAndPads(HBox container)
+        private void CreateDockAndPads (HBox container)
         {
-            var componentsLibraryPad = new ComponentsLibraryPad();
-            var workspaceWindowPad = new WorkspaceWindowPad();
-            var experimentCanvasPad = new ExperimentCanvasPad(m_applicationContext);
-            var outputWindowPad = new OutputWindowPad();
+            var componentsLibraryPad = new ComponentsLibraryPad ();
+            var workspaceWindowPad = new WorkspaceWindowPad ();
+            var experimentCanvasPad = new ExperimentCanvasPad (m_applicationContext);
+            var outputWindowPad = new OutputWindowPad ();
 
-            IDockPad[] pads = new IDockPad[] 
-                {  
-                    componentsLibraryPad,
-                    workspaceWindowPad,
-                    experimentCanvasPad,
-                    outputWindowPad
-                };
+            IDockPad[] pads = new IDockPad[] {  
+                componentsLibraryPad,
+                workspaceWindowPad,
+                experimentCanvasPad,
+                outputWindowPad
+            };
 
-            foreach(IDockPad pad in pads) 
-            {
-                pad.Initialize(m_dockFrame);
+            foreach (IDockPad pad in pads) {
+                pad.Initialize (m_dockFrame);
             }
 
             this.ApplicationPads = pads;
@@ -186,7 +180,7 @@ namespace TraceLab.UI.GTK
             this.ExperimentCanvasPad = experimentCanvasPad;
             this.OutputWindowPad = outputWindowPad;
 
-            container.PackStart(m_dockFrame, true, true, 0);
+            container.PackStart (m_dockFrame, true, true, 0);
 
             //TODO: save last layout - see how Pinta has done it
 //            string layout_file = System.IO.Path.Combine (PintaCore.Settings.GetUserSettingsDirectory(), "layouts.xml");
@@ -219,52 +213,47 @@ namespace TraceLab.UI.GTK
         /// <param name="defaultLocationX">Default location x for the floating window</param>
         /// <param name="defaultLocationY">Default location y for the floating window</param>
         /// <param name="onVisibleChanged">The action that is executed when visibility of window changes.</param>
-        internal void ShowComponentInfoPad(BasicNodeControl component, 
-                                           int defaultLocationX, int defaultLocationY, System.Action<Boolean> onVisibleChanged) 
+        internal void ShowComponentInfoPad (BasicNodeControl component, 
+                                            int defaultLocationX, int defaultLocationY, System.Action<Boolean> onVisibleChanged)
         {  
             //delegate creation of component info panel to panel factory
-            m_infoPanelFactory.ShowComponentInfoPad(component, defaultLocationX, defaultLocationY, onVisibleChanged);
+            m_infoPanelFactory.ShowComponentInfoPad (component, defaultLocationX, defaultLocationY, onVisibleChanged);
         }
 
-        internal void HideComponentInfoPad(BasicNodeControl component)
+        internal void HideComponentInfoPad (BasicNodeControl component)
         {
-            m_infoPanelFactory.HideComponentInfoPad(component);
+            m_infoPanelFactory.HideComponentInfoPad (component);
         }
 
         #region UI Elements
-        
+
         /// <summary>
         /// Gets the main window.
         /// </summary>
         /// <value>
         /// The main window.
         /// </value>
-        public WindowShell WindowShell 
-        { 
+        public WindowShell WindowShell { 
             get;
             private set;
         }
-        
-        public ComponentsLibraryPad ComponentsLibraryPad
-        {
+
+        public ComponentsLibraryPad ComponentsLibraryPad {
             get;
             private set;
         }
-        
-        public WorkspaceWindowPad WorkspaceWindowPad 
-        {
+
+        public WorkspaceWindowPad WorkspaceWindowPad {
             get;
             private set;
         }
-        
-        public ExperimentCanvasPad ExperimentCanvasPad
-        {
+
+        public ExperimentCanvasPad ExperimentCanvasPad {
             get;
             private set;
         }
-        
-        public OutputWindowPad OutputWindowPad
-        {
+
+        public OutputWindowPad OutputWindowPad {
             get;
             private set;
         }
@@ -277,14 +266,12 @@ namespace TraceLab.UI.GTK
         /// <value>
         /// The application pads.
         /// </value>
-        public IDockPad[] ApplicationPads 
-        {
+        public IDockPad[] ApplicationPads {
             get;
             private set;
         }
-        
-        #endregion UI Elements
 
+        #endregion UI Elements
 
         /// <summary>
         /// Handler for closing main window event.
@@ -298,16 +285,48 @@ namespace TraceLab.UI.GTK
         /// </param>
         private void MainWindow_DeleteEvent (object o, DeleteEventArgs args)
         {
-            m_mainWindowCounter--;
+            bool quitApp = true;
 
-            //quit application if it was the last window
-            if(m_mainWindowCounter == 0) {
-                Application.Quit();
+
+            if (m_applicationContext.Application.Experiment != null && (m_applicationContext.Application.Experiment.IsModified || m_applicationContext.Application.Experiment.ExperimentInfo.IsModified)) {
+                //show a new dialog to warn the user he's closing the program without saving
+                ResponseType response = ResponseType.None;
+    
+                Dialog dialog = new Dialog (
+                    "Modified Experiment Not Saved",
+                    null,
+                    DialogFlags.Modal,
+                    "Yes", ResponseType.Yes, 
+                    "No", ResponseType.No
+                );
+
+                dialog.VBox.Add (new Label (CLOSE_MAIN_WINDOW_WARN_MSG)); 
+                dialog.ShowAll ();
+
+                response = (ResponseType)dialog.Run ();
+
+                if ((response == ResponseType.Yes)) {
+                    m_mainWindowCounter--;
+
+                } else {
+                    args.RetVal = true;     
+                    quitApp = false;               
+                }
+                dialog.Destroy ();
+              
+            } else {
+                m_mainWindowCounter--;
+            }
+
+
+            if (m_mainWindowCounter == 0 && quitApp) {
+                Application.Quit ();
                 args.RetVal = true;
 
                 //destroys all nlog rule targets
-                LogViewModel.DestroyLogTargets();
-            }
+                LogViewModel.DestroyLogTargets ();
+
+            }            
         }
     }
 }

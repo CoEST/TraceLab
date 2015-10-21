@@ -141,6 +141,13 @@ namespace MonoHotDraw.Tools {
         protected void UpdateUndoActivity() {
             if (HasMoved){
                 DragToolUndoActivity activity = UndoActivity as DragToolUndoActivity;
+                // HERZUM SPRINT 2.3 BUG FIX
+                if (activity == null)
+                    CreateUndoActivity ();
+                // HERZUM SPRINT 2.4 BUG FIX
+                if (activity != null)
+                // END HERZUM SPRINT 2.4 BUG FIX
+                // END HERZUM SPRINT 2.3 BUG FIX
                 activity.EndPoint = new PointD(LastX, LastY);
             }
             

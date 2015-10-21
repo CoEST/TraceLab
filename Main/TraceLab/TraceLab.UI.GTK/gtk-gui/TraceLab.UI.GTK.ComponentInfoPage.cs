@@ -20,7 +20,7 @@ namespace TraceLab.UI.GTK
 		private global::Gtk.Label label5;
 		private global::Gtk.Label label6;
 		private global::Gtk.Entry versionEntry;
-		
+
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
@@ -34,9 +34,9 @@ namespace TraceLab.UI.GTK
 			this.vbox2.BorderWidth = ((uint)(3));
 			// Container child vbox2.Gtk.Box+BoxChild
 			this.textview1 = new global::Gtk.TextView ();
-			this.textview1.Buffer.Text = "Finally define component\'s name, version and optionally provide description.\r\nNot" +
-				"e, that component\'s Name, Version, Input and Output, and Configuration determine" +
-				"s its unique ID.";
+			this.textview1.Buffer.Text = "Finally define component\'s name, version and optionally provide description.\nNote" +
+				", that component\'s Name, Version, Input and Output, and Configuration determines" +
+				" its unique ID.";
 			this.textview1.Sensitive = false;
 			this.textview1.CanFocus = true;
 			this.textview1.Name = "textview1";

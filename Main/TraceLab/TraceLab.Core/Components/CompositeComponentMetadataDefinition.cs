@@ -23,6 +23,9 @@ using System.Security.Permissions;
 
 namespace TraceLab.Core.Components
 {
+    /// <summary>
+    /// Represents the definition of a composite component
+    /// </summary>
     [Serializable]
     public class CompositeComponentMetadataDefinition : MetadataDefinition, IMetadataWithIOSpecDefinition, System.Xml.Serialization.IXmlSerializable
     {

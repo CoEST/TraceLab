@@ -1,5 +1,0 @@
-C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\bin\DebugMono\TraceLab.UI.GTK.dll
-C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\bin\DebugMono\TraceLab.UI.GTK.pdb
-C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\TraceLab.UI.GTK\obj\Debug\TraceLab.UI.GTK.csprojResolveAssemblyReference.cache
-C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\TraceLab.UI.GTK\obj\Debug\TraceLab.UI.GTK.dll
-C:\Users\ppruski\Documents\GitHub\TraceLab\Main\TraceLab\TraceLab.UI.GTK\obj\Debug\TraceLab.UI.GTK.pdb

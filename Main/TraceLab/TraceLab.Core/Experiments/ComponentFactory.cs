@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TraceLab.Core.Components;
+using TraceLab.Core.Utilities;
 
 namespace TraceLab.Core.Experiments
 {
     /// <summary>
-    /// Helper class for Base Experiment, that creates components and adds them to the experiment based on given metadefinitions. 
+    /// The Component Factory creates components metadata and adds them to the experiment based on given metadata definition. 
+    /// In other words, when user drags and drops the component definition from library into experiment canvas it creates the 
+    /// component metadata object based on the metadata definition and assigns it to the vertex node. Such metadata object 
+    /// keep the reference to its definition, and in addition it has properties that hold the values.
+    /// for example configuration values (ConfigWrapper class), and IO specification (IOSpec class)
+    /// 
+    /// Depending on the provided metadata definition, it will create Component, Composite Component, Decision, or Loop Scope.
     /// </summary>
     public static class ComponentFactory
     {
@@ -44,9 +51,64 @@ namespace TraceLab.Core.Experiments
             // case 4. Loop
             if (!isCreated)
                 isCreated = TryCreateLoopComponent(experiment, metadataDefinition, data, out newNode);
+
+            // HERZUM SPRINT 0.0
+            // case 5. Scope
+            if (!isCreated)
+                isCreated = TryCreateScopeComponent(experiment, metadataDefinition, data, out newNode);
+            // END HERZUM 0.0
+
+            // HERZUM SPRINT 1.0
+            if (!isCreated)
+                isCreated = TryCreateComment(experiment, metadataDefinition, data, out newNode);
+            // END HERZUM SPRINT 1.0
+
+            // HERZUM SPRINT 2.0: TLAB-65
+            // case 5. Challenge
+            if (!isCreated)
+                isCreated = TryCreateChallengeComponent(experiment, metadataDefinition, data, out newNode);
+            // END HERZUM SPRINT 2.0: TLAB-65
+
             
             return newNode;
         }
+
+        // HERZUM SPRINT 1.0
+        private static bool TryCreateComment(IEditableExperiment experiment, MetadataDefinition metadataDefinition, 
+                                               SerializedVertexData data, out ExperimentNode newCreatedNode)
+        {
+            bool isCreated = false;
+            newCreatedNode = null;
+
+            CommentMetadataDefinition commentMetadataDefinition = metadataDefinition as CommentMetadataDefinition;
+            if (commentMetadataDefinition != null)
+            {
+                data.Metadata = new CommentMetadata(commentMetadataDefinition.Label);
+                string commentNodeId = Guid.NewGuid().ToString();
+
+                // HERZUM SPRINT 1.2 COMMENT
+                // newCreatedNode = new CommentNode(commentNodeId, data);
+                var data_with_size = new SerializedVertexDataWithSize();
+                data_with_size.X = data.X;
+                data_with_size.Y = data.Y;
+                data_with_size.Metadata = data.Metadata;
+                data_with_size.Width  = 160;
+                data_with_size.Height = 160;
+                data_with_size.WidgetStatus = "normal";
+                newCreatedNode = new CommentNode(commentNodeId, data_with_size);
+                // END SPRINT 1.2 COMMENT
+
+                experiment.AddVertex(newCreatedNode);
+
+                //set the log settings of the new component
+                experiment.SetLogLevelSettings(newCreatedNode);
+
+                isCreated = true;
+            }
+
+            return isCreated;
+        }
+        // END HERZUM SPRINT 1.0
 
         /// <summary>
         /// Attempts to create the primitive component. Component is created only if definition is a ComponentMetadataDefinition.
@@ -247,7 +309,11 @@ namespace TraceLab.Core.Experiments
             string componentId = Guid.NewGuid().ToString();
 
             var componentGraph = new CompositeComponentEditableGraph(true);
-            componentGraph.References = new System.Collections.ObjectModel.ObservableCollection<TraceLabSDK.PackageSystem.IPackageReference>(experiment.References);
+
+            if (componentGraph.References != null)
+            {
+                componentGraph.References = experiment.References.CopyCollection();
+            }
 
             data.Metadata = new ScopeMetadata(componentGraph, scopeName, System.IO.Path.GetDirectoryName(experiment.ExperimentInfo.FilePath));
             
@@ -308,8 +374,12 @@ namespace TraceLab.Core.Experiments
             string componentId = Guid.NewGuid().ToString();
 
             var componentGraph = new CompositeComponentEditableGraph(true);
-            componentGraph.References = new System.Collections.ObjectModel.ObservableCollection<TraceLabSDK.PackageSystem.IPackageReference>(experiment.References);
 
+            if (componentGraph.References != null)
+            {
+                componentGraph.References = experiment.References.CopyCollection();
+            }
+            
             data.Metadata = new LoopScopeMetadata(componentGraph, scopeName, System.IO.Path.GetDirectoryName(experiment.ExperimentInfo.FilePath));
 
             string componentNodeId = Guid.NewGuid().ToString();
@@ -321,6 +391,139 @@ namespace TraceLab.Core.Experiments
 
             return loopScopeNode;
         }
+
+        // HERZUM SPRINT 0.0
+        /// <summary>
+        /// Attempts to create the composite component. Component is created only if definition is a LoopMetadataDefinition.
+        /// Otherwise method returns false, and null node.
+        /// </summary>
+        /// <param name="experiment">The experiment to which new component is added.</param>
+        /// <param name="metadataDefinition">The metadata definition which component is created based on.</param>
+        /// <param name="data">The data containing position of new vertex</param>
+        /// <param name="newCreatedNode">Output of new created node; null if metadatadefinition was not a LoopMetadataDefinition</param>
+        /// <returns>
+        /// true if metadatadefinition was a LoopMetadataDefinition and node has been created, otherwise false
+        /// </returns>
+        private static bool TryCreateScopeComponent(IEditableExperiment experiment, MetadataDefinition metadataDefinition, SerializedVertexData data,
+                                                   out ExperimentNode newCreatedNode)
+        {
+            bool isCreated = false;
+            newCreatedNode = null;
+
+            ScopeMetadataDefinition scopeMetadataDefinition = metadataDefinition as ScopeMetadataDefinition;
+            if (scopeMetadataDefinition != null)
+            {
+                newCreatedNode = CreateScopeNode(scopeMetadataDefinition.Label, experiment, data.X, data.Y);
+                isCreated = true;
+            }
+
+            return isCreated;
+        }
+
+        /// <summary>
+        /// Generates the scope node.
+        /// </summary>
+        /// <param name="scopeName">Name of the scope.</param>
+        /// <param name="experiment">The experiment to which new component is added.</param>
+        /// <param name="positionX">The position X.</param>
+        /// <param name="positionY">The position Y.</param>
+        /// <returns></returns>
+        private static ScopeNode CreateScopeNode(string scopeName, IEditableExperiment experiment, double positionX, double positionY)
+        {
+            var data = new SerializedVertexDataWithSize();
+            data.X = positionX;
+            data.Y = positionY;
+            data.Width = 160;
+            data.Height = 160;
+
+            string componentId = Guid.NewGuid().ToString();
+
+            var componentGraph = new CompositeComponentEditableGraph(true);
+
+            if (componentGraph.References != null)
+            {
+                componentGraph.References = experiment.References.CopyCollection();
+            }
+
+            data.Metadata = new ScopeMetadata(componentGraph, scopeName, System.IO.Path.GetDirectoryName(experiment.ExperimentInfo.FilePath));
+
+            string componentNodeId = Guid.NewGuid().ToString();
+            string componentName = data.Metadata.Label;
+
+            var scopeNode = new ScopeNode(Guid.NewGuid().ToString(), data);
+
+            experiment.AddVertex(scopeNode);
+
+            return scopeNode;
+        }
+        // END HERZUM 0.0
+
+        // HERZUM SPRINT 2.0: TLAB-65 CLASS
+        /// <summary>
+        /// Attempts to create the composite component. Component is created only if definition is a ChallengeMetadataDefinition.
+        /// Otherwise method returns false, and null node.
+        /// </summary>
+        /// <param name="experiment">The experiment to which new component is added.</param>
+        /// <param name="metadataDefinition">The metadata definition which component is created based on.</param>
+        /// <param name="data">The data containing position of new vertex</param>
+        /// <param name="newCreatedNode">Output of new created node; null if metadatadefinition was not a LoopMetadataDefinition</param>
+        /// <returns>
+        /// true if metadatadefinition was a ChallengeMetadataDefinition and node has been created, otherwise false
+        /// </returns>
+        private static bool TryCreateChallengeComponent(IEditableExperiment experiment, MetadataDefinition metadataDefinition, SerializedVertexData data,
+                                                    out ExperimentNode newCreatedNode)
+        {
+
+            bool isCreated = false;
+            newCreatedNode = null;
+
+            ChallengeMetadataDefinition challengeMetadataDefinition = metadataDefinition as ChallengeMetadataDefinition;
+            if (challengeMetadataDefinition != null)
+            {
+                newCreatedNode = CreateChallengeNode(challengeMetadataDefinition.Label, experiment, data.X, data.Y);
+                isCreated = true;
+            }
+
+            return isCreated;
+        }
+
+        /// <summary>
+        /// Generates the challenge node.
+        /// </summary>
+        /// <param name="challengeName">Name of the challenge.</param>
+        /// <param name="experiment">The experiment to which new component is added.</param>
+        /// <param name="positionX">The position X.</param>
+        /// <param name="positionY">The position Y.</param>
+        /// <returns></returns>
+        private static ChallengeNode CreateChallengeNode(string challengeName, IEditableExperiment experiment, double positionX, double positionY)
+        {
+            var data = new SerializedVertexDataWithSize();
+            data.X = positionX;
+            data.Y = positionY;
+            data.Width = 160;
+            data.Height = 160;
+
+            string componentId = Guid.NewGuid().ToString();
+
+            var componentGraph = new CompositeComponentEditableGraph(true);
+
+            if (componentGraph.References != null)
+            {
+                componentGraph.References = experiment.References.CopyCollection();
+            }
+
+            data.Metadata = new ChallengeMetadata(componentGraph, challengeName, System.IO.Path.GetDirectoryName(experiment.ExperimentInfo.FilePath));
+
+            string componentNodeId = Guid.NewGuid().ToString();
+            string componentName = data.Metadata.Label;
+
+            var challengeNode = new ChallengeNode(Guid.NewGuid().ToString(), data);
+
+            experiment.AddVertex(challengeNode);
+
+            return challengeNode;
+        }
+        // END HERZUM SPRINT 2.0: TLAB-65 CLASS
 
         #endregion
     }

@@ -21,11 +21,12 @@ along with this program.  If not, see<http://www.gnu.org/licenses/>.
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-        xmlns:pkgsrc="clr-namespace:TraceLab.UI.WPF.Views.PackageBuilder.PackageSource"
+        xmlns:pkgsrc="clr-namespace:TraceLab.Core.PackageBuilder;assembly=TraceLab.Core"
         xmlns:local="clr-namespace:TraceLab.UI.WPF.Views.PackageBuilder"
         xmlns:wpf="clr-namespace:TraceLab.UI.WPF.Controls"
         xmlns:Converters="clr-namespace:TraceLab.UI.WPF.Converters"
         xmlns:Selectors="clr-namespace:TraceLab.UI.WPF.Selectors"
+        xmlns:Core="clr-namespace:TraceLab.Core;assembly=TraceLab.Core"
         Title="Package Builder"
         Icon="/TraceLab.UI.WPF;component/Resources/Icon_PkgBuilder.ico"
         Background="SlateGray"
@@ -168,7 +169,7 @@ along with this program.  If not, see<http://www.gnu.org/licenses/>.
         <HierarchicalDataTemplate DataType="{x:Type pkgsrc:PackageHeirarchyItem}" ItemsSource="{Binding Children}">
             <DockPanel AllowDrop="True" Drop="TreeView_Drop">
                 <wpf:TreeListViewExpander />
-                <Image Source="{Binding Icon}" Height="16" Width="16" Margin="2"/>
+                <Image Source="{Binding SourceFilePath, Converter={Converters:FilePathIconConverter}}" Height="16" Width="16" Margin="2"/>
                 <TextBlock Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Margin="2"/>
             </DockPanel>
         </HierarchicalDataTemplate>
@@ -176,7 +177,7 @@ along with this program.  If not, see<http://www.gnu.org/licenses/>.
         <DataTemplate DataType="{x:Type pkgsrc:PackageFileSourceInfo}">
             <DockPanel AllowDrop="True" Drop="TreeView_Drop">
                 <wpf:TreeListViewExpander Visibility="Hidden" />
-                <Image Source="{Binding Icon}" Height="16" Width="16" Margin="2"/>
+                <Image Source="{Binding SourceFilePath, Converter={Converters:FilePathIconConverter}}" Height="16" Width="16" Margin="2"/>
                 <TextBlock Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" ToolTip="{Binding SourceFilePath}" Margin="2"/>
             </DockPanel>
         </DataTemplate>
@@ -218,31 +219,24 @@ along with this program.  If not, see<http://www.gnu.org/licenses/>.
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
-                    <CheckBox x:Name="cb1" Grid.Row="0" Margin="25,25,5,0" Content="Include referenced files and directories"
+                    <CheckBox x:Name="cb1" Grid.Row="0" Margin="25,25,5,0" Content="{x:Static Core:Messages.PackageBuilderConfig1_IncludeIndependentFilesDirs}"
                               IsChecked="{Binding ExperimentPackageConfig.IncludeIndependentFilesDirs}" />
-                    <TextBlock Grid.Row="1" FontStyle="Italic" TextWrapping="Wrap" Margin="45,5,25,0" >
-                        Files and directories referenced by components via configuration are going to be included in the package
-                    </TextBlock>
-                    
-                    <CheckBox x:Name="cb2" Grid.Row="2" Margin="25,25,5,0" Content="Include referenced files and directories from other packages"
+                    <TextBlock Grid.Row="1" FontStyle="Italic" TextWrapping="Wrap" Margin="45,5,25,0" 
+                               Text="{x:Static Core:Messages.PackageBuilderConfig1_IncludeIndependentFilesDirs_Descr}" />
+
+                    <CheckBox x:Name="cb2" Grid.Row="2" Margin="25,25,5,0" Content="{x:Static Core:Messages.PackageBuilderConfig2_IncludeOtherPackagesFilesDirs}"
                               IsChecked="{Binding ExperimentPackageConfig.IncludeOtherPackagesFilesDirs}" />
-                    <TextBlock Grid.Row="3" FontStyle="Italic" TextWrapping="Wrap" Margin="45,5,25,0">
-                        Files and directories from other packages referenced by components via configuration are going to be included in the package
-                    </TextBlock>
-                    
-                    <CheckBox x:Name="cb3" Grid.Row="4" Margin="25,25,5,0" Content="Include other packages assemblies"
+                    <TextBlock Grid.Row="3" FontStyle="Italic" TextWrapping="Wrap" Margin="45,5,25,0"
+                               Text="{x:Static Core:Messages.PackageBuilderConfig2_IncludeOtherPackagesFilesDirs_Descr}" />
+
+                    <CheckBox x:Name="cb3" Grid.Row="4" Margin="25,25,5,0" Content="{x:Static Core:Messages.PackageBuilderConfig3_IncludeOtherPackagesAssemblies}"
                               IsChecked="{Binding ExperimentPackageConfig.IncludeOtherPackagesAssemblies}" />
-                    <TextBlock Grid.Row="5" FontStyle="Italic" TextWrapping="Wrap" Margin="45,5,25,0">
-                        Components and types assemblies from other packages are going to be included in the package,
-                        otherwise experiment might continue to have dependency on component from other packages. 
-                    </TextBlock>
+                    <TextBlock Grid.Row="5" FontStyle="Italic" TextWrapping="Wrap" Margin="45,5,25,0" 
+                               Text="{x:Static Core:Messages.PackageBuilderConfig3_IncludeOtherPackagesAssemblies_Descr}" />
 
                     <Separator Grid.Row="6" Margin="25,25,25,25" />
 
-                    <TextBlock Grid.Row="7" Margin="25,0,25,0" TextWrapping="Wrap" FontStyle="Italic">
-                        Note, that experiment package assists in building complete package with all necessary components and types assemblies.
-                        However, if components have external dependencies, user must add these external assemblies manually. 
-                    </TextBlock>
+                    <TextBlock Grid.Row="7" Margin="25,0,25,0" TextWrapping="Wrap" FontStyle="Italic" Text="{x:Static Core:Messages.PackageBuilderNote}" />
                 </Grid>
 
                 <Button x:Name="GenerateExperimentPackageButton" Grid.Row="2" Margin="0 5 0 0" Width="120" HorizontalAlignment="Right"

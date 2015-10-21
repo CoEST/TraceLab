@@ -35,13 +35,19 @@ namespace TraceLab.UI.GTK
 
         private static void PushParents(CompositeComponentGraph graph, List<Crumb> crumbs) 
         {
+
             IExperiment parent = graph.OwnerNode.Owner;
 
             CompositeComponentGraph graphAbove = parent as CompositeComponentGraph;
+           
             if(graphAbove != null) 
             {
                 PushParents(graphAbove, crumbs);
                 ExperimentNode ownerNode = graphAbove.OwnerNode;
+                // HERZUM SPRINT 2.5: TLAB-173
+                if (graphAbove.OwnerNode is ScopeNode || graphAbove.OwnerNode is LoopScopeNode || graphAbove.OwnerNode is ChallengeNode)
+                    return;
+                // END HERZUM SPRINT 2.5: TLAB-173
                 crumbs.Add(new ExperimentCrumb(ownerNode.Data.Metadata.Label, graphAbove));
             }
             else if(parent is Experiment)

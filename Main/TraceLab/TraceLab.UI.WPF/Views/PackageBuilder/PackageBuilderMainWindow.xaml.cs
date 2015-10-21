@@ -26,8 +26,8 @@ using TraceLab.Core.Experiments;
 using TraceLab.Core.ViewModels;
 using TraceLab.UI.WPF.Controls;
 using TraceLab.UI.WPF.ViewModels;
-using TraceLab.UI.WPF.Views.PackageBuilder.PackageSource;
 using TraceLab.Core.PackageSystem;
+using TraceLab.Core.PackageBuilder;
 
 namespace TraceLab.UI.WPF.Views.PackageBuilder
 {
@@ -56,199 +56,10 @@ namespace TraceLab.UI.WPF.Views.PackageBuilder
         public PackageBuilderMainWindow(Experiment originalExperiment, Dictionary<string, Type> supportedTypes)
         {
             InitializeComponent();
-            this.isExperimentPackage = true;
 
             var info = new PackageBuilderViewModel(originalExperiment, supportedTypes);
+            
             DataContext = info;
-        }
-
-        #region Experiment Package
-
-        /// <summary>
-        /// Especifies if the package is a self-contained experiment package
-        /// </summary>
-        private bool isExperimentPackage = false;
-
-        /// <summary>
-        /// Sets the contents of the package from the given experiment, types and components.
-        /// </summary>
-        /// <param name="pInfo">Experiment info.</param>
-        /// <param name="pTypes">Collection of type assembly files.</param>
-        /// <param name="pComponents">Collection of component assembly files.</param>
-        /// <returns></returns>
-        private PackageSourceInfo SetPackageContent(ExperimentPackagingResults pResults)
-        {
-            var info = new PackageSourceInfo();
-
-            // Adding components
-            if (pResults.ComponentAssemblies.Count > 0)
-            {
-                PackageHeirarchyItem componentsFolder = CreateFolder(info.Root, "Components");
-                componentsFolder.HasComponents = true;
-                foreach (string component in pResults.ComponentAssemblies)
-                {
-                    AddFile(componentsFolder, component);
-                }
-            }
-
-            // Adding experiment
-            PackageHeirarchyItem experimentFolder = CreateFolder(info.Root, "Experiment");
-            AddFile(experimentFolder, pResults.Experiment.ExperimentInfo.FilePath);
-            info.Name = pResults.Experiment.ExperimentInfo.Name + " Package";
-
-            // Adding refered types into subfolder of Experiment
-            if (pResults.Files.Count > 0)
-            {
-                foreach (PackageFileInfo file in pResults.Files)
-                {
-                    PackageHeirarchyItem lastFolder = CreateRelativeFolders(experimentFolder, file);
-                    AddFile(lastFolder, file.AbsoluteLocation);
-                }
-            }
-
-            //Adding refered directories into subfolder of Experiment
-            if (pResults.Directories.Count > 0)
-            {
-                foreach (PackageFileInfo dir in pResults.Directories)
-                {
-                    PackageHeirarchyItem lastFolder = CreateRelativeFolders(experimentFolder, dir);
-                    AddFolder(lastFolder, dir.AbsoluteLocation);
-                }
-            }
-
-            // Adding types
-            if (pResults.TypeAssemblies.Count > 0)
-            {
-                PackageHeirarchyItem typesFolder = CreateFolder(info.Root, "Types");
-                typesFolder.HasTypes = true;
-                foreach (string type in pResults.TypeAssemblies)
-                {
-                    AddFile(typesFolder, type);
-                }
-            }
-
-            return info;
-        }
-
-        private PackageHeirarchyItem CreateRelativeFolders(PackageHeirarchyItem experimentFolder, PackageFileInfo file)
-        {
-            PackageHeirarchyItem lastFolder = experimentFolder;
-            foreach (string folder in file.FoldersPath)
-            {
-                PackageHeirarchyItem folderInfo;
-                if (ContainsFolder(lastFolder, folder, out folderInfo))
-                {
-                    lastFolder = folderInfo;
-                }
-                else
-                {
-                    lastFolder = CreateFolder(lastFolder, folder);
-                }
-            }
-            return lastFolder;
-        }
-
-        #endregion
-
-        #region Tree Manipulation
-
-        /// <summary>
-        /// Creates an empty folder inside the PackageHeirarchyItem provided.
-        /// </summary>
-        /// <param name="pParent">Parent node of the new folder.</param>
-        /// <param name="pFolderName">Name of the folder.</param>
-        /// <returns></returns>
-        private PackageHeirarchyItem CreateFolder(PackageHeirarchyItem pParent, string pFolderName)
-        {
-            PackageHeirarchyItem newFolder = new PackageHeirarchyItem("");
-            newFolder.Name = pFolderName;
-            newFolder.Parent = pParent;
-            pParent.Children.Add(newFolder);
-
-            return newFolder;
-        }
-
-        private void Add(PackageHeirarchyItem parent, string filePath)
-        {
-            if (System.IO.File.Exists(filePath))
-            {
-                AddFile(parent, filePath);
-            }
-            else
-            {
-                AddFolder(parent, filePath);
-            }
-        }
-
-        private void AddFile(PackageHeirarchyItem parent, string filePath)
-        {
-            var name = System.IO.Path.GetFileName(filePath);
-            if (parent != null && !Contains(parent, name))
-            {
-                var newItem = new PackageFileSourceInfo(filePath);
-                newItem.Name = name;
-                newItem.Parent = parent;
-
-                parent.Children.Add(newItem);
-            }
-        }
-
-        private void AddFolder(PackageHeirarchyItem parent, string filePath)
-        {
-            System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(filePath);
-            if (parent != null && !Contains(parent, dir.Name))
-            {
-                var newItem = new PackageHeirarchyItem(filePath);
-                newItem.Name = dir.Name;
-                newItem.Parent = parent;
-
-                parent.Children.Add(newItem);
-
-                foreach (System.IO.FileInfo file in dir.EnumerateFiles())
-                {
-                    AddFile(newItem, file.FullName);
-                }
-
-                foreach (System.IO.DirectoryInfo subDir in dir.EnumerateDirectories())
-                {
-                    AddFolder(newItem, subDir.FullName);
-                }
-            }
-        }
-
-        static bool Contains(PackageHeirarchyItem info, string name)
-        {
-            bool contains = false;
-            foreach (PackageFileSourceInfo item in info.Children)
-            {
-                if (string.Equals(name, item.Name))
-                {
-                    contains = true;
-                    break;
-                }
-            }
-            return contains;
-        }
-
-        static bool ContainsFolder(PackageHeirarchyItem info, string name, out PackageHeirarchyItem resultFolder)
-        {
-            resultFolder = null;
-            bool contains = false;
-            foreach (PackageFileSourceInfo item in info.Children)
-            {
-                if (string.Equals(name, item.Name))
-                {
-                    resultFolder = item as PackageHeirarchyItem;
-                    //if resultFolder now is different than null it means there is such folder in hierarchy,
-                    //otherwise there is file of same name - so return false
-                    if (resultFolder != null)
-                    {
-                        contains = true;
-                    }
-                    break;
-                }
-            }
-            return contains;
         }
 
         private void TreeListView_KeyUp(object sender, KeyEventArgs e)
@@ -273,8 +84,6 @@ namespace TraceLab.UI.WPF.Views.PackageBuilder
                 }
             }
         }
-
-        #endregion
 
         #region Drag & Drop
 
@@ -343,7 +152,7 @@ namespace TraceLab.UI.WPF.Views.PackageBuilder
             {
                 foreach (string filePath in ((System.Windows.DataObject)e.Data).GetFileDropList())
                 {
-                    Add(parent, filePath);
+                    viewModel.Add(parent, filePath);
                 }
             }
 
@@ -437,7 +246,16 @@ namespace TraceLab.UI.WPF.Views.PackageBuilder
                     {
                         foreach (PackageFileSourceInfo item in info.Files)
                         {
-                            noError = noError && AddItemToPackage(pkg, item);
+                            try
+                            {
+                                noError = noError && PackageCreator.AddItemToPackage(pkg, item, viewModel.IsExperimentPackage);
+                            }
+                            catch (TraceLab.Core.Exceptions.PackageCreationFailureException ex)
+                            {
+                                MessageBox.Show("Error creating package: " + ex.Message,
+                                    "Package Creation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                                noError = false;
+                            }
                         }
 
                         pkg.SaveManifest();
@@ -489,101 +307,12 @@ namespace TraceLab.UI.WPF.Views.PackageBuilder
             MainBorder.Visibility = System.Windows.Visibility.Hidden;
         }
 
-        /// <summary>
-        /// Adds item and its content (file or folder) to package.
-        /// </summary>
-        /// <param name="pPkg">Package being created.</param>
-        /// <param name="item">Item to be added.</param>
-        /// <returns>True is there was no error during the operation, false otherwise.</returns>
-        private bool AddItemToPackage(TraceLab.Core.PackageSystem.Package pkg, PackageFileSourceInfo item)
-        {
-            bool noError = true;
-            string targetPath = System.IO.Path.Combine(pkg.Location, item.GetPath());
- 
-            PackageHeirarchyItem dir = item as PackageHeirarchyItem;
-            if (dir != null)
-            {
-                if (item.Parent != null)
-                {
-                    System.IO.Directory.CreateDirectory(targetPath);
-                }
-
-                foreach (PackageFileSourceInfo child in dir.Children)
-                {
-                    noError = noError && AddItemToPackage(pkg, child);
-                }
-
-                if (dir.HasComponents)
-                {
-                    pkg.SetDirectoryHasComponents(dir.GetPath(), true);
-                }
-                if (dir.HasTypes)
-                {
-                    pkg.SetDirectoryHasTypes(dir.GetPath(), true);
-                }
-            }
-            else
-            {
-                System.IO.File.Copy(item.SourceFilePath, targetPath);
-                //Add reference to this created package to all experiments and composite components
-                if (this.isExperimentPackage && targetPath.EndsWith(".teml") || targetPath.EndsWith(".tcml"))
-                {   
-                    noError = noError && AddPkgRefToExperiment(pkg, targetPath);
-                }
-                System.IO.File.SetAttributes(targetPath, System.IO.File.GetAttributes(targetPath) & ~System.IO.FileAttributes.ReadOnly);
-                pkg.AddFile(targetPath);
-            }
-
-            return noError;
-        }
-
-        /// <summary>
-        /// Modifies experiment to add reference to new package.
-        /// </summary>
-        /// <param name="pPkg">The package being created.</param>
-        /// <param name="pExperimentFile">The experiment file.</param>
-        /// <returns>True is there was no error during the operation, false otherwise.</returns>
-        private bool AddPkgRefToExperiment(TraceLab.Core.PackageSystem.Package pPkg, string pExperimentFile)
-        {
-            bool noError = true;
-            if (System.IO.File.Exists(pExperimentFile))
-            {
-                try
-                {
-                    XmlDocument xmlExperiment = new XmlDocument();
-                    xmlExperiment.Load(pExperimentFile);
-
-                    XmlNode nodeReferences = xmlExperiment.SelectSingleNode("//References");
-
-                    XmlElement newPkgReference = xmlExperiment.CreateElement("PackageReference");
-                    newPkgReference.SetAttribute("ID", pPkg.ID);
-                    newPkgReference.SetAttribute("Name", pPkg.Name);
-                    nodeReferences.AppendChild(newPkgReference);
-
-                    xmlExperiment.Save(pExperimentFile);
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Unable to modify experiment - reference to new package could not be added.",
-                        "Package Creation Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    noError = false;
-                }
-            }
-            else
-            {
-                noError = false;
-            }
-            return noError;
-        }
-
         #endregion
 
         private void GenerateExperimentPackageButton_Click(object sender, RoutedEventArgs e)
         {
             var viewModel = (PackageBuilderViewModel)DataContext;
-            var ePkgResults = viewModel.Pack();
-            PackageSourceInfo pkgInfo = SetPackageContent(ePkgResults);
-            viewModel.PackageSourceInfo = pkgInfo;
+            viewModel.GeneratePackageContent(); //it sets the root package source info
             viewModel.CurrentState = PackageBuilderWizardPage.FileViewer;
         }
     }

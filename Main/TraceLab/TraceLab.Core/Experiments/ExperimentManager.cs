@@ -28,6 +28,7 @@ using System.Xml.Serialization;
 using TraceLab.Core.Exceptions;
 using TraceLab.Core.Components;
 using System.Xml;
+using TraceLab.Core.Utilities;
 
 namespace TraceLab.Core.Experiments
 {
@@ -89,6 +90,7 @@ namespace TraceLab.Core.Experiments
                 {
                     experiment.ResetModifiedFlag();
                 }
+
             }
             catch (ArgumentException e)
             {
@@ -117,6 +119,60 @@ namespace TraceLab.Core.Experiments
             
             return experiment;
         }
+
+        /// <summary>
+        /// Loads an experiment from the specified STREAM.
+        /// </summary>
+        /// <param name="filename">The filename.</param>
+        /// <exception cref="TraceLab.Core.Exceptions.ExperimentLoadException">throws if experiment load fails</exception>
+        /// <returns>
+        /// Returns loaded m_experiment. If loading failed it returns null.
+        /// </returns>
+        /// TLAB-66 TLAB-68 TLAB-69
+        public static Experiment Load(Stream fileName, string originalFileName, TraceLab.Core.Components.ComponentsLibrary library)
+        {
+            Experiment experiment = null;
+            try
+            {   
+                using (System.Xml.XmlReader reader = System.Xml.XmlReader.Create(fileName))
+                {
+                    experiment = ExperimentSerializer.DeserializeExperiment(reader, library, originalFileName);
+
+                }
+
+                if (experiment != null)
+                {
+                    experiment.ResetModifiedFlag();
+                }
+            }
+            catch (ArgumentException e)
+            {
+                throw new ExperimentLoadException("The experiment file could not be loaded. Filename cannot be empty. ", e);
+            }
+            catch (System.Security.SecurityException e)
+            {
+                throw new ExperimentLoadException("The experiment file could not be loaded.", e);
+            }
+            catch (System.IO.FileNotFoundException e)
+            {
+                throw new ExperimentLoadException("The experiment file has not been found.", e);
+            }
+            catch (System.IO.DirectoryNotFoundException e)
+            {
+                throw new ExperimentLoadException("The directory has not been found.", e);
+            }
+            catch (UriFormatException e)
+            {
+                throw new ExperimentLoadException("The experiment is corrupted and could not be loaded.", e);
+            }
+            catch (System.Xml.XmlException e)
+            {
+                throw new ExperimentLoadException("The experiment is corrupted and could not be loaded.", e);
+            }
+
+            return experiment;
+        }
+
 
         #endregion
 
@@ -153,6 +209,30 @@ namespace TraceLab.Core.Experiments
 
             return success;
         }
+
+        public static bool SaveToCrypt(IExperiment experiment, string fileName)
+        {
+            if (fileName == null)
+                throw new ArgumentNullException("fileName");
+
+            string oldExperimentFilePath = experiment.ExperimentInfo.FilePath;
+
+            bool success = false;
+
+            try
+            {
+                //update its FilePath info to the new file location
+                experiment.ExperimentInfo.FilePath = fileName;
+                success = SaveToCrypt(experiment);
+            }
+            finally
+            {
+                if (success == false)
+                    experiment.ExperimentInfo.FilePath = oldExperimentFilePath; //go back to old filepath
+            }
+
+            return success;
+        }
         
         /// <summary>
         /// Saves the experiment to specified filename.
@@ -170,6 +250,46 @@ namespace TraceLab.Core.Experiments
                 throw new System.IO.IOException("File Is Read Only");
 
             bool success = SerializeExperimentToXml(experiment, experiment.ExperimentInfo.FilePath);
+
+            if (success)
+            {
+                experiment.ResetModifiedFlag();
+            }
+
+            return success;
+        }
+
+        // HERZUM SPRINT 3: TLAB-86
+        public static bool PublishTeml(IExperiment experiment, string filePath)
+        {
+
+            if (experiment == null)
+                throw new ArgumentNullException("experiment");
+
+            if (IsFileReadOnly(filePath))
+                throw new System.IO.IOException("File Is Read Only");
+
+            bool success = SerializeExperimentToXml(experiment, filePath);
+
+            if (success)
+            {
+                experiment.ResetModifiedFlag();
+            }
+
+            return success;
+        }
+        // END HERZUM SPRINT 3: TLAB-86
+
+        private static bool SaveToCrypt(IExperiment experiment)
+        {
+            if (experiment == null)
+                throw new ArgumentNullException("experiment");
+            if (String.IsNullOrEmpty(experiment.ExperimentInfo.FilePath))
+                throw new InvalidOperationException("experiment filepath");
+            if (IsFileReadOnly(experiment.ExperimentInfo.FilePath))
+                throw new System.IO.IOException("File Is Read Only");
+
+            bool success = SerializeExperimentToStream(experiment, experiment.ExperimentInfo.FilePath);
 
             if (success)
             {
@@ -200,6 +320,41 @@ namespace TraceLab.Core.Experiments
                 using (XmlWriter writer = XmlWriter.Create(filename, settings))
                 {
                     ExperimentSerializer.SerializeExperiment(writer, experiment);
+                }
+
+                success = true;
+            }
+            catch (System.Security.SecurityException ex)
+            {
+                System.Diagnostics.Debug.Write("Security exception while serializing experiment to Xml " + ex);
+            }
+
+            return success;
+        }
+
+        private static bool SerializeExperimentToStream(IExperiment experiment, string filename)
+        {
+            bool success = false;
+
+            try
+            {
+                XmlWriterSettings settings = new XmlWriterSettings();
+                settings.Indent = true;
+                settings.NamespaceHandling = NamespaceHandling.OmitDuplicates;
+                settings.OmitXmlDeclaration = true;
+                settings.ConformanceLevel = ConformanceLevel.Fragment;
+                settings.CloseOutput = false;
+
+                //create the xml writer
+                MemoryStream fileStream = new MemoryStream();
+                using (XmlWriter writer = XmlWriter.Create(fileStream, settings))
+                {
+                    ExperimentSerializer.SerializeExperiment(writer, experiment);
+                    writer.Flush();
+                    writer.Close();
+
+                    //we enrcypt the file before save it
+                    Crypto.EncryptFile(fileStream, filename);
                 }
 
                 success = true;
@@ -267,8 +422,12 @@ namespace TraceLab.Core.Experiments
                     //the Relative property is the only one that is serialized
                     SetNewRootLocationToReferencedFiles(experiment, true);
                 }
-                
-                success = Save(experiment);
+
+                //we check if the experiment is a challenge and if there is a password: in ths case we must encrypt the file
+                if((!string.IsNullOrEmpty(experiment.ExperimentInfo.ChallengePassword) || !string.IsNullOrEmpty(experiment.ExperimentInfo.ExperimentPassword)) && (!string.IsNullOrEmpty(experiment.ExperimentInfo.IsChallenge) && experiment.ExperimentInfo.IsChallenge.Equals("True"))){
+                    success = SaveToCrypt(experiment);
+                } else
+                    success = Save(experiment);
 
                 if (success == true)
                 {
@@ -357,23 +516,38 @@ namespace TraceLab.Core.Experiments
         /// <returns>experiment</returns>
         public static Experiment ReloadExperiment(Experiment experiment, TraceLab.Core.Components.ComponentsLibrary library)
         {
-            //cache current experiment file path
-            string currentPath = experiment.ExperimentInfo.FilePath;
+            if (experiment != null) {
+                //cache current experiment file path
+                string currentPath = experiment.ExperimentInfo.FilePath;
 
-            string tempFile = System.IO.Path.GetTempFileName();
+                string tempFile = System.IO.Path.GetTempFileName ();
 
-            //reload experiment by saving and loading it
-            SerializeExperimentToXml(experiment, tempFile);
-            Experiment refreshedExperiment = ExperimentManager.Load(tempFile, library);
+                //reload experiment by saving and loading it
+                SerializeExperimentToXml (experiment, tempFile);
+                Experiment refreshedExperiment = ExperimentManager.Load (tempFile, library);
 
-            //set m_experiment path to the actual path - from temporary path
-            refreshedExperiment.ExperimentInfo.FilePath = currentPath;
+                //set m_experiment path to the actual path - from temporary path
+                refreshedExperiment.ExperimentInfo.FilePath = currentPath;
 
-            SetNewRootLocationToReferencedFiles(refreshedExperiment, false);
+                SetNewRootLocationToReferencedFiles (refreshedExperiment, false);
 
-            return refreshedExperiment;
+                return refreshedExperiment;
+            } else 
+                return null;
         }
 
         #endregion Reload experiments on components library rescan
+
+        #region Delete File
+
+        public static bool DeleteFile(string pathToFile) {
+            if (!string.IsNullOrEmpty (pathToFile)) {
+                File.Delete (pathToFile);
+                return true;
+            } else 
+                return false;
+        }
+
+        #endregion Delete File
     }
 }

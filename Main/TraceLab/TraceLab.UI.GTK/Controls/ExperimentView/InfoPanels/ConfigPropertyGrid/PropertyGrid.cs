@@ -73,6 +73,19 @@ namespace MonoDevelop.Components.PropertyGrid
 		PropertySort propertySort = PropertySort.Categorized;
 		
 		const string PROP_HELP_KEY = "MonoDevelop.PropertyPad.ShowHelp";
+
+        // HERZUM SPRINT 5.0: TLAB-238 TLAB-243
+        private String data_root;
+        public String DataRoot
+        {
+            get {
+                return data_root;
+            }
+            set {
+                data_root = value;
+            }
+        }
+        // END HERZUM SPRINT 5.0: TLAB-238 TLAB-243
 		
 		public PropertyGrid (): this (new EditorManager ())
 		{
@@ -81,7 +94,6 @@ namespace MonoDevelop.Components.PropertyGrid
 		internal PropertyGrid (EditorManager editorManager)
 		{
 			this.editorManager = editorManager;
-			
 			#region Toolbar
 			
 			PropertyGridToolbar tb = new PropertyGridToolbar ();
@@ -132,6 +144,12 @@ namespace MonoDevelop.Components.PropertyGrid
 			vpaned = new VPaned ();
 
 			tree = new PropertyGridTree (editorManager, this);
+
+            // HERZUM SPRINT 4.2: TLAB-225
+            tree.VscrollbarPolicy = PolicyType.Never;
+            // END HERZUM SPRINT 4.2: TLAB-225
+           
+
 			tree.Changed += delegate {
 				Update ();
 			};
@@ -310,8 +328,12 @@ namespace MonoDevelop.Components.PropertyGrid
 				}
 			}
 			tree.RestoreStatus ();
+
+            // HERZUM SPRINT 5.0: TLAB-238 TLAB-243
+            tree.DataRoot = DataRoot;
+            // END HERZUM SPRINT 5.0: TLAB-238 TLAB-243
 		}
-		
+
 		void Update ()
 		{
 			PropertyDescriptorCollection properties;
@@ -337,6 +359,12 @@ namespace MonoDevelop.Components.PropertyGrid
 			get { return tree.ShadowType; }
 			set { tree.ShadowType = value; }
 		}
+
+        // HERZUM BUG FIX TLAB-254.3 
+        public void UnSelect () {
+            tree.UnSelect ();
+        }
+        // END HERZUM BUG FIX TLAB-254.3 
 		
 		#region Hel Pane
 		
@@ -421,6 +449,13 @@ namespace MonoDevelop.Components.PropertyGrid
 			UpdateHelp ();
 		}
 		
+        // HERZUM SPRINT 4.2: TLAB-225
+        public int CountPropertyGrid()
+        {
+            return tree.CountPropertyGridTree();
+        }
+        // END HERZUM SPRINT 4.2: TLAB-225
+
 		public interface IToolbarProvider
 		{
 			void Insert (Widget w, int pos);

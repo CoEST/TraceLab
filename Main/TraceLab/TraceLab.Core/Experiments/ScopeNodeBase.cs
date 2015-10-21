@@ -14,6 +14,11 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see<http://www.gnu.org/licenses/>.
 
+// HERZUM SPRINT 5.3 TLAB-251
+using System;
+using TraceLab.Core.Components;
+// END HERZUM SPRINT 5.3 TLAB-251
+
 namespace TraceLab.Core.Experiments
 {
     public abstract class ScopeNodeBase : CompositeComponentNode
@@ -69,5 +74,35 @@ namespace TraceLab.Core.Experiments
         {
             CompositeComponentMetadata.InitializeComponentGraph(this, settings);
         }
+
+        // HERZUM SPRINT 5.3 TLAB-251
+        public override bool IsModified
+        {
+            get 
+            {
+                ScopeBaseMetadata meta = Data.Metadata as ScopeBaseMetadata;
+                if (meta.ComponentGraph == null)
+                    return base.IsModified;
+                else
+                    return base.IsModified || meta.ComponentGraph.CalculateModification(); 
+            }
+            set
+            {
+                base.IsModified = value;
+            }
+        }
+
+        public override void ResetModifiedFlag()
+        {
+            base.ResetModifiedFlag ();
+            if (Data != null)  {
+                ScopeBaseMetadata meta = Data.Metadata as ScopeBaseMetadata;
+                if (meta.ComponentGraph != null){
+                    meta.ComponentGraph.ResetModifiedFlag ();
+                }
+            }
+        }
+        // END HERZUM SPRINT 5.3 TLAB-251
+
     }
 }

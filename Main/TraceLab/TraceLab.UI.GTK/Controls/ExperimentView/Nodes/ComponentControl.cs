@@ -37,6 +37,7 @@ namespace TraceLab.UI.GTK
             AttachListenerToIOSpecHighlights(node);
         }
 
+
         protected ComponentControl(ExperimentNode node, ApplicationContext applicationContext, 
                                    double waitForAnyAllHandleXLocation, 
                                    double waitForAnyAllHandleYLocation) 
@@ -46,6 +47,17 @@ namespace TraceLab.UI.GTK
             AttachListenerToIOSpecHighlights(node);
         }
 
+
+        // HERZUM SPRINT 5.2: TLAB-249
+        public void MoveIconInfo(double rel)
+        {
+            m_controlButtons.MoveIconInfo (this, rel);
+            // HERZUM SPRINT 5.5: TLAB-257
+            m_controlButtons.InfoButton.Toggled += OnInfoToggled;
+            // END HERZUM SPRINT 5.5: TLAB-257
+        }
+        // END HERZUM SPRINT 5.1: TLAB-249
+
         private void InitControlButtons(ApplicationContext applicationContext)
         {
             m_controlButtons = new NodeControlButtons (this, applicationContext);
@@ -54,6 +66,25 @@ namespace TraceLab.UI.GTK
 
         private void AttachListenerToIOSpecHighlights(ExperimentNode node)
         {
+
+            // HERZUM SPRINT 4: TLAB-238
+            ComponentMetadata meta = ExperimentNode.Data.Metadata as ComponentMetadata;
+            if (meta != null)  {
+                TraceLab.Core.Components.ConfigWrapper configWrapper = meta.ConfigWrapper as TraceLab.Core.Components.ConfigWrapper;
+                if (configWrapper != null){
+                    TraceLab.Core.Components.ConfigPropertyObject value = new TraceLab.Core.Components.ConfigPropertyObject();
+                    // HERZUM SPRINT 4.3: TLAB-238 TLAB-243 
+                    // ADD configWrapper.ConfigValues.TryGetValue ("ConfigurationFile", out value)
+                    if (configWrapper.ConfigValues.TryGetValue ("Directory", out value) || configWrapper.ConfigValues.TryGetValue ("ConfigurationFile", out value))
+                        if (value!=null){
+                            value.SetExperimentLocationRoot (System.IO.Path.GetDirectoryName(m_applicationContext.Application.Experiment.ExperimentInfo.FilePath), true);
+                        } 
+                        // END HERZUM SPRINT 4.2: TLAB-202
+                    }
+                    
+            }
+            // HERZUM SPRINT 4: TLAB-238
+
             //set convenience metadata field
             m_componentMetadata = node.Data.Metadata as IConfigurableAndIOSpecifiable;
             if(m_componentMetadata != null)
@@ -253,6 +284,9 @@ namespace TraceLab.UI.GTK
         {
             if(ev.IsRightButtonPressed())
             {
+                // HERZUM SPRINT 2.6 TLAB-172
+                if (IsEditable)
+                // END HERZUM SPRINT 2.6 TLAB-172
                 PopupContextMenu(mainTool, editor, defaultTool, ev);
                 return null;
             } 
@@ -262,6 +296,8 @@ namespace TraceLab.UI.GTK
             }
         }
 
+        // HERZUM SPRINT 2.3 TLAB-56 TLAB-57 TLAB-58 TLAB-59
+        /*
         private void PopupContextMenu(IPrimaryToolDelegator mainTool, IDrawingEditor editor, ITool dt, MouseEvent ev)
         {
             m_contextMenu = new Gtk.Menu();
@@ -279,6 +315,51 @@ namespace TraceLab.UI.GTK
 
             m_contextMenu.Popup();
         }
+        */
+
+        private void PopupContextMenu(IPrimaryToolDelegator mainTool, IDrawingEditor editor, ITool dt, MouseEvent ev)
+        {
+            m_contextMenu = new Gtk.Menu();
+            Gtk.MenuItem editLabel = new Gtk.MenuItem("Edit label");
+            Gtk.MenuItem copy = new Gtk.MenuItem("Copy");
+            Gtk.MenuItem cut = new Gtk.MenuItem("Cut");
+            // Gtk.MenuItem paste = new Gtk.MenuItem("Paste");
+
+            editLabel.Activated += delegate(object sender, EventArgs e) 
+            {
+                SimpleTextTool textTool = new SimpleTextTool(editor, this, dt, ev);
+                mainTool.DelegateTool = textTool;
+                textTool.StartEditing();
+            };
+
+            copy.Activated += delegate(object sender, EventArgs e) 
+            {
+                Clipboard.Copy(ExperimentNode.Owner as BaseExperiment);
+            };
+
+            cut.Activated += delegate(object sender, EventArgs e) 
+            {
+                Clipboard.Cut(ExperimentNode.Owner as BaseExperiment);
+            };
+
+            /*
+            paste.Activated += delegate(object sender, EventArgs e) 
+            {
+                Clipboard.Paste(ExperimentNode.Owner as BaseExperiment);
+                ExperimentCanvasPad ecp = ExperimentCanvasPadFactory.GetExperimentCanvasPad(m_applicationContext, this);
+                ecp.DisplayAddedSubgraph(ExperimentNode.Owner as BaseExperiment); 
+            };
+            */
+
+            m_contextMenu.Add(editLabel);
+            m_contextMenu.Add(copy);
+            m_contextMenu.Add(cut);
+            // m_contextMenu.Add(paste);
+            m_contextMenu.ShowAll();
+
+            m_contextMenu.Popup();
+        }
+        // END HERZUM SPRINT 2.3 TLAB-56 TLAB-57 TLAB-58 TLAB-59
 
         private NodeControlButtons m_controlButtons;
 

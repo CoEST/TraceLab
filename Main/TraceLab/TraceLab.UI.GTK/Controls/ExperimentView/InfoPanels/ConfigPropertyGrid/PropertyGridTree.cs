@@ -64,7 +64,7 @@ namespace MonoDevelop.Components.PropertyGrid
 			tree = new InternalTree (this, store);
 
 			CellRendererText crt;
-			
+
 			TreeViewColumn col;
 
 			col = new TreeViewColumn ();
@@ -77,8 +77,9 @@ namespace MonoDevelop.Components.PropertyGrid
 			col.Expand = false;
 			col.Sizing = TreeViewColumnSizing.Fixed;
 			col.FixedWidth = 180;
-			tree.AppendColumn (col);
-			
+
+            tree.AppendColumn (col);
+
 			editorColumn = new TreeViewColumn ();
 			editorColumn.Title = Catalog.GetString ("Value");
 			
@@ -103,6 +104,26 @@ namespace MonoDevelop.Components.PropertyGrid
 			tree.Selection.Changed += OnSelectionChanged;
 		}
 		
+        // HERZUM SPRINT 4.2: TLAB-225
+        public int CountPropertyGridTree()
+        {
+            return propertyRows.Count;
+        }
+        // END HERZUM SPRINT 4.2: TLAB-225
+
+        // HERZUM SPRINT 5.0: TLAB-238 TLAB-243
+        private String data_root;
+        public String DataRoot
+        {
+            get {
+                return data_root;
+            }
+            set {
+                data_root = value;
+            }
+        }
+        // END HERZUM SPRINT 5.0: TLAB-238 TLAB-243
+
 		public void CommitChanges ()
 		{
 			TreePath[] sel = tree.Selection.GetSelectedRows ();
@@ -270,6 +291,13 @@ namespace MonoDevelop.Components.PropertyGrid
 			});
 		}
 		
+        // HERZUM BUG FIX TLAB-254.3 
+        public void UnSelect ()
+        {
+            tree.Selection.UnselectAll ();
+        }
+        // END HERZUM BUG FIX TLAB-254.3 
+
 		void OnSelectionChanged (object s, EventArgs a)
 		{
 			TreePath[] rows = tree.Selection.GetSelectedRows ();
@@ -287,6 +315,14 @@ namespace MonoDevelop.Components.PropertyGrid
 				parentGrid.SetHelp (string.Empty, string.Empty);
 			}
 		}
+
+        // HERZUM BUG FIX TLAB-254.3 
+        protected override void OnFocusChildSet(Widget widget)
+        {
+            base.OnFocusChildSet (widget);
+            UnSelect ();
+        }
+        // END HERZUM BUG FIX TLAB-254.3
 		
 		internal void NotifyChanged ()
 		{
@@ -302,6 +338,11 @@ namespace MonoDevelop.Components.PropertyGrid
 			} else {
 				PropertyDescriptor prop = (PropertyDescriptor) model.GetValue (iter, 1);
 				PropertyEditorCell propCell = editorManager.GetEditor (prop);
+
+                // HERZUM SPRINT 5.0: TLAB-238 TLAB-243
+                propCell.DataRoot = DataRoot;
+                // END HERZUM SPRINT 5.0: TLAB-238 TLAB-243
+
 				InstanceData idata = (InstanceData) model.GetValue (iter, 3);
 				propCell.Initialize (tree, editorManager, prop, idata.Instance);
 				rc.SetData (idata.Instance, prop, propCell);
@@ -579,6 +620,13 @@ namespace MonoDevelop.Components.PropertyGrid
 					this.CellBackgroundGdk = tree.Style.MidColors [(int) Gtk.StateType.Normal];
 				else
 					this.CellBackground = null;
+                // HERZUM SPRINT 4.2: TLAB-226
+                //this.CellBackground = "grey";
+                // HERZUM SPRINT 5: TLAB-242
+                Gdk.Color colorBack = new  Gdk.Color (245, 245, 245);
+                this.CellBackgroundGdk = colorBack;
+                // END HERZUM SPRINT 5: TLAB-242
+                // END HERZUM SPRINT 4.2: TLAB-226
 			}
 		}
 		
@@ -658,7 +706,7 @@ namespace MonoDevelop.Components.PropertyGrid
 			box = new EventBox ();
 			box.ButtonPressEvent += new ButtonPressEventHandler (OnClickBox);
 			box.ModifyBg (StateType.Normal, Style.White);
-			box.Add (child);
+            box.Add (child);
 		}
 		
 		[GLib.ConnectBefore]

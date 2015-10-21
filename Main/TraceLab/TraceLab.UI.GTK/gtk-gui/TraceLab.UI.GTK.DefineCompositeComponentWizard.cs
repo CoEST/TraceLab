@@ -19,7 +19,7 @@ namespace TraceLab.UI.GTK
 		private global::Gtk.Button defineButton;
 		private global::Gtk.Button cancelButton;
 		private global::Gtk.Button okButton;
-		
+
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);

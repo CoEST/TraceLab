@@ -48,7 +48,7 @@ namespace TraceLab.UI.GTK
 		private global::Gtk.Label GtkLabel18;
 		private global::Gtk.Button buttonCancel;
 		private global::Gtk.Button buttonOk;
-		
+
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
@@ -150,8 +150,6 @@ namespace TraceLab.UI.GTK
 			// Container child GtkViewport.Gtk.Container+ContainerChild
 			this.lbl_temporaryComponentDirectories = new global::Gtk.Label ();
 			this.lbl_temporaryComponentDirectories.Name = "lbl_temporaryComponentDirectories";
-			this.lbl_temporaryComponentDirectories.Xalign = 0.04F;
-			this.lbl_temporaryComponentDirectories.Yalign = 0.04F;
 			this.lbl_temporaryComponentDirectories.UseMarkup = true;
 			this.lbl_temporaryComponentDirectories.Selectable = true;
 			w15.Add (this.lbl_temporaryComponentDirectories);
@@ -328,8 +326,6 @@ namespace TraceLab.UI.GTK
 			// Container child GtkViewport1.Gtk.Container+ContainerChild
 			this.lbl_temporaryTypesDirectories = new global::Gtk.Label ();
 			this.lbl_temporaryTypesDirectories.Name = "lbl_temporaryTypesDirectories";
-			this.lbl_temporaryTypesDirectories.Xalign = 0.04F;
-			this.lbl_temporaryTypesDirectories.Yalign = 0.04F;
 			this.lbl_temporaryTypesDirectories.UseMarkup = true;
 			this.lbl_temporaryTypesDirectories.Selectable = true;
 			w63.Add (this.lbl_temporaryTypesDirectories);

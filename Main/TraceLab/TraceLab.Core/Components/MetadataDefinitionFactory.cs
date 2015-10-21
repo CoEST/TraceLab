@@ -16,6 +16,10 @@
 
 using System;
 
+// HERZUM SPRINT 1.1
+// "Decision & Loops" --> "Control Structures"
+// END HERZUM SPRINT 1.1
+
 namespace TraceLab.Core.Components
 {
     /// <summary>
@@ -38,6 +42,24 @@ namespace TraceLab.Core.Components
 
             DecisionMetadataDefinition gotoDecisionMetadataDefinition = BuildGoToDecisionDefinition();
             componentsDefinitionCollection.Add(gotoDecisionMetadataDefinition);
+
+            // HERZUM  SPRINT 0.0
+            ScopeMetadataDefinition scopeMetadataDefinition = BuildScopeDefinition();
+            componentsDefinitionCollection.Add(scopeMetadataDefinition);
+
+            // HERZUM SPRINT 2.0: TLAB-65 CLASS
+            // ScopeMetadataDefinition challengeScopeMetadataDefinition = BuildChallengeDefinition();
+            // componentsDefinitionCollection.Add(challengeScopeMetadataDefinition);
+            ChallengeMetadataDefinition challengeMetadataDefinition = BuildChallengeDefinition();
+            componentsDefinitionCollection.Add(challengeMetadataDefinition);
+            // END HERZUM SPRINT 2.0: TLAB-65 CLASS
+
+            // END HERZUM 0.0
+
+            // HERZUM SPRINT 1.0
+            CommentMetadataDefinition commentMetadataDefinition = BuildCommentDefinition();
+            componentsDefinitionCollection.Add(commentMetadataDefinition);
+            // END HERZUM SPRINT 1.0
         }
                 
         /// <summary>
@@ -48,7 +70,7 @@ namespace TraceLab.Core.Components
         {
             DecisionMetadataDefinition decisionMetadataDefinition = new DecisionMetadataDefinition(DecisionMetadataDefinition.DecisionGuid);
             decisionMetadataDefinition.Label = "If Statement Decision (with scopes)";
-            decisionMetadataDefinition.Tags.SetTag("Decision & Loops", false);
+            decisionMetadataDefinition.Tags.SetTag("Control Structures", false);
             decisionMetadataDefinition.Description = "Decisions provides way of specifying execution paths via corresponding scopes based on runtime data in the workspace.";
             return decisionMetadataDefinition;
         }
@@ -57,10 +79,44 @@ namespace TraceLab.Core.Components
         {
             DecisionMetadataDefinition decisionMetadataDefinition = new DecisionMetadataDefinition(DecisionMetadataDefinition.GotoDecisionGuid);
             decisionMetadataDefinition.Label = "Goto Decision";
-            decisionMetadataDefinition.Tags.SetTag("Decision & Loops", false);
+            decisionMetadataDefinition.Tags.SetTag("Control Structures", false);
             decisionMetadataDefinition.Description = "Goto Decisions provides way of specifying execution paths based on runtime data in the workspace.";
             return decisionMetadataDefinition;
         }
+
+        // HERZUM  SPRINT 0.0
+        private static ScopeMetadataDefinition  BuildScopeDefinition()
+        {
+            ScopeMetadataDefinition scopeMetadataDefinition = new ScopeMetadataDefinition (ScopeMetadataDefinition.ScopeGuid);
+            scopeMetadataDefinition.Label = "Scope";
+            scopeMetadataDefinition.Tags.SetTag("Control Structures", false);
+            scopeMetadataDefinition.Description = "Scope provides way of specifying execution paths based on runtime data in the workspace.";
+            return scopeMetadataDefinition;
+        }
+
+        // HERZUM SPRINT 2.0: TLAB-65 CLASS
+        private static ChallengeMetadataDefinition  BuildChallengeDefinition()
+        {
+            ChallengeMetadataDefinition challengeMetadataDefinition = new ChallengeMetadataDefinition (ChallengeMetadataDefinition.ChallengeScopeGuid);
+            challengeMetadataDefinition.Label = "Challenge Scope";
+            challengeMetadataDefinition.Tags.SetTag("Control Structures", false);
+            challengeMetadataDefinition.Description = "Challenge Scope provides way of specifying execution paths based on runtime data in the workspace.";
+            return challengeMetadataDefinition;
+        }
+        // END HERZUM SPRINT 2.0: TLAB-65 CLASS
+
+        // END HERZUM 0.0
+
+        // HERZUM SPRINT 1.0
+        private static CommentMetadataDefinition  BuildCommentDefinition()
+        {
+            CommentMetadataDefinition commentMetadataDefinition = new CommentMetadataDefinition (CommentMetadataDefinition.CommentGuid);
+            commentMetadataDefinition.Label = "Comment";
+            commentMetadataDefinition.Tags.SetTag("Control Structures", false);
+            commentMetadataDefinition.Description = "Comment.";
+            return commentMetadataDefinition;
+        }
+        // END HERZUM SPRINT 1.0
 
         /// <summary>
         /// Builds the loop definition.
@@ -70,7 +126,7 @@ namespace TraceLab.Core.Components
         {
             LoopMetadataDefinition loopMetadataDefinition = new LoopMetadataDefinition(LoopMetadataDefinition.WhileLoopGuid);
             loopMetadataDefinition.Label = "While Loop";
-            loopMetadataDefinition.Tags.SetTag("Decision & Loops", false);
+            loopMetadataDefinition.Tags.SetTag("Control Structures", false);
             loopMetadataDefinition.Description = "Loop provides a editable inner graph that can be repeated multiple types based on the given condition.";
             return loopMetadataDefinition;
         }

@@ -271,6 +271,17 @@ namespace TraceLab.Core.Experiments
             IEnumerable<ExperimentNodeConnection> edges;
             if (TryGetOutEdges(decisionNode, out edges))
             {
+                // HERZUM SPRINT 2.0 TLAB-148
+                //iterate over the copy of edges, as edges itself are going to be delete when nodes are deleted
+                bool found = false;
+                foreach (ExperimentNodeConnection edge in new List<ExperimentNodeConnection>(edges))
+                {
+                    if (edge.Target is ExitDecisionNode)
+                        found = true;
+                }
+                if (found)
+                // END HERZUM SPRINT 2.0 TLAB-148
+
                 //iterate over the copy of edges, as edges itself are going to be delete when nodes are deleted
                 foreach (ExperimentNodeConnection edge in new List<ExperimentNodeConnection>(edges))
                 {
@@ -304,9 +315,11 @@ namespace TraceLab.Core.Experiments
             return base.RemoveVertex(node);
         }
 
+        // HERZUM SPRINT 2.3 TLAB-140
         /// <summary>
         /// Removes the selected vertices.
         /// </summary>
+        /*
         public void RemoveSelectedVertices()
         {
             foreach (ExperimentNode node in new List<ExperimentNode>(Vertices))
@@ -320,6 +333,21 @@ namespace TraceLab.Core.Experiments
                 }
             }
         }
+        */
+        public void RemoveSelectedVertices()
+        {
+            foreach (ExperimentNode node in new List<ExperimentNode>(Vertices))
+            {
+                //don't remove scope nodes and exit decisions nodes directly - if decision node was also selected that logic will
+                //remove its correposding nodes
+                if (node.IsSelected == true && node is ExperimentStartNode == false && node is ExperimentEndNode == false
+                    && (node is ScopeNode == false ||(node is ScopeNode == true && (node as ScopeNode).DecisionNode == null)) && node is ExitDecisionNode == false)
+                {
+                    RemoveVertex(node);
+                }
+            }
+        }
+        // END HERZUM SPRINT 2.3 TLAB-140
 
         #endregion Remove Vertex
 
@@ -593,23 +621,159 @@ namespace TraceLab.Core.Experiments
             }
 
             if (other.References != null)
-            {   
-                if (!RuntimeInfo.IsRunInMono)
-                {
-                    References = new ObservableCollection<TraceLabSDK.PackageSystem.IPackageReference>(other.References);
-                }
-                else
-                {
-                    // Mono currently has not implemented constructor of ObservableCollection(IEnumerable<T> collection)
-                    // thus we have to add references manually
-                    References = new ObservableCollection<TraceLabSDK.PackageSystem.IPackageReference>();
-                    foreach (TraceLabSDK.PackageSystem.IPackageReference reference in other.References)
-                    {
-                        References.Add(reference);
+            {
+                References = other.References.CopyCollection();
+            }
+        }
+
+
+        // HERZUM SPRINT 2.3 TLAB-56 TLAB-57 TLAB-58 TLAB-59
+        public void CopyAndAdd(CompositeComponentGraph subExperiment, double x, double y)
+        {
+            if (subExperiment == null)
+                return;
+
+            CopyAndAdd (subExperiment, x, y, true);
+        }
+
+        public void CopyAndAdd(CompositeComponentGraph subExperiment, double x, double y, bool first)
+        {
+            if (subExperiment == null)
+                return;
+
+            if (subExperiment.IsVerticesEmpty)
+                return;
+
+            bool firstNode = true;
+            double minX = 0;
+            double minY = 0;
+            double offsetX = 0;
+            double offsetY = 0;
+
+            if (first){
+
+                foreach (ExperimentNode node in subExperiment.Vertices)   
+                // HERZUM SPRINT 2.6 TLAB-175         
+                // if (node.ID != "Start" && node.ID != "End"){
+                if ((node.ID != "Start" && node.ID != "End") && !(first && (node is ExperimentStartNode || node is ExperimentEndNode))) {
+                // END HERZUM SPRINT 2.6 TLAB-175
+                    if (firstNode){
+                        minX = node.Data.X;
+                        minY = node.Data.Y;
+                        firstNode = false;
+                    }
+                    else {
+                        if (node.Data.X < minX) minX = node.Data.X;
+                        if (node.Data.Y < minY) minY = node.Data.Y;
                     }
                 }
             }
+
+            offsetX = x - minX;
+            offsetY = y - minY;
+
+            //keep lookup from original node to its clone for later edge reproduction
+            Dictionary<ExperimentNode, ExperimentNode> clonedNodeLookup = new Dictionary<ExperimentNode, ExperimentNode>();
+
+            // Clone vertices and add them to the composite component graph
+            foreach (ExperimentNode node in subExperiment.Vertices)
+            {
+                // HERZUM SPRINT 2.6 TLAB-175
+                // if (node.ID != "Start" && node.ID != "End")
+                if ((node.ID != "Start" && node.ID != "End") && !(first && (node is ExperimentStartNode || node is ExperimentEndNode)))
+                // END HERZUM SPRINT 2.6 TLAB-175
+                {
+                    var clonedNode = node.Clone();
+                    clonedNode.ID = Guid.NewGuid().ToString();
+                    SetLogLevelSettings(clonedNode, Settings);
+                    clonedNodeLookup[node] = clonedNode;
+
+                    clonedNode.Owner = this;
+
+                    if (first){
+                        clonedNode.Data.X = clonedNode.Data.X + offsetX;
+                        clonedNode.Data.Y = clonedNode.Data.Y + offsetY;
+                    }
+
+                    AddVertex(clonedNode);
+
+                    ScopeBaseMetadata scopeBaseMetadata = node.Data.Metadata as ScopeBaseMetadata;
+                    ScopeBaseMetadata clonedScopeBaseMetadata = clonedNode.Data.Metadata as ScopeBaseMetadata;
+                    if ((scopeBaseMetadata != null && clonedScopeBaseMetadata!= null) && 
+                        (scopeBaseMetadata.ComponentGraph!=null))
+                    {
+                        clonedScopeBaseMetadata.ComponentGraph.Clear();
+                        clonedScopeBaseMetadata.ComponentGraph.GetExperiment().ExperimentInfo = clonedScopeBaseMetadata.ComponentGraph.GetExperiment().ExperimentInfo.CloneWithNewId();
+                        clonedScopeBaseMetadata.ComponentGraph.CopyAndAdd(scopeBaseMetadata.ComponentGraph,x,y,false);
+
+                    }
+                }
+            }
+
+            // Clone edges
+            foreach (ExperimentNodeConnection connection in subExperiment.Edges)
+            {
+                ExperimentNode cloneSourceNode, cloneTargetNode;
+
+                //add edges only if both source and target nodes has been found in clones lookup
+                bool foundSourceNode = clonedNodeLookup.TryGetValue(connection.Source, out cloneSourceNode);
+                bool foundTargetNode = clonedNodeLookup.TryGetValue(connection.Target, out cloneTargetNode);
+                if (foundSourceNode && foundTargetNode)
+                {
+                    ExperimentNodeConnection clonedConnection = new ExperimentNodeConnection(Guid.NewGuid().ToString(), cloneSourceNode, cloneTargetNode, connection.IsFixed, connection.IsVisible);
+                    //copy also all route points
+                    clonedConnection.RoutePoints.CopyPointsFrom(connection.RoutePoints);
+                    AddEdge(clonedConnection);
+
+                    //special case - fix scope node references
+                    ScopeNodeHelper.TryFixScopeDecisionEntryAndExitNodes(cloneSourceNode, cloneTargetNode);
+                }
+            }
+
+            // HERZUM SPRINT 2.4 TLAB-56 TLAB-57 TLAB-58 TLAB-59
+            if (first){
+                if (subExperiment.References != null)
+                {
+                    References = subExperiment.References.CopyCollection();
+                }
+            }
+            // HERZUM SPRINT 2.4 TLAB-56 TLAB-57 TLAB-58 TLAB-59
+
+            // Do deep copy of errors.
+            this.m_errors = new ObservableDictionary<ExperimentNode, ExperimentNodeError>();
+            foreach (KeyValuePair<ExperimentNode, ExperimentNodeError> pair in m_errors)
+            {
+                m_errors[clonedNodeLookup[pair.Key]] = new ExperimentNodeError(pair.Value.ErrorMessage, pair.Value.ErrorType);
+            }
         }
+
+        // HERZUM SPRINT 4: TLAB-215
+        public bool ThereAreNodeErrors(out string message)
+        {
+            bool wrong = false;
+            string localMessage = "";
+            string subMessage = "";
+            // HERZUM SPRINT 4.2: TLAB-215
+            // if (this.Errors.Count > 0){
+            // END HERZUM SPRINT 4.2: TLAB-215
+                foreach (ExperimentNode node in Vertices){ 
+                    if (node.Error!= null && node.Error.ErrorMessage != null)
+                        localMessage = localMessage + "\r\n" + node.Data.Metadata.Label + " Component: " + node.Error.ErrorMessage + "\r\n";
+                    ScopeBaseMetadata meta = node.Data.Metadata as ScopeBaseMetadata;
+                    if (meta != null && meta.ComponentGraph !=null){ 
+                        wrong = meta.ComponentGraph.ThereAreNodeErrors(out subMessage);
+                        localMessage = localMessage + subMessage;
+                    }
+                }
+            // HERZUM SPRINT 4.2: TLAB-215
+            // }
+            // END HERZUM SPRINT 4.2: TLAB-215
+            message = localMessage;
+            return (this.Errors.Count > 0) || wrong;
+        }
+        // END HERZUM SPRINT 4: TLAB-215
+
+        // END HERZUM SPRINT 2.3 TLAB-56 TLAB-57 TLAB-58 TLAB-59
 
         #endregion
 
