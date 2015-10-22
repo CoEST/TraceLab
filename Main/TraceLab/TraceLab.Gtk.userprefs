@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TraceLab.Core/Experiments/ComponentFactory.cs">
+    <Files>
+      <File FileName="TraceLab.UI.GTK/Controls/ExperimentView/InfoPanels/ConfigPropertyGrid/Editors/FilePathEditor.cs" Line="57" Column="18" />
+      <File FileName="TraceLab.Core/Experiments/ComponentFactory.cs" Line="503" Column="50" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
