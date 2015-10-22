@@ -23,6 +23,10 @@ using System.IO;
 using System.Xml.XPath;
 using TraceLabSDK.PackageSystem;
 
+// HERZUM SPRINT 3.1 TLAB-179
+using TraceLabSDK;
+// END HERZUM SPRINT 3.1 TLAB-179
+
 namespace TraceLab.Core.PackageSystem
 {
     public class Package : MarshalByRefObject, IPackage
@@ -335,7 +339,10 @@ namespace TraceLab.Core.PackageSystem
             if (string.IsNullOrWhiteSpace(path))
                 throw new ArgumentException("Path not be empty.");
 
-            path = path.Replace('/', '\\');
+            // HERZUM SPRINT 3.1 TLAB-179
+            if (TraceLabSDK.RuntimeInfo.OperatingSystem == RuntimeInfo.OS.Windows)
+            // END // HERZUM SPRINT 3.1 TLAB-179
+                path = path.Replace('/', '\\');
             string relativePath = path;
             // Validate that the file exists:
             if (System.IO.Path.IsPathRooted(path))
@@ -344,7 +351,13 @@ namespace TraceLab.Core.PackageSystem
                 path = info.FullName;
                 if (path.StartsWith(Location))
                 {
-                    relativePath = ".\\" + path.Remove(0, Location.Length + 1);
+                    // HERZUM SPRINT 3.1 TLAB-179
+                    // relativePath = ".\\" + path.Remove(0, Location.Length + 1);
+                    if (TraceLabSDK.RuntimeInfo.OperatingSystem == RuntimeInfo.OS.Windows)
+                        relativePath = ".\\" + path.Remove(0, Location.Length + 1);
+                    else
+                        relativePath = "./" + path.Remove(0, Location.Length + 1);
+                    // END HERZUM SPRINT 3.1 TLAB-179
                 }
                 else
                 {

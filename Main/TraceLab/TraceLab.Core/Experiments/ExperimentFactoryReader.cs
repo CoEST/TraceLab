@@ -184,6 +184,21 @@ namespace TraceLab.Core.Experiments
             {
                 node = new ExitDecisionNode(id, nodeData);
             }
+            // HERZUM SPRINT 1.0
+            else if (nodeData.Metadata is CommentMetadata)
+            {
+                // HERZUM SPRINT 1.2
+                // node = new CommentNode(id, nodeData);
+                node = new CommentNode(id, (SerializedVertexDataWithSize) nodeData);
+                // END HERZUM SPRINT 1.2
+            }
+            // END HERZUM SPRINT 1.0
+            // HERZUM SPRINT 2.0: TLAB-65 CLASS
+            else if (nodeData.Metadata is ChallengeMetadata)
+            {
+                node = new ChallengeNode(id, (SerializedVertexDataWithSize) nodeData);
+            }
+            // END HERZUM SPRINT 2.0: TLAB-65 CLASS
             else
             {
                 ComponentNode componentNode = new ComponentNode(id, nodeData);

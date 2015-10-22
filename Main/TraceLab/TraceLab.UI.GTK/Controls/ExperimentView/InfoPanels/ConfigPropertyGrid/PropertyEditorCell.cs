@@ -34,6 +34,10 @@ using MonoDevelop.Components.PropertyGrid.PropertyEditors;
 using Gtk;
 using Gdk;
 
+// HERZUM SPRINT 4.2: TLAB-202
+using System.Text.RegularExpressions;
+// END HERZUM SPRINT 4.2: TLAB-202
+
 namespace MonoDevelop.Components.PropertyGrid
 {
 	public class PropertyEditorCell
@@ -179,6 +183,31 @@ namespace MonoDevelop.Components.PropertyGrid
 			if (DialogueEdit)
 				throw new NotImplementedException();
 		}
+
+        // HERZUM SPRINT 4.2: TLAB-202
+        public virtual void SetDirectory (String newDirectoryLocation)
+        {
+        }
+        // END HERZUM SPRINT 4.2: TLAB-202
+
+        // HERZUM SPRINT 4.2: TLAB-202
+        public virtual void SetFilePath (String newFilePath)
+        {
+        }
+        // END HERZUM SPRINT 4.2: TLAB-202
+
+        // HERZUM SPRINT 5.0: TLAB-238 TLAB-243
+        private String data_root;
+        public String DataRoot
+        {
+            get {
+                return data_root;
+            }
+            set {
+                data_root = value;
+            }
+        }
+        // HERZUM SPRINT 5.0: TLAB-238 TLAB-243
 	}
 	
 	
@@ -273,6 +302,7 @@ namespace MonoDevelop.Components.PropertyGrid
 				}
 				syncing = false;
 			}
+
 		}
 		
 /*		public void AttachObject (object ob)
@@ -321,7 +351,10 @@ namespace MonoDevelop.Components.PropertyGrid
 		#endregion
 	}
 	
-	class CellRendererWidget: Gtk.DrawingArea
+    // HERZUM SPRINT 4.2: TLAB-202
+	//class CellRendererWidget: Gtk.DrawingArea
+    class CellRendererWidget: Gtk.TextView
+    // END HERZUM SPRINT 4.2: TLAB-202
 	{
 		PropertyEditorCell cell;
 		object obj;
@@ -335,6 +368,15 @@ namespace MonoDevelop.Components.PropertyGrid
 			this.property = cell.Property;
 			em = cell.EditorManager;
 			this.ModifyBg (Gtk.StateType.Normal, this.Style.White);
+
+            // HERZUM SPRINT 4.2: TLAB-202
+            if (cell != null && cell.Value != null && Buffer != null){
+                if ((cell.Value as TraceLabSDK.Component.Config.DirectoryPath) != null)
+                    Buffer.Text = (cell.Value as TraceLabSDK.Component.Config.DirectoryPath).Absolute;
+                else if ((cell.Value as TraceLabSDK.Component.Config.FilePath) != null)
+                    Buffer.Text = (cell.Value as TraceLabSDK.Component.Config.FilePath).Absolute;
+            }
+            // END HERZUM SPRINT 4.2: TLAB-202
 		}
 		
 		protected override bool OnExposeEvent (EventExpose evnt)
@@ -344,21 +386,117 @@ namespace MonoDevelop.Components.PropertyGrid
 			
 			Gdk.Rectangle rect = Allocation;
 			rect.Inflate (-3, 0);// Add some margin
-			
+
 			cell.Render (this.GdkWindow, rect, StateType.Normal);
+
 			return res;
 		}
+
+        // HERZUM SPRINT 4.2: TLAB-202
+        /*
+        protected override bool OnFocusOutEvent (EventFocus evnt)
+        {
+            bool res = base.OnFocusOutEvent (evnt);
+
+            if (cell != null && cell.Value != null && Buffer != null)
+                if ((cell.Value as TraceLabSDK.Component.Config.DirectoryPath)!=null){
+                    if (Buffer.Text != null && !Buffer.Text.Trim().Equals("") && !System.IO.Directory.Exists(Buffer.Text))
+                        Buffer.Text = (cell.Value as TraceLabSDK.Component.Config.DirectoryPath).Absolute;
+                    (cell.Value as TraceLabSDK.Component.Config.DirectoryPath).Absolute = Buffer.Text;
+                    cell.SetDirectory (Buffer.Text);
+                    
+                }  else if ((cell.Value as TraceLabSDK.Component.Config.FilePath) != null){
+                    if (Buffer.Text != null && !Buffer.Text.Trim().Equals("") && !System.IO.File.Exists(Buffer.Text))
+                        Buffer.Text = (cell.Value as TraceLabSDK.Component.Config.FilePath).Absolute;
+                    (cell.Value as TraceLabSDK.Component.Config.FilePath).Absolute = Buffer.Text;
+                    cell.SetFilePath (Buffer.Text);
+                }
+
+            return res;
+        }
+        */
+        // HERZUM SPRINT 4.3: TLAB-238 TLAB-243
+        protected override bool OnFocusOutEvent (EventFocus evnt)
+        {
+            bool res = base.OnFocusOutEvent (evnt);
+
+            if (cell == null || Buffer == null)
+                return res;
+
+            if ((cell as TraceLab.UI.GTK.PropertyGridEditors.DirectoryPathEditor)!=null){
+
+                try {
+                    if (cell.Value != null) {
+                        if (Buffer.Text != null && !Buffer.Text.Trim().Equals(""))
+                            if (!System.IO.Directory.Exists(Buffer.Text))
+                                Buffer.Text = (cell.Value as TraceLabSDK.Component.Config.DirectoryPath).Absolute;
+                        (cell.Value as TraceLabSDK.Component.Config.DirectoryPath).Absolute = Buffer.Text;
+                    }
+                    cell.SetDirectory (Buffer.Text);
+                }
+                catch {}
+            }  else if ((cell as TraceLab.UI.GTK.PropertyGridEditors.FilePathEditor) != null){
+
+                try {
+                    if (cell.Value != null) {
+                        if (Buffer.Text != null && !Buffer.Text.Trim().Equals(""))
+                            if (!System.IO.File.Exists(Buffer.Text))
+                                Buffer.Text = (cell.Value as TraceLabSDK.Component.Config.FilePath).Absolute;
+                        (cell.Value as TraceLabSDK.Component.Config.FilePath).Absolute = Buffer.Text;
+                    }
+                    cell.SetFilePath (Buffer.Text);
+                }
+                catch {}
+            }
+
+            return res;
+        }
+        // END HERZUM SPRINT 4.3: TLAB-238 TLAB-243
+
+        protected override bool OnFocusInEvent (EventFocus evnt)
+        {
+            // Buffer.Text;
+            bool res = base.OnFocusOutEvent (evnt);
+
+            if (cell != null && cell.Value != null && Buffer != null)  {
+                if ((cell.Value as TraceLabSDK.Component.Config.DirectoryPath)!=null)
+                    Buffer.Text = (cell.Value as TraceLabSDK.Component.Config.DirectoryPath).Absolute;
+                else if ((cell.Value as TraceLabSDK.Component.Config.FilePath) != null)
+                    Buffer.Text = (cell.Value as TraceLabSDK.Component.Config.FilePath).Absolute;
+            }
+            return res;
+        }
+
+        public void Refresh ()
+        {
+            if (cell != null && cell.Value != null && Buffer != null){
+                if ((cell.Value as TraceLabSDK.Component.Config.DirectoryPath) != null)
+                    Buffer.Text = (cell.Value as TraceLabSDK.Component.Config.DirectoryPath).Absolute;
+                else if ((cell.Value as TraceLabSDK.Component.Config.FilePath) != null)
+                    Buffer.Text = (cell.Value as TraceLabSDK.Component.Config.FilePath).Absolute;
+            }
+        }
+        // END HERZUM SPRINT 4.2: TLAB-202
+
 	}
 	
 	class PropertyDialogueEditor: HBox, IPropertyEditor
 	{
 		PropertyEditorCell cell;
-		
+
+        // HERZUM SPRINT 4.2: TLAB-202
+        CellRendererWidget cellRendererWidget = null;
+        // END HERZUM SPRINT 4.2: TLAB-202
+
 		public PropertyDialogueEditor (PropertyEditorCell cell)
 		{
 			this.cell = cell;
 			Spacing = 3;
-			PackStart (new CellRendererWidget (cell), true, true, 0);
+            // HERZUM SPRINT 4.2: TLAB-202
+            // PackStart (new CellRendererWidget (cell), true, true, 0);
+            cellRendererWidget = new CellRendererWidget (cell);
+            PackStart (cellRendererWidget, true, true, 0);
+            // END HERZUM SPRINT 4.2: TLAB-202
 			Label buttonLabel = new Label ();
 			buttonLabel.UseMarkup = true;
 			buttonLabel.Xpad = 0; buttonLabel.Ypad = 0;
@@ -372,9 +510,14 @@ namespace MonoDevelop.Components.PropertyGrid
 		
 		void DialogueButtonClicked (object s, EventArgs args)
 		{
+
 			cell.LaunchDialogue ();
 			if (ValueChanged != null)
 				ValueChanged (this, args);
+
+            // HERZUM SPRINT 4.2: TLAB-202
+            cellRendererWidget.Refresh ();
+            // END HERZUM SPRINT 4.2: TLAB-202
 		}
 		
 		public void Initialize (EditSession session)

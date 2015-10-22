@@ -22,10 +22,8 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-
 // # define DEBUG_SHOW_FPS
 // # define DEBUG_SHOW_VISIBLE_AREA
-
 using Cairo;
 using Gdk;
 using Gtk;
@@ -37,13 +35,74 @@ using MonoHotDraw.Figures;
 using MonoHotDraw.Handles;
 using MonoHotDraw.Util;
 
-namespace MonoHotDraw {
+namespace MonoHotDraw
+{
+    // HERZUM SPRINT 2.3 TLAB-56 TLAB-57 TLAB-58 TLAB-59
+    public class MouseEventArgs : EventArgs
+    {
+        private MouseEvent mouseEvent;
 
-    public class StandardDrawingView : ContainerCanvas, IDrawingView {
-        
+        public MouseEventArgs (MouseEvent ev)
+        {
+            mouseEvent = ev;
+        }
+
+        public MouseEvent MouseEvent {
+            get { return mouseEvent; }
+        }
+    }
+    // END HERZUM SPRINT 2.3 TLAB-56 TLAB-57 TLAB-58 TLAB-59
+    public class StandardDrawingView : ContainerCanvas, IDrawingView
+    {
         public event EventHandler VisibleAreaChanged;
+        // HERZUM SPRINT 2.3 TLAB-56 TLAB-57 TLAB-58 TLAB-59
+        public event EventHandler Copy;
 
-        public StandardDrawingView (IDrawingEditor editor): base () {
+        private void OnCopy ()
+        {
+            if (Copy != null)
+                Copy (this, new EventArgs ());
+        }
+
+        public event EventHandler Cut;
+
+        private void OnCut ()
+        {
+            if (Cut != null)
+                Cut (this, new EventArgs ());
+        }
+
+        public event EventHandler<MouseEventArgs> Paste;
+
+        // TLAB-184
+        public event EventHandler<MouseEventArgs> PanTool;
+
+        private void OnPanTool (MouseEvent ev)
+        {
+            if (PanTool != null) {
+                PanTool (this, new MouseEventArgs (ev));
+            }
+        }
+   
+        public event EventHandler<MouseEventArgs> PanToolButtonReleased;
+
+        private void OnPanToolButtonRelease (MouseEvent ev)
+        {
+            if (PanToolButtonReleased != null) {
+                PanToolButtonReleased (this, new MouseEventArgs (ev));
+            }
+        }
+        /// TLAB-184
+
+        private void OnPaste (MouseEvent ev)
+        {
+            if (Paste != null) {
+                Paste (this, new MouseEventArgs (ev));
+            }
+        }
+        // END HERZUM SPRINT 2.3 TLAB-56 TLAB-57 TLAB-58 TLAB-59
+        public StandardDrawingView (IDrawingEditor editor): base ()
+        {
             Drawing = new StandardDrawing ();
             Editor = editor;
             Scale = 1.0;
@@ -59,7 +118,9 @@ namespace MonoHotDraw {
         /// Otherwise MissingIntPtrCtorException may be trown.
         /// </summary>
         /// <param name="raw">Raw.</param>
-        protected StandardDrawingView(System.IntPtr raw) : base(raw) {}
+        protected StandardDrawingView (System.IntPtr raw) : base(raw)
+        {
+        }
 
         public IDrawing Drawing {
             set {
@@ -80,14 +141,13 @@ namespace MonoHotDraw {
         }
 
         public IDrawingEditor Editor { get; set; }
-        
+
         public double Scale {
             get { return _scale; }
             set { 
-                if(value != _scale) 
-                {
+                if (value != _scale) {
                     _scale = value;
-                    QueueDraw();
+                    QueueDraw ();
                 }
             }
         }
@@ -99,40 +159,46 @@ namespace MonoHotDraw {
                 }
             }
         }
-        
+
         public int SelectionCount {
             get { return _selection.Count; }
         }
-        
-        public void Add (IFigure figure) {
+
+        public void Add (IFigure figure)
+        {
             Drawing.Add (figure);
         }
 
-        public void AddToSelection (IFigure figure) {
+        public void AddToSelection (IFigure figure)
+        {
             if (!IsFigureSelected (figure) && Drawing.Includes (figure)) {
                 _selection.Add (figure);
                 figure.IsSelected = true;
                 figure.Invalidate ();
             }
         }
-        
-        public void AddToSelection (FigureCollection collection) {
+
+        public void AddToSelection (FigureCollection collection)
+        {
             foreach (IFigure figure in collection) {
                 AddToSelection (figure);
             } 
         }
-        
-        public void Remove (IFigure figure) {
+
+        public void Remove (IFigure figure)
+        {
             Drawing.Remove (figure);
         }
 
-        public void RemoveFromSelection (IFigure figure) {
+        public void RemoveFromSelection (IFigure figure)
+        {
             _selection.Remove (figure);
             figure.IsSelected = false;
             figure.Invalidate ();
         }
 
-        public void ToggleSelection (IFigure figure) {
+        public void ToggleSelection (IFigure figure)
+        {
             if (IsFigureSelected (figure)) {
                 RemoveFromSelection (figure);
             } else {
@@ -140,7 +206,8 @@ namespace MonoHotDraw {
             }
         }
 
-        public void ClearSelection () {
+        public void ClearSelection ()
+        {
             foreach (IFigure figure in _selection) {
                 figure.IsSelected = false;
                 figure.Invalidate ();
@@ -149,21 +216,22 @@ namespace MonoHotDraw {
             _selection.Clear ();
         }
 
-        public void ClearAll() 
+        public void ClearAll ()
         {
-            ClearSelection();
+            ClearSelection ();
 
-            foreach (IFigure figure in new System.Collections.Generic.List<IFigure>(Drawing.FiguresEnumerator)) 
-            {
-                Drawing.Remove(figure);
+            foreach (IFigure figure in new System.Collections.Generic.List<IFigure>(Drawing.FiguresEnumerator)) {
+                Drawing.Remove (figure);
             }
         }
 
-        public bool IsFigureSelected (IFigure figure) {
+        public bool IsFigureSelected (IFigure figure)
+        {
             return _selection.Contains (figure);
         }
-        
-        public IHandle FindHandle (double x, double y) {
+
+        public IHandle FindHandle (double x, double y)
+        {
             foreach (IHandle handle in SelectionHandles) {
                 if (handle.ContainsPoint (x, y)) {
                     return handle;
@@ -171,21 +239,23 @@ namespace MonoHotDraw {
             }
             return null;
         }
-        
-        public PointD ViewToDrawing (double x, double y) {
+
+        public PointD ViewToDrawing (double x, double y)
+        {
             return new PointD {
                 X = (x/Scale + VisibleArea.X),
                 Y = (y/Scale + VisibleArea.Y)
             };
         }
-        
-        public PointD DrawingToView (double x, double y) {
+
+        public PointD DrawingToView (double x, double y)
+        {
             return new PointD {
-                    X = (x - VisibleArea.X) * Scale,
-                    Y = (y - VisibleArea.Y) * Scale
+                X = (x - VisibleArea.X) * Scale,
+                Y = (y - VisibleArea.Y) * Scale
             };
         }
-        
+
         public RectangleD VisibleArea {
             get {
                 return new RectangleD {
@@ -196,11 +266,12 @@ namespace MonoHotDraw {
                 };
             }
         }
-        
-        public void ScrollToMakeVisible (PointD point) {
+
+        public void ScrollToMakeVisible (PointD point)
+        {
             RectangleD visible = VisibleArea;
             
-            if (visible.Contains(point.X, point.Y) ) {
+            if (visible.Contains (point.X, point.Y)) {
                 return;
             }
             
@@ -214,23 +285,22 @@ namespace MonoHotDraw {
             
             if (point.X < visible.X) {
                 Hadjustment.Value = Math.Round (point.X, 0);
-            }
-            else if (point.X > visible.X2 ) {
+            } else if (point.X > visible.X2) {
                 Hadjustment.Value = Math.Round (point.X - visible.Width, 0);
             }
             
             if (point.Y < visible.Y) {
                 Vadjustment.Value = Math.Round (point.Y, 0);
-            }
-            else if (point.Y > visible.Y2) {
+            } else if (point.Y > visible.Y2) {
                 Vadjustment.Value = Math.Round (point.Y - visible.Height, 0);
             }
         }
-        
-        public void ScrollToMakeVisible (RectangleD rect) {
+
+        public void ScrollToMakeVisible (RectangleD rect)
+        {
             RectangleD visible = VisibleArea;
             
-            if (visible.Contains(rect) ) {
+            if (visible.Contains (rect)) {
                 return;
             }
             
@@ -245,7 +315,7 @@ namespace MonoHotDraw {
             if (rect.X < visible.X) {
                 Hadjustment.Value = Math.Round (rect.X, 0);
             }
-            if (rect.X2 > visible.X2 ) {
+            if (rect.X2 > visible.X2) {
                 Hadjustment.Value = Math.Round (rect.X2 - visible.Width, 0);
             }
             
@@ -256,7 +326,7 @@ namespace MonoHotDraw {
                 Vadjustment.Value = Math.Round (rect.Y2 - visible.Height, 0);
             }
         }
-        
+
         public void ScrollCanvas (int dx, int dy)
         {
             double hadjustment = Hadjustment.Value + dx;
@@ -273,9 +343,9 @@ namespace MonoHotDraw {
             Vadjustment.Value = vadjustment;
         }
 
-        public double ZoomToFit() 
+        public double ZoomToFit ()
         {
-            this.Drawing.RecalculateDisplayBox();
+            this.Drawing.RecalculateDisplayBox ();
             RectangleD displayBox = this.Drawing.DisplayBox;
             RectangleD viewport = new RectangleD {
                 X = Allocation.X,
@@ -291,22 +361,20 @@ namespace MonoHotDraw {
             double maxHeightScale = viewport.Height / displayBox.Height; 
             
             //Use the smaller of the 2 scales for the scaling
-            double scale = Math.Min(maxHeightScale, maxWidthScale); 
+            double scale = Math.Min (maxHeightScale, maxWidthScale); 
 
             Scale = scale;
 
-            ScrollToMakeVisible(displayBox);
+            ScrollToMakeVisible (displayBox);
 
             return scale;
         }
 
         protected IEnumerable <IHandle> SelectionHandles {
-            get 
-            {
+            get {
                 //display selection handles only if there is one figure selected
                 //it looks overcrowded if all handles of all selected figures are displayed 
-                if(_selection.Count == 1)
-                {
+                if (_selection.Count == 1) {
                     foreach (IFigure figure in SelectionEnumerator) {
                         foreach (IHandle handle in figure.HandlesEnumerator) {
                             yield return handle;
@@ -314,9 +382,10 @@ namespace MonoHotDraw {
                     }
                 }
             }
-        }   
-                
-        public FigureCollection InsertFigures (FigureCollection figures, double dx, double dy, bool check) {
+        }
+
+        public FigureCollection InsertFigures (FigureCollection figures, double dx, double dy, bool check)
+        {
             InsertIntoDrawingVisitor visitor = new InsertIntoDrawingVisitor (Drawing);
             foreach (IFigure figure in figures) {    
                 figure.MoveBy (dx, dy);
@@ -326,15 +395,16 @@ namespace MonoHotDraw {
             //TODO: Use check parameter
             return visitor.GetAddedFigures ();
         }
-    
-        protected override bool OnExposeEvent (EventExpose ev) {
+
+        protected override bool OnExposeEvent (EventExpose ev)
+        {
             using (Cairo.Context context = CairoHelper.Create (ev.Window)) {
                 
-                context.Save();
+                context.Save ();
                 
-                PointD translation = DrawingToView(0.0,  0.0);
+                PointD translation = DrawingToView (0.0, 0.0);
                 context.Translate (translation.X, translation.Y);
-                context.Scale(Scale, Scale);
+                context.Scale (Scale, Scale);
                 
                 foreach (IFigure figure in Drawing.FiguresEnumerator) {
                     // check region for update
@@ -348,7 +418,7 @@ namespace MonoHotDraw {
                     figure.DrawSelected (context);
                 }
                 
-                context.Restore();
+                context.Restore ();
 
                 foreach (IHandle handle in SelectionHandles) {
                     handle.Draw (context, this);
@@ -356,12 +426,13 @@ namespace MonoHotDraw {
             }
             
             DebugUpdateFrame ();
-            return base.OnExposeEvent(ev);
+            return base.OnExposeEvent (ev);
         }
-        
-        protected override bool OnMotionNotifyEvent (EventMotion gdk_event) {
-            PointD point = ViewToDrawing(gdk_event.X, gdk_event.Y);
-            MouseEvent ev = new MouseEvent(this, gdk_event, point);
+
+        protected override bool OnMotionNotifyEvent (EventMotion gdk_event)
+        {
+            PointD point = ViewToDrawing (gdk_event.X, gdk_event.Y);
+            MouseEvent ev = new MouseEvent (this, gdk_event, point);
 
             if (_drag) {
                 // TODO: Move this to a Tool
@@ -371,72 +442,163 @@ namespace MonoHotDraw {
                 Editor.Tool.MouseMove (ev);
             }
 
-            return base.OnMotionNotifyEvent(gdk_event);
+            // HERZUM SPRINT 1.0
+            // return base.OnMotionNotifyEvent(gdk_event);
+            return true;
+            // END HERZUM SPRINT 1.0     
         }
 
-        protected override bool OnButtonReleaseEvent (EventButton gdk_event) {
-            Drawing.RecalculateDisplayBox();
-            PointD point = ViewToDrawing(gdk_event.X, gdk_event.Y);
-            MouseEvent ev = new MouseEvent(this, gdk_event, point);
+        protected override bool OnButtonReleaseEvent (EventButton gdk_event)
+        {
+            Drawing.RecalculateDisplayBox ();
+            PointD point = ViewToDrawing (gdk_event.X, gdk_event.Y);
+            MouseEvent ev = new MouseEvent (this, gdk_event, point);
             Editor.Tool.MouseUp (ev);
             _drag = false;
-            return base.OnButtonReleaseEvent(gdk_event);
-        }
 
-        protected override bool OnButtonPressEvent (Gdk.EventButton gdk_event) {
-            PointD point = ViewToDrawing(gdk_event.X, gdk_event.Y);
-            MouseEvent ev = new MouseEvent(this, gdk_event, point);
+            // TLAB-184
+            if (ev.isCentralButtonPressed ()) {
+                if (PanToolButtonReleased != null)
+                    OnPanToolButtonRelease (ev);
+            }
+            /// TLAB-184
+
+            return base.OnButtonReleaseEvent (gdk_event);
+        }
+        // HERZUM SPRINT 2.3 TLAB-56 TLAB-57 TLAB-58 TLAB-59
+        protected Gtk.Menu m_contextMenu;
+
+        private void PopupContextMenu (MouseEvent ev)
+        {
+            m_contextMenu = new Gtk.Menu ();
+            Gtk.MenuItem copy = new Gtk.MenuItem ("Copy");
+            Gtk.MenuItem cut = new Gtk.MenuItem ("Cut");
+            Gtk.MenuItem paste = new Gtk.MenuItem ("Paste");
+
+            copy.Activated += delegate(object sender, EventArgs e) {
+                OnCopy ();
+            };
+
+            cut.Activated += delegate(object sender, EventArgs e) {
+                OnCut ();
+            };
+
+            paste.Activated += delegate(object sender, EventArgs e) {
+                OnPaste (ev);
+            };
+
+            m_contextMenu.Add (copy);
+            m_contextMenu.Add (cut);
+            m_contextMenu.Add (paste);
+            m_contextMenu.ShowAll ();
+
+            m_contextMenu.Popup ();
+        }
+        // END HERZUM SPRINT 2.3 TLAB-56 TLAB-57 TLAB-58 TLAB-59
+        // HERZUM SPRINT 2.3 TLAB-56 TLAB-57 TLAB-58 TLAB-59
+        static double x = -1;
+        static double y = -1;
+        // END HERZUM SPRINT 2.3 TLAB-56 TLAB-57 TLAB-58 TLAB-59
+   
+        protected override bool OnButtonPressEvent (Gdk.EventButton gdk_event)
+        {
+
+            PointD point = ViewToDrawing (gdk_event.X, gdk_event.Y);
+            MouseEvent ev = new MouseEvent (this, gdk_event, point);
+
+            // HERZUM SPRINT 2.3 TLAB-56 TLAB-57 TLAB-58 TLAB-59
+            IFigure figure = Drawing.FindFigure (ev.X, ev.Y);
+            // END HERZUM SPRINT 2.3 TLAB-56 TLAB-57 TLAB-58 TLAB-59
+
+            // HERZUM SPRINT 2.3 TLAB-56 TLAB-57 TLAB-58 TLAB-59
+            if (ev.IsRightButtonPressed ()) {
+                if (x != -1 && (x != ev.X || y != ev.Y)) {
+                    x = ev.X;
+                    y = ev.Y;
+                } else if (x == ev.X && y == ev.Y)
+                    return true;
+                else {
+                    x = ev.X;
+                    y = ev.Y;
+                }
+            } 
+            // END HERZUM SPRINT 2.3 TLAB-56 TLAB-57 TLAB-58 TLAB-59
+
+            // HERZUM SPRINT 2.3 TLAB-56 TLAB-57 TLAB-58 TLAB-59           
+            if (figure == null && ev.IsRightButtonPressed ()) {
+                // HERZUM SPRINT 2.6 TLAB-172
+                if (Paste != null)
+                // END HERZUM SPRINT 2.6 TLAB-172
+                    PopupContextMenu (ev);
+                return true;
+            }
+            // END HERZUM SPRINT 2.3 TLAB-56 TLAB-57 TLAB-58 TLAB-59
+
+            // TLAB-184
+            if (ev.isCentralButtonPressed ()) {
+                if (PanTool != null)
+                    OnPanTool (ev);
+            }
+            /// TLAB-184
+
             Editor.Tool.MouseDown (ev);
             _drag = true;
 
-            return base.OnButtonPressEvent(gdk_event);
+            return base.OnButtonPressEvent (gdk_event);
         }
 
-        protected override bool OnKeyPressEvent (Gdk.EventKey ev) {
-            Editor.Tool.KeyDown (new KeyEvent(this, ev));
-            return base.OnKeyPressEvent(ev);
+        protected override bool OnKeyPressEvent (Gdk.EventKey ev)
+        {
+            Editor.Tool.KeyDown (new KeyEvent (this, ev));
+            return base.OnKeyPressEvent (ev);
         }
-        
-        protected override bool OnKeyReleaseEvent (Gdk.EventKey ev) {
-            Editor.Tool.KeyUp (new KeyEvent(this, ev));
-            return base.OnKeyReleaseEvent(ev);
+
+        protected override bool OnKeyReleaseEvent (Gdk.EventKey ev)
+        {
+            Editor.Tool.KeyUp (new KeyEvent (this, ev));
+            return base.OnKeyReleaseEvent (ev);
         }
-        
-        protected override void OnSizeAllocated (Gdk.Rectangle allocation) {
+
+        protected override void OnSizeAllocated (Gdk.Rectangle allocation)
+        {
             base.OnSizeAllocated (allocation);
             
             UpdateAdjustments ();
-            OnVisibleAreaChaned();
+            OnVisibleAreaChaned ();
         }
 
-        protected override void OnAdjustmentValueChanged (object sender, EventArgs args) {
-            QueueDraw();
-            OnVisibleAreaChaned();
+        protected override void OnAdjustmentValueChanged (object sender, EventArgs args)
+        {
+            QueueDraw ();
+            OnVisibleAreaChaned ();
         }
 
-        
-        protected void OnDrawingInvalidated (object sender, DrawingEventArgs args) {
+        protected void OnDrawingInvalidated (object sender, DrawingEventArgs args)
+        {
             RectangleD r = args.Rectangle;
-            PointD p = DrawingToView(r.X, r.Y);
+            PointD p = DrawingToView (r.X, r.Y);
             r.X = p.X;
             r.Y = p.Y;
             r.Width = r.Width * Scale;
             r.Height = r.Height * Scale;
-            QueueDrawArea ((int) r.X, (int) r.Y, (int) r.Width, (int) r.Height);
+            QueueDrawArea ((int)r.X, (int)r.Y, (int)r.Width, (int)r.Height);
         }
-        
-        protected void OnDrawingSizeAllocated (object sender, DrawingEventArgs args) {
+
+        protected void OnDrawingSizeAllocated (object sender, DrawingEventArgs args)
+        {
             UpdateAdjustments ();
-            QueueDraw();
+            QueueDraw ();
         }
-        
-        protected void OnVisibleAreaChaned() {
+
+        protected void OnVisibleAreaChaned ()
+        {
             if (VisibleAreaChanged != null) {
-                VisibleAreaChanged(this, new EventArgs());
+                VisibleAreaChanged (this, new EventArgs ());
             }
         }
-        
-        private void UpdateAdjustments () {
+
+        private void UpdateAdjustments ()
+        {
             RectangleD drawing_box = Drawing.DisplayBox;
             drawing_box.Add (VisibleArea);
             
@@ -454,25 +616,26 @@ namespace MonoHotDraw {
             Vadjustment.Upper = drawing_box.Y2;
             Vadjustment.Change ();
         }
-        
+
         [ConditionalAttribute ("DEBUG_SHOW_FPS")]
-        private void DebugCreateTimer () {
+        private void DebugCreateTimer ()
+        {
             GLib.Timeout.Add (1000, delegate() {
-                System.Console.WriteLine ("FPS: {0}", _frameCount.ToString());
+                System.Console.WriteLine ("FPS: {0}", _frameCount.ToString ());
                 _frameCount = 0;
                 return true;
             });
         }
-        
+
         [ConditionalAttribute ("DEBUG_SHOW_FPS")]
-        private void DebugUpdateFrame () {
+        private void DebugUpdateFrame ()
+        {
             _frameCount ++;
         }
-        
-        private bool _drag;        
+
+        private bool _drag;
         private IDrawing _drawing;
         private FigureCollection _selection;
-        
         // used for debug purposes
         private int _frameCount = 0;
         private double _scale = 1.0;

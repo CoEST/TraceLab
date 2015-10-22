@@ -82,6 +82,10 @@ namespace TraceLab.Core.Components
                 if (m_mappedTo != value)
                 {
                     m_mappedTo = value;
+                    // HERZUM SPRINT 4.2: TLAB-191
+                    if (value == null)
+                        m_mappedTo = "";
+                    // END HERZUM SPRINT 4.2: TLAB-191
                     NotifyPropertyChanged("MappedTo");
                     IsModified = true;
                 }

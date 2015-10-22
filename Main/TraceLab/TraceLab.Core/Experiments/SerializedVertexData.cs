@@ -249,7 +249,14 @@ namespace TraceLab.Core.Experiments
                 typeof(ComponentTemplateMetadata),
                 typeof(ExitDecisionMetadata),
                 typeof(ScopeMetadata),
-                typeof(CompositeComponentMetadata)
+                typeof(CompositeComponentMetadata),
+                // HERZUM SPRINT 1.0
+                typeof(CommentMetadata),
+                // END HERZUM SPRINT 1.0
+                // HERZUM SPRINT 2.0: TLAB-65 CLASS
+                typeof(ChallengeMetadata)
+                // END HERZUM SPRINT 2.0: TLAB-65 CLASS
+
             };
 
             //based on version read old or new type of serialized data 

@@ -91,6 +91,13 @@ namespace TraceLab.Core.Components
             }
         }
 
+        // HERZUM SPRINT 1.0
+        public void SetSubExperiment(CompositeComponentEditableGraph compositeComponentEditableGraph)
+        {
+            m_compositeComponentGraph = compositeComponentEditableGraph;
+        }
+        // END HERZUM SPRINT 1.0
+
         #region IXmlSerializable
 
         /// <summary>

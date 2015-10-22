@@ -12,7 +12,7 @@ namespace TraceLab.UI.GTK
 		private global::Gtk.Entry filterEntry;
 		private global::Gtk.ScrolledWindow GtkScrolledWindow;
 		private global::Gtk.TreeView treeView;
-		
+
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
@@ -56,6 +56,7 @@ namespace TraceLab.UI.GTK
 			w11.Fill = false;
 			// Container child hbox1.Gtk.Box+BoxChild
 			this.packageReferencesButton = new global::Gtk.Button ();
+			this.packageReferencesButton.Sensitive = false;
 			this.packageReferencesButton.CanFocus = true;
 			this.packageReferencesButton.Name = "packageReferencesButton";
 			this.packageReferencesButton.UseUnderline = true;

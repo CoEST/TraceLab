@@ -17,6 +17,8 @@
 using System;
 using Gtk;
 using TraceLab.Core.Experiments;
+using System.Collections.Generic;
+using System.IO;
 
 namespace TraceLab.UI.GTK
 {
@@ -33,6 +35,10 @@ namespace TraceLab.UI.GTK
 
             fileChooserDialog.AlternativeButtonOrder = new int[] { (int)ResponseType.Ok, (int)ResponseType.Cancel };
             fileChooserDialog.SelectMultiple = false;
+
+            // HERZUM SPRINT 4 TLAB-214
+            fileChooserDialog.SetCurrentFolder(TraceLab.Core.Settings.Settings.GetSettings().DefaultExperimentsDirectory);
+            // END SPRINT HERZUM 4 HERZUM 4: TLAB-214
 
             AddFilters(fileChooserDialog);
 
@@ -59,19 +65,37 @@ namespace TraceLab.UI.GTK
         }
 
 
-        private static void AddFilters(FileChooserDialog dialog) 
+        /// <summary>
+        /// Adds the filters. Returns default extension
+        /// </summary>
+        /// <returns>The filters.</returns>
+        /// <param name="dialog">Dialog.</param>
+        private static string AddFilters(FileChooserDialog dialog) 
         {
+            string defaultExtension = "teml";
+            string cryptedFileExtension = "temlx";
             // Add experiment files filter
             FileFilter fileFilter = new FileFilter();
-            fileFilter.AddPattern("*.teml");
-            fileFilter.Name = Mono.Unix.Catalog.GetString("Experiment files (.teml)");
+            fileFilter.AddPattern(string.Format("*.{0}", defaultExtension));
+            fileFilter.Name = Mono.Unix.Catalog.GetString(string.Format("Experiment files (.{0})", defaultExtension));
             dialog.AddFilter(fileFilter);
+
+            // Add experiment files filter
+            //TLAB-67
+        //here: we check if the file is crypted, if it's so we ask the user to insert a password. then we decrypt the file and check the 
+            /// password. if the pwd is the same we contninue with the standard process, otherwise we raise and error
+            FileFilter fileFilterCryptedFile = new FileFilter();
+            fileFilterCryptedFile.AddPattern(string.Format("*.{0}", cryptedFileExtension));
+            fileFilterCryptedFile.Name = Mono.Unix.Catalog.GetString(string.Format("Experiment files (.{0})", cryptedFileExtension));
+            dialog.AddFilter(fileFilterCryptedFile);
             
             //add another option of All files
             FileFilter allFilesFilter = new FileFilter();
             allFilesFilter.Name = Mono.Unix.Catalog.GetString("All files");
             allFilesFilter.AddPattern("*.*");
             dialog.AddFilter(allFilesFilter);
+
+            return defaultExtension;
         }
 
         internal static string ShowSaveAsDialog(Window parentWindow, string currentFilename = null) 
@@ -92,19 +116,32 @@ namespace TraceLab.UI.GTK
                 fileChooserDialog.SetFilename(currentFilename);
             }
 
-            AddFilters(fileChooserDialog);
+            string defaultExtension = AddFilters(fileChooserDialog);
 
-            int response = fileChooserDialog.Run();
-            
-            string filename = null;
-            if(response == (int)Gtk.ResponseType.Ok) 
+            while (fileChooserDialog.Run() == (int)Gtk.ResponseType.Ok) 
             {
-                filename = fileChooserDialog.Filename;
+                string filename = fileChooserDialog.Filename;
+                if (string.IsNullOrEmpty(Path.GetExtension(filename))) 
+                {
+                    // No extension; add one from the format descriptor.
+                    filename = string.Format ("{0}.{1}", filename, defaultExtension);
+                    fileChooserDialog.CurrentName = Path.GetFileName (filename);
+
+                    // We also need to display an overwrite confirmation message manually,
+                    // because MessageDialog won't do this for us in this case.
+                    if (File.Exists (filename) && !ConfirmOverwrite (fileChooserDialog, filename))
+                    {
+                        continue;
+                    }
+                }
+
+                fileChooserDialog.Destroy();
+                return filename;
             }
-            
+
+            //if file was not selected return null
             fileChooserDialog.Destroy();
-            
-            return filename;
+            return null;
         }
 
         internal static void ShowSaveErrorDialog(Window parentWindow, string message, string file)
@@ -119,8 +156,9 @@ namespace TraceLab.UI.GTK
             dlg.Destroy();
         }
 
-
-        internal static bool SelectCatalogDialog (Window parentWindow, out string selectedDirectory)
+        // HERZUM SPRINT 4: TLAB-214
+        internal static bool SelectCatalogDialog (Window parentWindow, out string selectedDirectory, string defaultDirectory)
+        // END HERZUM SPRINT 4: TLAB-214
         {
 
             var fileChooserDialog = new Gtk.FileChooserDialog (Mono.Unix.Catalog.GetString ("Select Directory..."), 
@@ -132,6 +170,11 @@ namespace TraceLab.UI.GTK
             
             fileChooserDialog.AlternativeButtonOrder = new int[] { (int)ResponseType.Ok, (int)ResponseType.Cancel };
             fileChooserDialog.SelectMultiple = false;
+
+            // HERZUM SPRINT 4 TLAB-214
+            if (defaultDirectory != null)
+                fileChooserDialog.SetCurrentFolder(defaultDirectory);
+            // END SPRINT HERZUM 4 HERZUM 4: TLAB-214
 
             int response = fileChooserDialog.Run ();
 
@@ -177,6 +220,72 @@ namespace TraceLab.UI.GTK
                 fileChooserDialog.Destroy();
                 return false;
             }
+        }
+
+        internal static string SelectPackageFileDialog(Window parentWindow)
+        {
+            var fileChooserDialog = new FileChooserDialog (Mono.Unix.Catalog.GetString ("Save Package As"),
+                                                           parentWindow,
+                                                           FileChooserAction.Save,
+                                                           Gtk.Stock.Cancel,
+                                                           Gtk.ResponseType.Cancel,
+                                                           Gtk.Stock.Save, Gtk.ResponseType.Ok);
+
+            fileChooserDialog.DoOverwriteConfirmation = true;
+            fileChooserDialog.AlternativeButtonOrder = new int[] { (int)ResponseType.Ok, (int)ResponseType.Cancel };
+            fileChooserDialog.SelectMultiple = false;
+
+            // Add experiment files filter
+            string defaultExtension = "tpkg";
+            FileFilter fileFilter = new FileFilter();
+            fileFilter.AddPattern(string.Format("*.{0}", defaultExtension));
+            fileFilter.Name = Mono.Unix.Catalog.GetString(string.Format("TraceLab Package Files (.{0})", defaultExtension));
+            fileChooserDialog.AddFilter(fileFilter);
+
+            while (fileChooserDialog.Run() == (int)Gtk.ResponseType.Ok) 
+            {
+                string filename = fileChooserDialog.Filename;
+                if (string.IsNullOrEmpty(Path.GetExtension(filename))) 
+                {
+                    // No extension; add one from the format descriptor.
+                    filename = string.Format ("{0}.{1}", filename, defaultExtension);
+                    fileChooserDialog.CurrentName = Path.GetFileName (filename);
+
+                    // We also need to display an overwrite confirmation message manually,
+                    // because MessageDialog won't do this for us in this case.
+                    if (File.Exists (filename) && !ConfirmOverwrite (fileChooserDialog, filename))
+                    {
+                        continue;
+                    }
+                }
+
+                fileChooserDialog.Destroy();
+                return filename;
+            }
+
+            fileChooserDialog.Destroy();
+            return null;
+        }
+
+        private static bool ConfirmOverwrite (FileChooserDialog fcd, string file)
+        {
+            string primary = Mono.Unix.Catalog.GetString ("A file named \"{0}\" already exists. Do you want to replace it?");
+            string secondary = Mono.Unix.Catalog.GetString ("The file already exists in \"{1}\". Replacing it will overwrite its contents.");
+            string message = string.Format ("<span weight=\"bold\">{0}</span>\n\n{1}", primary, secondary);
+
+            MessageDialog md = new MessageDialog (fcd, DialogFlags.Modal | DialogFlags.DestroyWithParent,
+                                                  MessageType.Question, ButtonsType.None,
+                                                  true, message, System.IO.Path.GetFileName (file), fcd.CurrentFolder);
+
+            md.AddButton (Stock.Cancel, ResponseType.Cancel);
+            md.AddButton (Stock.Save, ResponseType.Ok);
+            md.DefaultResponse = ResponseType.Cancel;
+            md.AlternativeButtonOrder = new int[] { (int)ResponseType.Ok, (int)ResponseType.Cancel };
+
+            int response = md.Run ();
+            md.Destroy ();
+
+            return response == (int)ResponseType.Ok;
         }
     }
 }

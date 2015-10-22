@@ -20,6 +20,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Controls;
 using System.Windows;
+using TraceLab.Core.PackageBuilder;
 
 namespace TraceLab.UI.WPF.Views.PackageBuilder
 {
@@ -31,7 +32,7 @@ namespace TraceLab.UI.WPF.Views.PackageBuilder
 
             if (element != null && item != null)
             {
-                var folder = item as PackageSource.PackageHeirarchyItem;
+                var folder = item as PackageHeirarchyItem;
 
                 if (folder != null)
                     return element.FindResource("HasComponentsCellTemplate") as DataTemplate;
@@ -51,7 +52,7 @@ namespace TraceLab.UI.WPF.Views.PackageBuilder
 
             if (element != null && item != null)
             {
-                var folder = item as PackageSource.PackageHeirarchyItem;
+                var folder = item as PackageHeirarchyItem;
 
                 if (folder != null)
                     return element.FindResource("HasTypesCellTemplate") as DataTemplate;

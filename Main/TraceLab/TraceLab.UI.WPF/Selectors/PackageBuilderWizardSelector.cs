@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Controls;
 using System.Windows;
-using TraceLab.UI.WPF.Views.PackageBuilder.PackageSource;
+using TraceLab.Core.PackageBuilder;
 
 namespace TraceLab.UI.WPF.Selectors
 {

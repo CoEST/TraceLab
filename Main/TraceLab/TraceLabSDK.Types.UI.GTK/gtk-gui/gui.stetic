@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stetic-interface>
+  <configuration>
+    <images-root-path>..</images-root-path>
+    <target-gtk-version>2.12</target-gtk-version>
+  </configuration>
+  <import>
+    <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <widget-library name="../../bin/DebugMono/TraceLabSDK.Types.UI.GTK.dll" internal="true" />
+  </import>
+  <widget class="Gtk.Bin" id="TraceLabSDK.Types.TLArtifactsCollectionEditor" design-size="300 300">
+    <property name="MemberName" />
+    <property name="Visible">False</property>
+    <child>
+      <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+        <property name="MemberName" />
+        <property name="ShadowType">In</property>
+        <child>
+          <widget class="Gtk.TreeView" id="treeView">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="ShowScrollbars">True</property>
+          </widget>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Bin" id="TraceLabSDK.Types.TLSimilarityMatrixEditor" design-size="300 300">
+    <property name="MemberName" />
+    <property name="Visible">False</property>
+    <child>
+      <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+        <property name="MemberName" />
+        <property name="ShadowType">In</property>
+        <child>
+          <widget class="Gtk.TreeView" id="treeView">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="ShowScrollbars">True</property>
+          </widget>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</stetic-interface>

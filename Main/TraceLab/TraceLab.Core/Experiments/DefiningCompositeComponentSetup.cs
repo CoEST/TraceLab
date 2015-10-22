@@ -33,13 +33,51 @@ namespace TraceLab.Core.Experiments
     {
         #region Constructor
 
+        // HERZUM SPRINT 3.1 TLAB-180
+        private void ConstructGraphFromSelectedScopeNodes(BaseExperiment experiment)
+        {
+            if (experiment == null)
+                return;
+            CompositeComponentGraph.CopyAndAdd (CompositeComponentGraph.ConstructGraphFromSelectedNodes (experiment), 200.0, 200.0);  
+            foreach (ExperimentNode node in experiment.Vertices) 
+                if (!node.IsSelected){
+                    ScopeBaseMetadata scopeBaseMetadata = node.Data.Metadata as ScopeBaseMetadata;
+                    if (scopeBaseMetadata!= null && scopeBaseMetadata.ComponentGraph!=null)
+                        ConstructGraphFromSelectedScopeNodes(scopeBaseMetadata.ComponentGraph);
+                }
+        }
+
+        private void ConstructGraphFromSelectedScopeNodes(CompositeComponentGraph experiment)
+        {
+            if (experiment == null)
+                return;
+            CompositeComponentGraph.CopyAndAdd (CompositeComponentGraph.ConstructGraphFromSelectedNodes (experiment), 200.0, 200.0);  
+            foreach (ExperimentNode node in experiment.Vertices) {
+                if (!node.IsSelected){
+                    ScopeBaseMetadata scopeBaseMetadata = node.Data.Metadata as ScopeBaseMetadata;
+                    if (scopeBaseMetadata!= null && scopeBaseMetadata.ComponentGraph!=null)
+                        ConstructGraphFromSelectedScopeNodes(scopeBaseMetadata.ComponentGraph);
+                }
+            }
+        }
+        // END HERZUM SPRINT 3.1 TLAB-180
+
         /// <summary>
         /// Initializes a new instance of the <see cref="DefiningCompositeComponentSetup"/> class.
         /// </summary>
         /// <param name="experiment">The experiment.</param>
         public DefiningCompositeComponentSetup(Experiment experiment)
         {
-            CompositeComponentGraph = CompositeComponentGraph.ConstructGraphFromSelectedNodes(experiment);
+
+            // HERZUM SPRINT 2.4 TLAB-157
+            // CompositeComponentGraph = CompositeComponentGraph.ConstructGraphFromSelectedNodes(experiment);
+            CompositeComponentGraph = CompositeComponentGraph.ConstructEmptyGraph();
+            // HERZUM SPRINT 3.1 TLAB-180
+            // CompositeComponentGraph.CopyAndAdd (CompositeComponentGraph.ConstructGraphFromSelectedNodes (experiment), 200.0, 200.0);  
+            ConstructGraphFromSelectedScopeNodes (experiment);
+            // END HERZUM SPRINT 3.1 TLAB-180
+            CompositeComponentGraph.ConnectNodesToStartAndEndNode(CompositeComponentGraph);
+            // END HERZUM SPRINT 2.4 TLAB-157
 
             InputSettings = new SortedDictionary<string, ItemSetting>();
             OutputSettings = new SortedDictionary<string, ItemSetting>();

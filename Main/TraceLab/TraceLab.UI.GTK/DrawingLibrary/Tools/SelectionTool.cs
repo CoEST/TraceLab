@@ -39,10 +39,46 @@ namespace MonoHotDraw.Tools {
         public SelectionTool (IDrawingEditor editor): base (editor) {
         }
 
+        // HERZUM SPRINT 2.0 TLAB-136-2
+        // HERZUM SPRINT 2.5 TLAB-136
+        // static double x = -1;
+        // static double y = -1;
+        static bool mouseDown = false;
+        static bool mouseUp = true;
+        // END // HERZUM SPRINT 2.5 TLAB-136
+        // END HERZUM SPRINT 2.0 TLAB-136-2
+
         public override void MouseDown(MouseEvent ev)
         {
             base.MouseDown(ev);
             IDrawingView view = ev.View;
+
+            // HERZUM SPRINT 2.5 TLAB-136
+            if (!mouseUp){
+                return;
+            }
+            else
+            {
+                mouseUp = false;
+                mouseDown = true;
+            }
+            // HERZUM SPRINT 2.5 TLAB-136
+
+            // HERZUM SPRINT 2.0 TLAB-136-2
+            /*
+            if (x!=-1 && (x != ev.X || y != ev.Y)){
+                x = ev.X;
+                y = ev.Y;
+            } 
+            else if (x == ev.X && y == ev.Y)
+                return;
+            else {
+                x = ev.X;
+                y = ev.Y;
+            }
+            */
+            // END HERZUM SPRINT 2.5 TLAB-136
+            // END HERZUM SPRINT 2.2 TLAB-136-2
 
             IFigure figure = view.Drawing.FindFigure(ev.X, ev.Y);
 
@@ -86,7 +122,44 @@ namespace MonoHotDraw.Tools {
             }
         }
 
+        // HERZUM SPRINT 2.0 TLAB-136-2
+        // HERZUM SPRINT 2.5 TLAB-136
+        // static double x2 = -1;
+        // static double y2 = -1;
+        // END HERZUM SPRINT 2.5 TLAB-136
+        // END HERZUM SPRINT 2.0 TLAB-136-2
+
         public override void MouseUp (MouseEvent ev) {
+
+            // HERZUM SPRINT 2.5 TLAB-136
+            if (!mouseDown){
+                return;
+            }
+            else
+            {
+                mouseUp = true;
+                mouseDown = false;
+            }
+
+            // END HERZUM SPRINT 2.5 TLAB-136
+
+            // HERZUM SPRINT 2.0 TLAB-136-2
+            // HERZUM SPRINT 2.5 TLAB-136
+            /*
+            if (x2!=-1 && (x2 != ev.X || y2 != ev.Y)){
+                x2 = ev.X;
+                y2 = ev.Y;
+            } 
+            else if (x2 == ev.X && y2 == ev.Y)
+                return;
+            else {
+                x2 = ev.X;
+                y2 = ev.Y;
+            }
+            */
+            // END HERZUM SPRINT 2.5 TLAB-136
+            // END HERZUM SPRINT 2.2 TLAB-136-2
+
             if (DelegateTool != null) {
                 DelegateTool.MouseUp (ev);
             }

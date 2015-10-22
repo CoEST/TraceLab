@@ -5,14 +5,17 @@ namespace TraceLab.UI.GTK
 	public partial class DecisionInfoPanel
 	{
 		private global::Gtk.Table table1;
-		private global::Gtk.Button checkCodeButton;
+		private global::Gtk.Button checkCodeButton1;
 		private global::Gtk.Label componentLabelLbl;
 		private global::Gtk.Entry componentLabelValue;
-		private global::Gtk.Label decisionCodeLbl;
-		private global::Gtk.TextView errorTextView;
-		private global::Gtk.ScrolledWindow GtkScrolledWindow;
-		private global::Gtk.TextView decisionCodeEntryBox;
-		
+		private global::Gtk.Label decisionCodeLbl1;
+		private global::Gtk.TextView errorTextView1;
+		private global::Gtk.ScrolledWindow gtkview1;
+		private global::Gtk.TextView decisionCodeEntryBox1;
+		private global::Gtk.Table table3;
+		private global::Gtk.ComboBox loadComboBox1;
+		private global::Gtk.ComboBox selectComboBox1;
+
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
@@ -20,23 +23,20 @@ namespace TraceLab.UI.GTK
 			global::Stetic.BinContainer.Attach (this);
 			this.Name = "TraceLab.UI.GTK.DecisionInfoPanel";
 			// Container child TraceLab.UI.GTK.DecisionInfoPanel.Gtk.Container+ContainerChild
-			this.table1 = new global::Gtk.Table (((uint)(5)), ((uint)(2)), false);
+			this.table1 = new global::Gtk.Table (((uint)(6)), ((uint)(2)), false);
 			this.table1.Name = "table1";
 			this.table1.RowSpacing = ((uint)(6));
 			this.table1.ColumnSpacing = ((uint)(6));
 			// Container child table1.Gtk.Table+TableChild
-			this.checkCodeButton = new global::Gtk.Button ();
-			this.checkCodeButton.CanFocus = true;
-			this.checkCodeButton.Name = "checkCodeButton";
-			this.checkCodeButton.UseUnderline = true;
-			this.checkCodeButton.Label = "Check code";
-			this.table1.Add (this.checkCodeButton);
-			global::Gtk.Table.TableChild w1 = ((global::Gtk.Table.TableChild)(this.table1 [this.checkCodeButton]));
+			this.checkCodeButton1 = new global::Gtk.Button ();
+			this.checkCodeButton1.CanFocus = true;
+			this.checkCodeButton1.Name = "checkCodeButton1";
+			this.checkCodeButton1.UseUnderline = true;
+			this.checkCodeButton1.Label = "Check correctness";
+			this.table1.Add (this.checkCodeButton1);
+			global::Gtk.Table.TableChild w1 = ((global::Gtk.Table.TableChild)(this.table1 [this.checkCodeButton1]));
 			w1.TopAttach = ((uint)(4));
 			w1.BottomAttach = ((uint)(5));
-			w1.RightAttach = ((uint)(2));
-			w1.XPadding = ((uint)(2));
-			w1.YPadding = ((uint)(2));
 			w1.XOptions = ((global::Gtk.AttachOptions)(4));
 			w1.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild
@@ -49,10 +49,6 @@ namespace TraceLab.UI.GTK
 			this.componentLabelLbl.LabelProp = global::Mono.Unix.Catalog.GetString ("Label:");
 			this.table1.Add (this.componentLabelLbl);
 			global::Gtk.Table.TableChild w2 = ((global::Gtk.Table.TableChild)(this.table1 [this.componentLabelLbl]));
-			w2.TopAttach = ((uint)(1));
-			w2.BottomAttach = ((uint)(2));
-			w2.XPadding = ((uint)(2));
-			w2.YPadding = ((uint)(2));
 			w2.XOptions = ((global::Gtk.AttachOptions)(4));
 			w2.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild
@@ -65,73 +61,91 @@ namespace TraceLab.UI.GTK
 			global::Gtk.Table.TableChild w3 = ((global::Gtk.Table.TableChild)(this.table1 [this.componentLabelValue]));
 			w3.TopAttach = ((uint)(1));
 			w3.BottomAttach = ((uint)(2));
-			w3.LeftAttach = ((uint)(1));
-			w3.RightAttach = ((uint)(2));
-			w3.XPadding = ((uint)(2));
-			w3.YPadding = ((uint)(2));
-			w3.XOptions = ((global::Gtk.AttachOptions)(4));
 			w3.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild
-			this.decisionCodeLbl = new global::Gtk.Label ();
-			this.decisionCodeLbl.Name = "decisionCodeLbl";
-			this.decisionCodeLbl.Xpad = 3;
-			this.decisionCodeLbl.Xalign = 0F;
-			this.decisionCodeLbl.Yalign = 0F;
-			this.decisionCodeLbl.LabelProp = global::Mono.Unix.Catalog.GetString ("DecisionCode: ");
-			this.table1.Add (this.decisionCodeLbl);
-			global::Gtk.Table.TableChild w4 = ((global::Gtk.Table.TableChild)(this.table1 [this.decisionCodeLbl]));
+			this.decisionCodeLbl1 = new global::Gtk.Label ();
+			this.decisionCodeLbl1.Name = "decisionCodeLbl1";
+			this.decisionCodeLbl1.Xpad = 3;
+			this.decisionCodeLbl1.Xalign = 0F;
+			this.decisionCodeLbl1.Yalign = 0F;
+			this.decisionCodeLbl1.LabelProp = global::Mono.Unix.Catalog.GetString ("Enter your if-else construct here: ");
+			this.table1.Add (this.decisionCodeLbl1);
+			global::Gtk.Table.TableChild w4 = ((global::Gtk.Table.TableChild)(this.table1 [this.decisionCodeLbl1]));
 			w4.TopAttach = ((uint)(2));
 			w4.BottomAttach = ((uint)(3));
-			w4.RightAttach = ((uint)(2));
-			w4.XPadding = ((uint)(2));
-			w4.YPadding = ((uint)(2));
 			w4.XOptions = ((global::Gtk.AttachOptions)(4));
 			w4.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild
-			this.errorTextView = new global::Gtk.TextView ();
-			this.errorTextView.CanFocus = true;
-			this.errorTextView.Name = "errorTextView";
-			this.errorTextView.Editable = false;
-			this.errorTextView.CursorVisible = false;
-			this.errorTextView.AcceptsTab = false;
-			this.errorTextView.Justification = ((global::Gtk.Justification)(3));
-			this.errorTextView.WrapMode = ((global::Gtk.WrapMode)(2));
-			this.errorTextView.LeftMargin = 3;
-			this.errorTextView.RightMargin = 3;
-			this.table1.Add (this.errorTextView);
-			global::Gtk.Table.TableChild w5 = ((global::Gtk.Table.TableChild)(this.table1 [this.errorTextView]));
-			w5.RightAttach = ((uint)(2));
-			w5.XPadding = ((uint)(3));
-			w5.YPadding = ((uint)(3));
+			this.errorTextView1 = new global::Gtk.TextView ();
+			this.errorTextView1.CanFocus = true;
+			this.errorTextView1.Name = "errorTextView1";
+			this.errorTextView1.Editable = false;
+			this.errorTextView1.CursorVisible = false;
+			this.errorTextView1.AcceptsTab = false;
+			this.errorTextView1.WrapMode = ((global::Gtk.WrapMode)(3));
+			this.errorTextView1.LeftMargin = 3;
+			this.errorTextView1.RightMargin = 3;
+			this.table1.Add (this.errorTextView1);
+			global::Gtk.Table.TableChild w5 = ((global::Gtk.Table.TableChild)(this.table1 [this.errorTextView1]));
+			w5.TopAttach = ((uint)(5));
+			w5.BottomAttach = ((uint)(6));
 			w5.XOptions = ((global::Gtk.AttachOptions)(4));
-			w5.YOptions = ((global::Gtk.AttachOptions)(6));
+			w5.YOptions = ((global::Gtk.AttachOptions)(4));
 			// Container child table1.Gtk.Table+TableChild
-			this.GtkScrolledWindow = new global::Gtk.ScrolledWindow ();
-			this.GtkScrolledWindow.Name = "GtkScrolledWindow";
-			this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
-			// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
-			this.decisionCodeEntryBox = new global::Gtk.TextView ();
-			this.decisionCodeEntryBox.Buffer.Text = "// here is sample condition code\r\n\r\nif(Load(\"provide variable from workspace\") < " +
-				"0) {\r\n  Select(\"provide next component label\");\r\n} else {\r\n  Select(\"provide nex" +
-				"t component label\");\r\n}\r\n";
-			this.decisionCodeEntryBox.CanFocus = true;
-			this.decisionCodeEntryBox.Name = "decisionCodeEntryBox";
-			this.GtkScrolledWindow.Add (this.decisionCodeEntryBox);
-			this.table1.Add (this.GtkScrolledWindow);
-			global::Gtk.Table.TableChild w7 = ((global::Gtk.Table.TableChild)(this.table1 [this.GtkScrolledWindow]));
+			this.gtkview1 = new global::Gtk.ScrolledWindow ();
+			this.gtkview1.Name = "gtkview1";
+			this.gtkview1.ShadowType = ((global::Gtk.ShadowType)(1));
+			// Container child gtkview1.Gtk.Container+ContainerChild
+			this.decisionCodeEntryBox1 = new global::Gtk.TextView ();
+			this.decisionCodeEntryBox1.Buffer.Text = "For example: \nif ((int)Load(\"j\")>0){\n   Select(\"Node1\");\n} else {\n   Select(\"Node" +
+				"2\");\n}";
+			this.decisionCodeEntryBox1.CanFocus = true;
+			this.decisionCodeEntryBox1.Name = "decisionCodeEntryBox1";
+			this.gtkview1.Add (this.decisionCodeEntryBox1);
+			this.table1.Add (this.gtkview1);
+			global::Gtk.Table.TableChild w7 = ((global::Gtk.Table.TableChild)(this.table1 [this.gtkview1]));
 			w7.TopAttach = ((uint)(3));
 			w7.BottomAttach = ((uint)(4));
-			w7.RightAttach = ((uint)(2));
-			w7.XPadding = ((uint)(2));
-			w7.YPadding = ((uint)(2));
+			w7.XOptions = ((global::Gtk.AttachOptions)(4));
+			w7.YOptions = ((global::Gtk.AttachOptions)(4));
+			// Container child table1.Gtk.Table+TableChild
+			this.table3 = new global::Gtk.Table (((uint)(3)), ((uint)(1)), false);
+			this.table3.Name = "table3";
+			this.table3.RowSpacing = ((uint)(6));
+			this.table3.ColumnSpacing = ((uint)(6));
+			// Container child table3.Gtk.Table+TableChild
+			this.loadComboBox1 = global::Gtk.ComboBox.NewText ();
+			this.loadComboBox1.Name = "loadComboBox1";
+			this.table3.Add (this.loadComboBox1);
+			global::Gtk.Table.TableChild w8 = ((global::Gtk.Table.TableChild)(this.table3 [this.loadComboBox1]));
+			w8.XOptions = ((global::Gtk.AttachOptions)(4));
+			w8.YOptions = ((global::Gtk.AttachOptions)(4));
+			// Container child table3.Gtk.Table+TableChild
+			this.selectComboBox1 = global::Gtk.ComboBox.NewText ();
+			this.selectComboBox1.ExtensionEvents = ((global::Gdk.ExtensionMode)(1));
+			this.selectComboBox1.Name = "selectComboBox1";
+			this.table3.Add (this.selectComboBox1);
+			global::Gtk.Table.TableChild w9 = ((global::Gtk.Table.TableChild)(this.table3 [this.selectComboBox1]));
+			w9.TopAttach = ((uint)(1));
+			w9.BottomAttach = ((uint)(2));
+			w9.YOptions = ((global::Gtk.AttachOptions)(4));
+			this.table1.Add (this.table3);
+			global::Gtk.Table.TableChild w10 = ((global::Gtk.Table.TableChild)(this.table1 [this.table3]));
+			w10.TopAttach = ((uint)(3));
+			w10.BottomAttach = ((uint)(4));
+			w10.LeftAttach = ((uint)(1));
+			w10.RightAttach = ((uint)(2));
+			w10.XOptions = ((global::Gtk.AttachOptions)(4));
 			this.Add (this.table1);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
-			this.errorTextView.Hide ();
+			this.errorTextView1.Hide ();
 			this.Hide ();
+			this.selectComboBox1.Changed += new global::System.EventHandler (this.OnSelectComboBoxChanged);
+			this.loadComboBox1.Changed += new global::System.EventHandler (this.OnLoadComboBoxChanged);
 			this.componentLabelValue.Changed += new global::System.EventHandler (this.labelChanged);
-			this.checkCodeButton.Clicked += new global::System.EventHandler (this.CheckCode);
+			this.checkCodeButton1.Clicked += new global::System.EventHandler (this.CheckCode);
 		}
 	}
 }

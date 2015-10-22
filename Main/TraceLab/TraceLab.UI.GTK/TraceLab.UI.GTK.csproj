@@ -14,7 +14,7 @@
     <DebugSymbols>True</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>False</Optimize>
-    <OutputPath>..\bin\DebugMono</OutputPath>
+    <OutputPath>..\bin\Debug</OutputPath>
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -54,16 +54,35 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Deploy|AnyCPU'">
     <OutputPath>..\bin\Deploy\</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Windows|AnyCPU' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Windows</OutputPath>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="Mono.Posix" />
-    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>glib-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>glade-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Mono.Cairo" />
     <Reference Include="NLog">
@@ -143,6 +162,26 @@
     <EmbeddedResource Include="Resources\Icon_Help16.png" />
     <EmbeddedResource Include="Resources\Icon_Link16.png" />
     <EmbeddedResource Include="Resources\Icon_Video16.png" />
+    <EmbeddedResource Include="Resources\Icon_PkgBuilder16.png" />
+    <EmbeddedResource Include="Resources\Icon_PkgCreate16.png" />
+    <EmbeddedResource Include="Resources\icon_max.png" />
+    <EmbeddedResource Include="Resources\icon_min.png" />
+    <EmbeddedResource Include="Resources\icon_normalize.png" />
+    <EmbeddedResource Include="Resources\icon_resize.png" />
+    <EmbeddedResource Include="Resources\addscope.png" />
+    <EmbeddedResource Include="Resources\publish2_icon.jpg" />
+    <EmbeddedResource Include="Resources\publish_icon.jpg" />
+    <EmbeddedResource Include="Resources\publish3_icon.gif" />
+    <EmbeddedResource Include="Resources\publish4_icon.png" />
+    <EmbeddedResource Include="Resources\icon_max_disabled.png" />
+    <EmbeddedResource Include="Resources\icon_normalize_disabled.png" />
+    <EmbeddedResource Include="Resources\icon_min_disabled.png" />
+    <EmbeddedResource Include="Resources\icon_max_small.png" />
+    <EmbeddedResource Include="Resources\icon_max_disabled_small.png" />
+    <EmbeddedResource Include="Resources\icon_min_disabled_small.png" />
+    <EmbeddedResource Include="Resources\icon_normalize_disabled_small.png" />
+    <EmbeddedResource Include="Resources\icon_min_small.png" />
+    <EmbeddedResource Include="Resources\icon_normalize_small.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DrawingLibrary\ContainerCanvas.cs" />
@@ -353,8 +392,6 @@
     <Compile Include="Controls\ExperimentView\Nodes\DecisionNodeControl.cs" />
     <Compile Include="Controls\ExperimentView\Nodes\RemoveConnectionHandle.cs" />
     <Compile Include="Controls\ExperimentView\InfoPanels\InfoPanelFactory.cs" />
-    <Compile Include="gtk-gui\TraceLab.UI.GTK.DecisionInfoPanel.cs" />
-    <Compile Include="Controls\ExperimentView\InfoPanels\DecisionInfoPanel.cs" />
     <Compile Include="Controls\ExperimentView\InfoPanels\InfoPanelUtils.cs" />
     <Compile Include="Controls\ExperimentView\Nodes\PixToggleButtonHandle.cs" />
     <Compile Include="Controls\ExperimentView\Nodes\CompositeComponentControl.cs" />
@@ -393,6 +430,39 @@
     <Compile Include="Actions\File\SettingsAction.cs" />
     <Compile Include="Controls\SettingsDialog.cs" />
     <Compile Include="gtk-gui\TraceLab.UI.GTK.SettingsDialog.cs" />
+    <Compile Include="PackageBuilder\PackageBuilderWindow.cs" />
+    <Compile Include="gtk-gui\TraceLab.UI.GTK.PackageBuilderWindow.cs" />
+    <Compile Include="PackageBuilder\PackageBuilderSettingsPage.cs" />
+    <Compile Include="gtk-gui\TraceLab.UI.GTK.PackageBuilderSettingsPage.cs" />
+    <Compile Include="PackageBuilder\PackageBuilderMainPage.cs" />
+    <Compile Include="gtk-gui\TraceLab.UI.GTK.PackageBuilderMainPage.cs" />
+    <Compile Include="Actions\File\PackageBuilderAction.cs" />
+    <Compile Include="Extensions\TextBufferExtensions.cs" />
+    <Compile Include="Controls\ExperimentView\Nodes\ScopeCanvasPad.cs" />
+    <Compile Include="Controls\ExperimentView\Nodes\CommentNodeControl.cs" />
+    <Compile Include="CommentWidget.cs" />
+    <Compile Include="gtk-gui\TraceLab.UI.GTK.CommentWidget.cs" />
+    <Compile Include="Controls\ExperimentView\Nodes\LoopNodeControl.cs" />
+    <Compile Include="LoopDecisionInfoPanel.cs" />
+    <Compile Include="gtk-gui\TraceLab.UI.GTK.LoopDecisionInfoPanel.cs" />
+    <Compile Include="Controls\ExperimentView\Nodes\ExitDecisionControl.cs" />
+    <Compile Include="Controls\ExperimentView\Nodes\ScopeNodeControl.cs" />
+    <Compile Include="Controls\ExperimentView\InfoPanels\DecisionInfoPanel.cs" />
+    <Compile Include="gtk-gui\TraceLab.UI.GTK.DecisionInfoPanel.cs" />
+    <Compile Include="Controls\ExperimentView\Nodes\ComponentResizeControl.cs" />
+    <Compile Include="Controls\ExperimentView\Nodes\ChallengeNodeControl.cs" />
+    <Compile Include="Controls\ExperimentView\Nodes\ExperimentCanvasPadFactory.cs" />
+    <Compile Include="BaseInfoPanel.cs" />
+    <Compile Include="gtk-gui\TraceLab.UI.GTK.BaseInfoPanel.cs" />
+    <Compile Include="PasswordPicker.cs" />
+    <Compile Include="gtk-gui\TraceLab.UI.GTK.PasswordPicker.cs" />
+    <Compile Include="CalendarDatePickerDialog.cs" />
+    <Compile Include="gtk-gui\TraceLab.UI.GTK.CalendarDatePickerDialog.cs" />
+    <Compile Include="InsertPassword.cs" />
+    <Compile Include="gtk-gui\TraceLab.UI.GTK.InsertPassword.cs" />
+    <Compile Include="Controls\ExperimentView\DragClipboard.cs" />
+    <Compile Include="Controls\PasswordDialog.cs" />
+    <Compile Include="PackageBuilder\ChallengePackageBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TraceLab.Core\TraceLab.Core.csproj">
@@ -410,4 +480,7 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup />
   <ItemGroup />
+  <ItemGroup>
+    <Folder Include="PackageBuilder\" />
+  </ItemGroup>
 </Project>

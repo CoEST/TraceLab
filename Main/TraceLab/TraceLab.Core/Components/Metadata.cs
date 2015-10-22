@@ -26,6 +26,13 @@ using TraceLab.Core.Utilities;
 
 namespace TraceLab.Core.Components
 {
+    /// <summary>
+    /// Metadata is constructed based on the metadata definition, and in addition holds the varying values.
+    /// For example it may have:
+    /// IO Spec mapping values, Configuration values, and so on. 
+    /// There can be several metadata instances per each definition. 
+    /// Obviously, since user can drag one component several times to the experiment and set different values for each of them. 
+    /// </summary>
     [Serializable]
     [XmlInclude(typeof(ComponentMetadata))]
     [XmlInclude(typeof(DecisionMetadata))]
@@ -36,10 +43,23 @@ namespace TraceLab.Core.Components
     [XmlInclude(typeof(CompositeComponentMetadata))]
     [XmlInclude(typeof(ComponentTemplateMetadata))]
     [XmlInclude(typeof(ExitDecisionMetadata))]
+    // HERZUM SPRINT 1.0
+    [XmlInclude(typeof(CommentMetadata))]
+    // END HERZUM SPRINT 1.0
+    // HERZUM SPRINT 2.0: TLAB-65 CLASS
+    [XmlInclude(typeof(ChallengeMetadata))]
+    // END HERZUM SPRINT 2.0: TLAB-65 CLASS
+
     [DebuggerDisplay("{Label}")]
     public abstract class Metadata : INotifyPropertyChanged, IXmlSerializable, ISerializable, IModifiable
     {
         private string m_label;
+        /// <summary>
+        /// Gets or sets the label.
+        /// </summary>
+        /// <value>
+        /// The label.
+        /// </value>
         [XmlAttribute("Label")]
         public string Label
         {
@@ -51,7 +71,22 @@ namespace TraceLab.Core.Components
             {
                 if (m_label != value)
                 {
+                    // HERZUM SPRINT 5.3 TLAB-251
+                    bool noModified = false;
+                    if (m_label!=null)
+                    {
+                        noModified = m_label.Equals("Start") && value.Equals("Enter");
+                        noModified = noModified || m_label.Equals("End") && value.Equals("Exit");
+                    }
+                    // END HERZUM SPRINT 5.3 TLAB-251
+
                     m_label = value;
+
+                    // HERZUM SPRINT 5.3 TLAB-251
+                    if (noModified)
+                        return;
+                    // END HERZUM SPRINT 5.3 TLAB-251
+
                     NotifyPropertyChanged("Label");
                     m_isMetadataModified = true;
                     IsModified = true;
@@ -61,6 +96,12 @@ namespace TraceLab.Core.Components
         }
 
         private bool m_waitsForAllPredecessors = true;
+        /// <summary>
+        /// Gets or sets a value indicating whether component waits for all predecessors or not
+        /// </summary>
+        /// <value>
+        /// 	<c>true</c> if [waits for all predecessors]; otherwise, <c>false</c>.
+        /// </value>
         [XmlAttribute("WaitsForAllPredecessors")]
         public bool WaitsForAllPredecessors
         {
@@ -82,6 +123,12 @@ namespace TraceLab.Core.Components
         }
         
         private bool m_deserializationError/* = false*/;
+        /// <summary>
+        /// Gets or sets a value indicating whether there was deserialization error
+        /// </summary>
+        /// <value>
+        /// 	<c>true</c> if this instance has deserialization error; otherwise, <c>false</c>.
+        /// </value>
         [XmlIgnore]
         public bool HasDeserializationError
         {
@@ -100,6 +147,12 @@ namespace TraceLab.Core.Components
         }
 
         private string m_deserializationErrorMessage;
+        /// <summary>
+        /// Gets or sets the deserialization error message.
+        /// </summary>
+        /// <value>
+        /// The deserialization error message.
+        /// </value>
         [XmlIgnore]
         public string DeserializationErrorMessage
         {
@@ -119,6 +172,9 @@ namespace TraceLab.Core.Components
 
         #region Logging
 
+        /// <summary>
+        /// Inits the logging node settings.
+        /// </summary>
         protected virtual void InitLoggingNodeSettings()
         {
             var logLevels = new LogLevelItem[6];
@@ -134,7 +190,10 @@ namespace TraceLab.Core.Components
                 LogLevelItemLookup.Add(logLevel.Level, logLevel);
             }
         }
-                
+
+        /// <summary>
+        /// Gets the log levels.
+        /// </summary>
         public IEnumerable<LogLevelItem> LogLevels
         {
             get
@@ -207,6 +266,9 @@ namespace TraceLab.Core.Components
 
         [NonSerialized]
         private PropertyChangedEventHandler m_propertyChanged;
+        /// <summary>
+        /// Occurs when a property value changes.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged
         {
             add
@@ -219,11 +281,19 @@ namespace TraceLab.Core.Components
             }
         }
 
+        /// <summary>
+        /// Notifies the property changed.
+        /// </summary>
+        /// <param name="property">The property.</param>
         protected void NotifyPropertyChanged(string property)
         {
             NotifyPropertyChanged(new PropertyChangedEventArgs(property));
         }
 
+        /// <summary>
+        /// Notifies the property changed.
+        /// </summary>
+        /// <param name="e">The <see cref="System.ComponentModel.PropertyChangedEventArgs"/> instance containing the event data.</param>
         private void NotifyPropertyChanged(PropertyChangedEventArgs e)
         {
             if (m_propertyChanged != null)

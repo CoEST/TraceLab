@@ -31,7 +31,7 @@ namespace TraceLab.UI.GTK
             actionHandlers.Add(new SaveExperimentAction(applicationWrapper));
             actionHandlers.Add(new SaveExperimentAsAction(applicationWrapper));
             actionHandlers.Add(new SettingsAction(applicationWrapper));
-
+            actionHandlers.Add(new PackageBuilderAction(applicationWrapper));
             
             // Initialize each action handler
             foreach (var action in actionHandlers)

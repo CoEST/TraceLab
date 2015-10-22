@@ -115,5 +115,22 @@ namespace TraceLab.Core
         public const string ShouldOverwriteFileQuestion = "The file {0} already exists. Do you want to continue and overwrite existing file?";
 
         public const string ConfirmRemoveSelectedNodes = "Are you sure, that you want delete selected nodes from the experiment?";
+
+        #region Package Builder
+
+        public const string PackageBuilderConfig1_IncludeIndependentFilesDirs = "Include referenced files and directories";
+        public const string PackageBuilderConfig1_IncludeIndependentFilesDirs_Descr = "Files and directories referenced by components via configuration are going to be included in the package";
+
+        public const string PackageBuilderConfig2_IncludeOtherPackagesFilesDirs = "Include referenced files and directories from other packages";
+        public const string PackageBuilderConfig2_IncludeOtherPackagesFilesDirs_Descr = "Files and directories from other packages referenced by components via configuration are going to be included in the package";
+
+        public const string PackageBuilderConfig3_IncludeOtherPackagesAssemblies = "Include other packages assemblies";
+        public const string PackageBuilderConfig3_IncludeOtherPackagesAssemblies_Descr = "Components and types assemblies from other packages are going to be included in the package, " +
+                                                                                         "otherwise experiment might continue to have dependency on component from other packages. ";
+        
+        public const string PackageBuilderNote = "Note, that experiment package assists in building complete package with all necessary components and types assemblies. "+
+                                                 "However, if components have external dependencies, user must add these external assemblies manually. ";
+
+        #endregion
     }
 }

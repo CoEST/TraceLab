@@ -74,7 +74,17 @@ namespace TraceLab.UI.GTK
                 connection.ConnectStart(sourceControl.ConnectorAt(source.Data.X, source.Data.Y));
                 connection.ConnectEnd(targetControl.ConnectorAt(target.Data.X, target.Data.Y));
                 connection.UpdateConnection();
-                connection.IsEditable = editable;
+
+                // HERZUM SPRINT 2.4 TLAB-157
+                if (connection.ExperimentNodeConnection != null && connection.ExperimentNodeConnection.Source != null && connection.ExperimentNodeConnection.Target != null)
+                // END HERZUM SPRINT 2.4 TLAB-157
+                // HERZUM SPRINT 2.3: TLAB-160
+                if ((connection.ExperimentNodeConnection.Source is ExperimentDecisionNode && connection.ExperimentNodeConnection.Target is ScopeNode)||
+                    (connection.ExperimentNodeConnection.Target is ExitDecisionNode))
+                    connection.IsEditable = false;
+                else
+                // END HERZUM SPRINT 2.3: TLAB-160
+                    connection.IsEditable = editable;
                 
                 m_experimentCanvasWidget.ExperimentCanvas.View.Drawing.Add(connection);
                 m_experimentCanvasWidget.ExperimentCanvas.View.ClearSelection();

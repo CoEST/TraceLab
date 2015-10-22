@@ -33,12 +33,30 @@ namespace TraceLab.UI.GTK
         {
             //first column with icons
             m_newConnectionHandle = new NewConnectionHandle (ownerControl, applicationContext, new QuickActionLocator (15, 0, QuickActionPosition.Right));
-            m_infoHandle = new PixToggleButtonHandle (ownerControl, new QuickActionLocator (15, 0.8, QuickActionPosition.Right),
-                                              s_infoIcon, s_infoOnIcon);
+ 
+            // HERZUM SPRINT 5.0: TLAB-230
+            // HERZUM SPRINT 5.1: TLAB-230
+            if (ownerControl is ScopeNodeControl || ownerControl is CommentNodeControl)
+                m_infoHandle = new PixToggleButtonHandle (ownerControl, new QuickActionLocator (15, 0.12, QuickActionPosition.Right),
+                                                          s_infoIcon, s_infoOnIcon);
+            else
+                m_infoHandle = new PixToggleButtonHandle (ownerControl, new QuickActionLocator (15, 0.8, QuickActionPosition.Right),
+                                                          s_infoIcon, s_infoOnIcon);
+            // END HERZUM SPRINT 5.1: TLAB-230
+            // END HERZUM SPRINT 5.0: TLAB-230
+
 
             //second column with icons
             m_removeHandle = new RemoveNodeHandle (ownerControl, new QuickActionLocator (35, 0, QuickActionPosition.Right));
         }
+
+        // HERZUM SPRINT 5.2: TLAB-249
+        public void MoveIconInfo(BasicNodeControl ownerControl,double rel)
+        {
+            m_infoHandle = new PixToggleButtonHandle (ownerControl, new QuickActionLocator (15, rel, QuickActionPosition.Right),
+                                                  s_infoIcon, s_infoOnIcon);
+        }
+        // END HERZUM SPRINT 5.2: TLAB-249
 
         public PixToggleButtonHandle InfoButton
         {

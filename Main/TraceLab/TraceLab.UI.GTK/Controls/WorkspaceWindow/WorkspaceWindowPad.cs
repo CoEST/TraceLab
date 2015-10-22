@@ -142,10 +142,39 @@ namespace TraceLab.UI.GTK
 
             m_treeView.RowActivated += HandleRowActivated;
 
+            // HERZUM SPRINT 3: TLAB-86
+            VBox vbox1 = new VBox();
             sw.Add(m_treeView);
-            sw.ShowAll();
-            return sw;
+            vbox1.Add (sw);
+            Box.BoxChild w1 = ((Box.BoxChild)(vbox1 [sw]));
+            w1.Position = 0;
+
+            baseline.CanFocus = false;
+
+            Box.BoxChild w2 = ((Box.BoxChild)(vbox1 [baseline]));
+            vbox1.Add (baseline);
+            w2.Position = 2;
+            w2.Expand = false;
+            w2.Fill = false;
+
+
+            vbox1.ShowAll ();
+            return vbox1;
+
+            //sw.Add(m_treeView);
+            //sw.ShowAll();
+            //return sw;
+
+            // END HERZUM SPRINT 3: TLAB-86
         }
+
+        // HERZUM SPRINT 3: TLAB-86
+        TextView baseline = new TextView();
+        public void ShowBaseline (string type, string value)
+        {
+            baseline.Buffer.Text = "BASELINE" + "  " + type + "   " + value;
+        }
+        // END HERZUM SPRINT 3: TLAB-86
 
         private void HandleRowActivated (object source, RowActivatedArgs args)
         {
@@ -154,12 +183,62 @@ namespace TraceLab.UI.GTK
             {
                 WorkspaceUnit unit = (WorkspaceUnit)m_treeView.Model.GetValue(item, 0);
 
+                //prepare display funtions
+                //first try to display it with GTK, and eventually fallback to windows form display
+                var displaysFuncs = new WorkspaceViewerLoader.DisplayEditor[]
+                {
+                    DisplayGTKWindow,
+                    WorkspaceViewerLoader.DisplayWindowsFormEditor
+                };
+
                 String error;
-                if(!WorkspaceViewerLoader.LoadViewer(unit.Data, unit.FriendlyUnitName, out error))
+                if(!WorkspaceViewerLoader.LoadViewer(unit.Data, unit.FriendlyUnitName, 
+                                                     WorkspaceUIAssemblyExtensions.Extensions, displaysFuncs, 
+                                                     out error))
                 {
                     NLog.LogManager.GetCurrentClassLogger().Warn(error);
                 }
             }
+        }
+
+        /// <summary>
+        /// Displays the GTK window.
+        /// </summary>
+        /// <param name="editor">The editor.</param>
+        /// <param name="windowTitle">The window title.</param>
+        /// <returns>if window has been displayed, otherwise false</returns>
+        private bool DisplayGTKWindow(TraceLabSDK.IWorkspaceUnitEditor editor, String windowTitle)
+        {
+            DockItem dockingWindow = m_dockFrame.GetItem(windowTitle);
+            if(dockingWindow == null) 
+            {
+                dockingWindow = m_dockFrame.AddItem(windowTitle);
+                dockingWindow.DefaultLocation = "Workspace/Bottom";
+                dockingWindow.Behavior = DockItemBehavior.Normal;
+
+                dockingWindow.Visible = true;
+
+                //Float window
+                m_dockFrame.SetStatus(dockingWindow, DockItemStatus.Floating);
+                Gdk.Rectangle floatRectangle = dockingWindow.FloatingPosition;
+                floatRectangle.Width = 350;
+                floatRectangle.Height = 180;
+
+                //location of info box next to the component node just sligthly below cursor click
+                floatRectangle.X = 150;
+                floatRectangle.Y = 150;
+                dockingWindow.SetFloatMode(floatRectangle);
+            } 
+            else
+            {
+                //if already exists just set it visible
+                dockingWindow.Visible = true;
+            }
+
+            dockingWindow.Label = windowTitle;
+            dockingWindow.Content = editor as Widget;
+
+            return true;
         }
 
         #region Render Columns Methods
@@ -181,15 +260,23 @@ namespace TraceLab.UI.GTK
         {
             WorkspaceUnit workspaceUnit = (WorkspaceUnit)model.GetValue(iter, 2);
             CellRendererText renderer = (CellRendererText)cell;
-            if(workspaceUnit.Type.IsPrimitive || workspaceUnit.Type == String.Empty.GetType()) 
-            {
-                renderer.Visible = true;
-                renderer.Text = workspaceUnit.Data.ToString();
-            } 
-            else
-            {
-                renderer.Visible = false;
-            }
+            // HERZUM SPRINT 5.1: TLAB-170
+            if (workspaceUnit!=null &&  workspaceUnit.Type!=null && renderer!=null)
+                if(workspaceUnit.Type.IsPrimitive || workspaceUnit.Type == String.Empty.GetType()) 
+                {
+                    renderer.Visible = true;
+                    // HERZUM SPRINT 2.6: TLAB-170
+                    if (workspaceUnit.Data != null)
+                        renderer.Text = workspaceUnit.Data.ToString ();
+                    else
+                        renderer.Text = "";
+                    // END HERZUM SPRINT 2.6: TLAB-170
+                } 
+                else
+                {
+                    renderer.Visible = false;
+                }
+            // END HERZUM SPRINT 5.1: TLAB-170
         }
                 
         private void RenderViewerIcon(TreeViewColumn column, CellRenderer cell, TreeModel model, TreeIter iter)
@@ -330,6 +417,27 @@ namespace TraceLab.UI.GTK
         }
 
         #endregion
+
+        // HERZUM SPRINT 3: TLAB-86
+        internal bool SearchValueMetricVariable(string nameMetricVariable, out string typeMetricVariable, out string valueMetricVariable)
+        {
+            foreach (object[] unit in m_workspaceStore)
+            {
+                TraceLab.Core.Workspaces.WorkspaceUnit row = unit[0] as TraceLab.Core.Workspaces.WorkspaceUnit;
+                if (row.FriendlyUnitName.Equals(nameMetricVariable))
+                {
+                    typeMetricVariable = row.Type.ToString();
+                    valueMetricVariable = row.Data.ToString();
+                    return true;
+                }
+            }
+
+            typeMetricVariable = "";
+            valueMetricVariable = "";
+            return false;
+
+        }
+        // END HERZUM SPRINT 3: TLAB-86
 
         private bool m_initialized = false;
         private DockFrame m_dockFrame;

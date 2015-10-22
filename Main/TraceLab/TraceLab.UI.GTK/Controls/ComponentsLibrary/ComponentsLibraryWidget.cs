@@ -49,6 +49,11 @@ namespace TraceLab.UI.GTK
                 //detach handlers
                 viewModel.Rescanned -= ComponentsLibraryRescannedHandler;
                 viewModel.Rescanning -= ComponentsLibraryRescanningHandler;
+
+                if (viewModel.Experiment != null)
+                {
+                    viewModel.Experiment.References.CollectionChanged -= References_CollectionChanged;
+                }
             }
             
             viewModel = applicationViewModel.ComponentLibraryViewModel;
@@ -56,12 +61,30 @@ namespace TraceLab.UI.GTK
             //attach handlers
             viewModel.Rescanned += ComponentsLibraryRescannedHandler;
             viewModel.Rescanning += ComponentsLibraryRescanningHandler;
+
+            if (viewModel.Experiment != null)
+            {
+                viewModel.Experiment.References.CollectionChanged += References_CollectionChanged;
+                this.packageReferencesButton.Sensitive = true;
+            } 
+            else 
+            {
+                this.packageReferencesButton.Sensitive = false;
+            }
             
             // Don't build hierarchy unless the library is done scanning
             if (viewModel.IsRescanning == false)
                 ComponentsLibraryRescannedHandler(this, EventArgs.Empty);
 
             EnableDrag();
+        }
+
+        private void References_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            if (viewModel.IsRescanning == false)
+            {
+                RebuildTree();
+            }
         }
        
         #region Drag & Drop
@@ -124,8 +147,13 @@ namespace TraceLab.UI.GTK
         
         void ComponentsLibraryRescannedHandler(object sender, EventArgs e)
         {
-            treeFilter = new TreeModelFilter(BuildTreeModel(), null);
-            treeFilter.VisibleFunc = new TreeModelFilterVisibleFunc(FilterTree);
+            RebuildTree();
+        }
+
+        void RebuildTree()
+        {
+            treeFilter = new TreeModelFilter (BuildTreeModel (), null);
+            treeFilter.VisibleFunc = new TreeModelFilterVisibleFunc (FilterTree);
             treeView.Model = treeFilter;
         }
         
@@ -153,12 +181,20 @@ namespace TraceLab.UI.GTK
         TreeModel BuildTreeModel()
         {
             TreeStore treeStore = new TreeStore(typeof(ComponentsLibraryNode));
-            
             foreach (ComponentsLibraryNode node in NodesTreeBuilder.Build(viewModel)) 
             {
                 TreeIter treeParentNode = treeStore.AppendValues(node);
+                //foreach (ComponentsLibraryNode nodeChild in node)
+                //    AddNodeToTreeModel(nodeChild, treeStore, treeParentNode);
+                // HERZUM SPRINT 3: TLAB-194
+                List<ComponentsLibraryNode> listNode = new List<ComponentsLibraryNode> ();
                 foreach (ComponentsLibraryNode nodeChild in node)
-                    AddNodeToTreeModel(nodeChild, treeStore, treeParentNode);
+                    listNode.Add (nodeChild);
+                listNode.Sort ();
+                if (listNode.Count>0)
+                    foreach (ComponentsLibraryNode nodeChild in listNode)
+                        AddNodeToTreeModel(nodeChild, treeStore, treeParentNode);
+                // END HERZUM SPRINT 3: TLAB-194
             }
             
             return treeStore;
@@ -167,8 +203,18 @@ namespace TraceLab.UI.GTK
         void AddNodeToTreeModel(ComponentsLibraryNode node, TreeStore tree, TreeIter parentNode)
         {
             parentNode = tree.AppendValues(parentNode, node);
+            //foreach (ComponentsLibraryNode childNode in node)
+            //    AddNodeToTreeModel(childNode, tree, parentNode);
+
+            // HERZUM SPRINT 3: TLAB-194
+            List<ComponentsLibraryNode> listNode = new List<ComponentsLibraryNode> ();
             foreach (ComponentsLibraryNode childNode in node)
-                AddNodeToTreeModel(childNode, tree, parentNode);
+                listNode.Add (childNode);
+            listNode.Sort ();
+            if (listNode.Count>0)
+                foreach (ComponentsLibraryNode childNode in listNode)
+                    AddNodeToTreeModel(childNode, tree, parentNode);
+            // END HERZUM SPRINT 3: TLAB-194
         }
         
         void OnFilterEntryTextChanged(object sender, EventArgs e)

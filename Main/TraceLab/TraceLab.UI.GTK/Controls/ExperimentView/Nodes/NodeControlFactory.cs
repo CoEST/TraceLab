@@ -48,10 +48,49 @@ namespace TraceLab.UI.GTK
             { 
                 control = new DecisionNodeControl(node, m_applicationContext);
             }
+            else if (node is ExitDecisionNode)
+            {
+                // HERZUM  SPRINT 0.0
+                // control = null;
+                // throw new NotImplementedException();
+                // HERZUM SPRINT 1.1 IF
+                // control = new EndNodeControl(node, m_applicationContext);
+                control = new ExitDecisionControl(node, m_applicationContext);
+                // END HERZUM SPRINT 1.1 IF
+                // END HERZUM 
+            }
+            else if (node is LoopScopeNode)
+            {
+                // HERZUM SPRINT 1.1 LOOP
+                // control = null;
+                // throw new NotImplementedException();
+                control = new LoopNodeControl(node, m_applicationContext);
+                // END HERZUM SPRINT 1.1 LOOP
+            }
+            else if (node is ScopeNode)
+            {
+                // HERZUM  SPRINT 0.0
+                //control = null;
+                //throw new NotImplementedException();
+                control = new ScopeNodeControl(node, m_applicationContext);
+                // END HERZUM 
+            }
+            // HERZUM SPRINT 2.0: TLAB-65 CLASS
+            else if (node is ChallengeNode)
+            {
+                control = new ChallengeNodeControl(node, m_applicationContext);
+            }
+            // END HERZUM SPRINT 2.0: TLAB-65 CLASS
             else if (node is CompositeComponentNode)
             {
                 control = new CompositeComponentControl(node, m_applicationContext);
             }
+            // HERZUM SPRINT 1.0
+            else if (node is CommentNode)
+            {
+                control = new CommentNodeControl(node, m_applicationContext);
+            }
+            // END HERZUM SPRINT 1.0
             else 
             {
                 control = new BasicNodeControl(node, m_applicationContext);

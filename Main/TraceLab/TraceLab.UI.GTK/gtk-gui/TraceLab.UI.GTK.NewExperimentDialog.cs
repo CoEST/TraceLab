@@ -21,7 +21,7 @@ namespace TraceLab.UI.GTK
 		private global::Gtk.Entry tbx_fileName;
 		private global::Gtk.Button buttonCancel;
 		private global::Gtk.Button btn_ok;
-		
+
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
@@ -266,11 +266,9 @@ namespace TraceLab.UI.GTK
 			this.DefaultWidth = 715;
 			this.DefaultHeight = 342;
 			this.Show ();
-			this.tbx_fileName.Changed += new global::System.EventHandler (this.onChangeValidateHandler);
-			this.tbx_experimentName.Changed += new global::System.EventHandler (this.onChangeValidateHandler);
 			this.tbx_experimentName.TextDeleted += new global::Gtk.TextDeletedHandler (this.updateProjectName);
 			this.tbx_experimentName.TextInserted += new global::Gtk.TextInsertedHandler (this.updateProjectName);
-			this.tbx_dirPath.Changed += new global::System.EventHandler (this.onChangeValidateHandler);
+			this.tbx_experimentName.Changed += new global::System.EventHandler (this.OnTbxExperimentNameChanged);
 			this.btn_selectDir.Clicked += new global::System.EventHandler (this.buttonSelectDirClickedHandler);
 			this.buttonCancel.Clicked += new global::System.EventHandler (this.buttonCancelClickedHandler);
 			this.btn_ok.Clicked += new global::System.EventHandler (this.buttonOKClickedHandler);

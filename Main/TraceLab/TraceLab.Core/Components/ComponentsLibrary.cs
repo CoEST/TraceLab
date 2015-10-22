@@ -34,6 +34,13 @@ namespace TraceLab.Core.Components
 {
     /// <summary>
     /// Components library is the central class that manages component definitions, and loads components assemblies.
+    /// 
+    /// The Component Library is a quite large class that was growing overtime. 
+    /// It has quite a bit of code and functionality, but its core functionality is to control the scan via Component Scanner, 
+    /// then keeping the list of all components metadata definitions discovered during that scan, 
+    /// and finally loading/constructing component classes when the experiment starts via Component Loader. 
+    /// 
+    /// It also manages components in the packages.
     /// </summary>
     public class ComponentsLibrary : MarshalByRefObject, System.ComponentModel.INotifyPropertyChanged, IComponentsLibrary
     {
@@ -432,6 +439,8 @@ namespace TraceLab.Core.Components
             IsRescanning = false;
             if (Rescanned != null)
                 Rescanned(this, EventArgs.Empty);
+
+
         }
 
         /// <summary>
@@ -474,12 +483,16 @@ namespace TraceLab.Core.Components
         }
 
         /// <summary>
-        /// Loads the component based on the given metadata
+        /// Loads the component based on the given metadata.
+        /// 
+        /// Note, that the component loader is constructed in the secondary App Domain via CreateInstanceAndUnwrap.
+        /// It is essential that this is done in another App Domain, so that the assembly can be unloaded after
+        /// experiment execution is completed. 
         /// </summary>
         /// <param name="componentMetadata">The component metadata.</param>
         /// <param name="workspace">The workspace.</param>
         /// <param name="logger">The logger.</param>
-        /// <param name="componentsAppDomain">The components app domain is the app domain which decision assembly is going to be loaded into.</param>
+        /// <param name="componentsAppDomain">The components app domain is the app domain which component assembly is going to be loaded into.</param>
         /// <returns>Loaded component</returns>
         internal IComponent LoadComponent(ComponentMetadata componentMetadata, IWorkspaceInternal workspace, ComponentLogger logger, AppDomain componentsAppDomain)
         {
@@ -967,6 +980,74 @@ namespace TraceLab.Core.Components
             }
         }
 
+        private void RescanInternalNOThread(PackageSystem.PackageManager emaPkgManager,
+                                         IEnumerable<string> emaWorkspaceTypeDirectories,
+                                         bool emaRebuildCache)
+        {
+            IEnumerable<string> workspaceTypeDirectories = emaWorkspaceTypeDirectories;
+            PackageSystem.PackageManager pkgManager = emaPkgManager;
+            bool rebuildCache = emaRebuildCache;
+
+            if (this.m_packageTypeDirectories == null)
+            {
+                // Packages can include types, so their directories should be checked
+                this.m_packageTypeDirectories = new HashSet<string>(workspaceTypeDirectories);
+                // Additional types - for packaged components only
+                foreach (string location in pkgManager.PackageLocations)
+                {
+                    var packages = pkgManager[location];
+                    foreach (TraceLabSDK.PackageSystem.IPackage pkg in packages)
+                    {
+                        foreach (string typesLocation in pkgManager.GetDependantTypeLocations(pkg))
+                        {
+                            string path = Path.GetFullPath(typesLocation);
+                            this.m_packageTypeDirectories.Add(path);
+                        }
+                    }
+                }
+            }
+
+            Clear();
+            try
+            {
+                // Loads cache from file if it has been created and at program startup (not rescanning)
+                if (rebuildCache == false)
+                {
+                    ComponentsLibraryCache cache = ComponentsLibraryCacheHelper.LoadCacheFile();
+                    if (cache != null)
+                    {
+                        this.m_componentFilesCache = cache;
+                        this.m_componentFilesCache.CheckAppInformation(this.m_dataRoot);
+                    }
+                    else
+                    {
+                        this.m_componentFilesCache = new ComponentsLibraryCache(this.m_dataRoot);
+                    }
+                }
+                else
+                {
+                    this.m_componentFilesCache.Clear();
+                }
+
+                // Read packages first
+                this.m_componentFilesCache.CheckTypeDirectories(this.m_packageTypeDirectories);
+                ScanPackageComponents(pkgManager, this.m_packageTypeDirectories);
+                LoadComponentsDefinitions(workspaceTypeDirectories);
+                MetadataDefinitionFactory.LoadConstantDefinitionsIntoLibrary(m_componentDefinitions);
+
+                // Only update cache file if it was modified
+                if (this.m_componentFilesCache.WasModified || !ComponentsLibraryCacheHelper.CacheFileExists())
+                {
+                    ComponentsLibraryCacheHelper.StoreCacheFile(this.m_componentFilesCache);
+                }
+            }
+            finally
+            {
+                OnRescanned();
+            }
+        }
+
+
         private System.Threading.Thread m_rescanThread;
         public void Rescan(PackageSystem.PackageManager pkgManager, IEnumerable<string> workspaceTypeDirectories, bool rebuildCache)
         {
@@ -983,13 +1064,16 @@ namespace TraceLab.Core.Components
                 OnRescanning();
             }
 
+            RescanInternalNOThread (pkgManager, workspaceTypeDirectories, rebuildCache);
+
+
             Thread thread = ThreadFactory.CreateThread(new System.Threading.ParameterizedThreadStart(RescanInternal));
             thread.IsBackground = true;
-            thread.Priority = System.Threading.ThreadPriority.BelowNormal;
+            thread.Priority = System.Threading.ThreadPriority.Highest;// BelowNormal;
             thread.Name = "Component Library Rescan Thread";
-            thread.Start(new Object[] { pkgManager, workspaceTypeDirectories, rebuildCache });
+       //     thread.Start(new Object[] { pkgManager, workspaceTypeDirectories, rebuildCache });
 
-            m_rescanThread = thread;
+      //      m_rescanThread = thread;
         }
 
         #region LockRescanning

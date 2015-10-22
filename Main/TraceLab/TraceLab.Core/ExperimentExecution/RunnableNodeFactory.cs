@@ -61,6 +61,9 @@ namespace TraceLab.Core.ExperimentExecution
             LoopScopeMetadata loopMetadata = metadata as LoopScopeMetadata;
             CompositeComponentMetadata compositeComponentMetadata = metadata as CompositeComponentMetadata;
             ExitDecisionMetadata exitDecisionMetadata = metadata as ExitDecisionMetadata;
+            // HERZUM SPRINT 2.0: TLAB-65
+            ChallengeMetadata challengeMetadata = metadata as ChallengeMetadata;
+            // END HERZUM SPRINT 2.0: TLAB-65
             if (componentMetadata != null)
             {
                 TraceLabSDK.ComponentLogger logger = TraceLab.Core.Components.LoggerFactory.CreateLogger(loggerNameRoot, nodeId, componentMetadata);
@@ -96,6 +99,12 @@ namespace TraceLab.Core.ExperimentExecution
             {
                 retNode = new RunnablePrimitiveNode(nodeId, exitDecisionMetadata.WaitsForAllPredecessors);
             }
+            // HERZUM SPRINT 2.0: TLAB-65
+            else if (challengeMetadata != null)
+            {
+                retNode = CreateScopeCompositeComponentNode(nodeId, challengeMetadata, loggerNameRoot, library, componentsAppDomain, terminateExperimentExecutionResetEvent);
+            }
+            // END HERZUM SPRINT 2.0: TLAB-65
             else
             {
                 throw new Exceptions.InconsistentTemplateException("Could not identify node type.");

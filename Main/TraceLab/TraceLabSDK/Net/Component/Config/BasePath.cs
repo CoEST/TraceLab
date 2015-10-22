@@ -41,6 +41,11 @@ namespace TraceLabSDK.Component.Config
         /// <param name="absolutePath">The absolute path.</param>
         public virtual void Init(string absolutePath)
         {
+            // HERZUM SPRINT 4.2: TLAB-202
+            #if DEBUG
+            Console.WriteLine ("Init "+ absolutePath);
+            #endif
+            // END HERZUM SPRINT 4.2: TLAB-202
             this.Init(absolutePath, null);
         }
 
@@ -51,6 +56,11 @@ namespace TraceLabSDK.Component.Config
         /// <param name="dataRoot">The data root.</param>
         public virtual void Init(string absolutePath, string dataRoot)
         {
+            // HERZUM SPRINT 4.2: TLAB-202
+            #if DEBUG
+            Console.WriteLine ("Init" + absolutePath + " - " + dataRoot );
+            #endif
+            // END HERZUM SPRINT 4.2: TLAB-202
             if (dataRoot != null)
                 this.SetDataRoot(dataRoot, true);
             this.Absolute = absolutePath;
@@ -136,6 +146,11 @@ namespace TraceLabSDK.Component.Config
                             Relative = m_absolute;
                         }
                     }
+                
+                    // HERZUM SPRINT 4.3: TLAB-238 TLAB-243
+                    if (Relative.Equals (""))
+                        Relative = ".";
+                    // END HERZUM SPRINT 4.3: TLAB-238 TLAB-243
                 }
             }
         }
@@ -219,6 +234,7 @@ namespace TraceLabSDK.Component.Config
         /// <returns></returns>
         private static string DetermineRelativePath(string absolutePath, string relativeTo)
         {
+
             OperatingSystem os = Environment.OSVersion;
 
             StringComparison comparisonType = StringComparison.CurrentCulture;
@@ -231,6 +247,14 @@ namespace TraceLabSDK.Component.Config
             }
 
             char dirSeparatorChar = System.IO.Path.DirectorySeparatorChar;
+
+            // HERZUM SPRINT 4.3: TLAB-238 TLAB-243
+            if (System.IO.Directory.Exists(absolutePath))
+                if (!absolutePath.EndsWith (dirSeparatorChar.ToString()))
+                    absolutePath = absolutePath + dirSeparatorChar;
+            if (!relativeTo.EndsWith (dirSeparatorChar.ToString()))
+                relativeTo = relativeTo + dirSeparatorChar;
+            // END HERZUM SPRINT 4.3: TLAB-238 TLAB-243
 
             string[] absoluteDirectories = absolutePath.Split(dirSeparatorChar);
             string[] relativeDirectories = relativeTo.Split(dirSeparatorChar);
@@ -251,6 +275,10 @@ namespace TraceLabSDK.Component.Config
                     break;
             }
 
+            #if DEBUG
+            Console.WriteLine ("lastCommonRoot = " + lastCommonRoot);
+            #endif
+
             //If we didn't find a common prefix then throw
             if (lastCommonRoot == -1)
                 throw new ArgumentException("Paths do not have a common base");
@@ -266,9 +294,23 @@ namespace TraceLabSDK.Component.Config
             }
 
             //Add on the folders
-            for (index = lastCommonRoot + 1; index < absoluteDirectories.Length - 1; index++)
+            for (index = lastCommonRoot + 1; index < absoluteDirectories.Length - 1; index++) {
                 relativePath.Append(absoluteDirectories[index] + dirSeparatorChar);
+                #if DEBUG
+                Console.WriteLine ("absoluteDirectories[index] + dirSeparatorChar = " + absoluteDirectories[index] + dirSeparatorChar);
+                #endif
+            }
             relativePath.Append(absoluteDirectories[absoluteDirectories.Length - 1]);
+
+            #if DEBUG
+            Console.WriteLine ("absoluteDirectories[absoluteDirectories.Length - 1] = " + absoluteDirectories[absoluteDirectories.Length - 1]);
+            #endif
+
+            // HERZUM SPRINT 4.2: TLAB-202
+            #if DEBUG
+            Console.WriteLine (" return RelativePath = " + relativePath.ToString());
+            #endif
+            // END HERZUM SPRINT 4.2: TLAB-202
 
             return relativePath.ToString();
         }

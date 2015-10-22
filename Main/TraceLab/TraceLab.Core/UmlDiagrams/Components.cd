@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TraceLab.Core.Components.MetadataDefinition" Collapsed="true">
+    <Position X="7.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAEAQAAAEACggEAggAAAAIAAAABAAMQAAAAAAAJAAAA=</HashCode>
+      <FileName>Components\MetadataDefinition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Components.LoopMetadataDefinition" Collapsed="true">
+    <Position X="8.25" Y="9.5" Width="3" />
+    <InheritanceLine Type="TraceLab.Core.Components.MetadataDefinition" FixedToPoint="true">
+      <Path>
+        <Point X="8.5" Y="3.062" />
+        <Point X="8.5" Y="3.437" />
+        <Point X="11.625" Y="3.437" />
+        <Point X="11.625" Y="9.875" />
+        <Point X="11.25" Y="9.875" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\LoopMetadataDefinition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Components.ComponentMetadataDefinition" Collapsed="true">
+    <Position X="8" Y="5" Width="3" />
+    <InheritanceLine Type="TraceLab.Core.Components.MetadataDefinition" FixedToPoint="true">
+      <Path>
+        <Point X="8.5" Y="3.062" />
+        <Point X="8.5" Y="3.437" />
+        <Point X="11.625" Y="3.437" />
+        <Point X="11.625" Y="5.312" />
+        <Point X="11" Y="5.312" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>ABAAAAAACAAAEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\ComponentMetadataDefinition.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.878" />
+  </Class>
+  <Class Name="TraceLab.Core.Components.CompositeComponentMetadataDefinition" Collapsed="true">
+    <Position X="8.25" Y="8.25" Width="3" />
+    <InheritanceLine Type="TraceLab.Core.Components.MetadataDefinition" FixedToPoint="true">
+      <Path>
+        <Point X="8.5" Y="3.062" />
+        <Point X="8.5" Y="3.437" />
+        <Point X="11.625" Y="3.437" />
+        <Point X="11.625" Y="8.688" />
+        <Point X="11.25" Y="8.688" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQICAEEBAAEAAAAACAABQQAgAAAAAgAAAAAA=</HashCode>
+      <FileName>Components\CompositeComponentMetadataDefinition.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.604" />
+  </Class>
+  <Class Name="TraceLab.Core.Components.DecisionMetadataDefinition" Collapsed="true">
+    <Position X="8" Y="5.75" Width="3" />
+    <InheritanceLine Type="TraceLab.Core.Components.MetadataDefinition" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.5" Y="3.062" />
+        <Point X="8.5" Y="3.437" />
+        <Point X="11.625" Y="3.437" />
+        <Point X="11.625" Y="6.062" />
+        <Point X="11" Y="6.062" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\DecisionMetadataDefinition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Components.MetadataDefinitionFactory" Collapsed="true">
+    <Position X="8.75" Y="1.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAEAAAAAAAAAAACAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Components\MetadataDefinitionFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Components.ComponentScanner" Collapsed="true">
+    <Position X="6.25" Y="0.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AARAAAAAAgAEAQAASAAAAgAACAAAAAAAAgAABAgAAAA=</HashCode>
+      <FileName>Components\ComponentScanner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Components.ComponentsLibrary" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>4EJCBARSAQBsApDAATEoBAAAgAhBABCQwEA6AIhSBAo=</HashCode>
+      <FileName>Components\ComponentsLibrary.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Components" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TraceLab.Core.Components.ComponentLoader" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AQAAgAAACAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAACAA=</HashCode>
+      <FileName>Components\ComponentLoader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Experiments.ComponentFactory" Collapsed="true">
+    <Position X="6.5" Y="1.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAACAAIAAABAACAAQAAAAAAAYAABAEAAQAAAAAAAAI=</HashCode>
+      <FileName>Experiments\ComponentFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Components.Metadata" Collapsed="true">
+    <Position X="1.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AICAAAQUEAAAAqBhBIAgAAAy0AFAQBIBAAAAhMAAABA=</HashCode>
+      <FileName>Components\Metadata.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TraceLab.Core.Components.ComponentMetadata" Collapsed="true">
+    <Position X="2.5" Y="5" Width="2" />
+    <AssociationLine Name="ComponentMetadataDefinition" Type="TraceLab.Core.Components.ComponentMetadataDefinition">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.547" Y="0.07" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAoBAAUIACAECBAgAAEAQAiAARAUJAAAQAAkAAQArg=</HashCode>
+      <FileName>Components\ComponentMetadata.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ComponentMetadataDefinition" />
+    </ShowAsAssociation>
+    <Lollipop Orientation="Right" Position="0.491" Collapsed="true" />
+  </Class>
+  <Class Name="TraceLab.Core.Components.CompositeComponentBaseMetadata" Collapsed="true">
+    <Position X="2.5" Y="7.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>CIAAAAAAAACAAAAAAAAAAAAAQAAAAAABAAAAAgAAACA=</HashCode>
+      <FileName>Components\CompositeComponentBaseMetadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Components.DecisionMetadata" Collapsed="true">
+    <Position X="2.5" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAUAACgAGAxAQAEAACiAUBAAAAIAABAgAAQADA=</HashCode>
+      <FileName>Components\DecisionMetadata.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Right" Position="0.129" Collapsed="true" />
+  </Class>
+  <Class Name="TraceLab.Core.Components.EndNodeMetadata" Collapsed="true">
+    <Position X="2.5" Y="4.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAUAAAAAAAAAAAAAAACAABAAAAAAAAAgAAAABA=</HashCode>
+      <FileName>Components\EndNodeMetadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Components.ExitDecisionMetadata" Collapsed="true">
+    <Position X="2.5" Y="6.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAUAAAAAAAAAAAAAAACAABAAAAAAAAAgAAAABA=</HashCode>
+      <FileName>Components\ExitDecisionMetadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Components.StartNodeMetadata" Collapsed="true">
+    <Position X="2.5" Y="3.5" Width="2" />
+    <InheritanceLine Type="TraceLab.Core.Components.Metadata" ManuallyRouted="true">
+      <Path>
+        <Point X="2.25" Y="3.062" />
+        <Point X="2.25" Y="3.315" />
+        <Point X="3.5" Y="3.315" />
+        <Point X="3.5" Y="3.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAUAAAAAAAAAAAAAAACAABAAAAAAAAAgAAAABA=</HashCode>
+      <FileName>Components\StartNodeMetadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Components.CompositeComponentMetadata" Collapsed="true">
+    <Position X="3.5" Y="8.25" Width="2.5" />
+    <InheritanceLine Type="TraceLab.Core.Components.CompositeComponentBaseMetadata" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3" Y="7.941" />
+        <Point X="3" Y="8.625" />
+        <Point X="3.5" Y="8.625" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="ComponentMetadataDefinition" Type="TraceLab.Core.Components.CompositeComponentMetadataDefinition">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.1" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAoBAAUIACAECBIAAAAAQACAAQAUBAAAQAAkgAUAJg=</HashCode>
+      <FileName>Components\CompositeComponentMetadata.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ComponentMetadataDefinition" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TraceLab.Core.Components.ScopeBaseMetadata" Collapsed="true">
+    <Position X="3.5" Y="9.25" Width="2.5" />
+    <InheritanceLine Type="TraceLab.Core.Components.CompositeComponentBaseMetadata" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3" Y="7.941" />
+        <Point X="3" Y="9.562" />
+        <Point X="3.5" Y="9.562" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAICAACBIAAAAAAACAAAAQAAAAAAAggAAAAA=</HashCode>
+      <FileName>Components\ScopeBaseMetadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Components.LoopScopeMetadata" Collapsed="true">
+    <Position X="4.5" Y="10.25" Width="2" />
+    <InheritanceLine Type="TraceLab.Core.Components.ScopeBaseMetadata" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.875" Y="9.941" />
+        <Point X="3.875" Y="10.625" />
+        <Point X="4.5" Y="10.625" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAACgAGAQAQAEAACCAUAAAAAIAABAgAAQADA=</HashCode>
+      <FileName>Components\LoopScopeMetadata.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Right" Position="0.1" />
+  </Class>
+  <Class Name="TraceLab.Core.Components.ScopeMetadata" Collapsed="true">
+    <Position X="4.5" Y="11" Width="1.5" />
+    <InheritanceLine Type="TraceLab.Core.Components.ScopeBaseMetadata" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.875" Y="9.941" />
+        <Point X="3.875" Y="11.375" />
+        <Point X="4.5" Y="11.375" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Components\ScopeMetadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

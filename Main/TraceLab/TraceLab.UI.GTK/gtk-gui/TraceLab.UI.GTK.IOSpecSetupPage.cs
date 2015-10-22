@@ -9,7 +9,7 @@ namespace TraceLab.UI.GTK
 		private global::Gtk.TextView textview1;
 		private global::Gtk.TreeView inputsView;
 		private global::Gtk.TreeView outputsView;
-		
+
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
@@ -30,8 +30,8 @@ namespace TraceLab.UI.GTK
 			this.vbox3.BorderWidth = ((uint)(3));
 			// Container child vbox3.Gtk.Box+BoxChild
 			this.textview1 = new global::Gtk.TextView ();
-			this.textview1.Buffer.Text = "Component is defined by its inputs and outputs. \r\nPlease select inputs that your " +
-				"component will require to do its computation, and final outputs.";
+			this.textview1.Buffer.Text = "Component is defined by its inputs and outputs. \nPlease select inputs that your c" +
+				"omponent will require to do its computation, and final outputs.";
 			this.textview1.Sensitive = false;
 			this.textview1.CanFocus = true;
 			this.textview1.Name = "textview1";

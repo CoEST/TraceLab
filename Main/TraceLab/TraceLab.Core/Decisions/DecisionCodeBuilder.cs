@@ -59,11 +59,22 @@ namespace TraceLab.Core.Decisions
             else
             {
                 //append ';' to the end just in case so that user condition can be simplified
-                string decisionCode = (metadata.DecisionCode.EndsWith(";")) ? metadata.DecisionCode : metadata.DecisionCode + ";";
+                //HERZUM SPRINT 2.6: TLAB-170
+                string decisionCode = "";
+                if (metadata!=null && metadata.DecisionCode!=null)
+                    decisionCode = (metadata.DecisionCode.EndsWith(";")) ? metadata.DecisionCode : metadata.DecisionCode + ";";
+                //END HERZUM SPRINT 2.6: TLAB-170
 
                 DecisionCodeParser codeParser = new DecisionCodeParser(decisionCode, successorNodeLabelIdLookup, predeccessorsOutputsNameTypeLookup);
-                string userDecisionCodeSnippet = codeParser.ParseCode();
-                bodyCode = String.Format(LOOP_DECISION_MODULE_BODY, userDecisionCodeSnippet);
+                //string userDecisionCodeSnippet = codeParser.ParseCode();
+                string userDecisionCodeSnippet = codeParser.ParseCodeLoop();
+                //bodyCode = String.Format(DECISION_MODULE_BODY, userDecisionCodeSnippet);
+                if (userDecisionCodeSnippet.Contains ("return")) {
+                    bodyCode = String.Format(LOOP_DECISION_MODULE_BODY, userDecisionCodeSnippet);
+                } else {
+                    bodyCode = String.Format(LOOP_DECISION_MODULE_BODY_2, userDecisionCodeSnippet);
+                }
+
                 moduleInterface = typeof(ILoopDecisionModule).FullName;
             }
 
@@ -96,6 +107,7 @@ namespace TraceLab.Core.Decisions
                                              bodyCode));
 
             return codeBuilder.ToString();
+
         }
         
         #region Code Snippets
@@ -171,6 +183,15 @@ namespace TraceLab.Core.Decisions
         /// It is used in case of LoopScopeMetadata
         /// </summary>
         private const string LOOP_DECISION_MODULE_BODY = @"
+                
+                public bool Condition()
+                {{          
+                    //return {0};
+                    {0};
+                }}
+        ";
+
+        private const string LOOP_DECISION_MODULE_BODY_2 = @"
                 
                 public bool Condition()
                 {{

@@ -270,7 +270,10 @@ namespace TraceLab.Core.Components
         {
             foreach (IOItem item in Input.Values)
             {
-                if (item.MappedTo.Equals(value))
+                // HERZUM SPRINT 4: TLAB-191
+                // if (item.MappedTo.Equals(value))
+                if (item.MappedTo!= null && item.MappedTo.Equals(value))
+                // HERZUM SPRINT 4: TLAB-191
                 {
                     item.IsHighlighted = true;
                     IsInputHighlighted = true;
@@ -280,7 +283,10 @@ namespace TraceLab.Core.Components
 
             foreach (IOItem item in Output.Values)
             {
-                if (item.MappedTo.Equals(value))
+                // HERZUM SPRINT 4: TLAB-191
+                // if (item.MappedTo.Equals(value))
+                if (item.MappedTo != null && item.MappedTo.Equals(value))
+                // END HERZUM SPRINT 4: TLAB-191
                 {
                     item.IsHighlighted = true;
                     IsOutputHighlighted = true;

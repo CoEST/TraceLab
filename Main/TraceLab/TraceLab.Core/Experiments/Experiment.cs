@@ -33,6 +33,16 @@ namespace TraceLab.Core.Experiments
     public class Experiment : BaseExperiment, IEditableExperiment
     {
         private bool m_isModified;
+        private string m_unlockingPassword;
+
+        public string unlockingPassword{
+            get {
+                return this.m_unlockingPassword;
+            }
+            set {
+                this.m_unlockingPassword = value;
+            }
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Experiment"/> class.

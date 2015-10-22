@@ -21,6 +21,7 @@ using System.Text;
 using System.Collections.ObjectModel;
 using TraceLabSDK.PackageSystem;
 using TraceLab.Core.Experiments;
+using TraceLab.Core.PackageSystem;
 
 namespace TraceLab.UI.WPF.ViewModels
 {
@@ -61,72 +62,12 @@ namespace TraceLab.UI.WPF.ViewModels
 
             if (!packageVM.IsChecked) 
             {
-                RemoveReference(m_experiment, packageReference);
+                PackagesViewModelHelper.RemoveReference(m_experiment, packageReference);
             }
             else if(packageVM.IsChecked && !m_experiment.References.Contains(packageReference))
             {
-                AddReference(m_experiment, packageReference);
+                PackagesViewModelHelper.AddReference(m_experiment, packageReference);
             }
         }
-
-        #region Remove Reference
-
-        private static void RemoveReference(IExperiment experiment, Core.PackageSystem.PackageReference packageReference)
-        {
-            if (experiment.References.Contains(packageReference))
-            {
-                experiment.References.Remove(packageReference);
-
-                RemoveReferenceFromScopes(experiment, packageReference);
-            }
-        }
-
-        private static void RemoveReferenceFromScopes(IExperiment experiment, Core.PackageSystem.PackageReference packageReference)
-        {
-            foreach (ExperimentNode node in experiment.Vertices)
-            {
-                ScopeNodeBase scopeNode = node as ScopeNodeBase;
-                if (scopeNode != null)
-                {
-                    var subgraph = scopeNode.CompositeComponentMetadata.ComponentGraph;
-                    if (subgraph.References.Contains(packageReference))
-                    {
-                        subgraph.References.Remove(packageReference);
-                    }
-                }
-            }
-        }
-
-        #endregion Remove Reference
-
-        #region Add Reference
-
-        private static void AddReference(IExperiment experiment, Core.PackageSystem.PackageReference packageReference)
-        {
-            if (!experiment.References.Contains(packageReference))
-            {
-                experiment.References.Add(packageReference);
-
-                AddReferenceToScopes(experiment, packageReference);
-            }
-        }
-
-        private static void AddReferenceToScopes(IExperiment experiment, Core.PackageSystem.PackageReference packageReference)
-        {
-            foreach (ExperimentNode node in experiment.Vertices)
-            {
-                ScopeNodeBase scopeNode = node as ScopeNodeBase;
-                if (scopeNode != null)
-                {
-                    var subgraph = scopeNode.CompositeComponentMetadata.ComponentGraph;
-                    if (!subgraph.References.Contains(packageReference))
-                    {
-                        subgraph.References.Add(packageReference);
-                    }
-                }
-            }
-        }
-
-        #endregion Add Reference
     }
 }

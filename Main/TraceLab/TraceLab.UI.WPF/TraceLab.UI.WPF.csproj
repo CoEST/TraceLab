@@ -131,6 +131,7 @@
       <DependentUpon>ScreenshotDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\CountToBoolConverter.cs" />
+    <Compile Include="Converters\FilePathIconConverter.cs" />
     <Compile Include="Converters\RectConverter.cs" />
     <Compile Include="Converters\RoutePointsConverter.cs" />
     <Compile Include="Selectors\PackageBuilderWizardSelector.cs" />
@@ -461,10 +462,6 @@
     <Compile Include="Views\PackageBuilder\PackageBuilderMainWindow.xaml.cs">
       <DependentUpon>PackageBuilderMainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PackageBuilder\PackageSource\PackageBuilderViewModel.cs" />
-    <Compile Include="Views\PackageBuilder\PackageSource\PackageFileSourceInfo.cs" />
-    <Compile Include="Views\PackageBuilder\PackageSource\PackageHeirarchyItem.cs" />
-    <Compile Include="Views\PackageBuilder\PackageSource\PackageSourceInfo.cs" />
     <Compile Include="Views\PackageBuilder\SafeHBitmapHandle.cs" />
     <Compile Include="Views\ReadonlyDockableGraph.xaml.cs">
       <DependentUpon>ReadonlyDockableGraph.xaml</DependentUpon>
