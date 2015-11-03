@@ -56,19 +56,6 @@ namespace TraceLab
                         var app = new TraceLabApplicationGUI();
                         app.Run(args);
                     }
-                    catch (InvalidKeyException e)
-                    {
-                        if (!isRunOnMono)
-                        {
-                            System.Windows.Forms.MessageBox.Show(e.Message, @"Invalid key!",
-                                                          System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
-                        }
-                        else
-                        {
-                            //attempt to display missing key warning in Gtk 
-                            TraceLabApplicationGUI.DisplayGtkErrorDialog(e.Message, "Warning");
-                        }
-                    }
                     catch (Exception e)
                     {
                         if (!isRunOnMono)
