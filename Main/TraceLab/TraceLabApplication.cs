@@ -36,8 +36,6 @@ namespace TraceLab
         {
             Initialize (args);
 
-            ApplicationViewModel.RegisteredUser = KeyValidator.ValidateKey (UserDirectory);
-
             if (InitViewModel ()) {
                 RunUI ();
             } 
