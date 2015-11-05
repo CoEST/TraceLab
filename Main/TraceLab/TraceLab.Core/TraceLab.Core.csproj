@@ -101,7 +101,6 @@
     <Optimize>false</Optimize>
     <OutputPath>bin\Windows</OutputPath>
     <WarningLevel>4</WarningLevel>
-    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

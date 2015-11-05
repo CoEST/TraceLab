@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -89,8 +89,8 @@ namespace TraceLab.Core.Experiments
                 // HERZUM SPRINT 1.2 COMMENT
                 // newCreatedNode = new CommentNode(commentNodeId, data);
                 var data_with_size = new SerializedVertexDataWithSize();
-                data_with_size.X = data.X;
-                data_with_size.Y = data.Y;
+                data_with_size.X = data.X-110;
+                data_with_size.Y = data.Y-100;
                 data_with_size.Metadata = data.Metadata;
                 data_with_size.Width  = 160;
                 data_with_size.Height = 160;
@@ -201,6 +201,8 @@ namespace TraceLab.Core.Experiments
             DecisionMetadataDefinition decisionMetadataDefinition = metadataDefinition as DecisionMetadataDefinition;
             if (decisionMetadataDefinition != null)
             {
+                data.X = data.X - 80;
+                data.Y = data.Y - 20;
                 newCreatedNode = CreateDecisionComponent(experiment, decisionMetadataDefinition, data);
                 isCreated = true;
             }
@@ -218,13 +220,16 @@ namespace TraceLab.Core.Experiments
         private static ExperimentDecisionNode CreateDecisionComponent(IEditableExperiment experiment, DecisionMetadataDefinition decisionMetadataDefinition, SerializedVertexData data)
         {
             data.Metadata = new DecisionMetadata(decisionMetadataDefinition.Label);
-            
+
+
             ExperimentDecisionNode decisionNode = new ExperimentDecisionNode(Guid.NewGuid().ToString(), data);
             experiment.AddVertex(decisionNode);
 
             if (decisionMetadataDefinition.ID == DecisionMetadataDefinition.DecisionGuid)
             {
                 //generate corresponding scopes and exit nodes
+                data.X = data.X - 65;
+                data.Y = data.Y - 125;
                 GenerateScopesAndExit(experiment, data, decisionNode);
             }
             //otherwise it is GoTo decision that does not have corresponding scopes, so simply return it
@@ -366,8 +371,8 @@ namespace TraceLab.Core.Experiments
         private static LoopScopeNode CreateLoopScopeNode(string scopeName, IEditableExperiment experiment, double positionX, double positionY)
         {
             var data = new SerializedVertexDataWithSize();
-            data.X = positionX;
-            data.Y = positionY;
+            data.X = positionX-115;
+            data.Y = positionY-100;
             data.Width = 160;
             data.Height = 160;
 
@@ -431,8 +436,8 @@ namespace TraceLab.Core.Experiments
         private static ScopeNode CreateScopeNode(string scopeName, IEditableExperiment experiment, double positionX, double positionY)
         {
             var data = new SerializedVertexDataWithSize();
-            data.X = positionX;
-            data.Y = positionY;
+            data.X = positionX-105;
+            data.Y = positionY-105;
             data.Width = 160;
             data.Height = 160;
 
@@ -498,8 +503,8 @@ namespace TraceLab.Core.Experiments
         private static ChallengeNode CreateChallengeNode(string challengeName, IEditableExperiment experiment, double positionX, double positionY)
         {
             var data = new SerializedVertexDataWithSize();
-            data.X = positionX;
-            data.Y = positionY;
+            data.X = positionX-135;
+            data.Y = positionY-100;
             data.Width = 160;
             data.Height = 160;
 
