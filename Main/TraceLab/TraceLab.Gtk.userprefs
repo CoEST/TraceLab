@@ -2,12 +2,46 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="TraceLab.Core/Experiments/ComponentFactory.cs">
     <Files>
-      <File FileName="TraceLab.UI.GTK/Controls/ExperimentView/InfoPanels/ConfigPropertyGrid/Editors/FilePathEditor.cs" Line="57" Column="18" />
-      <File FileName="TraceLab.Core/Experiments/ComponentFactory.cs" Line="503" Column="50" />
+      <File FileName="TraceLab.UI.GTK/Controls/ExperimentView/InfoPanels/ConfigPropertyGrid/Editors/FilePathEditor.cs" Line="1" Column="1" />
+      <File FileName="TraceLab.Core/Experiments/ComponentFactory.cs" Line="508" Column="1" />
+      <File FileName="TraceLab.Core/Experiments/SerializedVertexData.cs" Line="349" Column="1" />
+      <File FileName="TraceLab.Core/Experiments/CompositeComponentEditableGraph.cs" Line="51" Column="1" />
+      <File FileName="TraceLab.Core/Experiments/CompositeComponentGraph.cs" Line="560" Column="1" />
+      <File FileName="TraceLab.Core/Experiments/BaseExperiment.cs" Line="237" Column="1" />
+      <File FileName="TraceLab.Core/Utilities/ObservableDictionary.cs" Line="614" Column="1" />
+      <File FileName="TraceLab.Core/Experiments/ExperimentInfo.cs" Line="40" Column="1" />
+      <File FileName="TraceLab.Core/Experiments/ExperimentStartNode.cs" Line="28" Column="1" />
+      <File FileName="TraceLab.Core/Experiments/ExperimentNode.cs" Line="335" Column="1" />
+      <File FileName="TraceLab.Core/Components/StartNodeMetadata.cs" Line="35" Column="1" />
+      <File FileName="TraceLab.Core/Components/Metadata.cs" Line="98" Column="1" />
+      <File FileName="TraceLab.Core/Experiments/ExperimentEndNode.cs" Line="27" Column="1" />
+      <File FileName="TraceLab.Core/Components/EndNodeMetadata.cs" Line="34" Column="1" />
+      <File FileName="TraceLab.Core/Utilities/ObservableCollectionExtension.cs" Line="22" Column="1" />
+      <File FileName="TraceLab.Core/Components/ChallengeMetadata.cs" Line="55" Column="1" />
+      <File FileName="TraceLab.Core/Components/ScopeBaseMetadata.cs" Line="47" Column="1" />
+      <File FileName="TraceLab.Core/Components/CompositeComponentBaseMetadata.cs" Line="42" Column="1" />
+      <File FileName="TraceLab.Core/Settings/LogLevelItem.cs" Line="36" Column="1" />
+      <File FileName="TraceLab.Core/Experiments/ChallengeNode.cs" Line="31" Column="1" />
+      <File FileName="TraceLab.Core/Experiments/ScopeNodeBase.cs" Line="27" Column="1" />
+      <File FileName="TraceLab.Core/Experiments/CompositeComponentNode.cs" Line="31" Column="1" />
+      <File FileName="TraceLab.Core/Experiments/Experiment.cs" Line="138" Column="1" />
+      <File FileName="TraceLab.UI.GTK/Controls/ExperimentView/ExperimentCanvasPad.cs" Line="380" Column="1" />
+      <File FileName="TraceLab.UI.GTK/Controls/ExperimentView/ExperimentDrawer.cs" Line="57" Column="1" />
+      <File FileName="TraceLab.UI.GTK/Controls/ExperimentView/Nodes/NodeControlFactory.cs" Line="51" Column="1" />
+      <File FileName="TraceLab.UI.GTK/Controls/ExperimentView/Nodes/ChallengeNodeControl.cs" Line="33" Column="1" />
+      <File FileName="TraceLab.UI.GTK/Controls/ExperimentView/Nodes/ScopeNodeControl.cs" Line="53" Column="1" />
+      <File FileName="TraceLab.UI.GTK/Controls/ExperimentView/Nodes/ComponentResizeControl.cs" Line="109" Column="1" />
+      <File FileName="TraceLab.UI.GTK/Controls/ExperimentView/Nodes/ComponentControl.cs" Line="34" Column="1" />
+      <File FileName="TraceLab.UI.GTK/Controls/ExperimentView/Nodes/BasicNodeControl.cs" Line="40" Column="1" />
+      <File FileName="TraceLab.UI.GTK/DrawingLibrary/Figures/SimpleTextFigure.cs" Line="347" Column="1" />
+      <File FileName="TraceLab.UI.GTK/DrawingLibrary/Figures/AttributeFigure.cs" Line="38" Column="1" />
+      <File FileName="TraceLab.UI.GTK/DrawingLibrary/Figures/AbstractFigure.cs" Line="43" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/home/tracelab/devel/Tracelab/Main/TraceLab/TraceLab.Core/Experiments/ComponentFactory.cs" line="69" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
