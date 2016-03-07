@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TraceLab.Core.Components.IOItemDefinition" Collapsed="true">
+    <Position X="5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAgAAAAiAAAACQCgABAAIAABQAAgAAAAAA=</HashCode>
+      <FileName>Components\IOItemDefinition.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Bottom" Position="0.169" />
+  </Class>
+  <Class Name="TraceLab.Core.Components.IOItem" Collapsed="true">
+    <Position X="2" Y="6" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AEAAAAAGAAAAAJEhgAAAgAACgAIAAIABBAAAgAAAAAA=</HashCode>
+      <FileName>Components\IOItem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="IOItemDefinition" />
+    </ShowAsAssociation>
+    <Lollipop Orientation="Bottom" Position="0.19" Collapsed="true" />
+  </Class>
+  <Class Name="TraceLab.Core.Components.IOSpecDefinition" Collapsed="true">
+    <Position X="3.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAIAAAAEAAAAMAQAAAAAAAAAAA=</HashCode>
+      <FileName>Components\IOSpecDefinition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TraceLab.Core.Components.IOSpec" Collapsed="true">
+    <Position X="2" Y="4" Width="1.5" />
+    <AssociationLine Name="Input" Type="TraceLab.Core.Components.IOItem" FixedFromPoint="true">
+      <Path>
+        <Point X="2.312" Y="4.562" />
+        <Point X="2.312" Y="6" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.162" Y="0.769" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Output" Type="TraceLab.Core.Components.IOItem">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.774" Y="0.766" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>oAAAQAEUgAABABBhoAAYAAACkIAAAPERAAAUgBQIABA=</HashCode>
+      <FileName>Components\IOSpec.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Input" />
+      <Property Name="Output" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TraceLab.Core.Components.ConfigWrapperDefinition" Collapsed="true">
+    <Position X="10" Y="6" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAgAAAAAACCABAAIAYAAAggABCAAA=</HashCode>
+      <FileName>Components\ConfigWrapperDefinition.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Bottom" Position="0.21" Collapsed="true" />
+  </Class>
+  <Class Name="TraceLab.Core.Components.ConfigWrapper" Collapsed="true">
+    <Position X="7" Y="4" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="m_configWrapperDefinition" Type="TraceLab.Core.Components.ConfigWrapperDefinition" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.688" Y="4.562" />
+        <Point X="7.688" Y="6.281" />
+        <Point X="10" Y="6.281" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.05" Y="0.266" Height="0.182" Width="2.133" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="ConfigValues" Type="TraceLab.Core.Components.ConfigPropertyObject">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.258" Y="0.245" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>MCAAEAQUAAAAoIgh4QAABAAiigBAAYAZAAQC5ADQARg=</HashCode>
+      <FileName>Components\ConfigWrapper.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_configWrapperDefinition" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="ConfigValues" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TraceLab.Core.Components.ConfigPropertyObject" Collapsed="true">
+    <Position X="10" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>MAAAMgCVAAAgAAghsIAIACQigARAAIgJAQAggABAAAA=</HashCode>
+      <FileName>Components\ConfigPropertyObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Bottom" Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TraceLab.Core.Components.ComponentMetadata" Collapsed="true">
+    <Position X="5" Y="0.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="IOSpec" Type="TraceLab.Core.Components.IOSpec" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.438" Y="1.191" />
+        <Point X="6.438" Y="2.722" />
+        <Point X="3.031" Y="2.722" />
+        <Point X="3.031" Y="4" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="ConfigWrapper" Type="TraceLab.Core.Components.ConfigWrapper">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.348" Y="0.102" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="ComponentMetadataDefinition" Type="TraceLab.Core.Components.ComponentMetadataDefinition" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.188" Y="1.191" />
+        <Point X="5.188" Y="1.846" />
+        <Point X="3" Y="1.846" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.12" Y="0.112" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAoBAAUIACAECBAgAAEAQAiAARAUJAAAQAAkAAQArg=</HashCode>
+      <FileName>Components\ComponentMetadata.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="IOSpec" />
+      <Property Name="ConfigWrapper" />
+      <Property Name="ComponentMetadataDefinition" />
+      <Property Name="MetadataDefinition" />
+    </ShowAsAssociation>
+    <Lollipop Orientation="Right" Position="0.491" Collapsed="true" />
+  </Class>
+  <Class Name="TraceLab.Core.Components.ComponentMetadataDefinition" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="2.5" />
+    <InheritanceLine Type="TraceLab.Core.Components.MetadataDefinition" FixedToPoint="true">
+      <Path>
+        <Point X="1.25" Y="1.062" />
+        <Point X="1.25" Y="1.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>ABAAAAAACAAAEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\ComponentMetadataDefinition.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Bottom" Position="0.2" />
+  </Class>
+  <Class Name="TraceLab.Core.Components.MetadataDefinition" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAEAQAAAEACggEAggAAAAIAAAABAAMQAAAAAAAJAAAA=</HashCode>
+      <FileName>Components\MetadataDefinition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

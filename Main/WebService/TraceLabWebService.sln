@@ -1,0 +1,88 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebService", "http://localhost:49460", "{940CF486-C926-4463-ADB2-FAB076756051}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_49460"
+		Debug.AspNetCompiler.PhysicalPath = "..\WebService\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49460\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_49460"
+		Release.AspNetCompiler.PhysicalPath = "..\WebService\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49460\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\WebService\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLab.Core", "TraceLab.Core\TraceLab.Core.csproj", "{D22496F8-7E72-4B36-9FCA-630CD1679943}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLabWeb", "..\..\..\..\Visual Studio 2013\Projects\localhost_49460\TraceLabWeb\TraceLabWeb.csproj", "{C03619B0-8824-441D-A80D-5ED6C48783FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug MONO_DEV|Any CPU = Debug MONO_DEV|Any CPU
+		Debug Mono|Any CPU = Debug Mono|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Deploy|Any CPU = Deploy|Any CPU
+		Release Mono|Any CPU = Release Mono|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Windows|Any CPU = Windows|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{940CF486-C926-4463-ADB2-FAB076756051}.Debug MONO_DEV|Any CPU.ActiveCfg = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Debug MONO_DEV|Any CPU.Build.0 = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Debug Mono|Any CPU.ActiveCfg = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Debug Mono|Any CPU.Build.0 = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Deploy|Any CPU.ActiveCfg = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Deploy|Any CPU.Build.0 = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Release Mono|Any CPU.ActiveCfg = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Release Mono|Any CPU.Build.0 = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Windows|Any CPU.ActiveCfg = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Windows|Any CPU.Build.0 = Debug|Any CPU
+		{D22496F8-7E72-4B36-9FCA-630CD1679943}.Debug MONO_DEV|Any CPU.ActiveCfg = Debug MONO_DEV|Any CPU
+		{D22496F8-7E72-4B36-9FCA-630CD1679943}.Debug MONO_DEV|Any CPU.Build.0 = Debug MONO_DEV|Any CPU
+		{D22496F8-7E72-4B36-9FCA-630CD1679943}.Debug Mono|Any CPU.ActiveCfg = Debug Mono|Any CPU
+		{D22496F8-7E72-4B36-9FCA-630CD1679943}.Debug Mono|Any CPU.Build.0 = Debug Mono|Any CPU
+		{D22496F8-7E72-4B36-9FCA-630CD1679943}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D22496F8-7E72-4B36-9FCA-630CD1679943}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D22496F8-7E72-4B36-9FCA-630CD1679943}.Deploy|Any CPU.ActiveCfg = Deploy|Any CPU
+		{D22496F8-7E72-4B36-9FCA-630CD1679943}.Deploy|Any CPU.Build.0 = Deploy|Any CPU
+		{D22496F8-7E72-4B36-9FCA-630CD1679943}.Release Mono|Any CPU.ActiveCfg = Release Mono|Any CPU
+		{D22496F8-7E72-4B36-9FCA-630CD1679943}.Release Mono|Any CPU.Build.0 = Release Mono|Any CPU
+		{D22496F8-7E72-4B36-9FCA-630CD1679943}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D22496F8-7E72-4B36-9FCA-630CD1679943}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D22496F8-7E72-4B36-9FCA-630CD1679943}.Windows|Any CPU.ActiveCfg = Windows|Any CPU
+		{D22496F8-7E72-4B36-9FCA-630CD1679943}.Windows|Any CPU.Build.0 = Windows|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Debug MONO_DEV|Any CPU.ActiveCfg = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Debug MONO_DEV|Any CPU.Build.0 = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Debug Mono|Any CPU.ActiveCfg = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Debug Mono|Any CPU.Build.0 = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Deploy|Any CPU.ActiveCfg = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Deploy|Any CPU.Build.0 = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Release Mono|Any CPU.ActiveCfg = Release|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Release Mono|Any CPU.Build.0 = Release|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Windows|Any CPU.ActiveCfg = Release|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Windows|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
