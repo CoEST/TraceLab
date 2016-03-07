@@ -1,0 +1,5 @@
+C:\Users\ozohdi2\Documents\Visual Studio 2013\Projects\localhost_49460\TraceLabWeb\bin\Debug\TraceLabWeb.dll
+C:\Users\ozohdi2\Documents\Visual Studio 2013\Projects\localhost_49460\TraceLabWeb\bin\Debug\TraceLabWeb.pdb
+C:\Users\ozohdi2\Documents\Visual Studio 2013\Projects\localhost_49460\TraceLabWeb\obj\Debug\TraceLabWeb.csprojResolveAssemblyReference.cache
+C:\Users\ozohdi2\Documents\Visual Studio 2013\Projects\localhost_49460\TraceLabWeb\obj\Debug\TraceLabWeb.dll
+C:\Users\ozohdi2\Documents\Visual Studio 2013\Projects\localhost_49460\TraceLabWeb\obj\Debug\TraceLabWeb.pdb

@@ -26,11 +26,11 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebService", "http://localh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLab.Core", "TraceLab.Core\TraceLab.Core.csproj", "{D22496F8-7E72-4B36-9FCA-630CD1679943}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLabWeb", "..\..\..\..\Visual Studio 2013\Projects\localhost_49460\TraceLabWeb\TraceLabWeb.csproj", "{C03619B0-8824-441D-A80D-5ED6C48783FF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLab", "TraceLab\TraceLab.csproj", "{7286BBD3-327E-4078-A693-6F6AC53D72ED}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLabSDK", "TraceLabSDK\TraceLabSDK.csproj", "{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLabWeb", "TraceLabWeb\TraceLabWeb.csproj", "{C03619B0-8824-441D-A80D-5ED6C48783FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,20 +71,6 @@ Global
 		{D22496F8-7E72-4B36-9FCA-630CD1679943}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D22496F8-7E72-4B36-9FCA-630CD1679943}.Windows|Any CPU.ActiveCfg = Windows|Any CPU
 		{D22496F8-7E72-4B36-9FCA-630CD1679943}.Windows|Any CPU.Build.0 = Windows|Any CPU
-		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Debug MONO_DEV|Any CPU.ActiveCfg = Debug|Any CPU
-		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Debug MONO_DEV|Any CPU.Build.0 = Debug|Any CPU
-		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Debug Mono|Any CPU.ActiveCfg = Debug|Any CPU
-		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Debug Mono|Any CPU.Build.0 = Debug|Any CPU
-		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Deploy|Any CPU.ActiveCfg = Debug|Any CPU
-		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Deploy|Any CPU.Build.0 = Debug|Any CPU
-		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Release Mono|Any CPU.ActiveCfg = Release|Any CPU
-		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Release Mono|Any CPU.Build.0 = Release|Any CPU
-		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Windows|Any CPU.ActiveCfg = Release|Any CPU
-		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Windows|Any CPU.Build.0 = Release|Any CPU
 		{7286BBD3-327E-4078-A693-6F6AC53D72ED}.Debug MONO_DEV|Any CPU.ActiveCfg = Debug MONO_DEV|Any CPU
 		{7286BBD3-327E-4078-A693-6F6AC53D72ED}.Debug MONO_DEV|Any CPU.Build.0 = Debug MONO_DEV|Any CPU
 		{7286BBD3-327E-4078-A693-6F6AC53D72ED}.Debug Mono|Any CPU.ActiveCfg = Debug Mono|Any CPU
@@ -113,6 +99,20 @@ Global
 		{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}.Windows|Any CPU.ActiveCfg = Release Mono|Any CPU
 		{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}.Windows|Any CPU.Build.0 = Release Mono|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Debug MONO_DEV|Any CPU.ActiveCfg = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Debug MONO_DEV|Any CPU.Build.0 = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Debug Mono|Any CPU.ActiveCfg = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Debug Mono|Any CPU.Build.0 = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Deploy|Any CPU.ActiveCfg = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Deploy|Any CPU.Build.0 = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Release Mono|Any CPU.ActiveCfg = Release|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Release Mono|Any CPU.Build.0 = Release|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Windows|Any CPU.ActiveCfg = Release|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Windows|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
