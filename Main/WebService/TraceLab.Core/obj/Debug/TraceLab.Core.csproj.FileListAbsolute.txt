@@ -1,3 +1,9 @@
+C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\bin\Debug\TraceLab.Core.dll
+C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\bin\Debug\TraceLab.Core.pdb
+C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\bin\Debug\TraceLab.Core.dll.CodeAnalysisLog.xml
+C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\bin\Debug\TraceLab.Core.dll.lastcodeanalysissucceeded
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab.Core\obj\Debug\TraceLab.Core.csprojResolveAssemblyReference.cache
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab.Core\obj\Debug\Interop.mscoree.dll
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab.Core\obj\Debug\TraceLab.Core.csproj.ResolveComReference.cache
+C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab.Core\obj\Debug\TraceLab.Core.dll
+C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab.Core\obj\Debug\TraceLab.Core.pdb

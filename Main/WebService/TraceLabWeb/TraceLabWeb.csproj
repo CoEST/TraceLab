@@ -42,6 +42,20 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TraceLab.Core\TraceLab.Core.csproj">
+      <Project>{d22496f8-7e72-4b36-9fca-630cd1679943}</Project>
+      <Name>TraceLab.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TraceLabSDK\TraceLabSDK.csproj">
+      <Project>{e9b1767c-db2a-4b16-b6ab-02cea4db3b6d}</Project>
+      <Name>TraceLabSDK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TraceLab\TraceLab.csproj">
+      <Project>{7286bbd3-327e-4078-a693-6f6ac53d72ed}</Project>
+      <Name>TraceLab</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

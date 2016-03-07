@@ -32,6 +32,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLabSDK", "TraceLabSDK\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLabWeb", "TraceLabWeb\TraceLabWeb.csproj", "{C03619B0-8824-441D-A80D-5ED6C48783FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLabSDK.Types", "TraceLabSDK.Types\TraceLabSDK.Types.csproj", "{94A3E4E6-2EB7-4715-8A11-D8CF119D7458}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug MONO_DEV|Any CPU = Debug MONO_DEV|Any CPU
@@ -113,6 +115,20 @@ Global
 		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Windows|Any CPU.ActiveCfg = Release|Any CPU
 		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Windows|Any CPU.Build.0 = Release|Any CPU
+		{94A3E4E6-2EB7-4715-8A11-D8CF119D7458}.Debug MONO_DEV|Any CPU.ActiveCfg = Debug MONO_DEV|Any CPU
+		{94A3E4E6-2EB7-4715-8A11-D8CF119D7458}.Debug MONO_DEV|Any CPU.Build.0 = Debug MONO_DEV|Any CPU
+		{94A3E4E6-2EB7-4715-8A11-D8CF119D7458}.Debug Mono|Any CPU.ActiveCfg = Debug Mono|Any CPU
+		{94A3E4E6-2EB7-4715-8A11-D8CF119D7458}.Debug Mono|Any CPU.Build.0 = Debug Mono|Any CPU
+		{94A3E4E6-2EB7-4715-8A11-D8CF119D7458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94A3E4E6-2EB7-4715-8A11-D8CF119D7458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94A3E4E6-2EB7-4715-8A11-D8CF119D7458}.Deploy|Any CPU.ActiveCfg = Deploy|Any CPU
+		{94A3E4E6-2EB7-4715-8A11-D8CF119D7458}.Deploy|Any CPU.Build.0 = Deploy|Any CPU
+		{94A3E4E6-2EB7-4715-8A11-D8CF119D7458}.Release Mono|Any CPU.ActiveCfg = Release Mono|Any CPU
+		{94A3E4E6-2EB7-4715-8A11-D8CF119D7458}.Release Mono|Any CPU.Build.0 = Release Mono|Any CPU
+		{94A3E4E6-2EB7-4715-8A11-D8CF119D7458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94A3E4E6-2EB7-4715-8A11-D8CF119D7458}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94A3E4E6-2EB7-4715-8A11-D8CF119D7458}.Windows|Any CPU.ActiveCfg = Release Mono|Any CPU
+		{94A3E4E6-2EB7-4715-8A11-D8CF119D7458}.Windows|Any CPU.Build.0 = Release Mono|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
