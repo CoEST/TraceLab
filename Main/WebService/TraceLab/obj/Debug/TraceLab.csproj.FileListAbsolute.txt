@@ -1,0 +1,4 @@
+C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\TraceLab\bin\Debug\TraceLab.exe.config
+C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.csprojResolveAssemblyReference.cache
+C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.Properties.Resources.resources
+C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.csproj.GenerateResource.Cache
