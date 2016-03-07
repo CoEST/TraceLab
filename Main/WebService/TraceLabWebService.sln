@@ -28,6 +28,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLab.Core", "TraceLab.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLabWeb", "..\..\..\..\Visual Studio 2013\Projects\localhost_49460\TraceLabWeb\TraceLabWeb.csproj", "{C03619B0-8824-441D-A80D-5ED6C48783FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLab", "TraceLab\TraceLab.csproj", "{7286BBD3-327E-4078-A693-6F6AC53D72ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLabSDK", "TraceLabSDK\TraceLabSDK.csproj", "{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug MONO_DEV|Any CPU = Debug MONO_DEV|Any CPU
@@ -81,6 +85,34 @@ Global
 		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Windows|Any CPU.ActiveCfg = Release|Any CPU
 		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Windows|Any CPU.Build.0 = Release|Any CPU
+		{7286BBD3-327E-4078-A693-6F6AC53D72ED}.Debug MONO_DEV|Any CPU.ActiveCfg = Debug MONO_DEV|Any CPU
+		{7286BBD3-327E-4078-A693-6F6AC53D72ED}.Debug MONO_DEV|Any CPU.Build.0 = Debug MONO_DEV|Any CPU
+		{7286BBD3-327E-4078-A693-6F6AC53D72ED}.Debug Mono|Any CPU.ActiveCfg = Debug Mono|Any CPU
+		{7286BBD3-327E-4078-A693-6F6AC53D72ED}.Debug Mono|Any CPU.Build.0 = Debug Mono|Any CPU
+		{7286BBD3-327E-4078-A693-6F6AC53D72ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7286BBD3-327E-4078-A693-6F6AC53D72ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7286BBD3-327E-4078-A693-6F6AC53D72ED}.Deploy|Any CPU.ActiveCfg = Deploy|Any CPU
+		{7286BBD3-327E-4078-A693-6F6AC53D72ED}.Deploy|Any CPU.Build.0 = Deploy|Any CPU
+		{7286BBD3-327E-4078-A693-6F6AC53D72ED}.Release Mono|Any CPU.ActiveCfg = Release Mono|Any CPU
+		{7286BBD3-327E-4078-A693-6F6AC53D72ED}.Release Mono|Any CPU.Build.0 = Release Mono|Any CPU
+		{7286BBD3-327E-4078-A693-6F6AC53D72ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7286BBD3-327E-4078-A693-6F6AC53D72ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7286BBD3-327E-4078-A693-6F6AC53D72ED}.Windows|Any CPU.ActiveCfg = Release Mono|Any CPU
+		{7286BBD3-327E-4078-A693-6F6AC53D72ED}.Windows|Any CPU.Build.0 = Release Mono|Any CPU
+		{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}.Debug MONO_DEV|Any CPU.ActiveCfg = Debug MONO_DEV|Any CPU
+		{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}.Debug MONO_DEV|Any CPU.Build.0 = Debug MONO_DEV|Any CPU
+		{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}.Debug Mono|Any CPU.ActiveCfg = Debug Mono|Any CPU
+		{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}.Debug Mono|Any CPU.Build.0 = Debug Mono|Any CPU
+		{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}.Deploy|Any CPU.ActiveCfg = Deploy|Any CPU
+		{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}.Deploy|Any CPU.Build.0 = Deploy|Any CPU
+		{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}.Release Mono|Any CPU.ActiveCfg = Release Mono|Any CPU
+		{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}.Release Mono|Any CPU.Build.0 = Release Mono|Any CPU
+		{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}.Windows|Any CPU.ActiveCfg = Release Mono|Any CPU
+		{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}.Windows|Any CPU.Build.0 = Release Mono|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

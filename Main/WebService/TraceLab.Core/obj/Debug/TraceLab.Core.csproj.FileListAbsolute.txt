@@ -1,0 +1,3 @@
+C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab.Core\obj\Debug\TraceLab.Core.csprojResolveAssemblyReference.cache
+C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab.Core\obj\Debug\Interop.mscoree.dll
+C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab.Core\obj\Debug\TraceLab.Core.csproj.ResolveComReference.cache
