@@ -95,6 +95,7 @@ namespace TraceLabWeb
 
         public static void OpenExperiment(string value)
         {
+            log = "";
             try
             {
                 var experiment = TraceLab.Core.Experiments.ExperimentManager.Load(value, ComponentsLibrary.Instance);

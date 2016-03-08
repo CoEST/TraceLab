@@ -10,17 +10,17 @@ namespace TraceLabWeb
 {
     public class WebConsoleAdapter
     {
-        static TraceLabApplicationWebConsole application;
+       // static TraceLabApplicationWebConsole application;
 
         public static void Run()
         {
-            application = new TraceLabApplicationWebConsole();
-            application.RunThis();
+            //application = new TraceLabApplicationWebConsole();
+            //application.RunThis();
         }
 
         public static string GetLog()
         {
-            return application.GetLog();
+            return null;
         }
         
     }

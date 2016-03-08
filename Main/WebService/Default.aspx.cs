@@ -9,7 +9,6 @@ using TraceLabWeb;
 
 public partial class _Default : System.Web.UI.Page
 {
-    TraceLabApplicationWebConsole app;
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -18,18 +17,19 @@ public partial class _Default : System.Web.UI.Page
     {
         //WebConsoleAdapter.Run();
         string[] args = { };
-        app = new TraceLabApplicationWebConsole();
+        var app = TraceLabApplicationWebConsole.Instance;
         app.Run(args);
         app.RunThis();
         app.DisplayHelp();
-        app.OpenExperiment();
 
-        Label2.Text = app.GetLog();
+        Label1.Text = app.GetLog();
     }
 
     protected void Button2_Click(object sender, EventArgs e)
     {
-        app.DisplayHelp();
+        var app = TraceLabApplicationWebConsole.Instance;
+        app.OpenExperiment(TextBox1.Text);
+        //app.DisplayHelp();
         Label2.Text = app.GetLog();
     }
 

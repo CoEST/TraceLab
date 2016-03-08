@@ -10,7 +10,11 @@ namespace TraceLabWeb
 {
     public class TraceLabApplicationWebConsole : TraceLab.TraceLabApplication
     {
-   
+
+        private static TraceLabApplicationWebConsole INSTANCE;
+
+        private TraceLabApplicationWebConsole() { }
+
         public void RunThis()
         {
             this.RunUI();
@@ -31,9 +35,22 @@ namespace TraceLabWeb
             WebConsoleUI.DisplayHelp();
         }
 
-        public void OpenExperiment()
+        public void OpenExperiment(string path)
         {
-            WebConsoleUI.OpenExperiment("C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml");
+            //"C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"
+            WebConsoleUI.OpenExperiment(path);
+        }
+
+        public static TraceLabApplicationWebConsole Instance
+        {
+            get
+            {
+                if (INSTANCE == null)
+                {
+                    INSTANCE = new TraceLabApplicationWebConsole();
+                }
+                return INSTANCE;
+            }
         }
     }
 }
