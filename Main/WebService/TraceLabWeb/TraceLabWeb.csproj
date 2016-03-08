@@ -39,8 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TraceLabApplicationWebConsole.cs" />
+    <Compile Include="WebConsoleUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TraceLab.Core\TraceLab.Core.csproj">
