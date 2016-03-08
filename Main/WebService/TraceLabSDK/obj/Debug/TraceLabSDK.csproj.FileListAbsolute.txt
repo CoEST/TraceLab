@@ -1,5 +1,6 @@
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\lib\TraceLabSDK.XML
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\lib\TraceLabSDK.dll
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\lib\TraceLabSDK.pdb
+C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLabSDK\obj\Debug\TraceLabSDK.csprojResolveAssemblyReference.cache
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLabSDK\obj\Debug\TraceLabSDK.dll
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLabSDK\obj\Debug\TraceLabSDK.pdb

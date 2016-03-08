@@ -7,11 +7,21 @@ using TraceLab;
 
 namespace TraceLabWeb
 {
-    class TraceLabApplicationWebConsole : TraceLab.TraceLabApplication
+    public class TraceLabApplicationWebConsole : TraceLab.TraceLabApplication
     {
+        public void RunThis()
+        {
+            this.RunUI();
+        }
+
         protected override void RunUI()
         {
             WebConsoleUI.Run(MainViewModel);
+        }
+
+        public string GetLog()
+        {
+            return WebConsoleUI.log;
         }
     }
 }

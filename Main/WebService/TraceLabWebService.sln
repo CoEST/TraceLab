@@ -7,6 +7,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebService", "http://localh
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{c03619b0-8824-441d-a80d-5ed6c48783ff}|TraceLabWeb.dll;{D22496F8-7E72-4B36-9FCA-630CD1679943}|TraceLab.Core.dll;{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}|TraceLabSDK.dll;{94A3E4E6-2EB7-4715-8A11-D8CF119D7458}|TraceLabSDK.Types.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_49460"
 		Debug.AspNetCompiler.PhysicalPath = "..\WebService\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49460\"

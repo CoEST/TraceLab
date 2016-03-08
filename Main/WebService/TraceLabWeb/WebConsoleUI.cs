@@ -12,6 +12,12 @@ namespace TraceLabWeb
 {
     public class WebConsoleUI
     {
+        public static string log;
+
+        public static void UpdateLog( string inLog)
+        {
+            log = inLog;
+        }
 
         private WebConsoleUI(ApplicationViewModel application)
         {
@@ -20,6 +26,13 @@ namespace TraceLabWeb
 
         public static void Run(ApplicationViewModel application)
         {
+            ConsoleInstance = new WebConsoleUI(application);
+
+           // ConsoleInstance.ComponentLibraryScannningWaiter.Wait();
+
+            ConsoleInstance.DisplayExistingLogs();
+
+            /*
             if (ConsoleInstance != null)
             {
                 throw new InvalidOperationException("Console UI is already running!");
@@ -30,6 +43,9 @@ namespace TraceLabWeb
             ConsoleInstance.ComponentLibraryScannningWaiter.Wait();
 
             ConsoleInstance.DisplayExistingLogs();
+
+
+
             ConsoleInstance.StartListenToLogEvents();
 
             ConsoleInstance.Exit = false;
@@ -46,6 +62,7 @@ namespace TraceLabWeb
 
             //cleanup
             LogViewModel.DestroyLogTargets();*/
+            
         }
 
         private void LogEventsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -79,7 +96,8 @@ namespace TraceLabWeb
         {
             foreach (LogInfo logInfo in new System.Collections.ArrayList(Application.LogViewModel.Events))
             {
-                PrintLog(logInfo);
+                UpdateLog(logInfo.Exception.ToString());
+                //PrintLog(logInfo);
             }
         }
 
