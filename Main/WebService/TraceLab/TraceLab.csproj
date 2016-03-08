@@ -112,6 +112,9 @@
     <DefineConstants>TRACE;MONO</DefineConstants>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="IKVM.OpenJDK.Tools">
       <HintPath>..\external\ikvm\release\bin\IKVM.OpenJDK.Tools.dll</HintPath>

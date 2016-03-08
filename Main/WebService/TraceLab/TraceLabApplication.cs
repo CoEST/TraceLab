@@ -55,6 +55,7 @@ namespace TraceLab
         /// </summary>
         static TraceLabApplication()
         {
+            
             ComponentDirectories = new List<string>();
             TypeDirectories = new List<string>();
             PackageDirectories = new List<string>();
@@ -89,6 +90,7 @@ namespace TraceLab
             Processor.Commands["?"] = new Action<string>(DisplayCommandLineHelp);
 
             Processor.Commands["installpackage"] = new Action<string>(InstallPackage);
+             
         }
 
         private static CommandLineProcessor Processor

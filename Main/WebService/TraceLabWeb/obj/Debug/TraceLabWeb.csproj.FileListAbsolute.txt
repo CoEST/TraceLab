@@ -6,7 +6,6 @@ C:\Users\ozohdi2\Documents\Visual Studio 2013\Projects\localhost_49460\TraceLabW
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLabWeb.dll
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLabWeb.pdb
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLab.Core.dll
-C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLab.exe
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLabSDK.dll
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\QuickGraph.dll
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\NLog.dll
@@ -39,3 +38,4 @@ C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\obj\Debug\TraceLabWeb.csprojResolveAssemblyReference.cache
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\obj\Debug\TraceLabWeb.dll
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\obj\Debug\TraceLabWeb.pdb
+C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLab.exe

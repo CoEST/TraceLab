@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TraceLab;
+using System.Diagnostics;
 
 namespace TraceLabWeb
 {
     public class TraceLabApplicationWebConsole : TraceLab.TraceLabApplication
     {
+   
         public void RunThis()
         {
             this.RunUI();

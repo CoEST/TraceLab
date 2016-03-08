@@ -14,6 +14,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see<http://www.gnu.org/licenses/>.
 
+
 using Microsoft.Shell;
 using System;
 using System.Threading;
@@ -48,6 +49,7 @@ namespace TraceLab
 
             if(startInstance) 
             {
+                /*
                 try
                 {
                     try
@@ -91,6 +93,7 @@ namespace TraceLab
                         SingleInstance.Cleanup();
                     }
                 }
+                 */
             }
         }
     }

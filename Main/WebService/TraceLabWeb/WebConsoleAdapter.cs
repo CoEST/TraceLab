@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TraceLab;
 
+
 namespace TraceLabWeb
 {
     public class WebConsoleAdapter

@@ -1,6 +1,4 @@
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\TraceLab\bin\Debug\TraceLab.exe.config
-C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab\bin\Debug\TraceLab.exe.config
-C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab\bin\Debug\TraceLab.exe
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab\bin\Debug\TraceLab.pdb
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab\bin\Debug\TraceLab.Core.dll
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab\bin\Debug\TraceLabSDK.dll
@@ -13,5 +11,7 @@ C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab\bin\Debug\Tr
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.csprojResolveAssemblyReference.cache
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.Properties.Resources.resources
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.csproj.GenerateResource.Cache
-C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.exe
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.pdb
+C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab\bin\Debug\TraceLab.exe.config
+C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab\bin\Debug\TraceLab.exe
+C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.exe
