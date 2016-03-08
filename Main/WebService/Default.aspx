@@ -15,23 +15,39 @@
     <form id="form1" runat="server">
 
     <div>
-        
+        <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
     </div>
        <asp:TextBox ID="TextBox1" runat="server" Text="C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml" Width="663px">C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml</asp:TextBox>
         
     <div>
         
     
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Initialize TraceLab" />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Display Help" />
 
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     </div> 
     <div>
        
 
-        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="OpenFile" />
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Open File" />
 
          <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+    </div>
+
+    <div>
+       
+
+        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Run Experiment" />
+
+         <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+    </div>
+
+    <div>
+       
+
+        <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Get Log" />
+
+         <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
     </div>
         
     </form>

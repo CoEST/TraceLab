@@ -28,41 +28,12 @@ namespace TraceLabWeb
         {
             ConsoleInstance = new WebConsoleUI(application);
 
-           // ConsoleInstance.ComponentLibraryScannningWaiter.Wait();
+            // ConsoleInstance.ComponentLibraryScannningWaiter.Wait();
 
             ConsoleInstance.DisplayExistingLogs();
 
-            /*
-            if (ConsoleInstance != null)
-            {
-                throw new InvalidOperationException("Console UI is already running!");
-            }
-
-            ConsoleInstance = new WebConsoleUI(application);
-
-            ConsoleInstance.ComponentLibraryScannningWaiter.Wait();
-
-            ConsoleInstance.DisplayExistingLogs();
-
-
-
-            ConsoleInstance.StartListenToLogEvents();
-
-            ConsoleInstance.Exit = false;
-
-            /*while (!ConsoleInstance.Exit)
-            {
-                Console.Write("#> ");
-                string input = Console.ReadLine();
-                if (ConsoleInstance.ParseInput(input) == false)
-                {
-                    Console.WriteLine("Command is incorrect. Display commands using ?");
-                }
-            }
-
-            //cleanup
-            LogViewModel.DestroyLogTargets();*/
-            
+            log = "TraceLab is ready";
+                        
         }
 
         private void LogEventsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -80,6 +51,7 @@ namespace TraceLabWeb
 
         public static void DisplayHelp()
         {
+            log = "";
             log += ("COEST TraceLab");
 
             log += ("Available commands:");
@@ -115,6 +87,22 @@ namespace TraceLabWeb
             {
                 string msg = String.Format("Unable to open the file {0}. Error: {1}", value, ex.Message);
                 log += msg;
+            }
+        }
+
+        public static void RunExperiment()
+        {
+            var experiment = ConsoleInstance.Application.Experiment;
+            if (experiment != null)
+            {
+                ExperimentProgress progress = new ExperimentProgress();
+                experiment.RunExperiment(progress, ConsoleInstance.Application.Workspace, ComponentsLibrary.Instance);
+                log = progress.GetLog;
+            }
+            else
+            {
+                log = ("\tExperiment has not been opened yet.");
+                log += ("\tOpen experiment first: open:[filepath]");
             }
         }
 

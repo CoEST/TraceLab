@@ -15,11 +15,6 @@ namespace TraceLabWeb
 
         private TraceLabApplicationWebConsole() { }
 
-        public void RunThis()
-        {
-            this.RunUI();
-        }
-
         protected override void RunUI()
         {
             WebConsoleUI.Run(MainViewModel);
@@ -41,13 +36,22 @@ namespace TraceLabWeb
             WebConsoleUI.OpenExperiment(path);
         }
 
+        public void RunExperiment()
+        {
+            //"C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"
+            WebConsoleUI.RunExperiment();
+        }
+
         public static TraceLabApplicationWebConsole Instance
         {
             get
             {
                 if (INSTANCE == null)
                 {
+                    string[] args = { };
                     INSTANCE = new TraceLabApplicationWebConsole();
+                    INSTANCE.Run(args);
+                    INSTANCE.RunUI();
                 }
                 return INSTANCE;
             }

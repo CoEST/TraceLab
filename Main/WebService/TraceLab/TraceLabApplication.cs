@@ -246,6 +246,10 @@ namespace TraceLab
                 return;
             }
 
+            // TODO; update this later
+            BaseDirectory = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            BaseDirectory = System.IO.Path.Combine(BaseDirectory, "TraceLab");
+
             //case 1: base directory is specified in commands arguments
             //init all directories residing in that directory
             if (BaseDirectory != null) 
