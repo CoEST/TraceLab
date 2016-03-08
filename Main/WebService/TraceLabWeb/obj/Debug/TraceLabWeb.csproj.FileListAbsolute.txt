@@ -46,7 +46,6 @@ C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Deb
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLabSDK.dll
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLabSDK.Types.dll
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\NLog.dll
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\QuickGraph.dll
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\IKVM.Runtime.dll
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\IKVM.OpenJDK.Core.dll
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\IKVM.OpenJDK.Util.dll

@@ -22,6 +22,7 @@ public partial class _Default : System.Web.UI.Page
         app.Run(args);
         app.RunThis();
         app.DisplayHelp();
+        app.OpenExperiment();
 
         Label2.Text = app.GetLog();
     }

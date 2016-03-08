@@ -93,9 +93,57 @@ namespace TraceLabWeb
             log += ("\t?\t- This help message.");
         }
 
+        public static void OpenExperiment(string value)
+        {
+            try
+            {
+                var experiment = TraceLab.Core.Experiments.ExperimentManager.Load(value, ComponentsLibrary.Instance);
+                if (experiment != null)
+                {
+                    ReloadApplicationViewModel(experiment);
+                    //Console.WriteLine("\tExperiment has been opened.");
+                    DisplayExperimentInfo(null);
+                }
+            }
+            catch (TraceLab.Core.Exceptions.ExperimentLoadException ex)
+            {
+                string msg = String.Format("Unable to open the file {0}. Error: {1}", value, ex.Message);
+                log += msg;
+            }
+            catch (Exception ex)
+            {
+                string msg = String.Format("Unable to open the file {0}. Error: {1}", value, ex.Message);
+                log += msg;
+            }
+        }
+
         private void StartListenToLogEvents()
         {
             ((INotifyCollectionChanged)Application.LogViewModel.Events).CollectionChanged += LogEventsCollectionChanged;
+        }
+
+        private void StopListenToLogEvents()
+        {
+            ((INotifyCollectionChanged)Application.LogViewModel.Events).CollectionChanged -= LogEventsCollectionChanged;
+        }
+
+        private static void DisplayExperimentInfo(string value)
+        {
+            if (ConsoleInstance.Application.Experiment == null)
+            {
+                log += ("\tExperiment has not been opened yet.");
+                log += ("\tOpen experiment first: open:[filepath]");
+            }
+            else
+            {
+                log += ("Experiment information");
+                log += ("\tName:\t {0}"+ ConsoleInstance.Application.Experiment.ExperimentInfo.Name);
+                log += ("\tFilePath:\t {0}"+ ConsoleInstance.Application.Experiment.ExperimentInfo.FilePath);
+                log += ("\tAuthor:\t {0}"+ ConsoleInstance.Application.Experiment.ExperimentInfo.Author);
+                log += ("\tContributors:\t {0}"+ ConsoleInstance.Application.Experiment.ExperimentInfo.Contributors);
+                log += ("\tDescription:\t {0}"+ ConsoleInstance.Application.Experiment.ExperimentInfo.Description);
+                log += ("\tVertices count:\t {0}"+ ConsoleInstance.Application.Experiment.VertexCount);
+            }
         }
 
         private static void PrintLog(LogInfo logInfo)
@@ -115,6 +163,13 @@ namespace TraceLabWeb
                 //UpdateLog(logInfo.Exception.ToString());
                 PrintLog(logInfo);
             }
+        }
+
+        private static void ReloadApplicationViewModel(TraceLab.Core.Experiments.Experiment experiment)
+        {
+            ConsoleInstance.StopListenToLogEvents();
+            ConsoleInstance.Application = ApplicationViewModel.CreateNewApplicationViewModel(ConsoleInstance.Application, experiment);
+            ConsoleInstance.StartListenToLogEvents();
         }
 
         private static WebConsoleUI ConsoleInstance

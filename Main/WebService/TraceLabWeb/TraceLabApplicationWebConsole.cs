@@ -30,5 +30,10 @@ namespace TraceLabWeb
         {
             WebConsoleUI.DisplayHelp();
         }
+
+        public void OpenExperiment()
+        {
+            WebConsoleUI.OpenExperiment("C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml");
+        }
     }
 }
