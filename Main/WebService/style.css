@@ -1,0 +1,7 @@
+﻿body {}
+.hidden { display: none; }
+.top-buffer { margin-top: 15px;}
+.fill-body {min-height: 250px;}
+.fill-body-double {min-height: 515px;}
+
+

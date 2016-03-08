@@ -1,0 +1,96 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="TraceLab_UI.aspx.cs" Inherits="TraceLab_UI" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>TraceLab</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container-fluid">
+              <!-- Static navbar -->
+          <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Trace Lab</a>
+              </div>
+              <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#">Projects</a></li>
+                  <li><a href="#">Help</a></li>
+                </ul>
+              </div><!--/.nav-collapse -->
+            </div><!--/.container-fluid -->
+          </nav>
+
+         <div class="row ">
+                <div class="col-md-12 " >   
+                    <div class="progress hidden">
+                      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                        <span class="sr-only">45% Complete</span>
+                      </div>
+                    </div>  
+
+                    <asp:Button ID="OpenButton" runat="server" Text="Open" class="btn btn-default btn-lg" OnClick="OpenButton_Click"/>
+                    <asp:TextBox ID="OpenDirText" runat="server"></asp:TextBox>
+                    <button type="button" class="btn btn-default btn-lg">
+                      <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-default btn-lg">
+                      <span class="glyphicon glyphicon-stop" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div><!-- Buttons for Start and Stop-->
+
+            <div class="row top-buffer"> 
+                <div class="col-md-4" >
+                    <div class="panel panel-primary fill-body">
+                        <div class="panel-heading">Components</div>
+                        <div class="panel-body"></div>
+                    </div>
+                    <div class="panel panel-primary fill-body">
+                        <div class="panel-heading">Runtime Data</div>
+                        <div class="panel-body"></div>
+                    </div>
+                </div>
+                <div class="col-md-8 " >              
+                    <div class="panel panel-primary fill-body-double">
+                        <div class="panel-heading">Workspace</div>
+                        <div class="panel-body"></div>
+                    </div>
+                </div>
+            </div><!-- Main workspace-->
+           
+            
+            <div class="row"> 
+                <div class="col-md-12 well" >
+                    <div class="alert alert-success " role="alert"><span class="glyphicon glyphicon-remove" onclick="hide(this)" aria-hidden="true">  Success!! </div>
+                    <div class="alert alert-info " role="alert"><span class="glyphicon glyphicon-remove" onclick="hide(this)" aria-hidden="true"> Info!!       </div>
+                    <div class="alert alert-warning " role="alert"><span class="glyphicon glyphicon-remove" onclick="hide(this)" aria-hidden="true"> Warning!! </div>
+                    <div class="alert alert-danger " role="alert"><span class="glyphicon glyphicon-remove" onclick="hide(this)" aria-hidden="true"> Error!!    </div>
+                </div>
+            </div> <!-- Console -->
+           
+        </div>
+    </form>
+
+    <script type="text/javascript" src="tracelab_UI.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</body>
+</html>
