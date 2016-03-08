@@ -25,5 +25,10 @@ namespace TraceLabWeb
         {
             return WebConsoleUI.log;
         }
+
+        public void DisplayHelp()
+        {
+            WebConsoleUI.DisplayHelp();
+        }
     }
 }

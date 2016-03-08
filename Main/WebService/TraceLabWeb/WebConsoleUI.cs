@@ -78,6 +78,21 @@ namespace TraceLabWeb
             }
         }
 
+        public static void DisplayHelp()
+        {
+            log += ("COEST TraceLab");
+
+            log += ("Available commands:");
+            log += ("\topen [filepath]\t- Opens the experiment file. Abbreviated as: o");
+            log += ("\trun \t- Runs the experiment");
+            log += ("\tstop \t- Stops the running experiment");
+            log += ("\texperiment \t- Displays info about currently opened experiment. Abbreviated as: e");
+            log += ("\tcomponents\t- Displays loaded components.  Abbreviated as: c");
+            log += ("\tworkspace\t- Displays data in the workspace.  Abbreviated as: w");
+            log += ("\texit\t- Exits tracelab");
+            log += ("\t?\t- This help message.");
+        }
+
         private void StartListenToLogEvents()
         {
             ((INotifyCollectionChanged)Application.LogViewModel.Events).CollectionChanged += LogEventsCollectionChanged;
@@ -88,7 +103,8 @@ namespace TraceLabWeb
             //Console.WriteLine("{0} from '{1}': Message: {2}", logInfo.Level, logInfo.SourceName, logInfo.Message);
             if (logInfo.Exception != null)
             {
-         //       Console.WriteLine(logInfo.Exception.ToString());
+                //       Console.WriteLine(logInfo.Exception.ToString());
+                UpdateLog(logInfo.Exception.ToString());
             }
         }
 
@@ -96,8 +112,8 @@ namespace TraceLabWeb
         {
             foreach (LogInfo logInfo in new System.Collections.ArrayList(Application.LogViewModel.Events))
             {
-                UpdateLog(logInfo.Exception.ToString());
-                //PrintLog(logInfo);
+                //UpdateLog(logInfo.Exception.ToString());
+                PrintLog(logInfo);
             }
         }
 

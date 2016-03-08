@@ -9,6 +9,70 @@
             Represents the box plot point in BoxSummaryData series
             </summary>
         </member>
+        <member name="P:TraceLabSDK.Types.Contests.BoxPlotPoint.Min">
+            <summary>
+            Gets or sets the min.
+            </summary>
+            <value>
+            The min.
+            </value>
+        </member>
+        <member name="P:TraceLabSDK.Types.Contests.BoxPlotPoint.Q1">
+            <summary>
+            Gets or sets the q1.
+            </summary>
+            <value>
+            The q1.
+            </value>
+        </member>
+        <member name="P:TraceLabSDK.Types.Contests.BoxPlotPoint.Median">
+            <summary>
+            Gets or sets the median.
+            </summary>
+            <value>
+            The median.
+            </value>
+        </member>
+        <member name="P:TraceLabSDK.Types.Contests.BoxPlotPoint.Mean">
+            <summary>
+            Gets or sets the mean.
+            </summary>
+            <value>
+            The mean.
+            </value>
+        </member>
+        <member name="P:TraceLabSDK.Types.Contests.BoxPlotPoint.Q3">
+            <summary>
+            Gets or sets the q3.
+            </summary>
+            <value>
+            The q3.
+            </value>
+        </member>
+        <member name="P:TraceLabSDK.Types.Contests.BoxPlotPoint.Max">
+            <summary>
+            Gets or sets the max.
+            </summary>
+            <value>
+            The max.
+            </value>
+        </member>
+        <member name="P:TraceLabSDK.Types.Contests.BoxPlotPoint.StdDev">
+            <summary>
+            Gets or sets the STD dev.
+            </summary>
+            <value>
+            The STD dev.
+            </value>
+        </member>
+        <member name="P:TraceLabSDK.Types.Contests.BoxPlotPoint.N">
+            <summary>
+            Gets or sets the Number of Datapoints.
+            </summary>
+            <value>
+            The N.
+            </value>
+        </member>
         <member name="M:TraceLabSDK.Types.Contests.BoxPlotPoint.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:TraceLabSDK.Types.Contests.BoxPlotPoint"/> class.
@@ -75,139 +139,15 @@
             </summary>
             <param name="writer">The writer.</param>
         </member>
-        <member name="P:TraceLabSDK.Types.Contests.BoxPlotPoint.Min">
-            <summary>
-            Gets or sets the min.
-            </summary>
-            <value>
-            The min.
-            </value>
-        </member>
-        <member name="P:TraceLabSDK.Types.Contests.BoxPlotPoint.Q1">
-            <summary>
-            Gets or sets the q1.
-            </summary>
-            <value>
-            The q1.
-            </value>
-        </member>
-        <member name="P:TraceLabSDK.Types.Contests.BoxPlotPoint.Median">
-            <summary>
-            Gets or sets the median.
-            </summary>
-            <value>
-            The median.
-            </value>
-        </member>
-        <member name="P:TraceLabSDK.Types.Contests.BoxPlotPoint.Mean">
-            <summary>
-            Gets or sets the mean.
-            </summary>
-            <value>
-            The mean.
-            </value>
-        </member>
-        <member name="P:TraceLabSDK.Types.Contests.BoxPlotPoint.Q3">
-            <summary>
-            Gets or sets the q3.
-            </summary>
-            <value>
-            The q3.
-            </value>
-        </member>
-        <member name="P:TraceLabSDK.Types.Contests.BoxPlotPoint.Max">
-            <summary>
-            Gets or sets the max.
-            </summary>
-            <value>
-            The max.
-            </value>
-        </member>
-        <member name="P:TraceLabSDK.Types.Contests.BoxPlotPoint.StdDev">
-            <summary>
-            Gets or sets the STD dev.
-            </summary>
-            <value>
-            The STD dev.
-            </value>
-        </member>
-        <member name="P:TraceLabSDK.Types.Contests.BoxPlotPoint.N">
-            <summary>
-            Gets or sets the Number of Datapoints.
-            </summary>
-            <value>
-            The N.
-            </value>
-        </member>
         <member name="T:TraceLabSDK.Types.Contests.BoxSummaryData">
             <summary>
             List of BoxPlot points
             </summary>
         </member>
-        <member name="T:TraceLabSDK.Types.Contests.Metric">
+        <member name="P:TraceLabSDK.Types.Contests.BoxSummaryData.Points">
             <summary>
-            Represent the abstract metric.
+            Gets the points.
             </summary>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.Metric.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:TraceLabSDK.Types.Contests.Metric"/> class.
-            </summary>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.Metric.#ctor(System.String,System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:TraceLabSDK.Types.Contests.Metric"/> class.
-            </summary>
-            <param name="metricName">Name of the metric.</param>
-            <param name="description">The description.</param>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.Metric.GetSchema">
-            <summary>
-            This method is reserved and should not be used. When implementing the IXmlSerializable interface, you should return null (Nothing in Visual Basic) from this method, and instead, if specifying a custom schema is required, apply the <see cref="T:System.Xml.Serialization.XmlSchemaProviderAttribute"/> to the class.
-            </summary>
-            <returns>
-            An <see cref="T:System.Xml.Schema.XmlSchema"/> that describes the XML representation of the object that is produced by the <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)"/> method and consumed by the <see cref="M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)"/> method.
-            </returns>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.Metric.ReadXml(System.Xml.XmlReader)">
-            <summary>
-            Generates an object from its XML representation.
-            </summary>
-            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> stream from which the object is deserialized.</param>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.Metric.WriteXml(System.Xml.XmlWriter)">
-            <summary>
-            Converts an object into its XML representation.
-            </summary>
-            <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized.</param>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.Metric.ReadData(System.IO.BinaryReader)">
-            <summary>
-            Reads the data. (allows faster custom serialization for better performance in TraceLab)
-            </summary>
-            <param name="reader">The reader.</param>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.Metric.WriteData(System.IO.BinaryWriter)">
-            <summary>
-            Writes the data. (allows faster custom serialization for better performance in TraceLab)
-            </summary>
-            <param name="writer">The writer.</param>
-        </member>
-        <member name="P:TraceLabSDK.Types.Contests.Metric.MetricName">
-            <summary>
-            Gets or sets the name of the metric.
-            </summary>
-            <value>
-            The name of the metric.
-            </value>
-        </member>
-        <member name="P:TraceLabSDK.Types.Contests.Metric.Description">
-            <summary>
-            Gets or sets the description.
-            </summary>
-            <value>
-            The description.
-            </value>
         </member>
         <member name="M:TraceLabSDK.Types.Contests.BoxSummaryData.#ctor">
             <summary>
@@ -263,14 +203,14 @@
             </summary>
             <param name="writer">The writer.</param>
         </member>
-        <member name="P:TraceLabSDK.Types.Contests.BoxSummaryData.Points">
-            <summary>
-            Gets the points.
-            </summary>
-        </member>
         <member name="T:TraceLabSDK.Types.Contests.LineSeries">
             <summary>
             Represent one series of points
+            </summary>
+        </member>
+        <member name="P:TraceLabSDK.Types.Contests.LineSeries.Points">
+            <summary>
+            Gets the points.
             </summary>
         </member>
         <member name="M:TraceLabSDK.Types.Contests.LineSeries.#ctor">
@@ -327,15 +267,26 @@
             </summary>
             <param name="writer">The writer.</param>
         </member>
-        <member name="P:TraceLabSDK.Types.Contests.LineSeries.Points">
-            <summary>
-            Gets the points.
-            </summary>
-        </member>
         <member name="T:TraceLabSDK.Types.Contests.Point">
             <summary>
             Represents the point in LineSeries
             </summary>
+        </member>
+        <member name="P:TraceLabSDK.Types.Contests.Point.X">
+            <summary>
+            Gets or sets the X coordinate.
+            </summary>
+            <value>
+            The X coordinate.
+            </value>
+        </member>
+        <member name="P:TraceLabSDK.Types.Contests.Point.Y">
+            <summary>
+            Gets or sets the Y coordinate.
+            </summary>
+            <value>
+            The Y coordinate.
+            </value>
         </member>
         <member name="M:TraceLabSDK.Types.Contests.Point.#ctor">
             <summary>
@@ -381,48 +332,10 @@
             </summary>
             <param name="writer">The writer.</param>
         </member>
-        <member name="P:TraceLabSDK.Types.Contests.Point.X">
-            <summary>
-            Gets or sets the X coordinate.
-            </summary>
-            <value>
-            The X coordinate.
-            </value>
-        </member>
-        <member name="P:TraceLabSDK.Types.Contests.Point.Y">
-            <summary>
-            Gets or sets the Y coordinate.
-            </summary>
-            <value>
-            The Y coordinate.
-            </value>
-        </member>
         <member name="T:TraceLabSDK.Types.Contests.TLDataset">
             <summary>
             Encapsulates Source Artifacts, Target Artifacts, and corresponding answer set from one to the other.
             </summary>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.TLDataset.#ctor">
-            <summary>
-            Default constructor
-            </summary>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.TLDataset.#ctor(System.String)">
-            <summary>
-            Default constructor
-            </summary>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.TLDataset.ReadData(System.IO.BinaryReader)">
-            <summary>
-            Reads the data. (allows faster custom serialization for better performance in TraceLab)
-            </summary>
-            <param name="reader">The reader.</param>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.TLDataset.WriteData(System.IO.BinaryWriter)">
-            <summary>
-            Writes the data. (allows faster custom serialization for better performance in TraceLab)
-            </summary>
-            <param name="writer">The writer.</param>
         </member>
         <member name="P:TraceLabSDK.Types.Contests.TLDataset.Name">
             <summary>
@@ -455,6 +368,28 @@
             <value>
             The answer set.
             </value>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.TLDataset.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.TLDataset.#ctor(System.String)">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.TLDataset.ReadData(System.IO.BinaryReader)">
+            <summary>
+            Reads the data. (allows faster custom serialization for better performance in TraceLab)
+            </summary>
+            <param name="reader">The reader.</param>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.TLDataset.WriteData(System.IO.BinaryWriter)">
+            <summary>
+            Writes the data. (allows faster custom serialization for better performance in TraceLab)
+            </summary>
+            <param name="writer">The writer.</param>
         </member>
         <member name="T:TraceLabSDK.Types.Contests.TLDatasetsList">
             <summary>
@@ -559,6 +494,270 @@
             </summary>
             <param name="writer">The writer.</param>
         </member>
+        <member name="T:TraceLabSDK.Types.Contests.Metric">
+            <summary>
+            Represent the abstract metric.
+            </summary>
+        </member>
+        <member name="P:TraceLabSDK.Types.Contests.Metric.MetricName">
+            <summary>
+            Gets or sets the name of the metric.
+            </summary>
+            <value>
+            The name of the metric.
+            </value>
+        </member>
+        <member name="P:TraceLabSDK.Types.Contests.Metric.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>
+            The description.
+            </value>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.Metric.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TraceLabSDK.Types.Contests.Metric"/> class.
+            </summary>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.Metric.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TraceLabSDK.Types.Contests.Metric"/> class.
+            </summary>
+            <param name="metricName">Name of the metric.</param>
+            <param name="description">The description.</param>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.Metric.GetSchema">
+            <summary>
+            This method is reserved and should not be used. When implementing the IXmlSerializable interface, you should return null (Nothing in Visual Basic) from this method, and instead, if specifying a custom schema is required, apply the <see cref="T:System.Xml.Serialization.XmlSchemaProviderAttribute"/> to the class.
+            </summary>
+            <returns>
+            An <see cref="T:System.Xml.Schema.XmlSchema"/> that describes the XML representation of the object that is produced by the <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)"/> method and consumed by the <see cref="M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)"/> method.
+            </returns>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.Metric.ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Generates an object from its XML representation.
+            </summary>
+            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> stream from which the object is deserialized.</param>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.Metric.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Converts an object into its XML representation.
+            </summary>
+            <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized.</param>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.Metric.ReadData(System.IO.BinaryReader)">
+            <summary>
+            Reads the data. (allows faster custom serialization for better performance in TraceLab)
+            </summary>
+            <param name="reader">The reader.</param>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.Metric.WriteData(System.IO.BinaryWriter)">
+            <summary>
+            Writes the data. (allows faster custom serialization for better performance in TraceLab)
+            </summary>
+            <param name="writer">The writer.</param>
+        </member>
+        <member name="T:TraceLabSDK.Types.Contests.DatasetResults">
+            <summary>
+            Represents the results for the dataset of the given name.
+            It contains the list of metric results.
+            </summary>
+        </member>
+        <member name="P:TraceLabSDK.Types.Contests.DatasetResults.DatasetName">
+            <summary>
+            Gets or sets the name of the dataset which results were computed for.
+            </summary>
+            <value>
+            The name of the dataset.
+            </value>
+        </member>
+        <member name="P:TraceLabSDK.Types.Contests.DatasetResults.Metrics">
+            <summary>
+            Gets or sets the list of metrics
+            </summary>
+            <value>
+            The metrics.
+            </value>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.DatasetResults.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:TraceLabSDK.Types.Contests.DatasetResults"/> class from being created.
+            </summary>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.DatasetResults.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TraceLabSDK.Types.Contests.DatasetResults"/> class.
+            </summary>
+            <param name="datasetName">Name of the dataset, which results were computed for.</param>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.DatasetResults.AddMetric(TraceLabSDK.Types.Contests.Metric)">
+            <summary>
+            Adds the metric.
+            </summary>
+            <param name="metric">The metric.</param>
+            <exception cref="T:System.ArgumentException">throws if provided is not LineSeries or BoxSummaryData, the only types currently supported</exception>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.DatasetResults.AddLineSeriesMetric(TraceLabSDK.Types.Contests.LineSeries)">
+            <summary>
+            Adds a LineSeries metric.
+            </summary>
+            <param name="metric">The metric.</param>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.DatasetResults.AddBoxSummaryMetric(TraceLabSDK.Types.Contests.BoxSummaryData)">
+            <summary>
+            Adds a BoxSummary metric.
+            </summary>
+            <param name="metric">The metric.</param>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.DatasetResults.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/> is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"/> to compare with this instance.</param>
+            <returns>
+              <c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.DatasetResults.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.DatasetResults.GetSchema">
+            <summary>
+            This method is reserved and should not be used. When implementing the IXmlSerializable interface, you should return null (Nothing in Visual Basic) from this method, and instead, if specifying a custom schema is required, apply the <see cref="T:System.Xml.Serialization.XmlSchemaProviderAttribute"/> to the class.
+            </summary>
+            <returns>
+            An <see cref="T:System.Xml.Schema.XmlSchema"/> that describes the XML representation of the object that is produced by the <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)"/> method and consumed by the <see cref="M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)"/> method.
+            </returns>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.DatasetResults.ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Generates an object from its XML representation.
+            </summary>
+            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> stream from which the object is deserialized.</param>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.DatasetResults.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Converts an object into its XML representation.
+            </summary>
+            <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized.</param>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.DatasetResults.ReadData(System.IO.BinaryReader)">
+            <summary>
+            Reads the data. (allows faster custom serialization for better performance in TraceLab)
+            </summary>
+            <param name="reader">The reader.</param>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.DatasetResults.WriteData(System.IO.BinaryWriter)">
+            <summary>
+            Writes the data. (allows faster custom serialization for better performance in TraceLab)
+            </summary>
+            <param name="writer">The writer.</param>
+        </member>
+        <member name="T:TraceLabSDK.Types.Contests.TLExperimentResults">
+            <summary>
+            Represents the set of metric results for one particular technique and set of metrics.
+            </summary>
+        </member>
+        <member name="P:TraceLabSDK.Types.Contests.TLExperimentResults.TechniqueName">
+            <summary>
+            Gets or sets the name of the technique, which results were computed by.
+            </summary>
+            <value>
+            The name of the technique.
+            </value>
+        </member>
+        <member name="P:TraceLabSDK.Types.Contests.TLExperimentResults.DatasetsResults">
+            <summary>
+            Gets the datasets results.
+            </summary>
+            <value>
+            The datasets results.
+            </value>
+        </member>
+        <member name="P:TraceLabSDK.Types.Contests.TLExperimentResults.AcrossAllDatasetsResults">
+            <summary>
+            Gets or sets the results across all datasets. 
+            The metric used across all dataset may differ than the metrics used 
+            per single dataset, thus it is treated as separate property and is not included in
+            the collection of datasetsresults. 
+            </summary>
+            <value>
+            The across all datasets results.
+            </value>
+        </member>
+        <member name="P:TraceLabSDK.Types.Contests.TLExperimentResults.Score">
+            <summary>
+            Gets or sets the score.
+            The score represents position in the leader board ranking.
+            The score can be computed by any method in the component defined by the user.
+            It has to be independent from other results, and cannot change over time. It is a const score
+            computed for the technique. This value is going to be uploaded to the server when publishing results
+            and will determine the position in the ranking.
+            </summary>
+            <value>
+            The score.
+            </value>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.TLExperimentResults.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TraceLabSDK.Types.Contests.TLExperimentResults"/> class.
+            </summary>
+            <param name="techniqueName">Name of the technique, which results were computed by.</param>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.TLExperimentResults.AddDatasetResult(TraceLabSDK.Types.Contests.DatasetResults)">
+            <summary>
+            Adds the dataset result.
+            </summary>
+            <param name="results">The results.</param>
+        </member>
+        <member name="P:TraceLabSDK.Types.Contests.TLExperimentResults.BaseData">
+            <summary>
+            Gets or sets the base data from which the metric results were computed.
+            For example, the similarity matrix with tracing results.
+            </summary>
+            <value>
+            The base data.
+            </value>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.TLExperimentResults.GetSchema">
+            <summary>
+            This method is reserved and should not be used. When implementing the IXmlSerializable interface, you should return null (Nothing in Visual Basic) from this method, and instead, if specifying a custom schema is required, apply the <see cref="T:System.Xml.Serialization.XmlSchemaProviderAttribute"/> to the class.
+            </summary>
+            <returns>
+            An <see cref="T:System.Xml.Schema.XmlSchema"/> that describes the XML representation of the object that is produced by the <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)"/> method and consumed by the <see cref="M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)"/> method.
+            </returns>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.TLExperimentResults.ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Generates an object from its XML representation.
+            </summary>
+            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> stream from which the object is deserialized.</param>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.TLExperimentResults.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Converts an object into its XML representation.
+            </summary>
+            <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized.</param>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.TLExperimentResults.ReadData(System.IO.BinaryReader)">
+            <summary>
+            Reads the data. (allows faster custom serialization for better performance in TraceLab)
+            </summary>
+            <param name="reader">The reader.</param>
+        </member>
+        <member name="M:TraceLabSDK.Types.Contests.TLExperimentResults.WriteData(System.IO.BinaryWriter)">
+            <summary>
+            Writes the data. (allows faster custom serialization for better performance in TraceLab)
+            </summary>
+            <param name="writer">The writer.</param>
+        </member>
         <member name="T:TraceLabSDK.Types.PostingsCollection">
             <summary>
             Wrapper for generic ICollection of TLPostings - nice name for java.
@@ -636,10 +835,33 @@
             Represents the dictionary of term entries. 
             </summary>
         </member>
+        <member name="P:TraceLabSDK.Types.TLDictionaryIndex.Terms">
+            <summary>
+            Data Structure that contains the collection of Terms
+            </summary>
+        </member>
         <member name="F:TraceLabSDK.Types.TLDictionaryIndex.m_termEntries">
             <summary>
             just additional collection - needed to be able to return nice looking collection
             in java, rather than Terms.Values as ICollection of TermEntries - which would look ugly with generics.
+            </summary>
+        </member>
+        <member name="P:TraceLabSDK.Types.TLDictionaryIndex.TermEntries">
+            <summary>
+            Returns collection of termEntries collection. 
+            </summary>
+            <returns>collection of termEntries collection.</returns>
+        </member>
+        <member name="P:TraceLabSDK.Types.TLDictionaryIndex.NumberOfTermEntries">
+            <summary>
+            Returns total number of all termEntries
+            </summary>
+            <returns>number of terms</returns>
+        </member>
+        <member name="P:TraceLabSDK.Types.TLDictionaryIndex.VectorLengthsOfArtifacts">
+            <summary>
+            Stores the vector lenght of each artifact text - it is later used for normalization purposes 
+            The vector length is the square root of the sum of the squares of all the term weights.	
             </summary>
         </member>
         <member name="M:TraceLabSDK.Types.TLDictionaryIndex.#ctor">
@@ -730,32 +952,24 @@
             </summary>
             <param name="writer">The writer.</param>
         </member>
-        <member name="P:TraceLabSDK.Types.TLDictionaryIndex.Terms">
-            <summary>
-            Data Structure that contains the collection of Terms
-            </summary>
-        </member>
-        <member name="P:TraceLabSDK.Types.TLDictionaryIndex.TermEntries">
-            <summary>
-            Returns collection of termEntries collection. 
-            </summary>
-            <returns>collection of termEntries collection.</returns>
-        </member>
-        <member name="P:TraceLabSDK.Types.TLDictionaryIndex.NumberOfTermEntries">
-            <summary>
-            Returns total number of all termEntries
-            </summary>
-            <returns>number of terms</returns>
-        </member>
-        <member name="P:TraceLabSDK.Types.TLDictionaryIndex.VectorLengthsOfArtifacts">
-            <summary>
-            Stores the vector lenght of each artifact text - it is later used for normalization purposes 
-            The vector length is the square root of the sum of the squares of all the term weights.	
-            </summary>
-        </member>
         <member name="T:TraceLabSDK.Types.TLPosting">
             <summary>
             Represents the posting in the dictionary
+            </summary>
+        </member>
+        <member name="P:TraceLabSDK.Types.TLPosting.ArtifactId">
+            <summary>
+            Gets or sets Artifact Id for the current posing, in which term has been found in
+            </summary>
+        </member>
+        <member name="P:TraceLabSDK.Types.TLPosting.Frequency">
+            <summary>
+            Gets or Sets the frequency of the term in the current artifact of the posting
+            </summary>
+        </member>
+        <member name="P:TraceLabSDK.Types.TLPosting.Weight">
+            <summary>
+            Gets or sets the score weight for the term in the currentl artifact of the posting
             </summary>
         </member>
         <member name="M:TraceLabSDK.Types.TLPosting.Compare(TraceLabSDK.Types.TLPosting,TraceLabSDK.Types.TLPosting)">
@@ -810,21 +1024,6 @@
             </summary>
             <param name="writer">The writer.</param>
         </member>
-        <member name="P:TraceLabSDK.Types.TLPosting.ArtifactId">
-            <summary>
-            Gets or sets Artifact Id for the current posing, in which term has been found in
-            </summary>
-        </member>
-        <member name="P:TraceLabSDK.Types.TLPosting.Frequency">
-            <summary>
-            Gets or Sets the frequency of the term in the current artifact of the posting
-            </summary>
-        </member>
-        <member name="P:TraceLabSDK.Types.TLPosting.Weight">
-            <summary>
-            Gets or sets the score weight for the term in the currentl artifact of the posting
-            </summary>
-        </member>
         <member name="T:TraceLabSDK.Types.TLTermEntry">
             <summary>
             Represents term entry. Each term entry consists of 
@@ -833,10 +1032,36 @@
             collection of postings.
             </summary>
         </member>
+        <member name="P:TraceLabSDK.Types.TLTermEntry.Term">
+            <summary>
+            Gets or sets the term
+            </summary>
+        </member>
+        <member name="P:TraceLabSDK.Types.TLTermEntry.NumberOfArtifactsContainingTerm">
+            <summary>
+            Gets or sets the number of artifacts conatining the term
+            </summary>
+            <exception cref="T:System.ArgumentException">if sets to value less than 0</exception>
+        </member>
+        <member name="P:TraceLabSDK.Types.TLTermEntry.TotalFrequencyAcrossArtifacts">
+            <summary>
+            Gets or sets the total frequency across all artifacts
+            </summary>
+        </member>
+        <member name="P:TraceLabSDK.Types.TLTermEntry.Weight">
+            <summary>
+            Gets or sets the total weight score for the term entry
+            </summary>
+        </member>
         <member name="F:TraceLabSDK.Types.TLTermEntry.m_postings">
             <summary>
             just additional collection - needed to be able to return nice looking collection
             in java, rather than Terms.Values as ICollection of TermEntries - which would look ugly with generics.
+            </summary>
+        </member>
+        <member name="P:TraceLabSDK.Types.TLTermEntry.Postings">
+            <summary>
+            Gets Postings Collections for the current TLTermEntry
             </summary>
         </member>
         <member name="M:TraceLabSDK.Types.TLTermEntry.#ctor">
@@ -931,32 +1156,6 @@
             Writes the data. (allows faster custom serialization for better performance in TraceLab)
             </summary>
             <param name="writer">The writer.</param>
-        </member>
-        <member name="P:TraceLabSDK.Types.TLTermEntry.Term">
-            <summary>
-            Gets or sets the term
-            </summary>
-        </member>
-        <member name="P:TraceLabSDK.Types.TLTermEntry.NumberOfArtifactsContainingTerm">
-            <summary>
-            Gets or sets the number of artifacts conatining the term
-            </summary>
-            <exception cref="T:System.ArgumentException">if sets to value less than 0</exception>
-        </member>
-        <member name="P:TraceLabSDK.Types.TLTermEntry.TotalFrequencyAcrossArtifacts">
-            <summary>
-            Gets or sets the total frequency across all artifacts
-            </summary>
-        </member>
-        <member name="P:TraceLabSDK.Types.TLTermEntry.Weight">
-            <summary>
-            Gets or sets the total weight score for the term entry
-            </summary>
-        </member>
-        <member name="P:TraceLabSDK.Types.TLTermEntry.Postings">
-            <summary>
-            Gets Postings Collections for the current TLTermEntry
-            </summary>
         </member>
         <member name="T:TraceLabSDK.Types.Generics.Collections.StringList">
             <summary>
@@ -1062,6 +1261,16 @@
             <param name="id">id of the artifact</param>
             <param name="text">text, ie. requirement text, regulatory code text, user scenario text, artifact code, design class description, etc</param>
         </member>
+        <member name="P:TraceLabSDK.Types.TLArtifact.Id">
+            <summary>
+            ID is a unique id of the artifact.
+            </summary>
+        </member>
+        <member name="P:TraceLabSDK.Types.TLArtifact.Text">
+            <summary>
+            Text is a textual representation of the software project resource - for example, the text of requirement, fragment of software code, etc.
+            </summary>
+        </member>
         <member name="M:TraceLabSDK.Types.TLArtifact.GetSchema">
             <summary>
             This method is reserved and should not be used. When implementing the IXmlSerializable interface, this method should and does return null.
@@ -1106,21 +1315,43 @@
             </summary>
             <param name="writer">The writer.</param>
         </member>
-        <member name="P:TraceLabSDK.Types.TLArtifact.Id">
-            <summary>
-            ID is a unique id of the artifact.
-            </summary>
-        </member>
-        <member name="P:TraceLabSDK.Types.TLArtifact.Text">
-            <summary>
-            Text is a textual representation of the software project resource - for example, the text of requirement, fragment of software code, etc.
-            </summary>
-        </member>
         <member name="T:TraceLabSDK.Types.TLArtifactsCollection">
             <summary>
             TLArtifactCollection is the collection of TLArtifacts. 
             It is currently implemented as Dictionary for quick lookup for artifacts.
             </summary>
+        </member>
+        <member name="P:TraceLabSDK.Types.TLArtifactsCollection.CollectionId">
+            <summary>
+            Gets or sets the collection id.
+            </summary>
+            <value>
+            The collection id.
+            </value>
+        </member>
+        <member name="P:TraceLabSDK.Types.TLArtifactsCollection.CollectionName">
+            <summary>
+            Gets or sets the name of the collection.
+            </summary>
+            <value>
+            The name of the collection.
+            </value>
+        </member>
+        <member name="P:TraceLabSDK.Types.TLArtifactsCollection.CollectionVersion">
+            <summary>
+            Gets or sets the collection version.
+            </summary>
+            <value>
+            The collection version.
+            </value>
+        </member>
+        <member name="P:TraceLabSDK.Types.TLArtifactsCollection.CollectionDescription">
+            <summary>
+            Gets or sets the collection description.
+            </summary>
+            <value>
+            The collection description.
+            </value>
         </member>
         <member name="M:TraceLabSDK.Types.TLArtifactsCollection.#ctor">
             <summary>
@@ -1198,237 +1429,6 @@
             </summary>
             <param name="writer">The writer.</param>
         </member>
-        <member name="P:TraceLabSDK.Types.TLArtifactsCollection.CollectionId">
-            <summary>
-            Gets or sets the collection id.
-            </summary>
-            <value>
-            The collection id.
-            </value>
-        </member>
-        <member name="P:TraceLabSDK.Types.TLArtifactsCollection.CollectionName">
-            <summary>
-            Gets or sets the name of the collection.
-            </summary>
-            <value>
-            The name of the collection.
-            </value>
-        </member>
-        <member name="P:TraceLabSDK.Types.TLArtifactsCollection.CollectionVersion">
-            <summary>
-            Gets or sets the collection version.
-            </summary>
-            <value>
-            The collection version.
-            </value>
-        </member>
-        <member name="P:TraceLabSDK.Types.TLArtifactsCollection.CollectionDescription">
-            <summary>
-            Gets or sets the collection description.
-            </summary>
-            <value>
-            The collection description.
-            </value>
-        </member>
-        <member name="T:TraceLabSDK.Types.Contests.DatasetResults">
-            <summary>
-            Represents the results for the dataset of the given name.
-            It contains the list of metric results.
-            </summary>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.DatasetResults.#ctor">
-            <summary>
-            Prevents a default instance of the <see cref="T:TraceLabSDK.Types.Contests.DatasetResults"/> class from being created.
-            </summary>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.DatasetResults.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:TraceLabSDK.Types.Contests.DatasetResults"/> class.
-            </summary>
-            <param name="datasetName">Name of the dataset, which results were computed for.</param>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.DatasetResults.AddMetric(TraceLabSDK.Types.Contests.Metric)">
-            <summary>
-            Adds the metric.
-            </summary>
-            <param name="metric">The metric.</param>
-            <exception cref="T:System.ArgumentException">throws if provided is not LineSeries or BoxSummaryData, the only types currently supported</exception>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.DatasetResults.AddLineSeriesMetric(TraceLabSDK.Types.Contests.LineSeries)">
-            <summary>
-            Adds a LineSeries metric.
-            </summary>
-            <param name="metric">The metric.</param>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.DatasetResults.AddBoxSummaryMetric(TraceLabSDK.Types.Contests.BoxSummaryData)">
-            <summary>
-            Adds a BoxSummary metric.
-            </summary>
-            <param name="metric">The metric.</param>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.DatasetResults.Equals(System.Object)">
-            <summary>
-            Determines whether the specified <see cref="T:System.Object"/> is equal to this instance.
-            </summary>
-            <param name="obj">The <see cref="T:System.Object"/> to compare with this instance.</param>
-            <returns>
-              <c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
-            </returns>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.DatasetResults.GetHashCode">
-            <summary>
-            Returns a hash code for this instance.
-            </summary>
-            <returns>
-            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
-            </returns>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.DatasetResults.GetSchema">
-            <summary>
-            This method is reserved and should not be used. When implementing the IXmlSerializable interface, you should return null (Nothing in Visual Basic) from this method, and instead, if specifying a custom schema is required, apply the <see cref="T:System.Xml.Serialization.XmlSchemaProviderAttribute"/> to the class.
-            </summary>
-            <returns>
-            An <see cref="T:System.Xml.Schema.XmlSchema"/> that describes the XML representation of the object that is produced by the <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)"/> method and consumed by the <see cref="M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)"/> method.
-            </returns>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.DatasetResults.ReadXml(System.Xml.XmlReader)">
-            <summary>
-            Generates an object from its XML representation.
-            </summary>
-            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> stream from which the object is deserialized.</param>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.DatasetResults.WriteXml(System.Xml.XmlWriter)">
-            <summary>
-            Converts an object into its XML representation.
-            </summary>
-            <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized.</param>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.DatasetResults.ReadData(System.IO.BinaryReader)">
-            <summary>
-            Reads the data. (allows faster custom serialization for better performance in TraceLab)
-            </summary>
-            <param name="reader">The reader.</param>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.DatasetResults.WriteData(System.IO.BinaryWriter)">
-            <summary>
-            Writes the data. (allows faster custom serialization for better performance in TraceLab)
-            </summary>
-            <param name="writer">The writer.</param>
-        </member>
-        <member name="P:TraceLabSDK.Types.Contests.DatasetResults.DatasetName">
-            <summary>
-            Gets or sets the name of the dataset which results were computed for.
-            </summary>
-            <value>
-            The name of the dataset.
-            </value>
-        </member>
-        <member name="P:TraceLabSDK.Types.Contests.DatasetResults.Metrics">
-            <summary>
-            Gets or sets the list of metrics
-            </summary>
-            <value>
-            The metrics.
-            </value>
-        </member>
-        <member name="T:TraceLabSDK.Types.Contests.TLExperimentResults">
-            <summary>
-            Represents the set of metric results for one particular technique and set of metrics.
-            </summary>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.TLExperimentResults.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:TraceLabSDK.Types.Contests.TLExperimentResults"/> class.
-            </summary>
-            <param name="techniqueName">Name of the technique, which results were computed by.</param>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.TLExperimentResults.AddDatasetResult(TraceLabSDK.Types.Contests.DatasetResults)">
-            <summary>
-            Adds the dataset result.
-            </summary>
-            <param name="results">The results.</param>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.TLExperimentResults.GetSchema">
-            <summary>
-            This method is reserved and should not be used. When implementing the IXmlSerializable interface, you should return null (Nothing in Visual Basic) from this method, and instead, if specifying a custom schema is required, apply the <see cref="T:System.Xml.Serialization.XmlSchemaProviderAttribute"/> to the class.
-            </summary>
-            <returns>
-            An <see cref="T:System.Xml.Schema.XmlSchema"/> that describes the XML representation of the object that is produced by the <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)"/> method and consumed by the <see cref="M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)"/> method.
-            </returns>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.TLExperimentResults.ReadXml(System.Xml.XmlReader)">
-            <summary>
-            Generates an object from its XML representation.
-            </summary>
-            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> stream from which the object is deserialized.</param>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.TLExperimentResults.WriteXml(System.Xml.XmlWriter)">
-            <summary>
-            Converts an object into its XML representation.
-            </summary>
-            <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized.</param>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.TLExperimentResults.ReadData(System.IO.BinaryReader)">
-            <summary>
-            Reads the data. (allows faster custom serialization for better performance in TraceLab)
-            </summary>
-            <param name="reader">The reader.</param>
-        </member>
-        <member name="M:TraceLabSDK.Types.Contests.TLExperimentResults.WriteData(System.IO.BinaryWriter)">
-            <summary>
-            Writes the data. (allows faster custom serialization for better performance in TraceLab)
-            </summary>
-            <param name="writer">The writer.</param>
-        </member>
-        <member name="P:TraceLabSDK.Types.Contests.TLExperimentResults.TechniqueName">
-            <summary>
-            Gets or sets the name of the technique, which results were computed by.
-            </summary>
-            <value>
-            The name of the technique.
-            </value>
-        </member>
-        <member name="P:TraceLabSDK.Types.Contests.TLExperimentResults.DatasetsResults">
-            <summary>
-            Gets the datasets results.
-            </summary>
-            <value>
-            The datasets results.
-            </value>
-        </member>
-        <member name="P:TraceLabSDK.Types.Contests.TLExperimentResults.AcrossAllDatasetsResults">
-            <summary>
-            Gets or sets the results across all datasets. 
-            The metric used across all dataset may differ than the metrics used 
-            per single dataset, thus it is treated as separate property and is not included in
-            the collection of datasetsresults. 
-            </summary>
-            <value>
-            The across all datasets results.
-            </value>
-        </member>
-        <member name="P:TraceLabSDK.Types.Contests.TLExperimentResults.Score">
-            <summary>
-            Gets or sets the score.
-            The score represents position in the leader board ranking.
-            The score can be computed by any method in the component defined by the user.
-            It has to be independent from other results, and cannot change over time. It is a const score
-            computed for the technique. This value is going to be uploaded to the server when publishing results
-            and will determine the position in the ranking.
-            </summary>
-            <value>
-            The score.
-            </value>
-        </member>
-        <member name="P:TraceLabSDK.Types.Contests.TLExperimentResults.BaseData">
-            <summary>
-            Gets or sets the base data from which the metric results were computed.
-            For example, the similarity matrix with tracing results.
-            </summary>
-            <value>
-            The base data.
-            </value>
-        </member>
         <member name="T:TraceLabSDK.Types.TLLinksList">
             <summary>
             Helper class for Java - nice name for a list of TLSingleLinks
@@ -1459,6 +1459,14 @@
             Represents container for the metrics. 
             Currently it is simply a list of metrics.
             </summary>
+        </member>
+        <member name="P:TraceLabSDK.Types.TLKeyValuePairsList.NameOfCollection">
+            <summary>
+            Gets or sets the name of collection.
+            </summary>
+            <value>
+            The name of collection.
+            </value>
         </member>
         <member name="M:TraceLabSDK.Types.TLKeyValuePairsList.#ctor">
             <summary>
@@ -1491,14 +1499,6 @@
             </summary>
             <param name="writer">The writer.</param>
         </member>
-        <member name="P:TraceLabSDK.Types.TLKeyValuePairsList.NameOfCollection">
-            <summary>
-            Gets or sets the name of collection.
-            </summary>
-            <value>
-            The name of collection.
-            </value>
-        </member>
         <member name="T:TraceLabSDK.Types.TLSimilarityMatrix">
             <summary>
             TLMatrix represents the set of links from source artifact ids to target artifact ids. 
@@ -1512,6 +1512,41 @@
         <member name="F:TraceLabSDK.Types.TLSimilarityMatrix.m_matrix">
             <summary>
             This does not use standard serialization - see the ISerializable implementation for details.
+            </summary>
+        </member>
+        <member name="P:TraceLabSDK.Types.TLSimilarityMatrix.Threshold">
+            <summary>
+            Threshold can be interpreted in two ways
+            If matrix is used as answer matrix Threshold represents confidence threshold, that can be useful in case of existence of "gray".
+            In this case anything above this threshold value is considered as relevant link.
+            
+            If matrix is used as similarity matrix, anything above this threshold value is considered as retrieved link.
+            
+            Default Thresold value is 0.0.
+            </summary>
+        </member>
+        <member name="P:TraceLabSDK.Types.TLSimilarityMatrix.SourceArtifactsIds">
+            <summary>
+            Returns the copy of the source artifacts ids that are included in this answer set.
+            </summary>
+        </member>
+        <member name="P:TraceLabSDK.Types.TLSimilarityMatrix.AllLinks">
+            <summary>
+            Returns the copy list of all links in the answer set. 
+            It is lazy load, the list is constructed when it is requested.
+            </summary>
+        </member>
+        <member name="P:TraceLabSDK.Types.TLSimilarityMatrix.Name">
+            <summary>
+            Gets or sets the name. Usually it is useful to name it by same name as a dataset name, which similarity matrix corresponds to. 
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:TraceLabSDK.Types.TLSimilarityMatrix.Count">
+            <summary>
+            Gets total count of all links in the spare matrix. 
             </summary>
         </member>
         <member name="M:TraceLabSDK.Types.TLSimilarityMatrix.#ctor">
@@ -1610,44 +1645,24 @@
             </summary>
             <param name="writer">The writer.</param>
         </member>
-        <member name="P:TraceLabSDK.Types.TLSimilarityMatrix.Threshold">
-            <summary>
-            Threshold can be interpreted in two ways
-            If matrix is used as answer matrix Threshold represents confidence threshold, that can be useful in case of existence of "gray".
-            In this case anything above this threshold value is considered as relevant link.
-            
-            If matrix is used as similarity matrix, anything above this threshold value is considered as retrieved link.
-            
-            Default Thresold value is 0.0.
-            </summary>
-        </member>
-        <member name="P:TraceLabSDK.Types.TLSimilarityMatrix.SourceArtifactsIds">
-            <summary>
-            Returns the copy of the source artifacts ids that are included in this answer set.
-            </summary>
-        </member>
-        <member name="P:TraceLabSDK.Types.TLSimilarityMatrix.AllLinks">
-            <summary>
-            Returns the copy list of all links in the answer set. 
-            It is lazy load, the list is constructed when it is requested.
-            </summary>
-        </member>
-        <member name="P:TraceLabSDK.Types.TLSimilarityMatrix.Name">
-            <summary>
-            Gets or sets the name. Usually it is useful to name it by same name as a dataset name, which similarity matrix corresponds to. 
-            </summary>
-            <value>
-            The name.
-            </value>
-        </member>
-        <member name="P:TraceLabSDK.Types.TLSimilarityMatrix.Count">
-            <summary>
-            Gets total count of all links in the spare matrix. 
-            </summary>
-        </member>
         <member name="T:TraceLabSDK.Types.TLSingleLink">
             <summary>
             Represents the single link between two artifacts specified by source artifact id and target artifact id, as well as score.
+            </summary>
+        </member>
+        <member name="P:TraceLabSDK.Types.TLSingleLink.SourceArtifactId">
+            <summary>
+            Gets or sets source artifact id for the link
+            </summary>
+        </member>
+        <member name="P:TraceLabSDK.Types.TLSingleLink.TargetArtifactId">
+            <summary>
+            Gets or sets target artifact id for the link
+            </summary>
+        </member>
+        <member name="P:TraceLabSDK.Types.TLSingleLink.Score">
+            <summary>
+            Gets or sets score for the link.
             </summary>
         </member>
         <member name="M:TraceLabSDK.Types.TLSingleLink.#ctor(System.String,System.String,System.Double)">
@@ -1704,21 +1719,6 @@
             Writes the data. (allows faster custom serialization for better performance in TraceLab)
             </summary>
             <param name="writer">The writer.</param>
-        </member>
-        <member name="P:TraceLabSDK.Types.TLSingleLink.SourceArtifactId">
-            <summary>
-            Gets or sets source artifact id for the link
-            </summary>
-        </member>
-        <member name="P:TraceLabSDK.Types.TLSingleLink.TargetArtifactId">
-            <summary>
-            Gets or sets target artifact id for the link
-            </summary>
-        </member>
-        <member name="P:TraceLabSDK.Types.TLSingleLink.Score">
-            <summary>
-            Gets or sets score for the link.
-            </summary>
         </member>
         <member name="T:TraceLabSDK.Types.TLStopwords">
             <summary>

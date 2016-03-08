@@ -4,3 +4,9 @@ C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\Types\TraceLabSDK.Types.pdb
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLabSDK.Types\obj\Debug\TraceLabSDK.Types.csprojResolveAssemblyReference.cache
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLabSDK.Types\obj\Debug\TraceLabSDK.Types.dll
 C:\Users\ozohdi2\Documents\GitHub\TraceLab\Main\WebService\TraceLabSDK.Types\obj\Debug\TraceLabSDK.Types.pdb
+C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\Types\TraceLabSDK.Types.XML
+C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\Types\TraceLabSDK.Types.dll
+C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\Types\TraceLabSDK.Types.pdb
+C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabSDK.Types\obj\Debug\TraceLabSDK.Types.csprojResolveAssemblyReference.cache
+C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabSDK.Types\obj\Debug\TraceLabSDK.Types.dll
+C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabSDK.Types\obj\Debug\TraceLabSDK.Types.pdb
