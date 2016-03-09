@@ -61,7 +61,6 @@ namespace TraceLabWeb
                     string[] args = { };
                     INSTANCE = new TraceLabApplicationWebConsole();
                     INSTANCE.Run(args);
-                    INSTANCE.RunUI();
                 }
                 return INSTANCE;
             }

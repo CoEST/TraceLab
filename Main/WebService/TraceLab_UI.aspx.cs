@@ -11,6 +11,8 @@ public partial class TraceLab_UI : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         var app = TraceLabApplicationWebConsole.Instance;
+        Components.Text = app.GetComponents();
+        Workspace.Text = app.GetWorkspace();
     }
 
     protected void OpenButton_Click(object sender, EventArgs e)
@@ -28,6 +30,8 @@ public partial class TraceLab_UI : System.Web.UI.Page
     {
         var app = TraceLabApplicationWebConsole.Instance;
         Console.Text = app.GetLog();
+        Components.Text = app.GetComponents();
+        Workspace.Text = app.GetWorkspace();
     }
 
     protected void Run_Click(object sender, EventArgs e)
@@ -35,5 +39,7 @@ public partial class TraceLab_UI : System.Web.UI.Page
         var app = TraceLabApplicationWebConsole.Instance;
         app.RunExperiment();
         Console.Text = app.GetLog();
+        Components.Text = app.GetComponents();
+        Workspace.Text = app.GetWorkspace();
     }
 }

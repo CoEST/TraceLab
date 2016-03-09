@@ -44,7 +44,6 @@ C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Deb
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLab.Core.dll
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLab.dll
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLabSDK.dll
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLabSDK.Types.dll
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\NLog.dll
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\IKVM.Runtime.dll
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\IKVM.OpenJDK.Core.dll
@@ -63,14 +62,9 @@ C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Deb
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\IKVM.OpenJDK.Media.dll
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\IKVM.AWT.WinForms.dll
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\IKVM.OpenJDK.Charsets.dll
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLab.Core.pdb
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLabSDK.pdb
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLabSDK.xml
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLab.pdb
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLabSDK.Types.pdb
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLabSDK.Types.xml
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\NLog.pdb
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\NLog.xml
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\obj\Debug\TraceLabWeb.csprojResolveAssemblyReference.cache
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\obj\Debug\TraceLabWeb.dll
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\TraceLabWeb\obj\Debug\TraceLabWeb.pdb
