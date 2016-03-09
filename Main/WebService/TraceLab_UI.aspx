@@ -46,16 +46,13 @@
                       </div>
                     </div>  
 
-                    <asp:Button ID="OpenButton" runat="server" Text="Open" class="btn btn-default btn-lg" OnClick="OpenButton_Click"/>
+
+                    
+                    <asp:LinkButton ID="Run" CssClass="btn btn-primary btn-lg" runat="server" OnClick="Run_Click"><span class="glyphicon glyphicon-play"></span></asp:LinkButton>
+                    <asp:LinkButton ID="Stop" CssClass="btn btn-primary btn-lg" runat="server" ><span class="glyphicon glyphicon-stop"></span></asp:LinkButton>
+                    <asp:LinkButton ID="ReloadLog" CssClass="btn btn-primary btn-lg" runat="server" OnClick="Log_Click"><span class="glyphicon glyphicon-refresh"></span></asp:LinkButton>
+                    <asp:LinkButton ID="OpenButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="OpenButton_Click"><span class="glyphicon glyphicon-folder-open""></span></asp:LinkButton>
                     <asp:TextBox ID="OpenDirText" runat="server" Width="799px" Text ="C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"></asp:TextBox>
-                    
-                    <asp:Button id="Run" type="button" runat="server" class="btn btn-default btn-lg" OnClick="Run_Click" />
-                      <!--span class="glyphicon glyphicon-play" aria-hidden="true"></!--span-->
-                    
-                    <button type="button" class="btn btn-default btn-lg">
-                      <!--span class="glyphicon glyphicon-stop" aria-hidden="true"></!--span-->
-                    </button>
-                    <asp:Button ID="ReloadLog" runat="server" Text="Reload Log" class="btn btn-default btn-lg" OnClick="Log_Click"/>
                 </div>
             </div><!-- Buttons for Start and Stop-->
 
