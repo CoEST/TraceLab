@@ -16,5 +16,5 @@ DEBUG;TRACE
 15-396001730
 Types\TLArtifactsCollectionEditor.xaml;Types\TLDictionaryIndexEditor.xaml;Types\TLMetricsContainerEditor.xaml;Types\TLSimilarityMatrixEditor.xaml;Types\TLArtifactEditor.xaml;Types\TLStopwordsEditor.xaml;
 
-False
+True
 

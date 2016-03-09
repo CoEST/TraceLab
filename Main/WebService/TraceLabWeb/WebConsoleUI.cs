@@ -12,27 +12,70 @@ namespace TraceLabWeb
 {
     public class WebConsoleUI
     {
-        public static string log;
+        public static string log = "";
+        public static ExperimentProgress progress = new ExperimentProgress();
+
+        public static string getLog()
+        {
+            log += progress.GetLog;
+            return log;
+        }
 
         public static void UpdateLog( string inLog)
         {
-            log = inLog;
+            log += inLog;
         }
 
         private WebConsoleUI(ApplicationViewModel application)
         {
             Application = application;
+            ComponentLibraryScannningWaiter = new System.Threading.ManualResetEventSlim();
+            if (Application.ComponentLibraryViewModel.IsRescanning == false)
+            {
+                ComponentLibraryScannningWaiter.Set();
+            }
+        }
+
+        internal static string GetWorkspace()
+        {
+            string components = "<ul>";
+            if (ConsoleInstance.Application.Workspace.Units.Count == 0)
+            {
+                components += ("<li>Workspace is empty</li>");
+            }
+            else
+            {
+                foreach (WorkspaceUnit unitData in ConsoleInstance.Application.Workspace.Units)
+                {
+                    components += string.Format("<li>{0}</li>", unitData.FriendlyUnitName);
+                }
+            }
+            components += "</ul>";
+            return components;
+        }
+
+        internal static string GetComponents()
+        {
+            string components = "<ul>";
+            foreach (MetadataDefinition definition in ConsoleInstance.Application.ComponentLibraryViewModel.ComponentsCollection)
+            {
+                components += string.Format("<li>{0}</li>", definition.Label);
+            }
+
+            components += "</ul>";
+            return components;
         }
 
         public static void Run(ApplicationViewModel application)
         {
             ConsoleInstance = new WebConsoleUI(application);
 
-            // ConsoleInstance.ComponentLibraryScannningWaiter.Wait();
+            ConsoleInstance.ComponentLibraryScannningWaiter.Wait();
 
             ConsoleInstance.DisplayExistingLogs();
+            ConsoleInstance.StartListenToLogEvents();
 
-            log = "TraceLab is ready";
+            log += "TraceLab is ready<br />";
                         
         }
 
@@ -51,30 +94,29 @@ namespace TraceLabWeb
 
         public static void DisplayHelp()
         {
-            log = "";
-            log += ("COEST TraceLab");
+            log += ("<br />COEST TraceLab<br />");
 
-            log += ("Available commands:");
-            log += ("\topen [filepath]\t- Opens the experiment file. Abbreviated as: o");
-            log += ("\trun \t- Runs the experiment");
-            log += ("\tstop \t- Stops the running experiment");
-            log += ("\texperiment \t- Displays info about currently opened experiment. Abbreviated as: e");
-            log += ("\tcomponents\t- Displays loaded components.  Abbreviated as: c");
-            log += ("\tworkspace\t- Displays data in the workspace.  Abbreviated as: w");
-            log += ("\texit\t- Exits tracelab");
-            log += ("\t?\t- This help message.");
+            log += ("Available commands:<br />");
+            log += ("\topen [filepath]\t- Opens the experiment file. Abbreviated as: o<br />");
+            log += ("\trun \t- Runs the experiment<br />");
+            log += ("\tstop \t- Stops the running experiment<br />");
+            log += ("\texperiment \t- Displays info about currently opened experiment. Abbreviated as: e<br />");
+            log += ("\tcomponents\t- Displays loaded components.  Abbreviated as: c<br />");
+            log += ("\tworkspace\t- Displays data in the workspace.  Abbreviated as: w<br />");
+            log += ("\texit\t- Exits tracelab<br />");
+            log += ("\t?\t- This help message.<br />");
         }
 
         public static void OpenExperiment(string value)
         {
-            log = "";
+            //log = "";
             try
             {
                 var experiment = TraceLab.Core.Experiments.ExperimentManager.Load(value, ComponentsLibrary.Instance);
                 if (experiment != null)
                 {
                     ReloadApplicationViewModel(experiment);
-                    //Console.WriteLine("\tExperiment has been opened.");
+                    log += ("\tExperiment has been opened. <br/>");
                     DisplayExperimentInfo(null);
                 }
             }
@@ -95,13 +137,13 @@ namespace TraceLabWeb
             var experiment = ConsoleInstance.Application.Experiment;
             if (experiment != null)
             {
-                ExperimentProgress progress = new ExperimentProgress();
+                
                 experiment.RunExperiment(progress, ConsoleInstance.Application.Workspace, ComponentsLibrary.Instance);
-                log = progress.GetLog;
+                log += progress.GetLog;
             }
             else
             {
-                log = ("\tExperiment has not been opened yet.");
+                log += ("\tExperiment has not been opened yet.");
                 log += ("\tOpen experiment first: open:[filepath]");
             }
         }
@@ -125,13 +167,13 @@ namespace TraceLabWeb
             }
             else
             {
-                log += ("Experiment information");
-                log += ("\tName:\t {0}"+ ConsoleInstance.Application.Experiment.ExperimentInfo.Name);
-                log += ("\tFilePath:\t {0}"+ ConsoleInstance.Application.Experiment.ExperimentInfo.FilePath);
-                log += ("\tAuthor:\t {0}"+ ConsoleInstance.Application.Experiment.ExperimentInfo.Author);
-                log += ("\tContributors:\t {0}"+ ConsoleInstance.Application.Experiment.ExperimentInfo.Contributors);
-                log += ("\tDescription:\t {0}"+ ConsoleInstance.Application.Experiment.ExperimentInfo.Description);
-                log += ("\tVertices count:\t {0}"+ ConsoleInstance.Application.Experiment.VertexCount);
+                log += string.Format("<br />Experiment information<br />");
+                log += string.Format("\tName:\t {0}<br />", ConsoleInstance.Application.Experiment.ExperimentInfo.Name);
+                log += string.Format("\tFilePath:\t {0}<br />", ConsoleInstance.Application.Experiment.ExperimentInfo.FilePath);
+                log += string.Format("\tAuthor:\t {0}<br />", ConsoleInstance.Application.Experiment.ExperimentInfo.Author);
+                log += string.Format("\tContributors:\t {0}<br />", ConsoleInstance.Application.Experiment.ExperimentInfo.Contributors);
+                log += string.Format("\tDescription:\t {0}<br />", ConsoleInstance.Application.Experiment.ExperimentInfo.Description);
+                log += string.Format("\tVertices count:\t {0}<br />", ConsoleInstance.Application.Experiment.VertexCount);
             }
         }
 

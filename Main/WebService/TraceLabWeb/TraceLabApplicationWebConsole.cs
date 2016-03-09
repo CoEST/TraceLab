@@ -22,12 +22,22 @@ namespace TraceLabWeb
 
         public string GetLog()
         {
-            return WebConsoleUI.log;
+            return WebConsoleUI.getLog();
         }
 
         public void DisplayHelp()
         {
             WebConsoleUI.DisplayHelp();
+        }
+
+        public string GetWorkspace()
+        {
+            return WebConsoleUI.GetWorkspace();
+        }
+
+        public string GetComponents()
+        {
+            return WebConsoleUI.GetComponents();
         }
 
         public void OpenExperiment(string path)

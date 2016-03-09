@@ -50,6 +50,32 @@
             that will allow selecting the directory.
             </summary>
         </member>
+        <member name="M:TraceLabSDK.Component.Config.DirectoryPath.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TraceLabSDK.Component.Config.DirectoryPath"/> class.
+            </summary>
+        </member>
+        <member name="M:TraceLabSDK.Component.Config.DirectoryPath.op_Implicit(TraceLabSDK.Component.Config.DirectoryPath)~System.String">
+            <summary>
+            Performs an implicit conversion from <see cref="T:TraceLabSDK.Component.Config.FilePath"/> to <see cref="T:System.String"/>.
+            </summary>
+            <param name="path">The path.</param>
+            <returns>
+            The result of the conversion.
+            </returns>
+        </member>
+        <member name="M:TraceLabSDK.Component.Config.DirectoryPath.ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Generates an object from its XML representation.
+            </summary>
+            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> stream from which the object is deserialized.</param>
+        </member>
+        <member name="M:TraceLabSDK.Component.Config.DirectoryPath.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Converts an object into its XML representation.
+            </summary>
+            <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized.</param>
+        </member>
         <member name="T:TraceLabSDK.Component.Config.BasePath">
             <summary>
             Class represents the base path for FilePath and DirectoryPath.
@@ -74,6 +100,27 @@
             <param name="absolutePath">The absolute path.</param>
             <param name="dataRoot">The data root.</param>
         </member>
+        <member name="P:TraceLabSDK.Component.Config.BasePath.Relative">
+            <summary>
+            Gets or sets the string value representing the path itself.
+            </summary>
+            <value>
+            The path.
+            </value>
+        </member>
+        <member name="P:TraceLabSDK.Component.Config.BasePath.Absolute">
+            <summary>
+            Gets or sets the absolute path represented by this Path
+            </summary>
+            <value>
+            The absolute path.
+            </value>
+        </member>
+        <member name="P:TraceLabSDK.Component.Config.BasePath.DataRoot">
+            <summary>
+            Gets the data root of this Path.
+            </summary>
+        </member>
         <member name="M:TraceLabSDK.Component.Config.BasePath.SetDataRoot(System.String,System.Boolean)">
             <summary>
             Sets the data root.
@@ -88,6 +135,11 @@
             <param name="absolutePath">The absolute path.</param>
             <param name="relativeTo">relative to.</param>
             <returns></returns>
+        </member>
+        <member name="E:TraceLabSDK.Component.Config.BasePath.PropertyChanged">
+            <summary>
+            Occurs when a property value changes.
+            </summary>
         </member>
         <member name="M:TraceLabSDK.Component.Config.BasePath.NotifyPropertyChanged(System.String)">
             <summary>
@@ -115,38 +167,19 @@
             </summary>
             <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized.</param>
         </member>
-        <member name="P:TraceLabSDK.Component.Config.BasePath.Relative">
+        <member name="T:TraceLabSDK.Component.Config.FilePath">
             <summary>
-            Gets or sets the string value representing the path itself.
-            </summary>
-            <value>
-            The path.
-            </value>
-        </member>
-        <member name="P:TraceLabSDK.Component.Config.BasePath.Absolute">
-            <summary>
-            Gets or sets the absolute path represented by this Path
-            </summary>
-            <value>
-            The absolute path.
-            </value>
-        </member>
-        <member name="P:TraceLabSDK.Component.Config.BasePath.DataRoot">
-            <summary>
-            Gets the data root of this Path.
+            Used to represent a FilePath in a Configuration object
+            
+            Any FilePaths will be displayed with a special editor when displaying the configuration of a component.
             </summary>
         </member>
-        <member name="E:TraceLabSDK.Component.Config.BasePath.PropertyChanged">
+        <member name="M:TraceLabSDK.Component.Config.FilePath.#ctor">
             <summary>
-            Occurs when a property value changes.
+            Initializes a new instance of the <see cref="T:TraceLabSDK.Component.Config.FilePath"/> class.  Used for XML serialization ONLY.
             </summary>
         </member>
-        <member name="M:TraceLabSDK.Component.Config.DirectoryPath.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:TraceLabSDK.Component.Config.DirectoryPath"/> class.
-            </summary>
-        </member>
-        <member name="M:TraceLabSDK.Component.Config.DirectoryPath.op_Implicit(TraceLabSDK.Component.Config.DirectoryPath)~System.String">
+        <member name="M:TraceLabSDK.Component.Config.FilePath.op_Implicit(TraceLabSDK.Component.Config.FilePath)~System.String">
             <summary>
             Performs an implicit conversion from <see cref="T:TraceLabSDK.Component.Config.FilePath"/> to <see cref="T:System.String"/>.
             </summary>
@@ -155,17 +188,43 @@
             The result of the conversion.
             </returns>
         </member>
-        <member name="M:TraceLabSDK.Component.Config.DirectoryPath.ReadXml(System.Xml.XmlReader)">
+        <member name="M:TraceLabSDK.Component.Config.FilePath.ReadXml(System.Xml.XmlReader)">
             <summary>
             Generates an object from its XML representation.
             </summary>
             <param name="reader">The <see cref="T:System.Xml.XmlReader"/> stream from which the object is deserialized.</param>
         </member>
-        <member name="M:TraceLabSDK.Component.Config.DirectoryPath.WriteXml(System.Xml.XmlWriter)">
+        <member name="F:TraceLabSDK.Component.Config.FilePath.relativeToDataRoot">
+            <summary>
+            If read FilePath was version1 the path was relative to the dataroot, not experiment location root. It has to be transformed in post process.
+            </summary>
+        </member>
+        <member name="M:TraceLabSDK.Component.Config.FilePath.WriteXml(System.Xml.XmlWriter)">
             <summary>
             Converts an object into its XML representation.
             </summary>
             <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized.</param>
+        </member>
+        <member name="P:TraceLabSDK.Component.Config.FilePath.Relative">
+            <summary>
+            Gets or sets the string value representing the path itself.
+            </summary>
+            <value>
+            The path.
+            </value>
+        </member>
+        <member name="P:TraceLabSDK.Component.Config.FilePath.Absolute">
+            <summary>
+            Gets or sets the absolute path represented by this FilePath
+            </summary>
+            <value>
+            The absolute path.
+            </value>
+        </member>
+        <member name="P:TraceLabSDK.Component.Config.FilePath.DataRoot">
+            <summary>
+            Gets the data root of this FilePath.
+            </summary>
         </member>
         <member name="T:TraceLabSDK.LinkAttribute">
             <summary>
@@ -249,13 +308,6 @@
             An interface used to represent a Package to the PackageSystem.  The primary purpose of this interface is to facilitate testing.
             </summary>
         </member>
-        <member name="M:TraceLabSDK.PackageSystem.IPackage.GetAbsolutePath(System.String)">
-            <summary>
-            Gets the absolute path of a file, given the file's ID within the package.
-            </summary>
-            <param name="fileID">The file ID.</param>
-            <returns></returns>
-        </member>
         <member name="P:TraceLabSDK.PackageSystem.IPackage.ComponentLocations">
             <summary>
             Where components are located within this Package.
@@ -296,16 +348,17 @@
             Where workspace types are located within this Package.
             </summary>
         </member>
+        <member name="M:TraceLabSDK.PackageSystem.IPackage.GetAbsolutePath(System.String)">
+            <summary>
+            Gets the absolute path of a file, given the file's ID within the package.
+            </summary>
+            <param name="fileID">The file ID.</param>
+            <returns></returns>
+        </member>
         <member name="T:TraceLabSDK.PackageSystem.IPackageFile">
             <summary>
             IPackageFile represents file in the package
             </summary>
-        </member>
-        <member name="M:TraceLabSDK.PackageSystem.IPackageFile.GetAbsolutePath">
-            <summary>
-            Gets the absolute path.
-            </summary>
-            <returns></returns>
         </member>
         <member name="P:TraceLabSDK.PackageSystem.IPackageFile.CompressedHash">
             <summary>
@@ -324,6 +377,12 @@
             <summary>
             Gets the data of the package file
             </summary>
+        </member>
+        <member name="M:TraceLabSDK.PackageSystem.IPackageFile.GetAbsolutePath">
+            <summary>
+            Gets the absolute path.
+            </summary>
+            <returns></returns>
         </member>
         <member name="P:TraceLabSDK.PackageSystem.IPackageFile.ID">
             <summary>
@@ -394,6 +453,11 @@
             </returns>
             <remarks>This is equivilent to calling GetReferencedPackages and checking if the missingReferences contains anything.</remarks>
         </member>
+        <member name="P:TraceLabSDK.PackageSystem.IPackageManager.PackageLocations">
+            <summary>
+            Gets the locations that packages can be loaded from.
+            </summary>
+        </member>
         <member name="M:TraceLabSDK.PackageSystem.IPackageManager.GetAbsolutePath(System.String,System.String)">
             <summary>
             Gets the absolute path for the given package file
@@ -401,11 +465,6 @@
             <param name="packageID">The ID of the package.</param>
             <param name="packageFileID">The ID of the package file.</param>
             <returns>The absolute path of the package file, or null if either the package or the package file doesn't exist.</returns>
-        </member>
-        <member name="P:TraceLabSDK.PackageSystem.IPackageManager.PackageLocations">
-            <summary>
-            Gets the locations that packages can be loaded from.
-            </summary>
         </member>
         <member name="T:TraceLabSDK.PackageSystem.IPackageReference">
             <summary>
@@ -432,18 +491,6 @@
             Initializes the static properties of Application, in particular detects Mono runtime
             </summary>
         </member>
-        <member name="M:TraceLabSDK.RuntimeInfo.IsRunningOnMac">
-            <summary>
-            Determines whether TraceLab is running on Mac by checking uname output.
-            On MacOS output of uname is Darwin. 
-            
-            Method found in Pinta source code. Seems to be hacky, but works.
-            Checking Environment.OSVersion.Platform return Unix for both Mac and Linux. 
-            </summary>
-            <returns>
-              <c>true</c> if TraceLab is running on Mac; otherwise, <c>false</c>.
-            </returns>
-        </member>
         <member name="P:TraceLabSDK.RuntimeInfo.IsRunInMono">
             <summary>
             Gets a value indicating whether this application is run in Mono runtime
@@ -456,6 +503,18 @@
             <summary>
             Gets the operating system MacOS, Linux or Windows.
             </summary>
+        </member>
+        <member name="M:TraceLabSDK.RuntimeInfo.IsRunningOnMac">
+            <summary>
+            Determines whether TraceLab is running on Mac by checking uname output.
+            On MacOS output of uname is Darwin. 
+            
+            Method found in Pinta source code. Seems to be hacky, but works.
+            Checking Environment.OSVersion.Platform return Unix for both Mac and Linux. 
+            </summary>
+            <returns>
+              <c>true</c> if TraceLab is running on Mac; otherwise, <c>false</c>.
+            </returns>
         </member>
         <member name="T:TraceLabSDK.RuntimeInfo.OS">
             <summary>
@@ -558,38 +617,6 @@
             An abstract base class that can be used when creating a component.
             </summary>
         </member>
-        <member name="T:TraceLabSDK.IComponent">
-            <summary>
-            The interface that must be implemented by a component
-            </summary>
-        </member>
-        <member name="M:TraceLabSDK.IComponent.PreCompute">
-            <summary>
-            Performs any pre-compute setup that is needed.  This is run immediately prior to <c>Compute</c>.
-            </summary>
-        </member>
-        <member name="M:TraceLabSDK.IComponent.Compute">
-            <summary>
-            Called when the component should do it's actual work.  
-            </summary>
-            <remarks>Any exception thrown will cause <c>Compute</c> to be treated as failed.</remarks>
-        </member>
-        <member name="M:TraceLabSDK.IComponent.PostCompute">
-            <summary>
-            Performs any processing necessary to shutdown/release systems or memory that the component might be holding on to prior to unload.
-            </summary>
-            <remarks>It's important to be aware that <c>PostCompute</c> will be called regardless of whether <c>Compute</c> or <c>PreCompute</c> succeeds or not.</remarks>
-        </member>
-        <member name="P:TraceLabSDK.IComponent.Workspace">
-            <summary>
-            The component's own personal phone-line to the Workspace.
-            </summary>
-        </member>
-        <member name="P:TraceLabSDK.IComponent.Configuration">
-            <summary>
-            An object that contains configuration properties for this component
-            </summary>
-        </member>
         <member name="M:TraceLabSDK.BaseComponent.InitializeLifetimeService">
             <summary>
             Obtains a lifetime service object to control the lifetime policy for this instance.
@@ -644,6 +671,38 @@
         <member name="P:TraceLabSDK.BaseComponent.Logger">
             <summary>
             Gets the logger that is to be used for this component
+            </summary>
+        </member>
+        <member name="T:TraceLabSDK.IComponent">
+            <summary>
+            The interface that must be implemented by a component
+            </summary>
+        </member>
+        <member name="M:TraceLabSDK.IComponent.PreCompute">
+            <summary>
+            Performs any pre-compute setup that is needed.  This is run immediately prior to <c>Compute</c>.
+            </summary>
+        </member>
+        <member name="M:TraceLabSDK.IComponent.Compute">
+            <summary>
+            Called when the component should do it's actual work.  
+            </summary>
+            <remarks>Any exception thrown will cause <c>Compute</c> to be treated as failed.</remarks>
+        </member>
+        <member name="M:TraceLabSDK.IComponent.PostCompute">
+            <summary>
+            Performs any processing necessary to shutdown/release systems or memory that the component might be holding on to prior to unload.
+            </summary>
+            <remarks>It's important to be aware that <c>PostCompute</c> will be called regardless of whether <c>Compute</c> or <c>PreCompute</c> succeeds or not.</remarks>
+        </member>
+        <member name="P:TraceLabSDK.IComponent.Workspace">
+            <summary>
+            The component's own personal phone-line to the Workspace.
+            </summary>
+        </member>
+        <member name="P:TraceLabSDK.IComponent.Configuration">
+            <summary>
+            An object that contains configuration properties for this component
             </summary>
         </member>
         <member name="T:TraceLabSDK.ComponentAttribute">
@@ -4584,65 +4643,6 @@
             <param name="message">A string to be written.</param>
             <param name="exception">An exception to be logged.</param>
         </member>
-        <member name="T:TraceLabSDK.Component.Config.FilePath">
-            <summary>
-            Used to represent a FilePath in a Configuration object
-            
-            Any FilePaths will be displayed with a special editor when displaying the configuration of a component.
-            </summary>
-        </member>
-        <member name="M:TraceLabSDK.Component.Config.FilePath.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:TraceLabSDK.Component.Config.FilePath"/> class.  Used for XML serialization ONLY.
-            </summary>
-        </member>
-        <member name="M:TraceLabSDK.Component.Config.FilePath.op_Implicit(TraceLabSDK.Component.Config.FilePath)~System.String">
-            <summary>
-            Performs an implicit conversion from <see cref="T:TraceLabSDK.Component.Config.FilePath"/> to <see cref="T:System.String"/>.
-            </summary>
-            <param name="path">The path.</param>
-            <returns>
-            The result of the conversion.
-            </returns>
-        </member>
-        <member name="M:TraceLabSDK.Component.Config.FilePath.ReadXml(System.Xml.XmlReader)">
-            <summary>
-            Generates an object from its XML representation.
-            </summary>
-            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> stream from which the object is deserialized.</param>
-        </member>
-        <member name="F:TraceLabSDK.Component.Config.FilePath.relativeToDataRoot">
-            <summary>
-            If read FilePath was version1 the path was relative to the dataroot, not experiment location root. It has to be transformed in post process.
-            </summary>
-        </member>
-        <member name="M:TraceLabSDK.Component.Config.FilePath.WriteXml(System.Xml.XmlWriter)">
-            <summary>
-            Converts an object into its XML representation.
-            </summary>
-            <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized.</param>
-        </member>
-        <member name="P:TraceLabSDK.Component.Config.FilePath.Relative">
-            <summary>
-            Gets or sets the string value representing the path itself.
-            </summary>
-            <value>
-            The path.
-            </value>
-        </member>
-        <member name="P:TraceLabSDK.Component.Config.FilePath.Absolute">
-            <summary>
-            Gets or sets the absolute path represented by this FilePath
-            </summary>
-            <value>
-            The absolute path.
-            </value>
-        </member>
-        <member name="P:TraceLabSDK.Component.Config.FilePath.DataRoot">
-            <summary>
-            Gets the data root of this FilePath.
-            </summary>
-        </member>
         <member name="T:TraceLabSDK.IOSpecAttribute">
             <summary>
             This attribute is used to declare what inputs or outputs a Component has.
@@ -4722,22 +4722,6 @@
             Represents the interface to a user control depicting the progress of an operation.
             </summary>
         </member>
-        <member name="M:TraceLabSDK.IProgress.Reset">
-            <summary>
-            Resets the current progress.
-            </summary>
-        </member>
-        <member name="M:TraceLabSDK.IProgress.Increment">
-            <summary>
-            Increments the current progress to the next step.
-            </summary>
-        </member>
-        <member name="M:TraceLabSDK.IProgress.SetError(System.Boolean)">
-            <summary>
-            Whether the Progress implementation should change it's display to display an error
-            </summary>
-            <param name="hasError">if set to <c>true</c> then an error has occurred in whatever is/was processing.</param>
-        </member>
         <member name="P:TraceLabSDK.IProgress.IsIndeterminate">
             <summary>
             Gets or sets a value indicating whether the progress of whatever is processing is indeterminate.
@@ -4775,24 +4759,25 @@
             This is usually a description of what the current step is doing.
             </remarks>
         </member>
+        <member name="M:TraceLabSDK.IProgress.Reset">
+            <summary>
+            Resets the current progress.
+            </summary>
+        </member>
+        <member name="M:TraceLabSDK.IProgress.Increment">
+            <summary>
+            Increments the current progress to the next step.
+            </summary>
+        </member>
+        <member name="M:TraceLabSDK.IProgress.SetError(System.Boolean)">
+            <summary>
+            Whether the Progress implementation should change it's display to display an error
+            </summary>
+            <param name="hasError">if set to <c>true</c> then an error has occurred in whatever is/was processing.</param>
+        </member>
         <member name="T:TraceLabSDK.NamespaceDoc">
             <summary>
             The TraceLabSDK namespace contains all of the classes and interfaces necessary to create a component for TraceLab.
-            </summary>
-        </member>
-        <member name="T:TraceLab.Core.Serialization.SerializerKey">
-            <summary>
-            A private helper class for use within the XmlSerializerFactory
-            </summary>
-        </member>
-        <member name="T:TraceLab.Core.Serialization.XmlSerializerFactory">
-            <summary>
-            A Factory/cache for XmlSerializers
-            
-            Due to the limitations of the XmlSerializer constructor, when using the extended constructor (with supporting types)
-            a new assembly is ALWAYS generated.  If you're doing a lot of serialization, this will get expensive very quickly.
-            
-            The solution that we've chosen for now is to cache the XmlSerializers based on the types that are being deserialized.
             </summary>
         </member>
         <member name="T:TraceLabSDK.WorkspaceTypeAttribute">
@@ -4866,6 +4851,14 @@
             The <see cref="T:System.Collections.Generic.ICollection`1"/> is read-only.
               </exception>
         </member>
+        <member name="P:TraceLabSDK.MultiDictionary`2.Count">
+            <summary>
+            Gets the number of elements contained in the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+            </summary>
+            <returns>
+            The number of elements contained in the <see cref="T:System.Collections.Generic.ICollection`1"/>.
+              </returns>
+        </member>
         <member name="M:TraceLabSDK.MultiDictionary`2.Add(`0,System.Collections.Generic.IEnumerable{`1})">
             <summary>
             Adds an element with the provided key and value to the <see cref="T:System.Collections.Generic.IDictionary`2"/>.
@@ -4894,6 +4887,14 @@
             <exception cref="T:System.ArgumentNullException"><paramref name="key"/> is null.
               </exception>
         </member>
+        <member name="P:TraceLabSDK.MultiDictionary`2.Keys">
+            <summary>
+            Gets an <see cref="T:System.Collections.Generic.ICollection`1"/> containing the keys of the <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.Generic.ICollection`1"/> containing the keys of the object that implements <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+              </returns>
+        </member>
         <member name="M:TraceLabSDK.MultiDictionary`2.Remove(`0)">
             <summary>
             Removes all elements from a given key
@@ -4913,6 +4914,33 @@
             <exception cref="T:System.ArgumentNullException"><paramref name="key"/> is null.
               </exception>
         </member>
+        <member name="P:TraceLabSDK.MultiDictionary`2.Values">
+            <summary>
+            Gets an <see cref="T:System.Collections.Generic.ICollection`1"/> containing the values in the <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.Generic.ICollection`1"/> containing the values in the object that implements <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+              </returns>
+        </member>
+        <member name="P:TraceLabSDK.MultiDictionary`2.Item(`0)">
+            <summary>
+            Gets or sets the element with the specified key.
+            </summary>
+            <returns>
+            The element with the specified key.
+              </returns>
+              
+            <exception cref="T:System.ArgumentNullException"><paramref name="key"/> is null.
+              </exception>
+              
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException">
+            The property is retrieved and <paramref name="key"/> is not found.
+              </exception>
+              
+            <exception cref="T:System.NotSupportedException">
+            The property is set and the <see cref="T:System.Collections.Generic.IDictionary`2"/> is read-only.
+              </exception>
+        </member>
         <member name="M:TraceLabSDK.MultiDictionary`2.GetEnumerator">
             <summary>
             Returns an enumerator that iterates through the collection.
@@ -4921,7 +4949,43 @@
             A <see cref="T:System.Collections.Generic.IEnumerator`1"/> that can be used to iterate through the collection.
             </returns>
         </member>
+        <member name="T:TraceLabSDK.MultiDictionary`2.Enumerator">
+            <summary>
+            An enumerator for iterating through a MultiDictionary.
+            </summary>
+        </member>
+        <member name="M:TraceLabSDK.MultiDictionary`2.Enumerator.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:TraceLabSDK.MultiDictionary`2.Enumerator.MoveNext">
+            <summary>
+            Advances the enumerator to the next element of the collection.
+            </summary>
+            <returns>
+            true if the enumerator was successfully advanced to the next element; false if the enumerator has passed the end of the collection.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            The collection was modified after the enumerator was created.
+              </exception>
+        </member>
+        <member name="P:TraceLabSDK.MultiDictionary`2.Enumerator.Current">
+            <summary>
+            Gets the current.
+            </summary>
+        </member>
+        <member name="E:TraceLabSDK.MultiDictionary`2.CollectionChanged">
+            <summary>
+            Occurs when the collection changes.
+            </summary>
+        </member>
         <member name="F:TraceLabSDK.MultiDictionary`2.m_propertyChanged">
+            <summary>
+            Occurs when a property value changes.
+            </summary>
+        </member>
+        <member name="E:TraceLabSDK.MultiDictionary`2.PropertyChanged">
             <summary>
             Occurs when a property value changes.
             </summary>
@@ -4973,85 +5037,6 @@
             <exception cref="T:System.Runtime.Serialization.SerializationException">
             The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> object associated with the current <see cref="T:System.Collections.Generic.Dictionary`2"/> instance is invalid.
               </exception>
-        </member>
-        <member name="P:TraceLabSDK.MultiDictionary`2.Count">
-            <summary>
-            Gets the number of elements contained in the <see cref="T:System.Collections.Generic.ICollection`1"/>.
-            </summary>
-            <returns>
-            The number of elements contained in the <see cref="T:System.Collections.Generic.ICollection`1"/>.
-              </returns>
-        </member>
-        <member name="P:TraceLabSDK.MultiDictionary`2.Keys">
-            <summary>
-            Gets an <see cref="T:System.Collections.Generic.ICollection`1"/> containing the keys of the <see cref="T:System.Collections.Generic.IDictionary`2"/>.
-            </summary>
-            <returns>
-            An <see cref="T:System.Collections.Generic.ICollection`1"/> containing the keys of the object that implements <see cref="T:System.Collections.Generic.IDictionary`2"/>.
-              </returns>
-        </member>
-        <member name="P:TraceLabSDK.MultiDictionary`2.Values">
-            <summary>
-            Gets an <see cref="T:System.Collections.Generic.ICollection`1"/> containing the values in the <see cref="T:System.Collections.Generic.IDictionary`2"/>.
-            </summary>
-            <returns>
-            An <see cref="T:System.Collections.Generic.ICollection`1"/> containing the values in the object that implements <see cref="T:System.Collections.Generic.IDictionary`2"/>.
-              </returns>
-        </member>
-        <member name="P:TraceLabSDK.MultiDictionary`2.Item(`0)">
-            <summary>
-            Gets or sets the element with the specified key.
-            </summary>
-            <returns>
-            The element with the specified key.
-              </returns>
-              
-            <exception cref="T:System.ArgumentNullException"><paramref name="key"/> is null.
-              </exception>
-              
-            <exception cref="T:System.Collections.Generic.KeyNotFoundException">
-            The property is retrieved and <paramref name="key"/> is not found.
-              </exception>
-              
-            <exception cref="T:System.NotSupportedException">
-            The property is set and the <see cref="T:System.Collections.Generic.IDictionary`2"/> is read-only.
-              </exception>
-        </member>
-        <member name="E:TraceLabSDK.MultiDictionary`2.CollectionChanged">
-            <summary>
-            Occurs when the collection changes.
-            </summary>
-        </member>
-        <member name="E:TraceLabSDK.MultiDictionary`2.PropertyChanged">
-            <summary>
-            Occurs when a property value changes.
-            </summary>
-        </member>
-        <member name="T:TraceLabSDK.MultiDictionary`2.Enumerator">
-            <summary>
-            An enumerator for iterating through a MultiDictionary.
-            </summary>
-        </member>
-        <member name="M:TraceLabSDK.MultiDictionary`2.Enumerator.Dispose">
-            <summary>
-            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
-            </summary>
-        </member>
-        <member name="M:TraceLabSDK.MultiDictionary`2.Enumerator.MoveNext">
-            <summary>
-            Advances the enumerator to the next element of the collection.
-            </summary>
-            <returns>
-            true if the enumerator was successfully advanced to the next element; false if the enumerator has passed the end of the collection.
-            </returns>
-            <exception cref="T:System.InvalidOperationException">
-            The collection was modified after the enumerator was created.
-              </exception>
-        </member>
-        <member name="P:TraceLabSDK.MultiDictionary`2.Enumerator.Current">
-            <summary>
-            Gets the current.
-            </summary>
         </member>
         <member name="T:TraceLabSDK.SerializableDictionary`2">
             <summary>
@@ -5137,6 +5122,21 @@
             </summary>
             <param name="type">The type.</param>
             <returns></returns>
+        </member>
+        <member name="T:TraceLab.Core.Serialization.SerializerKey">
+            <summary>
+            A private helper class for use within the XmlSerializerFactory
+            </summary>
+        </member>
+        <member name="T:TraceLab.Core.Serialization.XmlSerializerFactory">
+            <summary>
+            A Factory/cache for XmlSerializers
+            
+            Due to the limitations of the XmlSerializer constructor, when using the extended constructor (with supporting types)
+            a new assembly is ALWAYS generated.  If you're doing a lot of serialization, this will get expensive very quickly.
+            
+            The solution that we've chosen for now is to cache the XmlSerializers based on the types that are being deserialized.
+            </summary>
         </member>
     </members>
 </doc>

@@ -47,13 +47,15 @@
                     </div>  
 
                     <asp:Button ID="OpenButton" runat="server" Text="Open" class="btn btn-default btn-lg" OnClick="OpenButton_Click"/>
-                    <asp:TextBox ID="OpenDirText" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="OpenDirText" runat="server" Width="799px" Text ="C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"></asp:TextBox>
+                    
+                    <asp:Button id="Run" type="button" runat="server" class="btn btn-default btn-lg" OnClick="Run_Click" />
+                      <!--span class="glyphicon glyphicon-play" aria-hidden="true"></!--span-->
+                    
                     <button type="button" class="btn btn-default btn-lg">
-                      <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                      <!--span class="glyphicon glyphicon-stop" aria-hidden="true"></!--span-->
                     </button>
-                    <button type="button" class="btn btn-default btn-lg">
-                      <span class="glyphicon glyphicon-stop" aria-hidden="true"></span>
-                    </button>
+                    <asp:Button ID="ReloadLog" runat="server" Text="Reload Log" class="btn btn-default btn-lg" OnClick="Log_Click"/>
                 </div>
             </div><!-- Buttons for Start and Stop-->
 
@@ -61,17 +63,25 @@
                 <div class="col-md-4" >
                     <div class="panel panel-primary fill-body">
                         <div class="panel-heading">Components</div>
-                        <div class="panel-body"></div>
+                        <div class="panel-body">
+                            <asp:Label ID="Components" runat="server" Text=""></asp:Label>
+                        </div>
                     </div>
                     <div class="panel panel-primary fill-body">
-                        <div class="panel-heading">Runtime Data</div>
-                        <div class="panel-body"></div>
+                        <div class="panel-heading">Workspace</div>
+                        <div class="panel-body">
+                            <asp:Label ID="Workspace" runat="server" Text=""></asp:Label>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-8 " >              
                     <div class="panel panel-primary fill-body-double">
-                        <div class="panel-heading">Workspace</div>
-                        <div class="panel-body"></div>
+                        <div class="panel-heading">Graph</div>
+                        <div class="panel-body">
+                            <asp:Label ID="Labelconsole" runat="server" Text="Console: <br/>"></asp:Label>
+                            <asp:Label ID="Console" runat="server" Text=""></asp:Label>
+
+                        </div>
                     </div>
                 </div>
             </div><!-- Main workspace-->
