@@ -1,6 +1,0 @@
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\lib\TraceLabSDK.XML
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\lib\TraceLabSDK.dll
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\lib\TraceLabSDK.pdb
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabSDK\obj\Debug\TraceLabSDK.csprojResolveAssemblyReference.cache
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabSDK\obj\Debug\TraceLabSDK.dll
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabSDK\obj\Debug\TraceLabSDK.pdb

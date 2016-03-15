@@ -1,9 +1,0 @@
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\bin\Debug\TraceLab.Core.dll
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\bin\Debug\TraceLab.Core.pdb
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\bin\Debug\TraceLab.Core.dll.CodeAnalysisLog.xml
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\bin\Debug\TraceLab.Core.dll.lastcodeanalysissucceeded
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLab.Core\obj\Debug\TraceLab.Core.csprojResolveAssemblyReference.cache
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLab.Core\obj\Debug\Interop.mscoree.dll
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLab.Core\obj\Debug\TraceLab.Core.csproj.ResolveComReference.cache
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLab.Core\obj\Debug\TraceLab.Core.dll
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLab.Core\obj\Debug\TraceLab.Core.pdb
