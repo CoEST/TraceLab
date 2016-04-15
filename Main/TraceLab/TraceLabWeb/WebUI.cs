@@ -1,20 +1,4 @@
-﻿// TraceLab - Software Traceability Instrument to Facilitate and Empower Traceability Research
-// Copyright (C) 2012-2013 CoEST - National Science Foundation MRI-R2 Grant # CNS: 0959924
-//
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with this program.  If not, see<http://www.gnu.org/licenses/>.
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,11 +7,11 @@ using System.Collections.Specialized;
 using TraceLab.Core.Components;
 using TraceLab.Core.Workspaces;
 
-namespace TraceLabConsole
+namespace TraceLabWeb
 {
-    public class ConsoleUI
+    class WebUI
     {
-        private ConsoleUI(ApplicationViewModel application)
+        private WebUI(ApplicationViewModel application)
         {
             Application = application;
 
@@ -40,70 +24,32 @@ namespace TraceLabConsole
             //attach event to the rescanned event of components library, so that console prompt is shown after rescan is done
             Application.ComponentLibraryViewModel.Rescanned += new EventHandler(ComponentLibraryViewModel_Rescanned);
         }
-
+        
         public static void Run(ApplicationViewModel application)
         {
-            if (ConsoleInstance != null)
+            if (WebInstance != null)
             {
                 throw new InvalidOperationException("Console UI is already running!");
             }
 
-            ConsoleInstance = new ConsoleUI(application);
+            WebInstance = new WebUI(application);
 
-            ConsoleInstance.ComponentLibraryScannningWaiter.Wait();
+            WebInstance.ComponentLibraryScannningWaiter.Wait();
 
-            ConsoleInstance.DisplayExistingLogs();
-            ConsoleInstance.StartListenToLogEvents();
-
-            ConsoleInstance.Exit = false;
-
-            ConsoleInstance.ParseInput("open: C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml");
-            ConsoleInstance.ParseInput("run");
-
+            //WebInstance.Exit = false;
         }
 
         public static void RunCommand(string input)
         {
-            if (ConsoleInstance.ParseInput(input) == false)
+            if (WebInstance.ParseInput(input) == false)
             {
                 Console.WriteLine("Command is incorrect. Display commands using ?");
             }
         }
-        /*    
-            public static void Run(ApplicationViewModel application)
-            {
-                if (ConsoleInstance != null)
-                {
-                    throw new InvalidOperationException("Console UI is already running!");
-                }
-
-                ConsoleInstance = new ConsoleUI(application);
-
-                ConsoleInstance.ComponentLibraryScannningWaiter.Wait();
-
-                ConsoleInstance.DisplayExistingLogs();
-                ConsoleInstance.StartListenToLogEvents();
-
-                ConsoleInstance.Exit = false;
-
-                while (!ConsoleInstance.Exit)
-                {
-                    Console.Write("#> ");
-                    string input = Console.ReadLine();
-                    if (ConsoleInstance.ParseInput(input) == false)
-                    {
-                        Console.WriteLine("Command is incorrect. Display commands using ?");
-                    }
-                }
-
-                //cleanup
-                LogViewModel.DestroyLogTargets();
-            }
-            */
-
+                
         #region Private Properties
 
-        private static ConsoleUI ConsoleInstance
+        private static WebUI WebInstance
         {
             get;
             set;
@@ -139,7 +85,7 @@ namespace TraceLabConsole
 
         private static string stopcommand = "stop";
 
-        static ConsoleUI()
+        static WebUI()
         {
             Commands = new Dictionary<string, Action<string>>();
             Commands["run"] = new Action<string>(RunExperiment);
@@ -175,7 +121,7 @@ namespace TraceLabConsole
 
         private static void DisplayExperimentInfo(string value)
         {
-            if (ConsoleInstance.Application.Experiment == null)
+            if (WebInstance.Application.Experiment == null)
             {
                 Console.WriteLine("\tExperiment has not been opened yet.");
                 Console.WriteLine("\tOpen experiment first: open:[filepath]");
@@ -183,22 +129,22 @@ namespace TraceLabConsole
             else
             {
                 Console.WriteLine("Experiment information");
-                Console.WriteLine("\tName:\t {0}",ConsoleInstance.Application.Experiment.ExperimentInfo.Name);
-                Console.WriteLine("\tFilePath:\t {0}",ConsoleInstance.Application.Experiment.ExperimentInfo.FilePath);
-                Console.WriteLine("\tAuthor:\t {0}",ConsoleInstance.Application.Experiment.ExperimentInfo.Author);
-                Console.WriteLine("\tContributors:\t {0}",ConsoleInstance.Application.Experiment.ExperimentInfo.Contributors);
-                Console.WriteLine("\tDescription:\t {0}",ConsoleInstance.Application.Experiment.ExperimentInfo.Description);
-                Console.WriteLine("\tVertices count:\t {0}", ConsoleInstance.Application.Experiment.VertexCount);
+                Console.WriteLine("\tName:\t {0}",WebInstance.Application.Experiment.ExperimentInfo.Name);
+                Console.WriteLine("\tFilePath:\t {0}",WebInstance.Application.Experiment.ExperimentInfo.FilePath);
+                Console.WriteLine("\tAuthor:\t {0}",WebInstance.Application.Experiment.ExperimentInfo.Author);
+                Console.WriteLine("\tContributors:\t {0}",WebInstance.Application.Experiment.ExperimentInfo.Contributors);
+                Console.WriteLine("\tDescription:\t {0}",WebInstance.Application.Experiment.ExperimentInfo.Description);
+                Console.WriteLine("\tVertices count:\t {0}", WebInstance.Application.Experiment.VertexCount);
             }
         }
 
         private static void RunExperiment(string value)
         {
-            var experiment = ConsoleInstance.Application.Experiment;
+            var experiment = WebInstance.Application.Experiment;
             if (experiment != null)
             {
                 ExperimentProgress progress = new ExperimentProgress();
-                experiment.RunExperiment(progress, ConsoleInstance.Application.Workspace, ComponentsLibrary.Instance);
+                experiment.RunExperiment(progress, WebInstance.Application.Workspace, ComponentsLibrary.Instance);
             }
             else
             {
@@ -209,7 +155,7 @@ namespace TraceLabConsole
 
         private static void StopExperiment(string value)
         {
-            var experiment = ConsoleInstance.Application.Experiment;
+            var experiment = WebInstance.Application.Experiment;
             if (experiment != null && experiment.IsExperimentRunning == true)
             {
                 Console.WriteLine("\tStop experiment signaled. Stops experiment after all currently running components have finished processing");
@@ -225,7 +171,6 @@ namespace TraceLabConsole
         {
             try
             {
-                value = "C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml";
                 var experiment = TraceLab.Core.Experiments.ExperimentManager.Load(value, ComponentsLibrary.Instance);
                 if (experiment != null)
                 {
@@ -237,25 +182,25 @@ namespace TraceLabConsole
             catch (TraceLab.Core.Exceptions.ExperimentLoadException ex)
             {
                 string msg = String.Format("Unable to open the file {0}. Error: {1}", value, ex.Message);
-                NLog.LogManager.GetCurrentClassLogger().Warn(msg);
+                //NLog.LogManager.GetCurrentClassLogger().Warn(msg);
             }
             catch (Exception ex)
             {
                 string msg = String.Format("Unable to open the file {0}. Error: {1}", value, ex.Message);
-                NLog.LogManager.GetCurrentClassLogger().Warn(msg);
+               // NLog.LogManager.GetCurrentClassLogger().Warn(msg);
             }
         }
 
         private static void DisplayWorkspace(string value)
         {
             Console.WriteLine("Workspace:");
-            if (ConsoleInstance.Application.Workspace.Units.Count == 0)
+            if (WebInstance.Application.Workspace.Units.Count == 0)
             {
                 Console.WriteLine("\tWorkspace is empty");
             }
             else
             {
-                foreach (WorkspaceUnit unitData in ConsoleInstance.Application.Workspace.Units)
+                foreach (WorkspaceUnit unitData in WebInstance.Application.Workspace.Units)
                 {
                     Console.WriteLine("\t{0}", unitData.FriendlyUnitName);
                 }
@@ -265,7 +210,7 @@ namespace TraceLabConsole
         private static void DisplayComponents(string value)
         {
             Console.WriteLine("Components: ");
-            foreach (MetadataDefinition definition in ConsoleInstance.Application.ComponentLibraryViewModel.ComponentsCollection)
+            foreach (MetadataDefinition definition in WebInstance.Application.ComponentLibraryViewModel.ComponentsCollection)
             {
                 Console.WriteLine("\t{0}", definition.Label);
             }
@@ -273,7 +218,7 @@ namespace TraceLabConsole
 
         private static void ExitProgram(string value)
         {
-            ConsoleInstance.Exit = true;
+            WebInstance.Exit = true;
         }
 
         #endregion Console Commands
@@ -282,13 +227,13 @@ namespace TraceLabConsole
         
         private void ComponentLibraryViewModel_Rescanned(object sender, EventArgs e)
         {
-            var experiment = ConsoleInstance.Application.Experiment;
+            var experiment = WebInstance.Application.Experiment;
             if (experiment != null)
             {
                 var refreshedExperiment = TraceLab.Core.Experiments.ExperimentManager.ReloadExperiment(experiment, ComponentsLibrary.Instance);
                 ReloadApplicationViewModel(refreshedExperiment);
             }
-            NLog.LogManager.GetCurrentClassLogger().Info("Components Library scanning finished successfully!");
+            //NLog.LogManager.GetCurrentClassLogger().Info("Components Library scanning finished successfully!");
             ComponentLibraryScannningWaiter.Set();
         }
 
@@ -339,7 +284,7 @@ namespace TraceLabConsole
                 Action<string> func = null;
                 if (Commands.TryGetValue(command, out func) && func != null)
                 {
-                    var currentExperiment = ConsoleInstance.Application.Experiment;
+                    var currentExperiment = WebInstance.Application.Experiment;
                     if (currentExperiment != null && currentExperiment.IsExperimentRunning && command.Equals(stopcommand) == false)
                     {
                         Console.WriteLine("\tCurrently there is running experiment, and this command cannot be executed.");
@@ -365,7 +310,7 @@ namespace TraceLabConsole
 
         private static void PrintLog(LogInfo logInfo)
         {
-            Console.WriteLine("{0} from '{1}': Message: {2}", logInfo.Level, logInfo.SourceName, logInfo.Message);
+            //Console.WriteLine("{0} from '{1}': Message: {2}", logInfo.Level, logInfo.SourceName, logInfo.Message);
             if (logInfo.Exception != null)
             {
                 Console.WriteLine(logInfo.Exception.ToString());
@@ -374,9 +319,9 @@ namespace TraceLabConsole
 
         private static void ReloadApplicationViewModel(TraceLab.Core.Experiments.Experiment experiment)
         {
-            ConsoleInstance.StopListenToLogEvents();
-            ConsoleInstance.Application = ApplicationViewModel.CreateNewApplicationViewModel(ConsoleInstance.Application, experiment);
-            ConsoleInstance.StartListenToLogEvents();
+            WebInstance.StopListenToLogEvents();
+            WebInstance.Application = ApplicationViewModel.CreateNewApplicationViewModel(WebInstance.Application, experiment);
+            WebInstance.StartListenToLogEvents();
         }
 
         #endregion

@@ -55,7 +55,7 @@
       <Project>{e9b1767c-db2a-4b16-b6ab-02cea4db3b6d}</Project>
       <Name>TraceLabSDK</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TraceLab\TraceLab.csproj">
+    <ProjectReference Include="..\TraceLab.csproj">
       <Project>{7286bbd3-327e-4078-a693-6f6ac53d72ed}</Project>
       <Name>TraceLab</Name>
     </ProjectReference>

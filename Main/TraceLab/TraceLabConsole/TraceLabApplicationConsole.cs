@@ -24,7 +24,7 @@ namespace TraceLabConsole
     /// <summary>
     /// TraceLab Application with console user interface
     /// </summary>
-    class TraceLabApplicationConsole : TraceLab.TraceLabApplication
+    public class TraceLabApplicationConsole : TraceLab.TraceLabApplication
     {
         protected override void RunUI()
         {

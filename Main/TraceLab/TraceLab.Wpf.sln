@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLab", "TraceLab.csproj", "{7286BBD3-327E-4078-A693-6F6AC53D72ED}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLabSDK", "TraceLabSDK\TraceLabSDK.csproj", "{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}"
@@ -25,10 +27,31 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackageBuilder", "PackageBu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLabConsole", "TraceLabConsole\TraceLabConsole.csproj", "{23CFB202-288D-4574-AA4E-D8FBA7BC9A5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceLabWeb", "TraceLabWeb\TraceLabWeb.csproj", "{C03619B0-8824-441D-A80D-5ED6C48783FF}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebService", "http://localhost:49460", "{940CF486-C926-4463-ADB2-FAB076756051}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{23cfb202-288d-4574-aa4e-d8fba7bc9a5c}|TraceLabConsole.dll;{D22496F8-7E72-4B36-9FCA-630CD1679943}|TraceLab.Core.dll;{E9B1767C-DB2A-4B16-B6AB-02CEA4DB3B6D}|TraceLabSDK.dll;{94A3E4E6-2EB7-4715-8A11-D8CF119D7458}|TraceLabSDK.Types.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_49460"
+		Debug.AspNetCompiler.PhysicalPath = "..\WebService\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49460\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_49460"
+		Release.AspNetCompiler.PhysicalPath = "..\WebService\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49460\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\WebService\"
+	EndProjectSection
+EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = TraceLab.Wpf.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -176,8 +199,44 @@ Global
 		{23CFB202-288D-4574-AA4E-D8FBA7BC9A5C}.Release|Mixed Platforms.Build.0 = Release|x86
 		{23CFB202-288D-4574-AA4E-D8FBA7BC9A5C}.Release|x86.ActiveCfg = Release|x86
 		{23CFB202-288D-4574-AA4E-D8FBA7BC9A5C}.Release|x86.Build.0 = Release|x86
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Deploy|Any CPU.ActiveCfg = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Deploy|Any CPU.Build.0 = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Deploy|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Deploy|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Deploy|x86.ActiveCfg = Debug|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C03619B0-8824-441D-A80D-5ED6C48783FF}.Release|x86.ActiveCfg = Release|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Debug|x86.Build.0 = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Deploy|Any CPU.ActiveCfg = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Deploy|Any CPU.Build.0 = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Deploy|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Deploy|Mixed Platforms.Build.0 = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Deploy|x86.ActiveCfg = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Deploy|x86.Build.0 = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Release|x86.ActiveCfg = Debug|Any CPU
+		{940CF486-C926-4463-ADB2-FAB076756051}.Release|x86.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = TraceLab.Wpf.vsmdi
 	EndGlobalSection
 EndGlobal

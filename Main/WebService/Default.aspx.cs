@@ -11,40 +11,40 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        var app = TraceLabApplicationWebConsole.Instance;
-        Label5.Text = app.GetLog();
+       // var app = TraceLabApplicationWebConsole.Instance;
+     //   Label5.Text = app.GetLog();
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
         //WebConsoleAdapter.Run();
         
-        var app = TraceLabApplicationWebConsole.Instance;        
-        app.DisplayHelp();
+      //  var app = TraceLabApplicationWebConsole.Instance;        
+       // app.DisplayHelp();
 
-        Label1.Text = app.GetLog();
+       // Label1.Text = app.GetLog();
     }
 
     protected void Button2_Click(object sender, EventArgs e)
     {
-        var app = TraceLabApplicationWebConsole.Instance;
-        app.OpenExperiment(TextBox1.Text);
+    //    var app = TraceLabApplicationWebConsole.Instance;
+    //    app.OpenExperiment(TextBox1.Text);
         //app.DisplayHelp();
-        Label2.Text = app.GetLog();
+      //  Label2.Text = app.GetLog();
     }
 
 
     protected void Button3_Click(object sender, EventArgs e)
     {
-        var app = TraceLabApplicationWebConsole.Instance;
-        app.RunExperiment();
+    //    var app = TraceLabApplicationWebConsole.Instance;
+      //  app.RunExperiment();
         //app.DisplayHelp();
-        Label2.Text = app.GetLog();
+       // Label2.Text = app.GetLog();
     }
 
     protected void Button4_Click(object sender, EventArgs e)
     {
-        var app = TraceLabApplicationWebConsole.Instance;
+    //    var app = TraceLabApplicationWebConsole.Instance;
         
-        Label2.Text = app.GetLog();
+       // Label2.Text = app.GetLog();
     }
 }
