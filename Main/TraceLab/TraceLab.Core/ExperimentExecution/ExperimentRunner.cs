@@ -25,6 +25,8 @@ using TraceLab.Core.Exceptions;
 using System.Collections.ObjectModel;
 using TraceLab.Core.Utilities;
 using System.Collections;
+using System.Diagnostics;
+
 
 namespace TraceLab.Core.ExperimentExecution
 {
@@ -95,6 +97,7 @@ namespace TraceLab.Core.ExperimentExecution
         {
             try
             {
+
                 bool successful = true;
                 string endMessage = Messages.ExperimentRunnerSuccessMessage;
 

@@ -57,9 +57,16 @@ namespace TraceLabConsole
 
             ConsoleInstance.Exit = false;
 
+            
             ConsoleInstance.ParseInput("open: C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml");
             ConsoleInstance.ParseInput("run");
 
+            while (true) {
+                Console.Write("#> ");
+                string input = Console.ReadLine();
+
+            };
+            
         }
 
         public static void RunCommand(string input)

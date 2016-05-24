@@ -16,7 +16,7 @@ public partial class TraceLab_UI : System.Web.UI.Page
         var app = new TraceLabConsole.TraceLabApplicationConsole();
         app.Run(args);
 
-        String Command = "open: " + OpenDirText.Text;
+        String Command = "open: " + "C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml";
         Adaptor.RunCommand("Open", Command);
         Adaptor.RunCommand("Run", "run");
 

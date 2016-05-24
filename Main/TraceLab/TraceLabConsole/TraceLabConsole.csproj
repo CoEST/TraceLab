@@ -6,7 +6,7 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{23CFB202-288D-4574-AA4E-D8FBA7BC9A5C}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TraceLabConsole</RootNamespace>
     <AssemblyName>TraceLabConsole</AssemblyName>

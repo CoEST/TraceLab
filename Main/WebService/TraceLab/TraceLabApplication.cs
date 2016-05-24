@@ -36,7 +36,7 @@ namespace TraceLab
         {
             Initialize (args);
 
-            ApplicationViewModel.RegisteredUser = KeyValidator.ValidateKey (UserDirectory);
+       //     ApplicationViewModel.RegisteredUser = KeyValidator.ValidateKey (UserDirectory);
 
             if (InitViewModel ()) {
                 RunUI ();
@@ -492,8 +492,8 @@ namespace TraceLab
 
                         if (!TraceLabSDK.RuntimeInfo.IsRunInMono)
                         {
-                            System.Windows.Forms.MessageBox.Show(msg, "Experiment Loading Failure", 
-                                                                 System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Exclamation);
+                      //      System.Windows.Forms.MessageBox.Show(msg, "Experiment Loading Failure", 
+                                  //                               System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Exclamation);
                         }
                     }
                 }
@@ -566,8 +566,9 @@ namespace TraceLab
         /// <returns>Number of packages successfully unpacked.</returns>
         private static bool UnpackNewPackagesIn(string packagesDirectory)
         {
+            
             int packagesInstalled = 0;
-
+            /*
             foreach (string packagePath in PackagesToInstall)
             {
                 try
@@ -577,12 +578,12 @@ namespace TraceLab
                         bool createPkg = true;
                         Package pkg = new Package(stream);
                         String pkgDirectory = packagesDirectory + "\\" + pkg.Name;
-
+                       
                         if (Directory.Exists(pkgDirectory))
                         {
-                           var result = System.Windows.Forms.MessageBox.Show("Package \"" + pkg.Name + "\" already exists.  Would you like to overwrite it?",
-                                            "Package Overwrite Confirmation", System.Windows.Forms.MessageBoxButtons.YesNo,
-                                            System.Windows.Forms.MessageBoxIcon.Question);
+                         //  var result = System.Windows.Forms.MessageBox.Show("Package \"" + pkg.Name + "\" already exists.  Would you like to overwrite it?",
+                                      //      "Package Overwrite Confirmation", System.Windows.Forms.MessageBoxButtons.YesNo,
+                                        //    System.Windows.Forms.MessageBoxIcon.Question);
 
                             if (result == System.Windows.Forms.DialogResult.Yes)
                             {
@@ -632,6 +633,7 @@ namespace TraceLab
                         System.Windows.Forms.MessageBoxIcon.Error);
                 }
             }
+            */
             return (packagesInstalled > 0);
         }
 

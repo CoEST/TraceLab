@@ -41,10 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleWebAdapter.cs" />
-    <Compile Include="ExperimentProgress.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TraceLabApplicationWeb.cs" />
-    <Compile Include="WebUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TraceLab.Core\TraceLab.Core.csproj">
