@@ -33,15 +33,11 @@ C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabConsole\bin\D
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabConsole\bin\Debug\TraceLab.Core.dll
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabConsole\bin\Debug\TraceLab.exe
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabConsole\bin\Debug\TraceLabSDK.dll
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabConsole\bin\Debug\TraceLabSDK.Types.dll
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabConsole\bin\Debug\TraceLab.Core.pdb
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabConsole\bin\Debug\TraceLab.pdb
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabConsole\bin\Debug\TraceLabSDK.pdb
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabConsole\bin\Debug\TraceLabSDK.xml
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabConsole\bin\Debug\NLog.pdb
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabConsole\bin\Debug\NLog.xml
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabConsole\bin\Debug\TraceLabSDK.Types.pdb
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabConsole\bin\Debug\TraceLabSDK.Types.xml
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabConsole\obj\x86\Debug\TraceLabConsole.csprojResolveAssemblyReference.cache
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabConsole\obj\x86\Debug\TraceLabConsole.exe
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabConsole\obj\x86\Debug\TraceLabConsole.pdb

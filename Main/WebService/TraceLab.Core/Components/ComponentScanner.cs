@@ -21,6 +21,7 @@ using TraceLabSDK;
 using System.Xml.Serialization;
 using System.Xml;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace TraceLab.Core.Components
 {
@@ -184,8 +185,37 @@ namespace TraceLab.Core.Components
             try
             {
                 AssemblyFileDescriptor assemblyFile = new AssemblyFileDescriptor(assemblyPath);
-                var assm = Assembly.LoadFrom(assemblyPath);
+               /* string assemblyPath2 = System.Reflection.Assembly.GetExecutingAssembly().Location;
+                String assemblyPath3 = @"C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\Bin\SEMERU.Core.dll";
+                String assemblyPath4 = @"C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\Bin\SEMERU.Components.dll";
+                String assemblyPath5 = @"C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\Bin\SEMERU.Types.dll";
+                String assemblyPath6 = @"C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\Bin\TraceLabSDK.dll";
+                String assemblyPath7 = @"C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\Bin\TraceLabSDK.Types.dll";
+                String assemblyPath8 = @"C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\WebService\Bin\TraceLab.Core.dll";*/
 
+
+
+
+                var assm = Assembly.LoadFrom(assemblyPath);
+                /*var assm2 = Assembly.LoadFrom(assemblyPath2);
+                var assm3 = Assembly.LoadFrom(assemblyPath3);
+                var assm4 = Assembly.LoadFrom(assemblyPath4);
+                var assm5 = Assembly.LoadFrom(assemblyPath5);
+                var assm6 = Assembly.LoadFrom(assemblyPath6);
+                var assm7 = Assembly.LoadFrom(assemblyPath7);
+                var assm8 = Assembly.LoadFrom(assemblyPath8);
+
+                _AssemblyName[] references3 = assm3.GetReferencedAssemblies();
+                _AssemblyName [] references4 = assm4.GetReferencedAssemblies();
+
+
+
+                 var types2 = assm2.GetExportedTypes();
+                 var types3 = assm3.GetExportedTypes();
+                 var types4 = assm4.GetExportedTypes();*/
+                //var assm = Assembly.UnsafeLoadFrom(assemblyPath);
+                //var assm = Assembly.ReflectionOnlyLoadFrom(assemblyPath);
+                //var assm = Assembly.LoadFrom(assemblyPath);
                 //get all types from the assembly
                 var types = assm.GetExportedTypes();
                 foreach (var exportedType in types)

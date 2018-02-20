@@ -58,7 +58,7 @@ namespace TraceLabWeb
             {
                 if (INSTANCE == null)
                 {
-                    string[] args = { };
+                    string[] args = { CommandLineProcessor.SwitchCharacter + "base:C:\\Users\\cebernalc\\Documents\\GitHub\\TraceLab\\Main\\WebService\\Bin" };
                     INSTANCE = new TraceLabApplicationWebConsole();
                     INSTANCE.Run(args);
                 }

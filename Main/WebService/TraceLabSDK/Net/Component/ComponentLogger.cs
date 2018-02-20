@@ -14,10 +14,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see<http://www.gnu.org/licenses/>.
 
+using NLog;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.ComponentModel;
 using System.Security.Permissions;
 
@@ -1928,7 +1926,7 @@ namespace TraceLabSDK
     /// </summary>
     public class ComponentLoggerImplementation : MarshalByRefObject, TraceLabSDK.ComponentLogger
     {
-        private NLog.Logger m_logger;
+        private Logger m_logger;
 
         /// <summary>
         /// Obtains a lifetime service object to control the lifetime policy for this instance.

@@ -31,14 +31,10 @@ C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\bin\Debug\IKVM.Runtim
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\bin\Debug\NLog.dll
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\bin\Debug\QuickGraph.dll
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\bin\Debug\TraceLabSDK.dll
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\bin\Debug\TraceLabSDK.Types.dll
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\bin\Debug\TraceLab.Core.pdb
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\bin\Debug\TraceLabSDK.pdb
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\bin\Debug\TraceLabSDK.xml
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\bin\Debug\NLog.pdb
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\bin\Debug\NLog.xml
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\bin\Debug\TraceLabSDK.Types.pdb
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\bin\Debug\TraceLabSDK.Types.xml
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\obj\Debug\TraceLab.csprojResolveAssemblyReference.cache
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\obj\Debug\TraceLab.Properties.Resources.resources
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\obj\Debug\TraceLab.csproj.GenerateResource.Cache

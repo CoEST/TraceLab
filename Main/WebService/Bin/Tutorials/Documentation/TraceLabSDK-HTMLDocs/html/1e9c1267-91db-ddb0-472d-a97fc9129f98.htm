@@ -1,0 +1,634 @@
+﻿<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:mshelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+  <head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8" />
+    <META NAME="save" CONTENT="history" />
+    <title>Trace Method </title>
+    <meta name="Language" content="en-us" />
+    <meta name="System.Keywords" content="Trace method" />
+    <meta name="System.Keywords" content="ComponentLogger.Trace method" />
+    <meta name="Microsoft.Help.F1" content="TraceLabSDK.ComponentLogger.Trace" />
+    <meta name="Microsoft.Help.F1" content="TraceLabSDK.ComponentLogger.Trace``1" />
+    <meta name="Microsoft.Help.F1" content="TraceLabSDK.ComponentLogger.Trace``2" />
+    <meta name="Microsoft.Help.F1" content="TraceLabSDK.ComponentLogger.Trace``3" />
+    <meta name="Microsoft.Help.Id" content="Overload:TraceLabSDK.ComponentLogger.Trace" />
+    <meta name="Microsoft.Help.ContentType" content="Reference" />
+    <link rel="stylesheet" type="text/css" href="../styles/Presentation.css" />
+    <link rel="stylesheet" type="text/css" href="ms-help://Hx/HxRuntime/HxLink.css" />
+    <script type="text/javascript" src="../scripts/EventUtilities.js"> </script>
+    <script type="text/javascript" src="../scripts/SplitScreen.js"> </script>
+    <script type="text/javascript" src="../scripts/Dropdown.js"> </script>
+    <script type="text/javascript" src="../scripts/script_manifold.js"> </script>
+    <script type="text/javascript" src="../scripts/script_feedBack.js"> </script>
+    <script type="text/javascript" src="../scripts/CheckboxMenu.js"> </script>
+    <script type="text/javascript" src="../scripts/CommonUtilities.js"> </script>
+    <meta name="container" content="TraceLabSDK" />
+    <meta name="file" content="1e9c1267-91db-ddb0-472d-a97fc9129f98" />
+    <meta name="guid" content="1e9c1267-91db-ddb0-472d-a97fc9129f98" />
+    <xml>
+      <MSHelp:Attr Name="AssetID" Value="Overload:TraceLabSDK.ComponentLogger.Trace" />
+      <MSHelp:TOCTitle Title="Trace Method " />
+      <MSHelp:RLTitle Title="ComponentLogger.Trace Method  (TraceLabSDK)" />
+      <MSHelp:Keyword Index="A" Term="Overload:TraceLabSDK.ComponentLogger.Trace" />
+      <MSHelp:Keyword Index="A" Term="frlrfTraceLabSDKComponentLoggerClassTraceTopic" />
+      <MSHelp:Keyword Index="K" Term="Trace method" />
+      <MSHelp:Keyword Index="K" Term="ComponentLogger.Trace method" />
+      <MSHelp:Keyword Index="F" Term="TraceLabSDK.ComponentLogger.Trace" />
+      <MSHelp:Attr Name="DevLang" Value="CSharp" />
+      <MSHelp:Attr Name="DevLang" Value="VB" />
+      <MSHelp:Attr Name="Locale" Value="en-us" />
+      <MSHelp:Attr Name="TopicType" Value="kbSyntax" />
+      <MSHelp:Attr Name="TopicType" Value="apiref" />
+      <MSHelp:Attr Name="AssemblyVersion" Value="0.5.0.0" />
+    </xml>
+  </head>
+  <body>
+    <input type="hidden" id="userDataCache" class="userDataStyle" />
+    <input type="hidden" id="hiddenScrollOffset" />
+    <img id="collapseImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" alt="Collapse image" title="Collapse image" />
+    <img id="expandImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" alt="Expand Image" title="Expand Image" />
+    <img id="collapseAllImage" style="display:none; height:0; width:0;" src="../icons/collapse_all.gif" />
+    <img id="expandAllImage" style="display:none; height:0; width:0;" src="../icons/expand_all.gif" />
+    <img id="dropDownImage" style="display:none; height:0; width:0;" src="../icons/dropdown.gif" />
+    <img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../icons/dropdownHover.gif" />
+    <img id="copyImage" style="display:none; height:0; width:0;" src="../icons/copycode.gif" alt="Copy image" title="Copy image" />
+    <img id="copyHoverImage" style="display:none; height:0; width:0;" src="../icons/copycodeHighlight.gif" alt="CopyHover image" title="CopyHover image" />
+    <div id="header">
+      <table id="topTable" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0">
+              <img ID="toggleAllImage" class="toggleAll" src="../icons/collapse_all.gif" /> <label id="collapseAllLabel" for="toggleAllImage" style="display: none;">Collapse All</label><label id="expandAllLabel" for="toggleAllImage" style="display: none;">Expand All</label> </span>
+            <span>    </span>
+            <span id="devlangsDropdown" class="filter" tabindex="0">
+              <img id="devlangsDropdownImage" src="../icons/dropdown.gif" /> <label id="devlangsMenuAllLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: All </nobr></label><label id="devlangsMenuMultipleLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Multiple </nobr></label><label id="devlangsMenuCSharpLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: C# </nobr></label><label id="devlangsMenuVisualBasicLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual Basic </nobr></label><label id="devlangsMenuManagedCPlusPlusLabel" for="devlangsDropdownImage" style="display: none;"><nobr>Code: Visual C++ </nobr></label></span>
+            <span>    </span>
+            <span id="memberOptionsDropdown" class="filter" tabindex="0">
+              <img id="memberOptionsDropdownImage" src="../icons/dropdown.gif" /> <label id="memberOptionsMenuAllLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Show All </nobr></label><label id="memberOptionsMenuMultipleLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered </nobr></label><label id="memberOptionsMenuProtectedLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered </nobr></label><label id="memberOptionsMenuInheritedLabel" for="memberOptionsDropdownImage" style="display: none;"><nobr>Members: Filtered </nobr></label></span>
+          </td>
+        </tr>
+      </table>
+      <div id="devlangsMenu">
+        <input id="CSharpCheckbox" type="checkbox" data="CSharp,cs,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="CSharpCheckbox">C#</label>
+        <br />
+        <input id="VisualBasicCheckbox" type="checkbox" data="VisualBasic,vb,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="VisualBasicCheckbox">Visual Basic</label>
+        <br />
+        <input id="ManagedCPlusPlusCheckbox" type="checkbox" data="ManagedCPlusPlus,cpp,'persist'" value="on" onClick="SetLanguage(this)" />
+        <label class="checkboxLabel" for="ManagedCPlusPlusCheckbox">Visual C++</label>
+        <br />
+      </div>
+      <div id="memberOptionsMenu">
+        <input id="ProtectedCheckbox" type="checkbox" data="Protected" value="on" onClick="SetMemberOptions(this, 'vis')" />
+        <label class="checkboxLabel" for="ProtectedCheckbox">Include Protected Members</label>
+        <br />
+        <input id="InheritedCheckbox" type="checkbox" data="Inherited" value="on" onClick="SetMemberOptions(this, 'decl')" />
+        <label class="checkboxLabel" for="InheritedCheckbox">Include Inherited Members</label>
+        <br />
+      </div>
+      <table id="bottomTable" cellpadding="0" cellspacing="0">
+        <tr id="headerTableRow1">
+          <td align="left">
+            <span id="runningHeaderText">A Sandcastle Documented Class Library</span>
+          </td>
+        </tr>
+        <tr id="headerTableRow2">
+          <td align="left">
+            <span id="nsrTitle">ComponentLogger<span class="languageSpecificText"><span class="cs">.</span><span class="vb">.</span><span class="cpp">::</span><span class="nu">.</span><span class="fs">.</span></span>Trace Method </span>
+          </td>
+        </tr>
+        <tr id="headerTableRow3">
+          <td align="left">
+            <a href="01ec396a-6a02-417e-cea8-5e054ccba988.htm">ComponentLogger Interface</a> <a href="#seeAlsoToggle" onclick="OpenSection(seeAlsoToggle)">See Also</a> <span id="headfeedbackarea" class="feedbackhead"><a href="javascript:SubmitFeedback('','A Sandcastle Documented Class Library','','','','%0\dYour%20feedback%20is%20used%20to%20improve%20the%20documentation%20and%20the%20product.%20Your%20e-mail%20address%20will%20not%20be%20used%20for%20any%20other%20purpose%20and%20is%20disposed%20of%20after%20the%20issue%20you%20report%20is%20resolved.%20%20While%20working%20to%20resolve%20the%20issue%20that%20you%20report,%20you%20may%20be%20contacted%20via%20e-mail%20to%20get%20further%20details%20or%20clarification%20on%20the%20feedback%20you%20sent.%20After%20the%20issue%20you%20report%20has%20been%20addressed,%20you%20may%20receive%20an%20e-mail%20to%20let%20you%20know%20that%20your%20feedback%20has%20been%20addressed.%0\A%0\d','Customer%20Feedback');">Send Feedback</a></span></td>
+        </tr>
+      </table>
+      <table id="gradientTable">
+        <tr>
+          <td class="nsrBottom" background="../icons/gradient.gif" />
+        </tr>
+      </table>
+    </div>
+    <div id="mainSection">
+      <div id="mainBody">
+        <div id="allHistory" class="saveHistory" onsave="saveAll()" onload="loadAll()" />
+        <span style="color: DarkGray"></span>
+        <h1 class="heading">
+          <span onclick="ExpandCollapse(overloadMembersTableToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(overloadMembersTableToggle, event)" tabindex="0">
+            <img id="overloadMembersTableToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />Overload List</span>
+        </h1>
+        <div id="overloadMembersTableSection" class="section" name="collapseableSection" style="">
+          <table id="memberList" class="members" frame="lhs" cellpadding="2">
+            <col width="10%" />
+            <tr>
+              <th class="iconColumn">
+               
+            </th>
+              <th class="nameColumn">Name</th>
+              <th class="descriptionColumn">Description</th>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="daee5ba8-d01d-39aa-9265-ae1d3a2600ee.htm">Trace(Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="29e97d2e-c0f0-2f5a-688c-91da29a56bdc.htm">Trace(String)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="af4213ab-9a0a-559b-59ca-c29bb76ab34e.htm">Trace<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>T<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(T)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="f07bcd52-e283-8242-89db-118f52c01647.htm">Trace(IFormatProvider, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="aa192e73-ee25-f7fe-9db0-e23dafbe7e1e.htm">Trace<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>T<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, T)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="9660e09d-a3f7-659a-3cda-ad88e1c9362a.htm">Trace(String, Boolean)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="10b65da3-429d-724e-90d0-29b376e742c1.htm">Trace(String, Byte)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="adafcc1c-ab50-9a4b-be54-a2e63c94100d.htm">Trace(String, Char)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="1b48c724-df4c-e15c-2975-2953ab870693.htm">Trace(String, Decimal)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="250de3eb-82b1-4e65-3d85-c8a25890a868.htm">Trace(String, Double)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="50df8763-e7d1-1c4b-7e7e-3e58ebd6cd58.htm">Trace(String, Int32)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="70a9a6a6-c887-058c-88e9-1433f89fb806.htm">Trace(String, Int64)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="3ee06922-288f-aa6b-fc36-f2a35d5470b4.htm">Trace(String, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="14b273b1-bda9-e184-b4b3-36308de29981.htm">Trace(String, <span class="languageSpecificText"><span class="cpp">array&lt;</span></span>Object<span class="languageSpecificText"><span class="cpp">&gt;</span><span class="cs">[]</span><span class="vb">()</span><span class="nu">[]</span><span class="fs">[]</span></span>)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified parameters
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="cb35ddbd-acb0-59da-0219-b7e0fc0aa77d.htm">Trace(String, Single)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="57fba415-901e-0774-2cb4-165d4c1a51a8.htm">Trace(String, String)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="42b5af1a-62bb-9f80-2bf9-c593d30ec999.htm">Trace<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(String, TArgument)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified parameter
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="40b89555-063b-ac32-bfab-d7f8f225a80e.htm">Trace(IFormatProvider, String, Boolean)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="8b7f1b30-97e2-8142-066c-2fcf37d2103a.htm">Trace(IFormatProvider, String, Byte)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="16037060-0f50-0ca8-099d-fcdcdffb6754.htm">Trace(IFormatProvider, String, Char)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="228f71e1-1453-5780-413f-bcf8c3e5a334.htm">Trace(IFormatProvider, String, Decimal)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="06e8a5d4-55df-9cec-dac1-770d2bc721ac.htm">Trace(IFormatProvider, String, Double)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="4843fe02-a1be-a13a-3cc5-faf194f87268.htm">Trace(IFormatProvider, String, Int32)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="738ae5ea-dab5-bb9c-10f8-9568c4c5eb54.htm">Trace(IFormatProvider, String, Int64)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="ce9ee787-6d84-e40a-21b5-e590fcc7f230.htm">Trace(IFormatProvider, String, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="306a1ab8-2d26-2c7c-f8e6-04c8d5f4ddeb.htm">Trace(IFormatProvider, String, <span class="languageSpecificText"><span class="cpp">array&lt;</span></span>Object<span class="languageSpecificText"><span class="cpp">&gt;</span><span class="cs">[]</span><span class="vb">()</span><span class="nu">[]</span><span class="fs">[]</span></span>)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified parameters
+            and formatting them with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="f0850c4e-449a-438f-6ad3-a003fa6066e3.htm">Trace(IFormatProvider, String, Single)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="be38f58b-0b99-e62b-2a81-aa1227af0497.htm">Trace(IFormatProvider, String, String)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified value
+            as a parameter and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="1b70afb8-94fc-c8fe-fd60-04726963d9c0.htm">Trace<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, String, TArgument)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified parameter
+            and formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="f0a8181e-295c-85f0-37cb-167552d409d7.htm">Trace(String, Object, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified parameters
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="5aa11ba2-820f-7ccf-93e9-bd959de1e5da.htm">Trace<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(String, TArgument1, TArgument2)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified parameters
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="0eb73ec9-0f41-0dd0-070a-e2da3894c872.htm">Trace<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, String, TArgument1, TArgument2)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified arguments
+            formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="ccbfb781-d37e-787b-8a7e-66d2cf1c8acf.htm">Trace(String, Object, Object, Object)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified parameters.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="61cf0251-bee7-2461-06de-45417a6b15b8.htm">Trace<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2, TArgument3<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(String, TArgument1, TArgument2, TArgument3)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified parameters.
+            </div>
+              </td>
+            </tr>
+            <tr data="public;declared;notNetfw;">
+              <td>
+                <img src="../icons/pubmethod.gif" alt="Public method" title="Public method" />
+              </td>
+              <td>
+                <a href="c573520e-e28f-44cd-6665-620c3af8e726.htm">Trace<span class="languageSpecificText"><span class="cs">&lt;</span><span class="vb">(Of </span><span class="cpp">&lt;</span><span class="fs">&lt;'</span><span class="nu">(</span></span>TArgument1, TArgument2, TArgument3<span class="languageSpecificText"><span class="cs">&gt;</span><span class="vb">)</span><span class="cpp">&gt;</span><span class="fs">&gt;</span><span class="nu">)</span></span>(IFormatProvider, String, TArgument1, TArgument2, TArgument3)</a>
+              </td>
+              <td>
+                <div class="summary">
+            Writes the diagnostic message at the Trace level using the specified arguments
+            formatting it with the supplied format provider.
+            </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <h1 class="heading">
+          <span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">
+            <img id="seeAlsoToggle" class="toggle" name="toggleSwitch" src="../icons/collapse_all.gif" />See Also</span>
+        </h1>
+        <div id="seeAlsoSection" class="section" name="collapseableSection" style="">
+          <div class="seeAlsoStyle">
+            <a href="01ec396a-6a02-417e-cea8-5e054ccba988.htm">ComponentLogger Interface</a>
+          </div>
+          <div class="seeAlsoStyle">
+            <a href="4ff5a3f4-d1e8-7e05-0e2e-268377981a02.htm">ComponentLogger Members</a>
+          </div>
+          <div class="seeAlsoStyle">
+            <a href="23af86fa-6a55-b6e1-c801-36be425319a2.htm">TraceLabSDK Namespace</a>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <div class="footerLine">
+          <img width="100%" height="3px" src="../icons/footer.gif" alt="Footer image" title="Footer image" />
+        </div>
+        <A NAME="feedback"></A>
+        <span id="fb" class="feedbackcss"></span>
+      </div>
+    </div>
+  </body>
+</html>

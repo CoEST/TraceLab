@@ -1,0 +1,2 @@
+C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\ComponentsSources\SAREC-DePaul\TraceLab Components Source\Exporter\obj\Debug\Exporter.csprojResolveAssemblyReference.cache
+C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\ComponentsSources\SAREC-DePaul\TraceLab Components Source\Exporter\obj\Debug\Exporter.csproj.ResolveComReference.cache

@@ -32,6 +32,8 @@ namespace TraceLab.Core.Components
             {
                 System.Reflection.Assembly sdk = typeof(IComponent).Assembly;
                 return System.IO.Path.GetDirectoryName(sdk.Location);
+                //string sdkLocation = System.IO.Path.GetDirectoryName(sdk.Location);
+                //return sdkLocation.Replace("file:\\","");
             }
         }
 
@@ -41,6 +43,8 @@ namespace TraceLab.Core.Components
             {
                 Assembly core = typeof(LibraryHelper).Assembly;
                 return Path.GetDirectoryName(core.Location);
+                //string coreLocation = Path.GetDirectoryName(core.Location);
+                //return coreLocation.Replace("file:\\", "");
             }
         }
 

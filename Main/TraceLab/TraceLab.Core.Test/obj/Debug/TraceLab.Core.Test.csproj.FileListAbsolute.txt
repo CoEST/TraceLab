@@ -1,0 +1,1 @@
+C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLab.Core.Test\obj\Debug\TraceLab.Core.Test.csprojResolveAssemblyReference.cache
