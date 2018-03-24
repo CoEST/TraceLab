@@ -81,6 +81,17 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="col-md-8 " >              
+                    <div class="panel panel-primary fill-body-double">
+                        <div class="panel-heading">Component List</div>
+                        <div class="panel-body">
+                            <asp:Label ID="LabelList" runat="server" Text="Components: <br/>"></asp:Label>
+                            <asp:Label ID="ComponentList" runat="server" Text=""></asp:Label>
+
+                        </div>
+                    </div>
+                </div>
             </div><!-- Main workspace-->
            
             

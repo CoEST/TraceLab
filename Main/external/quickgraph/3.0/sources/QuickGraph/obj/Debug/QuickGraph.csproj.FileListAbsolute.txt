@@ -1,0 +1,17 @@
+C:\Users\cebernalc\Documents\GitHub\quickgraph\3.0\sources\QuickGraph\bin\Debug\QuickGraph.dll
+C:\Users\cebernalc\Documents\GitHub\quickgraph\3.0\sources\QuickGraph\bin\Debug\QuickGraph.pdb
+C:\Users\cebernalc\Documents\GitHub\quickgraph\3.0\sources\QuickGraph\obj\Debug\QuickGraph.csprojResolveAssemblyReference.cache
+C:\Users\cebernalc\Documents\GitHub\quickgraph\3.0\sources\QuickGraph\obj\Debug\QuickGraph.dll
+C:\Users\cebernalc\Documents\GitHub\quickgraph\3.0\sources\QuickGraph\obj\Debug\QuickGraph.pdb
+C:\Users\Andrew\Documents\TraceLab\Main\external\quickgraph\3.0\sources\QuickGraph\bin\Debug\CodeContractsDeclarative\QuickGraph.dll
+C:\Users\Andrew\Documents\TraceLab\Main\external\quickgraph\3.0\sources\QuickGraph\bin\Debug\CodeContractsDeclarative\QuickGraph.pdb
+C:\Users\Andrew\Documents\TraceLab\Main\external\quickgraph\3.0\sources\QuickGraph\bin\Debug\CodeContracts\QuickGraph.Contracts.dll
+C:\Users\Andrew\Documents\TraceLab\Main\external\quickgraph\3.0\sources\QuickGraph\bin\Debug\CodeContracts\QuickGraph.Contracts.pdb
+C:\Users\Andrew\Documents\TraceLab\Main\external\quickgraph\3.0\sources\QuickGraph\bin\Debug\QuickGraph.dll
+C:\Users\Andrew\Documents\TraceLab\Main\external\quickgraph\3.0\sources\QuickGraph\bin\Debug\QuickGraph.pdb
+C:\Users\Andrew\Documents\TraceLab\Main\external\quickgraph\3.0\sources\QuickGraph\obj\Debug\QuickGraph.csprojResolveAssemblyReference.cache
+C:\Users\Andrew\Documents\TraceLab\Main\external\quickgraph\3.0\sources\QuickGraph\obj\Debug\QuickGraphccrefgen.rsp
+C:\Users\Andrew\Documents\TraceLab\Main\external\quickgraph\3.0\sources\QuickGraph\obj\Debug\QuickGraph.rewritten
+C:\Users\Andrew\Documents\TraceLab\Main\external\quickgraph\3.0\sources\QuickGraph\obj\Debug\QuickGraph.dll
+C:\Users\Andrew\Documents\TraceLab\Main\external\quickgraph\3.0\sources\QuickGraph\obj\Debug\QuickGraph.pdb
+C:\Users\Andrew\Documents\TraceLab\Main\external\quickgraph\3.0\sources\QuickGraph\obj\Debug\CodeContractAnalysisRun.log

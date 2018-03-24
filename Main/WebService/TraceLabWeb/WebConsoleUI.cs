@@ -6,7 +6,7 @@ using TraceLab.Core.ViewModels;
 using System.Collections.Specialized;
 using TraceLab.Core.Components;
 using TraceLab.Core.Workspaces;
-
+using TraceLab.Core.Experiments;
 
 namespace TraceLabWeb
 {
@@ -63,6 +63,23 @@ namespace TraceLabWeb
             }
 
             components += "</ul>";
+            return components;
+        }
+        internal static string GetNodes()
+        {
+            string components = "<ul><li>Nodes:</li>";
+            foreach (ExperimentNode Node in ConsoleInstance.Application.Experiment.Vertices)
+            {
+                components += string.Format("<li>{0}</li>","ID"+ Node.ID + " Label" + Node.Data .Metadata.Label  );
+            }
+
+            components += "<li>Links:</li>";
+            foreach (ExperimentNodeConnection Link in ConsoleInstance.Application.Experiment.Edges)
+            {
+                components += string.Format("<li>{0}</li>", "Source: " + Link.Source.Data.Metadata.Label + " Target: " + Link.Target.Data.Metadata.Label);
+
+            }
+                components += "</ul>";
             return components;
         }
 

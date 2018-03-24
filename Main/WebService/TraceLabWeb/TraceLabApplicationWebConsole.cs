@@ -40,6 +40,11 @@ namespace TraceLabWeb
             return WebConsoleUI.GetComponents();
         }
 
+        public string GetNodes()
+        {
+            return WebConsoleUI.GetNodes (); // TODO WebConsoleUI.GetNodes
+        }
+
         public void OpenExperiment(string path)
         {
             //"C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"
@@ -58,7 +63,7 @@ namespace TraceLabWeb
             {
                 if (INSTANCE == null)
                 {
-                    string[] args = { CommandLineProcessor.SwitchCharacter + "base:C:\\Users\\cebernalc\\Documents\\GitHub\\TraceLab\\Main\\WebService\\Bin" };
+                    string[] args = { CommandLineProcessor.SwitchCharacter + "base:C:\\Users\\Andrew\\Documents\\TraceLab\\Main\\WebService\\Bin" };
                     INSTANCE = new TraceLabApplicationWebConsole();
                     INSTANCE.Run(args);
                 }
