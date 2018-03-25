@@ -1,0 +1,57 @@
+This document gives an overview of the steps taken and problems encountered while getting TraceLab WebService running on Brian's machine (after QuickGraph compilation via Carlos was added)
+
+
+Problem
+
+
+The following output:
+
+
+'"vsvars32.bat"' is not recognized as an internal or external command,
+  operable program or batch file.
+
+
+And error:
+
+
+Error		The command "call "%VS100COMNTOOLS%vsvars32.bat"
+rem sgen.exe /assembly:"C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLab\lib\TraceLabSDK.dll" /parsableerrors /force
+
+IF NOT EXIST C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\lib mkdir C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\lib
+"C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\..\external\ikvm\release\bin\ikvmstub.exe" -r:"C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\..\external\NLog\.NET Framework 3.5\NLog.dll" "TraceLabSDK.dll"
+
+xcopy C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLabSDK\mscorlib\*.* C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLab\lib\ /Y
+exit 0
+" exited with code 255.
+
+
+occur from TraceLabSDK. We were able to identify the following sources of the problem:
+In TraceLabSDK.Types.csproj starting on line 115, the following <PostBuildEvent> was failing
+
+
+    <PostBuildEvent>call "%25VS100COMNTOOLS%25vsvars32.bat"
+rem sgen.exe /assembly:"$(TargetPath)" /parsableerrors /force /r:"$(TargetDir)..\TraceLab\lib\TraceLabSDK.dll"
+
+"$(SolutionDir)..\external\ikvm\release\bin\ikvmstub.exe" -lib:"$(SolutionDir)lib" "$(TargetPath)" 
+
+exit 0</PostBuildEvent>
+
+
+Additionally, in TraceLabSDK.csproj starting on line 114, the following <PostBuildEvent> was failing
+
+
+<PostBuildEvent>call "%25VS100COMNTOOLS%25vsvars32.bat"
+rem sgen.exe /assembly:"$(TargetPath)" /parsableerrors /force
+
+IF NOT EXIST $(SolutionDir)lib mkdir $(SolutionDir)lib
+"$(SolutionDir)..\external\ikvm\release\bin\ikvmstub.exe" -r:"$(SolutionDir)..\external\NLog\.NET Framework 3.5\NLog.dll" "$(TargetFileName)"
+
+xcopy $(ProjectDir)mscorlib\*.* $(TargetDir) /Y
+exit 0
+</PostBuildEvent>
+
+
+We identified the problem to be the vsvars32.bat file. The Microsoft VS documentation defines this file's purpose to be setting environment variables for the VS command line. However, the documentation indicated that this file was used with older versions of VS (2015 and earlier) and should not exist in 2017. We tried changing "vsvars32.bat" to its 2017 equivalent "VsDevCmd.bat" according to the Microsoft documentation, but got the same errors in the same places, not recognizing the new file either. We also tried changing the file reference to "vcvars32.bat" according to a suggestion to fix a related problem on Stack Overflow with the same result.
+
+The Fix
+We deleted the entire <PostBuildEvent> statements from above from both TraceLabSDK.Types.csproj and TraceLabSDK.csproj. This finally allowed the successful compilation and running of TraceLab-WebService, although we are unsure how these deletions may impact the project in the future.
