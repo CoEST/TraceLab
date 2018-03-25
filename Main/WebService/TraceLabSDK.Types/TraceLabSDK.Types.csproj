@@ -112,12 +112,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>call "%25VS100COMNTOOLS%25vsvars32.bat"
-rem sgen.exe /assembly:"$(TargetPath)" /parsableerrors /force /r:"$(TargetDir)..\TraceLab\lib\TraceLabSDK.dll"
-
-"$(SolutionDir)..\external\ikvm\release\bin\ikvmstub.exe" -lib:"$(SolutionDir)lib" "$(TargetPath)" 
-
-exit 0</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug Mono|AnyCPU' ">
     <DebugType>none</DebugType>

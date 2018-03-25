@@ -110,15 +110,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>call "%25VS100COMNTOOLS%25vsvars32.bat"
-rem sgen.exe /assembly:"$(TargetPath)" /parsableerrors /force
-
-IF NOT EXIST $(SolutionDir)lib mkdir $(SolutionDir)lib
-"$(SolutionDir)..\external\ikvm\release\bin\ikvmstub.exe" -r:"$(SolutionDir)..\external\NLog\.NET Framework 3.5\NLog.dll" "$(TargetFileName)"
-
-xcopy $(ProjectDir)mscorlib\*.* $(TargetDir) /Y
-exit 0
-</PostBuildEvent>
+   
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug Mono|AnyCPU' ">
     <DebugType>none</DebugType>

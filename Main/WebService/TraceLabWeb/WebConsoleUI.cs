@@ -65,7 +65,7 @@ namespace TraceLabWeb
             components += "</ul>";
             return components;
         }
-        internal static string GetNodes()
+        public static string GetNodes()
         {
             string components = "<ul><li>Nodes:</li>";
             foreach (ExperimentNode Node in ConsoleInstance.Application.Experiment.Vertices)
@@ -145,6 +145,53 @@ namespace TraceLabWeb
             catch (Exception ex)
             {
                 string msg = String.Format("Unable to open the file {0}. Error: {1}", value, ex.Message);
+                log += msg;
+            }
+        }
+
+        public static void AddEdge(string value)
+        {
+            //log = "";
+            try
+            {
+                var experiment = ConsoleInstance.Application.Experiment;
+
+                string[] nodeNames = value.Split(',');
+                int existantNodeCount = 0;
+
+                if (nodeNames.Length   == 3)
+                {
+                    if (nodeNames[1].Equals(nodeNames[2]))
+                    {
+                        log += "Same node detected twice";
+                    }
+                    else
+                    {
+                        ExperimentNode targ = ConsoleInstance.Application.Experiment.GetNode (nodeNames[1]);
+                        ExperimentNode sour = ConsoleInstance.Application.Experiment.GetNode(nodeNames [2]);
+
+                        if (sour != null && targ != null)
+                        {
+                           
+                        ExperimentNodeConnection Edge = new ExperimentNodeConnection(nodeNames [0],sour,targ) ;
+                            experiment.AddEdge(Edge);
+                        }
+                        else
+                        {
+                            log += "Non-existant Node Detected";
+                        }
+
+                    }
+                }
+                else
+                {
+                    log += "Incorrect number of nodes detected";
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                string msg = String.Format("Unable to add edge {0}. Error: {1}", value, ex.Message);
                 log += msg;
             }
         }

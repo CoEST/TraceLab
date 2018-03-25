@@ -43,4 +43,10 @@ public partial class TraceLab_UI : System.Web.UI.Page
         Components.Text = app.GetComponents();
         Workspace.Text = app.GetWorkspace();
     }
+
+    protected void EdgeCommand(object sender, EventArgs e)
+    {
+        var app = TraceLabApplicationWebConsole.Instance;
+        app.AddEdge(EdgeCommandText.Text );
+    }
 }

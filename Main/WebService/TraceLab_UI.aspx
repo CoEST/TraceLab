@@ -53,7 +53,12 @@
                     <asp:LinkButton ID="ReloadLog" CssClass="btn btn-primary btn-lg" runat="server" OnClick="Log_Click"><span class="glyphicon glyphicon-refresh"></span></asp:LinkButton>
                     <asp:LinkButton ID="OpenButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="OpenButton_Click"><span class="glyphicon glyphicon-folder-open""></span></asp:LinkButton>
                     <asp:TextBox ID="OpenDirText" runat="server" Width="799px" Text ="C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"></asp:TextBox>
-                </div>
+
+                    <br />
+                   <asp:LinkButton ID="EdgeCommandButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="EdgeCommand"><span class="glyphicon glyphicon-ok""></span></asp:LinkButton>
+                     <asp:TextBox ID="EdgeCommandText" runat="server" Width="799px" Text ="C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"></asp:TextBox>
+          <br />
+                    </div>
             </div><!-- Buttons for Start and Stop-->
 
             <div class="row top-buffer"> 

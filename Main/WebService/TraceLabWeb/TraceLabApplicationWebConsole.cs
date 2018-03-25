@@ -51,6 +51,12 @@ namespace TraceLabWeb
             WebConsoleUI.OpenExperiment(path);
         }
 
+        public void AddEdge(string path)
+        {
+            //"C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"
+            WebConsoleUI.AddEdge(path);
+        }
+
         public void RunExperiment()
         {
             //"C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"
