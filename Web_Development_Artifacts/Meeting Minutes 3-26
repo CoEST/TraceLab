@@ -1,0 +1,9 @@
+Talked about implementation progress.
+Evaluated understanding of backend (~50%)
+How long until basic experiments can run with step through for user? (maybe 2 weeks)
+Once this is done send screen cast to Denys and Carlos for checking.
+
+Upcoming work:
+Andrew is going to create a frame for the different types of nodes we want to be able to add. The work can then be partitioned between Andrew and Brian.
+We will then work on adding the functionality for specific node types.
+Also write up test cases for what we've implemented thus far.
