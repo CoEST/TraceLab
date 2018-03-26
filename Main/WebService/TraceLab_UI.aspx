@@ -65,6 +65,11 @@
                     <asp:LinkButton ID="SaveButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="Save_Click"><span class="glyphicon glyphicon-saved""></span></asp:LinkButton>
                     <asp:TextBox ID="SaveText" runat="server" Width="799px" Text ="C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"></asp:TextBox>
  
+
+                    <br />
+                   <asp:LinkButton ID="NodeButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="AddNode"><span class="glyphicon glyphicon-ok""></span></asp:LinkButton>
+                     <asp:TextBox ID="NodeText" runat="server" Width="799px" Text ="C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"></asp:TextBox>
+          <br />
                     </div>
             </div><!-- Buttons for Start and Stop-->
 

@@ -48,7 +48,7 @@ namespace TraceLab.Core.Components
         /// Initializes a new instance of the <see cref="DecisionMetadata"/> class.
         /// </summary>
         /// <param name="label">The label.</param>
-        internal DecisionMetadata(string label)
+        public DecisionMetadata(string label)
         {
             UniqueDecisionID = Guid.NewGuid().ToString();
             Label = label;
