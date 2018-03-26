@@ -55,9 +55,16 @@
                     <asp:TextBox ID="OpenDirText" runat="server" Width="799px" Text ="C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"></asp:TextBox>
 
                     <br />
-                   <asp:LinkButton ID="EdgeCommandButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="EdgeCommand"><span class="glyphicon glyphicon-ok""></span></asp:LinkButton>
-                     <asp:TextBox ID="EdgeCommandText" runat="server" Width="799px" Text ="C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"></asp:TextBox>
-          <br />
+                    <asp:LinkButton ID="EdgeCommandButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="EdgeCommand"><span class="glyphicon glyphicon-ok""></span></asp:LinkButton>
+                    <asp:TextBox ID="EdgeNameText" runat="server" Width="299px" Text =""></asp:TextBox>
+                    <asp:TextBox ID="EdgeTargetText" runat="server" Width="299px" Text ="C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"></asp:TextBox>
+                    <asp:TextBox ID="EdgeSourceText" runat="server" Width="299px" Text ="C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"></asp:TextBox>
+                    <br />
+
+
+                    <asp:LinkButton ID="SaveButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="Save_Click"><span class="glyphicon glyphicon-saved""></span></asp:LinkButton>
+                    <asp:TextBox ID="SaveText" runat="server" Width="799px" Text ="C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"></asp:TextBox>
+ 
                     </div>
             </div><!-- Buttons for Start and Stop-->
 

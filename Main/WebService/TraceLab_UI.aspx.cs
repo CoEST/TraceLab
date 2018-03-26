@@ -26,6 +26,15 @@ public partial class TraceLab_UI : System.Web.UI.Page
         Workspace.Text = app.GetWorkspace();
     }
 
+    protected void Save_Click(object sender, EventArgs e)
+    {
+        var app = TraceLabApplicationWebConsole.Instance;
+        app.SaveExperiment (SaveText.Text);
+        Console.Text = app.GetLog();
+        Components.Text = app.GetComponents();
+        Workspace.Text = app.GetWorkspace();
+    }
+
     protected void Log_Click(object sender, EventArgs e)
     {
         var app = TraceLabApplicationWebConsole.Instance;
@@ -47,6 +56,6 @@ public partial class TraceLab_UI : System.Web.UI.Page
     protected void EdgeCommand(object sender, EventArgs e)
     {
         var app = TraceLabApplicationWebConsole.Instance;
-        app.AddEdge(EdgeCommandText.Text );
+        app.AddEdge(EdgeNameText .Text,EdgeSourceText.Text,EdgeTargetText.Text  );
     }
 }

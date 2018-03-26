@@ -73,3 +73,9 @@ C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceL
 C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.csproj.GenerateResource.Cache
 C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.dll
 C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.pdb
+C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\bin\Debug\TraceLabSDK.Types.dll
+C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\bin\Debug\QuickGraph.Serialization.dll
+C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\bin\Debug\TraceLab.Core.pdb
+C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\bin\Debug\TraceLabSDK.Types.pdb
+C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\bin\Debug\TraceLabSDK.Types.xml
+C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\bin\Debug\QuickGraph.Serialization.pdb

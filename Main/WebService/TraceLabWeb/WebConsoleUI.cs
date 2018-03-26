@@ -149,6 +149,27 @@ namespace TraceLabWeb
             }
         }
 
+        public static void SaveExperiment(string value)
+        {
+            //log = "";
+            try
+            {
+
+                TraceLab.Core.Experiments.ExperimentManager.SaveAs(ConsoleInstance.Application.Experiment , value, ReferencedFiles.IGNORE);
+
+            }
+            catch (TraceLab.Core.Exceptions.ExperimentLoadException ex)
+            {
+                string msg = String.Format("Unable to save the file {0}. Error: {1}", value, ex.Message);
+                log += msg;
+            }
+            catch (Exception ex)
+            {
+                string msg = String.Format("Unable to save the file {0}. Error: {1}", value, ex.Message);
+                log += msg;
+            }
+        }
+
         public static void AddEdge(string value)
         {
             //log = "";
@@ -157,8 +178,7 @@ namespace TraceLabWeb
                 var experiment = ConsoleInstance.Application.Experiment;
 
                 string[] nodeNames = value.Split(',');
-                int existantNodeCount = 0;
-
+               
                 if (nodeNames.Length   == 3)
                 {
                     if (nodeNames[1].Equals(nodeNames[2]))
