@@ -38,7 +38,7 @@ namespace TraceLab.Core.Experiments
 
         #endregion
         
-        protected ExperimentNode(string id, SerializedVertexData data)
+        public ExperimentNode(string id, SerializedVertexData data)
         {
             ID = id;
             Data = data;

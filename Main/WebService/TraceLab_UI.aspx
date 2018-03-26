@@ -58,6 +58,11 @@
                    <asp:LinkButton ID="EdgeCommandButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="EdgeCommand"><span class="glyphicon glyphicon-ok""></span></asp:LinkButton>
                      <asp:TextBox ID="EdgeCommandText" runat="server" Width="799px" Text ="C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"></asp:TextBox>
           <br />
+
+                    <br />
+                   <asp:LinkButton ID="NodeButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="AddNode"><span class="glyphicon glyphicon-ok""></span></asp:LinkButton>
+                     <asp:TextBox ID="NodeText" runat="server" Width="799px" Text ="C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"></asp:TextBox>
+          <br />
                     </div>
             </div><!-- Buttons for Start and Stop-->
 

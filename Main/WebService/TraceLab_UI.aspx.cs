@@ -49,4 +49,11 @@ public partial class TraceLab_UI : System.Web.UI.Page
         var app = TraceLabApplicationWebConsole.Instance;
         app.AddEdge(EdgeCommandText.Text );
     }
+
+    protected void AddNode(object sender, EventArgs e)
+    {
+        var app = TraceLabApplicationWebConsole.Instance;
+        app.AddNode(NodeText.Text);
+
+    }
 }

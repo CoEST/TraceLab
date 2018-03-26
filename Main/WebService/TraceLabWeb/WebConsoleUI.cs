@@ -196,6 +196,26 @@ namespace TraceLabWeb
             }
         }
 
+        public static void AddNode(string value)
+        {
+            try
+            {
+                var experiment = ConsoleInstance.Application.Experiment;
+
+                SerializedVertexData svd = new SerializedVertexData();
+                svd.Metadata = new DecisionMetadata(value);
+                ExperimentDecisionNode nodeToAdd = new ExperimentDecisionNode(Guid.NewGuid().ToString(), svd);
+
+                nodeToAdd.Data.Metadata.Label = value;
+                experiment.AddVertex(nodeToAdd);
+            }
+
+            catch
+            {
+                log += "Failed to create node";
+            }
+        }
+
         public static void RunExperiment()
         {
             var experiment = ConsoleInstance.Application.Experiment;
