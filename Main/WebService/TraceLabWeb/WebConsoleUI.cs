@@ -170,7 +170,7 @@ namespace TraceLabWeb
             }
         }
 
-        public static void AddEdge(string value)
+        public static void AddEdge(string value, string sourceName,string targetName)
         {
             //log = "";
             try
@@ -179,21 +179,19 @@ namespace TraceLabWeb
 
                 string[] nodeNames = value.Split(',');
                
-                if (nodeNames.Length   == 3)
-                {
-                    if (nodeNames[1].Equals(nodeNames[2]))
+                    if (sourceName .Equals(targetName ))
                     {
                         log += "Same node detected twice";
                     }
                     else
                     {
-                        ExperimentNode targ = ConsoleInstance.Application.Experiment.GetNode (nodeNames[1]);
-                        ExperimentNode sour = ConsoleInstance.Application.Experiment.GetNode(nodeNames [2]);
+                        ExperimentNode targ = ConsoleInstance.Application.Experiment.GetNode (targetName  );
+                        ExperimentNode sour = ConsoleInstance.Application.Experiment.GetNode(sourceName );
 
                         if (sour != null && targ != null)
                         {
                            
-                        ExperimentNodeConnection Edge = new ExperimentNodeConnection(nodeNames [0],sour,targ) ;
+                        ExperimentNodeConnection Edge = new ExperimentNodeConnection(value,sour,targ) ;
                             experiment.AddEdge(Edge);
                         }
                         else
@@ -202,11 +200,6 @@ namespace TraceLabWeb
                         }
 
                     }
-                }
-                else
-                {
-                    log += "Incorrect number of nodes detected";
-                }
                 
             }
             catch (Exception ex)

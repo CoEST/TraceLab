@@ -57,8 +57,8 @@
                     <br />
                     <asp:LinkButton ID="EdgeCommandButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="EdgeCommand"><span class="glyphicon glyphicon-ok""></span></asp:LinkButton>
                     <asp:TextBox ID="EdgeNameText" runat="server" Width="299px" Text =""></asp:TextBox>
-                    <asp:TextBox ID="EdgeTargetText" runat="server" Width="299px" Text ="C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"></asp:TextBox>
-                    <asp:TextBox ID="EdgeSourceText" runat="server" Width="299px" Text ="C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"></asp:TextBox>
+                    <asp:TextBox ID="EdgeTargetText" runat="server" Width="299px" Text =""></asp:TextBox>
+                    <asp:TextBox ID="EdgeSourceText" runat="server" Width="299px" Text =""></asp:TextBox>
                     <br />
 
 
@@ -68,7 +68,21 @@
 
                     <br />
                    <asp:LinkButton ID="NodeButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="AddNode"><span class="glyphicon glyphicon-ok""></span></asp:LinkButton>
-                     <asp:TextBox ID="NodeText" runat="server" Width="799px" Text ="C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"></asp:TextBox>
+                     <asp:TextBox ID="NodeText" runat="server" Width="599px" Text =""></asp:TextBox>
+                     <asp:TextBox ID="txt_nodeX" runat="server" Width="50px" Text =""></asp:TextBox>
+                     <asp:TextBox ID="txt_nodeY" runat="server" Width="50px" Text =""></asp:TextBox>
+                    <asp:DropDownList ID="NodeType" runat="server" Width ="200px">
+                        <asp:ListItem Text ="Start Node" Value ="ExperimentStartNode"/>
+                        <asp:ListItem Text ="End Node" Value ="ExperimentEndNode"/>
+                        <asp:ListItem Text ="Component Node" Value ="ComponentNode"/>
+                        <asp:ListItem Text ="Composite Component Node" Value ="CompositeComponentNode"/>
+                        <asp:ListItem Text ="Decision Node" Value ="DecisionNode"/>
+                        <asp:ListItem Text ="Exit Decision Node" Value ="ExitDecisionNode"/>
+                        <asp:ListItem Text ="Scope Node" Value ="ScopeNode"/>
+                        <asp:ListItem Text ="Loop Scope Node" Value ="LoopScopeNode"/>
+                        <asp:ListItem Text ="Challenge Node" Value ="ChallengeNode"/>
+                        <asp:ListItem Text ="Comment Node" Value ="CommentNode"/>
+                    </asp:DropDownList>
           <br />
                     </div>
             </div><!-- Buttons for Start and Stop-->
