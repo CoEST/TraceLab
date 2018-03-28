@@ -69,41 +69,40 @@ namespace TraceLabWeb
             switch(nodeType )
             {
                 case ("ExperimentStartNode"):
-                    WebConsoleUI.AddNode(nodeName);
+                    WebConsoleUI.AddStartNode (nodeName);
                     break;
                 case ("ExperimentEndNode"):
-                    WebConsoleUI.AddNode(nodeName);
+                    WebConsoleUI.AddEndNode(nodeName);
                     break;
                 case ("ComponentNode"):
-                    WebConsoleUI.AddNode(nodeName);
+                    WebConsoleUI.AddComponenetNode (nodeName);
                     break;
                 case ("CompositeComponentNode"):
-                    WebConsoleUI.AddNode(nodeName);
+                    WebConsoleUI.AddCompositeComponenetNode (nodeName);
                     break;
                 case ("DecisionNode"):
-                    WebConsoleUI.AddNode(nodeName);
+                    WebConsoleUI.AddDecisionNode (nodeName);
                     break;
                 case ("ExitDecisionNode"):
-                    WebConsoleUI.AddNode(nodeName);
+                    WebConsoleUI.AddExitDecisionNode (nodeName);
                     break;
                 case ("ScopeNode"):
-                    WebConsoleUI.AddNode(nodeName);
+                    WebConsoleUI.AddScopeNode (nodeName);
                     break;
                 case ("LoopScopeNode"):
-                    WebConsoleUI.AddNode(nodeName);
+                    WebConsoleUI.AddLoopScopeNode (nodeName);
                     break;
                 case ("ChallengeNode"):
-                    WebConsoleUI.AddNode(nodeName);
+                    WebConsoleUI.AddChallengeNode (nodeName);
                     break;
                 case ("CommentNode"):
-                    WebConsoleUI.AddNode(nodeName);
+                    WebConsoleUI.AddCommentNode (nodeName);
                     break;
                 default:
                     break;
 
 
             }
-            WebConsoleUI.AddNode(nodeName);
         }
 
         public void RunExperiment()
