@@ -113,6 +113,18 @@ namespace TraceLab.Core.ViewModels
             }
         }
 
+        public MetadataDefinition GetComponentByID(string ID)
+        {
+            foreach(MetadataDefinition definition in m_packageAwareComponentLibrary.Components )
+            {
+                if (definition.ID.Equals(ID))
+                {
+                    return definition;
+                }
+            }
+            return null;
+        }
+
         public IEnumerable<string> PackageTypeDirectories
         {
             get { return this.m_componentsLibraryInstance.PackageTypeDirectories; }

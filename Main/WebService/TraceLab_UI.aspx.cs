@@ -12,6 +12,10 @@ public partial class TraceLab_UI : System.Web.UI.Page
     {
         var app = TraceLabApplicationWebConsole.Instance;
         Components.Text = app.GetComponents();
+        ComponentDropDown.DataSource  = app.GetComponentListForDropDown();
+        ComponentDropDown.DataTextField = "Label";
+        ComponentDropDown.DataValueField = "ID";
+        ComponentDropDown.DataBind();
         Workspace.Text = app.GetWorkspace();
     }
 
@@ -23,6 +27,10 @@ public partial class TraceLab_UI : System.Web.UI.Page
 
         Console.Text += app.GetLog();
         Components.Text = app.GetComponents();
+        ComponentDropDown.DataSource = app.GetComponentListForDropDown();
+        ComponentDropDown.DataTextField = "Label";
+        ComponentDropDown.DataValueField = "ID";
+        ComponentDropDown.DataBind();
         Workspace.Text = app.GetWorkspace();
     }
 
@@ -32,6 +40,10 @@ public partial class TraceLab_UI : System.Web.UI.Page
         app.SaveExperiment (SaveText.Text);
         Console.Text = app.GetLog();
         Components.Text = app.GetComponents();
+        ComponentDropDown.DataSource = app.GetComponentListForDropDown();
+        ComponentDropDown.DataTextField = "Label";
+        ComponentDropDown.DataValueField = "ID";
+        ComponentDropDown.DataBind();
         Workspace.Text = app.GetWorkspace();
     }
 
@@ -42,6 +54,10 @@ public partial class TraceLab_UI : System.Web.UI.Page
         Components.Text = app.GetComponents();
         Workspace.Text = app.GetWorkspace();
         ComponentList.Text = app.GetNodes();
+        ComponentDropDown.DataSource = app.GetComponentListForDropDown();
+        ComponentDropDown.DataTextField = "Label";
+        ComponentDropDown.DataValueField = "ID";
+        ComponentDropDown.DataBind();
     }
 
     protected void Run_Click(object sender, EventArgs e)
@@ -51,6 +67,10 @@ public partial class TraceLab_UI : System.Web.UI.Page
         Console.Text = app.GetLog();
         Components.Text = app.GetComponents();
         Workspace.Text = app.GetWorkspace();
+        ComponentDropDown.DataSource = app.GetComponentListForDropDown();
+        ComponentDropDown.DataTextField = "Label";
+        ComponentDropDown.DataValueField = "ID";
+        ComponentDropDown.DataBind();
     }
 
     protected void EdgeCommand(object sender, EventArgs e)
@@ -62,7 +82,11 @@ public partial class TraceLab_UI : System.Web.UI.Page
     protected void AddNode(object sender, EventArgs e)
     {
         var app = TraceLabApplicationWebConsole.Instance;
-        app.AddNode(NodeText.Text,NodeType.SelectedValue );
-
+        int x = 0;
+        int y = 0;
+        Int32.TryParse(txt_nodeX.Text,out x);
+        Int32.TryParse(txt_nodeY.Text, out y);
+        app.AddNode(ComponentDropDown.SelectedValue , x, y);
+        
     }
 }

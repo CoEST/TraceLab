@@ -68,20 +68,11 @@
 
                     <br />
                    <asp:LinkButton ID="NodeButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="AddNode"><span class="glyphicon glyphicon-ok""></span></asp:LinkButton>
-                     <asp:TextBox ID="NodeText" runat="server" Width="599px" Text =""></asp:TextBox>
-                     <asp:TextBox ID="txt_nodeX" runat="server" Width="50px" Text =""></asp:TextBox>
-                     <asp:TextBox ID="txt_nodeY" runat="server" Width="50px" Text =""></asp:TextBox>
-                    <asp:DropDownList ID="NodeType" runat="server" Width ="200px">
-                        <asp:ListItem Text ="Start Node" Value ="ExperimentStartNode"/>
-                        <asp:ListItem Text ="End Node" Value ="ExperimentEndNode"/>
-                        <asp:ListItem Text ="Component Node" Value ="ComponentNode"/>
-                        <asp:ListItem Text ="Composite Component Node" Value ="CompositeComponentNode"/>
-                        <asp:ListItem Text ="Decision Node" Value ="DecisionNode"/>
-                        <asp:ListItem Text ="Exit Decision Node" Value ="ExitDecisionNode"/>
-                        <asp:ListItem Text ="Scope Node" Value ="ScopeNode"/>
-                        <asp:ListItem Text ="Loop Scope Node" Value ="LoopScopeNode"/>
-                        <asp:ListItem Text ="Challenge Node" Value ="ChallengeNode"/>
-                        <asp:ListItem Text ="Comment Node" Value ="CommentNode"/>
+                    X: <asp:TextBox ID="txt_nodeX" runat="server" Width="50px" Text =""></asp:TextBox>
+                     Y:<asp:TextBox ID="txt_nodeY" runat="server" Width="50px" Text =""></asp:TextBox>
+                    
+                    ComponentType:<asp:DropDownList ID="ComponentDropDown" runat="server" Width ="400px">
+
                     </asp:DropDownList>
           <br />
                     </div>

@@ -54,7 +54,7 @@ namespace TraceLab.Core.Components
         /// Initializes a new s_instance of the <see cref="ComponentMetadata"/> class.
         /// </summary>
         /// <param name="componentMetadataDefinition">The component metadata definition.</param>
-        internal ComponentMetadata(ComponentMetadataDefinition componentMetadataDefinition, string experimentLocationRoot)
+        public ComponentMetadata(ComponentMetadataDefinition componentMetadataDefinition, string experimentLocationRoot)
         {
             m_experimentLocationRoot = experimentLocationRoot;
             ComponentMetadataDefinition = componentMetadataDefinition;

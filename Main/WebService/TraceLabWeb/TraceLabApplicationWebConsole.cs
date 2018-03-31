@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TraceLab;
 using System.Diagnostics;
+using System.Data;
 
 namespace TraceLabWeb
 {
@@ -40,6 +41,13 @@ namespace TraceLabWeb
             return WebConsoleUI.GetComponents();
         }
 
+        public DataTable GetComponentListForDropDown()
+        {
+            return WebConsoleUI.GetComponentsForDropDown ();
+        }
+
+
+
         public string GetNodes()
         {
             return WebConsoleUI.GetNodes (); // TODO WebConsoleUI.GetNodes
@@ -63,46 +71,11 @@ namespace TraceLabWeb
             WebConsoleUI.AddEdge(edgeName,sourceName,targetName );
         }
 
-        public void AddNode(string nodeName, string nodeType)
+        public void AddNode(string componentType,int xloc,int yloc)
         {
      
-            switch(nodeType )
-            {
-                case ("ExperimentStartNode"):
-                    WebConsoleUI.AddStartNode (nodeName);
-                    break;
-                case ("ExperimentEndNode"):
-                    WebConsoleUI.AddEndNode(nodeName);
-                    break;
-                case ("ComponentNode"):
-                    WebConsoleUI.AddComponenetNode (nodeName);
-                    break;
-                case ("CompositeComponentNode"):
-                    WebConsoleUI.AddCompositeComponenetNode (nodeName);
-                    break;
-                case ("DecisionNode"):
-                    WebConsoleUI.AddDecisionNode (nodeName);
-                    break;
-                case ("ExitDecisionNode"):
-                    WebConsoleUI.AddExitDecisionNode (nodeName);
-                    break;
-                case ("ScopeNode"):
-                    WebConsoleUI.AddScopeNode (nodeName);
-                    break;
-                case ("LoopScopeNode"):
-                    WebConsoleUI.AddLoopScopeNode (nodeName);
-                    break;
-                case ("ChallengeNode"):
-                    WebConsoleUI.AddChallengeNode (nodeName);
-                    break;
-                case ("CommentNode"):
-                    WebConsoleUI.AddCommentNode (nodeName);
-                    break;
-                default:
-                    break;
-
-
-            }
+                    WebConsoleUI.AddComponenetNode (componentType ,xloc,yloc);
+                    
         }
 
         public void RunExperiment()

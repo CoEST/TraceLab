@@ -7,6 +7,8 @@ using System.Collections.Specialized;
 using TraceLab.Core.Components;
 using TraceLab.Core.Workspaces;
 using TraceLab.Core.Experiments;
+using TraceLab.Core.Utilities;
+using System.Data;
 
 namespace TraceLabWeb
 {
@@ -65,6 +67,23 @@ namespace TraceLabWeb
             components += "</ul>";
             return components;
         }
+           
+        internal static DataTable  GetComponentsForDropDown()
+        {
+            DataTable dt = new DataTable ();
+            dt.Columns.Add("Label");
+            dt.Columns.Add("ID");
+            foreach (MetadataDefinition definition in ConsoleInstance.Application.ComponentLibraryViewModel.ComponentsCollection)
+            {
+                DataRow dr = dt.NewRow();
+                dr["Label"] = definition.Label;
+                dr["ID"] = definition.ID;
+                dt.Rows.Add(dr);
+            }
+            
+            return dt;
+        }
+
         public static string GetNodes()
         {
             string components = "<ul><li>Nodes:</li>";
@@ -252,18 +271,17 @@ namespace TraceLabWeb
         }
 
 
-        public static void AddComponenetNode(string value) //TODO Implement for Node Type
+        public static void AddComponenetNode(string value, int xloc,int yloc) //TODO Implement for Node Type
         {
             try
             {
                 var experiment = ConsoleInstance.Application.Experiment;
 
-                SerializedVertexData svd = new SerializedVertexData();
-                svd.Metadata = new DecisionMetadata(value);
-                ExperimentDecisionNode nodeToAdd = new ExperimentDecisionNode(Guid.NewGuid().ToString(), svd);
+                MetadataDefinition metadataDefinition =ConsoleInstance.Application.ComponentLibraryViewModel.GetComponentByID (value)  ;
 
-                nodeToAdd.Data.Metadata.Label = value;
-                experiment.AddVertex(nodeToAdd);
+                ExperimentNode nodeToAdd = experiment.AddComponentFromDefinition(metadataDefinition, xloc,yloc);
+
+
             }
 
             catch
@@ -294,6 +312,10 @@ namespace TraceLabWeb
 
         }
 
+        /// <summary>
+        /// Add Decision Node to Experiment
+        /// </summary>
+        /// <param name="value">Label of Decision Node</param>
         public static void AddDecisionNode(string value)
         {
             try
@@ -337,15 +359,24 @@ namespace TraceLabWeb
 
         }
 
-        public static void AddScopeNode(string value) //TODO Implement for Node Type
+        /// <summary>
+        /// Add a scopeNode to the Experiment
+        /// </summary>
+        /// <param name="value">Name of the scope node</param>
+        public static void AddScopeNode(string value)
         {
             try
             {
                 var experiment = ConsoleInstance.Application.Experiment;
+                var componentGraph = new CompositeComponentEditableGraph(true);
 
-                SerializedVertexData svd = new SerializedVertexData();
-                svd.Metadata = new DecisionMetadata(value);
-                ExperimentDecisionNode nodeToAdd = new ExperimentDecisionNode(Guid.NewGuid().ToString(), svd);
+                if (componentGraph.References != null)
+                {
+                    componentGraph.References = experiment.References.CopyCollection();
+                }
+                SerializedVertexDataWithSize svd = new SerializedVertexDataWithSize();
+                svd.Metadata = new ScopeMetadata (componentGraph,value, System.IO.Path.GetDirectoryName(experiment.ExperimentInfo.FilePath));
+                ScopeNode  nodeToAdd = new ScopeNode(Guid.NewGuid().ToString(),svd);
 
                 nodeToAdd.Data.Metadata.Label = value;
                 experiment.AddVertex(nodeToAdd);
@@ -358,15 +389,25 @@ namespace TraceLabWeb
 
         }
 
-        public static void AddLoopScopeNode(string value) //TODO Implement for Node Type
+        /// <summary>
+        /// Add a Loop Scope Node to the Experiment
+        /// </summary>
+        /// <param name="value">The name of the node</param>
+        public static void AddLoopScopeNode(string value) 
         {
             try
             {
                 var experiment = ConsoleInstance.Application.Experiment;
+                var componentGraph = new CompositeComponentEditableGraph(true);
 
-                SerializedVertexData svd = new SerializedVertexData();
-                svd.Metadata = new DecisionMetadata(value);
-                ExperimentDecisionNode nodeToAdd = new ExperimentDecisionNode(Guid.NewGuid().ToString(), svd);
+                if (componentGraph.References != null)
+                {
+                    componentGraph.References = experiment.References.CopyCollection();
+                }
+
+                SerializedVertexDataWithSize svd = new SerializedVertexDataWithSize();
+                svd.Metadata = new LoopScopeMetadata ( componentGraph, value, System.IO.Path.GetDirectoryName(experiment.ExperimentInfo.FilePath));
+                LoopScopeNode  nodeToAdd = new LoopScopeNode(Guid.NewGuid().ToString(), svd);
 
                 nodeToAdd.Data.Metadata.Label = value;
                 experiment.AddVertex(nodeToAdd);
@@ -379,18 +420,23 @@ namespace TraceLabWeb
 
         }
 
-
-        public static void AddChallengeNode(string value) //TODO Implement for Node Type
+        /// <summary>
+        /// Add a challenge node to the Experiment
+        /// </summary>
+        /// <param name="value">the name of the challenge</param>
+        public static void AddChallengeNode(string value)
         {
             try
             {
                 var experiment = ConsoleInstance.Application.Experiment;
 
-                SerializedVertexData svd = new SerializedVertexData();
-                svd.Metadata = new DecisionMetadata(value);
-                ExperimentDecisionNode nodeToAdd = new ExperimentDecisionNode(Guid.NewGuid().ToString(), svd);
+                SerializedVertexDataWithSize svd = new SerializedVertexDataWithSize();
+                CompositeComponentEditableGraph compositeComponentGraph = new CompositeComponentEditableGraph (true);
 
-                nodeToAdd.Data.Metadata.Label = value;
+                svd.Metadata = new ChallengeMetadata (compositeComponentGraph ,value, System.IO.Path.GetDirectoryName(experiment.ExperimentInfo.FilePath));
+                ChallengeNode  nodeToAdd = new ChallengeNode(Guid.NewGuid().ToString(), svd);
+             
+               nodeToAdd.Data.Metadata.Label = value;
                 experiment.AddVertex(nodeToAdd);
             }
 

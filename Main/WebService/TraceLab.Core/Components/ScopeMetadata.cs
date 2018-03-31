@@ -48,7 +48,7 @@ namespace TraceLab.Core.Components
         /// <param name="compositeComponentGraph">The composite component graph.</param>
         /// <param name="label">The label.</param>
         /// <param name="experimentLocationRoot">The experiment location root.</param>
-        internal ScopeMetadata(CompositeComponentEditableGraph compositeComponentGraph, string label, string experimentLocationRoot)
+        public ScopeMetadata(CompositeComponentEditableGraph compositeComponentGraph, string label, string experimentLocationRoot)
             : base(compositeComponentGraph, label, experimentLocationRoot)
         {
         }
