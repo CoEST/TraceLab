@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLab.UI.WPF\obj\Debug\
+C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\TraceLab\TraceLab.UI.WPF\obj\Debug\
 TraceLab.UI.WPF
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 72285291742
 
 177717226786
-282101109156
+28-435888978
 Controls\ScreenshotDialog.xaml;Controls\ZoomControl\ScopeZoomStyle.xaml;Controls\AuthenticationAndUploadControl.xaml;Controls\EditableTextBlock.xaml;Controls\ExperimentBreadcrumb.xaml;Controls\TreeListView\Themes\Generic.xaml;Controls\ZoomControl\Generic.xaml;Resources\IOIcons.xaml;Resources\ScreenCaptureIcon.xaml;Views\AboutTraceLabDialog.xaml;Views\ComponentExceptionDisplay.xaml;Views\AboutExperimentDialog.xaml;Views\FolderPickerDialog.xaml;Views\NewExperimentDialog.xaml;Views\Nodes\BasicNodeControl.xaml;Views\Nodes\ReadOnlyLoopDecisionNodeInfoControl.xaml;Views\Nodes\LoopDecisionNodeInfoControl.xaml;Views\Nodes\ExitLoopScopeNodeControl.xaml;Views\Nodes\EnterLoopScopeNodeControl.xaml;Views\Nodes\LoopScopeNodeControl.xaml;Views\Nodes\ExitScopeNodeControl.xaml;Views\Nodes\EnterScopeNodeControl.xaml;Views\Nodes\ExitDecisionNodeControl.xaml;Views\Nodes\RoutePointThumbStyle.xaml;Views\Nodes\ScopeNodeControl.xaml;Views\Nodes\NodeInfoCommonResources.xaml;Views\Nodes\NodeResourcesReadOnly.xaml;Views\Nodes\NodeResourcesForSubLevelExperiment.xaml;Resources\ConfigPathsDataTemplatesBenchmark.xaml;Resources\ConfigPathsEditorsStyles.xaml;Resources\Import_icon.xaml;Resources\Sequence_icon.xaml;Resources\SystemStyles.xaml;Themes\GraphDocument.xaml;Controls\AssistListPopup.xaml;Resources\ConfigPathsDataTemplates.xaml;Views\Nodes\DecisionNodeControl.xaml;Views\Nodes\EdgeStyle.xaml;Views\Nodes\NodeResources.xaml;Themes\Generic.xaml;Themes\SearchTextBox.xaml;Views\BenchmarkWizardDialog.xaml;Views\ErrorDisplay.xaml;Views\ComponentLibraryOrganizer.xaml;Views\ComponentsLibraryWindow.xaml;Views\DefineBenchmarkDialog.xaml;Views\ExperimentImportManagerView.xaml;Views\DefineCompositeComponentWizard.xaml;Views\FilePickerDialog.xaml;Views\Nodes\ComponentNodeControl.xaml;Views\Nodes\NodeResourcesForExperiment.xaml;Views\Nodes\ReadOnlyComponentNodeInfo.xaml;Views\Nodes\ReadOnlyDecisionNodeInfo.xaml;Views\Nodes\EdgeStyleReadOnly.xaml;Views\Nodes\VertexControlStyleReadOnly.xaml;Views\Nodes\VertexControlStyle.xaml;Views\PackageBuilder\PackageBuilderMainWindow.xaml;Views\ReadonlyDockableGraph.xaml;Views\ScopeGraph.xaml;Views\SettingsPage.xaml;Views\SubExperimentControl.xaml;Views\StartPage.xaml;Views\WorkspaceWindow.xaml;Views\DockableGraph.xaml;Views\ExceptionDisplay.xaml;Views\MainWindow.xaml;Views\Nodes\ComponentNodeInfoControl.xaml;Views\Nodes\DecisionNodeInfoControl.xaml;Views\Nodes\NodeInfoContainer.xaml;Views\OutputWindow.xaml;Controls\ProgressControl.xaml;Views\Nodes\NodeColors.xaml;
 
 False

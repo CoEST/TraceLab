@@ -74,6 +74,12 @@ C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceL
 C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.dll
 C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.pdb
 =======
+C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\bin\Debug\TraceLabSDK.Types.dll
+C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\bin\Debug\QuickGraph.Serialization.dll
+C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\bin\Debug\TraceLab.Core.pdb
+C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\bin\Debug\TraceLabSDK.Types.pdb
+C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\bin\Debug\TraceLabSDK.Types.xml
+C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\bin\Debug\QuickGraph.Serialization.pdb
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLab\bin\Debug\TraceLab.dll.config
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLab\bin\Debug\TraceLab.dll
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLab\bin\Debug\TraceLab.pdb
@@ -97,9 +103,3 @@ C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLab\obj\Debug\T
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.csproj.CoreCompileInputs.cache
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.dll
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.pdb
-C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\bin\Debug\TraceLabSDK.Types.dll
-C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\bin\Debug\QuickGraph.Serialization.dll
-C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\bin\Debug\TraceLab.Core.pdb
-C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\bin\Debug\TraceLabSDK.Types.pdb
-C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\bin\Debug\TraceLabSDK.Types.xml
-C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\bin\Debug\QuickGraph.Serialization.pdb

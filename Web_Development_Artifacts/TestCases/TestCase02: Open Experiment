@@ -1,0 +1,17 @@
+# Description
+Tests to ensure that experiments can be opened properly
+
+# Precondition
+Application must be running
+User must be at http://localhost:49460/Tracelab_UI.aspx
+
+# Assumption
+Tracelab key has been properly set, the test experiment is runnable and without error
+
+# Test Steps
+1. Enter in the location of the experiment in the top text box
+2. Select the folder icon next to the text box
+2. Verifty the experiment has opened
+
+# Expected results
+The div labeled graph will display output verifying that the experiment has been opened.

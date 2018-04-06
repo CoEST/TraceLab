@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLabSDK.UI.WPF\obj\Debug\
+C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\TraceLab\TraceLabSDK.UI.WPF\obj\Debug\
 TraceLabSDK
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 6-736835496
 
 7-1354886311
-15-396001730
+15828414924
 Types\TLArtifactsCollectionEditor.xaml;Types\TLDictionaryIndexEditor.xaml;Types\TLMetricsContainerEditor.xaml;Types\TLSimilarityMatrixEditor.xaml;Types\TLArtifactEditor.xaml;Types\TLStopwordsEditor.xaml;
 
 False

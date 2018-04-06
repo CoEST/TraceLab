@@ -131,7 +131,7 @@ namespace TraceLab.Core.ExperimentExecution
                             if (currentActiveNodesList.Contains(node) == false)
                             {
                                 RunnableNodeThreadArgs args = new RunnableNodeThreadArgs { ExperimentRunner = this };
-                                var resetEvent = node.Run(args);
+                                var resetEvent = node.Run(args, progress); // brian added progress parameter
 
                                 currentActiveNodesList.Add(node, resetEvent);
                             }
