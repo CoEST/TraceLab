@@ -12,10 +12,13 @@ public partial class TraceLab_UI : System.Web.UI.Page
     {
         var app = TraceLabApplicationWebConsole.Instance;
         Components.Text = app.GetComponents();
-        ComponentDropDown.DataSource  = app.GetComponentListForDropDown();
-        ComponentDropDown.DataTextField = "Label";
-        ComponentDropDown.DataValueField = "ID";
-        ComponentDropDown.DataBind();
+        if (!IsPostBack)
+        {
+            ComponentDropDown.DataSource = app.GetComponentListForDropDown();
+            ComponentDropDown.DataTextField = "Label";
+            ComponentDropDown.DataValueField = "ID";
+            ComponentDropDown.DataBind();
+        }
         Workspace.Text = app.GetWorkspace();
     }
 
@@ -86,7 +89,7 @@ public partial class TraceLab_UI : System.Web.UI.Page
         int y = 0;
         Int32.TryParse(txt_nodeX.Text,out x);
         Int32.TryParse(txt_nodeY.Text, out y);
-        app.AddNode(ComponentDropDown.SelectedValue , x, y);
+        app.AddNode(ComponentDropDown.SelectedItem.Value , x, y);
         
     }
 }

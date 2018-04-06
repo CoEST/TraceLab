@@ -7,3 +7,12 @@ C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLab.Core\obj\Deb
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLab.Core\obj\Debug\TraceLab.Core.csproj.ResolveComReference.cache
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLab.Core\obj\Debug\TraceLab.Core.dll
 C:\Users\cebernalc\Documents\GitHub\TraceLab\Main\TraceLab\TraceLab.Core\obj\Debug\TraceLab.Core.pdb
+C:\Users\Andrew\Documents\Git\TraceLab\Main\TraceLab\bin\Debug\TraceLab.Core.dll
+C:\Users\Andrew\Documents\Git\TraceLab\Main\TraceLab\bin\Debug\TraceLab.Core.pdb
+C:\Users\Andrew\Documents\Git\TraceLab\Main\TraceLab\bin\Debug\TraceLab.Core.dll.CodeAnalysisLog.xml
+C:\Users\Andrew\Documents\Git\TraceLab\Main\TraceLab\bin\Debug\TraceLab.Core.dll.lastcodeanalysissucceeded
+C:\Users\Andrew\Documents\Git\TraceLab\Main\TraceLab\TraceLab.Core\obj\Debug\TraceLab.Core.csprojResolveAssemblyReference.cache
+C:\Users\Andrew\Documents\Git\TraceLab\Main\TraceLab\TraceLab.Core\obj\Debug\Interop.mscoree.dll
+C:\Users\Andrew\Documents\Git\TraceLab\Main\TraceLab\TraceLab.Core\obj\Debug\TraceLab.Core.csproj.ResolveComReference.cache
+C:\Users\Andrew\Documents\Git\TraceLab\Main\TraceLab\TraceLab.Core\obj\Debug\TraceLab.Core.dll
+C:\Users\Andrew\Documents\Git\TraceLab\Main\TraceLab\TraceLab.Core\obj\Debug\TraceLab.Core.pdb
