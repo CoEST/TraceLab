@@ -108,7 +108,7 @@ namespace TraceLab.Core.ExperimentExecution
                         progress.NumSteps = m_runnableExperiment.Nodes.Count;
                         // Start at 1 so user can tell something is happening.
                         progress.Increment();
-                        progress.CurrentStatus = Messages.ProgressExperimentProcessing;
+                        progress.CurrentStatus = Messages.ProgressExperimentProcessing + "<br/>";
                     }
 
                     // collection of nodes currently executing
@@ -227,7 +227,7 @@ namespace TraceLab.Core.ExperimentExecution
                         progress.SetError(true);
                     }
 
-                    progress.CurrentStatus = endMessage;
+                    progress.CurrentStatus = endMessage + "<br/>";
                 }
             }
             finally

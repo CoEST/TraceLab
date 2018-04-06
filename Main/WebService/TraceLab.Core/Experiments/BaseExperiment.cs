@@ -998,7 +998,7 @@ namespace TraceLab.Core.Experiments
         /// <param name="baseline">(optional) The baseline data that is going to be preloaded into workspace before executing the experiment.</param>
         public void RunExperiment(IProgress progress, Workspace workspace, ComponentsLibrary library, TraceLabSDK.Types.Contests.TLExperimentResults baseline)
         {
-            progress.CurrentStatus = "Preparing experiment...";
+            progress.CurrentStatus = "Preparing experiment...<br/>";
             progress.IsIndeterminate = true;
             progress.SetError(false);
             ClearErrors();

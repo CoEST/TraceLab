@@ -193,7 +193,7 @@ namespace TraceLab.Core.ExperimentExecution
             m_nodeThread = nodeThread;
 
             // Hard coded text to display to user - brian
-            string nodeMessage = "Finished \"" + Label + "\"";
+            string nodeMessage = "Executing \"" + Label + "\" <br/>";
             progress.CurrentStatus = nodeMessage;
 
             return m_nodeResetEvent;

@@ -511,7 +511,7 @@ namespace TraceLabWeb
                 log += string.Format("\tAuthor:\t {0}<br />", ConsoleInstance.Application.Experiment.ExperimentInfo.Author);
                 log += string.Format("\tContributors:\t {0}<br />", ConsoleInstance.Application.Experiment.ExperimentInfo.Contributors);
                 log += string.Format("\tDescription:\t {0}<br />", ConsoleInstance.Application.Experiment.ExperimentInfo.Description);
-                log += string.Format("\tVertices count:\t {0}<br />", ConsoleInstance.Application.Experiment.VertexCount);
+                log += string.Format("\tVertices count:\t {0}<br /><br/>", ConsoleInstance.Application.Experiment.VertexCount);
             }
         }
 
