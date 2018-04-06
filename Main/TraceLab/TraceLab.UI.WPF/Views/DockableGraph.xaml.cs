@@ -69,5 +69,10 @@ namespace TraceLab.UI.WPF.Views
         }
 
         #endregion
+
+        private void ExecuteCreateConnection(object sender, System.Windows.Input.ExecutedRoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -16,6 +16,7 @@
 
 using System;
 using System.Threading;
+using TraceLabSDK; // brian added using statement
 namespace TraceLab.Core.ExperimentExecution
 {
     public interface IRunnableNode
@@ -75,7 +76,7 @@ namespace TraceLab.Core.ExperimentExecution
         /// Runs creates the thread with specified specified arguments and starts this thread.
         /// </summary>
         /// <param name="args">The args.</param>
-        AutoResetEvent Run(RunnableNodeThreadArgs args);
+        AutoResetEvent Run(RunnableNodeThreadArgs args, IProgress progress); // brian added progress parameter
 
         /// <summary>
         /// The actual run execution of each node, that is executed in seperate thread

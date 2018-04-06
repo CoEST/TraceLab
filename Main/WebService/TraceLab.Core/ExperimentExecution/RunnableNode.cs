@@ -172,7 +172,7 @@ namespace TraceLab.Core.ExperimentExecution
         /// </summary>
         /// <param name="args">The args.</param>
         /// <returns>The the AutoResetEvent that will signal, when the thread finishes.</returns>
-        public AutoResetEvent Run(RunnableNodeThreadArgs args)
+        public AutoResetEvent Run(RunnableNodeThreadArgs args, IProgress progress) // brian added progress parameter
         {
             if (args == null || args.ExperimentRunner == null)
                 throw new ArgumentNullException("args", "RunnableNodeThreadArgs and its dispatcher cannot be null to start a thread");
@@ -191,6 +191,10 @@ namespace TraceLab.Core.ExperimentExecution
             nodeThread.Start(args);
 
             m_nodeThread = nodeThread;
+
+            // Hard coded text to display to user - brian
+            string nodeMessage = "Finished \"" + Label + "\"";
+            progress.CurrentStatus = nodeMessage;
 
             return m_nodeResetEvent;
         }
