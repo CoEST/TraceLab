@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TraceLab.Core.Experiments;
 using TraceLabSDK;
 
 namespace TraceLabWeb
@@ -10,6 +11,7 @@ namespace TraceLabWeb
     public class ExperimentProgress : IProgress
     {
         private bool m_isIndeterminate;
+        public  event EventHandler<EventArgs > ProgressChanged;
         public bool IsIndeterminate
         {
             get
@@ -78,6 +80,9 @@ namespace TraceLabWeb
                         log += String.Format("Current Status: {0}", value);
                     }
                     m_currentStatus = value;
+                        EventArgs e= new EventArgs() ;
+                        ProgressChanged.Invoke(this,e);
+                        
                 }
             }
         }

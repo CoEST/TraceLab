@@ -26,6 +26,21 @@ namespace TraceLabWeb
             return WebConsoleUI.getLog();
         }
 
+        public string GetLogUntouched()
+        {
+            return WebConsoleUI.getLogUntouched();
+        }
+
+        public bool IsExperimentRunning()
+        {
+            return WebConsoleUI.isExperimentRunning();
+        }
+
+        public void ClearLog()
+        {
+             WebConsoleUI.clearLog ();
+        }
+
         public void DisplayHelp()
         {
             WebConsoleUI.DisplayHelp();
@@ -90,7 +105,7 @@ namespace TraceLabWeb
             {
                 if (INSTANCE == null)
                 {
-                    string[] args = { CommandLineProcessor.SwitchCharacter + "base:C:\\Users\\Owner\\Documents\\W&M\\cs635\\TraceLab\\Main\\WebService\\Bin" };
+                    string[] args = { CommandLineProcessor.SwitchCharacter + "base:C:\\Users\\Andrew\\Documents\\Git\\TraceLab\\Main\\WebService\\Bin" };
                     INSTANCE = new TraceLabApplicationWebConsole();
                     INSTANCE.Run(args);
                 }

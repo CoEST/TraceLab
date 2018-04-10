@@ -15,12 +15,43 @@ namespace TraceLabWeb
     public class WebConsoleUI
     {
         public static string log = "";
+        public static string prevStatus = "";
         public static ExperimentProgress progress = new ExperimentProgress();
 
         public static string getLog()
         {
             log += progress.GetLog;
             return log;
+        }
+
+
+        public static string getLogUntouched()
+        {
+            return log;
+        }
+    
+        public static bool isExperimentRunning()
+        {
+            return ConsoleInstance.Application.Experiment.IsExperimentRunning ;
+        }
+
+        public static void clearLog()
+        {
+            log = "";
+            progress.CurrentStatus = "";
+            prevStatus = "";
+        }
+
+        public static void progLog(object sender, EventArgs e)
+        {
+            log += progress.CurrentStatus;            
+        }
+
+        public static void ExperimentCompleted(object sender, EventArgs e)
+        {
+            //log += progress.CurrentStatus;
+                        ConsoleInstance.Application.Experiment.ExperimentCompleted -= ExperimentCompleted;
+            progress.ProgressChanged -= progLog;
         }
 
         public static void UpdateLog( string inLog)
@@ -475,7 +506,9 @@ namespace TraceLabWeb
             var experiment = ConsoleInstance.Application.Experiment;
             if (experiment != null)
             {
-                
+                     experiment .ExperimentCompleted += ExperimentCompleted;
+                progress.ProgressChanged += progLog;
+      
                 experiment.RunExperiment(progress, ConsoleInstance.Application.Workspace, ComponentsLibrary.Instance);
                 log += progress.GetLog;
             }

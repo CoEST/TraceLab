@@ -1,17 +1,17 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="TraceLab_UI.aspx.cs" Inherits="TraceLab_UI" %>
-
+     
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>TraceLab</title>
-
+   
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -46,8 +46,9 @@
                       </div>
                     </div>  
 
-
-                    
+                     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+      
+                    <asp:Timer ID="runningTimer" runat="server" Interval="10" OnTick="running_refresh" Enabled ="False" />
                     <asp:LinkButton ID="Run" CssClass="btn btn-primary btn-lg" runat="server" OnClick="Run_Click"><span class="glyphicon glyphicon-play"></span></asp:LinkButton>
                     <asp:LinkButton ID="Stop" CssClass="btn btn-primary btn-lg" runat="server" ><span class="glyphicon glyphicon-stop"></span></asp:LinkButton>
                     <asp:LinkButton ID="ReloadLog" CssClass="btn btn-primary btn-lg" runat="server" OnClick="Log_Click"><span class="glyphicon glyphicon-refresh"></span></asp:LinkButton>

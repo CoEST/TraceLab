@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -67,13 +68,17 @@ public partial class TraceLab_UI : System.Web.UI.Page
     {
         var app = TraceLabApplicationWebConsole.Instance;
         app.RunExperiment();
-        Console.Text = app.GetLog();
+        app.ClearLog();
+     
         Components.Text = app.GetComponents();
         Workspace.Text = app.GetWorkspace();
+        //   running_refresh();
+        runningTimer.Enabled = true;
         ComponentDropDown.DataSource = app.GetComponentListForDropDown();
         ComponentDropDown.DataTextField = "Label";
         ComponentDropDown.DataValueField = "ID";
         ComponentDropDown.DataBind();
+        
     }
 
     protected void EdgeCommand(object sender, EventArgs e)
@@ -91,5 +96,45 @@ public partial class TraceLab_UI : System.Web.UI.Page
         Int32.TryParse(txt_nodeY.Text, out y);
         app.AddNode(ComponentDropDown.SelectedItem.Value , x, y);
         
+    }
+
+    public void running_refresh(object sender, EventArgs e)
+    {
+        try
+        { 
+            var app = TraceLabApplicationWebConsole.Instance;
+            Console.Text = app.GetLogUntouched();
+            if (app.GetLogUntouched().ToUpper().Contains ("DONE"))
+            {
+                Console.Text = app.GetLogUntouched();
+                runningTimer.Enabled = false;
+            }
+            //int i = 0;
+            //while ((!app.IsExperimentRunning())&&(i<10000))
+            //{
+            //    i++;
+            //    Thread.Sleep(50);
+            //    Console.Text = app.GetLogUntouched ();
+                
+            //}
+            //while (!app.GetLogUntouched().ToUpper().Contains ("DONE") && (i < 10000))
+            //{
+            //    i++;
+            //    Thread.Sleep (50);
+            //    Console.Text = app.GetLogUntouched();
+            //}
+            //Console.Text = app.GetLogUntouched();
+
+            //if (i >=10000)
+            //{
+            //    Console.Text = "timeout";
+            //}
+
+        }
+        catch(Exception ex)
+        {
+            Console.Text = ex.Message;
+            runningTimer.Enabled = false;
+        }
     }
 }
