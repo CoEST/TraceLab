@@ -102,34 +102,12 @@ public partial class TraceLab_UI : System.Web.UI.Page
     {
         try
         { 
-            var app = TraceLabApplicationWebConsole.Instance;
-            Console.Text = app.GetLogUntouched();
-            if (app.GetLogUntouched().ToUpper().Contains ("DONE"))
+            Console.Text = TraceLabApplicationWebConsole.Instance.GetLogUntouched();
+            if (TraceLabApplicationWebConsole.Instance.GetLogUntouched().ToUpper().Contains ("DONE"))
             {
-                Console.Text = app.GetLogUntouched();
+                Console.Text = TraceLabApplicationWebConsole.Instance.GetLogUntouched();
                 runningTimer.Enabled = false;
             }
-            //int i = 0;
-            //while ((!app.IsExperimentRunning())&&(i<10000))
-            //{
-            //    i++;
-            //    Thread.Sleep(50);
-            //    Console.Text = app.GetLogUntouched ();
-                
-            //}
-            //while (!app.GetLogUntouched().ToUpper().Contains ("DONE") && (i < 10000))
-            //{
-            //    i++;
-            //    Thread.Sleep (50);
-            //    Console.Text = app.GetLogUntouched();
-            //}
-            //Console.Text = app.GetLogUntouched();
-
-            //if (i >=10000)
-            //{
-            //    Console.Text = "timeout";
-            //}
-
         }
         catch(Exception ex)
         {

@@ -48,7 +48,7 @@
 
                      <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
       
-                    <asp:Timer ID="runningTimer" runat="server" Interval="10" OnTick="running_refresh" Enabled ="False" />
+                    <asp:Timer ID="runningTimer" runat="server" Interval="5" OnTick="running_refresh" Enabled ="False" />
                     <asp:LinkButton ID="Run" CssClass="btn btn-primary btn-lg" runat="server" OnClick="Run_Click"><span class="glyphicon glyphicon-play"></span></asp:LinkButton>
                     <asp:LinkButton ID="Stop" CssClass="btn btn-primary btn-lg" runat="server" ><span class="glyphicon glyphicon-stop"></span></asp:LinkButton>
                     <asp:LinkButton ID="ReloadLog" CssClass="btn btn-primary btn-lg" runat="server" OnClick="Log_Click"><span class="glyphicon glyphicon-refresh"></span></asp:LinkButton>
