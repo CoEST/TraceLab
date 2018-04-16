@@ -38,8 +38,8 @@
             </div><!--/.container-fluid -->
           </nav>
 
-         <div class="row ">
-                <div class="col-md-12 " >   
+         <div class="row">
+                <div class="col-md-8" >   
                     <div class="progress hidden">
                       <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
                         <span class="sr-only">45% Complete</span>
@@ -56,16 +56,15 @@
                     <asp:TextBox ID="OpenDirText" runat="server" Width="799px" Text ="C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"></asp:TextBox>
 
                     <br />
+
+                    <asp:LinkButton ID="SaveButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="Save_Click"><span class="glyphicon glyphicon-saved""></span></asp:LinkButton>
+                    Save File Location:<asp:TextBox ID="SaveText" runat="server" Width="799px" Text ="C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"></asp:TextBox>
+ 
+                    <br />
                     <asp:LinkButton ID="EdgeCommandButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="EdgeCommand"><span class="glyphicon glyphicon-ok""></span></asp:LinkButton>
                     <asp:TextBox ID="EdgeNameText" runat="server" Width="299px" Text =""></asp:TextBox>
                     <asp:TextBox ID="EdgeTargetText" runat="server" Width="299px" Text =""></asp:TextBox>
                     <asp:TextBox ID="EdgeSourceText" runat="server" Width="299px" Text =""></asp:TextBox>
-                    <br />
-
-
-                    <asp:LinkButton ID="SaveButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="Save_Click"><span class="glyphicon glyphicon-saved""></span></asp:LinkButton>
-                    <asp:TextBox ID="SaveText" runat="server" Width="799px" Text ="C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"></asp:TextBox>
- 
 
                     <br />
                    <asp:LinkButton ID="NodeButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="AddNode"><span class="glyphicon glyphicon-ok""></span></asp:LinkButton>
@@ -76,14 +75,43 @@
 
                     </asp:DropDownList>
           <br />
+                    <asp:LinkButton ID="RemoveNodeButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="AddNode"><span class="glyphicon glyphicon-minus""></span></asp:LinkButton>
+                   Label of node to remove:<asp:TextBox ID="RemoveNodeText" runat="server" Width="799px" Text =""></asp:TextBox>
+  <br />
+         
+                    <asp:LinkButton ID="RemoveEdgeButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="AddNode"><span class="glyphicon glyphicon-minus""></span></asp:LinkButton>
+                   Label of edge to remove:<asp:TextBox ID="RemoveEdgeText" runat="server" Width="799px" Text =""></asp:TextBox>
+
                     </div>
+
+             <div class="col-md-4" style="height:200px">              
+                    <div class="panel panel-primary fill-body-double" style="min-height :275px">
+                        <div class="panel-heading">Experiment Info</div>
+                        <div class="panel-body" style="min-height :90px">
+                            <asp:Label ID="ExperimentInfo" runat="server" Text="ExperimentInfo: <br/>"></asp:Label>
+                            <asp:Label ID="Info" runat="server" Text=""></asp:Label>
+                              Project Name:<asp:TextBox ID="ProjectNameText" runat="server" Width="200px" Text =""></asp:TextBox>
+                            <br />
+                              Author(s)   :<asp:TextBox ID="AuthorsText" runat="server" Width="200px" Text =""></asp:TextBox>
+                            <br />
+                              Contributors:<asp:TextBox ID="ContributorsText" runat="server" Width="200px" Text =""></asp:TextBox>
+                            <br />
+                              Description:<asp:TextBox ID="DescriptionText" runat="server" Width="200px" Height ="50px" Text ="" TextMode="MultiLine"></asp:TextBox>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+
             </div><!-- Buttons for Start and Stop-->
 
             <div class="row top-buffer"> 
                 <div class="col-md-4" >
                     <div class="panel panel-primary fill-body">
                         <div class="panel-heading">Components</div>
+                        
                         <div class="panel-body">
+                            <asp:PlaceHolder ID="ComponentConfig" runat ="server"></asp:PlaceHolder>
                             <asp:Label ID="Components" runat="server" Text=""></asp:Label>
                         </div>
                     </div>
@@ -117,6 +145,9 @@
                 </div>
             </div><!-- Main workspace-->
            
+        <div class ="row">
+
+        </div>
             
             <div class="row"> 
                 <div class="col-md-12 well" >

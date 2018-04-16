@@ -30,6 +30,12 @@ public partial class TraceLab_UI : System.Web.UI.Page
         app.OpenExperiment(directory);
 
         Console.Text += app.GetLog();
+
+        ProjectNameText.Text = "";
+        AuthorsText.Text = "";
+        ContributorsText.Text = "";
+        DescriptionText.Text = "";
+
         Components.Text = app.GetComponents();
         ComponentDropDown.DataSource = app.GetComponentListForDropDown();
         ComponentDropDown.DataTextField = "Label";
