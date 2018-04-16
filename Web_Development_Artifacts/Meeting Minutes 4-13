@@ -1,0 +1,20 @@
+Current Status
+-step by step text progress displayed in real time while running experiment
+-adding nodes by component drop down menu, adding edges by node id's
+
+Next Steps
+-send screen capture ASAP
+-deleting nodes and edges
+-displaying component node information
+-selecting/attaching data files in components to be experimented on
+  -> editing/specifying parameters and variables of components (see component properties)
+-displaying metrics/output at end of experiment
+  -> option to click to display on screen
+  -> option to export data to file
+-plan for implementation transition to graphical drag-drop-connect UI as in main TraceLab
+  -> decide on library/API to use, look into implementation in main TraceLab (is it portable?
+
+General
+-one week sprints now, try to regularly tag/release versions for review by Denys and Carlos
+-presentation likely on Friday, April 27
+-final deliverable due May 10
