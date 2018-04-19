@@ -111,7 +111,16 @@
                         <div class="panel-heading">Components</div>
                         
                         <div class="panel-body">
-                            <asp:PlaceHolder ID="ComponentConfig" runat ="server"></asp:PlaceHolder>
+                            <asp:TextBox ID="ComponentLabelText" runat ="server" OnTextChanged ="GetComponentInfo"></asp:TextBox>
+                            <asp:Button ID="loadSelectedComponent" runat ="server"  Text ="Load Component" OnClick ="GetComponentInfo" />
+                            <asp:placeholder ID="ComponentConfig" runat ="server"></asp:placeholder>
+                            <asp:Label ID="Compcon" Font-Size="small" runat="server" >
+
+                            </asp:Label>
+                            <br />
+                            <asp:Button ID="SetSelectedComponent" runat="server" Text ="Set Component" OnClick="SetComponentConfig"  Visible="false"/>
+                            <br />
+                            
                             <asp:Label ID="Components" runat="server" Text=""></asp:Label>
                         </div>
                     </div>

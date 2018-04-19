@@ -61,6 +61,12 @@ namespace TraceLabWeb
             return WebConsoleUI.GetComponentsForDropDown ();
         }
 
+        public string GetComponentConfigInfo(string comLabel)
+        {
+            string CompConf = WebConsoleUI.GetComponentInfo (comLabel );
+
+            return CompConf;
+        }
 
 
         public string GetNodes()

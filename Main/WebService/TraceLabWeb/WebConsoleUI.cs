@@ -115,6 +115,32 @@ namespace TraceLabWeb
             return dt;
         }
 
+
+        internal static string GetComponentInfo(string selectedID)
+        {
+            string compConfInfo = "";
+           
+//            ComponentMetadataDefinition selectedMetaData = ConsoleInstance.Application.ComponentLibraryViewModel.GetComponentByID(selectedID);
+           
+          ComponentNode node =(ComponentNode) ConsoleInstance.Application.Experiment.GetNode(selectedID);
+           System.Xml.Schema.XmlSchema schem = node.Data.Metadata .GetSchema();
+            ComponentMetadata meta = (ComponentMetadata)node.Data.Metadata;
+
+            foreach (IOItem inputItem in meta.IOSpec.Input .Values)
+            {
+              compConfInfo += inputItem.IOItemDefinition.Type + ":"+ inputItem.MappedTo+ ";";
+            }
+
+            foreach (IOItem outputItem in meta.IOSpec.Output.Values)
+            {
+                compConfInfo +=  outputItem.IOItemDefinition.Type + ":" + outputItem.MappedTo +  ";";
+            }
+            compConfInfo += "<asp:TextBox></TextBox>";
+ 
+           
+            return compConfInfo ;
+        }
+
         public static string GetNodes()
         {
             string components = "<ul><li>Nodes:</li>";

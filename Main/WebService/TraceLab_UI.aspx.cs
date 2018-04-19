@@ -104,6 +104,51 @@ public partial class TraceLab_UI : System.Web.UI.Page
         
     }
 
+    protected void GetComponentInfo(object sender,EventArgs e)
+    {
+        ComponentConfig.Controls.Clear();//Remove any controls that already exist
+        var app = TraceLabApplicationWebConsole.Instance;
+
+        string comps = app.GetComponentConfigInfo(ComponentLabelText.Text);
+       
+        string[] compControls = comps.Split(';');
+
+        foreach (string s in compControls)
+        {
+            string[] controlParts = s.Split(':');
+
+            if (controlParts[0].Equals("Text"))
+            {
+                TextBox newControl = new TextBox();
+                newControl.ID = controlParts[1];
+                ComponentConfig.Controls.Add(newControl);
+            }
+            else if (controlParts[0].Equals("Bool"))
+            {
+                CheckBox newControl = new CheckBox();
+                newControl.ID = controlParts[1];
+                ComponentConfig.Controls.Add(newControl);
+            }
+            else
+            {
+                Label newControl = new Label();
+                newControl.ID = controlParts[1];
+                newControl.Text = controlParts[0];
+                ComponentConfig.Controls.Add(newControl );
+            }
+
+
+        }
+
+        //Add controls that that component would have
+
+    }
+
+    protected void SetComponentConfig(object sender, EventArgs e)
+    {
+
+    }
+
     public void running_refresh(object sender, EventArgs e)
     {
         try
