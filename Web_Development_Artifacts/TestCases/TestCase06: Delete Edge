@@ -5,6 +5,7 @@ Tests to ensure that experiment running functionality is implemented correctly
 Application must be running
 User must be at http://localhost:49460/Tracelab_UI.aspx
 Experiment Must be opened
+At least two nodes and one edge must exist in the experiment
 
 # Assumption
 Tracelab key has been properly set, the opened experiment is runnable and without error
