@@ -99,7 +99,8 @@ C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLab\bin\Debug\T
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLab\bin\Debug\QuickGraph.Serialization.pdb
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.csprojResolveAssemblyReference.cache
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.Properties.Resources.resources
-C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.csproj.GenerateResource.Cache
+C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.csproj.GenerateResource.cache
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.csproj.CopyComplete
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.dll
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLab\obj\Debug\TraceLab.pdb

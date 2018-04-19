@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2017\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
 <FxCopReport Version="15.0">
  <Targets>
-  <Target Name="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab\bin\Debug\TraceLab.Core.dll">
+  <Target Name="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab\bin\Debug\TraceLab.Core.dll">
    <Modules>
     <Module Name="tracelab.core.dll">
      <Namespaces>
@@ -10,17 +10,28 @@
        <Types>
         <Type Name="BenchmarkInfo" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
+<<<<<<< HEAD
           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
            <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'BenchmarkInfo'.</Issue>
           </Message>
           <Message TypeName="ImplementSerializationConstructors" Category="Microsoft.Usage" CheckId="CA2229" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
+=======
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'BenchmarkInfo'.</Issue>
+          </Message>
+          <Message TypeName="ImplementSerializationConstructors" Category="Microsoft.Usage" CheckId="CA2229" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
            <Issue Name="CreateMagicConstructor" Certainty="95" Level="Error">Add a constructor to BenchmarkInfo with the following signature: 'protected BenchmarkInfo(SerializationInfo info, StreamingContext context)'.</Issue>
           </Message>
          </Messages>
         </Type>
         <Type Name="DefiningBenchmark" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
+<<<<<<< HEAD
           <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="DependsOnFix">
+=======
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="DependsOnFix">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
            <Issue Name="DependsOnFix" Certainty="95" Level="CriticalError">Implement IDisposable on 'DefiningBenchmark' because it creates members of the following IDisposable types: 'ExperimentWorkspaceWrapper'. If 'DefiningBenchmark' has previously shipped, adding new members that implement IDisposable to this type is considered a breaking change to existing consumers.</Issue>
           </Message>
          </Messages>
@@ -31,7 +42,11 @@
        <Types>
         <Type Name="ChallengeMetadata" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
+<<<<<<< HEAD
           <Message TypeName="ImplementSerializationConstructors" Category="Microsoft.Usage" CheckId="CA2229" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
+=======
+          <Message TypeName="ImplementSerializationConstructors" Category="Microsoft.Usage" CheckId="CA2229" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
            <Issue Name="CreateMagicConstructor" Certainty="95" Level="Error">Add a constructor to ChallengeMetadata with the following signature: 'protected ChallengeMetadata(SerializationInfo info, StreamingContext context)'.</Issue>
           </Message>
          </Messages>
@@ -40,16 +55,27 @@
          <Members>
           <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Components" File="ComponentMetadata.cs" Line="48">'ComponentMetadata.ComponentMetadata()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;ComponentMetadata..ctor()&#xD;&#xA;Metadata.InitLoggingNodeSettings():Void</Issue>
+=======
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Components" File="ComponentMetadata.cs" Line="48">'ComponentMetadata.ComponentMetadata()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;ComponentMetadata..ctor()&#xD;&#xA;Metadata.InitLoggingNodeSettings():Void</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
             </Message>
            </Messages>
           </Member>
           <Member Name="#.ctor(TraceLab.Core.Components.ComponentMetadataDefinition,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Components" File="ComponentMetadata.cs" Line="57">'ComponentMetadata.ComponentMetadata(ComponentMetadataDefinition, string)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;ComponentMetadata..ctor(ComponentMetadataDefinition, String)&#xD;&#xA;ComponentMetadata.set_ComponentMetadataDefinition(ComponentMetadataDefinition):Void&#xD;&#xA;ComponentMetadata.set_ComponentMetadataDefinitionID(String)&#xD;&#xA;Metadata.InitLoggingNodeSettings():Void</Issue>
              <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Components" File="ComponentMetadata.cs" Line="57">'ComponentMetadata.ComponentMetadata(ComponentMetadataDefinition, string)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;ComponentMetadata..ctor(ComponentMetadataDefinition, String)&#xD;&#xA;ComponentMetadata.set_ComponentMetadataDefinition(ComponentMetadataDefinition):Void&#xD;&#xA;ComponentMetadata.set_ComponentMetadataDefinitionID(String):Void&#xD;&#xA;Metadata.NotifyPropertyChanged(String):Void&#xD;&#xA;Metadata.set_IsModified(Boolean):Void</Issue>
+=======
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Components" File="ComponentMetadata.cs" Line="57">'ComponentMetadata.ComponentMetadata(ComponentMetadataDefinition, string)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;ComponentMetadata..ctor(ComponentMetadataDefinition, String)&#xD;&#xA;ComponentMetadata.set_ComponentMetadataDefinition(ComponentMetadataDefinition):Void&#xD;&#xA;ComponentMetadata.set_ComponentMetadataDefinitionID(String)&#xD;&#xA;Metadata.InitLoggingNodeSettings():Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Components" File="ComponentMetadata.cs" Line="57">'ComponentMetadata.ComponentMetadata(ComponentMetadataDefinition, string)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;ComponentMetadata..ctor(ComponentMetadataDefinition, String)&#xD;&#xA;ComponentMetadata.set_ComponentMetadataDefinition(ComponentMetadataDefinition):Void&#xD;&#xA;ComponentMetadata.set_ComponentMetadataDefinitionID(String):Void&#xD;&#xA;Metadata.NotifyPropertyChanged(String):Void&#xD;&#xA;Metadata.set_IsModified(Boolean):Void</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
             </Message>
            </Messages>
           </Member>
@@ -57,15 +83,24 @@
         </Type>
         <Type Name="CompositeComponentBaseMetadata" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
+<<<<<<< HEAD
           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
+=======
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
            <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'CompositeComponentBaseMetadata'.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Components" File="CompositeComponentBaseMetadata.cs" Line="42">'CompositeComponentBaseMetadata.CompositeComponentBaseMetadata()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentBaseMetadata..ctor()&#xD;&#xA;Metadata.InitLoggingNodeSettings():Void</Issue>
+=======
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Components" File="CompositeComponentBaseMetadata.cs" Line="42">'CompositeComponentBaseMetadata.CompositeComponentBaseMetadata()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentBaseMetadata..ctor()&#xD;&#xA;Metadata.InitLoggingNodeSettings():Void</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
             </Message>
            </Messages>
           </Member>
@@ -73,18 +108,30 @@
         </Type>
         <Type Name="CompositeComponentMetadata" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
+<<<<<<< HEAD
           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
            <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'CompositeComponentMetadata'.</Issue>
           </Message>
           <Message TypeName="ImplementSerializationConstructors" Category="Microsoft.Usage" CheckId="CA2229" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
+=======
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'CompositeComponentMetadata'.</Issue>
+          </Message>
+          <Message TypeName="ImplementSerializationConstructors" Category="Microsoft.Usage" CheckId="CA2229" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
            <Issue Name="CreateMagicConstructor" Certainty="95" Level="Error">Add a constructor to CompositeComponentMetadata with the following signature: 'protected CompositeComponentMetadata(SerializationInfo info, StreamingContext context)'.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#.ctor(TraceLab.Core.Components.CompositeComponentMetadataDefinition,System.String)" Kind="Method" Static="False" Accessibility="Assembly" ExternallyVisible="False">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Components" File="CompositeComponentMetadata.cs" Line="48">'CompositeComponentMetadata.CompositeComponentMetadata(CompositeComponentMetadataDefinition, string)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentMetadata..ctor(CompositeComponentMetadataDefinition, String)&#xD;&#xA;CompositeComponentMetadata.set_ComponentMetadataDefinition(CompositeComponentMetadataDefinition):Void&#xD;&#xA;CompositeComponentMetadata.set_ComponentMetadataDefinitionID(String):Void&#xD;&#xA;Metadata.NotifyPropertyChanged(String):Void&#xD;&#xA;Metadata.set_IsModified(Boolean):Void</Issue>
+=======
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Components" File="CompositeComponentMetadata.cs" Line="48">'CompositeComponentMetadata.CompositeComponentMetadata(CompositeComponentMetadataDefinition, string)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentMetadata..ctor(CompositeComponentMetadataDefinition, String)&#xD;&#xA;CompositeComponentMetadata.set_ComponentMetadataDefinition(CompositeComponentMetadataDefinition):Void&#xD;&#xA;CompositeComponentMetadata.set_ComponentMetadataDefinitionID(String):Void&#xD;&#xA;Metadata.NotifyPropertyChanged(String):Void&#xD;&#xA;Metadata.set_IsModified(Boolean):Void</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
             </Message>
            </Messages>
           </Member>
@@ -94,8 +141,13 @@
          <Members>
           <Member Name="#System.Xml.Serialization.IXmlSerializable.GetSchema()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="Error" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Components" File="IOItem.cs" Line="160">Make 'IOItem' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'IXmlSerializable.GetSchema()' and is visible to derived classes.</Issue>
+=======
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Components" File="IOItem.cs" Line="160">Make 'IOItem' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'IXmlSerializable.GetSchema()' and is visible to derived classes.</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
             </Message>
            </Messages>
           </Member>
@@ -105,8 +157,13 @@
          <Members>
           <Member Name="#System.Xml.Serialization.IXmlSerializable.GetSchema()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="True">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="Error" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Components" File="IOSpec.cs" Line="530">Make 'IOSpec' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'IXmlSerializable.GetSchema()' and is visible to derived classes.</Issue>
+=======
+            <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Components" File="IOSpec.cs" Line="530">Make 'IOSpec' sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of 'IXmlSerializable.GetSchema()' and is visible to derived classes.</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
             </Message>
            </Messages>
           </Member>
@@ -116,7 +173,11 @@
          <Members>
           <Member Name="#m_manager" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="MarkAllNonSerializableFields" Category="Microsoft.Usage" CheckId="CA2235" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
+=======
+            <Message TypeName="MarkAllNonSerializableFields" Category="Microsoft.Usage" CheckId="CA2235" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
              <Issue Certainty="95" Level="Error">Field 'LibraryHelper.PackageManagerSetup.m_manager' is a member of type 'LibraryHelper.PackageManagerSetup', which is serializable, but is of type 'PackageManager', which is not serializable. Add the NonSerializedAttribute to 'LibraryHelper.PackageManagerSetup.m_manager'.</Issue>
             </Message>
            </Messages>
@@ -125,10 +186,17 @@
         </Type>
         <Type Name="LoopScopeMetadata" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
+<<<<<<< HEAD
           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
            <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'LoopScopeMetadata'.</Issue>
           </Message>
           <Message TypeName="ImplementSerializationConstructors" Category="Microsoft.Usage" CheckId="CA2229" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
+=======
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'LoopScopeMetadata'.</Issue>
+          </Message>
+          <Message TypeName="ImplementSerializationConstructors" Category="Microsoft.Usage" CheckId="CA2229" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
            <Issue Name="CreateMagicConstructor" Certainty="95" Level="Error">Add a constructor to LoopScopeMetadata with the following signature: 'protected LoopScopeMetadata(SerializationInfo info, StreamingContext context)'.</Issue>
           </Message>
          </Messages>
@@ -139,8 +207,13 @@
            <Accessors>
             <Accessor Name="#get_DecisionsDirectoryPath()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
              <Messages>
+<<<<<<< HEAD
               <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="Breaking">
                <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Components" File="PackageAwareComponentLibrary.cs" Line="126">'PackageAwareComponentLibrary.DecisionsDirectoryPath.get()' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+=======
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Components" File="PackageAwareComponentLibrary.cs" Line="126">'PackageAwareComponentLibrary.DecisionsDirectoryPath.get()' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
               </Message>
              </Messages>
             </Accessor>
@@ -150,14 +223,22 @@
         </Type>
         <Type Name="ScopeBaseMetadata" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
+<<<<<<< HEAD
           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
+=======
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
            <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'ScopeBaseMetadata'.</Issue>
           </Message>
          </Messages>
         </Type>
         <Type Name="ScopeMetadata" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
+<<<<<<< HEAD
           <Message TypeName="ImplementSerializationConstructors" Category="Microsoft.Usage" CheckId="CA2229" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
+=======
+          <Message TypeName="ImplementSerializationConstructors" Category="Microsoft.Usage" CheckId="CA2229" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
            <Issue Name="CreateMagicConstructor" Certainty="95" Level="Error">Add a constructor to ScopeMetadata with the following signature: 'protected ScopeMetadata(SerializationInfo info, StreamingContext context)'.</Issue>
           </Message>
          </Messages>
@@ -168,21 +249,33 @@
        <Types>
         <Type Name="ExperimentLoadException" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
+<<<<<<< HEAD
           <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
+=======
+          <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
            <Issue Certainty="95" Level="Error">Add [Serializable] to 'ExperimentLoadException' as this type implements ISerializable.</Issue>
           </Message>
          </Messages>
         </Type>
         <Type Name="FilesCopyFailuresException" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
+<<<<<<< HEAD
           <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
+=======
+          <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
            <Issue Certainty="95" Level="Error">Add [Serializable] to 'FilesCopyFailuresException' as this type implements ISerializable.</Issue>
           </Message>
          </Messages>
         </Type>
         <Type Name="PackageCreationFailureException" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
+<<<<<<< HEAD
           <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
+=======
+          <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
            <Issue Certainty="95" Level="Error">Add [Serializable] to 'PackageCreationFailureException' as this type implements ISerializable.</Issue>
           </Message>
          </Messages>
@@ -195,8 +288,13 @@
          <Members>
           <Member Name="#Finalize()" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="False">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="RemoveEmptyFinalizers" Category="Microsoft.Performance" CheckId="CA1821" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="Warning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\ExperimentExecution" File="ExperimentRunner.cs" Line="64">'ExperimentRunner' implements a finalizer that only calls conditionally emitted methods or the base type finalizer. Remove the finalizer or ensure that it is only conditionally compiled into the assembly. If this violation occurs against a finalizer that is entirely wrapped in a conditionally-emitted block of code, suppress this message.</Issue>
+=======
+            <Message TypeName="RemoveEmptyFinalizers" Category="Microsoft.Performance" CheckId="CA1821" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\ExperimentExecution" File="ExperimentRunner.cs" Line="64">'ExperimentRunner' implements a finalizer that only calls conditionally emitted methods or the base type finalizer. Remove the finalizer or ensure that it is only conditionally compiled into the assembly. If this violation occurs against a finalizer that is entirely wrapped in a conditionally-emitted block of code, suppress this message.</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
             </Message>
            </Messages>
           </Member>
@@ -204,21 +302,33 @@
         </Type>
         <Type Name="RunnableNode" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
          <Messages>
+<<<<<<< HEAD
           <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
+=======
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
            <Issue Name="NonBreaking" Certainty="95" Level="CriticalError">Implement IDisposable on 'RunnableNode' because it creates members of the following IDisposable types: 'AutoResetEvent'.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#m_nodeResetEvent" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="MarkAllNonSerializableFields" Category="Microsoft.Usage" CheckId="CA2235" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
+=======
+            <Message TypeName="MarkAllNonSerializableFields" Category="Microsoft.Usage" CheckId="CA2235" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
              <Issue Certainty="95" Level="Error">Field 'RunnableNode.m_nodeResetEvent' is a member of type 'RunnableNode', which is serializable, but is of type 'AutoResetEvent', which is not serializable. Add the NonSerializedAttribute to 'RunnableNode.m_nodeResetEvent'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#m_nodeThread" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="MarkAllNonSerializableFields" Category="Microsoft.Usage" CheckId="CA2235" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
+=======
+            <Message TypeName="MarkAllNonSerializableFields" Category="Microsoft.Usage" CheckId="CA2235" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
              <Issue Certainty="95" Level="Error">Field 'RunnableNode.m_nodeThread' is a member of type 'RunnableNode', which is serializable, but is of type 'Thread', which is not serializable. Add the NonSerializedAttribute to 'RunnableNode.m_nodeThread'.</Issue>
             </Message>
            </Messages>
@@ -233,17 +343,29 @@
          <Members>
           <Member Name="#.ctor(TraceLab.Core.Experiments.BaseExperiment)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="CompositeComponentEditableGraph.cs" Line="67">'CompositeComponentEditableGraph.CompositeComponentEditableGraph(BaseExperiment)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentEditableGraph..ctor(BaseExperiment)&#xD;&#xA;BaseExperiment.CopyFrom(BaseExperiment):Void</Issue>
              <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="CompositeComponentEditableGraph.cs" Line="67">'CompositeComponentEditableGraph.CompositeComponentEditableGraph(BaseExperiment)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentEditableGraph..ctor(BaseExperiment)&#xD;&#xA;BaseExperiment.CopyFrom(BaseExperiment):Void&#xD;&#xA;CompositeComponentGraph.set_OwnerNode(CompositeComponentNode):Void</Issue>
+=======
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="CompositeComponentEditableGraph.cs" Line="67">'CompositeComponentEditableGraph.CompositeComponentEditableGraph(BaseExperiment)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentEditableGraph..ctor(BaseExperiment)&#xD;&#xA;BaseExperiment.CopyFrom(BaseExperiment):Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="CompositeComponentEditableGraph.cs" Line="67">'CompositeComponentEditableGraph.CompositeComponentEditableGraph(BaseExperiment)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentEditableGraph..ctor(BaseExperiment)&#xD;&#xA;BaseExperiment.CopyFrom(BaseExperiment):Void&#xD;&#xA;CompositeComponentGraph.set_OwnerNode(CompositeComponentNode):Void</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
             </Message>
            </Messages>
           </Member>
           <Member Name="#.ctor(TraceLab.Core.Experiments.CompositeComponentNode,TraceLab.Core.Experiments.CompositeComponentEditableGraph)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="CompositeComponentEditableGraph.cs" Line="84">'CompositeComponentEditableGraph.CompositeComponentEditableGraph(CompositeComponentNode, CompositeComponentEditableGraph)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentEditableGraph..ctor(CompositeComponentNode, CompositeComponentEditableGraph)&#xD;&#xA;BaseExperiment.CopyFrom(BaseExperiment):Void</Issue>
              <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="CompositeComponentEditableGraph.cs" Line="84">'CompositeComponentEditableGraph.CompositeComponentEditableGraph(CompositeComponentNode, CompositeComponentEditableGraph)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentEditableGraph..ctor(CompositeComponentNode, CompositeComponentEditableGraph)&#xD;&#xA;BaseExperiment.CopyFrom(BaseExperiment):Void&#xD;&#xA;CompositeComponentGraph.set_OwnerNode(CompositeComponentNode):Void</Issue>
+=======
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="CompositeComponentEditableGraph.cs" Line="84">'CompositeComponentEditableGraph.CompositeComponentEditableGraph(CompositeComponentNode, CompositeComponentEditableGraph)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentEditableGraph..ctor(CompositeComponentNode, CompositeComponentEditableGraph)&#xD;&#xA;BaseExperiment.CopyFrom(BaseExperiment):Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="CompositeComponentEditableGraph.cs" Line="84">'CompositeComponentEditableGraph.CompositeComponentEditableGraph(CompositeComponentNode, CompositeComponentEditableGraph)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentEditableGraph..ctor(CompositeComponentNode, CompositeComponentEditableGraph)&#xD;&#xA;BaseExperiment.CopyFrom(BaseExperiment):Void&#xD;&#xA;CompositeComponentGraph.set_OwnerNode(CompositeComponentNode):Void</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
             </Message>
            </Messages>
           </Member>
@@ -253,17 +375,29 @@
          <Members>
           <Member Name="#.ctor(TraceLab.Core.Experiments.BaseExperiment)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="CompositeComponentGraph.cs" Line="156">'CompositeComponentGraph.CompositeComponentGraph(BaseExperiment)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentGraph..ctor(BaseExperiment)&#xD;&#xA;BaseExperiment.CopyFrom(BaseExperiment):Void</Issue>
              <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="CompositeComponentGraph.cs" Line="156">'CompositeComponentGraph.CompositeComponentGraph(BaseExperiment)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentGraph..ctor(BaseExperiment)&#xD;&#xA;BaseExperiment.CopyFrom(BaseExperiment):Void&#xD;&#xA;CompositeComponentGraph.set_OwnerNode(CompositeComponentNode):Void</Issue>
+=======
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="CompositeComponentGraph.cs" Line="156">'CompositeComponentGraph.CompositeComponentGraph(BaseExperiment)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentGraph..ctor(BaseExperiment)&#xD;&#xA;BaseExperiment.CopyFrom(BaseExperiment):Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="CompositeComponentGraph.cs" Line="156">'CompositeComponentGraph.CompositeComponentGraph(BaseExperiment)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentGraph..ctor(BaseExperiment)&#xD;&#xA;BaseExperiment.CopyFrom(BaseExperiment):Void&#xD;&#xA;CompositeComponentGraph.set_OwnerNode(CompositeComponentNode):Void</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
             </Message>
            </Messages>
           </Member>
           <Member Name="#.ctor(TraceLab.Core.Experiments.CompositeComponentNode,TraceLab.Core.Experiments.CompositeComponentGraph)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="CompositeComponentGraph.cs" Line="156">'CompositeComponentGraph.CompositeComponentGraph(CompositeComponentNode, CompositeComponentGraph)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentGraph..ctor(CompositeComponentNode, CompositeComponentGraph)&#xD;&#xA;BaseExperiment.CopyFrom(BaseExperiment):Void</Issue>
              <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="CompositeComponentGraph.cs" Line="156">'CompositeComponentGraph.CompositeComponentGraph(CompositeComponentNode, CompositeComponentGraph)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentGraph..ctor(CompositeComponentNode, CompositeComponentGraph)&#xD;&#xA;BaseExperiment.CopyFrom(BaseExperiment):Void&#xD;&#xA;CompositeComponentGraph.set_OwnerNode(CompositeComponentNode):Void</Issue>
+=======
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="CompositeComponentGraph.cs" Line="156">'CompositeComponentGraph.CompositeComponentGraph(CompositeComponentNode, CompositeComponentGraph)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentGraph..ctor(CompositeComponentNode, CompositeComponentGraph)&#xD;&#xA;BaseExperiment.CopyFrom(BaseExperiment):Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="CompositeComponentGraph.cs" Line="156">'CompositeComponentGraph.CompositeComponentGraph(CompositeComponentNode, CompositeComponentGraph)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentGraph..ctor(CompositeComponentNode, CompositeComponentGraph)&#xD;&#xA;BaseExperiment.CopyFrom(BaseExperiment):Void&#xD;&#xA;CompositeComponentGraph.set_OwnerNode(CompositeComponentNode):Void</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
             </Message>
            </Messages>
           </Member>
@@ -273,16 +407,27 @@
          <Members>
           <Member Name="#.ctor(System.String,TraceLab.Core.Experiments.SerializedVertexData)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="CompositeComponentNode.cs" Line="31">'CompositeComponentNode.CompositeComponentNode(string, SerializedVertexData)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentNode..ctor(String, SerializedVertexData)&#xD;&#xA;CompositeComponentNode.InitializeComponentGraph():Void</Issue>
              <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="CompositeComponentNode.cs" Line="31">'CompositeComponentNode.CompositeComponentNode(string, SerializedVertexData)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentNode..ctor(String, SerializedVertexData)&#xD;&#xA;CompositeComponentNode.InitializeComponentGraph():Void&#xD;&#xA;CompositeComponentNode.InitializeComponentGraph(Settings):Void</Issue>
+=======
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="CompositeComponentNode.cs" Line="31">'CompositeComponentNode.CompositeComponentNode(string, SerializedVertexData)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentNode..ctor(String, SerializedVertexData)&#xD;&#xA;CompositeComponentNode.InitializeComponentGraph():Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="CompositeComponentNode.cs" Line="31">'CompositeComponentNode.CompositeComponentNode(string, SerializedVertexData)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentNode..ctor(String, SerializedVertexData)&#xD;&#xA;CompositeComponentNode.InitializeComponentGraph():Void&#xD;&#xA;CompositeComponentNode.InitializeComponentGraph(Settings):Void</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
             </Message>
            </Messages>
           </Member>
           <Member Name="#.ctor(System.String,TraceLab.Core.Experiments.SerializedVertexData,TraceLab.Core.Settings.Settings)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="CompositeComponentNode.cs" Line="37">'CompositeComponentNode.CompositeComponentNode(string, SerializedVertexData, Settings)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentNode..ctor(String, SerializedVertexData, Settings)&#xD;&#xA;CompositeComponentNode.InitializeComponentGraph(Settings):Void</Issue>
+=======
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="CompositeComponentNode.cs" Line="37">'CompositeComponentNode.CompositeComponentNode(string, SerializedVertexData, Settings)' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;CompositeComponentNode..ctor(String, SerializedVertexData, Settings)&#xD;&#xA;CompositeComponentNode.InitializeComponentGraph(Settings):Void</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
             </Message>
            </Messages>
           </Member>
@@ -292,8 +437,13 @@
          <Members>
           <Member Name="#DefineComponent()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="DependsOnFix">
              <Issue Certainty="75" Level="Warning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="DefiningCompositeComponentSetup.cs" Line="413">Object 'writer' can be disposed more than once in method 'DefiningCompositeComponentSetup.DefineComponent()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 413</Issue>
+=======
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="DefiningCompositeComponentSetup.cs" Line="413">Object 'writer' can be disposed more than once in method 'DefiningCompositeComponentSetup.DefineComponent()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 413</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
             </Message>
            </Messages>
           </Member>
@@ -303,9 +453,15 @@
          <Members>
           <Member Name="#SerializeExperimentToStream(TraceLab.Core.Experiments.IExperiment,System.String)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="DependsOnFix">
              <Issue Certainty="75" Level="Warning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="ExperimentManager.cs" Line="358">Object 'fileStream' can be disposed more than once in method 'ExperimentManager.SerializeExperimentToStream(IExperiment, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 358</Issue>
              <Issue Certainty="75" Level="Warning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="ExperimentManager.cs" Line="358">Object 'writer' can be disposed more than once in method 'ExperimentManager.SerializeExperimentToStream(IExperiment, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 358</Issue>
+=======
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="ExperimentManager.cs" Line="358">Object 'fileStream' can be disposed more than once in method 'ExperimentManager.SerializeExperimentToStream(IExperiment, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 358</Issue>
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="ExperimentManager.cs" Line="358">Object 'writer' can be disposed more than once in method 'ExperimentManager.SerializeExperimentToStream(IExperiment, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 358</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
             </Message>
            </Messages>
           </Member>
@@ -315,7 +471,11 @@
          <Members>
           <Member Name="#EdgeAdded" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="Breaking">
+=======
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="Breaking">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
              <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'EdgeAction&lt;ExperimentNode, ExperimentNodeConnection&gt;' as an object named 'sender'.</Issue>
              <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'EdgeAction&lt;ExperimentNode, ExperimentNodeConnection&gt;' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
             </Message>
@@ -323,7 +483,11 @@
           </Member>
           <Member Name="#EdgeRemoved" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="Breaking">
+=======
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="Breaking">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
              <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'EdgeAction&lt;ExperimentNode, ExperimentNodeConnection&gt;' as an object named 'sender'.</Issue>
              <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'EdgeAction&lt;ExperimentNode, ExperimentNodeConnection&gt;' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
             </Message>
@@ -331,7 +495,11 @@
           </Member>
           <Member Name="#NodeAdded" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="Breaking">
+=======
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="Breaking">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
              <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'VertexAction&lt;ExperimentNode&gt;' as an object named 'sender'.</Issue>
              <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'VertexAction&lt;ExperimentNode&gt;' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
             </Message>
@@ -339,7 +507,11 @@
           </Member>
           <Member Name="#NodeRemoved" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="Breaking">
+=======
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="Breaking">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
              <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'VertexAction&lt;ExperimentNode&gt;' as an object named 'sender'.</Issue>
              <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'VertexAction&lt;ExperimentNode&gt;' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
             </Message>
@@ -349,7 +521,11 @@
         </Type>
         <Type Name="RecentExperimentList" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
+<<<<<<< HEAD
           <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
+=======
+          <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
            <Issue Certainty="75" Level="Warning">Add [Serializable] to 'RecentExperimentList' as this type implements ISerializable.</Issue>
           </Message>
          </Messages>
@@ -358,8 +534,13 @@
          <Members>
           <Member Name="#SaveRecentExperimentListToXML(TraceLab.Core.Experiments.RecentExperimentList,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="DependsOnFix">
              <Issue Certainty="75" Level="Warning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="RecentExperimentsHelper.cs" Line="106">Object 'writer' can be disposed more than once in method 'RecentExperimentsHelper.SaveRecentExperimentListToXML(RecentExperimentList, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 106</Issue>
+=======
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Experiments" File="RecentExperimentsHelper.cs" Line="106">Object 'writer' can be disposed more than once in method 'RecentExperimentsHelper.SaveRecentExperimentListToXML(RecentExperimentList, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 106</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
             </Message>
            </Messages>
           </Member>
@@ -367,17 +548,28 @@
         </Type>
         <Type Name="SerializedVertexData" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
+<<<<<<< HEAD
           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
            <Issue Name="MakeOverridable" Certainty="60" Level="Error">Make 'SerializedVertexData'.GetObjectData virtual and overridable.</Issue>
           </Message>
           <Message TypeName="ImplementSerializationConstructors" Category="Microsoft.Usage" CheckId="CA2229" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
+=======
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+           <Issue Name="MakeOverridable" Certainty="60" Level="Error">Make 'SerializedVertexData'.GetObjectData virtual and overridable.</Issue>
+          </Message>
+          <Message TypeName="ImplementSerializationConstructors" Category="Microsoft.Usage" CheckId="CA2229" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
            <Issue Name="MakeUnsealedMagicConstructorFamily" Certainty="95" Level="Error">Declare the serialization constructor of 'SerializedVertexData', an unsealed type, as protected.</Issue>
           </Message>
          </Messages>
         </Type>
         <Type Name="SerializedVertexDataWithSize" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
+<<<<<<< HEAD
           <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
+=======
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
            <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'SerializedVertexDataWithSize'.</Issue>
           </Message>
          </Messages>
@@ -392,8 +584,13 @@
            <Accessors>
             <Accessor Name="#get_Item(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
              <Messages>
+<<<<<<< HEAD
               <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="Breaking">
                <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\PackageSystem" File="Package.cs" Line="120">'Package.this.get(string)' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+=======
+              <Message TypeName="DoNotRaiseExceptionsInUnexpectedLocations" Category="Microsoft.Design" CheckId="CA1065" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="Breaking">
+               <Issue Name="PropertyGetter" Certainty="90" Level="Warning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\PackageSystem" File="Package.cs" Line="120">'Package.this.get(string)' creates an exception of type 'NotImplementedException', an exception type that should not be raised in a property. If this exception instance might be raised, use a different exception type, convert this property into a method, or change this property's logic so that it no longer raises an exception.</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
               </Message>
              </Messages>
             </Accessor>
@@ -401,8 +598,13 @@
           </Member>
           <Member Name="#SaveManifest()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="DependsOnFix">
              <Issue Certainty="75" Level="Warning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\PackageSystem" File="Package.cs" Line="511">Object 'stream' can be disposed more than once in method 'Package.SaveManifest()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 511</Issue>
+=======
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\PackageSystem" File="Package.cs" Line="511">Object 'stream' can be disposed more than once in method 'Package.SaveManifest()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 511</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
             </Message>
            </Messages>
           </Member>
@@ -410,7 +612,11 @@
         </Type>
         <Type Name="PackageException" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
+<<<<<<< HEAD
           <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
+=======
+          <Message TypeName="MarkISerializableTypesWithSerializable" Category="Microsoft.Usage" CheckId="CA2237" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
            <Issue Certainty="95" Level="Error">Add [Serializable] to 'PackageException' as this type implements ISerializable.</Issue>
           </Message>
          </Messages>
@@ -423,17 +629,29 @@
          <Members>
           <Member Name="#EncryptFile(System.IO.Stream,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="DependsOnFix">
              <Issue Certainty="75" Level="Warning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Utilities" File="Crypto.cs" Line="74">Object 'fsEncrypted' can be disposed more than once in method 'Crypto.EncryptFile(Stream, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 74</Issue>
+=======
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Utilities" File="Crypto.cs" Line="74">Object 'fsEncrypted' can be disposed more than once in method 'Crypto.EncryptFile(Stream, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 74</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
             </Message>
            </Messages>
           </Member>
           <Member Name="#ZeroMemory(System.IntPtr,System.Int32)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="Breaking">
              <Issue Certainty="95" Level="CriticalWarning">Because it is a P/Invoke method, 'Crypto.ZeroMemory(IntPtr, int)' should be defined in a class named NativeMethods, SafeNativeMethods, or UnsafeNativeMethods.</Issue>
             </Message>
             <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="Breaking">
+=======
+            <Message TypeName="MovePInvokesToNativeMethodsClass" Category="Microsoft.Design" CheckId="CA1060" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="CriticalWarning">Because it is a P/Invoke method, 'Crypto.ZeroMemory(IntPtr, int)' should be defined in a class named NativeMethods, SafeNativeMethods, or UnsafeNativeMethods.</Issue>
+            </Message>
+            <Message TypeName="PInvokesShouldNotBeVisible" Category="Microsoft.Interoperability" CheckId="CA1401" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="Breaking">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
              <Issue Certainty="50" Level="CriticalError">Change the accessibility of P/Invoke 'Crypto.ZeroMemory(IntPtr, int)' so that it is no longer visible from outside its assembly.</Issue>
             </Message>
            </Messages>
@@ -448,8 +666,13 @@
          <Members>
           <Member Name="#SaveLinksToXML(System.String,System.Collections.Generic.List`1&lt;TraceLab.Core.ViewModels.WebsiteLink&gt;,System.Collections.Generic.List`1&lt;TraceLab.Core.ViewModels.WebsiteLink&gt;)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="DependsOnFix">
              <Issue Certainty="75" Level="Warning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\ViewModels" File="WebsiteLink.cs" Line="165">Object 'writer' can be disposed more than once in method 'WebsiteLink.SaveLinksToXML(string, List&lt;WebsiteLink&gt;, List&lt;WebsiteLink&gt;)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 165</Issue>
+=======
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\ViewModels" File="WebsiteLink.cs" Line="165">Object 'writer' can be disposed more than once in method 'WebsiteLink.SaveLinksToXML(string, List&lt;WebsiteLink&gt;, List&lt;WebsiteLink&gt;)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 165</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
             </Message>
            </Messages>
           </Member>
@@ -463,7 +686,11 @@
          <Members>
           <Member Name="#CallCompleted" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="Breaking">
+=======
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="Breaking">
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
              <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'CallCompletedEventHandler&lt;T&gt;' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
             </Message>
            </Messages>
@@ -474,8 +701,13 @@
          <Members>
           <Member Name="#Deserialize`1(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="DependsOnFix">
              <Issue Certainty="75" Level="Warning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\WebserviceAccess" File="JSONSerializer.cs" Line="79">Object 'memorystream' can be disposed more than once in method 'JsonSerializer.Deserialize&lt;T&gt;(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 79</Issue>
+=======
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\WebserviceAccess" File="JSONSerializer.cs" Line="79">Object 'memorystream' can be disposed more than once in method 'JsonSerializer.Deserialize&lt;T&gt;(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 79</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
             </Message>
            </Messages>
           </Member>
@@ -489,17 +721,29 @@
          <Members>
           <Member Name="#Store(System.String,System.Object)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="DoNotLockOnObjectsWithWeakIdentity" Category="Microsoft.Reliability" CheckId="CA2002" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="CriticalError" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Workspaces" File="Workspace.cs" Line="617">'Workspace.Store(string, object)' locks on a reference of type 'Workspace'. Replace this with a lock against an object with strong-identity.</Issue>
              <Issue Certainty="75" Level="CriticalError" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Workspaces" File="Workspace.cs" Line="626">'Workspace.Store(string, object)' locks on a reference of type 'Workspace'. Replace this with a lock against an object with strong-identity.</Issue>
+=======
+            <Message TypeName="DoNotLockOnObjectsWithWeakIdentity" Category="Microsoft.Reliability" CheckId="CA2002" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="CriticalError" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Workspaces" File="Workspace.cs" Line="617">'Workspace.Store(string, object)' locks on a reference of type 'Workspace'. Replace this with a lock against an object with strong-identity.</Issue>
+             <Issue Certainty="75" Level="CriticalError" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Workspaces" File="Workspace.cs" Line="626">'Workspace.Store(string, object)' locks on a reference of type 'Workspace'. Replace this with a lock against an object with strong-identity.</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
             </Message>
            </Messages>
           </Member>
           <Member Name="#StoreBytes(System.String,System.Type,System.Byte[])" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="DoNotLockOnObjectsWithWeakIdentity" Category="Microsoft.Reliability" CheckId="CA2002" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="CriticalError" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Workspaces" File="Workspace.cs" Line="684">'Workspace.StoreBytes(string, Type, byte[])' locks on a reference of type 'Workspace'. Replace this with a lock against an object with strong-identity.</Issue>
              <Issue Certainty="75" Level="CriticalError" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Workspaces" File="Workspace.cs" Line="693">'Workspace.StoreBytes(string, Type, byte[])' locks on a reference of type 'Workspace'. Replace this with a lock against an object with strong-identity.</Issue>
+=======
+            <Message TypeName="DoNotLockOnObjectsWithWeakIdentity" Category="Microsoft.Reliability" CheckId="CA2002" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="CriticalError" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Workspaces" File="Workspace.cs" Line="684">'Workspace.StoreBytes(string, Type, byte[])' locks on a reference of type 'Workspace'. Replace this with a lock against an object with strong-identity.</Issue>
+             <Issue Certainty="75" Level="CriticalError" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Workspaces" File="Workspace.cs" Line="693">'Workspace.StoreBytes(string, Type, byte[])' locks on a reference of type 'Workspace'. Replace this with a lock against an object with strong-identity.</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
             </Message>
            </Messages>
           </Member>
@@ -509,8 +753,13 @@
          <Members>
           <Member Name="#Store(System.String,System.Object)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
            <Messages>
+<<<<<<< HEAD
             <Message TypeName="Provide correct arguments to formatting methods" Category="Microsoft.Usage" CheckId="CA2241" Status="Active" Created="2018-04-18 22:06:13Z" FixCategory="DependsOnFix">
              <Issue Name="MissingFormatItem" Certainty="75" Level="Warning" Path="C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLab.Core\Workspaces" File="WorkspaceWrapper.cs" Line="218">Method 'WorkspaceWrapper.Store(string, object)' calls 'string.Format(IFormatProvider, string, params object[])' and does not provide a format item for argument "1". The provided format string is: '"Given object is null. It is not allowed to store null objects in the workspace."'</Issue>
+=======
+            <Message TypeName="Provide correct arguments to formatting methods" Category="Microsoft.Usage" CheckId="CA2241" Status="Active" Created="2018-04-19 02:57:55Z" FixCategory="DependsOnFix">
+             <Issue Name="MissingFormatItem" Certainty="75" Level="Warning" Path="C:\Users\Owner\Documents\W&amp;M\cs635\TraceLab\Main\WebService\TraceLab.Core\Workspaces" File="WorkspaceWrapper.cs" Line="218">Method 'WorkspaceWrapper.Store(string, object)' calls 'string.Format(IFormatProvider, string, params object[])' and does not provide a format item for argument "1". The provided format string is: '"Given object is null. It is not allowed to store null objects in the workspace."'</Issue>
+>>>>>>> 5488ce94c96bd29e210f0648503087b4824018d8
             </Message>
            </Messages>
           </Member>

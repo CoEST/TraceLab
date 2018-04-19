@@ -28,5 +28,6 @@ C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLab\lib\TraceLa
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLab\lib\TraceLabSDK.dll
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLab\lib\TraceLabSDK.pdb
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLabSDK\obj\Debug\TraceLabSDK.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLabSDK\obj\Debug\TraceLabSDK.csproj.CopyComplete
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLabSDK\obj\Debug\TraceLabSDK.dll
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLabSDK\obj\Debug\TraceLabSDK.pdb

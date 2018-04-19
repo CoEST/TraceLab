@@ -202,5 +202,6 @@ C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLabWeb\bin\Debu
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\QuickGraph.Serialization.pdb
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLabWeb\obj\Debug\TraceLabWeb.csprojResolveAssemblyReference.cache
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLabWeb\obj\Debug\TraceLabWeb.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLabWeb\obj\Debug\TraceLabWeb.csproj.CopyComplete
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLabWeb\obj\Debug\TraceLabWeb.dll
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLabWeb\obj\Debug\TraceLabWeb.pdb

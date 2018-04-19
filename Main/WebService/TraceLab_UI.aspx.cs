@@ -93,6 +93,12 @@ public partial class TraceLab_UI : System.Web.UI.Page
         app.AddEdge(EdgeNameText .Text,EdgeSourceText.Text,EdgeTargetText.Text  );
     }
 
+    protected void Delete_Edge(object sender, EventArgs e)
+    {
+        var app = TraceLabApplicationWebConsole.Instance;
+        app.Delete_Edge(DeleteNameText.Text, DeleteSourceText.Text, DeleteTargetText.Text);
+    }
+
     protected void AddNode(object sender, EventArgs e)
     {
         var app = TraceLabApplicationWebConsole.Instance;
@@ -103,6 +109,13 @@ public partial class TraceLab_UI : System.Web.UI.Page
         app.AddNode(ComponentDropDown.SelectedItem.Value , x, y);
         
     }
+
+    protected void Delete_Node(object sender, EventArgs e)
+    {
+        var app = TraceLabApplicationWebConsole.Instance;
+        app.Delete_Node(DeleteNodeText.Text);
+    }
+
 
     protected void GetComponentInfo(object sender,EventArgs e)
     {

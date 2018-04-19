@@ -92,11 +92,23 @@ namespace TraceLabWeb
             WebConsoleUI.AddEdge(edgeName,sourceName,targetName );
         }
 
+        public void Delete_Edge(string edgeName, string sourceName, string targetName)
+        {
+            //"C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"
+            WebConsoleUI.Delete_Edge(edgeName, sourceName, targetName);
+        }
+
         public void AddNode(string componentType,int xloc,int yloc)
         {
      
                     WebConsoleUI.AddComponenetNode (componentType ,xloc,yloc);
                     
+        }
+
+        public void Delete_Node(string nodeID)
+        {
+            //"C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"
+            WebConsoleUI.Delete_Node(nodeID);
         }
 
         public void RunExperiment()
@@ -111,7 +123,7 @@ namespace TraceLabWeb
             {
                 if (INSTANCE == null)
                 {
-                    string[] args = { CommandLineProcessor.SwitchCharacter + "base:C:\\Users\\Andrew\\Documents\\Git\\TraceLab\\Main\\WebService\\Bin" };
+                    string[] args = { CommandLineProcessor.SwitchCharacter + "base:C:\\Users\\Owner\\Documents\\W&M\\cs635\\TraceLab\\Main\\WebService\\Bin" };
                     INSTANCE = new TraceLabApplicationWebConsole();
                     INSTANCE.Run(args);
                 }
