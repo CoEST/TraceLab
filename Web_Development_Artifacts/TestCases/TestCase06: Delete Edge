@@ -1,0 +1,23 @@
+
+# Description
+Tests to ensure that experiment running functionality is implemented correctly
+
+# Precondition
+Application must be running
+User must be at http://localhost:49460/Tracelab_UI.aspx
+Experiment Must be opened
+
+# Assumption
+Tracelab key has been properly set, the opened experiment is runnable and without error
+
+# Test Steps
+1. Refresh the log to see the UIDs of the nodes
+2. Enter a label for the edge into the first edge text box (Not currently necessary, TBD if this should change)
+3. Enter a node UID into the second edge text box (target node)
+4. Enter a node UID into the third edge text box (source node
+5. Select the button on the same line
+6. Refresh the log
+7. Verify the edge has been deleted
+
+# Expected results
+The edge should disappear from the list of edges.
