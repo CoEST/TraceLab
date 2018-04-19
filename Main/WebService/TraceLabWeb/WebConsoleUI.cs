@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using TraceLab.Core.ViewModels;
@@ -120,7 +121,7 @@ namespace TraceLabWeb
             string components = "<ul><li>Nodes:</li>";
             foreach (ExperimentNode Node in ConsoleInstance.Application.Experiment.Vertices)
             {
-                components += string.Format("<li>{0}</li>","ID"+ Node.ID + " Label" + Node.Data .Metadata.Label  );
+                components += string.Format("<li>{0}</li>","ID: "+ Node.ID + " Label: " + Node.Data .Metadata.Label  );
             }
 
             components += "<li>Links:</li>";
@@ -255,6 +256,99 @@ namespace TraceLabWeb
             catch (Exception ex)
             {
                 string msg = String.Format("Unable to add edge {0}. Error: {1}", value, ex.Message);
+                log += msg;
+            }
+        }
+
+        public static void Delete_Edge(string value, string sourceName, string targetName)
+        {
+            //log = "";
+            try
+            {
+                var experiment = ConsoleInstance.Application.Experiment;
+
+                if (sourceName.Equals(targetName))
+                {
+                    log += "Same node detected twice";
+                }
+                else
+                {
+                    ExperimentNode targ = ConsoleInstance.Application.Experiment.GetNode(targetName);
+                    ExperimentNode sour = ConsoleInstance.Application.Experiment.GetNode(sourceName);
+
+                    if (sour != null && targ != null)
+                    {
+
+                        //ExperimentNodeConnection Edge = new ExperimentNodeConnection(value, sour, targ);
+                        bool found = false;
+                        foreach (ExperimentNodeConnection Link in experiment.Edges)
+                        {
+                            if (Link.Source.ID.Equals(sourceName) && Link.Target.ID.Equals(targetName))
+                            {
+                                experiment.RemoveEdge(Link);
+                                found = true;
+                                break;
+                            }
+
+                        }
+
+                        if (!found)
+                        {
+                            log += "Couldn't find that edge";
+                        }
+                    }
+                    else
+                    {
+                        log += "Non-existant Node Detected";
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                string msg = String.Format("Unable to delete edge {0}. Error: {1}", value, ex.Message);
+                log += msg;
+            }
+        }
+
+        public static void Delete_Node(string nodeID)
+        {
+            //log = "";
+            try
+            {
+                var experiment = ConsoleInstance.Application.Experiment;
+                ExperimentNode nodeToDel = ConsoleInstance.Application.Experiment.GetNode(nodeID);
+
+                if (nodeToDel != null)
+                {
+                    ArrayList LinksToDel = new ArrayList();
+
+                    foreach (ExperimentNodeConnection Link in experiment.Edges)
+                    {
+                        if (Link.Source.ID.Equals(nodeID) || Link.Target.ID.Equals(nodeID))
+                        {
+                            LinksToDel.Add(Link);
+                        }
+
+                    }
+
+                    foreach (ExperimentNodeConnection Link in LinksToDel)
+                    {
+                        experiment.RemoveEdge(Link);
+                    }
+
+                    experiment.RemoveVertex(nodeToDel);
+                }
+                else
+                {
+                    log += "Non-existant Node Detected";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                string msg = String.Format("Unable to delete Node {0}. Error: {1}", nodeID, ex.Message);
                 log += msg;
             }
         }

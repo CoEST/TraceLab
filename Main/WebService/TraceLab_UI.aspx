@@ -62,6 +62,12 @@
                     <asp:TextBox ID="EdgeSourceText" runat="server" Width="299px" Text =""></asp:TextBox>
                     <br />
 
+                    <asp:LinkButton ID="DeleteEdgeButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="Delete_Edge"><span class="glyphicon glyphicon-remove""></span></asp:LinkButton>
+                    <asp:TextBox ID="DeleteNameText" runat="server" Width="299px" Text =""></asp:TextBox>
+                    <asp:TextBox ID="DeleteTargetText" runat="server" Width="299px" Text =""></asp:TextBox>
+                    <asp:TextBox ID="DeleteSourceText" runat="server" Width="299px" Text =""></asp:TextBox>
+                    <br />
+
 
                     <asp:LinkButton ID="SaveButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="Save_Click"><span class="glyphicon glyphicon-saved""></span></asp:LinkButton>
                     <asp:TextBox ID="SaveText" runat="server" Width="799px" Text ="C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"></asp:TextBox>
@@ -76,6 +82,12 @@
 
                     </asp:DropDownList>
           <br />
+
+
+                    <asp:LinkButton ID="DeleteNodeButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="Delete_Node"><span class="glyphicon glyphicon-remove""></span></asp:LinkButton>
+                    <asp:TextBox ID="DeleteNodeText" runat="server" Width="299px" Text =""></asp:TextBox>
+                    <br />
+
                     </div>
             </div><!-- Buttons for Start and Stop-->
 
