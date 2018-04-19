@@ -58,24 +58,22 @@
                     <br />
 
                     <asp:LinkButton ID="SaveButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="Save_Click"><span class="glyphicon glyphicon-saved""></span></asp:LinkButton>
-                    Save File Location:<asp:TextBox ID="SaveText" runat="server" Width="799px" Text ="C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"></asp:TextBox>
+                    Save File Location:<asp:TextBox ID="SaveText" runat="server" Width="599px" Text ="C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"></asp:TextBox>
  
                     <br />
                     <asp:LinkButton ID="EdgeCommandButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="EdgeCommand"><span class="glyphicon glyphicon-ok""></span></asp:LinkButton>
-                    <asp:TextBox ID="EdgeNameText" runat="server" Width="299px" Text =""></asp:TextBox>
-                    <asp:TextBox ID="EdgeTargetText" runat="server" Width="299px" Text =""></asp:TextBox>
-                    <asp:TextBox ID="EdgeSourceText" runat="server" Width="299px" Text =""></asp:TextBox>
+                    <asp:TextBox ID="EdgeNameText" runat="server" Width="225px" Text =""></asp:TextBox>
+                    <asp:TextBox ID="EdgeTargetText" runat="server" Width="225px" Text =""></asp:TextBox>
+                    <asp:TextBox ID="EdgeSourceText" runat="server" Width="225px" Text =""></asp:TextBox>
 
-                    <asp:LinkButton ID="DeleteEdgeButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="Delete_Edge"><span class="glyphicon glyphicon-remove""></span></asp:LinkButton>
-                    <asp:TextBox ID="DeleteNameText" runat="server" Width="299px" Text =""></asp:TextBox>
-                    <asp:TextBox ID="DeleteTargetText" runat="server" Width="299px" Text =""></asp:TextBox>
-                    <asp:TextBox ID="DeleteSourceText" runat="server" Width="299px" Text =""></asp:TextBox>
                     <br />
 
+                    <asp:LinkButton ID="DeleteEdgeButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="Delete_Edge"><span class="glyphicon glyphicon-remove""></span></asp:LinkButton>
+                    <asp:TextBox ID="DeleteNameText" runat="server" Width="225px" Text =""></asp:TextBox>
+                    <asp:TextBox ID="DeleteTargetText" runat="server" Width="225px" Text =""></asp:TextBox>
+                    <asp:TextBox ID="DeleteSourceText" runat="server" Width="225px" Text =""></asp:TextBox>
+                    <br />
 
-                    <asp:LinkButton ID="SaveButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="Save_Click"><span class="glyphicon glyphicon-saved""></span></asp:LinkButton>
-                    <asp:TextBox ID="SaveText" runat="server" Width="799px" Text ="C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"></asp:TextBox>
- 
 
                     <br />
                    <asp:LinkButton ID="NodeButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="AddNode"><span class="glyphicon glyphicon-ok""></span></asp:LinkButton>
@@ -89,7 +87,7 @@
 
 
                     <asp:LinkButton ID="DeleteNodeButton" CssClass="btn btn-primary btn-lg" runat="server" OnClick="Delete_Node"><span class="glyphicon glyphicon-remove""></span></asp:LinkButton>
-                    <asp:TextBox ID="DeleteNodeText" runat="server" Width="299px" Text =""></asp:TextBox>
+                    <asp:TextBox ID="DeleteNodeText" runat="server" Width="225px" Text =""></asp:TextBox>
                     <br />
 
                     </div>
