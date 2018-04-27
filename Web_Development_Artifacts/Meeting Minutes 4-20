@@ -1,0 +1,20 @@
+Current Status
+-step by step text progress displayed in real time while running experiment
+-adding nodes by component drop down menu, adding edges by node id's
+-deleting nodes and edges by id's
+-experiment info fields in upper right
+-beginning to work on node editing
+
+Next Steps
+-Modify layout to mimic main TraceLab
+  -Group components by package
+-Display and save experiment info in upper right fields
+-Continue working on node editing (attaching artifacts, modifying parameters)
+-Start on GUI implementation with RaphaelJS
+-Displaying metrics/output at end of experiment
+  -> Option to click to display
+  -> Option to export to file
+-Test opening multiple tabs/instances at once in browser
+-Try using different browsers
+-Stress testing
+-Update comments and code/function documentation
