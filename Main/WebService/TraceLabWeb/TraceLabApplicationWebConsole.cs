@@ -61,17 +61,32 @@ namespace TraceLabWeb
             return WebConsoleUI.GetComponentsForDropDown ();
         }
 
-        public string GetComponentConfigInfo(string comLabel)
+        public DataTable  GetComponentConfigInfo(string comLabel)
         {
-            string CompConf = WebConsoleUI.GetComponentInfo (comLabel );
-
+            DataTable   CompConf = WebConsoleUI.GetComponentInfo (comLabel );
+            
             return CompConf;
+        }
+
+        public int UpdateComponentConfigInfo(string comID,DataTable  comUpdate)
+        {
+            return WebConsoleUI.updateComponent(comID, comUpdate);
         }
 
 
         public string GetNodes()
         {
-            return WebConsoleUI.GetNodes (); // TODO WebConsoleUI.GetNodes
+            return WebConsoleUI.GetNodes(); // TODO WebConsoleUI.GetNodes
+        }
+
+        public DataTable GetEdges()
+        {
+            return WebConsoleUI.GetLinks();
+        }
+
+        public DataTable  GetNodesForDropdown()
+        {
+            return WebConsoleUI.GetNodesForDropdown(); // TODO WebConsoleUI.GetNodes
         }
 
         public void OpenExperiment(string path)
@@ -123,7 +138,7 @@ namespace TraceLabWeb
             {
                 if (INSTANCE == null)
                 {
-                    string[] args = { CommandLineProcessor.SwitchCharacter + "base:C:\\Users\\Owner\\Documents\\W&M\\cs635\\TraceLab\\Main\\WebService\\Bin" };
+                    string[] args = { CommandLineProcessor.SwitchCharacter + "base:C:\\Users\\Andrew\\Documents\\Git\\TraceLab\\Main\\WebService\\Bin" };
                     INSTANCE = new TraceLabApplicationWebConsole();
                     INSTANCE.Run(args);
                 }

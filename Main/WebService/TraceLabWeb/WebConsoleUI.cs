@@ -18,6 +18,7 @@ namespace TraceLabWeb
         public static string log = "";
         public static string prevStatus = "";
         public static ExperimentProgress progress = new ExperimentProgress();
+        public DataTable ComponentConfigDatatable = new DataTable();
 
         public static string getLog()
         {
@@ -117,29 +118,117 @@ namespace TraceLabWeb
         }
 
 
-        internal static string GetComponentInfo(string selectedID)
+        internal static DataTable  GetComponentInfo(string selectedID)
         {
             string compConfInfo = "";
-           
-//            ComponentMetadataDefinition selectedMetaData = ConsoleInstance.Application.ComponentLibraryViewModel.GetComponentByID(selectedID);
-           
-          ComponentNode node =(ComponentNode) ConsoleInstance.Application.Experiment.GetNode(selectedID);
-           System.Xml.Schema.XmlSchema schem = node.Data.Metadata .GetSchema();
+            DataTable dt = new DataTable() ;
+            dt.Columns.Add("Type");
+            dt.Columns.Add("Value");
+            dt.Columns.Add("Name");
+            dt.Columns.Add("Section");
+
+            ComponentNode node =(ComponentNode) ConsoleInstance.Application.Experiment.GetNode(selectedID);
             ComponentMetadata meta = (ComponentMetadata)node.Data.Metadata;
 
             foreach (IOItem inputItem in meta.IOSpec.Input .Values)
             {
-              compConfInfo += inputItem.IOItemDefinition.Type + ":"+ inputItem.MappedTo+ ";";
+              compConfInfo += inputItem.IOItemDefinition.Type + ","+ inputItem.MappedTo+",In,"+ inputItem.IOItemDefinition.Name  +";";
+                DataRow dr = dt.NewRow();
+                dr["Type"] =inputItem.IOItemDefinition.Type;
+                dr["Value"] = inputItem.MappedTo ;
+                dr["Name"] = inputItem.IOItemDefinition.Name ;
+                dr["Section"] = "In";
+                dt.Rows.Add(dr);
             }
 
             foreach (IOItem outputItem in meta.IOSpec.Output.Values)
             {
-                compConfInfo +=  outputItem.IOItemDefinition.Type + ":" + outputItem.MappedTo +  ";";
+                compConfInfo +=  outputItem.IOItemDefinition.Type + "," + outputItem.MappedTo+",Out,"+outputItem.IOItemDefinition.Name  +  ";";
+
+                DataRow dr = dt.NewRow();
+                dr["Type"] = outputItem.IOItemDefinition.Type ;
+                dr["Value"] = outputItem.MappedTo ;
+                dr["Name"] = outputItem.IOItemDefinition.Name ;
+                dr["Section"] = "Out";
+                dt.Rows.Add(dr);
             }
-            compConfInfo += "<asp:TextBox></TextBox>";
- 
-           
-            return compConfInfo ;
+
+            foreach (ConfigPropertyObject  confwrap in meta.ConfigWrapper.ConfigValues.Values  )
+            {
+                if (confwrap.Type.ToString().Equals("TraceLabSDK.Component.Config.FilePath"))
+                {
+                    TraceLabSDK.Component.Config.FilePath fpath = (TraceLabSDK.Component.Config.FilePath)confwrap.Value;
+                    compConfInfo += confwrap.Type + "," + fpath.Absolute  + ",Conf," + confwrap.Name + ";";
+                    DataRow dr = dt.NewRow();
+                    dr["Type"] = confwrap.Type ;
+                    dr["Value"] = fpath.Absolute ;
+                    dr["Name"]= confwrap.Name ;
+                    dr["Section"] = "Out";
+                    dt.Rows.Add(dr);
+                }
+                else
+                {
+                compConfInfo += confwrap.Type + "," + confwrap.Value + ",Conf,"+confwrap.Name +";";
+                    DataRow dr = dt.NewRow();
+                    dr["Type"] = confwrap.Type ;
+                    dr["Value"] = confwrap.Value ;
+                    dr["Name"] = confwrap.Name ;
+                    dr["Section"] = "Conf";
+                    dt.Rows.Add(dr);
+                }
+            }
+
+            return dt;// compConfInfo.Substring (0,compConfInfo.Length -1) ;
+        }
+
+        public static int updateComponent(string selectedID, DataTable  compUpdate)
+        {//TODO there is definately a better way to do this. Look into later comparing WPF
+            try
+            {
+
+                ComponentNode node = (ComponentNode)ConsoleInstance.Application.Experiment.GetNode(selectedID);
+                ComponentMetadata meta = (ComponentMetadata)node.Data.Metadata;
+                
+                foreach(DataRow drow in compUpdate.Rows )
+                {
+                    if(drow["Section"].Equals ("In"))
+                    {
+                        foreach(IOItem inputItem in meta.IOSpec.Input.Values)
+                        {
+                            if (drow["Name"].Equals(inputItem.IOItemDefinition.Name))
+                            {
+                                inputItem.MappedTo = drow["Value"].ToString();
+                            }
+                        }
+                    }
+                    else if(drow["Section"].Equals ("Out"))
+                    {
+                        foreach (IOItem outputItem in meta.IOSpec.Output.Values )
+                        {
+                            if(drow["Name"].Equals (outputItem.IOItemDefinition.Name ))
+                            {
+                                outputItem.MappedTo = drow["Value"].ToString() ;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        foreach (ConfigPropertyObject confwrap in meta.ConfigWrapper.ConfigValues.Values)
+                        {
+                            if(drow["Name"].Equals(confwrap.Name))
+                            {
+                                confwrap.Value = drow["Value"];
+                            }
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+            return 1;
         }
 
         public static string GetNodes()
@@ -159,6 +248,48 @@ namespace TraceLabWeb
                 components += "</ul>";
             return components;
         }
+
+        public static DataTable GetLinks()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("source");
+            dt.Columns.Add("target");
+            dt.Columns.Add("ID");
+            foreach (ExperimentNodeConnection Link in ConsoleInstance.Application.Experiment.Edges )
+            {
+                DataRow drow = dt.NewRow();
+
+                drow["source"]=Link.Source.ID;
+                drow["target"] = Link.Target.ID;
+                drow["ID"] = Link.ID;
+
+                dt.Rows.Add(drow);
+            }
+
+            return dt;
+        }
+
+
+        public static DataTable   GetNodesForDropdown()
+        {
+            DataTable dt = new DataTable() ;
+            dt.Columns.Add("ID");
+            dt.Columns.Add("Label");
+            dt.Columns.Add("X");
+            dt.Columns.Add("Y");
+            foreach (ExperimentNode Node in ConsoleInstance.Application.Experiment.Vertices)
+            {
+                DataRow drow = dt.NewRow();
+                drow["ID"]=Node.ID;
+                drow["Label"] = Node.Data.Metadata.Label;
+                drow["X"] = Node.Data.X;
+                drow["Y"] = Node.Data.Y;
+                dt.Rows.Add(drow);
+            }
+            
+            return dt;
+        }
+
 
         public static void Run(ApplicationViewModel application)
         {
@@ -379,7 +510,7 @@ namespace TraceLabWeb
             }
         }
 
-        public static void AddStartNode(string value) //TODO Implement for Node Type
+        public static void AddStartNode(string value) //TODO Uneccesary apparently
         {
             try
             {

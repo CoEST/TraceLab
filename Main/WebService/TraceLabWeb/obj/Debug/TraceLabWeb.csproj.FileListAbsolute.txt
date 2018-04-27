@@ -155,12 +155,6 @@ C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\NLo
 C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLabWeb\obj\Debug\TraceLabWeb.csprojResolveAssemblyReference.cache
 C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLabWeb\obj\Debug\TraceLabWeb.dll
 C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLabWeb\obj\Debug\TraceLabWeb.pdb
-C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLabSDK.Types.dll
-C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\QuickGraph.Serialization.dll
-C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLab.Core.pdb
-C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLabSDK.Types.pdb
-C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLabSDK.Types.xml
-C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\QuickGraph.Serialization.pdb
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLabWeb.dll.config
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLabWeb.dll
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLabWeb.pdb
@@ -205,3 +199,9 @@ C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLabWeb\obj\Debu
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLabWeb\obj\Debug\TraceLabWeb.csproj.CopyComplete
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLabWeb\obj\Debug\TraceLabWeb.dll
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLabWeb\obj\Debug\TraceLabWeb.pdb
+C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLabSDK.Types.dll
+C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\QuickGraph.Serialization.dll
+C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLab.Core.pdb
+C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLabSDK.Types.pdb
+C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\TraceLabSDK.Types.xml
+C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLabWeb\bin\Debug\QuickGraph.Serialization.pdb

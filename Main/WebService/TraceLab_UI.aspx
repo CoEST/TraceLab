@@ -6,12 +6,130 @@
     <title>TraceLab</title>
    
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"/>
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"/>
     <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="raphael.js" charset="utf-8"></script>
+    <script type="text/javascript" src="GraphBuilder.js" charset ="utf-8" ></script>
+    <script type ="text/javascript" >
+       
+        var el;
+        var rpaper;
+        //window.onload = function () {
+        //    var dragger = function () {
+        //        this.ox = this.type == "rect" ? this.attr("x") : this.attr("cx");
+        //        this.oy = this.type == "rect" ? this.attr("y") : this.attr("cy");
+        //        this.animate({ "fill-opacity": .2 }, 500);
+        //    },
+        //        move = function (dx, dy) {
+        //            var att = this.type == "rect" ? { x: this.ox + dx, y: this.oy + dy } : { cx: this.ox + dx, cy: this.oy + dy };
+        //            this.attr(att);
+        //            for (var i = connections.length; i--;) {
+        //                paper.connection(connections[i]);
+        //            }
+        //            paper.safari();
+        //        },
+        //        up = function () {
+        //            this.animate({ "fill-opacity": 0 }, 500);
+        //        },
+        //        paper = Raphael("holder", 640, 480),
+        //        connections = [],
+        //        shapes = [];
+        //    paper.rect(0, 0, 640, 480, 10).attr({ fill: "#ddd", stroke: "none" });
+        
+            
+        //    shapes.push(paper.rect(290, 80, 60, 40, 2));
+        //    shapes.push(paper.rect(290, 180, 60, 40, 2));
+        //    for (var i = 0, ii = shapes.length; i < ii; i++) {
+        //        var color = Raphael.getColor();
+        //        shapes[i].attr({ fill: color, stroke: color, "fill-opacity": 0, "stroke-width": 2, cursor: "move" });
+        //        shapes[i].drag(move, dragger, up);
+        //    }
+        //   // paper.text(290+30, 80+20, "Trace");
+        //    connections.push(paper.connection(shapes[0], shapes[1], "#000"));
+            
+        //};
+        var shapes = [];
+        var connections = [];
+        var text = [];
+        var ID = [];
 
+                var dragger = function () {
+                this.ox = this.type == "rect" ? this.attr("x") : this.attr("cx");
+                this.oy = this.type == "rect" ? this.attr("y") : this.attr("cy");
+
+                }
+                move = function (dx, dy) {
+                    var att = this.type == "rect" ? { x: this.ox + dx, y: this.oy + dy } : { cx: this.ox + dx, cy: this.oy + dy };
+                    this.attr(att);                    
+                    for (var i = connections.length; i--;) {
+                        rpaper.connection(connections[i]);
+                    }
+                }
+                up = function () {
+                    
+                    }
+        function LoadExperiment(x) {
+            rpaper = Raphael("holder", 1000, 800),
+                shapes=[],
+                connections = [],
+                text = [],
+                ID = [];
+            rpaper.clear();
+            rpaper.rect(0, 0, 1000, 800, 10).attr({ fill: "#eee", stroke: "none" });
+            
+        };
+        function addNode(x, y, w, l,Text,Identifier) {
+            shapes.push(rpaper.rect(x, y, w, l));
+            ID.push(Identifier);
+            text.push(rpaper.text(x + w / 2, y + l / 2, Text));
+
+                        for (var i = 0, ii = shapes.length; i < ii; i++) {
+                shapes[i].attr({"stroke-width": 2, cursor: "move" });
+                shapes[i].drag(move, dragger, up);
+                            text[i].attr({cursor: "move"})
+                text[i].drag(move, dragger, up);
+            }
+        }
+        function addLink(targetID, sourceID)
+        {
+            var i = 0;
+            var j = 0;
+            while (i < ID.length) {
+                if (ID[i] == targetID) {
+                    break;
+                }
+                else {
+                    i++;
+                }
+            }
+            while (j < ID.length) {
+                if (ID[j] == sourceID) {
+                    break;
+                }
+                else {
+                    j++;
+                }
+            }
+
+           connections.push(rpaper.connection(shapes[i], shapes[j], "#000"));
+
+        }
+
+        function resetNodeHandlers()
+        {
+            
+            for (var i = 0, ii = shapes.length; i < ii; i++) {
+                shapes[i].attr({ "stroke-width": 2, cursor: "move" });
+                shapes[i].drag(move, dragger, up);
+                text[i].attr({ cursor: "move" })
+                text[i].drag(move, dragger, up);
+            }
+        }
+
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -119,8 +237,9 @@
                         <div class="panel-heading">Components</div>
                         
                         <div class="panel-body">
-                            <asp:TextBox ID="ComponentLabelText" runat ="server" OnTextChanged ="GetComponentInfo"></asp:TextBox>
+                            <asp:DropDownList ID="ComponentLabelText" runat ="server" OnSelectedIndexChanged ="GetComponentInfo"></asp:DropDownList>
                             <asp:Button ID="loadSelectedComponent" runat ="server"  Text ="Load Component" OnClick ="GetComponentInfo" />
+                            <asp:Button ID="updateSelectedComponent" runat ="server"  Text ="Update Component" OnClick ="GetComponentInfo" />
                             <asp:placeholder ID="ComponentConfig" runat ="server"></asp:placeholder>
                             <asp:Label ID="Compcon" Font-Size="small" runat="server" >
 
@@ -144,8 +263,9 @@
                         <div class="panel-heading">Graph</div>
                         <div class="panel-body">
                             <asp:Label ID="Labelconsole" runat="server" Text="Console: <br/>"></asp:Label>
+                            <div id="holder"></div>
                             <asp:Label ID="Console" runat="server" Text=""></asp:Label>
-
+                            
                         </div>
                     </div>
                 </div>
