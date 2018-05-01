@@ -50,84 +50,84 @@
         //   // paper.text(290+30, 80+20, "Trace");
         //    connections.push(paper.connection(shapes[0], shapes[1], "#000"));
             
-        //};
-        var shapes = [];
-        var connections = [];
-        var text = [];
-        var ID = [];
+        //////};
+        ////var shapes = [];
+        ////var connections = [];
+        ////var text = [];
+        ////var ID = [];
 
-                var dragger = function () {
-                this.ox = this.type == "rect" ? this.attr("x") : this.attr("cx");
-                this.oy = this.type == "rect" ? this.attr("y") : this.attr("cy");
+        ////        var dragger = function () {
+        ////        this.ox = this.type == "rect" ? this.attr("x") : this.attr("cx");
+        ////        this.oy = this.type == "rect" ? this.attr("y") : this.attr("cy");
 
-                }
-                move = function (dx, dy) {
-                    var att = this.type == "rect" ? { x: this.ox + dx, y: this.oy + dy } : { cx: this.ox + dx, cy: this.oy + dy };
-                    this.attr(att);                    
-                    for (var i = connections.length; i--;) {
-                        rpaper.connection(connections[i]);
-                    }
-                }
-                up = function () {
+        ////        }
+        ////        move = function (dx, dy) {
+        ////            var att = this.type == "rect" ? { x: this.ox + dx, y: this.oy + dy } : { cx: this.ox + dx, cy: this.oy + dy };
+        ////            this.attr(att);                    
+        ////            for (var i = connections.length; i--;) {
+        ////                rpaper.connection(connections[i]);
+        ////            }
+        ////        }
+        ////        up = function () {
                     
-                    }
-        function LoadExperiment(x) {
-            rpaper = Raphael("holder", 1000, 800),
-                shapes=[],
-                connections = [],
-                text = [],
-                ID = [];
-            rpaper.clear();
-            rpaper.rect(0, 0, 1000, 800, 10).attr({ fill: "#eee", stroke: "none" });
+        ////            }
+        ////function LoadExperiment(x) {
+        ////    rpaper = Raphael("holder", 1000, 800),
+        ////        shapes=[],
+        ////        connections = [],
+        ////        text = [],
+        ////        ID = [];
+        ////    rpaper.clear();
+        ////    rpaper.rect(0, 0, 1000, 800, 10).attr({ fill: "#eee", stroke: "none" });
             
-        };
-        function addNode(x, y, w, l,Text,Identifier) {
-            shapes.push(rpaper.rect(x, y, w, l));
-            ID.push(Identifier);
-            text.push(rpaper.text(x + w / 2, y + l / 2, Text));
+        ////};
+        ////function addNode(x, y, w, l,Text,Identifier) {
+        ////    shapes.push(rpaper.rect(x, y, w, l));
+        ////    ID.push(Identifier);
+        ////    text.push(rpaper.text(x + w / 2, y + l / 2, Text));
 
-                        for (var i = 0, ii = shapes.length; i < ii; i++) {
-                shapes[i].attr({"stroke-width": 2, cursor: "move" });
-                shapes[i].drag(move, dragger, up);
-                            text[i].attr({cursor: "move"})
-                text[i].drag(move, dragger, up);
-            }
-        }
-        function addLink(targetID, sourceID)
-        {
-            var i = 0;
-            var j = 0;
-            while (i < ID.length) {
-                if (ID[i] == targetID) {
-                    break;
-                }
-                else {
-                    i++;
-                }
-            }
-            while (j < ID.length) {
-                if (ID[j] == sourceID) {
-                    break;
-                }
-                else {
-                    j++;
-                }
-            }
+        ////                for (var i = 0, ii = shapes.length; i < ii; i++) {
+        ////        shapes[i].attr({"stroke-width": 2, cursor: "move" });
+        ////        shapes[i].drag(move, dragger, up);
+        ////                    text[i].attr({cursor: "move"})
+        ////        text[i].drag(move, dragger, up);
+        ////    }
+        ////}
+        ////function addLink(targetID, sourceID)
+        ////{
+        ////    var i = 0;
+        ////    var j = 0;
+        ////    while (i < ID.length) {
+        ////        if (ID[i] == targetID) {
+        ////            break;
+        ////        }
+        ////        else {
+        ////            i++;
+        ////        }
+        ////    }
+        ////    while (j < ID.length) {
+        ////        if (ID[j] == sourceID) {
+        ////            break;
+        ////        }
+        ////        else {
+        ////            j++;
+        ////        }
+        ////    }
 
-           connections.push(rpaper.connection(shapes[i], shapes[j], "#000"));
+        ////   connections.push(rpaper.connection(shapes[i], shapes[j], "#000"));
 
-        }
+        ////}
 
-        function resetNodeHandlers()
-        {
+        ////function resetNodeHandlers()
+        ////{
             
-            for (var i = 0, ii = shapes.length; i < ii; i++) {
-                shapes[i].attr({ "stroke-width": 2, cursor: "move" });
-                shapes[i].drag(move, dragger, up);
-                text[i].attr({ cursor: "move" })
-                text[i].drag(move, dragger, up);
-            }
-        }
+        ////    for (var i = 0, ii = shapes.length; i < ii; i++) {
+        ////        shapes[i].attr({ "stroke-width": 2, cursor: "move" });
+        ////        shapes[i].drag(move, dragger, up);
+        ////        text[i].attr({ cursor: "move" })
+        ////        text[i].drag(move, dragger, up);
+        ////    }
+        ////}
 
     </script>
 </head>

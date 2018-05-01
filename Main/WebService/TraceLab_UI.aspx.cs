@@ -12,6 +12,9 @@ public partial class TraceLab_UI : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        try
+        {
+
         var app = TraceLabApplicationWebConsole.Instance;
         Components.Text = app.GetComponents();
         if (!IsPostBack)
@@ -22,6 +25,11 @@ public partial class TraceLab_UI : System.Web.UI.Page
             ComponentDropDown.DataBind();
         }
         Workspace.Text = app.GetWorkspace();
+        }
+        catch (Exception ex)
+        {
+            Workspace.Text = "Error:" + ex.Message;
+        }
     }
 
     protected void OpenButton_Click(object sender, EventArgs e)
@@ -49,20 +57,20 @@ public partial class TraceLab_UI : System.Web.UI.Page
             ComponentLabelText.DataValueField = "ID";
             ComponentLabelText.DataBind();
             Workspace.Text = app.GetWorkspace();
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallFunction", "LoadExperiment(50);", true);
             buildGraph();
         }
         catch (Exception ex)
         {
             Workspace.Text = "Error";
         }
-        //TODO reload the raphael paper when project is opened
-
-
+     
     }
 
     protected void Save_Click(object sender, EventArgs e)
     {
+        try
+        {
+
         var app = TraceLabApplicationWebConsole.Instance;
         app.SaveExperiment (SaveText.Text);
         Console.Text = app.GetLog();
@@ -72,10 +80,18 @@ public partial class TraceLab_UI : System.Web.UI.Page
         ComponentDropDown.DataValueField = "ID";
         ComponentDropDown.DataBind();
         Workspace.Text = app.GetWorkspace();
+        }
+        catch (Exception ex)
+        {
+            Workspace.Text = "Error:" + ex.Message;
+        }
     }
 
     protected void Log_Click(object sender, EventArgs e)
     {
+        try
+        {
+
         var app = TraceLabApplicationWebConsole.Instance;
         Console.Text = app.GetLog();
         Components.Text = app.GetComponents();
@@ -85,10 +101,19 @@ public partial class TraceLab_UI : System.Web.UI.Page
         ComponentDropDown.DataTextField = "Label";
         ComponentDropDown.DataValueField = "ID";
         ComponentDropDown.DataBind();
+        buildGraph();
+        }
+        catch (Exception ex)
+        {
+            Workspace.Text = "Error:" + ex.Message;
+        }
     }
 
     protected void Run_Click(object sender, EventArgs e)
     {
+        try
+        {
+
         var app = TraceLabApplicationWebConsole.Instance;
         app.RunExperiment();
         app.ClearLog();
@@ -100,41 +125,90 @@ public partial class TraceLab_UI : System.Web.UI.Page
         ComponentDropDown.DataTextField = "Label";
         ComponentDropDown.DataValueField = "ID";
         ComponentDropDown.DataBind();
-        
+        }
+        catch (Exception ex)
+        {
+            Workspace.Text = "Error:" + ex.Message;
+        }
+
     }
 
     protected void EdgeCommand(object sender, EventArgs e)
     {
+        try
+        {
         var app = TraceLabApplicationWebConsole.Instance;
         app.AddEdge(EdgeNameText .Text,EdgeSourceText.Text,EdgeTargetText.Text  );
+        buildGraph();
+        }
+        catch (Exception ex)
+        {
+            Workspace.Text = "Error:" + ex.Message;
+        }
     }
 
     protected void Delete_Edge(object sender, EventArgs e)
     {
+        try
+        {
+
         var app = TraceLabApplicationWebConsole.Instance;
         app.Delete_Edge(DeleteNameText.Text, DeleteSourceText.Text, DeleteTargetText.Text);
+        buildGraph();
+        }
+        catch (Exception ex)
+        {
+            Workspace.Text = "Error:" + ex.Message;
+        }
     }
 
     protected void AddNode(object sender, EventArgs e)
     {
+        try
+        {
+
         var app = TraceLabApplicationWebConsole.Instance;
         int x = 0;
         int y = 0;
         Int32.TryParse(txt_nodeX.Text,out x);
         Int32.TryParse(txt_nodeY.Text, out y);
         app.AddNode(ComponentDropDown.SelectedItem.Value , x, y);
-        //TODO add a node to raphael paper when node is added
+        
+        ComponentLabelText.DataSource = app.GetNodesForDropdown();
+        ComponentLabelText.DataTextField = "Label";
+        ComponentLabelText.DataValueField = "ID";
+        ComponentLabelText.DataBind();
 
+        buildGraph();
+
+        }
+        catch (Exception ex)
+        {
+            Workspace.Text = "Error:" + ex.Message;
+        }
     }
 
     protected void Delete_Node(object sender, EventArgs e)
     {
+        try
+        {
+
         var app = TraceLabApplicationWebConsole.Instance;
         app.Delete_Node(DeleteNodeText.Text);
-        //TODO remove node from raphael paper when node is removed
+        
+        ComponentLabelText.DataSource = app.GetNodesForDropdown();
+        ComponentLabelText.DataTextField = "Label";
+        ComponentLabelText.DataValueField = "ID";
+        ComponentLabelText.DataBind();
+
+        buildGraph();
+        }
+        catch (Exception ex)
+        {
+            Workspace.Text = "Error:" + ex.Message;
+        }
     }
-
-
+    
     protected void GetComponentInfo(object sender,EventArgs e)
     {
         ComponentConfig.Controls.Clear();//Remove any controls that already exist
@@ -194,7 +268,7 @@ public partial class TraceLab_UI : System.Web.UI.Page
             }
             
         }
-
+        buildGraph();
         //Add controls that that component would have
 
     }
@@ -228,7 +302,8 @@ public partial class TraceLab_UI : System.Web.UI.Page
         }
 
         app.UpdateComponentConfigInfo(ComponentDropDown.SelectedValue, updatedDT);
-        
+
+        buildGraph();
 
         //run the update
     }
@@ -254,6 +329,7 @@ public partial class TraceLab_UI : System.Web.UI.Page
             {
                 Console.Text = TraceLabApplicationWebConsole.Instance.GetLogUntouched();
                 runningTimer.Enabled = false;
+                buildGraph();
             }
         }
         catch(Exception ex)
@@ -265,8 +341,12 @@ public partial class TraceLab_UI : System.Web.UI.Page
 
     public void buildGraph()
     {
+        try
+        {
+
         DataTable dt = new DataTable();
         var app = TraceLabApplicationWebConsole.Instance;
+        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallFunction", "LoadExperiment(50);", true);
 
         dt = app.GetNodesForDropdown ();
         foreach(DataRow drow in dt.Rows)
@@ -282,6 +362,11 @@ public partial class TraceLab_UI : System.Web.UI.Page
             Page.ClientScript.RegisterStartupScript(this.GetType(), "EdgeFunction" + Guid.NewGuid(), "addLink('" + drow["source"] + "','" + drow["target"]+ "');", true);
         }
         Page.ClientScript.RegisterStartupScript(this.GetType(), "resetHandlers" , "resetNodeHandlers();", true);
+        }
+        catch (Exception ex)
+        {
+            Workspace.Text = "Error:" + ex.Message;
+        }
     }
 
 }
