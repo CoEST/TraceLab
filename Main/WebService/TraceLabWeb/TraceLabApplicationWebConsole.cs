@@ -89,16 +89,22 @@ namespace TraceLabWeb
             return WebConsoleUI.GetNodesForDropdown(); // TODO WebConsoleUI.GetNodes
         }
 
-        public void OpenExperiment(string path)
+        public Dictionary<string, object> OpenExperiment(string path)
         {
             //"C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"
-            WebConsoleUI.OpenExperiment(path);
+            return WebConsoleUI.OpenExperiment(path);
         }
 
         public void SaveExperiment(string path)
         {
             //"C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"
             WebConsoleUI.SaveExperiment (path);
+        }
+
+        public void SaveExperimentInfo(string name, string authors, string contributors, string description)
+        {
+            //"C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"
+            WebConsoleUI.SaveExperimentInfo(name, authors, contributors, description);
         }
 
         public void AddEdge(string edgeName,string sourceName,string targetName)
@@ -138,7 +144,7 @@ namespace TraceLabWeb
             {
                 if (INSTANCE == null)
                 {
-                    string[] args = { CommandLineProcessor.SwitchCharacter + "base:C:\\Users\\Andrew\\Documents\\Git\\TraceLab\\Main\\WebService\\Bin" };
+                    string[] args = { CommandLineProcessor.SwitchCharacter + "base:C:\\Users\\Owner\\Documents\\W&M\\cs635\\TraceLab\\Main\\WebService\\Bin" };
                     INSTANCE = new TraceLabApplicationWebConsole();
                     INSTANCE.Run(args);
                 }

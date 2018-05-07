@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Data;
 using System.Linq;
 using System.Threading;
@@ -38,14 +39,14 @@ public partial class TraceLab_UI : System.Web.UI.Page
         {
             string directory = OpenDirText.Text;
             var app = TraceLabApplicationWebConsole.Instance;
-            app.OpenExperiment(directory);
+            Dictionary<string, object> info = app.OpenExperiment(directory);
 
             Console.Text += app.GetLog();
 
-            ProjectNameText.Text = "";
-            AuthorsText.Text = "";
-            ContributorsText.Text = "";
-            DescriptionText.Text = "";
+            ProjectNameText.Text = (string) info["name"];
+            AuthorsText.Text = (string) info["author"];
+            ContributorsText.Text = (string) info["contributors"];
+            DescriptionText.Text = (string) info["description"];
 
             Components.Text = app.GetComponents();
             ComponentDropDown.DataSource = app.GetComponentListForDropDown();
@@ -202,6 +203,19 @@ public partial class TraceLab_UI : System.Web.UI.Page
         ComponentLabelText.DataBind();
 
         buildGraph();
+        }
+        catch (Exception ex)
+        {
+            Workspace.Text = "Error:" + ex.Message;
+        }
+    }
+
+    protected void Save_Info(object sender, EventArgs e)
+    {
+        try
+        {
+            var app = TraceLabApplicationWebConsole.Instance;
+            app.SaveExperimentInfo(ProjectNameText.Text, AuthorsText.Text, ContributorsText.Text, DescriptionText.Text);
         }
         catch (Exception ex)
         {

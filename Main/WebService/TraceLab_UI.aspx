@@ -214,16 +214,34 @@
                     <div class="panel panel-primary fill-body-double" style="min-height :275px">
                         <div class="panel-heading">Experiment Info</div>
                         <div class="panel-body" style="min-height :90px">
-                            <asp:Label ID="ExperimentInfo" runat="server" Text="ExperimentInfo: <br/>"></asp:Label>
-                            <asp:Label ID="Info" runat="server" Text=""></asp:Label>
-                              Project Name:<asp:TextBox ID="ProjectNameText" runat="server" Width="200px" Text =""></asp:TextBox>
+                              Project Name:
+                            <div style="float: right"> 
+                                <asp:TextBox ID="ProjectNameText" runat="server" Width="250px" Text =""></asp:TextBox>
+                            </div>
                             <br />
-                              Author(s)   :<asp:TextBox ID="AuthorsText" runat="server" Width="200px" Text =""></asp:TextBox>
                             <br />
-                              Contributors:<asp:TextBox ID="ContributorsText" runat="server" Width="200px" Text =""></asp:TextBox>
+                              Author(s):
+                            <div style="float: right">
+                                <asp:TextBox ID="AuthorsText" runat="server" Width="250px" Text =""></asp:TextBox>
+                            </div>
                             <br />
-                              Description:<asp:TextBox ID="DescriptionText" runat="server" Width="200px" Height ="50px" Text ="" TextMode="MultiLine"></asp:TextBox>
-                            
+                            <br />
+                              Contributors:
+                            <div style="float: right">
+                              <asp:TextBox ID="ContributorsText" runat="server" Width="250px" Text =""></asp:TextBox>
+                            </div>
+                            <br />
+                            <br />
+                              Description:
+                            <div style="float: right">
+                                <asp:TextBox ID="DescriptionText" runat="server" Width="250px" Height ="50px" Text ="" TextMode="MultiLine"></asp:TextBox>
+                            </div>
+                            <br />
+                            <br />
+                            <br />
+                            <div style="float: right">
+                            <asp:LinkButton ID="SaveInfo" CssClass="btn btn-primary btn-lg" runat="server" OnClick="Save_Info"><span >Save</span></asp:LinkButton>
+                            </div>
                         </div>
                     </div>
                 </div>

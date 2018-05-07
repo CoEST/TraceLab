@@ -332,9 +332,10 @@ namespace TraceLabWeb
             log += ("\t?\t- This help message.<br />");
         }
 
-        public static void OpenExperiment(string value)
+        public static Dictionary<string, object> OpenExperiment(string value)
         {
             //log = "";
+            Dictionary<string, object> info;
             try
             {
                 var experiment = TraceLab.Core.Experiments.ExperimentManager.Load(value, ComponentsLibrary.Instance);
@@ -342,7 +343,8 @@ namespace TraceLabWeb
                 {
                     ReloadApplicationViewModel(experiment);
                     log += ("\tExperiment has been opened. <br/>");
-                    DisplayExperimentInfo(null);
+                    info = DisplayExperimentInfo(null);
+                    return info;
                 }
             }
             catch (TraceLab.Core.Exceptions.ExperimentLoadException ex)
@@ -355,6 +357,8 @@ namespace TraceLabWeb
                 string msg = String.Format("Unable to open the file {0}. Error: {1}", value, ex.Message);
                 log += msg;
             }
+            info = null;
+            return info;
         }
 
         public static void SaveExperiment(string value)
@@ -780,7 +784,27 @@ namespace TraceLabWeb
             ((INotifyCollectionChanged)Application.LogViewModel.Events).CollectionChanged -= LogEventsCollectionChanged;
         }
 
-        private static void DisplayExperimentInfo(string value)
+        private static Dictionary<string, object> DisplayExperimentInfo(string value)
+        {
+            Dictionary<string, object> info = new Dictionary<string, object>();
+            if (ConsoleInstance.Application.Experiment == null)
+            {
+                log += ("\tExperiment has not been opened yet.");
+                log += ("\tOpen experiment first: open:[filepath]");
+            }
+            else
+            {
+                info.Add("name", ConsoleInstance.Application.Experiment.ExperimentInfo.Name);
+                info.Add("filepath", ConsoleInstance.Application.Experiment.ExperimentInfo.FilePath);
+                info.Add("author", ConsoleInstance.Application.Experiment.ExperimentInfo.Author);
+                info.Add("contributors", ConsoleInstance.Application.Experiment.ExperimentInfo.Contributors);
+                info.Add("description", ConsoleInstance.Application.Experiment.ExperimentInfo.Description);
+                info.Add("vertices", ConsoleInstance.Application.Experiment.VertexCount);            
+            }
+            return info;
+        }
+
+        public static void SaveExperimentInfo(string name, string authors, string contributors, string description)
         {
             if (ConsoleInstance.Application.Experiment == null)
             {
@@ -789,13 +813,10 @@ namespace TraceLabWeb
             }
             else
             {
-                log += string.Format("<br />Experiment information<br />");
-                log += string.Format("\tName:\t {0}<br />", ConsoleInstance.Application.Experiment.ExperimentInfo.Name);
-                log += string.Format("\tFilePath:\t {0}<br />", ConsoleInstance.Application.Experiment.ExperimentInfo.FilePath);
-                log += string.Format("\tAuthor:\t {0}<br />", ConsoleInstance.Application.Experiment.ExperimentInfo.Author);
-                log += string.Format("\tContributors:\t {0}<br />", ConsoleInstance.Application.Experiment.ExperimentInfo.Contributors);
-                log += string.Format("\tDescription:\t {0}<br />", ConsoleInstance.Application.Experiment.ExperimentInfo.Description);
-                log += string.Format("\tVertices count:\t {0}<br /><br/>", ConsoleInstance.Application.Experiment.VertexCount);
+                ConsoleInstance.Application.Experiment.ExperimentInfo.Name = name;
+                ConsoleInstance.Application.Experiment.ExperimentInfo.Author = authors;
+                ConsoleInstance.Application.Experiment.ExperimentInfo.Contributors = contributors;
+                ConsoleInstance.Application.Experiment.ExperimentInfo.Description = description;
             }
         }
 
