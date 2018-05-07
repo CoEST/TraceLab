@@ -120,6 +120,7 @@ namespace TraceLabWeb
 
         internal static DataTable  GetComponentInfo(string selectedID)
         {
+
             string compConfInfo = "";
             DataTable dt = new DataTable() ;
             dt.Columns.Add("Type");
@@ -127,6 +128,8 @@ namespace TraceLabWeb
             dt.Columns.Add("Name");
             dt.Columns.Add("Section");
 
+            try
+            { 
             ComponentNode node =(ComponentNode) ConsoleInstance.Application.Experiment.GetNode(selectedID);
             ComponentMetadata meta = (ComponentMetadata)node.Data.Metadata;
 
@@ -177,7 +180,11 @@ namespace TraceLabWeb
                     dt.Rows.Add(dr);
                 }
             }
+            }
+            catch(Exception ex)
+            {
 
+            }
             return dt;// compConfInfo.Substring (0,compConfInfo.Length -1) ;
         }
 
@@ -332,7 +339,43 @@ namespace TraceLabWeb
             log += ("\t?\t- This help message.<br />");
         }
 
+<<<<<<< HEAD
         public static Dictionary<string, object> OpenExperiment(string value)
+=======
+
+        public static void NewExperiment(string fpath)
+        {
+            //log = "";
+            try
+            {
+                var experiment = TraceLab.Core.Experiments.ExperimentManager.New();
+                experiment.ExperimentInfo.FilePath = fpath;
+                try
+                {
+                    ExperimentManager.Save(experiment, fpath);
+                }
+                catch( Exception ex)
+                {
+                    log += "failed to save experiment:" + ex.Message;
+                }
+                if (experiment != null)
+                {
+                    ReloadApplicationViewModel(experiment);
+                    log += ("\tExperiment has been opened. <br/>");
+                    DisplayExperimentInfo(null);
+                }
+            }
+            catch (Exception ex)
+            {
+                string msg = String.Format("Unable to generateExperiment . Error: {0}",  ex.Message);
+                log += msg;
+            }
+        }
+
+
+
+        public static void OpenExperiment(string value)
+>>>>>>> c8835bdb0302cfa82198a4fef61fb3fd6474daa5
         {
             //log = "";
             Dictionary<string, object> info;
@@ -514,6 +557,24 @@ namespace TraceLabWeb
             }
         }
 
+        public static void MoveNode(int x, int y, string nodeID)
+        {
+            //cannot handle start and end nodes
+            var experiment = ConsoleInstance.Application.Experiment;
+            try
+            {
+                ExperimentNode  node = ConsoleInstance.Application.Experiment.GetNode(nodeID);
+               
+                node.Data.X = x;
+                node.Data.Y = y;
+
+            }
+            catch (Exception ex)
+            {
+                log += ex.Message;
+            }
+        }
+
         public static void AddStartNode(string value) //TODO Uneccesary apparently
         {
             try
@@ -570,9 +631,9 @@ namespace TraceLabWeb
 
             }
 
-            catch
+            catch (Exception ex)
             {
-                log += "Failed to create node";
+                log += "Failed to create node. Err:"+ex.Message ;
             }
 
         }
