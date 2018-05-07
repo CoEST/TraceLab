@@ -89,9 +89,6 @@ namespace TraceLabWeb
             return WebConsoleUI.GetNodesForDropdown(); // TODO WebConsoleUI.GetNodes
         }
 
-<<<<<<< HEAD
-        public Dictionary<string, object> OpenExperiment(string path)
-=======
         public void newExperiment(string fpath)
         {
             //"C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"
@@ -99,8 +96,7 @@ namespace TraceLabWeb
         }
 
 
-        public void OpenExperiment(string path)
->>>>>>> c8835bdb0302cfa82198a4fef61fb3fd6474daa5
+        public Dictionary<string, object> OpenExperiment(string path)
         {
             //"C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"
             return WebConsoleUI.OpenExperiment(path);

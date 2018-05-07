@@ -339,10 +339,6 @@ namespace TraceLabWeb
             log += ("\t?\t- This help message.<br />");
         }
 
-<<<<<<< HEAD
-        public static Dictionary<string, object> OpenExperiment(string value)
-=======
-
         public static void NewExperiment(string fpath)
         {
             //log = "";
@@ -374,8 +370,7 @@ namespace TraceLabWeb
 
 
 
-        public static void OpenExperiment(string value)
->>>>>>> c8835bdb0302cfa82198a4fef61fb3fd6474daa5
+        public static Dictionary<string, object> OpenExperiment(string value)
         {
             //log = "";
             Dictionary<string, object> info;
