@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Threading;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TraceLabWeb;
@@ -31,6 +32,42 @@ public partial class TraceLab_UI : System.Web.UI.Page
             Workspace.Text = "Error:" + ex.Message;
         }
     }
+
+    protected void NewProjButton_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            string directory = OpenDirText.Text;
+            var app = TraceLabApplicationWebConsole.Instance;
+            app.newExperiment(directory);
+
+
+            Console.Text += app.GetLog();
+
+            ProjectNameText.Text = "";
+            AuthorsText.Text = "";
+            ContributorsText.Text = "";
+            DescriptionText.Text = "";
+
+            Components.Text = app.GetComponents();
+            ComponentDropDown.DataSource = app.GetComponentListForDropDown();
+            ComponentDropDown.DataTextField = "Label";
+            ComponentDropDown.DataValueField = "ID";
+            ComponentDropDown.DataBind();
+            ComponentLabelText.DataSource = app.GetNodesForDropdown();
+            ComponentLabelText.DataTextField = "Label";
+            ComponentLabelText.DataValueField = "ID";
+            ComponentLabelText.DataBind();
+            Workspace.Text = app.GetWorkspace();
+            buildGraph();
+        }
+        catch (Exception ex)
+        {
+            Workspace.Text = "Error";
+        }
+     
+    }
+
 
     protected void OpenButton_Click(object sender, EventArgs e)
     {
@@ -63,8 +100,9 @@ public partial class TraceLab_UI : System.Web.UI.Page
         {
             Workspace.Text = "Error";
         }
-     
+
     }
+
 
     protected void Save_Click(object sender, EventArgs e)
     {
@@ -308,11 +346,13 @@ public partial class TraceLab_UI : System.Web.UI.Page
         //run the update
     }
 
-    protected void MoveNode(object sender, EventArgs e)
+    [WebMethod]
+    public static void MoveNode(int x, int y, string nodeID)
     {
         //TODO handle event when node is moved on raphael paper
         var app = TraceLabApplicationWebConsole.Instance;
-        //app.MoveNode(nodeName,x,y);
+        app.MoveNode(x,y,nodeID );
+
     }
 
     protected void SetComponentConfig(object sender, EventArgs e)
@@ -344,24 +384,24 @@ public partial class TraceLab_UI : System.Web.UI.Page
         try
         {
 
-        DataTable dt = new DataTable();
-        var app = TraceLabApplicationWebConsole.Instance;
-        Page.ClientScript.RegisterStartupScript(this.GetType(), "CallFunction", "LoadExperiment(50);", true);
+            DataTable dt = new DataTable();
+            var app = TraceLabApplicationWebConsole.Instance;
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallFunction" + Guid.NewGuid(), "LoadExperiment();", true);
 
-        dt = app.GetNodesForDropdown ();
-        foreach(DataRow drow in dt.Rows)
-        {
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "NodeFunction"+Guid .NewGuid (), "addNode("+drow["X"]+","+drow["Y"]+",150,40,'"+drow["Label"].ToString () +"','"+drow["ID"].ToString ()+"');", true);            
-        }
+            dt = app.GetNodesForDropdown();
+            foreach (DataRow drow in dt.Rows)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "NodeFunction" + Guid.NewGuid(), "addNode(" + drow["X"] + "," + drow["Y"] + ",150,40,'" + drow["Label"].ToString() + "','" + drow["ID"].ToString() + "');", true);
+            }
 
-        DataTable linkdt = new DataTable();
+            DataTable linkdt = new DataTable();
 
-        linkdt = app.GetEdges ();
-        foreach (DataRow drow in linkdt.Rows )
-        {
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "EdgeFunction" + Guid.NewGuid(), "addLink('" + drow["source"] + "','" + drow["target"]+ "');", true);
-        }
-        Page.ClientScript.RegisterStartupScript(this.GetType(), "resetHandlers" , "resetNodeHandlers();", true);
+            linkdt = app.GetEdges();
+            foreach (DataRow drow in linkdt.Rows)
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "EdgeFunction" + Guid.NewGuid(), "addLink('" + drow["source"] + "','" + drow["target"] + "');", true);
+            }
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "resetHandlers"+Guid.NewGuid() , "resetNodeHandlers();", true);
         }
         catch (Exception ex)
         {

@@ -89,6 +89,13 @@ namespace TraceLabWeb
             return WebConsoleUI.GetNodesForDropdown(); // TODO WebConsoleUI.GetNodes
         }
 
+        public void newExperiment(string fpath)
+        {
+            //"C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"
+            WebConsoleUI.NewExperiment(fpath);
+        }
+
+
         public void OpenExperiment(string path)
         {
             //"C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"
@@ -124,6 +131,11 @@ namespace TraceLabWeb
         {
             //"C:\\Program Files (x86)\\COEST\\TraceLab\\Tutorials\\First experiment\\VectorSpaceStandardExperiment.teml"
             WebConsoleUI.Delete_Node(nodeID);
+        }
+
+        public void MoveNode(int x,int y, string nodeID)
+        {
+            WebConsoleUI.MoveNode(x, y, nodeID);
         }
 
         public void RunExperiment()

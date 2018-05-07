@@ -4,7 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>TraceLab</title>
-   
+ 
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"/>
 
@@ -15,119 +16,9 @@
     <script type="text/javascript" src="GraphBuilder.js" charset ="utf-8" ></script>
     <script type ="text/javascript" >
        
-        var el;
-        var rpaper;
-        //window.onload = function () {
-        //    var dragger = function () {
-        //        this.ox = this.type == "rect" ? this.attr("x") : this.attr("cx");
-        //        this.oy = this.type == "rect" ? this.attr("y") : this.attr("cy");
-        //        this.animate({ "fill-opacity": .2 }, 500);
-        //    },
-        //        move = function (dx, dy) {
-        //            var att = this.type == "rect" ? { x: this.ox + dx, y: this.oy + dy } : { cx: this.ox + dx, cy: this.oy + dy };
-        //            this.attr(att);
-        //            for (var i = connections.length; i--;) {
-        //                paper.connection(connections[i]);
-        //            }
-        //            paper.safari();
-        //        },
-        //        up = function () {
-        //            this.animate({ "fill-opacity": 0 }, 500);
-        //        },
-        //        paper = Raphael("holder", 640, 480),
-        //        connections = [],
-        //        shapes = [];
-        //    paper.rect(0, 0, 640, 480, 10).attr({ fill: "#ddd", stroke: "none" });
+  //      var el;
+//        var rpaper;
         
-            
-        //    shapes.push(paper.rect(290, 80, 60, 40, 2));
-        //    shapes.push(paper.rect(290, 180, 60, 40, 2));
-        //    for (var i = 0, ii = shapes.length; i < ii; i++) {
-        //        var color = Raphael.getColor();
-        //        shapes[i].attr({ fill: color, stroke: color, "fill-opacity": 0, "stroke-width": 2, cursor: "move" });
-        //        shapes[i].drag(move, dragger, up);
-        //    }
-        //   // paper.text(290+30, 80+20, "Trace");
-        //    connections.push(paper.connection(shapes[0], shapes[1], "#000"));
-            
-        //////};
-        ////var shapes = [];
-        ////var connections = [];
-        ////var text = [];
-        ////var ID = [];
-
-        ////        var dragger = function () {
-        ////        this.ox = this.type == "rect" ? this.attr("x") : this.attr("cx");
-        ////        this.oy = this.type == "rect" ? this.attr("y") : this.attr("cy");
-
-        ////        }
-        ////        move = function (dx, dy) {
-        ////            var att = this.type == "rect" ? { x: this.ox + dx, y: this.oy + dy } : { cx: this.ox + dx, cy: this.oy + dy };
-        ////            this.attr(att);                    
-        ////            for (var i = connections.length; i--;) {
-        ////                rpaper.connection(connections[i]);
-        ////            }
-        ////        }
-        ////        up = function () {
-                    
-        ////            }
-        ////function LoadExperiment(x) {
-        ////    rpaper = Raphael("holder", 1000, 800),
-        ////        shapes=[],
-        ////        connections = [],
-        ////        text = [],
-        ////        ID = [];
-        ////    rpaper.clear();
-        ////    rpaper.rect(0, 0, 1000, 800, 10).attr({ fill: "#eee", stroke: "none" });
-            
-        ////};
-        ////function addNode(x, y, w, l,Text,Identifier) {
-        ////    shapes.push(rpaper.rect(x, y, w, l));
-        ////    ID.push(Identifier);
-        ////    text.push(rpaper.text(x + w / 2, y + l / 2, Text));
-
-        ////                for (var i = 0, ii = shapes.length; i < ii; i++) {
-        ////        shapes[i].attr({"stroke-width": 2, cursor: "move" });
-        ////        shapes[i].drag(move, dragger, up);
-        ////                    text[i].attr({cursor: "move"})
-        ////        text[i].drag(move, dragger, up);
-        ////    }
-        ////}
-        ////function addLink(targetID, sourceID)
-        ////{
-        ////    var i = 0;
-        ////    var j = 0;
-        ////    while (i < ID.length) {
-        ////        if (ID[i] == targetID) {
-        ////            break;
-        ////        }
-        ////        else {
-        ////            i++;
-        ////        }
-        ////    }
-        ////    while (j < ID.length) {
-        ////        if (ID[j] == sourceID) {
-        ////            break;
-        ////        }
-        ////        else {
-        ////            j++;
-        ////        }
-        ////    }
-
-        ////   connections.push(rpaper.connection(shapes[i], shapes[j], "#000"));
-
-        ////}
-
-        ////function resetNodeHandlers()
-        ////{
-            
-        ////    for (var i = 0, ii = shapes.length; i < ii; i++) {
-        ////        shapes[i].attr({ "stroke-width": 2, cursor: "move" });
-        ////        shapes[i].drag(move, dragger, up);
-        ////        text[i].attr({ cursor: "move" })
-        ////        text[i].drag(move, dragger, up);
-        ////    }
-        ////}
 
     </script>
 </head>
@@ -167,6 +58,7 @@
                      <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
       
                     <asp:Timer ID="runningTimer" runat="server" Interval="5" OnTick="running_refresh" Enabled ="False" />
+                    <asp:LinkButton ID="NewProj" CssClass="btn btn-primary btn-lg" runat="server" OnClick="NewProjButton_Click"><span class="glyphicon glyphicon-plus"></span></asp:LinkButton>
                     <asp:LinkButton ID="Run" CssClass="btn btn-primary btn-lg" runat="server" OnClick="Run_Click"><span class="glyphicon glyphicon-play"></span></asp:LinkButton>
                     <asp:LinkButton ID="Stop" CssClass="btn btn-primary btn-lg" runat="server" ><span class="glyphicon glyphicon-stop"></span></asp:LinkButton>
                     <asp:LinkButton ID="ReloadLog" CssClass="btn btn-primary btn-lg" runat="server" OnClick="Log_Click"><span class="glyphicon glyphicon-refresh"></span></asp:LinkButton>

@@ -62,6 +62,7 @@ var connections = [];
 var text = [];
 var ID = [];
 var elementIDindex = [];
+var indexSelected = -1;
 
 var selectNode = function () {
     for (var i = shapes.length; i--;)
@@ -89,16 +90,55 @@ var move = function (dx, dy) {
     }
     for (var i = shapes.length; i--;)
     {
-        if (this.id == elementIDindex[i])
+        if (this.id == shapes[i].id)
         {
-
+            var attText = { x: this.attr("x")+(this.attr("width")/2), y: this.attr("y")+(this.attr("height")/2) };
+            text[i].attr(attText);
+            indexSelected = i;
         }
     }
 }
 up = function () {
+
+
     this.animate({ "fill-opacity": 0 }, 500);
+    for (var i = shapes.length; i--;) {
+        if (this.id == shapes[i].id) {
+            indexSelected = i;
+        }
+    }
+
+
+    var ob = { x: this.attr("x"), y: this.attr("y"), nodeID: ID[indexSelected] };
+    var data = JSON.stringify(ob);
+    jQuery.ajax({
+        type: "POST", dataType: "json", contentType: "application/json; charset=utf-8",
+        url: "TraceLab_UI.aspx/MoveNode", data: data,
+        success: function (retValue)
+        {
+         //   alert("boop");
+        },
+        error: function (jqXHR, exception) {
+            var msg = '';
+            if (jqXHR.status === 0) {
+                msg = 'Not connect.\n Verify Network.';
+            } else if (jqXHR.status == 404) {
+                msg = 'Requested page not found. [404]';
+            } else if (jqXHR.status == 500) {
+                msg = 'Internal Server Error [500].';
+            } else if (exception === 'parsererror') {
+                msg = 'Requested JSON parse failed.';
+            } else if (exception === 'timeout') {
+                msg = 'Time out error.';
+            } else if (exception === 'abort') {
+                msg = 'Ajax request aborted.';
+            } else {
+                msg = 'Uncaught Error.\n' + jqXHR.responseText;
+            }
+            $('#post').html(msg);
+        }    });
 }
-function LoadExperiment(x) {
+function LoadExperiment() {
     rpaper = Raphael("holder", 1000, 800),
         shapes = [],
         connections = [],
@@ -149,6 +189,6 @@ function resetNodeHandlers() {
     for (var i = 0, ii = shapes.length; i < ii; i++) {
         shapes[i].attr({ "stroke-width": 2, cursor: "move" });
         shapes[i].drag(move, dragger, up);
-        shapes[i].click(selectNode);
+        shapes[i].dblclick(selectNode);
     }
 }
