@@ -14,4 +14,4 @@ Tracelab key has been properly set, the test experiment is runnable and without 
 2. Verifty the experiment has opened
 
 # Expected results
-The div labeled graph will display output verifying that the experiment has been opened.
+The div labeled graph will display output verifying that the experiment has been opened and a graph should appear showing the nodes in the experient

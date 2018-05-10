@@ -1,0 +1,20 @@
+# Description
+Tests to ensure that experiment Nodes can be updated
+
+# Precondition
+Application must be running
+User must be at http://localhost:49460/Tracelab_UI.aspx
+An experiment must be opened
+
+# Assumption
+Tracelab key has been properly set, the opened experiment is runnable and without error
+
+# Test Steps
+1. Open an experiment
+2. Double click on a node(eg CleanupPreprocessor) in the graph to open the configuration change option
+2. Change options displayed on the left (eg ConvertLowercase)
+3. Select the update component option
+4. Verify the component has has been updated by double clicking on the component in the graph to reload it
+
+# Expected results
+The component should be changed to reflect alterations made in the process
