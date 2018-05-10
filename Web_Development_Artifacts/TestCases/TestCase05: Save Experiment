@@ -8,6 +8,8 @@ An experiment must be opened
 
 # Assumption
 Tracelab key has been properly set, the opened experiment is runnable and without error
+The webservice will need permission to save to the location for the moment. Later the file should download through the browser
+To give permissions to the location it will need to be set in the security section of the folder browser for IIS_IUSRS
 
 # Test Steps
 1. Open an experiment
