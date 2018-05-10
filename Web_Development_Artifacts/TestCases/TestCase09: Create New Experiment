@@ -1,0 +1,18 @@
+# Description
+Tests to ensure that New experiments can be created
+
+# Precondition
+Application must be running
+User must be at http://localhost:49460/Tracelab_UI.aspx
+
+# Assumption
+Tracelab key has been properly set
+
+# Test Steps
+1. Enter a valid location(permissions to the location given to the webservice) into the first text box
+2. Select the + sign button
+3. A graph should appear with start and end nodes
+4. Save the experiment
+
+# Expected results
+The experiment should be saved in the location specified.
