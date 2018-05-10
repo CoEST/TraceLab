@@ -15,9 +15,6 @@
     <script type="text/javascript" src="raphael.js" charset="utf-8"></script>
     <script type="text/javascript" src="GraphBuilder.js" charset ="utf-8" ></script>
     <script type ="text/javascript" >
-       
-  //      var el;
-//        var rpaper;
         
 
     </script>
@@ -149,7 +146,7 @@
                         <div class="panel-body">
                             <asp:DropDownList ID="ComponentLabelText" runat ="server" OnSelectedIndexChanged ="GetComponentInfo"></asp:DropDownList>
                             <asp:Button ID="loadSelectedComponent" runat ="server"  Text ="Load Component" OnClick ="GetComponentInfo" />
-                            <asp:Button ID="updateSelectedComponent" runat ="server"  Text ="Update Component" OnClick ="GetComponentInfo" />
+                            <asp:Button ID="updateSelectedComponent" runat ="server"  Text ="Update Component" OnClick ="UpdateComponentInfo" />
                             <asp:placeholder ID="ComponentConfig" runat ="server"></asp:placeholder>
                             <asp:Label ID="Compcon" Font-Size="small" runat="server" >
 
@@ -164,6 +161,7 @@
                     <div class="panel panel-primary fill-body">
                         <div class="panel-heading">Workspace</div>
                         <div class="panel-body">
+                            <asp:Button ID="btn_ExperimentOutput" runat ="server" Text="Output Metrics"/>
                             <asp:Label ID="Workspace" runat="server" Text=""></asp:Label>
                         </div>
                     </div>
@@ -173,9 +171,9 @@
                         <div class="panel-heading">Graph</div>
                         <div class="panel-body">
                             <asp:Label ID="Labelconsole" runat="server" Text="Console: <br/>"></asp:Label>
-                            <div id="holder"></div>
                             <asp:Label ID="Console" runat="server" Text=""></asp:Label>
-                            
+                             <div id="holder"></div>
+                           
                         </div>
                     </div>
                 </div>

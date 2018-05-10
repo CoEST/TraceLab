@@ -26,6 +26,10 @@ public partial class TraceLab_UI : System.Web.UI.Page
             ComponentDropDown.DataValueField = "ID";
             ComponentDropDown.DataBind();
         }
+        else if (! ComponentLabelText.Text.Equals(""))
+            {
+                GetComponentInfo(sender, e);
+            }
         Workspace.Text = app.GetWorkspace();
         }
         catch (Exception ex)
@@ -297,7 +301,7 @@ public partial class TraceLab_UI : System.Web.UI.Page
                     ComponentConfig.Controls.Add(newLabel);
                     CheckBox newControl = new CheckBox();
                     newControl.ID = drow["Section"].ToString() + "/" + drow["Name"].ToString();
-                    if (drow["Value"].Equals(true))
+                    if (drow["Value"].Equals("True"))
                     {
                         newControl.Checked = true;
                     }
@@ -342,6 +346,7 @@ public partial class TraceLab_UI : System.Web.UI.Page
             drow["Section"] = tex.ID.Split('/')[0];
             drow["Name"] = tex.ID.Split('/')[1];
             drow["Value"] = tex.Text;
+            updatedDT.Rows.Add(drow);
         }
         foreach (CheckBox chk in ComponentConfig.Controls.OfType<CheckBox >())
         {
@@ -350,14 +355,19 @@ public partial class TraceLab_UI : System.Web.UI.Page
             drow["Section"] = chk.ID.Split('/')[0];
             drow["Name"] = chk.ID.Split('/')[1];
             drow["Value"] = chk.Checked ;
-
+            updatedDT.Rows.Add(drow);
         }
 
-        app.UpdateComponentConfigInfo(ComponentDropDown.SelectedValue, updatedDT);
+        app.UpdateComponentConfigInfo(ComponentLabelText.SelectedValue, updatedDT);
 
         buildGraph();
 
         //run the update
+    }
+
+    protected void SetOutput(object sender, EventArgs e)
+    {
+        Workspace.Text = TraceLabApplicationWebConsole.Instance.getOutput();
     }
 
     [WebMethod]
@@ -384,6 +394,7 @@ public partial class TraceLab_UI : System.Web.UI.Page
                 Console.Text = TraceLabApplicationWebConsole.Instance.GetLogUntouched();
                 runningTimer.Enabled = false;
                 buildGraph();
+                Console.Text += TraceLabApplicationWebConsole.Instance.getOutput();
             }
         }
         catch(Exception ex)

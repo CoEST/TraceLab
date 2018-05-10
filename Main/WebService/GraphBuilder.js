@@ -63,6 +63,7 @@ var text = [];
 var ID = [];
 var elementIDindex = [];
 var indexSelected = -1;
+var rpaper;
 
 var selectNode = function () {
     for (var i = shapes.length; i--;)
@@ -139,13 +140,20 @@ up = function () {
         }    });
 }
 function LoadExperiment() {
-    rpaper = Raphael("holder", 1000, 800),
+
+    if (indexSelected != -1)
+    {
+        rpaper.clear();
+    }
+
+    rpaper = new Raphael("holder", 1000, 800),
         shapes = [],
         connections = [],
         text = [],
         ID = [];
     rpaper.clear();
     rpaper.rect(0, 0, 1000, 800, 10).attr({ fill: "#eee", stroke: "none" });
+    selectedIndex = 0;
 
 };
 function addNode(x, y, w, l, Text, Identifier) {
@@ -154,11 +162,7 @@ function addNode(x, y, w, l, Text, Identifier) {
     text.push(rpaper.text(x + w / 2, y + l / 2, Text));
 
     elementIDindex.push(shapes.id);
-
-    //for (var i = 0, ii = shapes.length; i < ii; i++) {
-    //    shapes[i].attr({ "stroke-width": 2, cursor: "move" });
-    //    shapes[i].drag(move, dragger, up);
-    //}
+    
 }
 function addLink(targetID, sourceID) {
     var i = 0;

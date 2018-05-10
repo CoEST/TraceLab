@@ -166,7 +166,7 @@ namespace TraceLabWeb
                     dr["Type"] = confwrap.Type ;
                     dr["Value"] = fpath.Absolute ;
                     dr["Name"]= confwrap.Name ;
-                    dr["Section"] = "Out";
+                    dr["Section"] = "Conf";
                     dt.Rows.Add(dr);
                 }
                 else
@@ -893,6 +893,18 @@ namespace TraceLabWeb
                 //UpdateLog(logInfo.Exception.ToString());
                 PrintLog(logInfo);
             }
+        }
+
+        public static string SendOutput()
+        {
+            string ExperimentOutput="";
+
+         foreach (WorkspaceUnit workUnit in   ConsoleInstance.Application.WorkspaceViewModel.WorkspaceUnitCollection)
+            {
+                ExperimentOutput += workUnit.FriendlyUnitName;
+            }
+
+            return ExperimentOutput;
         }
 
         private static void ReloadApplicationViewModel(TraceLab.Core.Experiments.Experiment experiment)

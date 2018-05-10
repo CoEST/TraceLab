@@ -16,12 +16,6 @@ C:\Users\Andrew\Documents\TraceLab\Main\Types\TraceLabSDK.Types.pdb
 C:\Users\Andrew\Documents\TraceLab\Main\WebService\TraceLabSDK.Types\obj\Debug\TraceLabSDK.Types.csprojResolveAssemblyReference.cache
 C:\Users\Andrew\Documents\TraceLab\Main\WebService\TraceLabSDK.Types\obj\Debug\TraceLabSDK.Types.dll
 C:\Users\Andrew\Documents\TraceLab\Main\WebService\TraceLabSDK.Types\obj\Debug\TraceLabSDK.Types.pdb
-C:\Users\Andrew\Documents\Git\TraceLab\Main\Types\TraceLabSDK.Types.XML
-C:\Users\Andrew\Documents\Git\TraceLab\Main\Types\TraceLabSDK.Types.dll
-C:\Users\Andrew\Documents\Git\TraceLab\Main\Types\TraceLabSDK.Types.pdb
-C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLabSDK.Types\obj\Debug\TraceLabSDK.Types.csprojResolveAssemblyReference.cache
-C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLabSDK.Types\obj\Debug\TraceLabSDK.Types.dll
-C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLabSDK.Types\obj\Debug\TraceLabSDK.Types.pdb
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\Types\TraceLabSDK.Types.XML
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\Types\TraceLabSDK.Types.dll
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\Types\TraceLabSDK.Types.pdb
@@ -29,3 +23,9 @@ C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLabSDK.Types\ob
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLabSDK.Types\obj\Debug\TraceLabSDK.Types.csproj.CoreCompileInputs.cache
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLabSDK.Types\obj\Debug\TraceLabSDK.Types.dll
 C:\Users\Owner\Documents\W&M\cs635\TraceLab\Main\WebService\TraceLabSDK.Types\obj\Debug\TraceLabSDK.Types.pdb
+C:\Users\Andrew\Documents\Git\TraceLab\Main\Types\TraceLabSDK.Types.XML
+C:\Users\Andrew\Documents\Git\TraceLab\Main\Types\TraceLabSDK.Types.dll
+C:\Users\Andrew\Documents\Git\TraceLab\Main\Types\TraceLabSDK.Types.pdb
+C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLabSDK.Types\obj\Debug\TraceLabSDK.Types.csprojResolveAssemblyReference.cache
+C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLabSDK.Types\obj\Debug\TraceLabSDK.Types.dll
+C:\Users\Andrew\Documents\Git\TraceLab\Main\WebService\TraceLabSDK.Types\obj\Debug\TraceLabSDK.Types.pdb
