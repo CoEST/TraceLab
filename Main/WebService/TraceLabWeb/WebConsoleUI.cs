@@ -224,7 +224,21 @@ namespace TraceLabWeb
                         {
                             if(drow["Name"].Equals(confwrap.Name))
                             {
+                                if (confwrap.Type.ToString().Equals("System.Boolean"))
+                                {
+                                    if (drow["Value"].Equals ("True"))
+                                    {
+                                        confwrap.Value = true;
+                                    }
+                                    else
+                                    {
+                                        confwrap.Value = false;
+                                    }
+                                }
+                                else
+                                {
                                 confwrap.Value = drow["Value"];
+                                }
                             }
                         }
                     }
